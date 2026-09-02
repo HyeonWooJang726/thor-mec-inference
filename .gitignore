@@ -1,0 +1,52 @@
+# 로컬 환경 변수와 자격 증명
+.env
+.env.*
+credentials
+credentials/**
+*credentials*
+*api_key*
+*apikey*
+*token*
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*.pem
+*.key
+
+# 모델과 TensorRT 생성물
+*.onnx
+*.engine
+*.plan
+
+# raw 결과와 로그는 로컬에 보존하되 공개 Git에는 포함하지 않는다.
+logs/*
+results/*
+!logs/.gitkeep
+!results/.gitkeep
+
+# Python cache와 가상 환경
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+ENV/
+
+# Editor 임시 파일
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS 임시 파일
+.DS_Store
+Thumbs.db
+desktop.ini
