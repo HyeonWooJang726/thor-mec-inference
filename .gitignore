@@ -35,6 +35,14 @@ logs/*
 results/*
 !logs/.gitkeep
 !results/.gitkeep
+!results/decode_profiling/
+results/decode_profiling/*
+!results/decode_profiling/README.md
+!results/decode_profiling/formal_runs.csv
+!results/decode_profiling/summary.csv
+!results/decode_profiling/figures/
+results/decode_profiling/figures/*
+!results/decode_profiling/figures/aggregate_throughput_vs_streams.png
 
 # Python cache와 가상 환경
 __pycache__/
