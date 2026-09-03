@@ -118,7 +118,7 @@ def discover_formal_runs() -> list[dict[str, object]]:
             path.parent == RESULTS / "batch_profiling"
             and experiment == "RT-DETR isolated batch profiling"
             and "NV Power Mode: MAXN" in text
-            and batch in {2, 4, 8}
+            and batch in {2, 4, 8, 12, 16}
         )
         is_b1_formal = (
             path.parent == RESULTS / "power_calibration"
@@ -143,8 +143,8 @@ def discover_formal_runs() -> list[dict[str, object]]:
                 raise ValueError(f"{path}: formal command에 CUDA Graph 또는 SpinWait option이 있음")
             rows.append(parse_performance(path, batch, run))
     rows.sort(key=lambda row: (int(row["batch"]), int(row["run"])))
-    counts = {batch: sum(int(row["batch"]) == batch for row in rows) for batch in (1, 2, 4, 8)}
-    if counts != {1: 3, 2: 3, 4: 3, 8: 3}:
+    counts = {batch: sum(int(row["batch"]) == batch for row in rows) for batch in (1, 2, 4, 8, 12, 16)}
+    if counts != {1: 3, 2: 3, 4: 3, 8: 3, 12: 3, 16: 3}:
         raise ValueError(f"formal run count 불일치: {counts}")
     return rows
 
@@ -311,7 +311,7 @@ NVIDIA Jetson AGX Thor에서 RT-DETR Warehouse v1.0.2 / ResNet-50의 fixed batch
 
 ## 실험 방법
 
-각 batch `B={{1,2,4,8}}`에서 2 s warm-up 후 30 s measurement를 3회 수행했다. 각 log의 **마지막** `=== Performance summary ===`만 파싱했다. 중간 `Average on 10 runs ...` 출력은 formal result에 포함하지 않았다. Throughput run-to-run CV는 3회 QPS의 sample standard deviation을 mean으로 나눠 계산했다.
+각 batch `B={{1,2,4,8,12,16}}`에서 2 s warm-up 후 30 s measurement를 3회 수행했다. 각 log의 **마지막** `=== Performance summary ===`만 파싱했다. 중간 `Average on 10 runs ...` 출력은 formal result에 포함하지 않았다. Throughput run-to-run CV는 3회 QPS의 sample standard deviation을 mean으로 나눠 계산했다.
 
 ## 결과
 
@@ -321,7 +321,7 @@ NVIDIA Jetson AGX Thor에서 RT-DETR Warehouse v1.0.2 / ResNet-50의 fixed batch
 
 ## 해석
 
-raw log 재계산 기준 effective throughput은 b1 약 {summary[0]['effective_throughput_img_s_mean']:.2f}, b2 약 {summary[1]['effective_throughput_img_s_mean']:.2f}, b4 약 {summary[2]['effective_throughput_img_s_mean']:.2f}, b8 약 {summary[3]['effective_throughput_img_s_mean']:.2f} img/s다. b2 이후에는 batch당 GPU compute와 Host latency 증가가 effective throughput 증가로 이어지지 않았다. MAXN b4/b8에서는 후속 OC3 validation에서 OC3 activity가 확인되었으므로 large-batch 결과 해석에 caveat가 필요하다.
+raw log 재계산 기준 effective throughput은 b1 약 {summary[0]['effective_throughput_img_s_mean']:.2f}, b2 약 {summary[1]['effective_throughput_img_s_mean']:.2f}, b4 약 {summary[2]['effective_throughput_img_s_mean']:.2f}, b8 약 {summary[3]['effective_throughput_img_s_mean']:.2f}, b12 약 {summary[4]['effective_throughput_img_s_mean']:.2f}, b16 약 {summary[5]['effective_throughput_img_s_mean']:.2f} img/s다. b2 이후에는 batch당 GPU compute와 Host latency 증가가 effective throughput 증가로 이어지지 않았다. MAXN b4/b8에서는 후속 OC3 validation에서 OC3 activity가 확인되었으므로 large-batch 결과 해석에 caveat가 필요하다.
 
 ## 주의사항
 
@@ -333,7 +333,7 @@ raw log 재계산 기준 effective throughput은 b1 약 {summary[0]['effective_t
 
 ## 관련 파일
 
-- `formal_runs.csv`: 12개 formal run의 원자료 파싱 결과
+- `formal_runs.csv`: 18개 formal run의 원자료 파싱 결과
 - `summary.csv`: batch별 3회 집계
 - `figures/`: throughput 및 latency figure
 - 원본 `.log`: 수정하지 않은 raw measurement
@@ -344,7 +344,8 @@ raw log 재계산 기준 effective throughput은 b1 약 {summary[0]['effective_t
 def write_power_readme(rows: list[dict[str, object]]) -> None:
     lines = ["| Mode | Batch | Run | OC3 before | OC3 after | Delta | Effective img/s | GPU mean ms |", "|---|---:|---:|---:|---:|---:|---:|---:|"]
     for row in rows:
-        lines.append(f"| {row['power_mode']} | {row['batch']} | {row['run']} | {row['oc3_before']} | {row['oc3_after']} | {row['oc3_delta']} | {row['effective_throughput_img_s']:.3f} | {row['gpu_compute_mean_ms']:.3f} |")
+        run_label = row["run"] if row["run"] is not None else "NA"
+        lines.append(f"| {row['power_mode']} | {row['batch']} | {run_label} | {row['oc3_before']} | {row['oc3_after']} | {row['oc3_delta']} | {row['effective_throughput_img_s']:.3f} | {row['gpu_compute_mean_ms']:.3f} |")
     text = """# Power / OC3 validation
 
 Summary schema version: 1
@@ -438,7 +439,7 @@ Smoke test는 engine load, input binding, 짧은 실행 및 정상 종료 여부
 - Model/engine verification
 - Real-frame correctness
 - Power mode comparison
-- TensorRT b1/b2/b4/b8 isolated profiling
+- TensorRT b1/b2/b4/b8/b12/b16 isolated profiling
 - TensorRT jitter diagnostic
 - OC3 diagnostic
 - 120W sensitivity
@@ -505,7 +506,7 @@ def main() -> None:
     write_other_readmes()
     write_inventory()
     print(f"formal_runs={len(formal)}")
-    print("formal_counts=" + ",".join(f"b{batch}=3" for batch in (1, 2, 4, 8)))
+    print("formal_counts=" + ",".join(f"b{batch}=3" for batch in (1, 2, 4, 8, 12, 16)))
     print(f"oc3_runs={len(oc3)}")
 
 
