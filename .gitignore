@@ -19,6 +19,17 @@ id_ed25519.*
 *.engine
 *.plan
 
+# 저장소 위치와 무관하게 보호할 연구 raw artifact
+*.bin
+*.log
+*.mp4
+*.avi
+*.mkv
+*.mov
+datasets/
+dataset/
+data/
+
 # raw 결과와 로그는 로컬에 보존하되 공개 Git에는 포함하지 않는다.
 logs/*
 results/*
