@@ -27,7 +27,9 @@ PIPELINE_TEXT = (
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--video", required=True)
+    videos = parser.add_mutually_exclusive_group(required=True)
+    videos.add_argument("--video")
+    videos.add_argument("--videos", nargs="+")
     parser.add_argument("--engine", required=True)
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--max-frames", type=int)
@@ -155,38 +157,48 @@ class TensorRTRunner:
 
 def main():
     args = parse_args()
+    videos = [args.video] if args.video is not None else args.videos
+    streams = len(videos)
     Gst.init(None)
     cv2.setNumThreads(1)
+    pipelines = []
+    converters = []
+    sinks = []
     try:
         inference = TensorRTRunner(args.engine)
-        pipeline, converter, sink = build_pipeline(args.video)
+        for video in videos:
+            pipeline, converter, sink = build_pipeline(video)
+            pipelines.append(pipeline)
+            converters.append(converter)
+            sinks.append(sink)
     except Exception as error:
         print(f"ERROR setup: {error}", file=sys.stderr)
         return 1
 
     loop = GLib.MainLoop()
-    decoded = 0
-    preprocessed = 0
-    executions = 0
-    eos = False
-    consumer_done = False
+    decoded = [0] * streams
+    preprocessed = [0] * streams
+    executions = [0] * streams
+    eos = [False] * streams
+    consumer_done = [False] * streams
     errors = []
-    tensor_info = None
-    output_info = None
+    tensor_info = [None] * streams
+    output_info = [None] * streams
+    inference_lock = threading.Lock()
 
     def maybe_finish():
-        if consumer_done and (args.max_frames is not None or eos):
+        if all(consumer_done) and (args.max_frames is not None or all(eos)):
             loop.quit()
         return False
 
-    def consume():
-        nonlocal decoded, preprocessed, executions, consumer_done, tensor_info, output_info
+    def consume(index):
+        sink = sinks[index]
         try:
-            while args.max_frames is None or executions < args.max_frames:
+            while args.max_frames is None or executions[index] < args.max_frames:
                 sample = sink.emit("pull-sample")
                 if sample is None:
                     if args.max_frames is not None:
-                        raise RuntimeError("appsink returned no sample before bounded completion")
+                        raise RuntimeError(f"stream {index}: appsink returned no sample before bounded completion")
                     break
                 info = GstVideo.VideoInfo.new_from_caps(sample.get_caps())
                 if info.width != 1920 or info.height != 1080 or info.finfo.name != "BGR":
@@ -195,82 +207,110 @@ def main():
                 ok, mapping = buffer.map(Gst.MapFlags.READ)
                 if not ok:
                     raise RuntimeError("GstBuffer map failed")
-                decoded += 1
+                decoded[index] += 1
                 try:
                     frame = np.ndarray((1080, 1920, 3), dtype=np.uint8, buffer=mapping.data, strides=(info.stride[0], 3, 1))
                     tensor = preprocess_bgr(frame)
                 finally:
                     buffer.unmap(mapping)
-                preprocessed += 1
-                tensor_info = (tensor.shape, tensor.dtype, tensor.flags.c_contiguous)
-                outputs = inference.infer(tensor)
-                executions += 1
-                output_info = {name: (value.shape, value.dtype) for name, value in outputs.items()}
-            consumer_done = True
+                preprocessed[index] += 1
+                tensor_info[index] = (tensor.shape, tensor.dtype, tensor.flags.c_contiguous)
+                with inference_lock:
+                    outputs = inference.infer(tensor)
+                    output_info[index] = {name: (value.shape, value.dtype) for name, value in outputs.items()}
+                executions[index] += 1
+            consumer_done[index] = True
             GLib.idle_add(maybe_finish)
         except Exception as error:
             errors.append(str(error))
             GLib.idle_add(loop.quit)
 
-    def on_message(_bus, message):
-        nonlocal eos
+    def on_message(_bus, message, index):
         if message.type == Gst.MessageType.ERROR:
             error, debug = message.parse_error()
-            errors.append(f"GStreamer: {error}; debug={debug or 'unavailable'}")
+            errors.append(f"stream {index} GStreamer: {error}; debug={debug or 'unavailable'}")
             loop.quit()
         elif message.type == Gst.MessageType.EOS:
-            eos = True
-            if args.max_frames is not None and executions < args.max_frames:
-                errors.append(f"unexpected EOS after {executions} inference executions")
+            eos[index] = True
+            if args.max_frames is not None and executions[index] < args.max_frames:
+                errors.append(f"stream {index}: unexpected EOS after {executions[index]} inference executions")
                 loop.quit()
             else:
                 maybe_finish()
 
-    bus = pipeline.get_bus()
-    bus.add_signal_watch()
-    bus.connect("message", on_message)
-    worker = threading.Thread(target=consume, name="local-e2e")
+    for index, pipeline in enumerate(pipelines):
+        bus = pipeline.get_bus()
+        bus.add_signal_watch()
+        bus.connect("message", on_message, index)
+    workers = [threading.Thread(target=consume, args=(index,), name=f"local-e2e-{index}") for index in range(streams)]
     try:
-        if pipeline.set_state(Gst.State.PLAYING) == Gst.StateChangeReturn.FAILURE:
-            errors.append("failed to enter PLAYING state")
-        else:
-            worker.start()
+        for index, pipeline in enumerate(pipelines):
+            if pipeline.set_state(Gst.State.PLAYING) == Gst.StateChangeReturn.FAILURE:
+                errors.append(f"stream {index}: failed to enter PLAYING state")
+                break
+        if not errors:
+            for worker in workers:
+                worker.start()
             loop.run()
     finally:
-        caps = converter.get_static_pad("src").get_current_caps()
-        final_caps = caps.to_string() if caps else "unavailable"
-        pipeline.set_state(Gst.State.NULL)
-        if worker.ident is not None:
-            worker.join()
+        final_caps = []
+        for converter in converters:
+            caps = converter.get_static_pad("src").get_current_caps()
+            final_caps.append(caps.to_string() if caps else "unavailable")
+        for pipeline in pipelines:
+            pipeline.set_state(Gst.State.NULL)
+        for worker in workers:
+            if worker.ident is not None:
+                worker.join()
         inference.close()
 
     expected = args.max_frames if args.max_frames is not None else args.expected_frames
-    if decoded != expected or preprocessed != expected or executions != expected:
-        errors.append(f"count mismatch: decoded={decoded} preprocessed={preprocessed} inference={executions} expected={expected}")
-    if args.expected_frames is not None and not eos:
-        errors.append("EOS not reached")
+    for index in range(streams):
+        if decoded[index] != expected or preprocessed[index] != expected or executions[index] != expected:
+            errors.append(f"stream {index} count mismatch: decoded={decoded[index]} preprocessed={preprocessed[index]} inference={executions[index]} expected={expected}")
+        if args.expected_frames is not None and not eos[index]:
+            errors.append(f"stream {index}: EOS not reached")
     if errors:
         for error in errors:
             print(f"ERROR: {error}", file=sys.stderr)
         return 1
-    print(f"video path: {args.video}")
-    print(f"engine: {args.engine}")
-    print(f"actual pipeline: {PIPELINE_TEXT}")
-    print(f"runtime final caps: {final_caps}")
-    print(f"decoded frames: {decoded}")
-    print(f"preprocessed frames: {preprocessed}")
-    print(f"TensorRT inference executions: {executions}")
-    print(f"input tensor: shape={tensor_info[0]} dtype={tensor_info[1]} C-contiguous={tensor_info[2]}")
-    for name in ("pred_logits", "pred_boxes"):
-        print(f"output {name}: shape={output_info[name][0]} dtype={output_info[name][1]}")
+    if streams == 1:
+        print(f"video path: {videos[0]}")
+        print(f"engine: {args.engine}")
+        print(f"actual pipeline: {PIPELINE_TEXT}")
+        print(f"runtime final caps: {final_caps[0]}")
+        print(f"decoded frames: {decoded[0]}")
+        print(f"preprocessed frames: {preprocessed[0]}")
+        print(f"TensorRT inference executions: {executions[0]}")
+        print(f"input tensor: shape={tensor_info[0][0]} dtype={tensor_info[0][1]} C-contiguous={tensor_info[0][2]}")
+        for name in ("pred_logits", "pred_boxes"):
+            print(f"output {name}: shape={output_info[0][name][0]} dtype={output_info[0][name][1]}")
+    else:
+        print(f"streams: {streams}")
+        print(f"engine: {args.engine}")
+        print(f"actual pipeline: {PIPELINE_TEXT}")
+        for index, video in enumerate(videos):
+            print(f"stream {index} video path: {video}")
+            print(f"stream {index} runtime final caps: {final_caps[index]}")
+            print(f"stream {index} decoded frames: {decoded[index]}")
+            print(f"stream {index} preprocessed frames: {preprocessed[index]}")
+            print(f"stream {index} TensorRT inference executions: {executions[index]}")
+            print(f"stream {index} input tensor: shape={tensor_info[index][0]} dtype={tensor_info[index][1]} C-contiguous={tensor_info[index][2]}")
+            for name in ("pred_logits", "pred_boxes"):
+                print(f"stream {index} output {name}: shape={output_info[index][name][0]} dtype={output_info[index][name][1]}")
     if args.max_frames is not None:
-        print(f"mode: bounded at {args.max_frames} frames")
+        print(f"mode: bounded at {args.max_frames} frames{' per stream' if streams > 1 else ''}")
         print("termination: intentional bounded termination")
     else:
-        print(f"mode: full input EOS with expected frames {args.expected_frames}")
-        print(f"termination: {'full input EOS' if eos else 'abnormal before EOS'}")
-    print(f"EOS: {'yes' if eos else 'no'}")
-    print(f"RESULT decoded={decoded} preprocessed={preprocessed} inference={executions}")
+        print(f"mode: full input EOS with expected frames {args.expected_frames}{' per stream' if streams > 1 else ''}")
+        print(f"termination: {'full input EOS' if all(eos) else 'abnormal before EOS'}")
+    if streams == 1:
+        print(f"EOS: {'yes' if eos[0] else 'no'}")
+        print(f"RESULT decoded={decoded[0]} preprocessed={preprocessed[0]} inference={executions[0]}")
+    else:
+        for index in range(streams):
+            print(f"stream {index} EOS: {'yes' if eos[index] else 'no'}")
+        print(f"RESULT streams={streams} decoded={sum(decoded)} preprocessed={sum(preprocessed)} inference={sum(executions)}")
     return 0
 
 
