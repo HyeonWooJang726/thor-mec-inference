@@ -69,3 +69,7 @@ ENV/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Formal real-time local baseline artifacts
+!results/local_realtime_baseline/
+!results/local_realtime_baseline/**
