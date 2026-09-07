@@ -1,0 +1,66 @@
+{
+  "configuration": {
+    "videos": [
+      "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4",
+      "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0001.mp4",
+      "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0002.mp4",
+      "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0003.mp4",
+      "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0004.mp4"
+    ],
+    "K": 5,
+    "fps": 30.0,
+    "frames_per_stream": 1800,
+    "engine": "models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine",
+    "B": 1,
+    "C": 1
+  },
+  "counts": {
+    "arrivals": 9000,
+    "source_samples_pulled": 9000,
+    "completions": 9000
+  },
+  "per_stream_counts": [
+    {
+      "stream_id": 0,
+      "arrivals": 1800,
+      "source_samples_pulled": 1800,
+      "completions": 1800
+    },
+    {
+      "stream_id": 1,
+      "arrivals": 1800,
+      "source_samples_pulled": 1800,
+      "completions": 1800
+    },
+    {
+      "stream_id": 2,
+      "arrivals": 1800,
+      "source_samples_pulled": 1800,
+      "completions": 1800
+    },
+    {
+      "stream_id": 3,
+      "arrivals": 1800,
+      "source_samples_pulled": 1800,
+      "completions": 1800
+    },
+    {
+      "stream_id": 4,
+      "arrivals": 1800,
+      "source_samples_pulled": 1800,
+      "completions": 1800
+    }
+  ],
+  "scheduler": {
+    "lag_mean_ms": 0.11397695154785954,
+    "lag_p95_ms": 0.14249785199353932,
+    "lag_max_ms": 3.2239003339782357
+  },
+  "backlog": {
+    "peak": 32,
+    "at_final_arrival": 5,
+    "after_drain": 0
+  },
+  "errors": [],
+  "validation": "pass"
+}

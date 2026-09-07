@@ -1,0 +1,41 @@
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+streams: 1
+fps: 30
+frames per stream: 1800
+offered load [frames/s]: 30
+engine: models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine
+actual pipeline: filesrc -> qtdemux -> h264parse -> nvv4l2decoder -> nvvidconv -> video/x-raw,format=BGRx,width=1920,height=1080 -> videoconvert -> video/x-raw,format=BGR,width=1920,height=1080 -> appsink sync=false
+arrival synchronization: phase-aligned
+TensorRT batch B: 1
+cross-inference concurrency C: 1
+TensorRT execution contexts: 1
+inference workers: 1
+dynamic batching: no
+frame drop: no
+stream 0 video path: /home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4
+stream 0 arrivals: 1800
+stream 0 source samples pulled: 1800
+stream 0 preprocessed: 1800
+stream 0 completions: 1800
+stream 0 frame IDs: 0..1799 exactly once
+total arrivals: 1800
+total source samples pulled: 1800
+total completions: 1800
+per-frame artifact: results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run1/per_frame.csv
+summary artifact: results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run1/summary.json
+scheduler lag mean [ms]: 0.074066
+scheduler lag p95 [ms]: 0.097859
+scheduler lag max [ms]: 0.521803
+scheduler final-tick lag max [ms]: 0.067840
+arrival queue wait mean [ms]: 0.184448
+scheduled to front end mean [ms]: 0.258515
+front end observed mean [ms]: 9.553794
+ready queue wait mean [ms]: 0.133972
+inference mean [ms]: 11.307838
+local E2E mean [ms]: 21.254119
+peak backlog: 2
+backlog immediately after final actual arrival: 1
+final backlog after drain: 0
+termination: bounded workload fully drained
+RESULT streams=1 arrivals=1800 completions=1800 peak_backlog=2 final_arrival_backlog=1 final_backlog=0

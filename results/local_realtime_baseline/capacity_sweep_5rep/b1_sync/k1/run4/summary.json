@@ -1,0 +1,38 @@
+{
+  "configuration": {
+    "videos": [
+      "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4"
+    ],
+    "K": 1,
+    "fps": 30.0,
+    "frames_per_stream": 1800,
+    "engine": "models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine",
+    "B": 1,
+    "C": 1
+  },
+  "counts": {
+    "arrivals": 1800,
+    "source_samples_pulled": 1800,
+    "completions": 1800
+  },
+  "per_stream_counts": [
+    {
+      "stream_id": 0,
+      "arrivals": 1800,
+      "source_samples_pulled": 1800,
+      "completions": 1800
+    }
+  ],
+  "scheduler": {
+    "lag_mean_ms": 0.1146679163038142,
+    "lag_p95_ms": 0.2867242843421991,
+    "lag_max_ms": 0.37147166585782543
+  },
+  "backlog": {
+    "peak": 2,
+    "at_final_arrival": 1,
+    "after_drain": 0
+  },
+  "errors": [],
+  "validation": "pass"
+}

@@ -1,0 +1,89 @@
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+streams: 7
+fps: 30
+frames per stream: 1800
+offered load [frames/s]: 210
+engine: models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine
+actual pipeline: filesrc -> qtdemux -> h264parse -> nvv4l2decoder -> nvvidconv -> video/x-raw,format=BGRx,width=1920,height=1080 -> videoconvert -> video/x-raw,format=BGR,width=1920,height=1080 -> appsink sync=false
+arrival synchronization: phase-aligned
+TensorRT batch B: 1
+cross-inference concurrency C: 1
+TensorRT execution contexts: 1
+inference workers: 1
+dynamic batching: no
+frame drop: no
+stream 0 video path: /home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4
+stream 0 arrivals: 1800
+stream 0 source samples pulled: 1800
+stream 0 preprocessed: 1800
+stream 0 completions: 1800
+stream 0 frame IDs: 0..1799 exactly once
+stream 1 video path: /home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0001.mp4
+stream 1 arrivals: 1800
+stream 1 source samples pulled: 1800
+stream 1 preprocessed: 1800
+stream 1 completions: 1800
+stream 1 frame IDs: 0..1799 exactly once
+stream 2 video path: /home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0002.mp4
+stream 2 arrivals: 1800
+stream 2 source samples pulled: 1800
+stream 2 preprocessed: 1800
+stream 2 completions: 1800
+stream 2 frame IDs: 0..1799 exactly once
+stream 3 video path: /home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0003.mp4
+stream 3 arrivals: 1800
+stream 3 source samples pulled: 1800
+stream 3 preprocessed: 1800
+stream 3 completions: 1800
+stream 3 frame IDs: 0..1799 exactly once
+stream 4 video path: /home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0004.mp4
+stream 4 arrivals: 1800
+stream 4 source samples pulled: 1800
+stream 4 preprocessed: 1800
+stream 4 completions: 1800
+stream 4 frame IDs: 0..1799 exactly once
+stream 5 video path: /home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0005.mp4
+stream 5 arrivals: 1800
+stream 5 source samples pulled: 1800
+stream 5 preprocessed: 1800
+stream 5 completions: 1800
+stream 5 frame IDs: 0..1799 exactly once
+stream 6 video path: /home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0006.mp4
+stream 6 arrivals: 1800
+stream 6 source samples pulled: 1800
+stream 6 preprocessed: 1800
+stream 6 completions: 1800
+stream 6 frame IDs: 0..1799 exactly once
+total arrivals: 12600
+total source samples pulled: 12600
+total completions: 12600
+per-frame artifact: results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run4/per_frame.csv
+summary artifact: results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run4/summary.json
+scheduler lag mean [ms]: 0.148939
+scheduler lag p95 [ms]: 0.210783
+scheduler lag max [ms]: 2.903574
+scheduler final-tick lag max [ms]: 0.148487
+arrival queue wait mean [ms]: 1.261668
+scheduled to front end mean [ms]: 1.410607
+front end observed mean [ms]: 13.281000
+ready queue wait mean [ms]: 4449.608713
+inference mean [ms]: 5.276502
+local E2E mean [ms]: 4469.576822
+peak backlog: 1590
+backlog immediately after final actual arrival: 1590
+final backlog after drain: 0
+termination: bounded workload fully drained
+RESULT streams=7 arrivals=12600 completions=12600 peak_backlog=1590 final_arrival_backlog=1590 final_backlog=0
