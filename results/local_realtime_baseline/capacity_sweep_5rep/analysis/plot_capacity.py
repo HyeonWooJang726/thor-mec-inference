@@ -181,7 +181,6 @@ def plot(runs, aggregates):
             top = ax.secondary_xaxis("top", functions=(lambda x: x/30, lambda x: x*30))
             top.set_xticks(list(range(1, 8)))
             top.set_xlabel("Concurrent streams, K")
-            ax.text(-.19, 1.14, f"({chr(97+idx)})", transform=ax.transAxes, fontweight="bold")
         axes[0].set_ylim(15, 7500)
         axes[1].set_ylim(.4, 1600)
         handles = [Line2D([], [], marker="o", color="0.35", markerfacecolor="none",
