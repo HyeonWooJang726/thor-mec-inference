@@ -86,6 +86,7 @@ Native TensorRT environment:
 Python virtual environment:
 
 - Python: `3.12.3`
+- NumPy: `1.26.4`
 - TensorRT Python version: `10.16.1.11`
 - TensorRT Builder creation test: PASS
 

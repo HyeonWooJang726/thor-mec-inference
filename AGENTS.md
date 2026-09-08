@@ -2,9 +2,9 @@
 
 ## 저장소 목적과 현재 범위
 
-이 저장소는 NVIDIA Jetson AGX Thor에서 DNN inference system을 재현 가능하게 실험하기 위한 연구 testbed다. 현재 단계는 **Thor-only offline profiling**이다.
+이 저장소는 NVIDIA Jetson AGX Thor와 edge GPU server를 이용한 DNN inference system을 재현 가능하게 실험하기 위한 연구 testbed다. 현재 단계는 **Server/E2E integration bring-up**이다.
 
-최종 연구 질문, system architecture, optimization objective, scheduling formulation은 아직 고정하지 않는다. 따라서 현재 단계의 도구와 데이터 구조는 특정 연구 방향이나 알고리즘을 전제로 설계하지 않는다. RT-DETR inference, H.264 decoding, preprocessing, JPEG encoding/offloading, MEC networking, remote GPU execution, microbatch/queue-aware scheduling, ServeSense 및 최종 최적화·스케줄링 알고리즘은 별도 승인과 단계 전환 전까지 구현하지 않는다.
+Thor의 검증된 local inference baseline은 완료 및 동결된 상태다. 현재 단계에서는 기존 local implementation과 결과를 변경하지 않고, edge server TensorRT inference service, Thor-to-server networking, single-request E2E integration smoke 및 이후 승인된 server/E2E characterization을 구현할 수 있다. 최종 ServeSense estimator, scheduling policy, optimization algorithm 및 formal evaluation은 각각 명시적인 단계 전환과 승인 전까지 임의로 구현하거나 실행하지 않는다.
 
 ## 검증된 환경
 
