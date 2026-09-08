@@ -98,20 +98,24 @@ canonical local Thor engine and must not be used on the edge server.
 
 ## 7. Network
 
-Observed Thor LAN address during the server integration setup:
+Observed on 2026-09-08:
 
-- Thor: `192.168.0.189`
-- Network: `192.168.0.0/24`
+- Thor IPv4 address: `192.168.0.189`
+- Edge server IPv4 address: `192.168.0.7`
+- IPv4 subnet: `192.168.0.0/24`
+- Interface used for server traffic: `wlP1p1s0`
+- Medium: Wi-Fi
+- Radio: IEEE 802.11ax / Wi-Fi 6
+- Band: 5 GHz
+- Channel: 48
+- Frequency: 5240 MHz
+- Signal: `-42 dBm`
+- RX PHY rate: `1200.9 Mbit/s` (80 MHz)
+- TX PHY rate: `1921.5 Mbit/s` (160 MHz)
+- TCP connectivity to `192.168.0.7:5000`: PASS
 
-The Thor successfully established a TCP/HTTP connection to the edge server
-at `192.168.0.7:5000`.
-
-Physical negotiated link speed:
-
-- Not yet measured and therefore not reported.
-
-An observed SCP transfer rate must not be interpreted as the physical
-negotiated link speed.
+PHY rates are link-state observations and are not reported as
+application-level throughput.
 
 ## 8. Git Freeze Point
 

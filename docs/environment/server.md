@@ -219,48 +219,30 @@ end-to-end integration testing.
 
 ## 10. Network Configuration
 
-Thor:
+Observed on 2026-09-08:
 
-- Address: `192.168.0.189`
+- Server IPv4 address: `192.168.0.7`
+- Thor IPv4 address: `192.168.0.189`
+- IPv4 subnet: `192.168.0.0/24`
+- WSL2 networking mode: `mirrored`
+- Windows interface: `Wi-Fi`
+- Adapter: `Intel(R) Wi-Fi 7 BE200 320MHz`
+- Medium: Native 802.11
+- Active radio: IEEE 802.11ax / Wi-Fi 6
+- Band: 5 GHz
+- Channel: 48
+- Windows `Get-NetAdapter` LinkSpeed: `2.4 Gbps`
+- RX PHY rate: `2402 Mbit/s`
+- TX PHY rate: `2402 Mbit/s`
+- RSSI: `-39 dBm`
+- Hyper-V firewall: TCP port `5000`, remote address `192.168.0.189`
+- Thor -> Server TCP port 5000: PASS
+- Thor -> Server HTTP request: PASS (`200 OK`)
 
-Server / mirrored WSL:
+Both endpoints were observed on the same 5 GHz wireless access point.
 
-- Address: `192.168.0.7`
-
-Both devices were observed on:
-
-- `192.168.0.0/24`
-
-WSL2 originally used NAT networking. External Thor-to-WSL access did not
-work in that configuration.
-
-WSL was therefore configured to use mirrored networking.
-
-Hyper-V firewall rule:
-
-- Name: `WSL-Thor-5000`
-- Display name: `WSL Thor TCP 5000`
-- Direction: inbound
-- Protocol: TCP
-- Local port: `5000`
-- Allowed remote address: `192.168.0.189`
-- Action: Allow
-- Enabled: True
-- Enforcement status: OK
-
-Connectivity validation:
-
-- Thor -> Server TCP connection on port 5000: PASS
-- HTTP request from Thor to `192.168.0.7:5000`: PASS
-- HTTP response: `200 OK`
-
-Physical negotiated network link speed:
-
-- Not yet measured.
-- No 1 GbE / 2.5 GbE / 10 GbE value is currently claimed.
-
-An observed SCP application throughput must not be interpreted as the
-physical negotiated link speed.
+PHY/link rates are link-state observations and are not reported as
+application-level throughput.
 
 ## 11. Timing Warning
 
