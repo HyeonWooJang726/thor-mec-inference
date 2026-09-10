@@ -67,6 +67,7 @@ def main():
             "axes.grid": False, "savefig.dpi": 350,
         })
         fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.5), layout="constrained")
+        fig.get_layout_engine().set(wspace=.10)
         left, right = axes
         left.bar(left_ks, means, yerr=deviations, color="#0072B2", width=.6,
                  capsize=3, error_kw={"elinewidth": 1})
@@ -103,7 +104,7 @@ def main():
 
         assert all(not ax.get_title() for ax in axes)
         for ax, label in zip(axes, ["(a)", "(b)"]):
-            panel_label = ax.text(.02, .98, label, transform=ax.transAxes,
+            panel_label = ax.text(-.02, -.13, label, transform=ax.transAxes,
                                   ha="left", va="top", fontsize=10)
             panel_label.set_in_layout(False)
         # Exclusive creation protects existing figures, including this one.
