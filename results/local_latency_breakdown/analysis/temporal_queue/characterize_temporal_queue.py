@@ -346,7 +346,14 @@ def figures():
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     from matplotlib.ticker import ScalarFormatter
-    d=load(OUT/'temporal_data.json')
+    # Render from existing CSVs only; no raw timing or temporal analysis rerun.
+    d={'run_summary':[dict(r,K=int(r['K'])) for r in csvread(ROOT/'per_run_summary.csv')]}
+    for section,name in [('ready','ready_span_summary.csv'),
+                         ('service','period_service_demand_summary.csv'),
+                         ('carry','carryover_summary.csv')]:
+        d[section]=[{key:(int(value) if key=='K' else value if key in
+                         ('row_type','run_id','scope') else float(value))
+                     for key,value in r.items()} for r in csvread(OUT/name)]
     plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.labelsize':10,
         'xtick.labelsize':9,'ytick.labelsize':9,'legend.fontsize':8.5,
         'axes.spines.top':False,'axes.spines.right':False,'axes.grid':False,'savefig.dpi':350})
@@ -367,7 +374,7 @@ def figures():
     values=formal_values('deadline_miss_pct')
     axes[1].errorbar(ks,values.mean(axis=1),yerr=values.std(axis=1,ddof=1),color=orange,marker='o',markersize=4,capsize=2,lw=1.4)
     axes[1].set_ylim(0,105);axes[1].set_ylabel('Deadline miss (%)')
-    for ax,tag in zip(axes,['(a)','(b)']):ax.set_xticks(ks);ax.set_xlabel('Streams K');ax.text(0,1.04,tag,transform=ax.transAxes)
+    for ax in axes:ax.set_xticks(ks);ax.set_xlabel('Streams K')
     save(fig,'figure_1_local_qos_knee.png')
     fig,axes=plt.subplots(1,2,figsize=(7.2,2.8),gridspec_kw={'width_ratios':[3,1]},layout='constrained')
     comps=['frame_start_lag','front_end','inference_queue_wait','inference']
@@ -385,12 +392,11 @@ def figures():
     specs=[('ready','ready_span_mean_ms','Ready span (ms)',None),
            ('service','period_inference_service_sum_mean_ms','Service sum / period (ms)',None),
            ('carry','inference_unfinished_carryover_period_pct','Unfinished carry-over (%)','all_60s')]
-    for ax,(section,metric,label,scope),tag in zip(axes,specs,['(a)','(b)','(c)']):
+    for ax,(section,metric,label,scope) in zip(axes,specs):
         values=[row(d,section,k,scope=scope)[metric] for k in (5,6)]
         sd=[row(d,section,k,'sample_sd',scope=scope)[metric] for k in (5,6)]
         ax.bar([0,1],values,yerr=sd,color=[blue,orange],width=.6,capsize=3,error_kw={'elinewidth':1})
         ax.set_xticks([0,1],['5','6']);ax.set_xlabel('Streams K');ax.set_ylabel(label);ax.set_ylim(bottom=0)
-        ax.text(0,1.04,tag,transform=ax.transAxes)
     axes[1].axhline(1000/30,color='black',ls='--',lw=1,label='Frame period')
     axes[1].legend(loc='upper left',frameon=False,fontsize=8);axes[1].set_ylim(0,41)
     axes[2].set_ylim(0,105)
