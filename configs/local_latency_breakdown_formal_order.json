@@ -1,0 +1,414 @@
+{
+  "artifact_class": "ORCHESTRATION CONFIG / NOT AN EXPERIMENT RESULT",
+  "order_status": "VERIFIED",
+  "order_evidence": "Raw per_frame scheduled-arrival chronology agrees with oc3_before and exit-code file mtimes; preserve exact observed sequence, not a generic K-major/round-major approximation",
+  "runs": [
+    {
+      "K": 1,
+      "run_id": "run01",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run1/per_frame.csv",
+      "first_scheduled_arrival_s": "23860.470056422",
+      "last_completion_s": "23920.456922082",
+      "before_mtime_ns": 1788768791495229261,
+      "exit_mtime_ns": 1788768852695296071,
+      "source_sha256": "012f1d74124cce4d28d16f38cb0ef87d4d7a11120347e7312d8e248e7b7ff5e6"
+    },
+    {
+      "K": 2,
+      "run_id": "run01",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run1/per_frame.csv",
+      "first_scheduled_arrival_s": "24147.480027243997",
+      "last_completion_s": "24207.471078077",
+      "before_mtime_ns": 1788769078475586000,
+      "exit_mtime_ns": 1788769139719674044,
+      "source_sha256": "20257a7858829299c00e2cc387377716ec665833e909186625f423617c705467"
+    },
+    {
+      "K": 3,
+      "run_id": "run01",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run1/per_frame.csv",
+      "first_scheduled_arrival_s": "24269.559399799997",
+      "last_completion_s": "24329.555152067",
+      "before_mtime_ns": 1788769200515764588,
+      "exit_mtime_ns": 1788769261823858707,
+      "source_sha256": "b773a6dca64699e7d3c2432fd4c8d0468e397099191af283bbf7a50370eaac27"
+    },
+    {
+      "K": 4,
+      "run_id": "run01",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run1/per_frame.csv",
+      "first_scheduled_arrival_s": "24449.260103108998",
+      "last_completion_s": "24509.259690246",
+      "before_mtime_ns": 1788769380228047324,
+      "exit_mtime_ns": 1788769441564148065,
+      "source_sha256": "4fa675ddc20a75c810d5743af28e8023734aa702d4da4e9dcbed42ea486cf43c"
+    },
+    {
+      "K": 5,
+      "run_id": "run01",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run1/per_frame.csv",
+      "first_scheduled_arrival_s": "24578.056028357998",
+      "last_completion_s": "24638.063849121",
+      "before_mtime_ns": 1788769508996260849,
+      "exit_mtime_ns": 1788769570412587305,
+      "source_sha256": "dd0b9f3a5f217c437b694d2c5f7ac2f995e087fb4a06e958247809d7999d778f"
+    },
+    {
+      "K": 6,
+      "run_id": "run01",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run1/per_frame.csv",
+      "first_scheduled_arrival_s": "24903.42277551",
+      "last_completion_s": "24963.431493937",
+      "before_mtime_ns": 1788769834370751000,
+      "exit_mtime_ns": 1788769895847168361,
+      "source_sha256": "00e7498167f83951449402ebb4c6e28d281b06d8ee27949ecaa74510821b8236"
+    },
+    {
+      "K": 7,
+      "run_id": "run01",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run1/per_frame.csv",
+      "first_scheduled_arrival_s": "25201.629770229",
+      "last_completion_s": "25268.417979372",
+      "before_mtime_ns": 1788770132548564013,
+      "exit_mtime_ns": 1788770200916917926,
+      "source_sha256": "656a079f4905f3455e70bb8d4aa0c012ffc94341a562d56115b74bb512afbc71"
+    },
+    {
+      "K": 2,
+      "run_id": "run02",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run2/per_frame.csv",
+      "first_scheduled_arrival_s": "25379.704135560998",
+      "last_completion_s": "25439.694810007",
+      "before_mtime_ns": 1788770310717451298,
+      "exit_mtime_ns": 1788770371921732582,
+      "source_sha256": "13ea76f1a978d8832df3193b7c347483f0b8ff1b8e34d276e2501335a1202963"
+    },
+    {
+      "K": 3,
+      "run_id": "run02",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run2/per_frame.csv",
+      "first_scheduled_arrival_s": "25504.304903283",
+      "last_completion_s": "25564.298737681",
+      "before_mtime_ns": 1788770435270013368,
+      "exit_mtime_ns": 1788770496550276100,
+      "source_sha256": "0ea25176cf68dad03a9defda578a6d2309efddf6a9f30d6c851c22b28d5381dc"
+    },
+    {
+      "K": 4,
+      "run_id": "run02",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run2/per_frame.csv",
+      "first_scheduled_arrival_s": "25699.499359639998",
+      "last_completion_s": "25759.502361772",
+      "before_mtime_ns": 1788770630066822939,
+      "exit_mtime_ns": 1788770691811065771,
+      "source_sha256": "96a64dcbbcc1d3e808b5042f54e2a87b5bf651ec1e30467165d6924938bc1f01"
+    },
+    {
+      "K": 5,
+      "run_id": "run02",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run2/per_frame.csv",
+      "first_scheduled_arrival_s": "25809.294711717997",
+      "last_completion_s": "25869.294150378",
+      "before_mtime_ns": 1788770740215252361,
+      "exit_mtime_ns": 1788770801635484841,
+      "source_sha256": "61cd79b7ecc62e42dea15b40a0a318311db50149cacef95d93882dbefb9b6837"
+    },
+    {
+      "K": 6,
+      "run_id": "run02",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run2/per_frame.csv",
+      "first_scheduled_arrival_s": "26163.225632477",
+      "last_completion_s": "26223.245074771",
+      "before_mtime_ns": 1788771094168541053,
+      "exit_mtime_ns": 1788771155672754927,
+      "source_sha256": "bbad74365958c27d44735a89522c28c532ce331ef2644a58378d62f50d7e809d"
+    },
+    {
+      "K": 7,
+      "run_id": "run02",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run2/per_frame.csv",
+      "first_scheduled_arrival_s": "26433.194494108997",
+      "last_completion_s": "26500.392804663",
+      "before_mtime_ns": 1788771364085465072,
+      "exit_mtime_ns": 1788771433049696079,
+      "source_sha256": "b9c2a9135025e53d6cd7a63eb66384770fda0ecda27ffc0861b394d1971bc293"
+    },
+    {
+      "K": 1,
+      "run_id": "run02",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run2/per_frame.csv",
+      "first_scheduled_arrival_s": "26527.677497711",
+      "last_completion_s": "26587.663267431",
+      "before_mtime_ns": 1788771458669781486,
+      "exit_mtime_ns": 1788771519901984794,
+      "source_sha256": "0e5238d8f381bc11e7e6c8af8f0c4e85fae30ef3686ecf8c89e81fcdf429bc53"
+    },
+    {
+      "K": 3,
+      "run_id": "run03",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run3/per_frame.csv",
+      "first_scheduled_arrival_s": "26634.199389294998",
+      "last_completion_s": "26694.195096925",
+      "before_mtime_ns": 1788771565186134472,
+      "exit_mtime_ns": 1788771626458939730,
+      "source_sha256": "a48ab8d26783b0e02f2247c6e41d629c9205b0cc398b9b719e5ebc71f5925588"
+    },
+    {
+      "K": 4,
+      "run_id": "run03",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run3/per_frame.csv",
+      "first_scheduled_arrival_s": "26747.116795034",
+      "last_completion_s": "26807.116730136",
+      "before_mtime_ns": 1788771678115924919,
+      "exit_mtime_ns": 1788771739417004821,
+      "source_sha256": "17ccb91522c8fa105fb03bf7da1358d5954eb1be7b3697e8c61c6d11d11d815b"
+    },
+    {
+      "K": 5,
+      "run_id": "run03",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run3/per_frame.csv",
+      "first_scheduled_arrival_s": "26960.403962503",
+      "last_completion_s": "27020.407976427",
+      "before_mtime_ns": 1788771891351329182,
+      "exit_mtime_ns": 1788771952748149404,
+      "source_sha256": "87176e3e32e39515fa8ec7c798207bc6f21f5dfb7acf0ed5521c9051fcae50d3"
+    },
+    {
+      "K": 6,
+      "run_id": "run03",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run3/per_frame.csv",
+      "first_scheduled_arrival_s": "27207.434863822",
+      "last_completion_s": "27267.447953603",
+      "before_mtime_ns": 1788772138354307241,
+      "exit_mtime_ns": 1788772199854934994,
+      "source_sha256": "0aa3b7983705ee05f8de1d506feedc4dc6791ce217edf9d9301537d59fc791bf"
+    },
+    {
+      "K": 7,
+      "run_id": "run03",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run3/per_frame.csv",
+      "first_scheduled_arrival_s": "27431.424399195",
+      "last_completion_s": "27498.738033429",
+      "before_mtime_ns": 1788772362328433609,
+      "exit_mtime_ns": 1788772431365012383,
+      "source_sha256": "d74b35950a4cadbbc1cbc28f154dd133b8c9d848dd9d2fb500dee2739a2163dc"
+    },
+    {
+      "K": 1,
+      "run_id": "run03",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run3/per_frame.csv",
+      "first_scheduled_arrival_s": "27521.891817206",
+      "last_completion_s": "27581.881256012",
+      "before_mtime_ns": 1788772452937187243,
+      "exit_mtime_ns": 1788772514113669074,
+      "source_sha256": "7eb3f535a10ec599cab390bb767ef76010c1cbc7b4dd0a8abd3a651415880d35"
+    },
+    {
+      "K": 2,
+      "run_id": "run03",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run3/per_frame.csv",
+      "first_scheduled_arrival_s": "27596.895503839998",
+      "last_completion_s": "27656.88879116",
+      "before_mtime_ns": 1788772527933775221,
+      "exit_mtime_ns": 1788772589122234238,
+      "source_sha256": "8155fa418cef02734c8193adcefcbb23b59198bdbb78a84edbcd94b0ccd539cb"
+    },
+    {
+      "K": 4,
+      "run_id": "run04",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run4/per_frame.csv",
+      "first_scheduled_arrival_s": "27744.276710206",
+      "last_completion_s": "27804.275069786",
+      "before_mtime_ns": 1788772674798849891,
+      "exit_mtime_ns": 1788772736603276890,
+      "source_sha256": "9223582abcaaaa7a7433cdcaa2b84e24c6d2f94b6518c0a5be369a38118dc212"
+    },
+    {
+      "K": 5,
+      "run_id": "run04",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run4/per_frame.csv",
+      "first_scheduled_arrival_s": "27914.060451568",
+      "last_completion_s": "27974.066483254",
+      "before_mtime_ns": 1788772845011996532,
+      "exit_mtime_ns": 1788772906420389916,
+      "source_sha256": "a35b9273b89227726e96900fcf2c09c25fc0b7cea7f0ba365227ef581533be7c"
+    },
+    {
+      "K": 6,
+      "run_id": "run04",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run4/per_frame.csv",
+      "first_scheduled_arrival_s": "28202.978786808",
+      "last_completion_s": "28262.994186466",
+      "before_mtime_ns": 1788773133893777422,
+      "exit_mtime_ns": 1788773195398137570,
+      "source_sha256": "15275475d0518f95fd6429531349f0b431f40df1b9310f99ee64434895a97ff3"
+    },
+    {
+      "K": 7,
+      "run_id": "run04",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run4/per_frame.csv",
+      "first_scheduled_arrival_s": "28386.046710495",
+      "last_completion_s": "28453.287009265",
+      "before_mtime_ns": 1788773316934834919,
+      "exit_mtime_ns": 1788773385811222971,
+      "source_sha256": "bc61bee0a71a65ea67285512a141f9dda47e0bab4601ff530840beaf842c8351"
+    },
+    {
+      "K": 1,
+      "run_id": "run04",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run4/per_frame.csv",
+      "first_scheduled_arrival_s": "28471.549292027998",
+      "last_completion_s": "28531.538814045",
+      "before_mtime_ns": 1788773402543316558,
+      "exit_mtime_ns": 1788773463799657117,
+      "source_sha256": "fe9cb1dfa89f6258dfb9bcff990f6cc9956b226b42ae54234715320a897567f4"
+    },
+    {
+      "K": 2,
+      "run_id": "run04",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run4/per_frame.csv",
+      "first_scheduled_arrival_s": "28546.334357426",
+      "last_completion_s": "28606.327587482",
+      "before_mtime_ns": 1788773477343732004,
+      "exit_mtime_ns": 1788773538556068748,
+      "source_sha256": "69665a6bc7717450427a5a915acfbb469916d9cba122b3572dac2164a4fb73f0"
+    },
+    {
+      "K": 3,
+      "run_id": "run04",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run4/per_frame.csv",
+      "first_scheduled_arrival_s": "28627.296289081998",
+      "last_completion_s": "28687.292845274",
+      "before_mtime_ns": 1788773558284176717,
+      "exit_mtime_ns": 1788773619544510403,
+      "source_sha256": "64a8bf9d5e1280db803120d735d1d26986f7cb660a4255c6a2d26917befc78df"
+    },
+    {
+      "K": 5,
+      "run_id": "run05",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run5/per_frame.csv",
+      "first_scheduled_arrival_s": "28856.687256594",
+      "last_completion_s": "28916.691273283",
+      "before_mtime_ns": 1788773787619395291,
+      "exit_mtime_ns": 1788773849036419736,
+      "source_sha256": "6305c244c578ee504e556340b563f95af450d22a80c5012fea79b43248a4991a"
+    },
+    {
+      "K": 6,
+      "run_id": "run05",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run5/per_frame.csv",
+      "first_scheduled_arrival_s": "29008.189989323",
+      "last_completion_s": "29068.200697315",
+      "before_mtime_ns": 1788773939125809725,
+      "exit_mtime_ns": 1788774000606691336,
+      "source_sha256": "bbf00c1c628a19edc20e3df519c2c458d96d1fcc76f1e5c4829a0b4ae3a1fba4"
+    },
+    {
+      "K": 7,
+      "run_id": "run05",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run5/per_frame.csv",
+      "first_scheduled_arrival_s": "29176.770371057",
+      "last_completion_s": "29244.235413322",
+      "before_mtime_ns": 1788774107676117033,
+      "exit_mtime_ns": 1788774176748973452,
+      "source_sha256": "49cb33e7ddf28a16aa280080e52d01d2272855f3d48f349d7ae63fff57bb0081"
+    },
+    {
+      "K": 1,
+      "run_id": "run05",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run5/per_frame.csv",
+      "first_scheduled_arrival_s": "29289.695008882998",
+      "last_completion_s": "29349.681132567",
+      "before_mtime_ns": 1788774220697495997,
+      "exit_mtime_ns": 1788774281910197941,
+      "source_sha256": "c93796726328df4c634b7f61ef906eefee811ae4c553e24cb8ed9545a424254f"
+    },
+    {
+      "K": 2,
+      "run_id": "run05",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run5/per_frame.csv",
+      "first_scheduled_arrival_s": "29372.905250369",
+      "last_completion_s": "29432.894814022",
+      "before_mtime_ns": 1788774303918443542,
+      "exit_mtime_ns": 1788774365115109325,
+      "source_sha256": "36724e8259bca5179536cfaf93046532bd3f942ac7c608462d9fbe7814b6dc98"
+    },
+    {
+      "K": 3,
+      "run_id": "run05",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run5/per_frame.csv",
+      "first_scheduled_arrival_s": "29444.443772390998",
+      "last_completion_s": "29504.437306111",
+      "before_mtime_ns": 1788774375403218924,
+      "exit_mtime_ns": 1788774436703859217,
+      "source_sha256": "5e16a8984498678fa5ab975c21a89ed0a8378a8634d79b8c28b4890247f290e1"
+    },
+    {
+      "K": 4,
+      "run_id": "run05",
+      "source_per_frame": "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run5/per_frame.csv",
+      "first_scheduled_arrival_s": "29574.563562864998",
+      "last_completion_s": "29634.56086255",
+      "before_mtime_ns": 1788774505512554184,
+      "exit_mtime_ns": 1788774566869155186,
+      "source_sha256": "d3be6727079853168be33d74a2b54a7c3e04792bae24e5116d8ee5dfc83d5bd9"
+    }
+  ],
+  "cooldown": {
+    "status": "EXPLICIT_CURRENT_PROTOCOL",
+    "historical_inter_run_cooldown": "UNKNOWN",
+    "current_formal_deliberate_inter_run_cooldown": "NONE",
+    "sleep_before_run_ns": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "protocol_statement": "Historical deliberate cooldown could not be established. The new latency-breakdown formal protocol therefore uses no additional deliberate inter-run sleep; the next run starts after successful completion, cleanup, and validation of the preceding run.",
+    "evidence": "Explicit experiment-owner instruction in final pre-run validation task, 2026-09-10; this is a newly specified protocol, not historical cooldown reproduction."
+  },
+  "core_compatibility": {
+    "smoke_validated_profile_sha256": "f32424e373019bad75177408d95348e14902bab7b50b73572d39dc0a161780f5",
+    "measurement_block_sha256": "6049d16fdbe8d5001d2c4bd3498059e35fc8a49c50927f0bd2cd94b36d8fcc7d",
+    "allowed_changes": "CLI parameters and artifact names/labels/run IDs only; measurement block exactly unchanged",
+    "current_source_sha256": {
+      "profile_local_latency_breakdown.py": "6c0302ccb55f9597d30930f80c6eaab8de8a5026e57211d8e0f827c275e3830a",
+      "local_latency_breakdown_metrics.py": "4225d57739c29d18aef0e9e2d75bf4fc20f2407ffc50b603bcf8b8902aa08cce",
+      "test_local_latency_breakdown.py": "8c094eb0de2b2e55aa8bca7536b146002dedf002f5760eb9aec0a99327f018d1",
+      "profile_local_realtime.py": "0717ef6d137da6f07d9d1e6c6e533be37b0e9a0e3b49317d3c049f3138922323",
+      "profile_local_e2e.py": "ce416cc9ec233560a72325710a67b0212fc7b9ad7582e0463a539da34d5b141d",
+      "rtdetr_preprocess.py": "48f510234b84e52db3fa7f102279fe778c9c929b80d71e6a34cf684f5a4f7d1e"
+    }
+  }
+}
