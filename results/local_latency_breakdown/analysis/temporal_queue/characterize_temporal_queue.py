@@ -358,9 +358,9 @@ def figures():
         'xtick.labelsize':9,'ytick.labelsize':9,'legend.fontsize':8.5,
         'axes.spines.top':False,'axes.spines.right':False,'axes.grid':False,'savefig.dpi':350})
     blue,orange='#0072B2','#D55E00'
-    def save(fig,name):
+    def save(fig,name,*,bbox_inches='tight'):
         p=FIG/name;assert not p.exists(),p
-        fig.savefig(p,dpi=350,bbox_inches='tight',facecolor='white');plt.close(fig)
+        fig.savefig(p,dpi=350,bbox_inches=bbox_inches,facecolor='white');plt.close(fig)
     def formal_values(metric):
         return np.array([[float(r[metric]) for r in d['run_summary'] if r['K']==k] for k in range(1,8)])
     ks=np.arange(1,8)
@@ -400,7 +400,18 @@ def figures():
     axes[1].axhline(1000/30,color='black',ls='--',lw=1,label='Frame period')
     axes[1].legend(loc='upper left',frameon=False,fontsize=8);axes[1].set_ylim(0,41)
     axes[2].set_ylim(0,105)
-    save(fig,'figure_3_k5_k6_temporal_queue.png')
+    # Preserve the existing subplot geometry and export bounds before changing text.
+    fig.canvas.draw()
+    fig.set_dpi(350)
+    fig.canvas.draw()
+    export_bbox=fig.get_tightbbox(fig.canvas.get_renderer()).padded(plt.rcParams['savefig.pad_inches'])
+    fig.set_layout_engine('none')
+    axes[0].set_ylabel('Inference-ready span (ms)')
+    axes[1].set_ylabel('Average total inference time\nper period (ms)',labelpad=0,linespacing=0.9)
+    axes[2].set_ylabel('Periods with unfinished\ninference (%)',labelpad=0,linespacing=0.9)
+    axes[1].lines[-1].set_label('Frame period (33.33 ms)')
+    axes[1].get_legend().get_texts()[0].set_text('Frame period (33.33 ms)')
+    save(fig,'figure_3_k5_k6_temporal_queue.png',bbox_inches=export_bbox)
     print('Three 350-dpi PNGs written; aggregate bars/lines and sample SD only; no PDF generated.')
 
 def validate():
