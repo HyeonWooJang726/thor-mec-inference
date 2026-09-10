@@ -84,7 +84,7 @@ def main():
                              label=label, width=.6)
             component_handles.append(bars)
             bottom = [b + v for b, v in zip(bottom, values)]
-        right.set_ylabel("Mean E2E latency (ms)")
+        right.set_ylabel("Mean per-frame local latency (ms)")
         right.set_ylim(0, 50)
         deadline = right.axhline(period, color="black", ls="--", lw=1,
                                  label="Candidate deadline (33.33 ms)")
