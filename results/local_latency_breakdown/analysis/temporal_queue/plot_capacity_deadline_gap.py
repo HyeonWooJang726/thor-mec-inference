@@ -102,8 +102,10 @@ def main():
                    columnspacing=1.2, handlelength=1.5)
 
         assert all(not ax.get_title() for ax in axes)
-        assert not any(t.get_text() in {"(a)", "(b)", "(c)"}
-                       for t in fig.findobj(matplotlib.text.Text))
+        for ax, label in zip(axes, ["(a)", "(b)"]):
+            panel_label = ax.text(.02, .98, label, transform=ax.transAxes,
+                                  ha="left", va="top", fontsize=10)
+            panel_label.set_in_layout(False)
         # Exclusive creation protects existing figures, including this one.
         with OUTPUT.open("xb") as destination:
             fig.savefig(destination, format="png", dpi=350, bbox_inches="tight", facecolor="white")
