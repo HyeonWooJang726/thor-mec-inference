@@ -1,0 +1,118 @@
+{
+  "figure_1_local_qos": [
+    {
+      "xlim": [
+        0.6339999999999999,
+        7.366
+      ],
+      "ylim": [
+        18.10114391046311,
+        307.84679021318493
+      ],
+      "xscale": "linear",
+      "yscale": "log"
+    },
+    {
+      "xlim": [
+        0.6339999999999999,
+        7.366
+      ],
+      "ylim": [
+        -3.0,
+        105.0
+      ],
+      "xscale": "linear",
+      "yscale": "linear"
+    }
+  ],
+  "figure_2_latency_decomposition": [
+    {
+      "xlim": [
+        0.31,
+        6.6899999999999995
+      ],
+      "ylim": [
+        0.0,
+        32.905423817388886
+      ],
+      "xscale": "linear",
+      "yscale": "linear"
+    },
+    {
+      "xlim": [
+        6.56,
+        7.4399999999999995
+      ],
+      "ylim": [
+        0.0,
+        145.79107382003335
+      ],
+      "xscale": "linear",
+      "yscale": "linear"
+    }
+  ],
+  "figure_3_temporal_queue": [
+    {
+      "xlim": [
+        -0.402,
+        1.402
+      ],
+      "ylim": [
+        0.0,
+        10.740285412499999
+      ],
+      "xscale": "linear",
+      "yscale": "linear"
+    },
+    {
+      "xlim": [
+        -0.45199999999999996,
+        2.452
+      ],
+      "ylim": [
+        0.0,
+        108.0
+      ],
+      "xscale": "linear",
+      "yscale": "linear"
+    },
+    {
+      "xlim": [
+        -2.45,
+        62.45
+      ],
+      "ylim": [
+        0.0,
+        26.972057809400003
+      ],
+      "xscale": "linear",
+      "yscale": "linear"
+    }
+  ],
+  "figure_4_concurrency_queue_deadline": [
+    {
+      "xlim": [
+        0.6339999999999999,
+        7.366
+      ],
+      "ylim": [
+        -3.0,
+        105.0
+      ],
+      "xscale": "linear",
+      "yscale": "linear"
+    },
+    {
+      "xlim": [
+        0.6339999999999999,
+        7.366
+      ],
+      "ylim": [
+        0.0867537739087838,
+        270.125877910112
+      ],
+      "xscale": "linear",
+      "yscale": "log"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "validation": "PASS",
+  "unit_tests": 63,
+  "test_failures": 0,
+  "syntax_files": 26,
+  "import_modules": [
+    "analyze_local_concurrency_formal_control",
+    "local_concurrency_control_metrics",
+    "local_concurrency_tensorrt",
+    "local_concurrency_validation",
+    "profile_local_concurrency_control",
+    "run_local_concurrency_control",
+    "run_local_concurrency_formal_control",
+    "run_local_concurrency_trtexec_probe",
+    "profile_fullsource",
+    "screening_tensorrt",
+    "screening_validation",
+    "screening_metrics",
+    "termination_contract",
+    "run_fullsource",
+    "analyze",
+    "event_analysis",
+    "temporal",
+    "plot_figures"
+  ],
+  "formal_runs_replayed": 35,
+  "frames_replayed": 252000,
+  "summary_raw_consistency": "PASS",
+  "GPU_workload_executed": false,
+  "raw_data_rewritten": false,
+  "faint_individual_points_removed": true,
+  "fixed_C_title_text_removed": true,
+  "latency_legends_below_axes": true,
+  "mean_errorbar_bar_line_artist_values_identical": true,
+  "axis_limits_scales_labels_identical": true,
+  "visual_four_figures": "PASS",
+  "PNG_only": true,
+  "figures": [
+    {
+      "file": "figure_2_latency_decomposition.png",
+      "width": 1851,
+      "height": 876,
+      "sha256": "a10e1a7af37a7074221334dde4e5d3b0ef8368957cc205a2aa7e05c29a08f4fc"
+    },
+    {
+      "file": "figure_3_temporal_queue.png",
+      "width": 2362,
+      "height": 890,
+      "sha256": "3b6f56938ab355d2d357cdc3d835f3916fd911523d393e2750fe8bd6f155065c"
+    },
+    {
+      "file": "figure_1_local_qos.png",
+      "width": 1864,
+      "height": 853,
+      "sha256": "a257a0e4dff2dee705bcaaf131c40f6431de59fc4f9dc281231939271e77c14c"
+    },
+    {
+      "file": "figure_4_concurrency_queue_deadline.png",
+      "width": 1870,
+      "height": 1067,
+      "sha256": "bb38bca7ed024bcc21ae1eb82452c466d64c3c43c25c0e813d9c4c13d4961927"
+    }
+  ],
+  "derived_replot": {
+    "validation": "PASS",
+    "identical_to_full_raw_gate_render": true,
+    "PNG_sha256": {
+      "figure_2_latency_decomposition.png": "a10e1a7af37a7074221334dde4e5d3b0ef8368957cc205a2aa7e05c29a08f4fc",
+      "figure_3_temporal_queue.png": "3b6f56938ab355d2d357cdc3d835f3916fd911523d393e2750fe8bd6f155065c",
+      "figure_1_local_qos.png": "a257a0e4dff2dee705bcaaf131c40f6431de59fc4f9dc281231939271e77c14c",
+      "figure_4_concurrency_queue_deadline.png": "bb38bca7ed024bcc21ae1eb82452c466d64c3c43c25c0e813d9c4c13d4961927"
+    }
+  }
+}

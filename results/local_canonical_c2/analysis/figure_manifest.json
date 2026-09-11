@@ -1,0 +1,32 @@
+{
+  "validation": "PASS",
+  "PNG_only": true,
+  "old_figures_modified": false,
+  "period_service_sum_reused": false,
+  "figures": [
+    {
+      "figure": "figure_1_local_qos",
+      "path": "analysis/figures/figure_1_local_qos.png",
+      "caption": "Canonical C2 only. Mean and p95: arithmetic means of five run statistics; error bars sample SD. Individual run statistics remain in the accompanying tables. Deadline computed exactly from integer ns; candidate cadence deadline, not application SLA. Log latency axis retains all K without excluding startup.",
+      "format": "PNG"
+    },
+    {
+      "figure": "figure_2_latency_decomposition",
+      "path": "analysis/figures/figure_2_latency_decomposition.png",
+      "caption": "Each stacked height is the mean of five run-level component means. All components are per-frame wall-clock latency, in ms; independent K7 axis used only for readability if necessary. Mean components add exactly; component percentiles are never added.",
+      "format": "PNG"
+    },
+    {
+      "figure": "figure_3_temporal_queue",
+      "path": "analysis/figures/figure_3_temporal_queue.png",
+      "caption": "Observed transition K5\u2192K6. Ready span is max(r)-min(r) for K frames in one logical period. Boundary is t0+floor((j+1)*1e9/30); counts earlier logical IDs only. Waiting r<=t<s excludes active s<=t<c. Next first-ready checks all prior unfinished work, including not-yet-ready work. Boundary fractions use 1800 periods; next-first-ready fractions 1799. Bars: five run-level mean \u00b1 sample SD. Right: separate exact event-integrated one-second queue traces, never sampled depth. No sum of overlapping service times is interpreted as capacity.",
+      "format": "PNG"
+    },
+    {
+      "figure": "figure_4_concurrency_queue_deadline",
+      "path": "analysis/figures/figure_4_concurrency_queue_deadline.png",
+      "caption": "C2-safe motivation summary. Left: exact candidate deadline miss by K. Right: per-frame queue wait and inference service duration, not period service sums or GPU demand. Shading marks the selected observed transition. Five-run means and sample SD retained; individual values remain in accompanying tables. Concurrent outstanding host intervals do not prove physical GPU kernel overlap.",
+      "format": "PNG"
+    }
+  ]
+}

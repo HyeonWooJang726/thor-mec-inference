@@ -1,0 +1,36 @@
+{
+  "validation": "PASS",
+  "raw_frames_rechecked_for_statistics": 252000,
+  "temporal_period_rows_rechecked": 27000,
+  "all_run_and_five_run_statistics_numpy_agree": true,
+  "all_temporal_counts_bruteforce_masks_agree": true,
+  "all_1s_integrals_independently_agree": true,
+  "PNG_only": true,
+  "figures": [
+    {
+      "file": "figure_2_latency_decomposition.png",
+      "width": 1851,
+      "height": 876,
+      "sha256": "a10e1a7af37a7074221334dde4e5d3b0ef8368957cc205a2aa7e05c29a08f4fc"
+    },
+    {
+      "file": "figure_3_temporal_queue.png",
+      "width": 2362,
+      "height": 890,
+      "sha256": "3b6f56938ab355d2d357cdc3d835f3916fd911523d393e2750fe8bd6f155065c"
+    },
+    {
+      "file": "figure_1_local_qos.png",
+      "width": 1864,
+      "height": 853,
+      "sha256": "a257a0e4dff2dee705bcaaf131c40f6431de59fc4f9dc281231939271e77c14c"
+    },
+    {
+      "file": "figure_4_concurrency_queue_deadline.png",
+      "width": 1870,
+      "height": 1067,
+      "sha256": "bb38bca7ed024bcc21ae1eb82452c466d64c3c43c25c0e813d9c4c13d4961927"
+    }
+  ],
+  "visual_inspection": "all four viewed; axes, legends and external bottom panel labels readable"
+}

@@ -1,0 +1,8 @@
+{
+  "validation": "PASS",
+  "existing_local_tests": 27,
+  "new_termination_tests": 24,
+  "previous_EOS_tests": 7,
+  "failures": 0,
+  "test_only_fixture_default_rebound": true
+}

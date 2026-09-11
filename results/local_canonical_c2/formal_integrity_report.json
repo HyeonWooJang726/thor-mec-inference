@@ -1,0 +1,2850 @@
+{
+  "validation": "PASS",
+  "expected_runs": 35,
+  "expected_frames": 252000,
+  "valid_runs": 35,
+  "frames": 252000,
+  "failure": null,
+  "independent_whole_campaign_disk_replay": true,
+  "analysis_allowed": true,
+  "runs": [
+    {
+      "C": 2,
+      "K": 1,
+      "run_id": "run01",
+      "validation": "PASS",
+      "frames": 1800,
+      "counts": {
+        "arrivals": 1800,
+        "source_samples": 1800,
+        "preprocessed": 1800,
+        "completions": 1800,
+        "per_frame_rows": 1800
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true
+        ],
+        "eos_observed": [
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 3,
+        "service_interval_overlap_time_ns": 29236824,
+        "service_interval_overlap_time_ms": 29.236824,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 3,
+        "service_overlap_time_ms": 29.236824,
+        "worker_request_counts": {
+          "0": 900,
+          "1": 900
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1,
+          "service_interval_overlap_time_ns": 12109060,
+          "service_interval_overlap_time_ms": 12.10906,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 2,
+      "run_id": "run01",
+      "validation": "PASS",
+      "frames": 3600,
+      "counts": {
+        "arrivals": 3600,
+        "source_samples": 3600,
+        "preprocessed": 3600,
+        "completions": 3600,
+        "per_frame_rows": 3600
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 1802,
+        "service_interval_overlap_time_ns": 19006754482,
+        "service_interval_overlap_time_ms": 19006.754482,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 1802,
+        "service_overlap_time_ms": 19006.754482,
+        "worker_request_counts": {
+          "1": 1800,
+          "0": 1800
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1794,
+          "service_interval_overlap_time_ns": 7772409544,
+          "service_interval_overlap_time_ms": 7772.409544,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 3,
+      "run_id": "run01",
+      "validation": "PASS",
+      "frames": 5400,
+      "counts": {
+        "arrivals": 5400,
+        "source_samples": 5400,
+        "preprocessed": 5400,
+        "completions": 5400,
+        "per_frame_rows": 5400
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 3609,
+        "service_interval_overlap_time_ns": 15999157125,
+        "service_interval_overlap_time_ms": 15999.157125,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 3609,
+        "service_overlap_time_ms": 15999.157125,
+        "worker_request_counts": {
+          "1": 2708,
+          "0": 2692
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1793,
+          "service_interval_overlap_time_ns": 5017655439,
+          "service_interval_overlap_time_ms": 5017.655439,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 4,
+      "run_id": "run01",
+      "validation": "PASS",
+      "frames": 7200,
+      "counts": {
+        "arrivals": 7200,
+        "source_samples": 7200,
+        "preprocessed": 7200,
+        "completions": 7200,
+        "per_frame_rows": 7200
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 5414,
+        "service_interval_overlap_time_ns": 28179247297,
+        "service_interval_overlap_time_ms": 28179.247297,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 5414,
+        "service_overlap_time_ms": 28179.247297,
+        "worker_request_counts": {
+          "0": 3601,
+          "1": 3599
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 3494,
+          "service_interval_overlap_time_ns": 8472337653,
+          "service_interval_overlap_time_ms": 8472.337653,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 5,
+      "run_id": "run01",
+      "validation": "PASS",
+      "frames": 9000,
+      "counts": {
+        "arrivals": 9000,
+        "source_samples": 9000,
+        "preprocessed": 9000,
+        "completions": 9000,
+        "per_frame_rows": 9000
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 7219,
+        "service_interval_overlap_time_ns": 30317080619,
+        "service_interval_overlap_time_ms": 30317.080619,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 7219,
+        "service_overlap_time_ms": 30317.080619,
+        "worker_request_counts": {
+          "1": 4464,
+          "0": 4536
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 3611,
+          "service_interval_overlap_time_ns": 9094172904,
+          "service_interval_overlap_time_ms": 9094.172904,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 6,
+      "run_id": "run01",
+      "validation": "PASS",
+      "frames": 10800,
+      "counts": {
+        "arrivals": 10800,
+        "source_samples": 10800,
+        "preprocessed": 10800,
+        "completions": 10800,
+        "per_frame_rows": 10800
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 9048,
+        "service_interval_overlap_time_ns": 43238905459,
+        "service_interval_overlap_time_ms": 43238.905459,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 9048,
+        "service_overlap_time_ms": 43238.905459,
+        "worker_request_counts": {
+          "1": 5400,
+          "0": 5400
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 5201,
+          "service_interval_overlap_time_ns": 12930431252,
+          "service_interval_overlap_time_ms": 12930.431252,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 7,
+      "run_id": "run01",
+      "validation": "PASS",
+      "frames": 12600,
+      "counts": {
+        "arrivals": 12600,
+        "source_samples": 12600,
+        "preprocessed": 12600,
+        "completions": 12600,
+        "per_frame_rows": 12600
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 12083,
+        "service_interval_overlap_time_ns": 54807517053,
+        "service_interval_overlap_time_ms": 54807.517053,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 12083,
+        "service_overlap_time_ms": 54807.517053,
+        "worker_request_counts": {
+          "1": 6311,
+          "0": 6289
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 5630,
+          "service_interval_overlap_time_ns": 14695454801,
+          "service_interval_overlap_time_ms": 14695.454801,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 2,
+      "run_id": "run02",
+      "validation": "PASS",
+      "frames": 3600,
+      "counts": {
+        "arrivals": 3600,
+        "source_samples": 3600,
+        "preprocessed": 3600,
+        "completions": 3600,
+        "per_frame_rows": 3600
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 1805,
+        "service_interval_overlap_time_ns": 18702138208,
+        "service_interval_overlap_time_ms": 18702.138208,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 1805,
+        "service_overlap_time_ms": 18702.138208,
+        "worker_request_counts": {
+          "0": 1800,
+          "1": 1800
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1789,
+          "service_interval_overlap_time_ns": 7098521440,
+          "service_interval_overlap_time_ms": 7098.52144,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 3,
+      "run_id": "run02",
+      "validation": "PASS",
+      "frames": 5400,
+      "counts": {
+        "arrivals": 5400,
+        "source_samples": 5400,
+        "preprocessed": 5400,
+        "completions": 5400,
+        "per_frame_rows": 5400
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 3610,
+        "service_interval_overlap_time_ns": 16163560365,
+        "service_interval_overlap_time_ms": 16163.560365,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 3610,
+        "service_overlap_time_ms": 16163.560365,
+        "worker_request_counts": {
+          "0": 2691,
+          "1": 2709
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1796,
+          "service_interval_overlap_time_ns": 5024365233,
+          "service_interval_overlap_time_ms": 5024.365233,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 4,
+      "run_id": "run02",
+      "validation": "PASS",
+      "frames": 7200,
+      "counts": {
+        "arrivals": 7200,
+        "source_samples": 7200,
+        "preprocessed": 7200,
+        "completions": 7200,
+        "per_frame_rows": 7200
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 5414,
+        "service_interval_overlap_time_ns": 27435218413,
+        "service_interval_overlap_time_ms": 27435.218413,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 5414,
+        "service_overlap_time_ms": 27435.218413,
+        "worker_request_counts": {
+          "0": 3601,
+          "1": 3599
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 3439,
+          "service_interval_overlap_time_ns": 8209654377,
+          "service_interval_overlap_time_ms": 8209.654377,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 5,
+      "run_id": "run02",
+      "validation": "PASS",
+      "frames": 9000,
+      "counts": {
+        "arrivals": 9000,
+        "source_samples": 9000,
+        "preprocessed": 9000,
+        "completions": 9000,
+        "per_frame_rows": 9000
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 7216,
+        "service_interval_overlap_time_ns": 30433859200,
+        "service_interval_overlap_time_ms": 30433.8592,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 7216,
+        "service_overlap_time_ms": 30433.8592,
+        "worker_request_counts": {
+          "1": 4582,
+          "0": 4418
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 3644,
+          "service_interval_overlap_time_ns": 10107784990,
+          "service_interval_overlap_time_ms": 10107.78499,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 6,
+      "run_id": "run02",
+      "validation": "PASS",
+      "frames": 10800,
+      "counts": {
+        "arrivals": 10800,
+        "source_samples": 10800,
+        "preprocessed": 10800,
+        "completions": 10800,
+        "per_frame_rows": 10800
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 9040,
+        "service_interval_overlap_time_ns": 44422412725,
+        "service_interval_overlap_time_ms": 44422.412725,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 9040,
+        "service_overlap_time_ms": 44422.412725,
+        "worker_request_counts": {
+          "0": 5400,
+          "1": 5400
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 5224,
+          "service_interval_overlap_time_ns": 14420568551,
+          "service_interval_overlap_time_ms": 14420.568551,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 7,
+      "run_id": "run02",
+      "validation": "PASS",
+      "frames": 12600,
+      "counts": {
+        "arrivals": 12600,
+        "source_samples": 12600,
+        "preprocessed": 12600,
+        "completions": 12600,
+        "per_frame_rows": 12600
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 11899,
+        "service_interval_overlap_time_ns": 53304068385,
+        "service_interval_overlap_time_ms": 53304.068385,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 11899,
+        "service_overlap_time_ms": 53304.068385,
+        "worker_request_counts": {
+          "0": 6272,
+          "1": 6328
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 5587,
+          "service_interval_overlap_time_ns": 14705120322,
+          "service_interval_overlap_time_ms": 14705.120322,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 1,
+      "run_id": "run02",
+      "validation": "PASS",
+      "frames": 1800,
+      "counts": {
+        "arrivals": 1800,
+        "source_samples": 1800,
+        "preprocessed": 1800,
+        "completions": 1800,
+        "per_frame_rows": 1800
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true
+        ],
+        "eos_observed": [
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 3,
+        "service_interval_overlap_time_ns": 34672389,
+        "service_interval_overlap_time_ms": 34.672389,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 3,
+        "service_overlap_time_ms": 34.672389,
+        "worker_request_counts": {
+          "0": 900,
+          "1": 900
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 2,
+          "service_interval_overlap_time_ns": 11919176,
+          "service_interval_overlap_time_ms": 11.919176,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 3,
+      "run_id": "run03",
+      "validation": "PASS",
+      "frames": 5400,
+      "counts": {
+        "arrivals": 5400,
+        "source_samples": 5400,
+        "preprocessed": 5400,
+        "completions": 5400,
+        "per_frame_rows": 5400
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 3610,
+        "service_interval_overlap_time_ns": 15907347436,
+        "service_interval_overlap_time_ms": 15907.347436,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 3610,
+        "service_overlap_time_ms": 15907.347436,
+        "worker_request_counts": {
+          "0": 2740,
+          "1": 2660
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1759,
+          "service_interval_overlap_time_ns": 4096182207,
+          "service_interval_overlap_time_ms": 4096.182207,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 4,
+      "run_id": "run03",
+      "validation": "PASS",
+      "frames": 7200,
+      "counts": {
+        "arrivals": 7200,
+        "source_samples": 7200,
+        "preprocessed": 7200,
+        "completions": 7200,
+        "per_frame_rows": 7200
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 5409,
+        "service_interval_overlap_time_ns": 27452988188,
+        "service_interval_overlap_time_ms": 27452.988188,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 5409,
+        "service_overlap_time_ms": 27452.988188,
+        "worker_request_counts": {
+          "0": 3601,
+          "1": 3599
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 3460,
+          "service_interval_overlap_time_ns": 7947233536,
+          "service_interval_overlap_time_ms": 7947.233536,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 5,
+      "run_id": "run03",
+      "validation": "PASS",
+      "frames": 9000,
+      "counts": {
+        "arrivals": 9000,
+        "source_samples": 9000,
+        "preprocessed": 9000,
+        "completions": 9000,
+        "per_frame_rows": 9000
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 7219,
+        "service_interval_overlap_time_ns": 30539608395,
+        "service_interval_overlap_time_ms": 30539.608395,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 7219,
+        "service_overlap_time_ms": 30539.608395,
+        "worker_request_counts": {
+          "1": 4575,
+          "0": 4425
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 3653,
+          "service_interval_overlap_time_ns": 9653927551,
+          "service_interval_overlap_time_ms": 9653.927551,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 6,
+      "run_id": "run03",
+      "validation": "PASS",
+      "frames": 10800,
+      "counts": {
+        "arrivals": 10800,
+        "source_samples": 10800,
+        "preprocessed": 10800,
+        "completions": 10800,
+        "per_frame_rows": 10800
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 9050,
+        "service_interval_overlap_time_ns": 43270119553,
+        "service_interval_overlap_time_ms": 43270.119553,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 9050,
+        "service_overlap_time_ms": 43270.119553,
+        "worker_request_counts": {
+          "0": 5398,
+          "1": 5402
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 5261,
+          "service_interval_overlap_time_ns": 12830314656,
+          "service_interval_overlap_time_ms": 12830.314656,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 7,
+      "run_id": "run03",
+      "validation": "PASS",
+      "frames": 12600,
+      "counts": {
+        "arrivals": 12600,
+        "source_samples": 12600,
+        "preprocessed": 12600,
+        "completions": 12600,
+        "per_frame_rows": 12600
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 12024,
+        "service_interval_overlap_time_ns": 54225288125,
+        "service_interval_overlap_time_ms": 54225.288125,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 12024,
+        "service_overlap_time_ms": 54225.288125,
+        "worker_request_counts": {
+          "0": 6326,
+          "1": 6274
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 5659,
+          "service_interval_overlap_time_ns": 15008152849,
+          "service_interval_overlap_time_ms": 15008.152849,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 1,
+      "run_id": "run03",
+      "validation": "PASS",
+      "frames": 1800,
+      "counts": {
+        "arrivals": 1800,
+        "source_samples": 1800,
+        "preprocessed": 1800,
+        "completions": 1800,
+        "per_frame_rows": 1800
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true
+        ],
+        "eos_observed": [
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 2,
+        "service_interval_overlap_time_ns": 30574213,
+        "service_interval_overlap_time_ms": 30.574213,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 2,
+        "service_overlap_time_ms": 30.574213,
+        "worker_request_counts": {
+          "0": 900,
+          "1": 900
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1,
+          "service_interval_overlap_time_ns": 12801226,
+          "service_interval_overlap_time_ms": 12.801226,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 2,
+      "run_id": "run03",
+      "validation": "PASS",
+      "frames": 3600,
+      "counts": {
+        "arrivals": 3600,
+        "source_samples": 3600,
+        "preprocessed": 3600,
+        "completions": 3600,
+        "per_frame_rows": 3600
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 1805,
+        "service_interval_overlap_time_ns": 18482128906,
+        "service_interval_overlap_time_ms": 18482.128906,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 1805,
+        "service_overlap_time_ms": 18482.128906,
+        "worker_request_counts": {
+          "0": 1800,
+          "1": 1800
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1750,
+          "service_interval_overlap_time_ns": 8469754347,
+          "service_interval_overlap_time_ms": 8469.754347,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 4,
+      "run_id": "run04",
+      "validation": "PASS",
+      "frames": 7200,
+      "counts": {
+        "arrivals": 7200,
+        "source_samples": 7200,
+        "preprocessed": 7200,
+        "completions": 7200,
+        "per_frame_rows": 7200
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 5224,
+        "service_interval_overlap_time_ns": 25029685518,
+        "service_interval_overlap_time_ms": 25029.685518,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 5224,
+        "service_overlap_time_ms": 25029.685518,
+        "worker_request_counts": {
+          "0": 3592,
+          "1": 3608
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 3270,
+          "service_interval_overlap_time_ns": 7735650305,
+          "service_interval_overlap_time_ms": 7735.650305,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 5,
+      "run_id": "run04",
+      "validation": "PASS",
+      "frames": 9000,
+      "counts": {
+        "arrivals": 9000,
+        "source_samples": 9000,
+        "preprocessed": 9000,
+        "completions": 9000,
+        "per_frame_rows": 9000
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 6952,
+        "service_interval_overlap_time_ns": 29633018619,
+        "service_interval_overlap_time_ms": 29633.018619,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 6952,
+        "service_overlap_time_ms": 29633.018619,
+        "worker_request_counts": {
+          "0": 4266,
+          "1": 4734
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 3498,
+          "service_interval_overlap_time_ns": 8400927391,
+          "service_interval_overlap_time_ms": 8400.927391,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 6,
+      "run_id": "run04",
+      "validation": "PASS",
+      "frames": 10800,
+      "counts": {
+        "arrivals": 10800,
+        "source_samples": 10800,
+        "preprocessed": 10800,
+        "completions": 10800,
+        "per_frame_rows": 10800
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 9106,
+        "service_interval_overlap_time_ns": 43224734261,
+        "service_interval_overlap_time_ms": 43224.734261,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 9106,
+        "service_overlap_time_ms": 43224.734261,
+        "worker_request_counts": {
+          "0": 5408,
+          "1": 5392
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 5438,
+          "service_interval_overlap_time_ns": 13204210081,
+          "service_interval_overlap_time_ms": 13204.210081,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 7,
+      "run_id": "run04",
+      "validation": "PASS",
+      "frames": 12600,
+      "counts": {
+        "arrivals": 12600,
+        "source_samples": 12600,
+        "preprocessed": 12600,
+        "completions": 12600,
+        "per_frame_rows": 12600
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 12599,
+        "service_interval_overlap_time_ns": 58967071336,
+        "service_interval_overlap_time_ms": 58967.071336,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 12599,
+        "service_overlap_time_ms": 58967.071336,
+        "worker_request_counts": {
+          "1": 6296,
+          "0": 6304
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 5928,
+          "service_interval_overlap_time_ns": 15545527115,
+          "service_interval_overlap_time_ms": 15545.527115,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 1,
+      "run_id": "run04",
+      "validation": "PASS",
+      "frames": 1800,
+      "counts": {
+        "arrivals": 1800,
+        "source_samples": 1800,
+        "preprocessed": 1800,
+        "completions": 1800,
+        "per_frame_rows": 1800
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true
+        ],
+        "eos_observed": [
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 3,
+        "service_interval_overlap_time_ns": 33263161,
+        "service_interval_overlap_time_ms": 33.263161,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 3,
+        "service_overlap_time_ms": 33.263161,
+        "worker_request_counts": {
+          "0": 900,
+          "1": 900
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 2,
+          "service_interval_overlap_time_ns": 6472814,
+          "service_interval_overlap_time_ms": 6.472814,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 2,
+      "run_id": "run04",
+      "validation": "PASS",
+      "frames": 3600,
+      "counts": {
+        "arrivals": 3600,
+        "source_samples": 3600,
+        "preprocessed": 3600,
+        "completions": 3600,
+        "per_frame_rows": 3600
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 1803,
+        "service_interval_overlap_time_ns": 19083826079,
+        "service_interval_overlap_time_ms": 19083.826079,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 1803,
+        "service_overlap_time_ms": 19083.826079,
+        "worker_request_counts": {
+          "1": 1801,
+          "0": 1799
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1797,
+          "service_interval_overlap_time_ns": 8570206581,
+          "service_interval_overlap_time_ms": 8570.206581,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 3,
+      "run_id": "run04",
+      "validation": "PASS",
+      "frames": 5400,
+      "counts": {
+        "arrivals": 5400,
+        "source_samples": 5400,
+        "preprocessed": 5400,
+        "completions": 5400,
+        "per_frame_rows": 5400
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 3609,
+        "service_interval_overlap_time_ns": 14898061440,
+        "service_interval_overlap_time_ms": 14898.06144,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 3609,
+        "service_overlap_time_ms": 14898.06144,
+        "worker_request_counts": {
+          "0": 2711,
+          "1": 2689
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1747,
+          "service_interval_overlap_time_ns": 4313326759,
+          "service_interval_overlap_time_ms": 4313.326759,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 5,
+      "run_id": "run05",
+      "validation": "PASS",
+      "frames": 9000,
+      "counts": {
+        "arrivals": 9000,
+        "source_samples": 9000,
+        "preprocessed": 9000,
+        "completions": 9000,
+        "per_frame_rows": 9000
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 7222,
+        "service_interval_overlap_time_ns": 30577298899,
+        "service_interval_overlap_time_ms": 30577.298899,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 7222,
+        "service_overlap_time_ms": 30577.298899,
+        "worker_request_counts": {
+          "0": 4605,
+          "1": 4395
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 3676,
+          "service_interval_overlap_time_ns": 10397405677,
+          "service_interval_overlap_time_ms": 10397.405677,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 6,
+      "run_id": "run05",
+      "validation": "PASS",
+      "frames": 10800,
+      "counts": {
+        "arrivals": 10800,
+        "source_samples": 10800,
+        "preprocessed": 10800,
+        "completions": 10800,
+        "per_frame_rows": 10800
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 9039,
+        "service_interval_overlap_time_ns": 44172428292,
+        "service_interval_overlap_time_ms": 44172.428292,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 9039,
+        "service_overlap_time_ms": 44172.428292,
+        "worker_request_counts": {
+          "1": 5399,
+          "0": 5401
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 5294,
+          "service_interval_overlap_time_ns": 14136131261,
+          "service_interval_overlap_time_ms": 14136.131261,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 7,
+      "run_id": "run05",
+      "validation": "PASS",
+      "frames": 12600,
+      "counts": {
+        "arrivals": 12600,
+        "source_samples": 12600,
+        "preprocessed": 12600,
+        "completions": 12600,
+        "per_frame_rows": 12600
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 11708,
+        "service_interval_overlap_time_ns": 51510576235,
+        "service_interval_overlap_time_ms": 51510.576235,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 11708,
+        "service_overlap_time_ms": 51510.576235,
+        "worker_request_counts": {
+          "0": 6301,
+          "1": 6299
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 5555,
+          "service_interval_overlap_time_ns": 14635327530,
+          "service_interval_overlap_time_ms": 14635.32753,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 1,
+      "run_id": "run05",
+      "validation": "PASS",
+      "frames": 1800,
+      "counts": {
+        "arrivals": 1800,
+        "source_samples": 1800,
+        "preprocessed": 1800,
+        "completions": 1800,
+        "per_frame_rows": 1800
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true
+        ],
+        "eos_observed": [
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 3,
+        "service_interval_overlap_time_ns": 33212521,
+        "service_interval_overlap_time_ms": 33.212521,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 3,
+        "service_overlap_time_ms": 33.212521,
+        "worker_request_counts": {
+          "0": 900,
+          "1": 900
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 3,
+          "service_interval_overlap_time_ns": 7671308,
+          "service_interval_overlap_time_ms": 7.671308,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 2,
+      "run_id": "run05",
+      "validation": "PASS",
+      "frames": 3600,
+      "counts": {
+        "arrivals": 3600,
+        "source_samples": 3600,
+        "preprocessed": 3600,
+        "completions": 3600,
+        "per_frame_rows": 3600
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 1804,
+        "service_interval_overlap_time_ns": 19061555278,
+        "service_interval_overlap_time_ms": 19061.555278,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 1804,
+        "service_overlap_time_ms": 19061.555278,
+        "worker_request_counts": {
+          "1": 1800,
+          "0": 1800
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1795,
+          "service_interval_overlap_time_ns": 8006629958,
+          "service_interval_overlap_time_ms": 8006.629958,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 3,
+      "run_id": "run05",
+      "validation": "PASS",
+      "frames": 5400,
+      "counts": {
+        "arrivals": 5400,
+        "source_samples": 5400,
+        "preprocessed": 5400,
+        "completions": 5400,
+        "per_frame_rows": 5400
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 3609,
+        "service_interval_overlap_time_ns": 14837705944,
+        "service_interval_overlap_time_ms": 14837.705944,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 3609,
+        "service_overlap_time_ms": 14837.705944,
+        "worker_request_counts": {
+          "1": 2680,
+          "0": 2720
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 1796,
+          "service_interval_overlap_time_ns": 4449087357,
+          "service_interval_overlap_time_ms": 4449.087357,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    },
+    {
+      "C": 2,
+      "K": 4,
+      "run_id": "run05",
+      "validation": "PASS",
+      "frames": 7200,
+      "counts": {
+        "arrivals": 7200,
+        "source_samples": 7200,
+        "preprocessed": 7200,
+        "completions": 7200,
+        "per_frame_rows": 7200
+      },
+      "duplicate_frames": 0,
+      "missing_frames": 0,
+      "timestamp_ordering_violations": 0,
+      "decomposition_violations": 0,
+      "max_absolute_decomposition_error_ns": 0,
+      "negative_waiting_depth_events": 0,
+      "waiting_after_drain": 0,
+      "active_after_drain": 0,
+      "queue_accounting": "PASS",
+      "CSV_raw_equality": "PASS",
+      "EOS": "PASS",
+      "termination": {
+        "validation": "PASS",
+        "mode": "full_source",
+        "bounded_complete": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "eos_observed": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "missing_bus_EOS_stream_ids": [],
+        "errors": []
+      },
+      "concurrency": {
+        "max_active_inferences": 2,
+        "service_interval_overlap_count": 5408,
+        "service_interval_overlap_time_ns": 27953896339,
+        "service_interval_overlap_time_ms": 27953.896339,
+        "active_after_drain": 0,
+        "service_overlap_pair_count": 5408,
+        "service_overlap_time_ms": 27953.896339,
+        "worker_request_counts": {
+          "0": 3599,
+          "1": 3601
+        },
+        "configured_workers": 2,
+        "workers_actually_used": 2,
+        "worker_ids_used": [
+          0,
+          1
+        ],
+        "unused_worker_ids": [],
+        "resource_ownership": "PASS",
+        "buffer_ranges_nonoverlapping": true,
+        "submitted_not_yet_synchronized_intervals": {
+          "max_active_inferences": 2,
+          "service_interval_overlap_count": 3449,
+          "service_interval_overlap_time_ns": 8492713233,
+          "service_interval_overlap_time_ms": 8492.713233,
+          "active_after_drain": 0
+        },
+        "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+      }
+    }
+  ],
+  "raw_source_sha256": {
+    "k1/run01/raw_ns.json": "5b0ffcc5b69bda791cb85fce983f8214856c95c70dd6241f25a4aeb7a70a3422",
+    "k1/run01/per_frame.csv": "a6ab57451f29db229a1d8615a3c69234b727029c40d01653b6cf5a5e07ed0439",
+    "k1/run01/metadata.json": "9bed11d7ed065bf105e4ae86bbf8411caa354bab8aa15c782f65a092d9e2d7f6",
+    "k1/run01/resources.json": "0d7225b999ba2574c8021444011f4682ddf1dbbb45561197c6893b4403a311ed",
+    "k1/run01/validation.json": "663fa4c7ed540c69c9c96e3005c1a704bdef762d0ed12a0e42d1f349e7951748",
+    "k1/run01/termination_evidence.json": "463b22065a0c6ecc56e37de217c26206e88486eafce07c28e4ff2aab495b27d5",
+    "k1/run01/lifecycle.json": "04a966c810fc033d57781ed640b7e360b9a36fa958868f719dd5014014c48806",
+    "k1/run01/exit.json": "fdc3964d041eb47f798e057fe3869c22e64e85a42ee18e2004b9d0829e81b6c5",
+    "k2/run01/raw_ns.json": "ad733ca212401f436063e23e9d29570da7341a211e8930f657f8f86b68794a07",
+    "k2/run01/per_frame.csv": "eb6ad62f1c11469245dc101bad9556c4a0a1c0bcfd2abb268fdea4777669e1b3",
+    "k2/run01/metadata.json": "5fe0b1c2c11817c0f42efc792f09135f4d8dbf65257ce0cbd3ee9c64c30a4029",
+    "k2/run01/resources.json": "25d7a50dbecccc6a96f97e24bd194d7a52037f9c5223b265b171418ea5f407c0",
+    "k2/run01/validation.json": "3bbaa5d3d0932584a28c729907b52024fb28b21d409b9e30527ca6a4aceced12",
+    "k2/run01/termination_evidence.json": "9fe99d19ad41d68f1f516ef7283fcb8f35eff3fe3c536513faabe901248ae0af",
+    "k2/run01/lifecycle.json": "5e1fabe182e407b30817c6a03948ff3a72ec0098699aa808e7666789d86f198c",
+    "k2/run01/exit.json": "6eea69ff95fdc42a8d602259ea975af2a66dca6a925842ef3c6a6fe213786760",
+    "k3/run01/raw_ns.json": "766a5f1a8b429bfd49fe951668d1880d2fd08f2408113c2cdcc7e20634d885a0",
+    "k3/run01/per_frame.csv": "0401410968cc27e88fe5e70c3fbdc59f9d1646a57ba2629923524c7648691960",
+    "k3/run01/metadata.json": "c5d01f9e508ad02607e793f51822309d70b58a50b809ea93fd3010ddb10e80f8",
+    "k3/run01/resources.json": "9499c78703b083da8d6cd249cb1f813a9fd73212798136a0189945a7cedc0c43",
+    "k3/run01/validation.json": "ac5950a4a6f98b37c995a4fe1fde5908cac31855b3dbdf9e1eb30658b53f0a03",
+    "k3/run01/termination_evidence.json": "dede6ca1be80778fc74639f915ac9a30a01ea0810b39170936a914bb093ab80f",
+    "k3/run01/lifecycle.json": "3aeac4bcbdf824eac3d3902bf4b032e539bac069f83fe257ea301ab26c3a84db",
+    "k3/run01/exit.json": "c4b2f25852d53b1d903930165d75fbac954f7d0b3f6c277bdafd8c5b2b1f4a68",
+    "k4/run01/raw_ns.json": "09682f1b972a60822b5c747ff22980733f2b49f3982694858fb298b6842fd85d",
+    "k4/run01/per_frame.csv": "4488add54ee894fd582a25a75cb1d725996f3beee25183f3fd6394751f539ebf",
+    "k4/run01/metadata.json": "d7616d62d0e16fa0dfeccf0b50eba26a8c54d4864e8ae6da6ff50c008364da71",
+    "k4/run01/resources.json": "517b2db8ba84bb5bc5b90870b711c1abb1df514a3dcadb2b5030bdacf1223cc5",
+    "k4/run01/validation.json": "ab6f080f28e4beea5bb3d9176c0236d2153d9cd923779611f29aa79da3d4a542",
+    "k4/run01/termination_evidence.json": "9bc15825877febf98e50b6eeaef142065af5ab0de1b790ab01f1e85a43d0bcd4",
+    "k4/run01/lifecycle.json": "ecaa019de4e92c151621d8464ce4b0469d2f936b152365f642ae5b9026d0f479",
+    "k4/run01/exit.json": "de9dac436bb1a65540df3b460b03108a449815a35c9afd6e5ea0092e28c539be",
+    "k5/run01/raw_ns.json": "ccd381035b52a9ce4922903efbe3c801feae93c133af5a4a07eea2dbaa9d3618",
+    "k5/run01/per_frame.csv": "1676ec02dc20435a11c6a4886b8873b0653a7087f39ca95548433da25c6c340d",
+    "k5/run01/metadata.json": "906099cd5b555de4066e6d8c3147e0bd01c6d8ee7fafd2adb00d875922d906bf",
+    "k5/run01/resources.json": "9c9457d5134bfc7bf52dedc9980d05039d9b46730da804693d7a2d11c042fca7",
+    "k5/run01/validation.json": "63c50b0e085884fbbd6a2efebd985abd3e3b91600e25c1131e01903555f69441",
+    "k5/run01/termination_evidence.json": "8a16e646a650d1f1aa25d8701edb54e00d5a4b5ff304ef79c0aa1fdb11f80258",
+    "k5/run01/lifecycle.json": "ca02f3bfc5b55a681a0cd0d01473589e71fa0821c7aa531f9b4e20ab694350e3",
+    "k5/run01/exit.json": "019d88aa9145d58cedc987d19a1b9c268e01da637777fe36d108ffb0aec1b88d",
+    "k6/run01/raw_ns.json": "12971105cf2469118bf9bbe91515a50977e7c754b12ce047c1703a60529ec203",
+    "k6/run01/per_frame.csv": "4b445b4bc64fd33a2176186e28ac163f074084115ec1e7820d04b3307ba3b3d0",
+    "k6/run01/metadata.json": "e6a2667aa686471453248da9c74c300339122211113c214b3bdd468a027e64e8",
+    "k6/run01/resources.json": "31d4e5d145291986c201fa09b93a64fbb0b7b8efd85f97c23b88d8ab6185874c",
+    "k6/run01/validation.json": "17bfa52412a2842ee3452cee4c5f940f9e325e471607b303d2a676156df8f982",
+    "k6/run01/termination_evidence.json": "1b9656644dd25de5d68e2d4c5e3622a75e3f0ac33cb017e8c4a539fe0d3f8d12",
+    "k6/run01/lifecycle.json": "4749aff0ad1c1123bd89efb9ab206a20b371206052145e840e278950d09fbb49",
+    "k6/run01/exit.json": "f57f845b0b5c168ed7a372e64427e0545bf832f46c66102b7f29ee561470400c",
+    "k7/run01/raw_ns.json": "d765e386ac6fc58d650e45768073eae2668a0f478a4e83f2049177a721613209",
+    "k7/run01/per_frame.csv": "9b31541f8c0755c8fc7b38270cf93f37186e6f36d1c9456f722e43a0284eec34",
+    "k7/run01/metadata.json": "c86d57053558a21eac26ea4a30363442d0aa8d4a3e8902a9194a23b4b1a43bbf",
+    "k7/run01/resources.json": "acf862e8a2ed4be47ca059949845c4f8ea13924fce90e81635ff8f0cdc95c441",
+    "k7/run01/validation.json": "3899dbac5985ee647f36402d06b046a1580d0f8a37213b9d4fdb2578e6e73c19",
+    "k7/run01/termination_evidence.json": "ea5331036223ee52b3cc1d8f919a4a579e1c96d272354911fcc02b1bc2039cdc",
+    "k7/run01/lifecycle.json": "dfd73415cf67cc978081522777905e8dd08cf4c009b9c02a550590fb43f2beee",
+    "k7/run01/exit.json": "d825d5416669bdd05a3be8107854ca3d874d7e1d2ff7ca6d979b92bedff6fec6",
+    "k2/run02/raw_ns.json": "c6fefcb65cec5aaae397d3d2e5eb0833f6882f2426a5320d9d9f89d256b686cc",
+    "k2/run02/per_frame.csv": "d0b002386b950b04f61119b6468358f1ad2a668f0a8c16b7a91e904b997635c9",
+    "k2/run02/metadata.json": "959cf7a30b47b7c4d403490e6ac63b04d64e9e70bae7c99b3faee0ad14b54e88",
+    "k2/run02/resources.json": "a962f279ea5d5b1b2cb29243d9fbed729e241231fabf428d65bd47a0e1c00069",
+    "k2/run02/validation.json": "6a54ba623803d91959c76c47577b4ac69a5e2e0120b9781499570697718a59a2",
+    "k2/run02/termination_evidence.json": "9fe99d19ad41d68f1f516ef7283fcb8f35eff3fe3c536513faabe901248ae0af",
+    "k2/run02/lifecycle.json": "c7836dc33d358ac0feb830ae284d4bec184b6cf9b557e354171c0507cb1829c1",
+    "k2/run02/exit.json": "1410bf90ca223d5f6618dde5e536b466288a373791d1acdf9b1e387173105dfc",
+    "k3/run02/raw_ns.json": "926e2ce0039daae6cee83c70773db7e6ba1d6ed49bba124073379cd2f31c0dbf",
+    "k3/run02/per_frame.csv": "94d096a43a622d903fa029932b5c034538b24509ee9733ace8f545d225f0e6f1",
+    "k3/run02/metadata.json": "9f842c3cda4bbe36860df3f507a597871c85641b875379241cd56a50978eb5c8",
+    "k3/run02/resources.json": "bf198c8eb2ec7da5b9773808265583e0edd74132f73578528589245ab1c9567a",
+    "k3/run02/validation.json": "c78b85cbdf5c8bb0289cd9701e8c05a31a8fae0d0d12321af1d55723fadfcc43",
+    "k3/run02/termination_evidence.json": "dede6ca1be80778fc74639f915ac9a30a01ea0810b39170936a914bb093ab80f",
+    "k3/run02/lifecycle.json": "156d8a9368efcdfe878eaca3dcb8b28f2be7f818deee1403f813c27daea90d55",
+    "k3/run02/exit.json": "324f633695ec53b52d01e50afc13ae90ba43e0780b4ad2ea2e7ca19dd1e70848",
+    "k4/run02/raw_ns.json": "1179ce6d15dbdbc52e017b0f65c2a2d99f395118aeaad30171be652dfc1f2211",
+    "k4/run02/per_frame.csv": "cb0c7870cba2033f38f5b35d5d6de4293a98034d5436b26caa338925daf16cb1",
+    "k4/run02/metadata.json": "1bba13554a0e2c58a9af15f1209076e51422d59e1b29c958cc707da4285f8fe2",
+    "k4/run02/resources.json": "ea1f3c0cb54ace237050aca3a144877bcdc05ca2c765ef8c3587c99044df9226",
+    "k4/run02/validation.json": "089e90a72f839a3c8818cc3b37e3671d7397ea91c69daa682576362db5f2002c",
+    "k4/run02/termination_evidence.json": "9bc15825877febf98e50b6eeaef142065af5ab0de1b790ab01f1e85a43d0bcd4",
+    "k4/run02/lifecycle.json": "296b62244ab9aac69322830f5d63e6c4b5dcd570a628a55514002528c5669ed3",
+    "k4/run02/exit.json": "5719dfc1ac25fa4ff133e7dd9ea2fe59f70d4d5c1009a933986209135af62678",
+    "k5/run02/raw_ns.json": "87fa049f31f85d514634b139308399904e335f65bdda94a675a3fcb35caa38f6",
+    "k5/run02/per_frame.csv": "059fbd202d064b80df45258a124425d09336229472ba2809c179f3eb639aa1af",
+    "k5/run02/metadata.json": "f7337574a37761e6af150f6894b47667a771cd51c4fdfb2ddaefeb1672adcb4e",
+    "k5/run02/resources.json": "295548d7997b56680a9fea55e7799edb2215b735ee2942092ceb8af0a91eaf0b",
+    "k5/run02/validation.json": "6aa50ea470d7dc0e7a12cc45db705087951a57e6e3fca690a7909a2819ed7a0e",
+    "k5/run02/termination_evidence.json": "8a16e646a650d1f1aa25d8701edb54e00d5a4b5ff304ef79c0aa1fdb11f80258",
+    "k5/run02/lifecycle.json": "d2b5a0aeb4360bd5e35d9db3154a80a0ae6c94b9dfb48faee92876e45aae3f60",
+    "k5/run02/exit.json": "feadf3ecdaff9be094ae20323c71ad14f88744f6f910b1fd00aff584ce3fc0bc",
+    "k6/run02/raw_ns.json": "1cf787b13ec1f3dfaaf9aaab86235cc8e39c1879a1d1ae4fe86112e8058a6f20",
+    "k6/run02/per_frame.csv": "63964ed8ed00667b9662060aa605b6ebba14fb8657dc974e6be705c265b4b1d7",
+    "k6/run02/metadata.json": "9a41be8aaa3017a02f3d4034fc21a3752a9e909ab3f826d38ade8a182d043517",
+    "k6/run02/resources.json": "2f914a40540a352561d6fb4c2e71dc7933aee014ca889a19f6132af8cce5753d",
+    "k6/run02/validation.json": "aec5d93f73b2000d0eace8e609bc82a3ae64a9a526bc9b026c2adba05340a0fd",
+    "k6/run02/termination_evidence.json": "1b9656644dd25de5d68e2d4c5e3622a75e3f0ac33cb017e8c4a539fe0d3f8d12",
+    "k6/run02/lifecycle.json": "a624900098edd273dd684105f1df9adf2dc54befd1c44b13577c9b8b111c87c4",
+    "k6/run02/exit.json": "a3c6f3c1cb7af1b63707bc0abb2865b2f02f7c7bd20766178cd8f5e476a383ac",
+    "k7/run02/raw_ns.json": "df224410edaf06153ef67fa0fe57584b0930ed810ab5e31b556d22d6d8400c5b",
+    "k7/run02/per_frame.csv": "d7a1fe1e49eddc244d62299e3f2613ce43f939f190182f8a768d632d6f651d96",
+    "k7/run02/metadata.json": "749f340874ab436e3914284f3d7a2fc1a430d5fa1b5b7cf1192c853cf5b9ffa9",
+    "k7/run02/resources.json": "d5e696783640330d1f7d2c15dadc5ad7a9b08435cb13961f66a8ec1a65677152",
+    "k7/run02/validation.json": "a34c2e20f9a77c861e044db131206d612cd7933ffff289836293d84737b78b1d",
+    "k7/run02/termination_evidence.json": "ea5331036223ee52b3cc1d8f919a4a579e1c96d272354911fcc02b1bc2039cdc",
+    "k7/run02/lifecycle.json": "d488b5bbe1d6384a19f65a868bcc77eeb0f18627b942a643151a071de2b50dd1",
+    "k7/run02/exit.json": "7b5a5f8d1f6c040f9132711bf5d23362ba213365616b9e3488a843144bfcfd09",
+    "k1/run02/raw_ns.json": "48e665c9405fb1d03f5bc934fc00a9d584c11b9491200e0613f5ae9067605b04",
+    "k1/run02/per_frame.csv": "a8a3bd6c79ba1b1d4877402629d92ffd5bd2a208c60c3ceef64a1652e61d9fa6",
+    "k1/run02/metadata.json": "ce20b09b91cd61db4aa57931f0357231ac3d4675fd7798f0eacfe1a68f3f4a7d",
+    "k1/run02/resources.json": "01dbcf234875ec5e358d5ea54ce9dfbf0479afe72972aff2ca5d7a153a3a2847",
+    "k1/run02/validation.json": "c7ce77bbc01d46753d97695d790e48b87acf1bb175dfb05589c1bcd90d49d895",
+    "k1/run02/termination_evidence.json": "463b22065a0c6ecc56e37de217c26206e88486eafce07c28e4ff2aab495b27d5",
+    "k1/run02/lifecycle.json": "bb79f16e30ba38f29a4c96dce39faedd52eeafacc099fd0367e971a6cb0c94de",
+    "k1/run02/exit.json": "85b202b9edf6268ed858ec700045464a518b1e13d1cab56668e63dba3d66512a",
+    "k3/run03/raw_ns.json": "7a357fa4692852d7864e2d9228f2eceec40be41667f989b4cb543a1dac7d2247",
+    "k3/run03/per_frame.csv": "247d620b08285138102cad16926f1bfa525eacaa92298a5f08c9a5561e51a011",
+    "k3/run03/metadata.json": "b9599d9812fd194e73d4ca72fbc5eca50026d5df63da7df6fb4d4f684d599c69",
+    "k3/run03/resources.json": "2ac81724a7cfc51527b3de45037669d51c7adcdf6f1817a5d8bb2f9efe3434bb",
+    "k3/run03/validation.json": "8b3aef30fb5eb5190a5bb11a5b1436dca78f3e06bce40fdd41f892948579b86c",
+    "k3/run03/termination_evidence.json": "dede6ca1be80778fc74639f915ac9a30a01ea0810b39170936a914bb093ab80f",
+    "k3/run03/lifecycle.json": "03163c781221b220da7cfa95448e86a7d272e32a44013baae9834f9a6e1b094f",
+    "k3/run03/exit.json": "c6b1be19a83b045f6073393dcd611fb132e360307a8b3aed65b5303797d3b653",
+    "k4/run03/raw_ns.json": "41db8b2155ac47799ec280a79f046c3a221d5e5f19f93ed6b8faf9a5cee78596",
+    "k4/run03/per_frame.csv": "c29173dd1b8eb3fc51440f51d9c9dda17878d382f22b9b1a9129079a50df093f",
+    "k4/run03/metadata.json": "8364d57253cf38a675ec088f10a35da2241095be9daed327273cd029cf12dd9d",
+    "k4/run03/resources.json": "67832e8e9dbcac30d06db909fa2d1985b87d4fd5b45422e643b0dfd9896d2cfc",
+    "k4/run03/validation.json": "7186b2b8e09b277c47ad80feefb3408469aeb617205f51e4a2a0e0433cbe7377",
+    "k4/run03/termination_evidence.json": "9bc15825877febf98e50b6eeaef142065af5ab0de1b790ab01f1e85a43d0bcd4",
+    "k4/run03/lifecycle.json": "57339c6929b1ccdc887faf5f167adba6c87314bee1a933b27b5afae4ad426888",
+    "k4/run03/exit.json": "c93cd3d1437da8f7a45f6879b1e1238bf88e36ec44bdbabf46fbfc44230d3854",
+    "k5/run03/raw_ns.json": "e796a03257920f1012cb71028dfee59eedb713b81b51dbebff7c462d6c7c33f5",
+    "k5/run03/per_frame.csv": "9c82979f93083ef944be9e9cb3d3a2da665e1052f3001899de786aa005f2e09d",
+    "k5/run03/metadata.json": "57b197d1348d6832637a00f3c8f6ec930726a62a979c94c3be5b8c0ec6348730",
+    "k5/run03/resources.json": "2b6e8e4575b782a3f249cf79ee8b783b12be1a3ef5832b7deaf5c578930105e0",
+    "k5/run03/validation.json": "68338aef989ab4988d17b694568c7faaa09340cb0d80a19e74f5c68e78b7c35c",
+    "k5/run03/termination_evidence.json": "8a16e646a650d1f1aa25d8701edb54e00d5a4b5ff304ef79c0aa1fdb11f80258",
+    "k5/run03/lifecycle.json": "e02fbdf39624afa8d12a4224471110e2f9ea38c01c743838ae4003f1dfb38d1a",
+    "k5/run03/exit.json": "4b236de3ca808821289792457db37503a5f951425c64af5d0ea811d390c70e23",
+    "k6/run03/raw_ns.json": "bda3c63df657fd7dbd482105ccf28f46df5d3a55a4402240270c514d6b75254b",
+    "k6/run03/per_frame.csv": "68a520cecd92a3ccf76d91af26ae467c3ab750fc615d5c9e642c3c0ce96496a4",
+    "k6/run03/metadata.json": "5afa4a9f03270736de3f171068087ce358d211e672b5bdb8f618094c356d35f1",
+    "k6/run03/resources.json": "2ffdf632babc746f29018baf8f8ce863b9d55e91ebd626eaeee422af14e92830",
+    "k6/run03/validation.json": "d40ddf0a6d621d8530d8954bfd59e39d9dc4405cf3457d9fb2221b1e959bfd3d",
+    "k6/run03/termination_evidence.json": "1b9656644dd25de5d68e2d4c5e3622a75e3f0ac33cb017e8c4a539fe0d3f8d12",
+    "k6/run03/lifecycle.json": "07a5604b9f2730b1e1e2a6ada7fb04942fee8b3f12522e3aa61d03ffaef75ea1",
+    "k6/run03/exit.json": "0c6ed7042fe7992307d90fe14b5b4d53b5a3ab991c319aab47453311c67d3d5e",
+    "k7/run03/raw_ns.json": "06c5f1646a091367279d611c195c161ce0200f1072202decf4da1ad464ba8c8d",
+    "k7/run03/per_frame.csv": "be4ab50e44d8efd7416528440d82185cc611e19baf7dbf2c76faeb0f67e4fd80",
+    "k7/run03/metadata.json": "7fb572d1b8c61a0e88e4bea9e09483224db9aa4447184a6bc7477459b48f7685",
+    "k7/run03/resources.json": "7c97c10b7e147ca51ca415af4a6143b04fc27e2866e9f9cfbe1d21d4f9834a10",
+    "k7/run03/validation.json": "40b7a295c7e7f160092686921529199c5c70d790476650a40be44f3359ea7ff2",
+    "k7/run03/termination_evidence.json": "ea5331036223ee52b3cc1d8f919a4a579e1c96d272354911fcc02b1bc2039cdc",
+    "k7/run03/lifecycle.json": "3cb9cf70b3e2fa786a8a5e11ff1808c0ce4ae52a356cd3614f7ac205694c93b1",
+    "k7/run03/exit.json": "9a6d4f7740997ff8929836f5f59b2c4a45d13b722aff97bf6ccdb5cf6cab1612",
+    "k1/run03/raw_ns.json": "8d196ea19e01785061942d061f9d33dc5fa35ae88eb879992f08bccb08061b5b",
+    "k1/run03/per_frame.csv": "1ef6a56b8dd4c364b8c1965f3681c8f4e60c807235d61c9b7725bfb3fb652b15",
+    "k1/run03/metadata.json": "68099c7fce324766096af11524379f40ff24cbf985d333a298341ca98ff67ef1",
+    "k1/run03/resources.json": "74d989672b1cbebb38fb9c259ea8e624c1a5f00ef8848afa7dbdd046894c51ac",
+    "k1/run03/validation.json": "e0d77ac044a912b135ab7610de769bb933812582f9efd06f0ac7c3e9803137a8",
+    "k1/run03/termination_evidence.json": "463b22065a0c6ecc56e37de217c26206e88486eafce07c28e4ff2aab495b27d5",
+    "k1/run03/lifecycle.json": "fdf586ede413c5a32eb6a0d0c55bd6e24eaffddc5161c403fcdbacfa07e7c8c2",
+    "k1/run03/exit.json": "4af0bae78015248866162ebfc3a7063a8335eaf51df9573d9eee39e0afa0c363",
+    "k2/run03/raw_ns.json": "a530e82d5186e1f0414c40811d794e15c52410fd936cc759177512b641e90907",
+    "k2/run03/per_frame.csv": "782fc0ef6b36d9462e678aabb807b183fc3c65d8bcf83f67296dc2677d935f11",
+    "k2/run03/metadata.json": "78d5cb9c212cdec046c47d11c6562c9d159e31b3860497670bf22e79d1ce3a95",
+    "k2/run03/resources.json": "900dc024e188afbc72726a4618b55442bb201c112b8b33e522182eb6f98db8ea",
+    "k2/run03/validation.json": "0d9cf658472b1112b8ff35ef2bc1e2182b067a938beab39b413b8d69966fb7d7",
+    "k2/run03/termination_evidence.json": "9fe99d19ad41d68f1f516ef7283fcb8f35eff3fe3c536513faabe901248ae0af",
+    "k2/run03/lifecycle.json": "6799473f4fb44e723289902366269eb0e69402ea597027504743bdc3db7a676d",
+    "k2/run03/exit.json": "de7de716f0043d88a59f287cf82fa9aa2fb3ce2bb5f626df43f44bbbf28639e7",
+    "k4/run04/raw_ns.json": "e57c08151717e570333c3bf9d14847e7bde67d1d83f785e0047cd891d4fd5fd8",
+    "k4/run04/per_frame.csv": "e54c805bef47f5246cf48c7fe0e6978888b408b83ac50c7cdd096b6c594f771c",
+    "k4/run04/metadata.json": "74b946895b0e622f88a4e9638a761336ecfce590f71981634bf733d7b59dbb98",
+    "k4/run04/resources.json": "88f3e8763f9ab114b23a2438f4ca24cf4f37ef4ca987e093f87b4637a5cf1e62",
+    "k4/run04/validation.json": "d46df2c2a5fde78d18b73823079860a26a70c81c0636da719923b833ef307fe6",
+    "k4/run04/termination_evidence.json": "9bc15825877febf98e50b6eeaef142065af5ab0de1b790ab01f1e85a43d0bcd4",
+    "k4/run04/lifecycle.json": "d6d930c7bff0befff7d8ffb102f262cdcd53a66e9ac2403fe2a887b96fecaaec",
+    "k4/run04/exit.json": "790778c966daae75673ec4188c73b82464d83e912144645f34e537a56a17d6fe",
+    "k5/run04/raw_ns.json": "6d9812f209f8f9266421da9541c8a60a92d3d7abc4c8e483692eec1b78267323",
+    "k5/run04/per_frame.csv": "9bc6048829f2f8902b5719d46f35f5df1e94b3df477e290722dffb201edc453c",
+    "k5/run04/metadata.json": "5669ff46f22db90c2f2816b9407ee082d9be1cbe6b80773cd3144fb8d4a17991",
+    "k5/run04/resources.json": "af1444e7e407c5580cf1e7d53f72ce0815df8063907dd8d1b2ee83e79c96c5f6",
+    "k5/run04/validation.json": "d97d54a2c8f6599baaf2b97696573ed16790a9dfbce5b0667b5c2275260266f6",
+    "k5/run04/termination_evidence.json": "8a16e646a650d1f1aa25d8701edb54e00d5a4b5ff304ef79c0aa1fdb11f80258",
+    "k5/run04/lifecycle.json": "6b54631f1529e84184db84bd1fc97dae1cdfa35cff5bcef055ec075f18121999",
+    "k5/run04/exit.json": "a265b480a4cfae1de2ab2ee9766cb555bf0ff5266d8eddf54b17cbb2a055ad61",
+    "k6/run04/raw_ns.json": "35fc6f123cad33b09232040e5437501a1bff8ea9d9bc3c352f10bb37ae7adeac",
+    "k6/run04/per_frame.csv": "086c9e7028bbd202706d2d0b6727eff855469e8ad5ddab7331d34b60d3f788e0",
+    "k6/run04/metadata.json": "40c728605e88d4eacab559afa80e24e245dc7a523176488a7836e0cc2dbad886",
+    "k6/run04/resources.json": "05a4adb18a257f4151894d701d0a519e08cdc6320af4c66434df28e8ca82e33b",
+    "k6/run04/validation.json": "780875a0ca9e3790955c9580aac77edf734bc5e9b181d3861001341f5d3749fa",
+    "k6/run04/termination_evidence.json": "1b9656644dd25de5d68e2d4c5e3622a75e3f0ac33cb017e8c4a539fe0d3f8d12",
+    "k6/run04/lifecycle.json": "35b85cf8aabe5a15746d1c47ebef3da3992db0f3510eea1ba594c0999fb56be2",
+    "k6/run04/exit.json": "2328bfeb04faa272ffd024bbbe323ff2a4778fdb1ee0f51d84f05e5b0a321087",
+    "k7/run04/raw_ns.json": "a0f14ed141b3917fe1e027785c4b7d1ac3e6becc879b12a88856cce014821d54",
+    "k7/run04/per_frame.csv": "a6ad0c906b6393268a1e6a7b813842a2a6ec2ea519382418e2aea1dd0f8e5ffc",
+    "k7/run04/metadata.json": "18bcab1a7fd229a461f648d42c76a701d4f8a747aee6d5ca69252a2679dd6ec3",
+    "k7/run04/resources.json": "1a3408d934a3bef1fc9ab72b194172e1285276273f15be3f5991652623a8453f",
+    "k7/run04/validation.json": "33b404aa8586c2a022ce0cebc9335e7ac944f1d987dca2ce0f1c723cef04ad4a",
+    "k7/run04/termination_evidence.json": "ea5331036223ee52b3cc1d8f919a4a579e1c96d272354911fcc02b1bc2039cdc",
+    "k7/run04/lifecycle.json": "7da3dba0e4b9d24b569ba2a5a0d081715947f342dfc4eba09cbed1c9f26ef980",
+    "k7/run04/exit.json": "1697b37e4a1d51c0b183728469b530416270439ac5929d27f44f6da632bdb15d",
+    "k1/run04/raw_ns.json": "d6f050a46c103e40bf91606bdd301692e5b9fa2c3be8daf4ea0f2a26fcdaf6b1",
+    "k1/run04/per_frame.csv": "983f9f1fb83f1f4712b241c705c64d0984be15db556a08c63d83f08e458762ec",
+    "k1/run04/metadata.json": "1b3d19d99c62edc9d65449eed592f050d23799b311b5f082f0aaa412d1e7c0fa",
+    "k1/run04/resources.json": "8213d4362f8c1df60657ef96e2de443f3c3602a7bdb71aac9cdb8fdd7e317084",
+    "k1/run04/validation.json": "c7a354c65c5931cebfd0f3f63c49f92374228704160be1f0e8bd5e784ec326ab",
+    "k1/run04/termination_evidence.json": "463b22065a0c6ecc56e37de217c26206e88486eafce07c28e4ff2aab495b27d5",
+    "k1/run04/lifecycle.json": "70771eb5ad0bb56caf656da04b079cec6e6f256cd3103fca60662e7e7f7840a8",
+    "k1/run04/exit.json": "f9716c75a8e3702a494d016e375927a68feb838466b631f751750c04736cf9a9",
+    "k2/run04/raw_ns.json": "4eec0ec4d3df3e1a604b42ddb8bbf1300522e39c2281f1ef79031d4ace7a7186",
+    "k2/run04/per_frame.csv": "91a585d43d8ad9b6518b4b5bd4b821c25dcf57d1e4fcdd6ff442c7faf71751e5",
+    "k2/run04/metadata.json": "5081438736e40f677258990035329b2a27ff3aa5045b594a70f991fbbcf980bf",
+    "k2/run04/resources.json": "44bc8dce6b04fd0407056c0b0ca9ee49b80aa423e8cee360df3ec02ec1743c3c",
+    "k2/run04/validation.json": "cd5a9195778c4eb84477c909fe6554c75ccb36f6b541972a55ab8b751a450220",
+    "k2/run04/termination_evidence.json": "9fe99d19ad41d68f1f516ef7283fcb8f35eff3fe3c536513faabe901248ae0af",
+    "k2/run04/lifecycle.json": "16a9d57ded05fad5dc57c3f052d94a0105d4eb182f1190302c5aba42eec511e9",
+    "k2/run04/exit.json": "7b35ed8130de09338e970778dc05ec3d66fb733e4c457bc0d59802da745f9640",
+    "k3/run04/raw_ns.json": "f65ad52265f5272b6fe2d93141a2fe59fd8841be3924432e392c240c2e7fe2cc",
+    "k3/run04/per_frame.csv": "4593f4d6de1aabb3d8acdd1876eece7fce88d0b883cdcf65fe29120641fb0af0",
+    "k3/run04/metadata.json": "6383ebc7206d90a4c83bf80bcf6e5bc3aeacab896be3bb85eec037d7f589dd69",
+    "k3/run04/resources.json": "01837e4268879038a9d0588c9860002dc1895f0791e20d93727befb0ae653410",
+    "k3/run04/validation.json": "f5cef3943e5c71ba2277a6179a62796051640d276b64845645044fe611ea2c64",
+    "k3/run04/termination_evidence.json": "dede6ca1be80778fc74639f915ac9a30a01ea0810b39170936a914bb093ab80f",
+    "k3/run04/lifecycle.json": "1e349f3e7371428236baf13ad9fc808c10f27b6e63a4b79585df4ee0b3dcec25",
+    "k3/run04/exit.json": "ad5b157eef749ea058e238726a81210f44c09d6a02699ff40b4d9f2a8a1c57d5",
+    "k5/run05/raw_ns.json": "c753369b5e8eef9ce153d06c6d1d05408f19638c18742e5b556e4111a4195ab7",
+    "k5/run05/per_frame.csv": "f6205fb1b253fa1b9f9308f4c247ba5f729f16cfb6986005dec2c6997d87f293",
+    "k5/run05/metadata.json": "19af038a1d0a643f16c01f0173c31c871dea4a4483f7151de86c458658fc0971",
+    "k5/run05/resources.json": "12dbe9e5ccc38f178afb32bf039d85a8b70254e576b514b844ff84720f028bd9",
+    "k5/run05/validation.json": "c526f9cfc547e32227210d055284790e0990350f1b91fcc27154704f499c943f",
+    "k5/run05/termination_evidence.json": "8a16e646a650d1f1aa25d8701edb54e00d5a4b5ff304ef79c0aa1fdb11f80258",
+    "k5/run05/lifecycle.json": "f1e20ef9c45a5d1aa924fdfd23c89708f1ba159965b01a992d1d6d6bf7650ff6",
+    "k5/run05/exit.json": "5ca8bdd9feff04360bd403585843c48dbb7579c9c2459efe3dc00f4ff388b1a4",
+    "k6/run05/raw_ns.json": "16c3eb569c7a7dd9f727c6cd411c28fdc8b35ba56c9023766efa4c185d592d84",
+    "k6/run05/per_frame.csv": "7175d6a6a24660ec7a5fb680494367cbae7d6590a1ddfcb0b173eed89647562b",
+    "k6/run05/metadata.json": "3fe4fd8839a33546205e46d64042823daf740331b028636ad2ae592928f268a9",
+    "k6/run05/resources.json": "2586d27df5dd51f7b47c68a3381c84039bd66355c3b7e8e0fef1ee55b97b8dd4",
+    "k6/run05/validation.json": "a5feb5ca4b2d349f19dd6fe1abb33e8200ba513238263f5f545dfc15011b9e19",
+    "k6/run05/termination_evidence.json": "1b9656644dd25de5d68e2d4c5e3622a75e3f0ac33cb017e8c4a539fe0d3f8d12",
+    "k6/run05/lifecycle.json": "603554cb1438f885075f45c81585dca0d21cdc689318efac8bc3dddf2cf26266",
+    "k6/run05/exit.json": "a2fce470e11152e9a5419efb8cbd9d041a8404f09e63456d04531a678ef13c92",
+    "k7/run05/raw_ns.json": "0d9f203fa80c4256a5521294c793ec1c5d350b404d29102c94d3ed290aefe006",
+    "k7/run05/per_frame.csv": "26cb69845042112c49e012fcec727447846cad9afa9d7b49bf75aaa08ebfb6aa",
+    "k7/run05/metadata.json": "c2abe046eaeb9509c623d6bef59c8160dda0ea82852f314f08fff632553ccaea",
+    "k7/run05/resources.json": "8040f172084e43c2eb9fba47b82a11c72641ee6e853099e4c0d1822782619de2",
+    "k7/run05/validation.json": "e393bec018a63ddc504a2cd0d31934e72125e7ea595976318c508ae40b0e52ea",
+    "k7/run05/termination_evidence.json": "ea5331036223ee52b3cc1d8f919a4a579e1c96d272354911fcc02b1bc2039cdc",
+    "k7/run05/lifecycle.json": "bdf43c0e69c64780bc9d7366b967a2981848363c02bda41be167c89e95638e16",
+    "k7/run05/exit.json": "94ced8c35c2e989b319fb6228df93fc933bc4357ce6766ea943154a360967efc",
+    "k1/run05/raw_ns.json": "902b6a85b323127d48478512f537630ebc26913e0b3168b2ced40f87a89ab7c1",
+    "k1/run05/per_frame.csv": "59827795909a9aac1784ae3a1be1c59d88417bf5ed663c810fa87407b04ccf9e",
+    "k1/run05/metadata.json": "1d84a64a8cc7bd71051e1e34120cd50cc6aa280641ed242ffe291ad2dc808acc",
+    "k1/run05/resources.json": "47e848897bea4cdd79cdc80a58aef06d1ec08197c0c260b421754729aceeee4d",
+    "k1/run05/validation.json": "83493a89fe931145aa8d1eeb6d4c580187923be48830b4dea09babcabb818eb6",
+    "k1/run05/termination_evidence.json": "463b22065a0c6ecc56e37de217c26206e88486eafce07c28e4ff2aab495b27d5",
+    "k1/run05/lifecycle.json": "9474c700d5cb805b8eaea3071f51270ae3e819e38ffa7eac2c86829e2115999b",
+    "k1/run05/exit.json": "353fe6bdf1b9063c8eb78da7685dabaf824381c67464d037bb2309b6db78a8ab",
+    "k2/run05/raw_ns.json": "c3e3e85082460282ec85f6863d1e96caa29848cb4c8e4242dd7dbb244751f570",
+    "k2/run05/per_frame.csv": "1ce3fd544cd169d68d739bc1668d3b56218a0e5957fd8711bd4325d76a174e58",
+    "k2/run05/metadata.json": "0eab5e53296215868ac4dc37160a1b5c7a66364c6eb871a217774d4e5cbcc5b9",
+    "k2/run05/resources.json": "9cb164c653bd164315e95ac55af61971466815f7f4d7520e727fc0ba69affeee",
+    "k2/run05/validation.json": "d78dc6097e1e0783bde38c83e77975afb20a93fde45b000761f6cd5c7429aeb9",
+    "k2/run05/termination_evidence.json": "9fe99d19ad41d68f1f516ef7283fcb8f35eff3fe3c536513faabe901248ae0af",
+    "k2/run05/lifecycle.json": "1874013ac36cf8e3718b39f0a61194d3dc493ea7c646c6be91731980651f7b4b",
+    "k2/run05/exit.json": "6139f259cdcdc7fc7416f12f10c34ea55b765b55d324fc5cf966d1d4d69f2531",
+    "k3/run05/raw_ns.json": "0e273510cc1de42dd83169ec05262e56f9586377dfc00ec3c3b5021c5b0cd758",
+    "k3/run05/per_frame.csv": "4c8f90a0bde98e2c5289654c910e5ce6d89bf1863e3f3a2be6c6da78ca5ba960",
+    "k3/run05/metadata.json": "843848857bf69ca32e67a94dd91a6b7bf16d188618b8f236d751c0385f7548a1",
+    "k3/run05/resources.json": "69b77f6d653b973f6493242b3d79782ff234d32d85df2aa915bffb3aa3f2c42c",
+    "k3/run05/validation.json": "fb9151097ec78217b182dcb5a9470d3386268bc3945e90de9239076bd235d439",
+    "k3/run05/termination_evidence.json": "dede6ca1be80778fc74639f915ac9a30a01ea0810b39170936a914bb093ab80f",
+    "k3/run05/lifecycle.json": "37e1c2ba666a446f043e96d121bda745f1e30d3853821b0c7429fd45e628418d",
+    "k3/run05/exit.json": "3fdc663818e99f20c8204d94e22aaba881f78faaf1f132f0eb17494909c6cd3d",
+    "k4/run05/raw_ns.json": "81db609b3539b3108875f6f11b322c4278357e61ee0a04c93a8734ea227b718e",
+    "k4/run05/per_frame.csv": "6b56154e71abd5015d249c0c69a393bd829f860b1150367f1430214acbf22703",
+    "k4/run05/metadata.json": "422398707dfdeb8bc876386839bdc75c55419a57898509a3db74d653b5dd8f85",
+    "k4/run05/resources.json": "3f8456d87c573129b7454ba095b8943ac02ed7c6a8876e0555e01592644932af",
+    "k4/run05/validation.json": "eef177b70cf21e8a60c02c70fdebe5384fd0fc2ed4bc298cd40dab13be9574b3",
+    "k4/run05/termination_evidence.json": "9bc15825877febf98e50b6eeaef142065af5ab0de1b790ab01f1e85a43d0bcd4",
+    "k4/run05/lifecycle.json": "1f67d3a9b4937c454a9428801eac62b698d0c444828d066f8b38e74ceda8f000",
+    "k4/run05/exit.json": "9d39ebe678cf04e0c0d0bdb2f4ab9c7d4537203ce968b6fe060ac97612d52df8"
+  },
+  "GPU_kernel_overlap_measured": false
+}

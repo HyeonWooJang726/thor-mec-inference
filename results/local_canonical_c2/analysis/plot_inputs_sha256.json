@@ -1,0 +1,8 @@
+{
+  "formal_integrity_report.json": "1cd8bd838c9556303617bd99c457b9f6a52b189c4553eb8801100c9531dd5fd6",
+  "analysis/analysis_validation.json": "efd9d168a2d1ba7dcb1f3fc20e6ba6cdcf1d32941ecfe02da868878a93304b20",
+  "analysis/analysis_data.json": "9d3f26595928f7733e0b2a6f6b59ae73300abea1a8f4d1e86d3fa9bcc774a89d",
+  "analysis/temporal_analysis.json": "e7f0f20efa91344bc7a4bf3125b7d69e53962df3ffc49fde6d2b328cabf1833f",
+  "analysis/temporal_timeline_1s.csv": "2275dc682427339a2e400e81c99e046d67f11371c85f3b3eb15799219dda62d0",
+  "analysis/plot_axis_limits.json": "2b583d0489d34b216c64cfc050ba53edda0b440feaf6d43bf17293a9dac5f00d"
+}

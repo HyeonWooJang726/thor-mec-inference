@@ -1,0 +1,213 @@
+--- reference/profile_fullsource.py
++++ canonical/profile_fullsource.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Single-path C2/C4 full-source targeted validation; no final canonical campaign."""
++"""Canonical fixed C2 full-source Local baseline."""
+ import argparse
+ import csv
+ import math
+@@ -11,7 +11,7 @@
+ import hashlib
+ from pathlib import Path
+ 
+-sys.path.append(str(Path(__file__).resolve().parents[4] / 'scripts'))
++sys.path.append(str(Path(__file__).resolve().parents[3] / 'scripts'))
+ 
+ from profile_local_latency_breakdown import (
+     REPO, audit_inputs, write_json, experiment_metadata as c1_metadata,
+@@ -24,7 +24,7 @@
+ from screening_validation import validate_concurrency
+ from termination_contract import validate_termination
+ 
+-ROOT = REPO / 'results/local_inference_concurrency/c2_vs_c4_fullsource_validation'
++ROOT = REPO / 'results/local_canonical_c2'
+ CONCURRENCY_FIELDS = ['worker_id', 'context_id', 'a_ns', 'b_ns', 'r_ns', 's_ns', 'c_ns', 'service_start_ns', 'service_completion_ns',
+                       'submission_return_ns', 'stream_sync_return_ns']
+ CONTROL_FRAME_FIELDS = ['C', 'K', 'run_id'] + PER_FRAME_FIELDS + CONCURRENCY_FIELDS + ['start_lag_ns', 'front_end_ns', 'queue_wait_ns', 'inference_ns', 'local_latency_ns', 'start_lag_ms', 'queue_wait_ms', 'local_latency_ms']
+@@ -32,11 +32,9 @@
+ 
+ def parse_args():
+     p = argparse.ArgumentParser(description=__doc__)
+-    mode = p.add_mutually_exclusive_group(required=True)
+-    mode.add_argument('--gate', action='store_true')
+-    mode.add_argument('--targeted', action='store_true')
+-    p.add_argument('--concurrency', type=int, required=True, choices=(2, 4))
+-    p.add_argument('--k', type=int, required=True, choices=(5, 6, 7))
++    p.add_argument('--formal', action='store_true', required=True)
++    p.add_argument('--concurrency', type=int, required=True, choices=(2,))
++    p.add_argument('--k', type=int, required=True, choices=tuple(range(1,8)))
+     p.add_argument('--frames-per-stream', type=int, required=True, choices=(1800,))
+     p.add_argument('--run-id', required=True)
+     p.add_argument('--output-dir', required=True)
+@@ -45,14 +43,9 @@
+     if any(q.is_symlink() for q in (raw, *raw.parents)):
+         p.error('symlink output forbidden')
+     out = raw.resolve()
+-    if args.gate:
+-        if args.k != 5 or args.run_id != 'gate01':
+-            p.error('full-source gate fixes K5, gate01')
+-        expected = ROOT / 'gate' / f'c{args.concurrency}' / 'k5' / args.run_id
+-    else:
+-        if args.run_id not in ('run01','run02','run03'):
+-            p.error('targeted fixes run01..run03')
+-        expected = ROOT / f'c{args.concurrency}' / f'k{args.k}' / args.run_id
++    if args.run_id not in tuple(f'run{i:02d}' for i in range(1,6)):
++        p.error('canonical fixes run01..run05')
++    expected = ROOT / f'k{args.k}' / args.run_id
+     if out != expected:
+         p.error(f'exact fresh output required: {expected}')
+     args.fps, args.output_dir, args.smoke = 30, str(out), False
+@@ -62,8 +55,8 @@
+ def experiment_metadata(args, reference, evidence, video_metadata, environment, *, formal=False):
+     data = c1_metadata(args, reference, evidence, video_metadata, environment, formal=formal)
+     data.update({
+-        'concurrency': args.concurrency, 'planned_formal_K_list': [5, 6, 7],
+-        'K_list': [5, 6, 7] if formal else [args.k],
++        'concurrency': args.concurrency, 'planned_formal_K_list': list(range(1,8)),
++        'K_list': list(range(1,8)) if formal else [args.k],
+         'worker_startup_order': 'pipelines PLAYING -> front-end workers -> C context-owning inference workers -> t0+100ms -> arrival scheduler -> GLib loop',
+         'source_preparation': 'one shared engine and C independent contexts/streams/buffer sets created first; same pipeline preparation',
+         'warm_up_behavior': 'NONE; all 1800 full-source frames retained; no exclusion',
+@@ -75,13 +68,12 @@
+         'EOS_behavior': 'FULL SOURCE: original unbounded file/decode pipeline; all actual natural bus EOS messages and all accepted completions required before successful cleanup; sample budget cannot replace EOS',
+         'C1_measurement_sources_modified': False,
+     })
+-    data.update(artifact_class='FULL-SOURCE GATE / NON-CANONICAL' if args.gate else 'FULL-SOURCE TARGETED / NON-CANONICAL',
+-                purpose='C2/C4 60-second full-source targeted comparison; not final canonical baseline',
+-                K_list=[args.k], planned_formal_K_list=[], run_count_per_K=1 if args.gate else 3,
+-                offered_duration_s=args.frames_per_stream / 30,
+-                full_source_expected_frames=args.frames_per_stream,
+-                pipeline_termination='original full-source file/decode/conversion chain -> original appsink; no identity limiter or synthetic EOS',
+-                K_level_summary_aggregation='three separate run statistics and mean/sample SD/median/min/max; never pooled frames')
++    data.update(artifact_class='CANONICAL STATIC C2 FULL-SOURCE LOCAL',
++                purpose='final canonical static Local baseline; C2 fixed configuration',
++                K_list=[args.k], planned_formal_K_list=list(range(1,8)), run_count_per_K=5,
++                offered_duration_s=60, full_source_expected_frames=1800,
++                pipeline_termination='original full-source file/decode chain; no identity limiter or synthetic EOS',
++                K_level_summary_aggregation='five separate run statistics; mean/sample SD/median/min/max; never pooled frames')
+     data.pop('formal_duration_seconds', None)
+     data['source_sha256'].update({n: hashlib.sha256((REPO/'scripts'/n).read_bytes()).hexdigest() for n in
+         ('profile_local_concurrency_control.py', 'local_concurrency_tensorrt.py', 'local_concurrency_validation.py')})
+@@ -491,7 +483,7 @@
+     if not final_errors:
+         write_json(output_dir / "run_summary.json", {"metrics_ns": run, "queue": qmetrics, **concurrency_metrics})
+     validation = {
+-        "artifact_class": "FULL-SOURCE GATE / NON-CANONICAL" if args.gate else "FULL-SOURCE TARGETED / NON-CANONICAL", "K": streams, "C": args.concurrency, "expected": total_expected,
++        "artifact_class": "CANONICAL STATIC C2 FULL-SOURCE LOCAL", "K": streams, "C": args.concurrency, "expected": total_expected,
+         "source_EOS": eos, "EOS_validation": "PASS" if all(eos) else "FAIL",
+         "termination": termination, "bounded_complete": termination["bounded_complete"],
+         "counts": {"arrivals": sum(arrivals), "source_samples": sum(source_samples_pulled),
+@@ -506,7 +498,7 @@
+         "queue_wait_positive_frames": positive_wait,
+         "queue_accounting": "PASS" if qmetrics else "FAIL",
+         "errors": final_errors, "validation": "PASS" if not final_errors else "FAIL",
+-        "performance_interpretation": "NONE; termination gate only" if args.gate else "60-second full-source targeted validation; n=3; not final canonical baseline",
++        "performance_interpretation": "Canonical C2 Local baseline; five run-level statistics per K",
+     }
+     workload_completion_ns = max((r['c_ns'] for r in records), default=0)
+     offered_end_ns = t0_holder[0] + frames_per_stream * 1_000_000_000 // 30 if t0_holder else 0
+--- reference/screening_validation.py
++++ canonical/screening_validation.py
+@@ -44,8 +44,7 @@
+             raise ValueError('invalid submission ordering')
+     service = interval_metrics(records, concurrency=concurrency)
+     outstanding = interval_metrics(records, 'submission_return_ns', 'stream_sync_return_ns', concurrency)
+-    if service['max_active_inferences'] < 2 or outstanding['max_active_inferences'] < 2:
+-        raise ValueError('no observed concurrent submission')
++    # Low load can leave configured capacity idle; actual overlap is reported.
+     return {**service, 'service_overlap_pair_count': service['service_interval_overlap_count'],
+             'service_overlap_time_ms': service['service_interval_overlap_time_ms'],
+             'worker_request_counts': dict(Counter(r['worker_id'] for r in records)),
+--- reference/run_fullsource.py
++++ canonical/run_fullsource.py
+@@ -1,39 +1,36 @@
+ #!/usr/bin/env python3
+-"""Two natural-EOS gates, then exactly eighteen full-source targeted runs; fail fast."""
++"""Exactly 35 canonical fixed C2 full-source runs; fail fast."""
+ import argparse,json,shlex,shutil,subprocess,sys,time
+ from pathlib import Path
+-ROOT=Path(__file__).resolve().parents[1];REPO=ROOT.parents[2]
++ROOT=Path(__file__).resolve().parents[1];REPO=ROOT.parents[1]
+ sys.path.append(str(REPO/'scripts'))
+ from screening_metrics import validate_run
+ from run_local_concurrency_formal_control import preflight
+ from run_local_concurrency_trtexec_probe import save,digest,ENGINE
+-ORDER=[[(2,5),(4,5),(2,6),(4,6),(2,7),(4,7)],
+-       [(4,7),(2,7),(4,6),(2,6),(4,5),(2,5)],
+-       [(2,6),(4,6),(4,5),(2,5),(2,7),(4,7)]]
+-GATES=[(2,5),(4,5)]
++ORDER=[[(2,((rep+offset)%7)+1) for offset in range(7)] for rep in range(5)]
+ def source_hashes():
+     paths=list((ROOT/'code').glob('*.py'))+[REPO/'scripts'/p.name for p in (ROOT/'source_snapshot').glob('*.py')]
+     return {str(p.relative_to(REPO)):digest(p) for p in paths}
+ def command(c,k,rep=0):
+-    run_id=f'run{rep:02d}' if rep else 'gate01'
+-    output=(ROOT if rep else ROOT/'gate')/f'c{c}'/f'k{k}'/run_id
++    assert c == 2 and 1 <= k <= 7 and 1 <= rep <= 5
++    run_id=f'run{rep:02d}'
++    output=ROOT/f'k{k}'/run_id
+     argv=['/usr/bin/python3','-B',str((ROOT/'code/profile_fullsource.py').relative_to(REPO)),
+-          '--targeted' if rep else '--gate','--concurrency',str(c),'--k',str(k),
++          '--formal','--concurrency',str(c),'--k',str(k),
+           '--frames-per-stream','1800','--run-id',run_id,'--output-dir',str(output)]
+     return argv,output,run_id
+ 
+ def plan():
+-    return {'artifact_class':'FULL-SOURCE TARGETED / NON-CANONICAL','C':[2,4],'K':[5,6,7],
+-        'repetitions':3,'fps':30,'frames_per_stream':1800,'offered_duration_s':60,
+-        'expected_runs':18,'expected_frames':194400,'batch':1,'engine':ENGINE,'engine_sha256':digest(REPO/ENGINE),
++    return {'artifact_class':'CANONICAL STATIC C2 LOCAL','C':[2],'K':list(range(1,8)),
++        'repetitions':5,'fps':30,'frames_per_stream':1800,'offered_duration_s':60,
++        'expected_runs':35,'expected_frames':252000,'batch':1,'engine':ENGINE,'engine_sha256':digest(REPO/ENGINE),
+         'power':'MAXN','DVFS':'unlocked','jetson_clocks':'OFF','CUDA_Graph':False,
+         'warmup':'NONE','sample_exclusion':'NONE','deliberate_cooldown':'NONE','drop':'NONE',
+         'candidate_deadline':'local_latency_ns * 30 > 1000000000; candidate, not final SLA',
+         'source_termination':'natural full-source bus EOS for every source AND complete acquisition/drain/clean joins/NULL shutdown',
+         'runtime_watchdog_s':300,'outer_child_timeout_s':420,
+         'watchdog_source':'same 300-second runtime watchdog as existing full-source formal; no change after failure',
+-        'gates':[{'C':c,'K':k,'argv':command(c,k)[0],'expected_frames':9000,'excluded_from_primary':True} for c,k in GATES],
+-        'runs':[{'sequence':(rep-1)*6+pos,'C':c,'K':k,'rep':rep,'argv':command(c,k,rep)[0]}
++        'runs':[{'sequence':(rep-1)*7+pos,'C':c,'K':k,'rep':rep,'argv':command(c,k,rep)[0]}
+                 for rep,group in enumerate(ORDER,1) for pos,(c,k) in enumerate(group,1)]}
+ 
+ def one_run(c,k,rep,pinned,engine_sha):
+@@ -72,17 +69,14 @@
+     if not args.execute:print(json.dumps(plan(),indent=2));return
+     assert json.loads((ROOT/'regression_result.json').read_text())['validation']=='PASS'
+     assert json.loads((ROOT/'runtime_audit.json').read_text())['validation']=='PASS'
+-    planned=plan();assert len(planned['runs'])==len({(v['C'],v['K'],v['rep']) for v in planned['runs']})==18
+-    save(ROOT/'run_plan.json',planned)
++    planned=plan();assert len(planned['runs'])==len({(v['C'],v['K'],v['rep']) for v in planned['runs']})==35
++    assert sum(v['K']*1800 for v in planned['runs'])==252000
++    assert json.loads((ROOT/'formal_plan.json').read_text())==planned
++    # Exact plan was saved before execution.
+     pinned=source_hashes();save(ROOT/'source_sha256.json',pinned)
+     (ROOT/'orchestration').mkdir(exist_ok=False);save(ROOT/'preflight.json',preflight())
+-    gates=[];checks=[];current=None
++    checks=[];current=None
+     try:
+-        for c,k in GATES:
+-            current={'C':c,'K':k,'rep':0,'gate':True}
+-            summary,check=one_run(c,k,0,pinned,planned['engine_sha256']);gates.append(check)
+-        save(ROOT/'gate_report.json',{'validation':'PASS','valid_runs':2,'frames':18000,'runs':gates,'excluded_from_primary':True})
+-        print('FULL-SOURCE GATE PASS 2/2: natural EOS verified; proceeding to 18 targeted runs',flush=True)
+         for rep,group in enumerate(ORDER,1):
+             for c,k in group:
+                 current={'C':c,'K':k,'rep':rep,'gate':False}
+@@ -90,10 +84,10 @@
+                 save(ROOT/'orchestration'/f'completed_{len(checks):02d}.json',{'completed_runs':len(checks),'latest':summary})
+     except Exception as error:
+         save(ROOT/'campaign_failure.json',{'status':'INCOMPLETE','reason':str(error),'failed_configuration':current,
+-            'gate_checks':gates,'completed_targeted_runs':checks,'retried_runs':0})
++            'completed_runs':checks,'retried_runs':0})
+         raise
+-    assert len(checks)==18 and sum(x['frames'] for x in checks)==194400
+-    save(ROOT/'campaign_completion.json',{'validation':'PASS','valid_runs':18,'frames':194400,'failed_runs':0,
+-        'retried_runs':0,'gate_frames_excluded':18000,'runs':checks,'source_unchanged':source_hashes()==pinned})
+-    print('COMPLETE 18/18 valid runs / 194400 frames; gates excluded; no canonical 35-run',flush=True)
++    assert len(checks)==35 and sum(x['frames'] for x in checks)==252000
++    save(ROOT/'campaign_completion.json',{'validation':'PASS','valid_runs':35,'frames':252000,'failed_runs':0,
++        'retried_runs':0,'runs':checks,'source_unchanged':source_hashes()==pinned})
++    print('COMPLETE 35/35 runs / 252000 frames; independent whole-campaign gate required before analysis',flush=True)
+ if __name__=='__main__':main()

@@ -1,0 +1,13 @@
+{
+  "validation": "PASS",
+  "tests": 5,
+  "failed": 0,
+  "fixtures": "synthetic CPU correctness fixtures only; not performance data",
+  "coverage": [
+    "clipped occupancy and active fractions",
+    "touching intervals and idle time",
+    "capacity violation rejection",
+    "prior unfinished pre-ready work",
+    "two-active carry-over"
+  ]
+}

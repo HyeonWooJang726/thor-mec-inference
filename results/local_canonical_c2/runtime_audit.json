@@ -1,0 +1,16 @@
+{
+  "validation": "PASS",
+  "changed_functions": [
+    "parse_args",
+    "experiment_metadata",
+    "main"
+  ],
+  "all_other_functions_AST_identical": true,
+  "byte_identical_modules": {
+    "screening_tensorrt.py": true,
+    "screening_metrics.py": true,
+    "termination_contract.py": true
+  },
+  "performance_path_changes": 0,
+  "changes": "CLI/output metadata; orchestrator matrix; low-load overlap observation requirement removed, ownership and active bound retained"
+}

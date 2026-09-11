@@ -1,0 +1,27 @@
+{
+  "validation": "PASS",
+  "files_checked": 5571,
+  "unchanged_files": 5563,
+  "authorized_presentation_and_provenance_changes": [
+    "results/local_canonical_c2/analysis_source_sha256.json",
+    "results/local_canonical_c2/analysis/derived_integrity_report.json",
+    "results/local_canonical_c2/analysis/plot_figures.py",
+    "results/local_canonical_c2/analysis/figure_manifest.json",
+    "results/local_canonical_c2/analysis/figures/figure_2_latency_decomposition.png",
+    "results/local_canonical_c2/analysis/figures/figure_3_temporal_queue.png",
+    "results/local_canonical_c2/analysis/figures/figure_1_local_qos.png",
+    "results/local_canonical_c2/analysis/figures/figure_4_concurrency_queue_deadline.png"
+  ],
+  "unexpected_changes": [],
+  "canonical_raw_run_files_unchanged": 700,
+  "historical_result_files_unchanged": 4521,
+  "formal_integrity_report_unchanged": true,
+  "all_source_summary_CSVs_unchanged": true,
+  "profile_tcp_throughput_preserved": true,
+  "profile_edge_realtime_preserved": true,
+  "check_fields": [
+    "SHA256",
+    "size",
+    "mtime_ns"
+  ]
+}

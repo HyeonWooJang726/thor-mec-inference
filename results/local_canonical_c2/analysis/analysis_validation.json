@@ -1,0 +1,9 @@
+{
+  "validation": "PASS",
+  "runs": 35,
+  "frames": 252000,
+  "run_level_aggregation": true,
+  "mean_decomposition": true,
+  "active_fraction_sum": true,
+  "independent_event_area_identity": true
+}
