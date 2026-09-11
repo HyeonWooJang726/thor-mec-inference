@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -u -o pipefail
 
-ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)
 PYTHON=/usr/bin/python3
 VIDEO=${VIDEO:-/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/train/Warehouse_000/videos/Camera_0000.mp4}
 EXPECTED_FRAMES=${EXPECTED_FRAMES:-9000}
@@ -33,7 +33,7 @@ for streams in 1 2 4 8; do
       echo "Actual pipeline: $PIPELINE"
       echo "Run: $run"
       echo "Streams: $streams"
-      "$PYTHON" "$ROOT/scripts/profile_decode_preprocess.py" --video "$VIDEO" --streams "$streams" --expected-frames "$EXPECTED_FRAMES"
+      "$PYTHON" "$ROOT/scripts/initial_profiling/profile_decode_preprocess.py" --video "$VIDEO" --streams "$streams" --expected-frames "$EXPECTED_FRAMES"
     } 2>&1 | tee "$log"
     status=${PIPESTATUS[0]}
     if (( status != 0 )); then exit "$status"; fi

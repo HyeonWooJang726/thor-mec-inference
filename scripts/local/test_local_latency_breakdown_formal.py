@@ -1,5 +1,13 @@
 """CPU-only orchestration tests. Synthetic fixtures are not benchmark results."""
 
+# Resolve shared experiment modules for direct script and repository-root imports.
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "common"))
+from script_paths import configure as _configure, script_path
+_configure()
+
+
 import argparse
 import ast
 import copy
@@ -78,7 +86,7 @@ class OrchestrationTests(unittest.TestCase):
             self.assertEqual(sentinel.read_text(), "existing smoke")
 
     def test_cli_only_without_gpu_imports(self):
-        source = (runner.REPO / "scripts/profile_local_latency_breakdown.py").read_text()
+        source = (runner.REPO / "scripts/local/profile_local_latency_breakdown.py").read_text()
         tree = ast.parse(source)
         function = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == "parse_args")
         scope = {"argparse": argparse, "Path": Path, "REPO": runner.REPO,
@@ -99,12 +107,24 @@ class OrchestrationTests(unittest.TestCase):
         self.assertNotIn("profile_local_latency_breakdown", sys.modules)
 
     def test_measurement_hash_and_dependencies(self):
-        runner.audit_core(self.config)
+        # Historical whole-file pins must still reject refactored import paths.
+        with self.assertRaisesRegex(ValueError, "validated code version changed"):
+            runner.audit_core(self.config)
+        config = copy.deepcopy(self.config)
+        pins = config["core_compatibility"]["current_source_sha256"]
+        config["core_compatibility"]["current_source_sha256"] = {
+            name: runner.digest(script_path(name)) for name in pins}
+        # Only fixture source-file pins change; the measured block stays pinned.
+        runner.audit_core(config)
         self.assertEqual(self.config["core_compatibility"]["measurement_block_sha256"],
                          "6049d16fdbe8d5001d2c4bd3498059e35fc8a49c50927f0bd2cd94b36d8fcc7d")
 
     def test_child_failure_stops_before_next_run(self):
         config = copy.deepcopy(self.config)
+        check_root = runner.check_empty_formal_root
+        pins = config["core_compatibility"]["current_source_sha256"]
+        config["core_compatibility"]["current_source_sha256"] = {
+            name: runner.digest(script_path(name)) for name in pins}
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary) / "synthetic"
             plan = [{"K": 1, "run_id": "run01", "output_path": str(output / "k1/run01")},
@@ -112,6 +132,7 @@ class OrchestrationTests(unittest.TestCase):
             good = {"host_process_visibility": True, "MAXN": True,
                     "DVFS_not_max_locked": True, "must_clear_before_formal": []}
             with patch.object(runner, "OUTPUT", output), patch.object(runner, "preflight", return_value=good), \
+                    patch.object(runner, "check_empty_formal_root", side_effect=lambda: check_root(output)), \
                     patch.object(runner, "check_run_before"), patch.object(runner.subprocess, "run", return_value=subprocess.CompletedProcess([], 17)) as child:
                 with self.assertRaisesRegex(ValueError, "child failed"):
                     runner.execute(plan, config, [])

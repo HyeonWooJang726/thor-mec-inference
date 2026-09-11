@@ -6,6 +6,14 @@ protocol, and a clean
 host preflight. Each child invokes the existing profile once in a fresh process.
 """
 
+# Resolve shared experiment modules for direct script and repository-root imports.
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "common"))
+from script_paths import configure as _configure, script_path
+_configure()
+
+
 import argparse
 import csv
 from datetime import datetime, timezone
@@ -25,7 +33,7 @@ from local_latency_breakdown_metrics import (
     aggregate_runs, frame_rows_ns, queue_metrics, run_summary, validate_timing, write_csv,
 )
 
-REPO = Path(__file__).resolve().parents[1]
+REPO = Path(__file__).resolve().parents[2]
 OUTPUT = REPO / "results/local_latency_breakdown"
 BASELINE = REPO / "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync"
 ORDER = REPO / "configs/local_latency_breakdown_formal_order.json"
@@ -147,8 +155,8 @@ def audit_order_sources(config):
 def audit_core(config):
     compatibility = config["core_compatibility"]
     for name, expected in compatibility["current_source_sha256"].items():
-        require(digest(REPO / "scripts" / name) == expected, f"validated code version changed: {name}")
-    source = (REPO / "scripts/profile_local_latency_breakdown.py").read_text()
+        require(digest(script_path(name)) == expected, f"validated code version changed: {name}")
+    source = (REPO / "scripts/local/profile_local_latency_breakdown.py").read_text()
     block = source[source.index("    loop = GLib.MainLoop()"):source.index("    # Preserve raw ns evidence separately;")]
     require(hashlib.sha256(block.encode()).hexdigest() == compatibility["measurement_block_sha256"],
             "smoke-validated measurement block changed; smoke revalidation required")
@@ -316,7 +324,7 @@ def execute(plan, config, mapping_evidence):
             environment = preflight()
             require_preflight(environment)
             path = Path(run["output_path"])
-            command = [sys.executable, "-B", str(REPO / "scripts/profile_local_latency_breakdown.py"),
+            command = [sys.executable, "-B", str(REPO / "scripts/local/profile_local_latency_breakdown.py"),
                        "--formal", "--k", str(run["K"]), "--run-id", run["run_id"],
                        "--frames-per-stream", "1800", "--output-dir", str(path)]
             with (path.parent / f'{run["run_id"]}_console.log').open("x") as log:

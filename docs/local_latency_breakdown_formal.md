@@ -6,13 +6,13 @@ From the repository root, print the 35 planned runs without importing GStreamer,
 OpenCV or TensorRT, initializing a GPU, or creating any result directories:
 
 ```bash
-/usr/bin/python3 -B scripts/run_local_latency_breakdown_formal.py --dry-run
+/usr/bin/python3 -B scripts/local/run_local_latency_breakdown_formal.py --dry-run
 ```
 
 Inspect processes, load, MAXN and readable DVFS controls on the **host**:
 
 ```bash
-/usr/bin/python3 -B scripts/run_local_latency_breakdown_formal.py --preflight
+/usr/bin/python3 -B scripts/local/run_local_latency_breakdown_formal.py --preflight
 ```
 
 This command never stops processes or changes clocks. A sandbox PID namespace
@@ -69,13 +69,13 @@ by the runner.
 Run from the repository root, in a host terminal after cleanup:
 
 ```bash
-/usr/bin/python3 -B scripts/run_local_latency_breakdown_formal.py --preflight
+/usr/bin/python3 -B scripts/local/run_local_latency_breakdown_formal.py --preflight
 ```
 
 Only after inspecting that preflight, the single formal command is:
 
 ```bash
-/usr/bin/python3 -B scripts/run_local_latency_breakdown_formal.py --execute
+/usr/bin/python3 -B scripts/local/run_local_latency_breakdown_formal.py --execute
 ```
 
 The formal command is documentation only in this final pre-run task: it is not
@@ -121,6 +121,6 @@ are in `logs/local_latency_orchestration_20260910T160911/`.
 CPU-only tests (synthetic fixtures and mocked child execution, no inference):
 
 ```bash
-/usr/bin/python3 -B scripts/test_local_latency_breakdown_formal.py -v
-/usr/bin/python3 -B scripts/test_local_latency_breakdown.py -v
+/usr/bin/python3 -B scripts/local/test_local_latency_breakdown_formal.py -v
+/usr/bin/python3 -B scripts/local/test_local_latency_breakdown.py -v
 ```

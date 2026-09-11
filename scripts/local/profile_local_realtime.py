@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """Validate a phase-aligned 30 FPS local B=1, C=1 workload."""
 
+# Resolve shared experiment modules for direct script and repository-root imports.
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "common"))
+from script_paths import configure as _configure, script_path
+_configure()
+
+
 import argparse
 import csv
 import json

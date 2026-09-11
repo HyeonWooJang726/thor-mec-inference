@@ -1,4 +1,12 @@
 """CPU-only adversarial interval checks; synthetic fixtures, no performance claims."""
+
+# Resolve shared experiment modules for direct script and repository-root imports.
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "common"))
+from script_paths import configure as _configure, script_path
+_configure()
+
 import unittest
 import queue
 from local_latency_breakdown_metrics import QueueAccounting, queue_metrics

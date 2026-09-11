@@ -13,7 +13,7 @@ import subprocess
 import time
 from datetime import datetime, timezone
 
-REPO = Path(__file__).resolve().parents[1]
+REPO = Path(__file__).resolve().parents[2]
 ROOT = REPO / 'results/local_inference_concurrency/trtexec_probe'
 ENGINE = 'models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine'
 INPUT = 'results/correctness/Camera_0000_t60_input.bin'

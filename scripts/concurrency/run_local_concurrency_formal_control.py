@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 """Generalized-path C1/C2 smoke gate and exact 30-run formal control orchestration."""
+
+# Resolve shared experiment modules for direct script and repository-root imports.
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "common"))
+from script_paths import configure as _configure, script_path
+_configure()
+
 import argparse
 import hashlib
 import json
@@ -33,7 +41,7 @@ SOURCES = ['profile_local_concurrency_control.py', 'local_concurrency_tensorrt.p
 
 
 def hashes():
-    return {name: hashlib.file_digest((REPO/'scripts'/name).open('rb'), 'sha256').hexdigest() for name in SOURCES}
+    return {name: hashlib.file_digest(script_path(name).open('rb'), 'sha256').hexdigest() for name in SOURCES}
 
 
 def command(c, k, rep=0):
@@ -42,7 +50,7 @@ def command(c, k, rep=0):
     run_id = f'run{rep:02d}' if formal else 'smoke01'
     if formal:
         output /= run_id
-    argv = ['/usr/bin/python3', '-B', 'scripts/profile_local_concurrency_control.py',
+    argv = ['/usr/bin/python3', '-B', 'scripts/concurrency/profile_local_concurrency_control.py',
             '--formal' if formal else '--smoke', '--concurrency', str(c), '--k', str(k),
             '--frames-per-stream', '1800' if formal else '100', '--run-id', run_id,
             '--output-dir', str(output.relative_to(REPO))]
@@ -77,7 +85,7 @@ def preflight():
         if len(fields) != 5 or int(fields[0]) in ancestors:
             continue
         comm, args = fields[2], fields[4]
-        if comm in ('trtexec','gst-launch-1.0','ffmpeg') or ('python' in comm and 'scripts/profile_' in args):
+        if comm in ('trtexec','gst-launch-1.0','ffmpeg') or ('python' in comm and any(prefix in args for prefix in ('scripts/profile_', 'scripts/local/profile_', 'scripts/concurrency/profile_', 'scripts/initial_profiling/profile_', 'scripts/edge/profile_'))):
             blockers.append(line)
     data['competing_experiments'] = blockers
     if blockers:

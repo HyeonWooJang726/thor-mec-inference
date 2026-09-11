@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 """Run two bounded smokes, or print the future 15-run formal plan (never execute it)."""
+
+# Resolve shared experiment modules for direct script and repository-root imports.
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "common"))
+from script_paths import configure as _configure, script_path
+_configure()
+
 import argparse
 import csv
 import json
@@ -17,7 +25,7 @@ ROOT = REPO/'results/local_inference_concurrency'
 
 
 def command(k, frames, run_id, output, formal=False):
-    return ['/usr/bin/python3', '-B', 'scripts/profile_local_concurrency_control.py',
+    return ['/usr/bin/python3', '-B', 'scripts/concurrency/profile_local_concurrency_control.py',
             '--formal' if formal else '--smoke', '--k', str(k), '--frames-per-stream', str(frames),
             '--run-id', run_id, '--output-dir', str(output.relative_to(REPO))]
 

@@ -1,188 +1,88 @@
 #!/usr/bin/env python3
-"""Instrument the canonical local workload; formal runs use the dedicated runner."""
+"""Identical-path C=1/C=2 control. --smoke is bounded to K2/K6 x 100; formal requires explicit mode."""
+
+# Resolve shared experiment modules for direct script and repository-root imports.
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "common"))
+from script_paths import configure as _configure, script_path
+_configure()
 
 import argparse
 import csv
-import json
 import math
 import queue
-import hashlib
-import subprocess
-from datetime import datetime, timezone
-from fractions import Fraction
 import sys
 import threading
 import time
+import json
+import hashlib
 from pathlib import Path
 
-import cv2
-import gi
-import numpy as np
-
-gi.require_version("Gst", "1.0")
-gi.require_version("GstVideo", "1.0")
-from gi.repository import GLib, Gst, GstVideo  # noqa: E402
-
-from profile_local_e2e import PIPELINE_TEXT, TensorRTRunner, build_pipeline  # noqa: E402
-from rtdetr_preprocess import preprocess_bgr  # noqa: E402
-
-
-from local_latency_breakdown_metrics import (
+from profile_local_latency_breakdown import (
+    REPO, audit_inputs, write_json, experiment_metadata as c1_metadata,
+    Gst, GstVideo, GLib, cv2, np, build_pipeline, preprocess_bgr,
     QueueAccounting, PER_FRAME_FIELDS, PER_RUN_FIELDS, MOTIVATION_FIELDS, QUEUE_FIELDS,
     frame_rows_ns, validate_timing, queue_metrics, run_summary, aggregate_runs, write_csv,
 )
+from run_local_concurrency_trtexec_probe import environment as environment_metadata
+from local_concurrency_tensorrt import ConcurrentTensorRT
+from local_concurrency_validation import validate_concurrency
 
-REPO = Path(__file__).resolve().parents[1]
-BASELINE = REPO / "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync"
-SMOKE_ROOT = REPO / "results/local_latency_breakdown/_smoke"
+ROOT = REPO / 'results/local_inference_concurrency'
+CONCURRENCY_FIELDS = ['worker_id', 'context_id', 'a_ns', 'b_ns', 'r_ns', 's_ns', 'c_ns', 'service_start_ns', 'service_completion_ns',
+                      'submission_return_ns', 'stream_sync_return_ns']
+CONTROL_FRAME_FIELDS = PER_FRAME_FIELDS + CONCURRENCY_FIELDS + ['start_lag_ms', 'queue_wait_ms', 'local_latency_ms']
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description=__doc__)
-    mode = parser.add_mutually_exclusive_group(required=True)
-    mode.add_argument("--smoke", action="store_true")
-    mode.add_argument("--formal", action="store_true")
-    parser.add_argument("--k", type=int, required=True, choices=range(1, 8))
-    parser.add_argument("--frames-per-stream", type=int)
-    parser.add_argument("--run-id")
-    parser.add_argument("--output-dir", required=True)
-    args = parser.parse_args()
-    args.fps = 30
-    output = Path(args.output_dir).resolve()
+    p = argparse.ArgumentParser(description=__doc__)
+    mode = p.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--smoke', action='store_true')
+    mode.add_argument('--formal', action='store_true')
+    p.add_argument('--concurrency', type=int, required=True, choices=(1, 2))
+    p.add_argument('--k', type=int, required=True)
+    p.add_argument('--frames-per-stream', type=int, required=True)
+    p.add_argument('--run-id', default='smoke01')
+    p.add_argument('--output-dir', required=True)
+    args = p.parse_args()
+    raw = Path(args.output_dir).absolute()
+    if any(q.is_symlink() for q in (raw, *raw.parents)):
+        p.error('symlink output forbidden')
+    out = raw.resolve()
     if args.smoke:
-        if args.k not in (1, 2, 6) or args.frames_per_stream not in (None, 100):
-            parser.error("smoke requires K=1/2/6 and 100 frames per stream")
-        if args.run_id not in (None, "smoke01"):
-            parser.error("smoke run ID must be smoke01")
-        args.frames_per_stream, args.run_id = 100, "smoke01"
-        if not output.is_relative_to(SMOKE_ROOT.resolve()) or output == SMOKE_ROOT.resolve():
-            parser.error("smoke output must be a new directory strictly below _smoke/")
+        if args.k not in (2, 6) or args.frames_per_stream != 100 or args.run_id != 'smoke01':
+            p.error('smoke fixes K=2/6, 100 frames/stream, smoke01')
+        expected = ROOT / 'formal_control_preparation' / 'smoke' / f'c{args.concurrency}' / f'k{args.k}'
     else:
-        if args.frames_per_stream != 1800 or args.run_id not in {f"run{i:02d}" for i in range(1, 6)}:
-            parser.error("formal requires 1800 frames and run01..run05")
-        expected = SMOKE_ROOT.parent / f"k{args.k}" / args.run_id
-        if output != expected or any(p.is_symlink() for p in (expected, *expected.parents)):
-            parser.error("formal output must be the exact nonsymlink kK/runNN path")
-    args.output_dir = str(output)
+        if args.k not in (5, 6, 7) or args.frames_per_stream != 1800 or args.run_id not in {f'run{i:02d}' for i in range(1, 6)}:
+            p.error('formal fixes K=5/6/7, 1800 frames/stream, run01..run05')
+        expected = ROOT / 'formal_control' / f'c{args.concurrency}' / f'k{args.k}' / args.run_id
+    if out != expected:
+        p.error(f'exact fresh output path required: {expected}')
+    args.fps, args.output_dir = 30, str(out)
     return args
 
 
-def audit_inputs():
-    reference = json.loads((BASELINE / "k7/run1/summary.json").read_text())["configuration"]
-    videos, evidence = reference["videos"], []
-    if len(videos) != 7 or len(set(videos)) != 7:
-        raise ValueError("formal mapping must contain seven distinct inputs")
-    for k in range(1, 8):
-        for run in range(1, 6):
-            path = BASELINE / f"k{k}/run{run}/summary.json"
-            summary = json.loads(path.read_text())
-            config = summary["configuration"]
-            expected = dict(reference, videos=videos[:k], K=k)
-            if config != expected or summary["validation"] != "pass":
-                raise ValueError(f"formal configuration inconsistency: {path}")
-            console = BASELINE / f"k{k}/run{run}_console.log"
-            text = console.read_text()
-            if not all(f"stream {i} video path: {v}" in text for i, v in enumerate(videos[:k])):
-                raise ValueError(f"formal console mapping inconsistency: {console}")
-            evidence.extend(str(p.relative_to(REPO)) for p in (path, console))
-    if (reference["fps"], reference["frames_per_stream"], reference["B"], reference["C"]) != (30, 1800, 1, 1):
-        raise ValueError("unexpected formal workload")
-    video_metadata = []
-    for i, video in enumerate(videos):
-        probe = json.loads(subprocess.check_output([
-            "ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
-            "stream=codec_name,width,height,r_frame_rate,avg_frame_rate,nb_frames,duration:format=duration",
-            "-of", "json", video], text=True))
-        stream = probe["streams"][0]
-        if (stream["codec_name"], stream["width"], stream["height"],
-                stream["avg_frame_rate"], stream["nb_frames"]) != ("h264", 1920, 1080, "30/1", "1800"):
-            raise ValueError(f"unexpected formal input: {video}")
-        video_metadata.append({"stream_id": i, "path": video, "exists": Path(video).is_file(),
-                               "ffprobe": probe})
-    return reference, evidence, video_metadata
-
-
-def environment_metadata():
-    power = subprocess.check_output(["nvpmodel", "-q"], text=True).strip()
-    if "NV Power Mode: MAXN" not in power:
-        raise ValueError(f"MAXN required, observed: {power}")
-    paths = list(Path("/sys/devices/system/cpu/cpufreq").glob("policy*/scaling_governor"))
-    paths += list(Path("/sys/devices/system/cpu/cpufreq").glob("policy*/scaling_*_freq"))
-    for name in ("governor", "min_freq", "max_freq"):
-        paths += list(Path("/sys/class/devfreq").glob("*/" + name))
-    clocks = {str(p): p.read_text().strip() for p in paths if p.is_file()}
-    return {"Thor_hardware": Path("/proc/device-tree/model").read_text().strip("\0"),
-            "power_mode": power,
-            "jetson_clocks_state": "not enabled by this task; read-only sysfs DVFS evidence attached; --show requires root and was not escalated",
-            "clock_sysfs": clocks}
-
-
 def experiment_metadata(args, reference, evidence, video_metadata, environment, *, formal=False):
-    """Metadata builder supports a later formal caller, without writing artifacts."""
-    return {
-        "artifact_class": "FORMAL" if formal else "SMOKE / NON-FORMAL",
-        "purpose": "latency breakdown" if formal else "instrumentation correctness only; no performance interpretation",
-        "git_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, text=True).strip(),
-        "experiment_date": datetime.now(timezone.utc).isoformat(),
-        **environment,
-        "model": "RT-DETR Warehouse v1.0.2", "engine_path": args.engine,
-        "engine_sha256": hashlib.sha256(Path(args.engine).read_bytes()).hexdigest(),
-        "batch_size": 1, "concurrency": 1, "fps": 30,
-        "frames_per_stream": args.frames_per_stream,
-        "formal_frames_per_stream": reference["frames_per_stream"],
-        "formal_duration_seconds": 60,
-        "candidate_deadline_ms": 1000.0 / 30.0,
-        "candidate_deadline_exact_definition": "1/30 second",
-        "integer_ns_miss_comparison_rule": "e2e_ns * 30 > 1_000_000_000",
-        "candidate_deadline_purpose": "comparison with prior Local formal; not final application SLA",
-        "K_list": list(range(1, 8)) if formal else [args.k],
-        "planned_formal_K_list": list(range(1, 8)),
-        "run_count_per_K": 5 if formal else 1,
-        "actual_formal_stream_to_video_mapping": reference["videos"],
-        "active_stream_to_video_mapping": reference["videos"][:args.k],
-        "mapping_source_evidence": evidence, "videos": video_metadata,
-        "GStreamer_pipeline": PIPELINE_TEXT,
-        "appsink": {"sync": False, "emit_signals": False, "max_buffers": 1, "drop": False},
-        "preprocessing_identity": "rtdetr_preprocess.preprocess_bgr: INTER_LINEAR 640x360; top-left zero pad 640x640; BGR->RGB; FP32 /255; contiguous NCHW 1x3x640x640; cv2 threads=1",
-        "warm_up_behavior": "none in canonical profile_local_realtime.py; no warm-up added, no samples excluded",
-        "source_preparation": "TensorRTRunner constructed first; pipelines built in stream order, then all set PLAYING; no seek, pre-pull, or wait for preroll",
-        "worker_startup_order": "pipeline PLAYING in stream order -> all front-end workers -> one inference worker -> t0=perf_counter_ns()+100000000 -> arrival scheduler -> GLib loop",
-        "arrival_definition": "phase-aligned logical scheduled job arrivals at 30 FPS per stream; not camera capture or decoder timestamps",
-        "arrival_integer_representation": "a_ns=t0_ns+(frame_id*1000000000)//30; floor each absolute rational offset (<1ns quantization), no accumulated rounded period; wait API alone converts remaining ns to seconds",
-        "queue_capacity_semantics": "unbounded queue.Queue(maxsize=0) for each arrival queue and one FIFO ready queue; no drops, no batching; appsink max-buffers=1/drop=false unchanged",
-        "EOS_behavior": "bounded jobs; EOS noted; missing pull-sample fails; all completions required; pipeline NULL and thread join after drain; full-source EOS not required for bounded smoke",
-        "clock_source": vars(time.get_clock_info("perf_counter")),
-        "integer_ns_timing_method": "same underlying performance-counter clock semantics, integer-nanosecond API used for measurement",
-        "timing_API": "time.perf_counter_ns() (canonical time.perf_counter())",
-        "a_j": "30 FPS logical scheduled job-arrival time",
-        "b_j": "front-end worker after arrival get, immediately before pull-sample",
-        "r_j": "state_lock-protected ready-queue enqueue completion boundary: sample perf_counter_ns immediately after unbounded put returns, before enqueue counter/event publication",
-        "s_j": "after ready dequeue, under state_lock at end of start accounting, immediately before lock release and TensorRTRunner.infer call",
-        "c_j": "first perf_counter_ns after infer returns, before output-name validation; host outputs available",
-        "front_end_ms_boundary": "pull-sample wait/access; caps validation; buffer map; ndarray view; preprocess_bgr; unmap; ready job preparation; accounting lock acquisition; unbounded queue insertion through r; async decode service is not isolated",
-        "inference_ms_boundary": "TensorRT inference-worker service time: input validation, synchronous input H2D, execute_async_v3(stream=0), cudaDeviceSynchronize, synchronous output D2H, Python return; includes tiny s lock-release/call overhead; not pure GPU kernel latency",
-        "queue_depth_definition": "N_enqueue-N_inference_start immediately before this enqueue; excludes self and service, includes dequeued job until s",
-        "queue_event_accounting_method": "same state_lock for put/r/N_enqueue/event and N_inference_start/s/event; get outside lock; infer outside lock; Q_inf(t)=#{j:r_j<=t<s_j}; no Queue.qsize",
-        "queue_event_sequence_rule": "zero-based strictly increasing sequence assigned in state_lock; replay sequence without timestamp sorting, including equal timestamps",
-        "queue_time_weighted_integration_interval": "first ready enqueue r through last ready enqueue r; integer frame-ns area / integer ns interval; T=0 rejected",
-        "queue_peak_definition": "maximum event-state waiting depth over entire run through drain",
-        "queue_at_last_enqueue_definition": "waiting depth immediately after final ready enqueue event in lock sequence",
-        "K_level_summary_aggregation": "each metric is arithmetic mean of exactly five run-level statistics (including run percentiles and miss percentages); no pooled frames; queue metrics also mean of five independent run metrics",
-        "smoke_summary_aggregation": "one actual run per K; run_count=1; never represented as five repeats",
-        "statistics_arithmetic": "integer ns differences/validation/integration; exact rational means and linear percentile interpolation in ns; ms conversion only at CSV serialization",
-        "source_sha256": {n: hashlib.sha256((REPO / "scripts" / n).read_bytes()).hexdigest()
-                          for n in ("profile_local_realtime.py", "profile_local_e2e.py", "rtdetr_preprocess.py", "profile_local_latency_breakdown.py", "local_latency_breakdown_metrics.py")},
-    }
-
-
-def write_json(path, data):
-    def encode(value):
-        if isinstance(value, Fraction):
-            return {"numerator": value.numerator, "denominator": value.denominator}
-        raise TypeError(type(value).__name__)
-    with path.open("x") as handle:
-        json.dump(data, handle, indent=2, default=encode, allow_nan=False)
-        handle.write("\n")
+    data = c1_metadata(args, reference, evidence, video_metadata, environment, formal=formal)
+    data.update({
+        'concurrency': args.concurrency, 'planned_formal_K_list': [5, 6, 7],
+        'K_list': [5, 6, 7] if formal else [args.k],
+        'worker_startup_order': 'pipelines PLAYING -> front-end workers -> C context-owning inference workers -> t0+100ms -> arrival scheduler -> GLib loop',
+        'source_preparation': 'one shared engine and C independent contexts/streams/buffer sets created first; same pipeline preparation',
+        'warm_up_behavior': 'none, identical to frozen C=1 formal; all 100/1800 frames retained; trtexec warmup is separate',
+        'inference_ms_boundary': 's at end of start accounting -> input validation and private pinned staging copy -> async H2D -> execute_async_v3(nondefault per-worker stream) -> async D2H -> cudaStreamSynchronize(own stream) -> host output return -> c; not pure GPU kernel latency',
+        'queue_depth_definition': 'N_enqueue-N_inference_start; excludes all 0..C service frames; dequeued job remains waiting until s',
+        'gpu_kernel_overlap_directly_measured': False,
+        'extra_service_instrumentation': 'host execute return and stream-sync return timestamps; no GPU timing events',
+        'control_differences': 'primary comparison: only worker/context/stream/buffer-set count changes with C; identical per-request infer/timing/queue code',
+        'EOS_behavior': 'formal requires all source EOS messages and all completions; bounded smoke does not require full-source EOS',
+        'C1_measurement_sources_modified': False,
+    })
+    data['source_sha256'].update({n: hashlib.sha256(script_path(n).read_bytes()).hexdigest() for n in
+        ('profile_local_concurrency_control.py', 'local_concurrency_tensorrt.py', 'local_concurrency_validation.py')})
+    return data
 
 
 def main():
@@ -213,7 +113,7 @@ def main():
         print(f"ERROR: failed to create output directory: {error}", file=sys.stderr)
         return 1
 
-    # CLI/output adaptation only: the measurement block below is unchanged.
+    # Isolated control fork; C=1 files remain read-only. C=2 changes documented below.
     def artifact(name):
         return output_dir / (name if args.smoke else name.removeprefix("smoke_"))
 
@@ -225,7 +125,9 @@ def main():
     sinks = []
     inference = None
     try:
-        inference = TensorRTRunner(args.engine)
+        inference = ConcurrentTensorRT(args.engine, args.concurrency)
+        write_json(output_dir / "resources.json", inference.resources)
+        resource_metadata = inference.resources
         for video in videos:
             pipeline, _converter, sink = build_pipeline(video)
             pipelines.append(pipeline)
@@ -265,6 +167,18 @@ def main():
             errors.append(message)
         stop_event.set()
         GLib.idle_add(loop.quit)
+
+    def maybe_finish():
+        with state_lock:
+            complete = sum(completions) == total_expected
+            sources_done = args.smoke or all(eos)
+        if complete and sources_done:
+            loop.quit()
+        return False
+
+    def watchdog():
+        fail('run watchdog expired before complete drain/EOS')
+        return False
 
     def arrival_scheduler():
         try:
@@ -343,17 +257,25 @@ def main():
         except Exception as error:
             fail(f"stream {stream_id} front end: {error}")
 
-    def inference_worker():
+    def inference_worker(worker_id):
         try:
+            context_worker = inference.workers[worker_id]
+            context_worker.bind_thread()
             while sum(completions) < total_expected and not stop_event.is_set():
                 try:
                     job = ready_queue.get(timeout=0.1)
                 except queue.Empty:
                     continue
+                job["worker_id"] = worker_id
+                job["context_id"] = worker_id
                 with state_lock:
                     accounting.start(job, time.perf_counter_ns)
-                outputs = inference.infer(job["tensor"])
+                outputs = context_worker.infer(job["tensor"])
                 job["c_ns"] = time.perf_counter_ns()
+                job["service_start_ns"] = job["s_ns"]
+                job["service_completion_ns"] = job["c_ns"]
+                job["submission_return_ns"] = context_worker.submission_return_ns
+                job["stream_sync_return_ns"] = context_worker.stream_sync_return_ns
                 if set(outputs) != {"pred_logits", "pred_boxes"}:
                     raise RuntimeError(f"unexpected TensorRT outputs: {list(outputs)}")
                 del job["tensor"]
@@ -363,7 +285,7 @@ def main():
                     records.append(job)
                     complete = sum(completions) == total_expected
                 if complete:
-                    GLib.idle_add(loop.quit)
+                    GLib.idle_add(maybe_finish)
         except Exception as error:
             fail(f"inference worker: {error}")
 
@@ -374,6 +296,7 @@ def main():
         elif message.type == Gst.MessageType.EOS:
             with state_lock:
                 eos[stream_id] = True
+            maybe_finish()
 
     for stream_id, pipeline in enumerate(pipelines):
         bus = pipeline.get_bus()
@@ -384,7 +307,7 @@ def main():
         threading.Thread(target=front_end_worker, args=(stream_id,), name=f"realtime-front-{stream_id}")
         for stream_id in range(streams)
     ]
-    inference_thread = threading.Thread(target=inference_worker, name="realtime-inference")
+    inference_threads = [threading.Thread(target=inference_worker, args=(i,), name=f"concurrent-inference-{i}") for i in range(args.concurrency)]
     scheduler_thread = threading.Thread(target=arrival_scheduler, name="realtime-arrivals")
 
     started_threads = []
@@ -397,11 +320,13 @@ def main():
             for thread in front_threads:
                 thread.start()
                 started_threads.append(thread)
-            inference_thread.start()
-            started_threads.append(inference_thread)
+            for thread in inference_threads:
+                thread.start()
+                started_threads.append(thread)
             t0_holder.append(time.perf_counter_ns() + 100_000_000)
             scheduler_thread.start()
             started_threads.append(scheduler_thread)
+            GLib.timeout_add_seconds(300 if args.formal else 60, watchdog)
             loop.run()
     except Exception as error:
         errors.append(f"runtime: {error}")
@@ -447,9 +372,16 @@ def main():
             )
         if actual_ids != expected_ids:
             final_errors.append(f"stream {stream_id}: frame ID sequence mismatch")
+    if args.formal and not all(eos):
+        final_errors.append(f"source EOS incomplete: {eos}")
     timing = validate_timing(records)
     if any(timing.values()):
         final_errors.append(f"raw-ns timing validation: {timing}")
+    concurrency_metrics = {}
+    try:
+        concurrency_metrics = validate_concurrency(records, resource_metadata, args.concurrency)
+    except Exception as error:
+        final_errors.append(f"concurrency validation: {error}")
     qmetrics = {}
     try:
         qmetrics = queue_metrics(accounting.events, records, accounting.n_enqueue, accounting.n_start)
@@ -462,17 +394,22 @@ def main():
     positive_wait = sum(r["inference_queue_wait_ns"] > 0 for r in rows)
     if streams == 6 and (not positive_depth or not positive_wait):
         final_errors.append("K6 did not exercise positive queue depth/wait")
-    # Preserve raw ns evidence separately; never extend the exact per-frame CSV.
+    # Preserve both canonical metric columns and explicit concurrency evidence.
     write_json(artifact("smoke_raw_ns.json"), {"t0_ns": t0_holder[0] if t0_holder else None,
                "records": records, "queue_events": accounting.events})
-    write_csv(output_dir / "per_frame.csv", PER_FRAME_FIELDS, rows)
+    by_id = {(r['stream_id'], r['frame_id']): r for r in records}
+    for row in rows:
+        raw = by_id[(row['stream_id'], row['frame_id'])]
+        row.update({key: raw[key] for key in CONCURRENCY_FIELDS})
+        row.update(start_lag_ns=row['frame_start_lag_ns'], queue_wait_ns=row['inference_queue_wait_ns'], local_latency_ns=row['e2e_ns'])
+    write_csv(output_dir / "per_frame.csv", CONTROL_FRAME_FIELDS, rows)
     with (output_dir / "per_frame.csv").open(newline="") as handle:
         saved = csv.DictReader(handle)
         saved_rows = list(saved)
-        if saved.fieldnames != PER_FRAME_FIELDS or len(saved_rows) != total_expected:
+        if saved.fieldnames != CONTROL_FRAME_FIELDS or len(saved_rows) != total_expected:
             final_errors.append("serialized CSV schema/row mismatch")
         if any(not math.isfinite(float(row[field])) or float(row[field]) < 0
-               for row in saved_rows for field in PER_FRAME_FIELDS):
+               for row in saved_rows for field in CONTROL_FRAME_FIELDS):
             final_errors.append("serialized CSV has non-finite/negative values")
     if not final_errors:
         run = run_summary(rows, streams, args.run_id)
@@ -480,21 +417,30 @@ def main():
         write_csv(artifact("smoke_per_run_summary.csv"), PER_RUN_FIELDS, [run])
         write_csv(artifact("smoke_motivation_summary.csv"), MOTIVATION_FIELDS, motivation)
         write_csv(artifact("smoke_inference_queue_summary.csv"), QUEUE_FIELDS, queues)
+    if not final_errors:
+        write_json(output_dir / "run_summary.json", {"metrics_ns": run, "queue": qmetrics, **concurrency_metrics})
     validation = {
-        "artifact_class": "SMOKE / NON-FORMAL" if args.smoke else "FORMAL / SINGLE RUN", "K": streams, "expected": total_expected,
+        "artifact_class": "SMOKE / NON-FORMAL" if args.smoke else "FORMAL / SINGLE RUN", "K": streams, "C": args.concurrency, "expected": total_expected,
+        "source_EOS": eos, "EOS_validation": "PASS" if all(eos) else ("NOT_REQUIRED_BOUNDED_SMOKE" if args.smoke else "FAIL"),
         "counts": {"arrivals": sum(arrivals), "source_samples": sum(source_samples_pulled),
                    "preprocessed": sum(preprocessed), "completions": sum(completions), "per_frame_rows": len(rows)},
         "per_stream_counts": [{"stream_id": i, "arrivals": arrivals[i],
             "source_samples": source_samples_pulled[i], "preprocessed": preprocessed[i],
             "completions": completions[i]} for i in range(streams)],
         "frame_ID_range": f"0..{frames_per_stream - 1} exactly once per stream",
-        **timing, "queue": qmetrics, "queue_depth_positive_frames": positive_depth,
+        **timing, "concurrency": concurrency_metrics, "resources": resource_metadata,
+        "negative_waiting_depth_events": sum(e["depth"] < 0 for e in accounting.events),
+        "queue": qmetrics, "queue_depth_positive_frames": positive_depth,
         "queue_wait_positive_frames": positive_wait,
         "queue_accounting": "PASS" if qmetrics else "FAIL",
         "errors": final_errors, "validation": "PASS" if not final_errors else "FAIL",
         "performance_interpretation": "NONE" if args.smoke else "formal latency breakdown",
     }
     write_json(artifact("smoke_validation.json"), validation)
+    if not final_errors:
+        from local_concurrency_control_metrics import summarize_records
+        write_json(output_dir / "summary.json", summarize_records(
+            records, qmetrics, concurrency_metrics, args.concurrency, streams, args.run_id))
     print(json.dumps(validation, default=str))
     return 1 if final_errors else 0
 

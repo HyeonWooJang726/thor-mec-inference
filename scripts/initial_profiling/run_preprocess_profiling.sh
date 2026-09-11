@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -u -o pipefail
 
-ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)
 PYTHON=/usr/bin/python3
 FRAME=${FRAME:-"$ROOT/results/correctness/Camera_0000_t60.png"}
 ITERATIONS=${ITERATIONS:-9000}
@@ -28,7 +28,7 @@ for streams in 1 8; do
       echo "Streams: $streams"
       echo "Run: $run"
       echo "Iterations per stream: $ITERATIONS"
-      "$PYTHON" "$ROOT/scripts/profile_preprocess.py" --frame "$FRAME" --streams "$streams" --iterations "$ITERATIONS"
+      "$PYTHON" "$ROOT/scripts/initial_profiling/profile_preprocess.py" --frame "$FRAME" --streams "$streams" --iterations "$ITERATIONS"
     } 2>&1 | tee "$log"
     status=${PIPESTATUS[0]}
     if (( status != 0 )); then exit "$status"; fi

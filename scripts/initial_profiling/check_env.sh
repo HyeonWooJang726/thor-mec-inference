@@ -4,7 +4,7 @@
 set -uo pipefail
 
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-readonly REPO_ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd -P)"
+readonly REPO_ROOT="$(cd -- "${SCRIPT_DIR}/../.." && pwd -P)"
 readonly OUTPUT_DIR="${REPO_ROOT}/results/environment"
 readonly FILE_TIMESTAMP="$(date '+%Y%m%d_%H%M%S_%N')"
 readonly OUTPUT_FILE="${OUTPUT_DIR}/environment_${FILE_TIMESTAMP}.txt"

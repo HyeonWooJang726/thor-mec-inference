@@ -1,0 +1,309 @@
+{
+  "validation": "PASS",
+  "checkpoint_sha": "5a9ff673309bff280bbc94df5d19bb06d688adca",
+  "phase1_checkpoint_push": "PASS",
+  "origin_main_before": "a080e4ffbff3de1f43223488dcef31c98bcab5d8",
+  "tracked_scripts_before": 28,
+  "moved_script_count": 27,
+  "mapping": {
+    "check_env.sh": "scripts/initial_profiling/check_env.sh",
+    "profile_decode.py": "scripts/initial_profiling/profile_decode.py",
+    "profile_preprocess.py": "scripts/initial_profiling/profile_preprocess.py",
+    "profile_decode_preprocess.py": "scripts/initial_profiling/profile_decode_preprocess.py",
+    "run_decode_preprocess_profiling.sh": "scripts/initial_profiling/run_decode_preprocess_profiling.sh",
+    "run_preprocess_profiling.sh": "scripts/initial_profiling/run_preprocess_profiling.sh",
+    "summarize_decode.py": "scripts/initial_profiling/summarize_decode.py",
+    "summarize_profiling.py": "scripts/initial_profiling/summarize_profiling.py",
+    "profile_local_e2e.py": "scripts/local/profile_local_e2e.py",
+    "profile_local_realtime.py": "scripts/local/profile_local_realtime.py",
+    "profile_local_latency_breakdown.py": "scripts/local/profile_local_latency_breakdown.py",
+    "local_latency_breakdown_metrics.py": "scripts/local/local_latency_breakdown_metrics.py",
+    "run_local_latency_breakdown_formal.py": "scripts/local/run_local_latency_breakdown_formal.py",
+    "test_local_latency_breakdown.py": "scripts/local/test_local_latency_breakdown.py",
+    "test_local_latency_breakdown_formal.py": "scripts/local/test_local_latency_breakdown_formal.py",
+    "analyze_local_concurrency_formal_control.py": "scripts/concurrency/analyze_local_concurrency_formal_control.py",
+    "local_concurrency_control_metrics.py": "scripts/concurrency/local_concurrency_control_metrics.py",
+    "local_concurrency_tensorrt.py": "scripts/concurrency/local_concurrency_tensorrt.py",
+    "local_concurrency_validation.py": "scripts/concurrency/local_concurrency_validation.py",
+    "profile_local_concurrency_control.py": "scripts/concurrency/profile_local_concurrency_control.py",
+    "run_local_concurrency_control.py": "scripts/concurrency/run_local_concurrency_control.py",
+    "run_local_concurrency_formal_control.py": "scripts/concurrency/run_local_concurrency_formal_control.py",
+    "run_local_concurrency_trtexec_probe.py": "scripts/concurrency/run_local_concurrency_trtexec_probe.py",
+    "test_local_concurrency_formal_control.py": "scripts/concurrency/test_local_concurrency_formal_control.py",
+    "test_local_concurrency_validation.py": "scripts/concurrency/test_local_concurrency_validation.py",
+    "rtdetr_preprocess.py": "scripts/common/rtdetr_preprocess.py",
+    "smoke_tensor_e2e_client.py": "scripts/edge/smoke_tensor_e2e_client.py"
+  },
+  "regression": {
+    "validation": "PASS",
+    "unit_tests": 63,
+    "test_failures": 0,
+    "syntax_files": 49,
+    "import_modules": [
+      "analyze_local_concurrency_formal_control",
+      "local_concurrency_control_metrics",
+      "local_concurrency_tensorrt",
+      "local_concurrency_validation",
+      "profile_local_concurrency_control",
+      "run_local_concurrency_control",
+      "run_local_concurrency_formal_control",
+      "run_local_concurrency_trtexec_probe",
+      "profile_fullsource",
+      "screening_tensorrt",
+      "screening_validation",
+      "screening_metrics",
+      "termination_contract",
+      "run_fullsource",
+      "analyze",
+      "event_analysis",
+      "temporal"
+    ],
+    "formal_runs_replayed": 35,
+    "frames_replayed": 252000,
+    "summary_raw_consistency": "PASS",
+    "GPU_workload_executed": false,
+    "raw_data_rewritten": false
+  },
+  "entrypoints": {
+    "validation": "PASS",
+    "syntax_files": 31,
+    "shell_syntax": "PASS",
+    "import_modules": [
+      "scripts.initial_profiling.profile_decode",
+      "scripts.initial_profiling.profile_preprocess",
+      "scripts.initial_profiling.profile_decode_preprocess",
+      "scripts.initial_profiling.summarize_decode",
+      "scripts.initial_profiling.summarize_profiling",
+      "scripts.local.profile_local_e2e",
+      "scripts.local.profile_local_realtime",
+      "scripts.local.profile_local_latency_breakdown",
+      "scripts.local.local_latency_breakdown_metrics",
+      "scripts.local.run_local_latency_breakdown_formal",
+      "scripts.local.test_local_latency_breakdown",
+      "scripts.local.test_local_latency_breakdown_formal",
+      "scripts.concurrency.analyze_local_concurrency_formal_control",
+      "scripts.concurrency.local_concurrency_control_metrics",
+      "scripts.concurrency.local_concurrency_tensorrt",
+      "scripts.concurrency.local_concurrency_validation",
+      "scripts.concurrency.profile_local_concurrency_control",
+      "scripts.concurrency.run_local_concurrency_control",
+      "scripts.concurrency.run_local_concurrency_formal_control",
+      "scripts.concurrency.run_local_concurrency_trtexec_probe",
+      "scripts.concurrency.test_local_concurrency_formal_control",
+      "scripts.concurrency.test_local_concurrency_validation",
+      "scripts.common.rtdetr_preprocess",
+      "scripts.edge.smoke_tensor_e2e_client"
+    ],
+    "help_entrypoints": [
+      "scripts/initial_profiling/profile_decode.py",
+      "scripts/initial_profiling/profile_preprocess.py",
+      "scripts/initial_profiling/profile_decode_preprocess.py",
+      "scripts/local/profile_local_e2e.py",
+      "scripts/local/profile_local_realtime.py",
+      "scripts/local/profile_local_latency_breakdown.py",
+      "scripts/local/run_local_latency_breakdown_formal.py",
+      "scripts/concurrency/profile_local_concurrency_control.py",
+      "scripts/concurrency/run_local_concurrency_control.py",
+      "scripts/concurrency/run_local_concurrency_formal_control.py",
+      "scripts/concurrency/run_local_concurrency_trtexec_probe.py",
+      "scripts/edge/smoke_tensor_e2e_client.py",
+      "scripts/profile_edge_realtime.py",
+      "scripts/profile_local_e2e.py",
+      "scripts/concurrency/verify_canonical.py",
+      "scripts/concurrency/reproduce_canonical.py",
+      "canonical.py run",
+      "canonical.py profile",
+      "canonical.py plot",
+      "canonical.py temporal"
+    ],
+    "GPU_workload_executed": false
+  },
+  "reproduction": {
+    "validation": "PASS",
+    "summary_byte_identity": {
+      "per_run_summary.csv": true,
+      "motivation_summary.csv": true,
+      "run_level_variability.csv": true,
+      "inference_queue_summary.csv": true,
+      "latency_decomposition.csv": true,
+      "deadline_knee_analysis.csv": true,
+      "analysis/analysis_data.json": true,
+      "analysis/analysis_validation.json": true
+    },
+    "figure_byte_identity": {
+      "figure_1_local_qos.png": true,
+      "figure_2_latency_decomposition.png": true,
+      "figure_3_temporal_queue.png": true,
+      "figure_4_concurrency_queue_deadline.png": true
+    },
+    "runs": 35,
+    "frames": 252000,
+    "GPU_workload_executed": false,
+    "historical_artifacts_rewritten": false
+  },
+  "semantic_audit": {
+    "validation": "PASS",
+    "moved_files": 27,
+    "production_files_checked": 23,
+    "experiment_semantic_changes": 0,
+    "checks": [
+      {
+        "file": "scripts/initial_profiling/check_env.sh",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/initial_profiling/profile_decode.py",
+        "classification": "MOVE_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/initial_profiling/profile_preprocess.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/initial_profiling/profile_decode_preprocess.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/initial_profiling/run_decode_preprocess_profiling.sh",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/initial_profiling/run_preprocess_profiling.sh",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/initial_profiling/summarize_decode.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/initial_profiling/summarize_profiling.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/local/profile_local_e2e.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/local/profile_local_realtime.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/local/profile_local_latency_breakdown.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/local/local_latency_breakdown_metrics.py",
+        "classification": "MOVE_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/local/run_local_latency_breakdown_formal.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/local/test_local_latency_breakdown.py",
+        "classification": "IMPORT_PATH",
+        "status": "separate reviewed CPU tests"
+      },
+      {
+        "file": "scripts/local/test_local_latency_breakdown_formal.py",
+        "classification": "IMPORT_PATH + TEST_FIXTURE_PATH/HASH",
+        "status": "separate reviewed CPU tests"
+      },
+      {
+        "file": "scripts/concurrency/analyze_local_concurrency_formal_control.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/concurrency/local_concurrency_control_metrics.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/concurrency/local_concurrency_tensorrt.py",
+        "classification": "MOVE_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/concurrency/local_concurrency_validation.py",
+        "classification": "MOVE_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/concurrency/profile_local_concurrency_control.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/concurrency/run_local_concurrency_control.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/concurrency/run_local_concurrency_formal_control.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/concurrency/run_local_concurrency_trtexec_probe.py",
+        "classification": "PATH/IMPORT_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/concurrency/test_local_concurrency_formal_control.py",
+        "classification": "IMPORT_PATH",
+        "status": "separate reviewed CPU tests"
+      },
+      {
+        "file": "scripts/concurrency/test_local_concurrency_validation.py",
+        "classification": "IMPORT_PATH",
+        "status": "separate reviewed CPU tests"
+      },
+      {
+        "file": "scripts/common/rtdetr_preprocess.py",
+        "classification": "MOVE_ONLY",
+        "normalized_AST_or_shell_identity": true
+      },
+      {
+        "file": "scripts/edge/smoke_tensor_e2e_client.py",
+        "classification": "MOVE_ONLY",
+        "normalized_AST_or_shell_identity": true
+      }
+    ]
+  },
+  "preservation": {
+    "validation": "PASS",
+    "protected_result_files": 5566,
+    "changed_results": [],
+    "changed_unrelated": []
+  },
+  "unrelated_initial": {
+    "scripts/profile_tcp_throughput.py": {
+      "sha256": "d6960a78b3456fbcaa089718c5ff8820568a84e2acc9098f17f9a0ad6bcd9c64",
+      "size": 8021,
+      "mtime_ns": 1788876355259635747
+    },
+    "scripts/profile_edge_realtime.py": {
+      "sha256": "bb968d09d23d15f8c068f949b9b93364b3e3c9aff5e73274d9e420a81c5feefe",
+      "size": 16603,
+      "mtime_ns": 1788884113746810036
+    }
+  },
+  "inference_queue_deadline_termination_timing_changes": false,
+  "GPU_workload_executed": false,
+  "manifest_storage": "Local /tmp/thor_scripts_refactor/results_before.json; not a committed raw artifact",
+  "historical_source_pins_rewritten": false
+}

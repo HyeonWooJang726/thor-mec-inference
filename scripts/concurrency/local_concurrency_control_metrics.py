@@ -1,4 +1,12 @@
 """Raw-ns control statistics and independent disk-artifact validation; no GPU imports."""
+
+# Resolve shared experiment modules for direct script and repository-root imports.
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "common"))
+from script_paths import configure as _configure, script_path
+_configure()
+
 import csv
 import json
 from fractions import Fraction
