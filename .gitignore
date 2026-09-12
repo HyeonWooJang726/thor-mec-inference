@@ -32,17 +32,25 @@ data/
 
 # raw 결과와 로그는 로컬에 보존하되 공개 Git에는 포함하지 않는다.
 logs/*
-results/*
+results/**
+!results/**/
 !logs/.gitkeep
 !results/.gitkeep
-!results/decode_profiling/
-results/decode_profiling/*
-!results/decode_profiling/README.md
-!results/decode_profiling/formal_runs.csv
-!results/decode_profiling/summary.csv
-!results/decode_profiling/figures/
-results/decode_profiling/figures/*
-!results/decode_profiling/figures/aggregate_throughput_vs_streams.png
+# 분류 index와 tracked target을 가리키는 상대 symlink만 공개한다.
+# 기존 tracked artifact는 원래 index/경로를 유지한다. 새 raw 파일은 무시한다.
+!results/INDEX.md
+!results/active/README.md
+!results/reference/README.md
+!results/reference/local_canonical_c2
+!results/archive/README.md
+!results/archive/early_characterization/README.md
+!results/archive/early_characterization/decode_profiling
+!results/archive/early_characterization/local_realtime_baseline
+!results/archive/early_characterization/local_latency_breakdown
+!results/archive/early_characterization/local_inference_concurrency
+!results/archive/early_characterization/figures
+!results/archive/concurrency_discovery/README.md
+!results/archive/residual_exploration/README.md
 
 # Python cache와 가상 환경
 __pycache__/
@@ -69,7 +77,3 @@ ENV/
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# Formal real-time local baseline artifacts
-!results/local_realtime_baseline/
-!results/local_realtime_baseline/**
