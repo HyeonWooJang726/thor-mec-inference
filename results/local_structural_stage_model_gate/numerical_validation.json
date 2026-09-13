@@ -1,0 +1,693 @@
+{
+  "exact_count_fixtures": "PASS",
+  "real_query_crosschecks": [
+    {
+      "fold": 1,
+      "group": 0,
+      "A_start": 0,
+      "exact_pairs": 51710465,
+      "independent_sum": 51710465
+    },
+    {
+      "fold": 1,
+      "group": 75,
+      "A_start": 2,
+      "exact_pairs": 40746090,
+      "independent_sum": 40746090
+    },
+    {
+      "fold": 1,
+      "group": 150,
+      "A_start": 1,
+      "exact_pairs": 44923329,
+      "independent_sum": 44923329
+    },
+    {
+      "fold": 1,
+      "group": 225,
+      "A_start": 1,
+      "exact_pairs": 4614481,
+      "independent_sum": 4614481
+    },
+    {
+      "fold": 1,
+      "group": 300,
+      "A_start": 0,
+      "exact_pairs": 49420900,
+      "independent_sum": 49420900
+    },
+    {
+      "fold": 1,
+      "group": 375,
+      "A_start": 1,
+      "exact_pairs": 760,
+      "independent_sum": 760
+    },
+    {
+      "fold": 1,
+      "group": 375,
+      "A_start": 2,
+      "exact_pairs": 474202,
+      "independent_sum": 474202
+    },
+    {
+      "fold": 1,
+      "group": 375,
+      "A_start": 3,
+      "exact_pairs": 60949,
+      "independent_sum": 60949
+    },
+    {
+      "fold": 1,
+      "group": 375,
+      "A_start": 4,
+      "exact_pairs": 4682,
+      "independent_sum": 4682
+    },
+    {
+      "fold": 1,
+      "group": 375,
+      "A_start": 5,
+      "exact_pairs": 337,
+      "independent_sum": 337
+    },
+    {
+      "fold": 1,
+      "group": 450,
+      "A_start": 1,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 1,
+      "group": 525,
+      "A_start": 1,
+      "exact_pairs": 126279,
+      "independent_sum": 126279
+    },
+    {
+      "fold": 1,
+      "group": 525,
+      "A_start": 2,
+      "exact_pairs": 2152292,
+      "independent_sum": 2152292
+    },
+    {
+      "fold": 1,
+      "group": 525,
+      "A_start": 3,
+      "exact_pairs": 268779,
+      "independent_sum": 268779
+    },
+    {
+      "fold": 1,
+      "group": 525,
+      "A_start": 4,
+      "exact_pairs": 3205291,
+      "independent_sum": 3205291
+    },
+    {
+      "fold": 1,
+      "group": 600,
+      "A_start": 1,
+      "exact_pairs": 113947,
+      "independent_sum": 113947
+    },
+    {
+      "fold": 1,
+      "group": 600,
+      "A_start": 2,
+      "exact_pairs": 782838,
+      "independent_sum": 782838
+    },
+    {
+      "fold": 1,
+      "group": 600,
+      "A_start": 3,
+      "exact_pairs": 209532,
+      "independent_sum": 209532
+    },
+    {
+      "fold": 1,
+      "group": 600,
+      "A_start": 4,
+      "exact_pairs": 32808,
+      "independent_sum": 32808
+    },
+    {
+      "fold": 1,
+      "group": 600,
+      "A_start": 5,
+      "exact_pairs": 3627,
+      "independent_sum": 3627
+    },
+    {
+      "fold": 1,
+      "group": 600,
+      "A_start": 6,
+      "exact_pairs": 151,
+      "independent_sum": 151
+    },
+    {
+      "fold": 2,
+      "group": 0,
+      "A_start": 0,
+      "exact_pairs": 51710465,
+      "independent_sum": 51710465
+    },
+    {
+      "fold": 2,
+      "group": 75,
+      "A_start": 0,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 2,
+      "group": 75,
+      "A_start": 1,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 2,
+      "group": 75,
+      "A_start": 2,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 2,
+      "group": 75,
+      "A_start": 3,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 2,
+      "group": 75,
+      "A_start": 4,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 2,
+      "group": 150,
+      "A_start": 1,
+      "exact_pairs": 7109,
+      "independent_sum": 7109
+    },
+    {
+      "fold": 2,
+      "group": 150,
+      "A_start": 2,
+      "exact_pairs": 44569570,
+      "independent_sum": 44569570
+    },
+    {
+      "fold": 2,
+      "group": 225,
+      "A_start": 4,
+      "exact_pairs": 32328117,
+      "independent_sum": 32328117
+    },
+    {
+      "fold": 2,
+      "group": 300,
+      "A_start": 1,
+      "exact_pairs": 10927511,
+      "independent_sum": 10927511
+    },
+    {
+      "fold": 2,
+      "group": 375,
+      "A_start": 3,
+      "exact_pairs": 67,
+      "independent_sum": 67
+    },
+    {
+      "fold": 2,
+      "group": 375,
+      "A_start": 4,
+      "exact_pairs": 190594,
+      "independent_sum": 190594
+    },
+    {
+      "fold": 2,
+      "group": 450,
+      "A_start": 1,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 2,
+      "group": 525,
+      "A_start": 3,
+      "exact_pairs": 8514,
+      "independent_sum": 8514
+    },
+    {
+      "fold": 2,
+      "group": 525,
+      "A_start": 4,
+      "exact_pairs": 4337160,
+      "independent_sum": 4337160
+    },
+    {
+      "fold": 2,
+      "group": 600,
+      "A_start": 2,
+      "exact_pairs": 18481,
+      "independent_sum": 18481
+    },
+    {
+      "fold": 2,
+      "group": 600,
+      "A_start": 3,
+      "exact_pairs": 38998,
+      "independent_sum": 38998
+    },
+    {
+      "fold": 2,
+      "group": 600,
+      "A_start": 4,
+      "exact_pairs": 52534,
+      "independent_sum": 52534
+    },
+    {
+      "fold": 2,
+      "group": 600,
+      "A_start": 5,
+      "exact_pairs": 46617,
+      "independent_sum": 46617
+    },
+    {
+      "fold": 2,
+      "group": 600,
+      "A_start": 6,
+      "exact_pairs": 29611,
+      "independent_sum": 29611
+    },
+    {
+      "fold": 2,
+      "group": 600,
+      "A_start": 7,
+      "exact_pairs": 3589,
+      "independent_sum": 3589
+    },
+    {
+      "fold": 3,
+      "group": 0,
+      "A_start": 0,
+      "exact_pairs": 51696084,
+      "independent_sum": 51696084
+    },
+    {
+      "fold": 3,
+      "group": 75,
+      "A_start": 0,
+      "exact_pairs": 51315732,
+      "independent_sum": 51315732
+    },
+    {
+      "fold": 3,
+      "group": 75,
+      "A_start": 1,
+      "exact_pairs": 3251548,
+      "independent_sum": 3251548
+    },
+    {
+      "fold": 3,
+      "group": 75,
+      "A_start": 2,
+      "exact_pairs": 93093,
+      "independent_sum": 93093
+    },
+    {
+      "fold": 3,
+      "group": 150,
+      "A_start": 0,
+      "exact_pairs": 50636884,
+      "independent_sum": 50636884
+    },
+    {
+      "fold": 3,
+      "group": 150,
+      "A_start": 1,
+      "exact_pairs": 6113215,
+      "independent_sum": 6113215
+    },
+    {
+      "fold": 3,
+      "group": 150,
+      "A_start": 2,
+      "exact_pairs": 193023,
+      "independent_sum": 193023
+    },
+    {
+      "fold": 3,
+      "group": 150,
+      "A_start": 3,
+      "exact_pairs": 7083,
+      "independent_sum": 7083
+    },
+    {
+      "fold": 3,
+      "group": 225,
+      "A_start": 3,
+      "exact_pairs": 14530557,
+      "independent_sum": 14530557
+    },
+    {
+      "fold": 3,
+      "group": 300,
+      "A_start": 0,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 3,
+      "group": 375,
+      "A_start": 2,
+      "exact_pairs": 243,
+      "independent_sum": 243
+    },
+    {
+      "fold": 3,
+      "group": 375,
+      "A_start": 3,
+      "exact_pairs": 443224,
+      "independent_sum": 443224
+    },
+    {
+      "fold": 3,
+      "group": 450,
+      "A_start": 1,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 3,
+      "group": 525,
+      "A_start": 2,
+      "exact_pairs": 10397,
+      "independent_sum": 10397
+    },
+    {
+      "fold": 3,
+      "group": 525,
+      "A_start": 3,
+      "exact_pairs": 180244,
+      "independent_sum": 180244
+    },
+    {
+      "fold": 3,
+      "group": 525,
+      "A_start": 4,
+      "exact_pairs": 23098783,
+      "independent_sum": 23098783
+    },
+    {
+      "fold": 3,
+      "group": 600,
+      "A_start": 1,
+      "exact_pairs": 118567,
+      "independent_sum": 118567
+    },
+    {
+      "fold": 3,
+      "group": 600,
+      "A_start": 2,
+      "exact_pairs": 199715,
+      "independent_sum": 199715
+    },
+    {
+      "fold": 3,
+      "group": 600,
+      "A_start": 3,
+      "exact_pairs": 248467,
+      "independent_sum": 248467
+    },
+    {
+      "fold": 3,
+      "group": 600,
+      "A_start": 4,
+      "exact_pairs": 263903,
+      "independent_sum": 263903
+    },
+    {
+      "fold": 3,
+      "group": 600,
+      "A_start": 5,
+      "exact_pairs": 186445,
+      "independent_sum": 186445
+    },
+    {
+      "fold": 3,
+      "group": 600,
+      "A_start": 6,
+      "exact_pairs": 104281,
+      "independent_sum": 104281
+    },
+    {
+      "fold": 3,
+      "group": 600,
+      "A_start": 7,
+      "exact_pairs": 11356,
+      "independent_sum": 11356
+    },
+    {
+      "fold": 4,
+      "group": 0,
+      "A_start": 0,
+      "exact_pairs": 51696084,
+      "independent_sum": 51696084
+    },
+    {
+      "fold": 4,
+      "group": 75,
+      "A_start": 0,
+      "exact_pairs": 51315732,
+      "independent_sum": 51315732
+    },
+    {
+      "fold": 4,
+      "group": 75,
+      "A_start": 1,
+      "exact_pairs": 3258710,
+      "independent_sum": 3258710
+    },
+    {
+      "fold": 4,
+      "group": 75,
+      "A_start": 2,
+      "exact_pairs": 107415,
+      "independent_sum": 107415
+    },
+    {
+      "fold": 4,
+      "group": 150,
+      "A_start": 2,
+      "exact_pairs": 7149,
+      "independent_sum": 7149
+    },
+    {
+      "fold": 4,
+      "group": 150,
+      "A_start": 3,
+      "exact_pairs": 6322418,
+      "independent_sum": 6322418
+    },
+    {
+      "fold": 4,
+      "group": 225,
+      "A_start": 1,
+      "exact_pairs": 42019946,
+      "independent_sum": 42019946
+    },
+    {
+      "fold": 4,
+      "group": 300,
+      "A_start": 0,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 4,
+      "group": 375,
+      "A_start": 2,
+      "exact_pairs": 356340,
+      "independent_sum": 356340
+    },
+    {
+      "fold": 4,
+      "group": 450,
+      "A_start": 1,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 4,
+      "group": 525,
+      "A_start": 1,
+      "exact_pairs": 844230,
+      "independent_sum": 844230
+    },
+    {
+      "fold": 4,
+      "group": 525,
+      "A_start": 2,
+      "exact_pairs": 20966319,
+      "independent_sum": 20966319
+    },
+    {
+      "fold": 4,
+      "group": 600,
+      "A_start": 6,
+      "exact_pairs": 38534,
+      "independent_sum": 38534
+    },
+    {
+      "fold": 4,
+      "group": 600,
+      "A_start": 7,
+      "exact_pairs": 26861,
+      "independent_sum": 26861
+    },
+    {
+      "fold": 5,
+      "group": 0,
+      "A_start": 0,
+      "exact_pairs": 51696084,
+      "independent_sum": 51696084
+    },
+    {
+      "fold": 5,
+      "group": 75,
+      "A_start": 1,
+      "exact_pairs": 48502225,
+      "independent_sum": 48502225
+    },
+    {
+      "fold": 5,
+      "group": 150,
+      "A_start": 0,
+      "exact_pairs": 50537875,
+      "independent_sum": 50537875
+    },
+    {
+      "fold": 5,
+      "group": 225,
+      "A_start": 3,
+      "exact_pairs": 874789,
+      "independent_sum": 874789
+    },
+    {
+      "fold": 5,
+      "group": 300,
+      "A_start": 0,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 5,
+      "group": 375,
+      "A_start": 0,
+      "exact_pairs": 2485547,
+      "independent_sum": 2485547
+    },
+    {
+      "fold": 5,
+      "group": 375,
+      "A_start": 1,
+      "exact_pairs": 182492,
+      "independent_sum": 182492
+    },
+    {
+      "fold": 5,
+      "group": 375,
+      "A_start": 2,
+      "exact_pairs": 21889,
+      "independent_sum": 21889
+    },
+    {
+      "fold": 5,
+      "group": 375,
+      "A_start": 3,
+      "exact_pairs": 42777,
+      "independent_sum": 42777
+    },
+    {
+      "fold": 5,
+      "group": 375,
+      "A_start": 4,
+      "exact_pairs": 10739,
+      "independent_sum": 10739
+    },
+    {
+      "fold": 5,
+      "group": 375,
+      "A_start": 5,
+      "exact_pairs": 20790,
+      "independent_sum": 20790
+    },
+    {
+      "fold": 5,
+      "group": 450,
+      "A_start": 1,
+      "exact_pairs": 0,
+      "independent_sum": 0
+    },
+    {
+      "fold": 5,
+      "group": 525,
+      "A_start": 2,
+      "exact_pairs": 20564,
+      "independent_sum": 20564
+    },
+    {
+      "fold": 5,
+      "group": 525,
+      "A_start": 3,
+      "exact_pairs": 6640001,
+      "independent_sum": 6640001
+    },
+    {
+      "fold": 5,
+      "group": 600,
+      "A_start": 2,
+      "exact_pairs": 82022,
+      "independent_sum": 82022
+    },
+    {
+      "fold": 5,
+      "group": 600,
+      "A_start": 3,
+      "exact_pairs": 618059,
+      "independent_sum": 618059
+    },
+    {
+      "fold": 5,
+      "group": 600,
+      "A_start": 4,
+      "exact_pairs": 166023,
+      "independent_sum": 166023
+    },
+    {
+      "fold": 5,
+      "group": 600,
+      "A_start": 5,
+      "exact_pairs": 22274,
+      "independent_sum": 22274
+    },
+    {
+      "fold": 5,
+      "group": 600,
+      "A_start": 6,
+      "exact_pairs": 2393,
+      "independent_sum": 2393
+    }
+  ],
+  "probabilities": "PASS",
+  "run_holdout": "PASS"
+}

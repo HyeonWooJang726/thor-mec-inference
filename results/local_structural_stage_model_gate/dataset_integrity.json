@@ -1,0 +1,12 @@
+{
+  "validation": "PASS",
+  "valid_runs": 280,
+  "frames": 2016000,
+  "ready_on_time": 1973897,
+  "service_start_on_time": 1806626,
+  "PRE_READY_LATE": 42103,
+  "ordering_violations": 0,
+  "decomposition_violations": 0,
+  "before_state_checks": "PASS",
+  "same_ns_ambiguities": 0
+}

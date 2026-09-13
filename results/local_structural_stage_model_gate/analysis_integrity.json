@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "output_root_preexisted": false,
+  "valid_runs": 280,
+  "total_raw_frames": 2016000,
+  "evaluated_frames": 1973897,
+  "pre_ready_late_excluded": 42103,
+  "Dynamic_runs_used": 0,
+  "new_GPU_runs": 0,
+  "protected_entries_checked": 19322,
+  "protected_hash_mismatches": [],
+  "canonical_input_files_checked": 566,
+  "canonical_input_hash_mismatches": [],
+  "existing_raw_modified": false,
+  "production_code_modified": false,
+  "unrelated_changes_preserved": true,
+  "git_before": {
+    "rev-parse HEAD": "8baa6c03e366c8f1c576d8ca7fc373e47ffd7027\n",
+    "rev-parse origin/main": "8baa6c03e366c8f1c576d8ca7fc373e47ffd7027\n",
+    "status --short": " M scripts/profile_tcp_throughput.py\n?? scripts/partitioning/\n?? scripts/profile_edge_realtime.py\n"
+  },
+  "git_after": {
+    "rev-parse HEAD": "8baa6c03e366c8f1c576d8ca7fc373e47ffd7027\n",
+    "rev-parse origin/main": "8baa6c03e366c8f1c576d8ca7fc373e47ffd7027\n",
+    "status --short": " M scripts/profile_tcp_throughput.py\n?? scripts/partitioning/\n?? scripts/profile_edge_realtime.py\n"
+  },
+  "commit_push": "NO",
+  "fold_membership": "PASS; saved statistical slots; replacement not temporal Round4",
+  "feature_leakage_audit": "ready inputs only; test W/A_start/S used for labels and assumption audit, not predictions",
+  "observer_limitation": "actual completion publication/receipt unavailable; ideal event-time state only",
+  "probability_max_sum_error": 3.3306690738754696e-16,
+  "minimum_support": "200 samples AND 3 training runs",
+  "numerical_validation": "exact integer all-pair counter fixtures and independent full-distribution sum queries PASS",
+  "model_convergence": "10/10 direct fits PASS",
+  "figure_count": 3,
+  "figure_formats": [
+    "PNG",
+    "PDF"
+  ],
+  "render_review": "PNG and PDF raster render visually inspected for labels, margins and legibility",
+  "environment": {
+    "python": "/usr/bin/python3",
+    "version": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "numpy": "1.26.4",
+    "pandas": "2.1.4",
+    "scipy": "1.11.4",
+    "matplotlib": "3.6.3",
+    "platform": "Linux-6.8.12-1021-tegra-aarch64-with-glibc2.39"
+  },
+  "analysis_source_hashes": {
+    "_scripts/analyze_models.py": "2687bfdde2bb61fa22e4c39390b00304925554e5d90ff31a6300749ee882955d",
+    "_scripts/build_dataset.py": "01c7f4c77e9a6b0955943541afbf64f645e19b3a1fa833c01448dc48dfb2801b",
+    "_scripts/empirical_count.cpp": "a34788cac608b784f3f255ccbaa13083431f82dd1b3b99877e8bc479c450e091",
+    "_scripts/empirical_count.so": "177e045e8ca8030f2cd8af05683bd7080e0cfc13d8b6c078c6e54e7e1bc8cd70",
+    "_scripts/fit_models.py": "39263ff04a3850ca0a5d4f25d2379b23ee9092a742bdefca44742be9b9676cc1",
+    "_scripts/make_figures.py": "d674da47eb3878a3b8bbfa3209274e2ace03f97d4831188cd3c7555663a4ced4",
+    "_scripts/verify_preservation.py": "72d06a16a903ca0b6b8ea57a2ac58808e261a7f9d438e6598eb795986ed7b53d"
+  }
+}

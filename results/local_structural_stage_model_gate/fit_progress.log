@@ -1,0 +1,55 @@
+fold 1 train 1579166 test 394731
+B0 fitted 1
+B1 fitted 1
+structural 1 100 / 603 seconds 0.1
+structural 1 200 / 603 seconds 0.7
+structural 1 300 / 603 seconds 1.4
+structural 1 400 / 603 seconds 2.3
+structural 1 500 / 603 seconds 2.8
+structural 1 600 / 603 seconds 3.2
+structural 1 603 / 603 seconds 3.2
+fold completed 1
+fold 2 train 1579187 test 394710
+B0 fitted 2
+B1 fitted 2
+structural 2 100 / 611 seconds 0.1
+structural 2 200 / 611 seconds 0.6
+structural 2 300 / 611 seconds 1.4
+structural 2 400 / 611 seconds 2.2
+structural 2 500 / 611 seconds 2.7
+structural 2 600 / 611 seconds 3.1
+structural 2 611 / 611 seconds 3.1
+fold completed 2
+fold 3 train 1579203 test 394694
+B0 fitted 3
+B1 fitted 3
+structural 3 100 / 611 seconds 0.1
+structural 3 200 / 611 seconds 0.6
+structural 3 300 / 611 seconds 1.4
+structural 3 400 / 611 seconds 2.2
+structural 3 500 / 611 seconds 2.8
+structural 3 600 / 611 seconds 3.3
+structural 3 611 / 611 seconds 3.3
+fold completed 3
+fold 4 train 1578856 test 395041
+B0 fitted 4
+B1 fitted 4
+structural 4 100 / 618 seconds 0.1
+structural 4 200 / 618 seconds 0.6
+structural 4 300 / 618 seconds 1.4
+structural 4 400 / 618 seconds 2.2
+structural 4 500 / 618 seconds 2.6
+structural 4 600 / 618 seconds 3.1
+structural 4 618 / 618 seconds 3.1
+fold completed 4
+fold 5 train 1579176 test 394721
+B0 fitted 5
+B1 fitted 5
+structural 5 100 / 629 seconds 0.1
+structural 5 200 / 629 seconds 0.6
+structural 5 300 / 629 seconds 1.4
+structural 5 400 / 629 seconds 2.2
+structural 5 500 / 629 seconds 2.7
+structural 5 600 / 629 seconds 3.2
+structural 5 629 / 629 seconds 3.2
+fold completed 5

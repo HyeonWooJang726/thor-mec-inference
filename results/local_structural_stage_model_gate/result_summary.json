@@ -1,0 +1,43 @@
+{
+  "verdict": "STRUCTURAL_STAGE_MODEL_WEAKLY_SUPPORTED",
+  "fold_mean_metrics": {
+    "B0": {
+      "Brier": 0.1641713221656861,
+      "logloss": 0.29550066078134407
+    },
+    "B1": {
+      "Brier": 0.15172860902939372,
+      "logloss": 0.2730003247467571
+    },
+    "P": {
+      "Brier": 0.10511854943821128,
+      "logloss": 0.1704050980649347
+    }
+  },
+  "fold_SD_metrics": {
+    "B0": {
+      "Brier": 0.007022568329060449,
+      "logloss": 0.011531369992622451
+    },
+    "B1": {
+      "Brier": 0.007373802174043302,
+      "logloss": 0.012835873970396799
+    },
+    "P": {
+      "Brier": 0.005931879387101995,
+      "logloss": 0.010754686408243022
+    }
+  },
+  "P_vs_B1_improving_folds": {
+    "Brier": 5,
+    "logloss": 5
+  },
+  "P_minus_B1_mean": {
+    "Brier": -0.046610059591182404,
+    "logloss": -0.10259522668182244
+  },
+  "K5_K6_K7_stage_run_MAE_improved": 7,
+  "K5_K6_K7_stage_run_MAE_total": 9,
+  "KC_stage_run_MAE_improved": 54,
+  "KC_stage_run_MAE_total": 72
+}
