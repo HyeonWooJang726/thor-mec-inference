@@ -1,0 +1,1132 @@
+{
+  "status": "PASS",
+  "direct_tuple_checks": [
+    {
+      "fold": 1,
+      "group": 0,
+      "b30": 692811040,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 0,
+      "b30": 700459630,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 0,
+      "b30": 707938630,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 50,
+      "b30": 638995690,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 50,
+      "b30": 657408070,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 50,
+      "b30": 661652650,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 100,
+      "b30": 219708760,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 150,
+      "b30": 668130280,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 150,
+      "b30": 697264900,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 150,
+      "b30": 700457500,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 200,
+      "b30": 645833320,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 200,
+      "b30": 656267560,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 200,
+      "b30": 661883560,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 250,
+      "b30": 674527930,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 250,
+      "b30": 677181280,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 250,
+      "b30": 679288210,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 300,
+      "b30": 675981040,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 300,
+      "b30": 698902510,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 300,
+      "b30": 706910740,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 350,
+      "b30": 558390130,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 350,
+      "b30": 631074670,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 350,
+      "b30": 655742290,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 400,
+      "b30": 647399380,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 400,
+      "b30": 675806860,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 400,
+      "b30": 688368940,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 450,
+      "b30": 509221210,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 450,
+      "b30": 533632720,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 450,
+      "b30": 646399510,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 500,
+      "b30": 523764490,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 500,
+      "b30": 594045250,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 500,
+      "b30": 594325960,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 550,
+      "b30": 663598660,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 600,
+      "b30": 499511590,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 600,
+      "b30": 567111550,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 1,
+      "group": 600,
+      "b30": 575140690,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 0,
+      "b30": 701921560,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 0,
+      "b30": 702708160,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 0,
+      "b30": 709506700,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 50,
+      "b30": 697499050,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 50,
+      "b30": 708134260,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 50,
+      "b30": 708750970,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 100,
+      "b30": 631566670,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 100,
+      "b30": 678069730,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 100,
+      "b30": 696716080,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 150,
+      "b30": 273311590,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 150,
+      "b30": 644146960,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 150,
+      "b30": 654798280,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 200,
+      "b30": 499252870,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 200,
+      "b30": 541048750,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 200,
+      "b30": 542089540,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 250,
+      "b30": 347912950,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 250,
+      "b30": 594303640,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 250,
+      "b30": 647221780,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 300,
+      "b30": 590771020,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 300,
+      "b30": 644438350,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 300,
+      "b30": 648705820,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 350,
+      "b30": 582291040,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 350,
+      "b30": 589670590,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 350,
+      "b30": 594884830,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 400,
+      "b30": 588703600,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 400,
+      "b30": 600623830,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 400,
+      "b30": 605102650,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 450,
+      "b30": 130820950,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 450,
+      "b30": 356820940,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 450,
+      "b30": 614529700,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 500,
+      "b30": 462020560,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 500,
+      "b30": 546690700,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 500,
+      "b30": 597586450,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 550,
+      "b30": 602134000,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 550,
+      "b30": 616616650,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 550,
+      "b30": 648446170,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 600,
+      "b30": 615005080,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 600,
+      "b30": 638672140,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 2,
+      "group": 600,
+      "b30": 647190790,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 0,
+      "b30": 693174280,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 0,
+      "b30": 708754510,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 0,
+      "b30": 716956930,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 50,
+      "b30": 661241980,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 50,
+      "b30": 662906770,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 50,
+      "b30": 663540400,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 100,
+      "b30": 7058470,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 100,
+      "b30": 649067020,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 150,
+      "b30": 648397120,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 150,
+      "b30": 664312210,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 150,
+      "b30": 666167860,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 200,
+      "b30": 480281740,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 200,
+      "b30": 564150850,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 200,
+      "b30": 619068310,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 250,
+      "b30": 647628730,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 300,
+      "b30": 511555510,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 300,
+      "b30": 546279370,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 300,
+      "b30": 621160750,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 350,
+      "b30": 565678720,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 350,
+      "b30": 592003630,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 350,
+      "b30": 602716420,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 400,
+      "b30": 573937720,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 400,
+      "b30": 594342310,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 400,
+      "b30": 596799250,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 450,
+      "b30": 538304860,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 450,
+      "b30": 600631570,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 450,
+      "b30": 603977860,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 500,
+      "b30": 597448480,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 500,
+      "b30": 606760300,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 500,
+      "b30": 640489120,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 550,
+      "b30": 539202820,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 550,
+      "b30": 580352800,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 550,
+      "b30": 582489640,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 600,
+      "b30": 575522260,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 600,
+      "b30": 623858770,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 3,
+      "group": 600,
+      "b30": 641913070,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 0,
+      "b30": 701538040,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 0,
+      "b30": 702712390,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 0,
+      "b30": 705083020,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 50,
+      "b30": 664046980,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 50,
+      "b30": 672083500,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 50,
+      "b30": 673706650,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 100,
+      "b30": 601975870,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 100,
+      "b30": 665964850,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 100,
+      "b30": 667524070,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 150,
+      "b30": 644418070,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 150,
+      "b30": 650405050,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 150,
+      "b30": 655813420,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 200,
+      "b30": 705912880,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 200,
+      "b30": 708575320,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 200,
+      "b30": 710670850,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 250,
+      "b30": 510004420,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 250,
+      "b30": 628398460,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 250,
+      "b30": 662204950,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 300,
+      "b30": 632494750,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 300,
+      "b30": 650607580,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 300,
+      "b30": 664755340,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 350,
+      "b30": 402996160,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 350,
+      "b30": 509028250,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 350,
+      "b30": 552190630,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 400,
+      "b30": 677588170,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 400,
+      "b30": 687521290,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 400,
+      "b30": 695466670,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 450,
+      "b30": 430702780,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 450,
+      "b30": 548148940,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 450,
+      "b30": 631663210,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 500,
+      "b30": 285764170,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 500,
+      "b30": 320822710,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 500,
+      "b30": 493110910,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 550,
+      "b30": 559957960,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 550,
+      "b30": 563110120,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 550,
+      "b30": 642320920,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 600,
+      "b30": 676297870,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 600,
+      "b30": 680543710,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 4,
+      "group": 600,
+      "b30": 682216930,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 0,
+      "b30": 694614040,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 0,
+      "b30": 696724540,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 0,
+      "b30": 754090150,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 50,
+      "b30": 697217920,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 50,
+      "b30": 708051790,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 50,
+      "b30": 718250680,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 100,
+      "b30": 655621030,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 100,
+      "b30": 670651990,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 100,
+      "b30": 673747810,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 150,
+      "b30": 8783740,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 150,
+      "b30": 629879530,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 150,
+      "b30": 704001490,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 200,
+      "b30": 690302770,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 200,
+      "b30": 712643380,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 200,
+      "b30": 715907590,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 250,
+      "b30": 608020600,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 250,
+      "b30": 624312730,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 250,
+      "b30": 639313300,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 300,
+      "b30": 561488980,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 300,
+      "b30": 638650600,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 300,
+      "b30": 694603450,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 350,
+      "b30": 485826370,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 350,
+      "b30": 511748110,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 400,
+      "b30": 570463300,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 400,
+      "b30": 592523950,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 400,
+      "b30": 596102980,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 450,
+      "b30": 491678290,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 450,
+      "b30": 558913330,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 450,
+      "b30": 580833610,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 500,
+      "b30": 478351150,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 500,
+      "b30": 490491880,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 500,
+      "b30": 558364690,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 550,
+      "b30": 557538580,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 550,
+      "b30": 608659000,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 550,
+      "b30": 636715540,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 600,
+      "b30": 516996010,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 600,
+      "b30": 541085140,
+      "direct_tuple_classification_matches": true
+    },
+    {
+      "fold": 5,
+      "group": 600,
+      "b30": 549059200,
+      "direct_tuple_classification_matches": true
+    }
+  ],
+  "max_old_joint_queue_probability_difference": 1.1102230246251565e-16,
+  "support_or_backoff_differences": 0,
+  "probability_sum": "PASS",
+  "heldout_run_separation": "PASS",
+  "test_W_S_A_start_used_in_prediction": false
+}

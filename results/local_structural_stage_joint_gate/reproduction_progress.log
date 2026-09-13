@@ -1,0 +1,46 @@
+B1 fit complete 1
+structural 1 100 / 603 seconds 0.1
+structural 1 200 / 603 seconds 0.7
+structural 1 300 / 603 seconds 1.4
+structural 1 400 / 603 seconds 2.3
+structural 1 500 / 603 seconds 2.8
+structural 1 600 / 603 seconds 3.1
+structural 1 603 / 603 seconds 3.1
+reproduction PASS fold 1
+B1 fit complete 2
+structural 2 100 / 611 seconds 0.1
+structural 2 200 / 611 seconds 0.6
+structural 2 300 / 611 seconds 1.3
+structural 2 400 / 611 seconds 2.1
+structural 2 500 / 611 seconds 2.6
+structural 2 600 / 611 seconds 3.1
+structural 2 611 / 611 seconds 3.1
+reproduction PASS fold 2
+B1 fit complete 3
+structural 3 100 / 611 seconds 0.1
+structural 3 200 / 611 seconds 0.6
+structural 3 300 / 611 seconds 1.3
+structural 3 400 / 611 seconds 2.1
+structural 3 500 / 611 seconds 2.8
+structural 3 600 / 611 seconds 3.3
+structural 3 611 / 611 seconds 3.3
+reproduction PASS fold 3
+B1 fit complete 4
+structural 4 100 / 618 seconds 0.1
+structural 4 200 / 618 seconds 0.6
+structural 4 300 / 618 seconds 1.4
+structural 4 400 / 618 seconds 2.2
+structural 4 500 / 618 seconds 2.6
+structural 4 600 / 618 seconds 3.1
+structural 4 618 / 618 seconds 3.1
+reproduction PASS fold 4
+B1 fit complete 5
+structural 5 100 / 629 seconds 0.1
+structural 5 200 / 629 seconds 0.6
+structural 5 300 / 629 seconds 1.4
+structural 5 400 / 629 seconds 2.2
+structural 5 500 / 629 seconds 2.7
+structural 5 600 / 629 seconds 3.2
+structural 5 629 / 629 seconds 3.2
+reproduction PASS fold 5
+ALL REPRODUCTION PASS {"B1": {"Brier": 0.1517286090293937, "logloss": 0.27300032474675706}, "P-old": {"Brier": 0.10511854943821128, "logloss": 0.1704050980649347}}

@@ -1,0 +1,21 @@
+# Joint structural stage gate — frozen before reproduction/results
+
+New CPU-only output root; existing structural/F​​ormal/result/code inputs remain read-only. No new features, model family, tuning, GPU, controller, policy replay, C counterfactual or Git writes. Output root absent at startup. HEAD and origin/main equal d965452619af7ea103f8b5f4b421fa608a8d8f6e. Unrelated changes are preserved.
+
+## Dataset and population
+Re-extract canonical raw records with the byte-identical previous build_dataset.py copied to this new directory. Audit all 280 valid5 runs, exact membership/slot, per-frame/JSON agreement and before-state queue/event semantics. Compare EVERY dataset array and saved fold evaluation identity to previous results. Expected total2,016,000, eligible1,973,897, pre-ready excluded42,103. Any mismatch stops analysis. Both training and evaluation use ready-on-time frames, including queue-stage misses. K2/C1 historical run04 excluded; replacement statistical slot4 is not original Round4. Dynamic data unused.
+
+## Reproduction barrier
+B1 and P-old copied implementation must match the supplied commit byte-for-byte. B1 is K,C reference-coded categorical plus numeric b30,Q,A with train-only population SD standardization; multinomial reference ON_TIME; L2=0.001 on nonintercept coefficients; exact prior L-BFGS-B options. P-old retains KCQA -> KCQ -> KCA -> KC -> C transition backoff and KCA_start -> CA_start -> KC -> C service backoff, minimum200 samples AND3 training runs. Train/test slots identical. Rerun B1 fitting and P-old empirical integration, rather than reuse old predictions as the new results. Compare all held-out probabilities with old saved predictions (atol=rtol=1e-10) and fold Brier/logloss (absolute tolerance1e-10). Complete all five reproduction folds successfully BEFORE generating P-joint predictions. Failure verdict REPRODUCTION_FAILURE, no joint results.
+
+## Only model change
+For P-joint, each selected training index retains its actual W,A_start,S triplet. The ready-transition table, backoff selection and support are exactly the P-old table. Select by test K,C,Q,A only; never test W,S,A_start. Compute integer counts using sorted30*W and sorted30*(W+S) and query integer b30, no rounded/floating deadline. pQ=(M-n_W_on_time)/M, pS=(n_W_on_time-n_total_on_time)/M, pO=n_total_on_time/M. No smoothing, subsampling, histogram bins or independence approximation. Verify tuple-preserving counts against direct exact integer classification for deterministic queries, per-frame backoff equality, and queue probability equality with P-old. A_start retained as provenance, not a test lookup feature.
+
+## Reporting definitions
+Same prior multiclass Brier=sum of three squared errors. Logloss clips only scoring probabilities to1e-15; zero true-class probabilities also reported. Equal-weighted mean and sample SD across five held-out folds; run/fold not frame is the replication unit. Each fold pools its held-out eligible frames. Calibration scope rates are equal-run mean rates as previously. Store signed gap, absolute gap of means, mean absolute run-level error and run SD. For the predeclared K5/C cell-count and K6/C1 guardrail, absolute calibration error means abs(mean predicted run rate - mean observed run rate). Also report the mean-run-absolute-error counterpart to avoid ambiguity. K5 service aggregate criterion explicitly uses mean run absolute error.
+
+## Predeclared verdict without changes
+SUPPORTED iff both mean metrics decrease, each improves>=4/5 folds, K5 service mean run absolute error decreases, >=5/8 K5/C service cells have reduced absolute mean-rate gap, and K6/C1 Queue absolute mean-rate gap<=0.05 (5pp). NOT_SUPPORTED if either mean metric fails to improve, either has<=2 improving folds, or K5 service mean run absolute error fails to decrease. Otherwise WEAKLY_SUPPORTED. Thresholds/support/backoff/features fixed. No model extensions after results.
+
+## Preservation and reproduction
+Hash pre-existing results/scripts/configs before/after; preserve existing structural files and raw exactly. All source copies, hashes, predictions and metadata live only in this new root. Three PNG/PDF figure types max. No package/environment changes. Numerical fixtures are CPU algorithm checks, not workloads or acquisitions.

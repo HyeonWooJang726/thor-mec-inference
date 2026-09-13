@@ -1,0 +1,20 @@
+[
+  {
+    "original": "results/local_structural_stage_model_gate/_scripts/build_dataset.py",
+    "copy": "results/local_structural_stage_joint_gate/_scripts/build_dataset.py",
+    "sha256": "01c7f4c77e9a6b0955943541afbf64f645e19b3a1fa833c01448dc48dfb2801b",
+    "matches_commit": true
+  },
+  {
+    "original": "results/local_structural_stage_model_gate/_scripts/fit_models.py",
+    "copy": "results/local_structural_stage_joint_gate/_scripts/frozen_models.py",
+    "sha256": "39263ff04a3850ca0a5d4f25d2379b23ee9092a742bdefca44742be9b9676cc1",
+    "matches_commit": true
+  },
+  {
+    "original": "results/local_structural_stage_model_gate/_scripts/empirical_count.cpp",
+    "copy": "results/local_structural_stage_joint_gate/_scripts/empirical_count.cpp",
+    "sha256": "a34788cac608b784f3f255ccbaa13083431f82dd1b3b99877e8bc479c450e091",
+    "matches_commit": true
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "new_output_root_preexisted": false,
+  "valid_runs": 280,
+  "total_frames": 2016000,
+  "frames_evaluated": 1973897,
+  "PRE_READY_LATE_excluded": 42103,
+  "population_identical_to_previous": true,
+  "primary_models": [
+    "B1",
+    "P-old",
+    "P-joint"
+  ],
+  "B1_reproduced": true,
+  "P_old_reproduced": true,
+  "maximum_reproduction_probability_difference": {
+    "B1": 0.0,
+    "P-old": 0.0
+  },
+  "joint_generated_only_after_all_five_reproductions_passed": true,
+  "max_probability_sum_error": 3.3306690738754696e-16,
+  "max_old_joint_queue_probability_difference": 1.1102230246251565e-16,
+  "backoff_support_differences": 0,
+  "protected_entries_checked": 19374,
+  "previous_structural_entries_checked": 52,
+  "canonical_and_reference_input_files_checked": 585,
+  "protected_hash_mismatches": [],
+  "input_hash_mismatches": [],
+  "existing_raw_modified": false,
+  "production_code_modified": false,
+  "existing_structural_result_modified": false,
+  "unrelated_changes_preserved": true,
+  "new_GPU_runs": 0,
+  "Edge_server_runs": 0,
+  "Dynamic_runs_used": 0,
+  "new_features": false,
+  "new_ML_family": false,
+  "threshold_support_backoff_changed": false,
+  "commit_push": "NO",
+  "git_before": {
+    "rev-parse HEAD": "d965452619af7ea103f8b5f4b421fa608a8d8f6e\n",
+    "rev-parse origin/main": "d965452619af7ea103f8b5f4b421fa608a8d8f6e\n",
+    "status --short": " M scripts/profile_tcp_throughput.py\n?? scripts/partitioning/\n?? scripts/profile_edge_realtime.py\n"
+  },
+  "git_after": {
+    "rev-parse HEAD": "d965452619af7ea103f8b5f4b421fa608a8d8f6e\n",
+    "rev-parse origin/main": "d965452619af7ea103f8b5f4b421fa608a8d8f6e\n",
+    "status --short": " M scripts/profile_tcp_throughput.py\n?? scripts/partitioning/\n?? scripts/profile_edge_realtime.py\n"
+  },
+  "figure_count": 3,
+  "figure_formats": [
+    "PNG",
+    "PDF"
+  ],
+  "render_review": "PNG and PDF renders visually inspected",
+  "environment": {
+    "python": "/usr/bin/python3",
+    "version": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "numpy": "1.26.4",
+    "pandas": "2.1.4",
+    "scipy": "1.11.4",
+    "matplotlib": "3.6.3"
+  },
+  "analysis_source_hashes": {
+    "_scripts/analyze_joint.py": "9a31691bab54d01a34dd01839aa3e9c6f4b278db903cbce00dd9681baa7606f2",
+    "_scripts/build_dataset.py": "01c7f4c77e9a6b0955943541afbf64f645e19b3a1fa833c01448dc48dfb2801b",
+    "_scripts/empirical_count.cpp": "a34788cac608b784f3f255ccbaa13083431f82dd1b3b99877e8bc479c450e091",
+    "_scripts/empirical_count.so": "177e045e8ca8030f2cd8af05683bd7080e0cfc13d8b6c078c6e54e7e1bc8cd70",
+    "_scripts/fit_joint.py": "1f9c5e51148300607e73b5e039c9ee02103b1b8bf23c30f4ab585f6e25e3ae5b",
+    "_scripts/frozen_models.py": "39263ff04a3850ca0a5d4f25d2379b23ee9092a742bdefca44742be9b9676cc1",
+    "_scripts/make_figures.py": "3c8b8c5342062087d70968f51ca8ab93a1a94da14ec38bd198a9a68423e4686b",
+    "_scripts/reproduce_old.py": "18c5db1fb91aee4ec70b5c98f72d6c90faac8c2a4bc35032ad25c9d988cad84e",
+    "_scripts/verify_integrity.py": "28acb6eb3367c924a31db4a36740b2fc7f20e5c99fed76575a5ff2877d3eb85f"
+  }
+}

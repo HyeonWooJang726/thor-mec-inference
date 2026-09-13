@@ -1,0 +1,49 @@
+{
+  "verdict": "JOINT_STAGE_MODEL_SUPPORTED",
+  "criteria": {
+    "Brier_mean_improved": true,
+    "logloss_mean_improved": true,
+    "Brier_at_least_4_of_5": true,
+    "logloss_at_least_4_of_5": true,
+    "K5_service_mean_run_error_reduced": true,
+    "K5_service_absolute_error_cells_at_least_5": true,
+    "K6_C1_queue_absolute_error_at_most_5pp": true
+  },
+  "mean_metrics": [
+    {
+      "model": "B1",
+      "Brier_mean": 0.15172860902939372,
+      "Brier_std": 0.007373802174043302,
+      "logloss_mean": 0.2730003247467571,
+      "logloss_std": 0.012835873970396799
+    },
+    {
+      "model": "P-old",
+      "Brier_mean": 0.10511854943821128,
+      "Brier_std": 0.005931879387101995,
+      "logloss_mean": 0.1704050980649347,
+      "logloss_std": 0.010754686408243022
+    },
+    {
+      "model": "P-joint",
+      "Brier_mean": 0.09370132754016254,
+      "Brier_std": 0.006674945889456121,
+      "logloss_mean": 0.15382969532266333,
+      "logloss_std": 0.011875361044492471
+    }
+  ],
+  "paired_mean_delta": {
+    "Brier": -0.011417221898048757,
+    "logloss": -0.01657540274227135
+  },
+  "improving_folds": {
+    "Brier": 5,
+    "logloss": 5
+  },
+  "K5_service_old_error_pp": 7.993643491036295,
+  "K5_service_joint_error_pp": 4.839760775247372,
+  "K5_service_improved_cells_absolute_mean_error": 8,
+  "K5_service_improved_cells_mean_run_absolute_error": 8,
+  "K6_C1_queue_joint_error_pp": 2.839232795879132,
+  "full_state_usage_percent": 95.35370893212766
+}

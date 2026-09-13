@@ -1,0 +1,156 @@
+{
+  "status": "PASS",
+  "reference_commit": "d965452619af7ea103f8b5f4b421fa608a8d8f6e",
+  "probability_atol": 1e-10,
+  "probability_rtol": 1e-10,
+  "metric_atol": 1e-10,
+  "folds": [
+    {
+      "fold": 1,
+      "training_runs": 224,
+      "test_runs": 56,
+      "test_frames": 394731,
+      "identity_match": true,
+      "B1": {
+        "Brier": 0.15595845259458382,
+        "logloss": 0.2808816492544096,
+        "max_probability_abs_difference": 0.0,
+        "Brier_abs_difference": 2.7755575615628914e-17,
+        "logloss_abs_difference": 0.0,
+        "reproduced": true
+      },
+      "P-old": {
+        "Brier": 0.10539212092331257,
+        "logloss": 0.16990865757600923,
+        "max_probability_abs_difference": 0.0,
+        "Brier_abs_difference": 6.938893903907228e-17,
+        "logloss_abs_difference": 2.7755575615628914e-17,
+        "reproduced": true
+      }
+    },
+    {
+      "fold": 2,
+      "training_runs": 224,
+      "test_runs": 56,
+      "test_frames": 394710,
+      "identity_match": true,
+      "B1": {
+        "Brier": 0.16230616025933423,
+        "logloss": 0.29083983408475084,
+        "max_probability_abs_difference": 0.0,
+        "Brier_abs_difference": 2.7755575615628914e-17,
+        "logloss_abs_difference": 5.551115123125783e-17,
+        "reproduced": true
+      },
+      "P-old": {
+        "Brier": 0.11518640908944196,
+        "logloss": 0.18908612632814695,
+        "max_probability_abs_difference": 0.0,
+        "Brier_abs_difference": 5.551115123125783e-17,
+        "logloss_abs_difference": 5.551115123125783e-17,
+        "reproduced": true
+      }
+    },
+    {
+      "fold": 3,
+      "training_runs": 224,
+      "test_runs": 56,
+      "test_frames": 394694,
+      "identity_match": true,
+      "B1": {
+        "Brier": 0.14824418788481175,
+        "logloss": 0.2677099712687686,
+        "max_probability_abs_difference": 0.0,
+        "Brier_abs_difference": 5.551115123125783e-17,
+        "logloss_abs_difference": 0.0,
+        "reproduced": true
+      },
+      "P-old": {
+        "Brier": 0.1032316933319052,
+        "logloss": 0.16568345336601392,
+        "max_probability_abs_difference": 0.0,
+        "Brier_abs_difference": 0.0,
+        "logloss_abs_difference": 2.7755575615628914e-17,
+        "reproduced": true
+      }
+    },
+    {
+      "fold": 4,
+      "training_runs": 224,
+      "test_runs": 56,
+      "test_frames": 395041,
+      "identity_match": true,
+      "B1": {
+        "Brier": 0.14367237685843154,
+        "logloss": 0.2582033180383405,
+        "max_probability_abs_difference": 0.0,
+        "Brier_abs_difference": 2.7755575615628914e-17,
+        "logloss_abs_difference": 0.0,
+        "reproduced": true
+      },
+      "P-old": {
+        "Brier": 0.10081384260038333,
+        "logloss": 0.1631703860079725,
+        "max_probability_abs_difference": 0.0,
+        "Brier_abs_difference": 2.7755575615628914e-17,
+        "logloss_abs_difference": 0.0,
+        "reproduced": true
+      }
+    },
+    {
+      "fold": 5,
+      "training_runs": 224,
+      "test_runs": 56,
+      "test_frames": 394721,
+      "identity_match": true,
+      "B1": {
+        "Brier": 0.14846186754980717,
+        "logloss": 0.26736685108751607,
+        "max_probability_abs_difference": 0.0,
+        "Brier_abs_difference": 5.551115123125783e-17,
+        "logloss_abs_difference": 5.551115123125783e-17,
+        "reproduced": true
+      },
+      "P-old": {
+        "Brier": 0.10096868124601341,
+        "logloss": 0.1641768670465308,
+        "max_probability_abs_difference": 0.0,
+        "Brier_abs_difference": 1.3877787807814457e-17,
+        "logloss_abs_difference": 0.0,
+        "reproduced": true
+      }
+    }
+  ],
+  "dataset_arrays_identical": true,
+  "dataset_fields_compared": [
+    "run",
+    "slot",
+    "K",
+    "C",
+    "stream_id",
+    "frame_id",
+    "Q",
+    "A",
+    "A_start",
+    "b30",
+    "b_start30",
+    "W",
+    "S",
+    "stage"
+  ],
+  "prior_canonical_input_hashes_match": true,
+  "B1_reproduced": true,
+  "P_old_reproduced": true,
+  "training_and_test_population_identical": true,
+  "backoff_tables_identical": true,
+  "means": {
+    "B1": {
+      "Brier": 0.1517286090293937,
+      "logloss": 0.27300032474675706
+    },
+    "P-old": {
+      "Brier": 0.10511854943821128,
+      "logloss": 0.1704050980649347
+    }
+  }
+}

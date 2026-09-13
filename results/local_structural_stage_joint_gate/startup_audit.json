@@ -1,0 +1,14 @@
+{
+  "git": {
+    "rev-parse HEAD": "d965452619af7ea103f8b5f4b421fa608a8d8f6e\n",
+    "rev-parse origin/main": "d965452619af7ea103f8b5f4b421fa608a8d8f6e\n",
+    "status --short": " M scripts/profile_tcp_throughput.py\n?? scripts/partitioning/\n?? scripts/profile_edge_realtime.py\n"
+  },
+  "python": "/usr/bin/python3",
+  "version": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+  "Formal_root": "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full",
+  "membership": "formal_per_run_summary_valid5.csv statistical_slot",
+  "existing_protected_manifest": "/home/ainet/research/thor-mec-inference/results/local_deadline_feasibility_gate/protected_inputs_before.json",
+  "sklearn": "unavailable in system Python and .venv; no installation; use SciPy logistic",
+  "new_GPU_runs": 0
+}
