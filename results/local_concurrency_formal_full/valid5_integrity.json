@@ -1,0 +1,46 @@
+{
+  "validation": "PASS",
+  "timestamp": "2026-09-12T23:43:33.800614+00:00",
+  "original_campaign": {
+    "attempted": 280,
+    "PASS": 279,
+    "FAIL": 1,
+    "ABORTED": 0
+  },
+  "replacement": {
+    "attempted": 1,
+    "PASS": 1,
+    "FAIL": 0,
+    "child_exit_code": 0,
+    "completed_frames": 3600,
+    "observed_max_A": 1,
+    "per_stream_frames": [
+      1800,
+      1800
+    ],
+    "formal_integrity": "PASS",
+    "independent_validation": "PASS",
+    "worker_join_count": 4,
+    "pipeline_NULL_count": 2,
+    "runtime_errors": [],
+    "watchdog_triggered": false
+  },
+  "primary": {
+    "conditions": 56,
+    "valid_repeats_per_condition": 5,
+    "valid_measurements": 280,
+    "completed_frames": 2016000,
+    "excluded_original_global_index": 220,
+    "original_PASS_rows_retained": 279
+  },
+  "actual_round_id_for_replacement": null,
+  "replacement_in_original_drift": false,
+  "unchanged_other_55_aggregates": true,
+  "original_preservation": {
+    "validation": "PASS",
+    "files_checked": 9584,
+    "hash_mismatches": []
+  },
+  "raw_reference_hash_checks": "PASS",
+  "automatic_retries": 0
+}

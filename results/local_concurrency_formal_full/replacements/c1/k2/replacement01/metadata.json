@@ -1,0 +1,399 @@
+{
+  "artifact_class": "FULL FORMAL LOCAL STATIC-CONCURRENCY CHARACTERIZATION",
+  "purpose": "five repeated full-source runs per K,C; run-to-run system variability",
+  "git_commit": "c8352245fa8be6aefff6d7ba91c29c669bb19ea7",
+  "experiment_date": "2026-09-12T23:42:26.503182+00:00",
+  "utc": "2026-09-12T23:42:26.468100+00:00",
+  "uname": [
+    "Linux",
+    "thor",
+    "6.8.12-1021-tegra",
+    "#1 SMP PREEMPT Thu Aug  6 21:56:04 PDT 2026",
+    "aarch64"
+  ],
+  "power_mode": "NV Power Mode: MAXN\n0\n",
+  "clock_sysfs": {
+    "/sys/devices/system/cpu/cpufreq/policy8/scaling_governor": "schedutil",
+    "/sys/devices/system/cpu/cpufreq/policy6/scaling_governor": "schedutil",
+    "/sys/devices/system/cpu/cpufreq/policy4/scaling_governor": "schedutil",
+    "/sys/devices/system/cpu/cpufreq/policy2/scaling_governor": "schedutil",
+    "/sys/devices/system/cpu/cpufreq/policy0/scaling_governor": "schedutil",
+    "/sys/devices/system/cpu/cpufreq/policy12/scaling_governor": "schedutil",
+    "/sys/devices/system/cpu/cpufreq/policy10/scaling_governor": "schedutil",
+    "/sys/devices/system/cpu/cpufreq/policy8/scaling_min_freq": "972000",
+    "/sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq": "972000",
+    "/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq": "972000",
+    "/sys/devices/system/cpu/cpufreq/policy2/scaling_min_freq": "972000",
+    "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq": "972000",
+    "/sys/devices/system/cpu/cpufreq/policy12/scaling_min_freq": "972000",
+    "/sys/devices/system/cpu/cpufreq/policy10/scaling_min_freq": "972000",
+    "/sys/devices/system/cpu/cpufreq/policy8/scaling_max_freq": "2601000",
+    "/sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq": "2601000",
+    "/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq": "2601000",
+    "/sys/devices/system/cpu/cpufreq/policy2/scaling_max_freq": "2601000",
+    "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq": "2601000",
+    "/sys/devices/system/cpu/cpufreq/policy12/scaling_max_freq": "2601000",
+    "/sys/devices/system/cpu/cpufreq/policy10/scaling_max_freq": "2601000",
+    "/sys/class/devfreq/gpu-gpc-0/governor": "nvhost_podgov",
+    "/sys/class/devfreq/8188050000.vic/governor": "tegra_wmark",
+    "/sys/class/devfreq/gpu-nvd-0/governor": "nvhost_podgov",
+    "/sys/class/devfreq/bwmgr/governor": "bpmp-bwmgr",
+    "/sys/class/devfreq/gpu-gpc-0/min_freq": "315000000",
+    "/sys/class/devfreq/8188050000.vic/min_freq": "54000000",
+    "/sys/class/devfreq/gpu-nvd-0/min_freq": "315000000",
+    "/sys/class/devfreq/bwmgr/min_freq": "665600000",
+    "/sys/class/devfreq/gpu-gpc-0/max_freq": "1575000000",
+    "/sys/class/devfreq/8188050000.vic/max_freq": "1107000000",
+    "/sys/class/devfreq/gpu-nvd-0/max_freq": "1692000000",
+    "/sys/class/devfreq/bwmgr/max_freq": "4266000000",
+    "/sys/class/devfreq/gpu-gpc-0/cur_freq": "0",
+    "/sys/class/devfreq/8188050000.vic/cur_freq": "54000000",
+    "/sys/class/devfreq/gpu-nvd-0/cur_freq": "0",
+    "/sys/class/devfreq/bwmgr/cur_freq": "665600000"
+  },
+  "DVFS_unlocked": true,
+  "jetson_clocks": "OFF: CPU/GPU/EMC min < max; no clock modification",
+  "pid1": "systemd",
+  "processes": "    PID    PPID COMMAND         %CPU COMMAND\n      1       0 systemd          0.0 /sbin/init 2\n      2       0 kthreadd         0.0 [kthreadd]\n      3       2 pool_workqueue_  0.0 [pool_workqueue_release]\n      4       2 kworker/R-rcu_g  0.0 [kworker/R-rcu_g]\n      5       2 kworker/R-rcu_p  0.0 [kworker/R-rcu_p]\n      6       2 kworker/R-slub_  0.0 [kworker/R-slub_]\n      7       2 kworker/R-netns  0.0 [kworker/R-netns]\n      9       2 kworker/0:0H-ev  0.0 [kworker/0:0H-events_highpri]\n     12       2 kworker/R-mm_pe  0.0 [kworker/R-mm_pe]\n     13       2 rcu_tasks_kthre  0.0 [rcu_tasks_kthread]\n     14       2 rcu_tasks_trace  0.0 [rcu_tasks_trace_kthread]\n     15       2 ksoftirqd/0      0.0 [ksoftirqd/0]\n     16       2 rcu_preempt      0.0 [rcu_preempt]\n     17       2 migration/0      0.0 [migration/0]\n     18       2 cpuhp/0          0.0 [cpuhp/0]\n     19       2 cpuhp/1          0.0 [cpuhp/1]\n     20       2 migration/1      0.0 [migration/1]\n     21       2 ksoftirqd/1      0.0 [ksoftirqd/1]\n     23       2 kworker/1:0H-ev  0.0 [kworker/1:0H-events_highpri]\n     24       2 cpuhp/2          0.0 [cpuhp/2]\n     25       2 migration/2      0.0 [migration/2]\n     26       2 ksoftirqd/2      0.0 [ksoftirqd/2]\n     28       2 kworker/2:0H-ev  0.0 [kworker/2:0H-events_highpri]\n     29       2 cpuhp/3          0.0 [cpuhp/3]\n     30       2 migration/3      0.0 [migration/3]\n     31       2 ksoftirqd/3      0.0 [ksoftirqd/3]\n     33       2 kworker/3:0H-ev  0.0 [kworker/3:0H-events_highpri]\n     34       2 cpuhp/4          0.0 [cpuhp/4]\n     35       2 migration/4      0.0 [migration/4]\n     36       2 ksoftirqd/4      0.0 [ksoftirqd/4]\n     38       2 kworker/4:0H-ev  0.0 [kworker/4:0H-events_highpri]\n     39       2 cpuhp/5          0.0 [cpuhp/5]\n     40       2 migration/5      0.0 [migration/5]\n     41       2 ksoftirqd/5      0.0 [ksoftirqd/5]\n     43       2 kworker/5:0H-ev  0.0 [kworker/5:0H-events_highpri]\n     44       2 cpuhp/6          0.0 [cpuhp/6]\n     45       2 migration/6      0.0 [migration/6]\n     46       2 ksoftirqd/6      0.0 [ksoftirqd/6]\n     48       2 kworker/6:0H-ev  0.0 [kworker/6:0H-events_highpri]\n     49       2 cpuhp/7          0.0 [cpuhp/7]\n     50       2 migration/7      0.0 [migration/7]\n     51       2 ksoftirqd/7      0.0 [ksoftirqd/7]\n     53       2 kworker/7:0H-ev  0.0 [kworker/7:0H-events_highpri]\n     54       2 cpuhp/8          0.0 [cpuhp/8]\n     55       2 migration/8      0.0 [migration/8]\n     56       2 ksoftirqd/8      0.0 [ksoftirqd/8]\n     58       2 kworker/8:0H-ev  0.0 [kworker/8:0H-events_highpri]\n     59       2 cpuhp/9          0.0 [cpuhp/9]\n     60       2 migration/9      0.0 [migration/9]\n     61       2 ksoftirqd/9      0.0 [ksoftirqd/9]\n     63       2 kworker/9:0H-ev  0.0 [kworker/9:0H-events_highpri]\n     64       2 cpuhp/10         0.0 [cpuhp/10]\n     65       2 migration/10     0.0 [migration/10]\n     66       2 ksoftirqd/10     0.0 [ksoftirqd/10]\n     68       2 kworker/10:0H-e  0.0 [kworker/10:0H-events_highpri]\n     69       2 cpuhp/11         0.0 [cpuhp/11]\n     70       2 migration/11     0.0 [migration/11]\n     71       2 ksoftirqd/11     0.0 [ksoftirqd/11]\n     73       2 kworker/11:0H-e  0.0 [kworker/11:0H-events_highpri]\n     74       2 cpuhp/12         0.0 [cpuhp/12]\n     75       2 migration/12     0.0 [migration/12]\n     76       2 ksoftirqd/12     0.0 [ksoftirqd/12]\n     78       2 kworker/12:0H-e  0.0 [kworker/12:0H-events_highpri]\n     79       2 cpuhp/13         0.0 [cpuhp/13]\n     80       2 migration/13     0.0 [migration/13]\n     81       2 ksoftirqd/13     0.0 [ksoftirqd/13]\n     83       2 kworker/13:0H-k  0.0 [kworker/13:0H-kblockd]\n     99       2 kdevtmpfs        0.0 [kdevtmpfs]\n    100       2 kworker/R-inet_  0.0 [kworker/R-inet_]\n    101       2 kauditd          0.0 [kauditd]\n    103       2 khungtaskd       0.0 [khungtaskd]\n    104       2 oom_reaper       0.0 [oom_reaper]\n    106       2 kworker/R-write  0.0 [kworker/R-write]\n    107       2 kcompactd0       0.0 [kcompactd0]\n    108       2 ksmd             0.0 [ksmd]\n    110       2 khugepaged       0.0 [khugepaged]\n    111       2 kworker/R-kinte  0.0 [kworker/R-kinte]\n    112       2 kworker/R-kbloc  0.0 [kworker/R-kbloc]\n    113       2 kworker/R-blkcg  0.0 [kworker/R-blkcg]\n    114       2 kworker/R-tpm_d  0.0 [kworker/R-tpm_d]\n    116       2 kworker/R-ata_s  0.0 [kworker/R-ata_s]\n    117       2 kworker/R-edac-  0.0 [kworker/R-edac-]\n    118       2 kworker/R-ffa_p  0.0 [kworker/R-ffa_p]\n    120       2 kworker/R-devfr  0.0 [kworker/R-devfr]\n    121       2 watchdogd        0.0 [watchdogd]\n    122       2 kworker/R-quota  0.0 [kworker/R-quota]\n    123       2 kworker/1:1H-kb  0.0 [kworker/1:1H-kblockd]\n    124       2 kworker/R-rpcio  0.0 [kworker/R-rpcio]\n    125       2 kworker/R-xprti  0.0 [kworker/R-xprti]\n    126       2 kswapd0          0.0 [kswapd0]\n    127       2 kworker/R-nfsio  0.0 [kworker/R-nfsio]\n    129       2 irq/54-arm-smmu  0.0 [irq/54-arm-smmu-v3-evtq]\n    130       2 irq/57-arm-smmu  0.0 [irq/57-arm-smmu-v3-evtq]\n    131       2 irq/60-arm-smmu  0.0 [irq/60-arm-smmu-v3-evtq]\n    132       2 irq/63-arm-smmu  0.0 [irq/63-arm-smmu-v3-evtq]\n    133       2 irq/66-arm-smmu  0.0 [irq/66-arm-smmu-v3-evtq]\n    134       2 kworker/R-vfio-  0.0 [kworker/R-vfio-]\n    135       2 kworker/R-dm_bu  0.0 [kworker/R-dm_bu]\n    148       2 kworker/R-optee  0.0 [kworker/R-optee]\n    152       2 irq/129-aerdrv   0.0 [irq/129-aerdrv]\n    153       2 irq/162-c600000  0.0 [irq/162-c600000.i2c]\n    154       2 irq/163-c610000  0.0 [irq/163-c610000.i2c]\n    155       2 irq/164-810c630  0.0 [irq/164-810c630000.i2c]\n    156       2 irq/165-810c640  0.0 [irq/165-810c640000.i2c]\n    157       2 irq/166-810c650  0.0 [irq/166-810c650000.i2c]\n    158       2 irq/167-810c670  0.0 [irq/167-810c670000.i2c]\n    159       2 irq/168-810c680  0.0 [irq/168-810c680000.i2c]\n    160       2 irq/169-810c690  0.0 [irq/169-810c690000.i2c]\n    161       2 irq/170-810c6a0  0.0 [irq/170-810c6a0000.i2c]\n    162       2 irq/171-810c6b0  0.0 [irq/171-810c6b0000.i2c]\n    163       2 irq/172-810c6d0  0.0 [irq/172-810c6d0000.i2c]\n    165       2 irq/174-a80aa10  0.0 [irq/174-a80aa10000.usb]\n    166       2 irq/182-a80aa10  0.0 [irq/182-a80aa10000.usb]\n    184       2 kworker/12:1H-k  0.0 [kworker/12:1H-kblockd]\n    187       2 irq/187-aerdrv   0.0 [irq/187-aerdrv]\n    189       2 irq/186-pcie-dp  0.0 [irq/186-pcie-dpc]\n    190       2 irq/203-aerdrv   0.0 [irq/203-aerdrv]\n    191       2 irq/202-pcie-dp  0.0 [irq/202-pcie-dpc]\n    192       2 irq/219-aerdrv   0.0 [irq/219-aerdrv]\n    193       2 irq/218-pcie-dp  0.0 [irq/218-pcie-dpc]\n    198       2 kworker/R-nvme-  0.0 [kworker/R-nvme-]\n    199       2 kworker/R-nvme-  0.0 [kworker/R-nvme-]\n    200       2 kworker/R-nvme-  0.0 [kworker/R-nvme-]\n    205       2 kworker/10:1H-k  0.0 [kworker/10:1H-kblockd]\n    208       2 kworker/R-uas    0.0 [kworker/R-uas]\n    219       2 kworker/11:1H-k  0.0 [kworker/11:1H-kblockd]\n    220       2 jbd2/nvme0n1p1-  0.0 [jbd2/nvme0n1p1-8]\n    221       2 kworker/R-ext4-  0.0 [kworker/R-ext4-]\n    229       2 kworker/5:1H-kb  0.0 [kworker/5:1H-kblockd]\n    230       2 kworker/4:1H-kb  0.0 [kworker/4:1H-kblockd]\n    231       2 kworker/R-mld    0.0 [kworker/R-mld]\n    232       2 kworker/3:1H-kb  0.0 [kworker/3:1H-kblockd]\n    233       2 kworker/R-ipv6_  0.0 [kworker/R-ipv6_]\n    263       2 kworker/8:1H-nv  0.0 [kworker/8:1H-nvpps_wq]\n    266       2 kworker/13:1H-e  0.0 [kworker/13:1H-events_highpri]\n    270       2 kworker/6:1H-kb  0.0 [kworker/6:1H-kblockd]\n    273       2 kworker/7:1H-kb  0.0 [kworker/7:1H-kblockd]\n    275       2 kworker/9:1H-kb  0.0 [kworker/9:1H-kblockd]\n    276       1 systemd-journal  0.0 /usr/lib/systemd/systemd-journald\n    293       2 kworker/2:1H-kb  0.0 [kworker/2:1H-kblockd]\n    304       2 irq/250-81893d0  0.0 [irq/250-81893d0000.rtcpu]\n    307       2 capture-control  0.0 [capture-control]\n    308       2 capture          0.0 [capture]\n    309       2 irq/259-host1x_  0.6 [irq/259-host1x_general]\n    335       1 nv-tee-supplica  0.0 /bin/bash /etc/systemd/nv-tee-supplicant.sh\n    341     335 tee-supplicant   0.0 /usr/sbin/tee-supplicant\n    365       1 systemd-udevd    0.1 /usr/lib/systemd/systemd-udevd\n    372       2 kworker/0:1H-kb  0.0 [kworker/0:1H-kblockd]\n    411       1 systemd-network  0.0 /usr/lib/systemd/systemd-networkd\n    422       2 kworker/R-cfg80  0.0 [kworker/R-cfg80]\n    423       2 hwrng            0.0 [hwrng]\n    428       2 irq/264-tegra_d  0.0 [irq/264-tegra_dce_isr]\n    429       2 kworker/R-dce-a  0.0 [kworker/R-dce-a]\n    450       2 kworker/R-nvpps  0.0 [kworker/R-nvpps]\n    451       2 irq/266-c6c0000  0.0 [irq/266-c6c0000.spi]\n    452       2 spi1             0.0 [spi1]\n    453       2 irq/268-810c590  0.0 [irq/268-810c590000.spi]\n    454       2 spi0             0.0 [spi0]\n    455       2 irq/270-810c440  0.0 [irq/270-810c440000.spi]\n    456       2 spi2             0.0 [spi2]\n    457       2 irq/272-nvvrs-p  0.0 [irq/272-nvvrs-pseq-irq]\n    460       2 irq/276-810c450  0.0 [irq/276-810c450000.spi]\n    462       2 spi3             0.0 [spi3]\n    464       2 irq/278-lm90     0.0 [irq/278-lm90]\n    474       2 kworker/R-tx_bw  0.0 [kworker/R-tx_bw]\n    489       2 kworker/R-tx_bw  0.0 [kworker/R-tx_bw]\n    490       2 kworker/u43:0-h  0.0 [kworker/u43:0-hci0]\n    505       2 kworker/R-EVENT  0.0 [kworker/R-EVENT]\n    506       2 kworker/R-TX_HD  0.0 [kworker/R-TX_HD]\n    507       2 kworker/R-RX_HD  0.0 [kworker/R-RX_HD]\n    509       2 nvmap-bz         0.0 [nvmap-bz]\n    523       2 kworker/R-tx_bw  0.0 [kworker/R-tx_bw]\n    534       2 kworker/R-btfww  0.0 [kworker/R-btfww]\n    535       2 kworker/u43:1-h  0.0 [kworker/u43:1-hci0]\n    537       2 kworker/R-tx_bw  0.0 [kworker/R-tx_bw]\n    668       2 kworker/R-AMSDU  0.0 [kworker/R-AMSDU]\n    871       1 haveged          0.0 /usr/sbin/haveged --Foreground --verbose=1\n    872       1 auditd           0.0 /sbin/auditd\n    879       1 systemd-resolve  0.0 /usr/lib/systemd/systemd-resolved\n    885       1 systemd-timesyn  0.0 /usr/lib/systemd/systemd-timesyncd\n    923       1 avahi-daemon     0.0 avahi-daemon: running [thor.local]\n    924       1 bluetoothd       0.0 /usr/libexec/bluetooth/bluetoothd -d --noplugin=audio,a2dp,avrcp,sap\n    925       1 dbus-daemon      0.0 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only\n    932       1 gnome-remote-de  0.0 /usr/libexec/gnome-remote-desktop-daemon --system\n    938       1 lpd              0.0 /usr/sbin/lpd -s\n   1117       1 python3          0.0 python3 /opt/nvidia/pva-allow-2/bin/nvidiaPvaAllowd.py\n   1148       2 nv_queue         0.0 [nv_queue]\n   1149       2 nv_mem_pool_scr  0.0 [nv_mem_pool_scrubber_queue]\n   1151       2 nv_mem_pool_scr  0.0 [nv_mem_pool_scrubber_queue]\n   1152       2 nv_mem_pool_scr  0.0 [nv_mem_pool_scrubber_queue]\n   1153       2 nv_queue         0.0 [nv_queue]\n   1166       2 nv_open_q        0.0 [nv_open_q]\n   1318       2 sugov:0          0.0 [sugov:0]\n   1319       2 sugov:10         0.0 [sugov:10]\n   1320       2 sugov:12         0.0 [sugov:12]\n   1321       2 sugov:2          0.0 [sugov:2]\n   1323       2 sugov:4          0.0 [sugov:4]\n   1324       2 sugov:6          0.0 [sugov:6]\n   1326       2 sugov:8          0.0 [sugov:8]\n   1344       1 polkitd          0.0 /usr/lib/polkit-1/polkitd --no-debug\n   1379       1 power-profiles-  0.0 /usr/libexec/power-profiles-daemon\n   1458       1 seatd            0.0 seatd -g video\n   1681       2 file-storage     0.0 [file-storage]\n   1743       1 accounts-daemon  0.0 /usr/libexec/accounts-daemon\n   1752       1 cron             0.0 /usr/sbin/cron -f -P\n   1757       1 switcheroo-cont  0.0 /usr/libexec/switcheroo-control\n   1763       1 systemd-logind   0.0 /usr/lib/systemd/systemd-logind\n   1769       1 udisksd          0.0 /usr/libexec/udisks2/udisksd\n   1806       1 rsyslogd         0.0 /usr/sbin/rsyslogd -n -iNONE\n   1827     923 avahi-daemon     0.0 avahi-daemon: chroot helper\n   1844       1 NetworkManager   0.0 /usr/sbin/NetworkManager --no-daemon\n   1883       1 nvfancontrol     0.0 /usr/sbin/nvfancontrol &\n   1885       1 dhcpd            0.0 /usr/sbin/dhcpd -cf /opt/nvidia/l4t-usb-device-mode/dhcpd.conf -pf /run/l4t-usb-devmode-dhcpd.pid -lf /run/l4t-usb-devmode-dhcpd.leases l4tbr0\n   1888       1 wpa_supplicant   0.0 /usr/sbin/wpa_supplicant -u -s -O DIR=/run/wpa_supplicant GROUP=netdev\n   1908       1 ModemManager     0.0 /usr/sbin/ModemManager\n   2000       2 nv_open_q        0.0 [nv_open_q]\n   2016       2 UVM global queu  0.0 [UVM global queue]\n   2017       2 UVM deferred re  0.0 [UVM deferred release queue]\n   2018       2 UVM Tools Event  0.0 [UVM Tools Event Queue]\n   2030       2 nvidia-modeset/  0.1 [nvidia-modeset/kthread_q]\n   2031       2 nvidia-modeset/  0.0 [nvidia-modeset/deferred_close_kthread_q]\n   2033       2 irq/428-nvidia   0.0 [irq/428-nvidia]\n   2034       2 irq/429-nvidia   0.0 [irq/429-nvidia]\n   2035       2 irq/430-nvidia   0.0 [irq/430-nvidia]\n   2036       2 irq/431-nvidia   0.0 [irq/431-nvidia]\n   2037       2 irq/432-nvidia   0.0 [irq/432-nvidia]\n   2038       2 irq/433-nvidia   0.0 [irq/433-nvidia]\n   2039       2 irq/434-nvidia   0.0 [irq/434-nvidia]\n   2040       2 irq/435-nvidia   0.0 [irq/435-nvidia]\n   2041       2 nvidia           0.0 [nvidia]\n   2042       2 nv_queue         0.1 [nv_queue]\n   2044       2 irq/292-mgbe0_0  0.0 [irq/292-mgbe0_0.common_irq]\n   2047       2 irq/329-mgbe1_0  0.0 [irq/329-mgbe1_0.common_irq]\n   2050       2 irq/340-mgbe2_0  0.0 [irq/340-mgbe2_0.common_irq]\n   2053       2 irq/348-mgbe3_0  0.0 [irq/348-mgbe3_0.common_irq]\n   2055       2 test_thread      0.0 [test_thread]\n   2056       2 disp_eng_share_  0.1 [disp_eng_share_thread]\n   2057       2 msg_notify_thre  0.0 [msg_notify_thread]\n   2058       2 fsm_thread       0.0 [fsm_thread]\n   2083       1 containerd       0.0 /usr/bin/containerd\n   2100       2 nvidia           0.0 [nvidia]\n   2101       2 nv_queue         0.0 [nv_queue]\n   2109       1 agetty           0.0 /sbin/agetty -o -p -- \\u --keep-baud 115200,57600,38400,9600 - vt220\n   2110       1 agetty           0.0 /sbin/agetty -o -p -- \\u --keep-baud 115200,57600,38400,9600 - vt220\n   2285       1 sshd             0.0 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups\n   2309       1 dockerd          0.0 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock\n   2310       1 gdm3             0.0 /usr/sbin/gdm3\n   2335       1 kerneloops       0.0 /usr/sbin/kerneloops --test\n   2358       1 kerneloops       0.0 /usr/sbin/kerneloops\n   2373     365 (udev-worker)    0.0 (udev-worker)\n   2374     365 (udev-worker)    0.2 (udev-worker)\n   2375       1 nvargus-daemon   0.0 /usr/sbin/nvargus-daemon\n   2624       1 rtkit-daemon     0.0 /usr/libexec/rtkit-daemon\n   2752       1 colord           0.0 /usr/libexec/colord\n   2771       2 krfcommd         0.0 [krfcommd]\n   2803       1 upowerd          0.0 /usr/libexec/upowerd\n   3527       1 systemd          0.0 /usr/lib/systemd/systemd --user\n   3536    3527 (sd-pam)         0.0 (sd-pam)\n   3547    3527 pipewire         0.0 /usr/bin/pipewire\n   3548    3527 pipewire         0.0 /usr/bin/pipewire -c filter-chain.conf\n   3549    3527 wireplumber      0.0 /usr/bin/wireplumber\n   3551    3527 pipewire-pulse   0.0 /usr/bin/pipewire-pulse\n   3557    3527 dbus-daemon      0.0 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only\n  11883     365 (udev-worker)    0.0 (udev-worker)\n  11884     365 (udev-worker)    0.0 (udev-worker)\n  11885     365 (udev-worker)    0.0 (udev-worker)\n  11893     365 (udev-worker)    0.0 (udev-worker)\n  11895     365 (udev-worker)    0.0 (udev-worker)\n  11897     365 (udev-worker)    0.0 (udev-worker)\n  11898     365 (udev-worker)    0.0 (udev-worker)\n  11899     365 (udev-worker)    0.0 (udev-worker)\n  11900     365 (udev-worker)    0.0 (udev-worker)\n  11902     365 (udev-worker)    0.0 (udev-worker)\n  11903     365 (udev-worker)    0.0 (udev-worker)\n  11904     365 (udev-worker)    0.0 (udev-worker)\n  11907     365 (udev-worker)    0.0 (udev-worker)\n  11946    2310 gdm-session-wor  0.0 gdm-session-worker [pam/gdm-password]\n  11962    3527 gnome-keyring-d  0.0 /usr/bin/gnome-keyring-daemon --foreground --components=pkcs11,secrets --control-directory=/run/user/1000/keyring\n  11988   11946 gdm-x-session    0.0 /usr/libexec/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu\n  11992   11988 Xorg             0.0 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -nolisten tcp -background none -noreset -keeptty -novtswitch -verbose 3\n  12007       2 nvidia-drm/time  0.0 [nvidia-drm/timeline-142cdc]\n  12015   11988 gnome-session-b  0.0 /usr/libexec/gnome-session-binary --session=ubuntu\n  12126    3527 at-spi-bus-laun  0.0 /usr/libexec/at-spi-bus-launcher\n  12133   12126 dbus-daemon      0.0 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus_1\n  12139    3527 gcr-ssh-agent    0.0 /usr/libexec/gcr-ssh-agent --base-dir /run/user/1000/gcr\n  12140    3527 gnome-session-c  0.0 /usr/libexec/gnome-session-ctl --monitor\n  12156    3527 gvfsd            0.0 /usr/libexec/gvfsd\n  12162    3527 gvfsd-fuse       0.0 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f\n  12165    3527 gnome-session-b  0.0 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu\n  12194    3527 gnome-shell      1.4 /usr/bin/gnome-shell\n  12223       2 nvidia-drm/time  0.0 [nvidia-drm/timeline-142ce0]\n  12226   12194 mutter-x11-fram  0.0 /usr/libexec/mutter-x11-frames\n  12229    3527 at-spi2-registr  0.0 /usr/libexec/at-spi2-registryd --use-gnome-session\n  12255    3527 xdg-permission-  0.0 /usr/libexec/xdg-permission-store\n  12256    3527 gnome-shell-cal  0.0 /usr/libexec/gnome-shell-calendar-server\n  12266    3527 evolution-sourc  0.0 /usr/libexec/evolution-source-registry\n  12280    3527 gjs              0.0 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.Shell.Notifications\n  12299    3527 ibus-daemon      0.0 /usr/bin/ibus-daemon --panel disable --xim\n  12300    3527 gsd-a11y-settin  0.0 /usr/libexec/gsd-a11y-settings\n  12301    3527 gsd-color        0.0 /usr/libexec/gsd-color\n  12304    3527 gsd-datetime     0.0 /usr/libexec/gsd-datetime\n  12307    3527 gsd-housekeepin  0.0 /usr/libexec/gsd-housekeeping\n  12312    3527 gsd-keyboard     0.0 /usr/libexec/gsd-keyboard\n  12314    3527 gsd-media-keys   0.0 /usr/libexec/gsd-media-keys\n  12323    3527 gsd-power        0.0 /usr/libexec/gsd-power\n  12324    3527 goa-daemon       0.0 /usr/libexec/goa-daemon\n  12325    3527 gsd-print-notif  0.0 /usr/libexec/gsd-print-notifications\n  12326    3527 gsd-rfkill       0.0 /usr/libexec/gsd-rfkill\n  12335    3527 gsd-screensaver  0.0 /usr/libexec/gsd-screensaver-proxy\n  12340    3527 gsd-sharing      0.0 /usr/libexec/gsd-sharing\n  12341   12165 gsd-disk-utilit  0.0 /usr/libexec/gsd-disk-utility-notify\n  12345    3527 gsd-smartcard    0.0 /usr/libexec/gsd-smartcard\n  12367    3527 gsd-sound        0.0 /usr/libexec/gsd-sound\n  12369   12165 evolution-alarm  0.0 /usr/libexec/evolution-data-server/evolution-alarm-notify\n  12371    3527 gsd-wacom        0.0 /usr/libexec/gsd-wacom\n  12382    3527 gsd-xsettings    0.0 /usr/libexec/gsd-xsettings\n  12403   12165 python3          0.0 python3 /usr/share/nvpmodel_indicator/nvpmodel_indicator.py\n  12406   12165 gnome-software   0.0 /usr/bin/gnome-software --gapplication-service\n  12414   12299 ibus-memconf     0.0 /usr/libexec/ibus-memconf\n  12421   12299 ibus-extension-  0.0 /usr/libexec/ibus-extension-gtk3\n  12423    3527 ibus-x11         0.0 /usr/libexec/ibus-x11 --kill-daemon\n  12433    3527 ibus-portal      0.0 /usr/libexec/ibus-portal\n  12445    3527 gsd-printer      0.0 /usr/libexec/gsd-printer\n  12466    3527 goa-identity-se  0.0 /usr/libexec/goa-identity-service\n  12484    3527 evolution-calen  0.0 /usr/libexec/evolution-calendar-factory\n  12486    3527 gvfs-udisks2-vo  0.0 /usr/libexec/gvfs-udisks2-volume-monitor\n  12557    3527 gvfs-goa-volume  0.0 /usr/libexec/gvfs-goa-volume-monitor\n  12568    3527 gvfs-afc-volume  0.0 /usr/libexec/gvfs-afc-volume-monitor\n  12571    3527 evolution-addre  0.0 /usr/libexec/evolution-addressbook-factory\n  12580    3527 gvfs-gphoto2-vo  0.0 /usr/libexec/gvfs-gphoto2-volume-monitor\n  12599    3527 gvfs-mtp-volume  0.0 /usr/libexec/gvfs-mtp-volume-monitor\n  12617    3527 xdg-desktop-por  0.0 /usr/libexec/xdg-desktop-portal\n  12627    3527 xdg-document-po  0.0 /usr/libexec/xdg-document-portal\n  12630   12403 python3          0.0 python3 /usr/share/nvpmodel_indicator/nvpmodel_indicator.py\n  12631   12403 python3          0.0 python3 /usr/share/nvpmodel_indicator/nvpmodel_indicator.py\n  12634   12403 python3          0.0 python3 /usr/share/nvpmodel_indicator/nvpmodel_indicator.py\n  12637   12403 python3          0.0 python3 /usr/share/nvpmodel_indicator/nvpmodel_indicator.py\n  12639    3527 gjs              0.0 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.ScreenSaver\n  12642   12403 python3          0.0 python3 /usr/share/nvpmodel_indicator/nvpmodel_indicator.py\n  12644   12627 fusermount3      0.0 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc\n  12645   12403 python3          0.0 python3 /usr/share/nvpmodel_indicator/nvpmodel_indicator.py\n  12646   12403 python3          0.0 python3 /usr/share/nvpmodel_indicator/nvpmodel_indicator.py\n  12648   12403 python3          0.0 python3 /usr/share/nvpmodel_indicator/nvpmodel_indicator.py\n  12664   12299 ibus-engine-sim  0.0 /usr/libexec/ibus-engine-simple\n  12673    3527 tracker-miner-f  0.0 /usr/libexec/tracker-miner-fs-3\n  12676    3527 xdg-desktop-por  0.0 /usr/libexec/xdg-desktop-portal-gnome\n  12720   12156 gvfsd-trash      0.0 /usr/libexec/gvfsd-trash --spawner :1.23 /org/gtk/gvfs/exec_spaw/0\n  12753    3527 dconf-service    0.0 /usr/libexec/dconf-service\n  12759    3527 xdg-desktop-por  0.0 /usr/libexec/xdg-desktop-portal-gtk\n  12792       1 fwupd            0.0 /usr/libexec/fwupd/fwupd\n  12810   12194 gjs              0.0 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com/app\n  12888    3527 gvfsd-metadata   0.0 /usr/libexec/gvfsd-metadata\n  13549   12156 gvfsd-recent     0.0 /usr/libexec/gvfsd-recent --spawner :1.23 /org/gtk/gvfs/exec_spaw/1\n  13977   12165 update-notifier  0.0 /usr/bin/update-notifier\n  62665       2 kworker/u56:0-T  0.0 [kworker/u56:0-TX_HDL]\n  68046    2285 sshd             0.0 sshd: ainet [priv]\n  68108   68046 sshd             0.0 sshd: ainet@pts/0\n  68109   68108 bash             0.0 -bash\n  72212       2 kworker/6:3+eve  0.0 [kworker/6:3+events]\n  82636       2 kworker/u51:2-T  0.0 [kworker/u51:2-TX_HDL]\n  84370       2 kworker/u48:0-E  0.0 [kworker/u48:0-EVENT_HDL]\n  85192       2 kworker/u47:1-T  0.0 [kworker/u47:1-TX_HDL]\n  89315       2 kworker/0:2-ine  0.0 [kworker/0:2-inet_frag_wq]\n  89332       2 kworker/12:2-pm  0.0 [kworker/12:2-pm]\n  89621       2 kworker/u45:1-T  0.0 [kworker/u45:1-TX_HDL]\n  89877       2 kworker/u55:1-T  0.0 [kworker/u55:1-TX_HDL]\n  90377       2 kworker/u47:0-T  0.0 [kworker/u47:0-TX_HDL]\n  90435       2 kworker/0:0-eve  0.0 [kworker/0:0-events]\n  90569       2 kworker/8:1-eve  0.0 [kworker/8:1-events]\n  90637       2 kworker/u57:1-T  0.0 [kworker/u57:1-TX_HDL]\n  90756       2 kworker/13:0-ev  0.0 [kworker/13:0-events]\n  90805       2 kworker/u52:0-T  0.0 [kworker/u52:0-TX_HDL]\n  91253       2 kworker/u42:2-e  0.0 [kworker/u42:2-events_unbound]\n  91657       2 kworker/u49:2-E  0.0 [kworker/u49:2-EVENT_HDL]\n  91740       2 kworker/13:2-pm  0.0 [kworker/13:2-pm]\n  92145       2 kworker/u30:4-e  0.0 [kworker/u30:4-events_unbound]\n  94901       2 kworker/u46:2-T  0.0 [kworker/u46:2-TX_HDL]\n  94911       2 kworker/12:1-mm  0.0 [kworker/12:1-mm_percpu_wq]\n  95150       2 kworker/5:1-mm_  0.0 [kworker/5:1-mm_percpu_wq]\n  95646       2 kworker/9:2-ine  0.0 [kworker/9:2-inet_frag_wq]\n  95725       2 kworker/u53:2-T  0.0 [kworker/u53:2-TX_HDL]\n  95730       2 kworker/u56:2-T  0.0 [kworker/u56:2-TX_HDL]\n  95735       2 kworker/7:2-eve  0.0 [kworker/7:2-events]\n  95765       2 kworker/u34:3-e  0.0 [kworker/u34:3-events_unbound]\n  95781       2 kworker/4:2-eve  0.0 [kworker/4:2-events]\n  95784       2 kworker/u39:1-e  0.0 [kworker/u39:1-events_power_efficient]\n  95786       2 kworker/u36:0-w  0.0 [kworker/u36:0-writeback]\n  98740       2 kworker/u28:0-e  0.7 [kworker/u28:0-ext4-rsv-conversion]\n  99445    3527 update-manager   0.8 /usr/bin/python3 /usr/bin/update-manager --no-update --no-focus-on-map\n  99634       2 kworker/u30:1-e  0.0 [kworker/u30:1-events_power_efficient]\n  99833       2 kworker/u41:0-e  0.0 [kworker/u41:0-events_freezable_power_]\n  99839       2 kworker/u30:0-e  0.0 [kworker/u30:0-events_unbound]\n  99856       2 kworker/u35:0-e  0.0 [kworker/u35:0-events_power_efficient]\n 102726       2 kworker/u37:3-e  0.0 [kworker/u37:3-events_freezable_power_]\n 102728       2 kworker/u40:0-e  0.0 [kworker/u40:0-events_power_efficient]\n 102751       2 kworker/u35:1-e  0.0 [kworker/u35:1-events_power_efficient]\n 102763       2 kworker/2:1-ine  0.0 [kworker/2:1-inet_frag_wq]\n 102767       2 kworker/u44:1-T  0.0 [kworker/u44:1-TX_HDL]\n 102785       2 kworker/u29:4-e  0.0 [kworker/u29:4-events_unbound]\n 102788       2 kworker/u34:0-e  0.0 [kworker/u34:0-events_freezable_power_]\n 102793       2 kworker/u33:3-e  0.0 [kworker/u33:3-events_power_efficient]\n 102807       2 kworker/u32:0-e  0.0 [kworker/u32:0-events_freezable_power_]\n 102809       2 kworker/11:2-ev  0.0 [kworker/11:2-events]\n 103454       2 kworker/3:0-eve  0.0 [kworker/3:0-events]\n 103707       2 kworker/u37:0-e  0.0 [kworker/u37:0-events_unbound]\n 103853       2 kworker/u54:2-T  0.0 [kworker/u54:2-TX_HDL]\n 104851       2 kworker/u31:0-e  0.0 [kworker/u31:0-events_power_efficient]\n 104965       2 kworker/u41:1-e  0.0 [kworker/u41:1-events_power_efficient]\n 105807       2 kworker/10:2-ev  0.0 [kworker/10:2-events]\n 106400       2 kworker/10:3-mm  0.0 [kworker/10:3-mm_percpu_wq]\n 106402       2 kworker/11:3+ev  0.0 [kworker/11:3+events]\n 106404       2 kworker/u42:1-e  0.0 [kworker/u42:1-events_unbound]\n 106409       2 kworker/10:1+ev  0.0 [kworker/10:1+events]\n 106410       2 kworker/6:0-mm_  0.0 [kworker/6:0-mm_percpu_wq]\n 106424       2 kworker/u33:1-e  0.0 [kworker/u33:1-events_power_efficient]\n 106425       2 kworker/u32:3-f  0.0 [kworker/u32:3-flush-259:0]\n 106501       2 kworker/u28:2-e  0.1 [kworker/u28:2-ext4-rsv-conversion]\n 106503       2 kworker/u31:2-e  0.0 [kworker/u31:2-events_power_efficient]\n 106504       2 kworker/u33:0-e  0.0 [kworker/u33:0-events_power_efficient]\n 106506       2 kworker/u29:3-e  0.0 [kworker/u29:3-events_power_efficient]\n 106507       2 kworker/u44:2-T  0.0 [kworker/u44:2-TX_HDL]\n 106511       2 kworker/u35:3-e  0.0 [kworker/u35:3-events_freezable_power_]\n 106528   68109 codex            2.0 codex\n 106800       2 kworker/u53:1    0.0 [kworker/u53:1]\n 106953       2 kworker/u44:4-R  0.0 [kworker/u44:4-RX_HDL]\n 107226       2 kworker/u38:0-w  0.0 [kworker/u38:0-writeback]\n 107390       2 kworker/u57:2-T  0.0 [kworker/u57:2-TX_HDL]\n 107857       2 kworker/u51:1-T  0.0 [kworker/u51:1-TX_HDL]\n 107988       2 kworker/u41:2-e  0.0 [kworker/u41:2-events_power_efficient]\n 107989       2 kworker/1:2-eve  0.0 [kworker/1:2-events]\n 107992       2 kworker/u34:2-e  0.0 [kworker/u34:2-events_power_efficient]\n 108130       2 kworker/u36:1-f  0.0 [kworker/u36:1-flush-259:0]\n 108161       2 kworker/u46:0-T  0.0 [kworker/u46:0-TX_HDL]\n 108260    2285 sshd             0.0 sshd: ainet [priv]\n 108322  108260 sshd             0.0 sshd: ainet@pts/1\n 108323  108322 bash             0.0 -bash\n 108350       2 kworker/u31:3-w  0.0 [kworker/u31:3-writeback]\n 108369       2 kworker/u29:0-e  0.0 [kworker/u29:0-events_power_efficient]\n 108387       2 kworker/u39:0-e  0.0 [kworker/u39:0-events_unbound]\n 108389       2 kworker/u40:2-e  0.0 [kworker/u40:2-events_freezable_power_]\n 108502       2 kworker/u32:1-f  0.0 [kworker/u32:1-flush-259:0]\n 108563       2 kworker/u36:2-f  0.0 [kworker/u36:2-flush-259:0]\n 108598       2 kworker/u50:0-T  0.0 [kworker/u50:0-TX_HDL]\n 108599       2 kworker/u44:3-R  0.1 [kworker/u44:3-RX_HDL]\n 108617       2 kworker/u40:1-e  0.0 [kworker/u40:1-events_unbound]\n 108618       2 kworker/11:0-ev  0.0 [kworker/11:0-events]\n 108727  106528 codex-code-mode  0.0 /home/ainet/.codex/packages/standalone/releases/0.154.0-aarch64-unknown-linux-musl/bin/codex-code-mode-host\n 108757       2 kworker/2:0-mm_  0.0 [kworker/2:0-mm_percpu_wq]\n 108760       2 kworker/5:0-ine  0.0 [kworker/5:0-inet_frag_wq]\n 108761       2 kworker/u55:0-T  0.0 [kworker/u55:0-TX_HDL]\n 108762       2 kworker/u49:0-T  0.0 [kworker/u49:0-TX_HDL]\n 108763       2 kworker/1:1-mm_  0.0 [kworker/1:1-mm_percpu_wq]\n 108779       2 kworker/7:0-eve  0.0 [kworker/7:0-events]\n 108811       2 kworker/8:2-ine  0.0 [kworker/8:2-inet_frag_wq]\n 108839       2 kworker/6:1-eve  0.0 [kworker/6:1-events]\n 108861       2 kworker/u48:2-E  0.0 [kworker/u48:2-EVENT_HDL]\n 108892       2 kworker/9:0-eve  0.0 [kworker/9:0-events]\n 108893       2 kworker/u54:0-T  0.0 [kworker/u54:0-TX_HDL]\n 108920       2 kworker/4:0-mm_  0.0 [kworker/4:0-mm_percpu_wq]\n 108945       2 kworker/u52:2-T  0.0 [kworker/u52:2-TX_HDL]\n 109014       2 kworker/u38:1-e  0.0 [kworker/u38:1-events_power_efficient]\n 109073       2 kworker/u37:1    0.0 [kworker/u37:1]\n 109074       2 kworker/u39:2-e  0.0 [kworker/u39:2-events_unbound]\n 109075       2 kworker/u37:2    0.0 [kworker/u37:2]\n 109092       2 kworker/3:2-eve  0.0 [kworker/3:2-events]\n 109094       2 kworker/u45:0-T  0.0 [kworker/u45:0-TX_HDL]\n 109112       2 kworker/u50:1-T  0.0 [kworker/u50:1-TX_HDL]\n 109129       2 kworker/11:1-ev  0.0 [kworker/11:1-events]\n 109147       2 kworker/u55:2-T  0.0 [kworker/u55:2-TX_HDL]\n 109177       2 kworker/13:1-ev  0.0 [kworker/13:1-events]\n 109242       2 kworker/8:0-eve  0.0 [kworker/8:0-events]\n 109259       2 kworker/1:0-pm   0.0 [kworker/1:0-pm]\n 109272       2 kworker/11:4     0.0 [kworker/11:4]\n 109291       2 kworker/5:2-ine  0.0 [kworker/5:2-inet_frag_wq]\n 109292       2 kworker/u28:1    0.0 [kworker/u28:1]\n 109293       2 kworker/u54:1-T  0.0 [kworker/u54:1-TX_HDL]\n 109311       2 kworker/u41:3-w  0.0 [kworker/u41:3-writeback]\n 109329       2 kworker/u44:0-E  0.1 [kworker/u44:0-EVENT_HDL]\n 109330       2 kworker/u56:1-T  0.0 [kworker/u56:1-TX_HDL]\n 109348       2 kworker/u47:2-T  0.0 [kworker/u47:2-TX_HDL]\n 109362       2 kworker/6:2-eve  0.0 [kworker/6:2-events]\n 109396       2 kworker/0:1-eve  0.0 [kworker/0:1-events]\n 109397       2 kworker/u38:2-e  0.0 [kworker/u38:2-events_unbound]\n 109464       2 kworker/4:1      0.0 [kworker/4:1]\n 109465       2 kworker/u42:0-f  0.0 [kworker/u42:0-flush-259:0]\n 109532       1 python3         24.5 /usr/bin/python3 -B /home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/replacements/_control/replacement.py --run-once\n 109545  109532 python3         34.6 /usr/bin/python3 -B /home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/replacements/_control/identity_adapter.py --formal --concurrency 1 --k 2 --frames-per-stream 1800 --run-id replacement01 --output-dir /home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/replacements/c1/k2/replacement01\n 109561  109545 ps               0.0 ps -eo pid,ppid,comm,pcpu,args\n",
+  "thermal": {
+    "/sys/class/thermal/thermal_zone2/temp": "35968",
+    "/sys/class/thermal/thermal_zone0/temp": "36031",
+    "/sys/class/thermal/thermal_zone3/temp": "34812",
+    "/sys/class/thermal/thermal_zone1/temp": "unavailable: [Errno 61] No data available",
+    "/sys/class/thermal/thermal_zone4/temp": "35281"
+  },
+  "relevant_environment": {
+    "PATH": "/home/ainet/.codex/packages/standalone/releases/0.154.0-aarch64-unknown-linux-musl/codex-path:/home/ainet/.local/bin:/home/ainet/.codex/tmp/arg0/codex-arg0iLjtAU:/home/ainet/.codex/packages/standalone/releases/0.154.0-aarch64-unknown-linux-musl/codex-path:/home/ainet/.local/bin:/home/ainet/.local/bin:/usr/local/cuda-13.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "LD_LIBRARY_PATH": "/usr/lib/python3.12/dist-packages/cv2/../../../../lib:"
+  },
+  "git_head": "c8352245fa8be6aefff6d7ba91c29c669bb19ea7",
+  "model": "RT-DETR Warehouse v1.0.2",
+  "engine_path": "/home/ainet/research/thor-mec-inference/models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine",
+  "engine_sha256": "9d01cdb2838bb1b9db58c246e6111a5dccee63bb937b673fb48caf43e53bc5ff",
+  "batch_size": 1,
+  "concurrency": 1,
+  "fps": 30,
+  "frames_per_stream": 1800,
+  "formal_frames_per_stream": 1800,
+  "candidate_deadline_ms": 33.333333333333336,
+  "candidate_deadline_exact_definition": "1/30 second",
+  "integer_ns_miss_comparison_rule": "e2e_ns * 30 > 1_000_000_000",
+  "candidate_deadline_purpose": "comparison with prior Local formal; not final application SLA",
+  "K_list": [
+    2
+  ],
+  "planned_formal_K_list": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "run_count_per_K": 5,
+  "actual_formal_stream_to_video_mapping": [
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4",
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0001.mp4",
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0002.mp4",
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0003.mp4",
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0004.mp4",
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0005.mp4",
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0006.mp4"
+  ],
+  "active_stream_to_video_mapping": [
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4",
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0001.mp4"
+  ],
+  "mapping_source_evidence": [
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run1/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run1_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run2/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run2_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run3/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run3_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run4/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run4_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run5/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k1/run5_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run1/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run1_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run2/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run2_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run3/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run3_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run4/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run4_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run5/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k2/run5_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run1/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run1_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run2/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run2_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run3/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run3_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run4/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run4_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run5/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k3/run5_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run1/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run1_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run2/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run2_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run3/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run3_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run4/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run4_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run5/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k4/run5_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run1/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run1_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run2/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run2_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run3/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run3_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run4/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run4_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run5/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k5/run5_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run1/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run1_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run2/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run2_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run3/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run3_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run4/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run4_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run5/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k6/run5_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run1/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run1_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run2/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run2_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run3/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run3_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run4/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run4_console.log",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run5/summary.json",
+    "results/local_realtime_baseline/capacity_sweep_5rep/b1_sync/k7/run5_console.log"
+  ],
+  "videos": [
+    {
+      "stream_id": 0,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4",
+      "exists": true,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ],
+        "format": {
+          "duration": "60.000000"
+        }
+      }
+    },
+    {
+      "stream_id": 1,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0001.mp4",
+      "exists": true,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ],
+        "format": {
+          "duration": "60.000000"
+        }
+      }
+    },
+    {
+      "stream_id": 2,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0002.mp4",
+      "exists": true,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ],
+        "format": {
+          "duration": "60.000000"
+        }
+      }
+    },
+    {
+      "stream_id": 3,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0003.mp4",
+      "exists": true,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ],
+        "format": {
+          "duration": "60.000000"
+        }
+      }
+    },
+    {
+      "stream_id": 4,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0004.mp4",
+      "exists": true,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ],
+        "format": {
+          "duration": "60.000000"
+        }
+      }
+    },
+    {
+      "stream_id": 5,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0005.mp4",
+      "exists": true,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ],
+        "format": {
+          "duration": "60.000000"
+        }
+      }
+    },
+    {
+      "stream_id": 6,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0006.mp4",
+      "exists": true,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ],
+        "format": {
+          "duration": "60.000000"
+        }
+      }
+    }
+  ],
+  "GStreamer_pipeline": "filesrc -> qtdemux -> h264parse -> nvv4l2decoder -> nvvidconv -> video/x-raw,format=BGRx,width=1920,height=1080 -> videoconvert -> video/x-raw,format=BGR,width=1920,height=1080 -> appsink sync=false",
+  "appsink": {
+    "sync": false,
+    "emit_signals": false,
+    "max_buffers": 1,
+    "drop": false
+  },
+  "preprocessing_identity": "rtdetr_preprocess.preprocess_bgr: INTER_LINEAR 640x360; top-left zero pad 640x640; BGR->RGB; FP32 /255; contiguous NCHW 1x3x640x640; cv2 threads=1",
+  "warm_up_behavior": "NONE; all 1800 full-source frames retained; no exclusion",
+  "source_preparation": "one shared engine and C independent contexts/streams/buffer sets created first; same pipeline preparation",
+  "worker_startup_order": "pipelines PLAYING -> front-end workers -> C context-owning inference workers -> t0+100ms -> arrival scheduler -> GLib loop",
+  "arrival_definition": "phase-aligned logical scheduled job arrivals at 30 FPS per stream; not camera capture or decoder timestamps",
+  "arrival_integer_representation": "a_ns=t0_ns+(frame_id*1000000000)//30; floor each absolute rational offset (<1ns quantization), no accumulated rounded period; wait API alone converts remaining ns to seconds",
+  "queue_capacity_semantics": "unbounded queue.Queue(maxsize=0) for each arrival queue and one FIFO ready queue; no drops, no batching; appsink max-buffers=1/drop=false unchanged",
+  "EOS_behavior": "FULL SOURCE: original unbounded file/decode pipeline; all actual natural bus EOS messages and all accepted completions required before successful cleanup; sample budget cannot replace EOS",
+  "clock_source": {
+    "implementation": "clock_gettime(CLOCK_MONOTONIC)",
+    "monotonic": true,
+    "adjustable": false,
+    "resolution": 1e-09
+  },
+  "integer_ns_timing_method": "same underlying performance-counter clock semantics, integer-nanosecond API used for measurement",
+  "timing_API": "time.perf_counter_ns() (canonical time.perf_counter())",
+  "a_j": "30 FPS logical scheduled job-arrival time",
+  "b_j": "front-end worker after arrival get, immediately before pull-sample",
+  "r_j": "state_lock-protected ready-queue enqueue completion boundary: sample perf_counter_ns immediately after unbounded put returns, before enqueue counter/event publication",
+  "s_j": "after ready dequeue, under state_lock at end of start accounting, immediately before lock release and TensorRTRunner.infer call",
+  "c_j": "first perf_counter_ns after infer returns, before output-name validation; host outputs available",
+  "front_end_ms_boundary": "pull-sample wait/access; caps validation; buffer map; ndarray view; preprocess_bgr; unmap; ready job preparation; accounting lock acquisition; unbounded queue insertion through r; async decode service is not isolated",
+  "inference_ms_boundary": "s at end of start accounting -> input validation and private pinned staging copy -> async H2D -> execute_async_v3(nondefault per-worker stream) -> async D2H -> cudaStreamSynchronize(own stream) -> host output return -> c; not pure GPU kernel latency",
+  "queue_depth_definition": "N_enqueue-N_inference_start; excludes all 0..C service frames; dequeued job remains waiting until s",
+  "queue_event_accounting_method": "same state_lock for put/r/N_enqueue/event and N_inference_start/s/event; get outside lock; infer outside lock; Q_inf(t)=#{j:r_j<=t<s_j}; no Queue.qsize",
+  "queue_event_sequence_rule": "zero-based strictly increasing sequence assigned in state_lock; replay sequence without timestamp sorting, including equal timestamps",
+  "queue_time_weighted_integration_interval": "first ready enqueue r through last ready enqueue r; integer frame-ns area / integer ns interval; T=0 rejected",
+  "queue_peak_definition": "maximum event-state waiting depth over entire run through drain",
+  "queue_at_last_enqueue_definition": "waiting depth immediately after final ready enqueue event in lock sequence",
+  "K_level_summary_aggregation": "five run statistics per K,C; mean, median, sample SD, min, max",
+  "smoke_summary_aggregation": "one actual run per K; run_count=1; never represented as five repeats",
+  "statistics_arithmetic": "integer ns differences/validation/integration; exact rational means and linear percentile interpolation in ns; ms conversion only at CSV serialization",
+  "source_sha256": {
+    "profile_local_realtime.py": "5b13e7e0e77cb5b380ff22c8bb39ca2eed456f975cddc1aa93ec384209fa1aae",
+    "profile_local_e2e.py": "aa9ec99381e6936f843a0e1e0cf3b3cc7beb93778748d0a3fb34b9d9be2084dd",
+    "rtdetr_preprocess.py": "48f510234b84e52db3fa7f102279fe778c9c929b80d71e6a34cf684f5a4f7d1e",
+    "profile_local_latency_breakdown.py": "970bc5ff2ae8eb6062600482d02dffa78979daa60875df4c2ffecc80152c5f63",
+    "local_latency_breakdown_metrics.py": "4225d57739c29d18aef0e9e2d75bf4fc20f2407ffc50b603bcf8b8902aa08cce",
+    "profile_local_concurrency_control.py": "6ae4743079e24b784621e48e85d8eb2b2a823fae4842781df7346d98ce360640",
+    "local_concurrency_tensorrt.py": "863cdd468d8565efdf2a82435e667f9fce837d7d2013ff61ab4ab8fafa8ba140",
+    "local_concurrency_validation.py": "50a29847f47855c9344bbf539fbb62dcec04fbc55df888998e4db689958045e6"
+  },
+  "gpu_kernel_overlap_directly_measured": false,
+  "extra_service_instrumentation": "host execute return and stream-sync return timestamps; no GPU timing events",
+  "control_differences": "primary comparison: only worker/context/stream/buffer-set count changes with C; identical per-request infer/timing/queue code",
+  "C1_measurement_sources_modified": false,
+  "offered_duration_s": 60,
+  "full_source_expected_frames": 1800,
+  "pipeline_termination": "original full-source file/decode chain; no identity limiter or synthetic EOS"
+}

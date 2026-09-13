@@ -1,0 +1,14 @@
+{
+  "exit_code": 0,
+  "start_time": "2026-09-12T23:42:25.431088+00:00",
+  "end_time": "2026-09-12T23:43:28.119491+00:00",
+  "started_utc_ns": 1789256545431078910,
+  "finished_utc_ns": 1789256608119484025,
+  "start_monotonic_ns": 52430758917631,
+  "end_monotonic_ns": 52493447314125,
+  "elapsed_ns": 62688396494,
+  "parent_pid": 109532,
+  "child_pid": 109545,
+  "watchdog_timeout": false,
+  "retried": false
+}

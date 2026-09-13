@@ -1,0 +1,1 @@
+CPU-only reproduction into a fresh analysis_valid5 output directory: analyze.py, render.py, verify.py. analyze.py refuses to overwrite existing analysis tables. Original inputs are immutable. No GPU/acquisition command is invoked. Matplotlib uses Agg; its cache stays under this directory.

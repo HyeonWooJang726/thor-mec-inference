@@ -1,0 +1,40 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/replacements/_control/identity_adapter.py",
+    "--formal",
+    "--concurrency",
+    "1",
+    "--k",
+    "2",
+    "--frames-per-stream",
+    "1800",
+    "--run-id",
+    "replacement01",
+    "--output-dir",
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/replacements/c1/k2/replacement01"
+  ],
+  "cwd": "/home/ainet/research/thor-mec-inference",
+  "source_command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/_campaign/profile_fullsource.py",
+    "--formal",
+    "--concurrency",
+    "1",
+    "--k",
+    "2",
+    "--frames-per-stream",
+    "1800",
+    "--run-id",
+    "run01",
+    "--output-dir",
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/c1/k2/run01"
+  ],
+  "frozen_profile": "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/_campaign/profile_fullsource.py",
+  "adapter_scope": "Only parse_args return fields run_id and output_dir; frozen main and all performance code unchanged",
+  "acquisition_phase": "POST_CAMPAIGN_REPLACEMENT",
+  "actual_round_id": null,
+  "actual_global_run_index": null
+}

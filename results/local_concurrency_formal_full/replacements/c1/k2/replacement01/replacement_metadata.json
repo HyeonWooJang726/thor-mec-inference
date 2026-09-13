@@ -1,0 +1,23 @@
+{
+  "artifact_class": "FULL FORMAL LOCAL STATIC-CONCURRENCY REPLACEMENT",
+  "acquisition_phase": "POST_CAMPAIGN_REPLACEMENT",
+  "replacement_for": {
+    "global_run_index": 220,
+    "original_round_id": 4,
+    "original_repeat_id": 4,
+    "original_run_id": "run04",
+    "original_status": "FAIL"
+  },
+  "replacement_condition": {
+    "K": 2,
+    "C": 1
+  },
+  "statistical_slot": 4,
+  "actual_round_id": null,
+  "actual_global_run_index": null,
+  "start_time": "2026-09-12T23:42:25.431088+00:00",
+  "end_time": "2026-09-12T23:43:28.119491+00:00",
+  "actual_child_exit_code": 0,
+  "reason": "original measurement completed all frames and validation, but child process terminated with exit code -11",
+  "legacy_validator_label": "LOCAL CONCURRENCY PILOT / NON-FORMAL and single-pilot wording are stale labels; original files unchanged"
+}

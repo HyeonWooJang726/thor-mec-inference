@@ -1,0 +1,146 @@
+{
+  "artifact_class": "LOCAL CONCURRENCY PILOT / NON-FORMAL",
+  "K": 2,
+  "C": 1,
+  "expected": 3600,
+  "source_EOS": [
+    true,
+    true
+  ],
+  "EOS_validation": "PASS",
+  "termination": {
+    "validation": "PASS",
+    "mode": "full_source",
+    "bounded_complete": [
+      true,
+      true
+    ],
+    "eos_observed": [
+      true,
+      true
+    ],
+    "missing_bus_EOS_stream_ids": [],
+    "errors": []
+  },
+  "bounded_complete": [
+    true,
+    true
+  ],
+  "counts": {
+    "arrivals": 3600,
+    "source_samples": 3600,
+    "preprocessed": 3600,
+    "completions": 3600,
+    "per_frame_rows": 3600
+  },
+  "per_stream_counts": [
+    {
+      "stream_id": 0,
+      "arrivals": 1800,
+      "source_samples": 1800,
+      "preprocessed": 1800,
+      "completions": 1800
+    },
+    {
+      "stream_id": 1,
+      "arrivals": 1800,
+      "source_samples": 1800,
+      "preprocessed": 1800,
+      "completions": 1800
+    }
+  ],
+  "frame_ID_range": "0..1799 exactly once per stream",
+  "timestamp_ordering_violations": 0,
+  "decomposition_violations": 0,
+  "max_absolute_decomposition_error_ns": 0,
+  "concurrency": {
+    "max_active_inferences": 1,
+    "service_interval_overlap_count": 0,
+    "service_interval_overlap_time_ns": 0,
+    "service_interval_overlap_time_ms": 0.0,
+    "active_after_drain": 0,
+    "service_overlap_pair_count": 0,
+    "service_overlap_time_ms": 0.0,
+    "worker_request_counts": {
+      "0": 3600
+    },
+    "configured_workers": 1,
+    "workers_actually_used": 1,
+    "worker_ids_used": [
+      0
+    ],
+    "unused_worker_ids": [],
+    "resource_ownership": "PASS",
+    "buffer_ranges_nonoverlapping": true,
+    "submitted_not_yet_synchronized_intervals": {
+      "max_active_inferences": 1,
+      "service_interval_overlap_count": 0,
+      "service_interval_overlap_time_ns": 0,
+      "service_interval_overlap_time_ms": 0.0,
+      "active_after_drain": 0
+    },
+    "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+  },
+  "resources": {
+    "configured_workers": 1,
+    "submission_stream_count": 1,
+    "concurrency": 1,
+    "buffer_set_count": 1,
+    "pinned_staging_set_count": 1,
+    "engine_instance_count": 1,
+    "execution_context_count": 1,
+    "cuda_stream_count": 1,
+    "num_aux_streams_per_context": 2,
+    "tensorrt_version": "10.16.2.10",
+    "workers": [
+      {
+        "worker_id": 0,
+        "context_object_id": 281472729874736,
+        "cuda_stream_pointer": 500743280,
+        "device_buffers": {
+          "inputs": 57973669888,
+          "pred_logits": 57917048832,
+          "pred_boxes": 57917057536
+        },
+        "pinned_host_buffers": {
+          "inputs": 13608419328,
+          "pred_logits": 57979961344,
+          "pred_boxes": 57979970048
+        },
+        "buffer_bytes": {
+          "inputs": 4915200,
+          "pred_logits": 8400,
+          "pred_boxes": 4800
+        }
+      }
+    ]
+  },
+  "negative_waiting_depth_events": 0,
+  "queue": {
+    "inference_queue_peak": 7,
+    "inference_queue_time_weighted": {
+      "numerator": 11064791074,
+      "denominator": 59870189999
+    },
+    "inference_queue_at_last_enqueue": 2,
+    "integration_start_ns": 52432904813658,
+    "integration_end_ns": 52492775003657,
+    "integration_duration_ns": 59870189999,
+    "integral_frame_ns": 11064791074,
+    "waiting_after_drain": 0,
+    "N_enqueue": 3600,
+    "N_inference_start": 3600,
+    "event_count": 7200
+  },
+  "queue_depth_positive_frames": 471,
+  "queue_wait_positive_frames": 3600,
+  "queue_accounting": "PASS",
+  "errors": [],
+  "validation": "PASS",
+  "performance_interpretation": "Single pilot run per K,C; no final formal conclusion",
+  "offered_duration_s": 60.0,
+  "offered_end_ns": 52492797896263,
+  "completion_elapsed_s": 59.993062007,
+  "drain_after_offered_end_s": 0.0,
+  "wall_clock_duration_s": 62.051636882
+}

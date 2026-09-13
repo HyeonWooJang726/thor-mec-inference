@@ -1,0 +1,9 @@
+C,equal_K_mean_DMR,equal_K_mean_descriptive_gap_pp,worst_K_descriptive_gap_pp,interpretation
+1,25.482407407407408,13.584508692365834,52.60952380952381,"equal K weights are exploratory, not deployment probabilities"
+2,16.973295540438397,5.075396825396825,35.388888888888886,"equal K weights are exploratory, not deployment probabilities"
+3,14.572721088435374,2.674822373393801,11.48412698412698,"equal K weights are exploratory, not deployment probabilities"
+4,12.78525321239607,0.8873544973544971,4.357777777777778,"equal K weights are exploratory, not deployment probabilities"
+5,18.394168556311413,6.49626984126984,21.27777777777777,"equal K weights are exploratory, not deployment probabilities"
+6,28.68298941798942,16.785090702947844,54.53518518518518,"equal K weights are exploratory, not deployment probabilities"
+7,29.586991685563113,17.68909297052154,57.2537037037037,"equal K weights are exploratory, not deployment probabilities"
+8,29.779444444444447,17.881545729402873,56.729629629629635,"equal K weights are exploratory, not deployment probabilities"

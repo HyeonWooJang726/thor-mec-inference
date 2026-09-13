@@ -1,0 +1,84 @@
+{
+  "C": 1,
+  "K": 2,
+  "run_id": "replacement01",
+  "validation": "PASS",
+  "frames": 3600,
+  "counts": {
+    "arrivals": 3600,
+    "source_samples": 3600,
+    "preprocessed": 3600,
+    "completions": 3600,
+    "per_frame_rows": 3600
+  },
+  "duplicate_frames": 0,
+  "missing_frames": 0,
+  "timestamp_ordering_violations": 0,
+  "decomposition_violations": 0,
+  "max_absolute_decomposition_error_ns": 0,
+  "negative_waiting_depth_events": 0,
+  "waiting_after_drain": 0,
+  "active_after_drain": 0,
+  "queue_accounting": "PASS",
+  "CSV_raw_equality": "PASS",
+  "EOS": "PASS",
+  "termination": {
+    "validation": "PASS",
+    "mode": "full_source",
+    "bounded_complete": [
+      true,
+      true
+    ],
+    "eos_observed": [
+      true,
+      true
+    ],
+    "missing_bus_EOS_stream_ids": [],
+    "errors": []
+  },
+  "concurrency": {
+    "max_active_inferences": 1,
+    "service_interval_overlap_count": 0,
+    "service_interval_overlap_time_ns": 0,
+    "service_interval_overlap_time_ms": 0.0,
+    "active_after_drain": 0,
+    "service_overlap_pair_count": 0,
+    "service_overlap_time_ms": 0.0,
+    "worker_request_counts": {
+      "0": 3600
+    },
+    "configured_workers": 1,
+    "workers_actually_used": 1,
+    "worker_ids_used": [
+      0
+    ],
+    "unused_worker_ids": [],
+    "resource_ownership": "PASS",
+    "buffer_ranges_nonoverlapping": true,
+    "submitted_not_yet_synchronized_intervals": {
+      "max_active_inferences": 1,
+      "service_interval_overlap_count": 0,
+      "service_interval_overlap_time_ns": 0,
+      "service_interval_overlap_time_ms": 0.0,
+      "active_after_drain": 0
+    },
+    "evidence_scope": "concurrent submission/outstanding host intervals only; GPU kernel overlap not measured"
+  },
+  "whole_interval_active_cap": "PASS",
+  "exact_event_area_identity": "PASS",
+  "active_fraction_sum": "PASS",
+  "period_boundary_accounting": "PASS",
+  "no_error_logs": true,
+  "timing_window": "A means/fractions: [t0,t0+60s); full-drain secondary occupancy retained",
+  "queue_window": "canonical first r through last r",
+  "completed_fps_definition": "completed_frames / ((max(c_ns)-t0_ns)/1e9)",
+  "carryover_definition": "fraction of 1800 period-end boundaries with prior-ID waiting/active > 0; includes final boundary",
+  "integer_ns_deadline": "(c_ns-a_ns)*30 > 1000000000",
+  "raw_sha256": {
+    "raw_ns.json": "6a251a0d524c037eb28d1611781c0cad6e96b8d7d30a8b6bf53f21704cf965a9",
+    "per_frame.csv": "5a891ce523789bad9d718fd55cd71af4cd06944f79b3407139a10653d74f7c3c",
+    "resources.json": "d0da468b52d229b1639e8217cfd6bddf24663a81f6e235cf5097d7fc35f08ee7",
+    "termination_evidence.json": "9fe99d19ad41d68f1f516ef7283fcb8f35eff3fe3c536513faabe901248ae0af",
+    "lifecycle.json": "d4da9c8f69fb34e0f17dc4cfe63d95d3e0cea6f398d41787c102298d3dbb6f96"
+  }
+}

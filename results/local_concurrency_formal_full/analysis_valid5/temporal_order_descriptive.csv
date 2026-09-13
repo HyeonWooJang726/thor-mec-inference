@@ -1,0 +1,3 @@
+metric,n_original_valid,slope_per_100_indices,correlation,replacement_used
+service_mean_ms,279,0.003345667731855167,0.008377555257760839,False
+deadline_miss_percent,279,-0.8944733518796841,-0.18241475906075555,False

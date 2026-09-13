@@ -1,0 +1,149 @@
+{
+  "validation": "PASS",
+  "conditions": 56,
+  "valid_runs": 280,
+  "primary_frames": 2016000,
+  "physical_acquisition_runs": 281,
+  "physical_acquisition_completed_frames": 2019600,
+  "original_campaign": {
+    "attempted": 280,
+    "PASS": 279,
+    "FAIL": 1,
+    "ABORTED": 0
+  },
+  "replacement_runs": 1,
+  "duplicates": 0,
+  "missing_conditions": 0,
+  "missing_required_metrics": 0,
+  "K_C_mismatches": 0,
+  "replacement_in_pairing": false,
+  "original_K2_C1_round4_missing": true,
+  "cap_intersection_runs_processed": 265,
+  "cap_zero_runs_with_exact_zero_intersection": 15,
+  "selective_deadline_conditions": [
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      8
+    ]
+  ],
+  "selective_deadline_runs": 110,
+  "primary_metrics_match_canonical": true,
+  "mean_decomposition": "PASS",
+  "exact_cap_and_mean_A_crosschecks": "PASS",
+  "GPU_runs": 0,
+  "source_modified": false,
+  "frame_level_statistical_replication": false,
+  "preservation_validation": "PASS",
+  "protected_files_checked": 9636,
+  "hash_mismatches": [],
+  "figures": [
+    "figure01_dmr.pdf",
+    "figure02_queue.pdf",
+    "figure03_service.pdf",
+    "figure04_mean_A.pdf",
+    "figure05_cap_and_waiting.pdf",
+    "figure06_mean_decomposition.pdf",
+    "figure07_completed_vs_offered.pdf",
+    "figure08_static_regret.pdf",
+    "figure09_local_tails.pdf"
+  ],
+  "git_status": "M scripts/profile_tcp_throughput.py\n?? scripts/partitioning/\n?? scripts/profile_edge_realtime.py",
+  "verdict": "FORMAL_CHARACTERIZATION_SUPPORTS_DYNAMIC_C_MOTIVATION",
+  "final_verification": "PASS",
+  "formal_metadata_consistency": "PASS",
+  "measurement_critical_hashes": "MATCH",
+  "round_pair_rows": 2940,
+  "missing_pair_rows": 12,
+  "missing_pair_reason": "K2 C1->C2 original Round4; 12 metrics",
+  "original_drift_reference_sha256": "40645462c61a9716fc155566f2e586ca6b8469db130fd960b40e0195f49a25ed",
+  "originals_hash_mismatches": [],
+  "source_script_sha256": {
+    "render.py": "3768e5221c3ce535bf3c68d858d6ffb22276e59b84c1f52abbe0283361819cd3",
+    "analyze.py": "d7f0f236dd8a341ef6ddccccddda71f3f40bde32a0fbaa510a8ced359ba1ff07",
+    "verify.py": "9bbd448eb5f3857d8f2451d8c502aac48b557cb4ee30b7813340450905147aef"
+  }
+}

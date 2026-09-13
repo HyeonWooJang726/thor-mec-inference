@@ -1,0 +1,8 @@
+hypothesis,verdict,evidence
+H1,CONFIRMED,"Queue response differs with K: K1 C1→2 +0.0389 ms (4/5 up), K2 −2.8916 ms (4/4 down), K7 −5073.2284 ms (5/5 down)."
+H2,CONFIRMED,"Service increases at some higher C: K5 C4→5 +5.7248 ms and K7 C6→7 +5.3554 ms, both 5/5 up. It does not rise at every adjacent step."
+H3,CONFIRMED,"Same region: K5 C4→5 queue −2.2821 ms and service +5.7248 ms, both consistent in 5/5; K7 C4→5 queue −5.7090 and service +3.0746 ms, 5/5."
+H4,CONFIRMED,"Non-monotonic DMR accompanies component changes: K5 C1→2 −11.0422 pp then C2→3 +1.5489 pp, each 5/5; K7 C3→4 −11.4841 then C4→5 +21.2778 pp, each 5/5. No causal attribution to queue/service alone."
+H5,CONFIRMED,"C2→4 DMR rises +1.8019 pp at K6 (5/5), but falls −35.3889 pp at K7 (5/5)."
+H6,NOT_CONFIRMED,"No single fixed C dominates every K in measured DMR. C4 has the lowest exploratory equal-K mean, but C2 is lower at K6 in every round. Adequacy to an unspecified deployment/SLA is not established."
+H7,CONFIRMED,Opposite repeat-consistent static preferences and distinct queue/service/blocked-state regimes motivate testing adaptation. Static data do not measure achievable online improvement or transition cost.
