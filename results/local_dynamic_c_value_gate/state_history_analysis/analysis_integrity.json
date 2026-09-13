@@ -1,0 +1,238 @@
+{
+  "validation": "PASS",
+  "primary_acquisitions": 30,
+  "requests": 351000,
+  "new_GPU_acquisitions": 0,
+  "phase_rows": 120,
+  "boundary_rows": 90,
+  "evolution_rows": 720,
+  "checks": [
+    {
+      "acquisition_id": "primary_01",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_02",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_03",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_04",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_05",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_06",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_07",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_08",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_09",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_10",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_11",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_12",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_13",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_14",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_15",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_16",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_17",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_18",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_19",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_20",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_21",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_22",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_23",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_24",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_25",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_26",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_27",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_28",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_29",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    },
+    {
+      "acquisition_id": "primary_30",
+      "requests": 11700,
+      "validation": "PASS",
+      "primary_DMR_reproduced": true,
+      "final_drain_zero": true
+    }
+  ],
+  "read_only_input_hash_mismatches": [],
+  "experimental_unit": "acquisition/run",
+  "phase_B_committed": false,
+  "phase_B_pushed": false,
+  "git_status_unchanged": true,
+  "final_required_outputs_present": true,
+  "secondary_window_rows": 240,
+  "phase_and_window_counts_match": true,
+  "DMR_gap_arithmetic_matches": true,
+  "final_original_dynamic_hash_mismatches": [],
+  "formal_unrelated_preservation_files": 9773,
+  "formal_unrelated_hash_mismatches": [],
+  "phase_A_commit": "97daa31cab61fa2fc6e46106ca6d1f87013b4436",
+  "HEAD_equals_origin_main": true,
+  "phase_B_tracked_files": 0,
+  "phase_B_staged_files": 0,
+  "final_verdict": "STATE_AWARE_DYNAMIC_C_WEAKLY_MOTIVATED"
+}
