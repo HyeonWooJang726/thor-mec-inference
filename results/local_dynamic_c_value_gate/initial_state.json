@@ -1,0 +1,12 @@
+{
+  "HEAD": "00d34699189f8c77c0c138f485f6c6183fb31641",
+  "branch": "main",
+  "initial_unrelated": [
+    "M scripts/profile_tcp_throughput.py",
+    "?? scripts/partitioning/",
+    "?? scripts/profile_edge_realtime.py"
+  ],
+  "preexisting_dynamic_root": false,
+  "preexisting_gpu_acquisitions": 0,
+  "figure_files_moved": 28
+}

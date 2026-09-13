@@ -1,0 +1,51 @@
+{
+  "input": "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/formal_per_run_summary_valid5.csv",
+  "sha256": "e7436bcea882fd220207c46b8ace9bd6a237572f6d019b9e2fb1ffbc20d92ecb",
+  "formula": "S(C)=(6*mean_DMR(K6,C)+7*mean_DMR(K7,C))/13",
+  "units": "percent",
+  "inclusion": "unchanged valid5; five PASS runs per condition; K2C1 replacement not relevant to score",
+  "interpretation": "static descriptive selection; not dynamic prediction/bound",
+  "RNG": "Python random.Random (MT19937)",
+  "seed": 20260913,
+  "base": [
+    [
+      "A",
+      "K_LOOKUP_C2_C4"
+    ],
+    [
+      "B",
+      "FIXED_C2"
+    ],
+    [
+      "B",
+      "K_LOOKUP_C2_C4"
+    ],
+    [
+      "A",
+      "FIXED_C4"
+    ],
+    [
+      "B",
+      "FIXED_C4"
+    ],
+    [
+      "A",
+      "FIXED_C2"
+    ]
+  ],
+  "shifts": [
+    4,
+    1,
+    0,
+    2,
+    5,
+    3
+  ],
+  "selected_shifts": [
+    4,
+    1,
+    0,
+    2,
+    5
+  ]
+}

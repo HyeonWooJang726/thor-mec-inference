@@ -1,0 +1,285 @@
+{
+  "measurement_critical_changed": false,
+  "measurement_critical": {
+    "/home/ainet/research/thor-mec-inference/models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine": {
+      "before": "9d01cdb2838bb1b9db58c246e6111a5dccee63bb937b673fb48caf43e53bc5ff",
+      "after": "9d01cdb2838bb1b9db58c246e6111a5dccee63bb937b673fb48caf43e53bc5ff",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/_campaign/analyze_run.py": {
+      "before": "e58ba8c15a670f79556ef1cec0ca5bfc723d19bf3ee5a48e7437d27aff09b4b7",
+      "after": "e58ba8c15a670f79556ef1cec0ca5bfc723d19bf3ee5a48e7437d27aff09b4b7",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/_campaign/base_analysis.py": {
+      "before": "b4ddf8d751ff2605da8d9d0d48f8d2ec16b2505d537cf1854a457a7ebd293afd",
+      "after": "b4ddf8d751ff2605da8d9d0d48f8d2ec16b2505d537cf1854a457a7ebd293afd",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/_campaign/common.py": {
+      "before": "a2b17fa7ffbaac21d8ab4cf3b89014fbfcebc1926b22875e32a1e5fe4df1208e",
+      "after": "a2b17fa7ffbaac21d8ab4cf3b89014fbfcebc1926b22875e32a1e5fe4df1208e",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/_campaign/profile_fullsource.py": {
+      "before": "e8e07867f8ecc83a014174bf44f8006e2b61b2504c5ba7abc6e4924ff0e87fb1",
+      "after": "e8e07867f8ecc83a014174bf44f8006e2b61b2504c5ba7abc6e4924ff0e87fb1",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/_campaign/screening_metrics.py": {
+      "before": "d27ee6a332831bd08c40e4706f8ab995fe6a502c3e35a3e3fae9a6a299dadb70",
+      "after": "d27ee6a332831bd08c40e4706f8ab995fe6a502c3e35a3e3fae9a6a299dadb70",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/_campaign/screening_tensorrt.py": {
+      "before": "03284559a3ab859ccf5dbb626cc516267223fddc3de3868dbd2a6f2a5a39dca4",
+      "after": "03284559a3ab859ccf5dbb626cc516267223fddc3de3868dbd2a6f2a5a39dca4",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/_campaign/screening_validation.py": {
+      "before": "a5ff75768ec0f14f666ddc5aba1433a867e897fe721ad8624e339f30d0a6744d",
+      "after": "a5ff75768ec0f14f666ddc5aba1433a867e897fe721ad8624e339f30d0a6744d",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/_campaign/termination_contract.py": {
+      "before": "874d5932ced75b87265b0ce0dafccf508834b8c2e8e36bd1a3b8cc724a75957b",
+      "after": "874d5932ced75b87265b0ce0dafccf508834b8c2e8e36bd1a3b8cc724a75957b",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_concurrency_formal_full/_campaign/test_campaign.py": {
+      "before": "fbf7c0f3083792cc9f4557ba6622351397fbb765b469fd8242189615c9393f23",
+      "after": "fbf7c0f3083792cc9f4557ba6622351397fbb765b469fd8242189615c9393f23",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/common/rtdetr_preprocess.py": {
+      "before": "48f510234b84e52db3fa7f102279fe778c9c929b80d71e6a34cf684f5a4f7d1e",
+      "after": "48f510234b84e52db3fa7f102279fe778c9c929b80d71e6a34cf684f5a4f7d1e",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/common/script_paths.py": {
+      "before": "3241041edbd7d229ed16eaf288423bab40fa0b86d1df9b08544200c9ffbf9024",
+      "after": "3241041edbd7d229ed16eaf288423bab40fa0b86d1df9b08544200c9ffbf9024",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/analyze_local_concurrency_formal_control.py": {
+      "before": "6fdbc0973f30fe7343a0cde5cc5360bcc0270d9e0f57b67d0da038724e99917d",
+      "after": "6fdbc0973f30fe7343a0cde5cc5360bcc0270d9e0f57b67d0da038724e99917d",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/canonical.py": {
+      "before": "93ee466e0f3bb0973d8b66e638bac9d2b24fa7e61578c1576c3116bb3f7ea550",
+      "after": "93ee466e0f3bb0973d8b66e638bac9d2b24fa7e61578c1576c3116bb3f7ea550",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/local_concurrency_control_metrics.py": {
+      "before": "7c3ef3e479f51cd623b9efb84ba166782e2aaf8e0e19d708f88f95326e3a2025",
+      "after": "7c3ef3e479f51cd623b9efb84ba166782e2aaf8e0e19d708f88f95326e3a2025",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/local_concurrency_tensorrt.py": {
+      "before": "863cdd468d8565efdf2a82435e667f9fce837d7d2013ff61ab4ab8fafa8ba140",
+      "after": "863cdd468d8565efdf2a82435e667f9fce837d7d2013ff61ab4ab8fafa8ba140",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/local_concurrency_validation.py": {
+      "before": "50a29847f47855c9344bbf539fbb62dcec04fbc55df888998e4db689958045e6",
+      "after": "50a29847f47855c9344bbf539fbb62dcec04fbc55df888998e4db689958045e6",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/plot_local_paper_summary.py": {
+      "before": "514744c08856ae3b77ba31dc38e24d58428077b5761771c729d8899017708c5e",
+      "after": "514744c08856ae3b77ba31dc38e24d58428077b5761771c729d8899017708c5e",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/profile_local_concurrency_control.py": {
+      "before": "6ae4743079e24b784621e48e85d8eb2b2a823fae4842781df7346d98ce360640",
+      "after": "6ae4743079e24b784621e48e85d8eb2b2a823fae4842781df7346d98ce360640",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/reproduce_canonical.py": {
+      "before": "cd33dcebb06e2e25d62544647c4a5183b134a24f1550f914957ae3a373c68dc7",
+      "after": "cd33dcebb06e2e25d62544647c4a5183b134a24f1550f914957ae3a373c68dc7",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/run_local_concurrency_control.py": {
+      "before": "e5fd9b8d36ca9acc81b966cc766408402b7e9fda8b971585d547a438e9f8e8a8",
+      "after": "e5fd9b8d36ca9acc81b966cc766408402b7e9fda8b971585d547a438e9f8e8a8",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/run_local_concurrency_formal_control.py": {
+      "before": "a18d36e8d922e7f1ba46b9a0853f0e0a9334a11e4dd7a1443d5347b58a9bf679",
+      "after": "a18d36e8d922e7f1ba46b9a0853f0e0a9334a11e4dd7a1443d5347b58a9bf679",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/run_local_concurrency_trtexec_probe.py": {
+      "before": "bf9c8ad60c80ea02f697af9eb5078cb337d1347fceefe510c914040a7c9e3b00",
+      "after": "bf9c8ad60c80ea02f697af9eb5078cb337d1347fceefe510c914040a7c9e3b00",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/test_local_concurrency_formal_control.py": {
+      "before": "cd87f55cc21f0d4032da1d3e13633b5a46840ac533a38ae09870eeb9b2597be2",
+      "after": "cd87f55cc21f0d4032da1d3e13633b5a46840ac533a38ae09870eeb9b2597be2",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/test_local_concurrency_validation.py": {
+      "before": "9b3afdbff49f633d4e6841c162dbd31c4f7841482edffc747d652753016f8110",
+      "after": "9b3afdbff49f633d4e6841c162dbd31c4f7841482edffc747d652753016f8110",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/concurrency/verify_canonical.py": {
+      "before": "761291e0758bdbbf6981e45c8c4c68b445b44215fb94920b15b95d269a708f28",
+      "after": "761291e0758bdbbf6981e45c8c4c68b445b44215fb94920b15b95d269a708f28",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/local/local_latency_breakdown_metrics.py": {
+      "before": "4225d57739c29d18aef0e9e2d75bf4fc20f2407ffc50b603bcf8b8902aa08cce",
+      "after": "4225d57739c29d18aef0e9e2d75bf4fc20f2407ffc50b603bcf8b8902aa08cce",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/local/profile_local_e2e.py": {
+      "before": "aa9ec99381e6936f843a0e1e0cf3b3cc7beb93778748d0a3fb34b9d9be2084dd",
+      "after": "aa9ec99381e6936f843a0e1e0cf3b3cc7beb93778748d0a3fb34b9d9be2084dd",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/local/profile_local_latency_breakdown.py": {
+      "before": "970bc5ff2ae8eb6062600482d02dffa78979daa60875df4c2ffecc80152c5f63",
+      "after": "970bc5ff2ae8eb6062600482d02dffa78979daa60875df4c2ffecc80152c5f63",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/local/profile_local_realtime.py": {
+      "before": "5b13e7e0e77cb5b380ff22c8bb39ca2eed456f975cddc1aa93ec384209fa1aae",
+      "after": "5b13e7e0e77cb5b380ff22c8bb39ca2eed456f975cddc1aa93ec384209fa1aae",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/local/run_local_latency_breakdown_formal.py": {
+      "before": "a2bc3ec96d163194f8413d12002053bd50b42ad2a1a46920abcff5536e9580fe",
+      "after": "a2bc3ec96d163194f8413d12002053bd50b42ad2a1a46920abcff5536e9580fe",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/local/test_local_latency_breakdown.py": {
+      "before": "0981e3ef780c94cd9421ed21fe40344749b7f078caf84bc5037786200f00db99",
+      "after": "0981e3ef780c94cd9421ed21fe40344749b7f078caf84bc5037786200f00db99",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/scripts/local/test_local_latency_breakdown_formal.py": {
+      "before": "57322f1bd7241914d878a3d21b4433faf96852fba188987e7833087611fe0b1e",
+      "after": "57322f1bd7241914d878a3d21b4433faf96852fba188987e7833087611fe0b1e",
+      "MATCH": true
+    },
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4": {
+      "before": "7a56955a524e8454ba63df4878a1634fba6f8f59a6136fce9b7a35c2b54a8caa",
+      "after": "7a56955a524e8454ba63df4878a1634fba6f8f59a6136fce9b7a35c2b54a8caa",
+      "MATCH": true
+    },
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0001.mp4": {
+      "before": "bf1bb1fd71a811cfdab83bdad01c0c4cf426124f3e7e6635a77bbdc23f68cb45",
+      "after": "bf1bb1fd71a811cfdab83bdad01c0c4cf426124f3e7e6635a77bbdc23f68cb45",
+      "MATCH": true
+    },
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0002.mp4": {
+      "before": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+      "after": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+      "MATCH": true
+    },
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0003.mp4": {
+      "before": "7deacc1aa539bb999ea16c0f656f52695b6fb034e6269bd80e670c090023766c",
+      "after": "7deacc1aa539bb999ea16c0f656f52695b6fb034e6269bd80e670c090023766c",
+      "MATCH": true
+    },
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0004.mp4": {
+      "before": "57934396f19a0b777da07c6171985bf861f546d42c2c0203b1a6f972a9c3a210",
+      "after": "57934396f19a0b777da07c6171985bf861f546d42c2c0203b1a6f972a9c3a210",
+      "MATCH": true
+    },
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0005.mp4": {
+      "before": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+      "after": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+      "MATCH": true
+    },
+    "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0006.mp4": {
+      "before": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a",
+      "after": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/runtime.py": {
+      "before": "1cd9186340eb7e67126e8038f23aafe1b1d133d74c257cd92ba388bec020b87b",
+      "after": "1cd9186340eb7e67126e8038f23aafe1b1d133d74c257cd92ba388bec020b87b",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/core.py": {
+      "before": "833da50cacdbe1db39098e891a666547065386f22a45e19f49c47b7d9cbcdf99",
+      "after": "833da50cacdbe1db39098e891a666547065386f22a45e19f49c47b7d9cbcdf99",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/environment.py": {
+      "before": "ccea4ce389ade751ae55ffbf9488653ab01cf5e404e701acc13c86232a125a13",
+      "after": "ccea4ce389ade751ae55ffbf9488653ab01cf5e404e701acc13c86232a125a13",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/input_manifest.json": {
+      "before": "7251bd3d88a07e54c00fc36ae7145d0c23f25101fa5a2242a6979d5c150494ec",
+      "after": "7251bd3d88a07e54c00fc36ae7145d0c23f25101fa5a2242a6979d5c150494ec",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/frozen_plan.json": {
+      "before": "b94a75693ca265f05b89177fad49341022457216e8066e7da04b2b402c0208e5",
+      "after": "b94a75693ca265f05b89177fad49341022457216e8066e7da04b2b402c0208e5",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/experiment_plan.md": {
+      "before": "2f1520c4a04064e465512e65d95db84f6dd61922e3a046b07422a67ac272b3f1",
+      "after": "2f1520c4a04064e465512e65d95db84f6dd61922e3a046b07422a67ac272b3f1",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/execution_order.csv": {
+      "before": "4165727bc67781b04ef123b8ed02cd94106b1911bf7153a2d94a857f40ca1096",
+      "after": "4165727bc67781b04ef123b8ed02cd94106b1911bf7153a2d94a857f40ca1096",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/execution_order_balance.csv": {
+      "before": "fd98f2fd02c4a3364ebcf2e3ede53bf08b91f6564468ffc06e9a7c64148db172",
+      "after": "fd98f2fd02c4a3364ebcf2e3ede53bf08b91f6564468ffc06e9a7c64148db172",
+      "MATCH": true
+    },
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/cpu_validation.json": {
+      "before": "53d5a11d8a605626c8f0817cdb27fadf5046bb59ecccca89b2c23e2c133df835",
+      "after": "53d5a11d8a605626c8f0817cdb27fadf5046bb59ecccca89b2c23e2c133df835",
+      "MATCH": true
+    }
+  },
+  "postprocessing_copies": [
+    {
+      "original_path": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/analyze.py",
+      "recovery_path": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/recovery_analysis.py",
+      "before_sha256": "695ef12520a6878ce6b1dc22b876368a70ca6ad4f4f379aaff928ab3bec9dbb4",
+      "after_sha256": "af7315b83b9d355141baaf76ca71e1110bbd9989d6d75132c80f0eff9179a771",
+      "original_modified": false,
+      "scope": "postprocessing/report/bookkeeping only"
+    },
+    {
+      "original_path": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/report.py",
+      "recovery_path": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/recovery_report.py",
+      "before_sha256": "3a13e69228d2a8b6b606ae1b1f4b6c07a11bf6acd10ce4fb0036700df6ce2707",
+      "after_sha256": "970805ddcc7f956e6edf4bf4728add06bd4c68731704e79688fee15df2f7dab1",
+      "original_modified": false,
+      "scope": "postprocessing/report/bookkeeping only"
+    },
+    {
+      "original_path": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/driver.py",
+      "recovery_path": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/continuation.py",
+      "before_sha256": "a4d6f61ffea724ade5d052f7fbd1a900f5af5e64052e2b43dfd4955b22c6fce4",
+      "after_sha256": "d1febb6dbd652c4d5daf447a07733f8b416ed20be8e24d40ab0b181a2efc31bd",
+      "original_modified": false,
+      "scope": "postprocessing/report/bookkeeping only"
+    },
+    {
+      "original_path": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/launch.py",
+      "recovery_path": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/launch_recovery.py",
+      "before_sha256": "9947f8efe5c5fd7cdf9b3d900b92e2c1315b21d9b968a47826d3087e94d5315d",
+      "after_sha256": "b3a5172d94e09c1bbbc172f6fe564fd70f853384922b83b6aa88919420742845",
+      "original_modified": false,
+      "scope": "postprocessing/report/bookkeeping only"
+    }
+  ],
+  "new_bookkeeping": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/bookkeeping.py"
+}

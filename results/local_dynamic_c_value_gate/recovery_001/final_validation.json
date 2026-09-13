@@ -1,0 +1,84 @@
+{
+  "validation": "PASS",
+  "original_files_hashed": 9773,
+  "preservation_hash_mismatches": [],
+  "critical_and_recovery_freeze_mismatches": [],
+  "original_campaign_status": "HALTED",
+  "original_smoke_row": "FAIL",
+  "continuation_status": "COMPLETED",
+  "primary_count": 30,
+  "primary_frames": 351000,
+  "actual_GPU_acquisitions_original": 1,
+  "actual_GPU_acquisitions_additional": 31,
+  "actual_GPU_total": 32,
+  "all_actual_child_exits_zero": true,
+  "automatic_retries": 0,
+  "paired_recalculation": "PASS",
+  "primary_smoke_inclusion": false,
+  "synthetic_fixture_inclusion": false,
+  "transition_behavior": {
+    "increase": {
+      "events": 15,
+      "counter_gt_new_C": 0,
+      "service_A_gt_new_C": 0,
+      "first_A_service_le_C_ns_delay_ms": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "first_A_service_lt_C_ns_delay_ms": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "first_counter_le_C_ns_delay_ms": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "first_counter_lt_C_ns_delay_ms": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "first_new_admission_ns_delay_ms": {
+        "mean": 11.762867133333334,
+        "min": 10.120747,
+        "max": 14.098452
+      }
+    },
+    "decrease": {
+      "events": 15,
+      "counter_gt_new_C": 15,
+      "service_A_gt_new_C": 15,
+      "first_A_service_le_C_ns_delay_ms": {
+        "mean": 5.3111532666666665,
+        "min": 0.03301,
+        "max": 11.545063
+      },
+      "first_A_service_lt_C_ns_delay_ms": {
+        "mean": 7.844541333333334,
+        "min": 1.594062,
+        "max": 12.056957
+      },
+      "first_counter_le_C_ns_delay_ms": {
+        "mean": 5.331022466666666,
+        "min": 0.053028,
+        "max": 11.573998
+      },
+      "first_counter_lt_C_ns_delay_ms": {
+        "mean": 7.862941066666667,
+        "min": 1.611729,
+        "max": 12.079522
+      },
+      "first_new_admission_ns_delay_ms": {
+        "mean": 10.237637866666667,
+        "min": 1.649582,
+        "max": 12.127559
+      }
+    }
+  },
+  "git_status_unchanged": true,
+  "no_staged_changes": true,
+  "no_commit_push": true
+}

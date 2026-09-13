@@ -1,0 +1,80 @@
+{
+  "recorded_at": "2026-09-13T08:24:23.470157+00:00",
+  "current_hashes_not_historical": true,
+  "model": "RT-DETR Warehouse v1.0.2",
+  "input_shape": [
+    1,
+    3,
+    640,
+    640
+  ],
+  "precision": "FP16 engine; FP32 I/O",
+  "B": 1,
+  "P": 4,
+  "engine": {
+    "path": "/home/ainet/research/thor-mec-inference/models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine",
+    "bytes": 92835500,
+    "sha256": "9d01cdb2838bb1b9db58c246e6111a5dccee63bb937b673fb48caf43e53bc5ff"
+  },
+  "videos": [
+    {
+      "stream_id": 0,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4",
+      "bytes": 36433143,
+      "current_sha256": "7a56955a524e8454ba63df4878a1634fba6f8f59a6136fce9b7a35c2b54a8caa"
+    },
+    {
+      "stream_id": 1,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0001.mp4",
+      "bytes": 28351858,
+      "current_sha256": "bf1bb1fd71a811cfdab83bdad01c0c4cf426124f3e7e6635a77bbdc23f68cb45"
+    },
+    {
+      "stream_id": 2,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0002.mp4",
+      "bytes": 29101239,
+      "current_sha256": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a"
+    },
+    {
+      "stream_id": 3,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0003.mp4",
+      "bytes": 27477008,
+      "current_sha256": "7deacc1aa539bb999ea16c0f656f52695b6fb034e6269bd80e670c090023766c"
+    },
+    {
+      "stream_id": 4,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0004.mp4",
+      "bytes": 22303508,
+      "current_sha256": "57934396f19a0b777da07c6171985bf861f546d42c2c0203b1a6f972a9c3a210"
+    },
+    {
+      "stream_id": 5,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0005.mp4",
+      "bytes": 16892801,
+      "current_sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632"
+    },
+    {
+      "stream_id": 6,
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0006.mp4",
+      "bytes": 23613453,
+      "current_sha256": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a"
+    }
+  ],
+  "preprocessing": "rtdetr_preprocess.preprocess_bgr: INTER_LINEAR 640x360; top-left zero pad 640x640; BGR->RGB; FP32 /255; contiguous NCHW 1x3x640x640; cv2 threads=1",
+  "pipeline": "filesrc -> qtdemux -> h264parse -> nvv4l2decoder -> nvvidconv -> video/x-raw,format=BGRx,width=1920,height=1080 -> videoconvert -> video/x-raw,format=BGR,width=1920,height=1080 -> appsink sync=false",
+  "num_aux_streams_per_context": 2,
+  "CUDA_Graph": false,
+  "frames_primary": {
+    "base_per_stream": 1800,
+    "seventh_stream": 900,
+    "total": 11700,
+    "K6_cohort": 5400,
+    "K7_cohort": 6300
+  },
+  "frames_smoke": {
+    "base_per_stream": 120,
+    "seventh_stream": 60,
+    "total": 780
+  },
+  "source_sample_semantics": "base samples 0..1799; seventh samples 0..899 only when logically active; no seek/rewind; global tick distinct from source sample index"
+}

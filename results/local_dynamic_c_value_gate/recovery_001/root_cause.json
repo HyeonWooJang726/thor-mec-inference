@@ -1,0 +1,10 @@
+{
+  "confirmed": true,
+  "error": "dict() got multiple values for keyword argument 'expected_frames'",
+  "acquisition_failure": false,
+  "original_child_exit": 0,
+  "original_completed": 780,
+  "original_status": "HALTED",
+  "reproduced_path": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/analyze.py:run",
+  "reproduction": "CPU-only actual old CSV/events; original writes prohibited"
+}

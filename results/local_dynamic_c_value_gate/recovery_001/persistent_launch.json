@@ -1,0 +1,15 @@
+{
+  "status": "LAUNCHED",
+  "time": "2026-09-13T08:53:23.863553+00:00",
+  "pid": 159761,
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/continuation.py"
+  ],
+  "cwd": "/home/ainet/research/thor-mec-inference",
+  "method": "setsid via Popen(start_new_session=True), detached stdin, dedicated stdout/stderr",
+  "no_reboot_autorestart": true,
+  "progress_log": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/progress.log",
+  "state": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/continuation_status.json"
+}

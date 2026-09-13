@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/runtime.py",
+    "--acquisition-id",
+    "primary_27"
+  ],
+  "cwd": "/home/ainet/research/thor-mec-inference",
+  "row": {
+    "index": 27,
+    "round": 5,
+    "position": 3,
+    "shift": 5,
+    "trace": "B",
+    "policy": "FIXED_C2",
+    "acquisition_id": "primary_27",
+    "duration_s": 60,
+    "expected_frames": 11700,
+    "stage": "primary",
+    "status": "UNATTEMPTED"
+  },
+  "recovery": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001"
+}

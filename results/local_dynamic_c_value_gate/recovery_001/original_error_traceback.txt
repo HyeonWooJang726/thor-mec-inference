@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<stdin>", line 20, in <module>
+  File "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/analyze.py", line 96, in run
+    result=dict(**row,**metrics(frames),completed_frames=len(frames),expected_frames=len(plan.jobs),integrity='PASS',observed_max_A=maxA,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: dict() got multiple values for keyword argument 'expected_frames'

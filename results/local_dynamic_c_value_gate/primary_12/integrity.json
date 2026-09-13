@@ -1,0 +1,48 @@
+{
+  "validation": "PASS",
+  "checks": [
+    {
+      "check": "actual_child_exit_zero",
+      "PASS": true
+    },
+    {
+      "check": "exact_counts",
+      "PASS": true
+    },
+    {
+      "check": "source_budgets",
+      "PASS": true
+    },
+    {
+      "check": "pipeline_NULL_and_workers_joined",
+      "PASS": true
+    },
+    {
+      "check": "no_errors_watchdog",
+      "PASS": true
+    },
+    {
+      "check": "final_counters_zero",
+      "PASS": true
+    },
+    {
+      "check": "unique_request_ids",
+      "PASS": true
+    },
+    {
+      "check": "source_order_timestamp_integer_decomposition",
+      "PASS": true
+    },
+    {
+      "check": "event_order_FIFO_atomic_admission_cap_and_publication",
+      "PASS": true
+    },
+    {
+      "check": "common_pool_4",
+      "PASS": true
+    }
+  ],
+  "completed_frames": 11700,
+  "exact_interval_accounting": "PASS",
+  "scope": "static/dynamic application state, not GPU utilization"
+}

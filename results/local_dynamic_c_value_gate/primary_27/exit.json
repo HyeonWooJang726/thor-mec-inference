@@ -1,0 +1,11 @@
+{
+  "exit_code": 0,
+  "actual_child_pid": 164606,
+  "parent_pid": 159761,
+  "started_at": "2026-09-13T09:21:13.953995+00:00",
+  "finished_at": "2026-09-13T09:22:16.483852+00:00",
+  "start_monotonic_ns": 87159281839001,
+  "end_monotonic_ns": 87221811715979,
+  "timeout": false,
+  "interruption": null
+}

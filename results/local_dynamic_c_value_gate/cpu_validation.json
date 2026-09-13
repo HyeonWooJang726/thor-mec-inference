@@ -1,0 +1,15 @@
+{
+  "validation": "PASS",
+  "tests": {
+    "trace_A_4": "PASS",
+    "trace_A_60": "PASS",
+    "trace_B_4": "PASS",
+    "trace_B_60": "PASS",
+    "integer_deadline": "PASS",
+    "atomic_admission_fifo_nonpreemptive_decrease": "PASS",
+    "boundary_increase_notification_apply": "PASS",
+    "delayed_producer_no_drop_no_K_rewind_drain": "PASS",
+    "identical_fixed_notification_path": "PASS"
+  },
+  "GPU_runs": 0
+}

@@ -1,0 +1,68 @@
+{
+  "t0_ns": 85689983847952,
+  "expected": 11700,
+  "generated": 11700,
+  "enqueued": 11700,
+  "started": 11700,
+  "completed": 11700,
+  "samples": [
+    1800,
+    1800,
+    1800,
+    1800,
+    1800,
+    1800,
+    900
+  ],
+  "front_done": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "natural_EOS_observed": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false
+  ],
+  "trace_budget_termination": true,
+  "EOS_not_required": true,
+  "waiting_after_drain": 0,
+  "active_counter_after_drain": 0,
+  "backlog_published_after_drain": 0,
+  "due_not_generated_after_drain": 0,
+  "joined": {
+    "front-0": true,
+    "front-1": true,
+    "front-2": true,
+    "front-3": true,
+    "front-4": true,
+    "front-5": true,
+    "front-6": true,
+    "inference-0": true,
+    "inference-1": true,
+    "inference-2": true,
+    "inference-3": true,
+    "producer": true,
+    "boundary": true
+  },
+  "pipeline_NULL": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "watchdog_triggered": false,
+  "runtime_errors": [],
+  "worker_errors": []
+}

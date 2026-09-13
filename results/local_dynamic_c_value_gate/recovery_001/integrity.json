@@ -1,0 +1,22 @@
+{
+  "campaign_status": "COMPLETED",
+  "counts": {
+    "smoke": {
+      "PASS": 1,
+      "FAIL": 0,
+      "ABORTED": 0,
+      "UNATTEMPTED": 0
+    },
+    "primary": {
+      "PASS": 30,
+      "FAIL": 0,
+      "ABORTED": 0,
+      "UNATTEMPTED": 0
+    }
+  },
+  "primary_valid_frames": 351000,
+  "primary_expected_frames": 351000,
+  "verdict": "NO_OBSERVED_ADVANTAGE_IN_TESTED_TRACES",
+  "automatic_retries": 0,
+  "unattempted_preserved": true
+}

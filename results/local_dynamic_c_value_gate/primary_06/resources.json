@@ -1,0 +1,94 @@
+{
+  "configured_workers": 4,
+  "submission_stream_count": 4,
+  "concurrency": 4,
+  "buffer_set_count": 4,
+  "pinned_staging_set_count": 4,
+  "engine_instance_count": 1,
+  "execution_context_count": 4,
+  "cuda_stream_count": 4,
+  "num_aux_streams_per_context": 2,
+  "tensorrt_version": "10.16.2.10",
+  "workers": [
+    {
+      "worker_id": 0,
+      "context_object_id": 281471851570608,
+      "cuda_stream_pointer": 777932336,
+      "device_buffers": {
+        "inputs": 57973669888,
+        "pred_logits": 57917048832,
+        "pred_boxes": 57917057536
+      },
+      "pinned_host_buffers": {
+        "inputs": 13608419328,
+        "pred_logits": 57979961344,
+        "pred_boxes": 57979970048
+      },
+      "buffer_bytes": {
+        "inputs": 4915200,
+        "pred_logits": 8400,
+        "pred_boxes": 4800
+      }
+    },
+    {
+      "worker_id": 1,
+      "context_object_id": 281471645319344,
+      "cuda_stream_pointer": 814844528,
+      "device_buffers": {
+        "inputs": 13667139584,
+        "pred_logits": 57917064704,
+        "pred_boxes": 57917073408
+      },
+      "pinned_host_buffers": {
+        "inputs": 13673431040,
+        "pred_logits": 57979975168,
+        "pred_boxes": 57979983872
+      },
+      "buffer_bytes": {
+        "inputs": 4915200,
+        "pred_logits": 8400,
+        "pred_boxes": 4800
+      }
+    },
+    {
+      "worker_id": 2,
+      "context_object_id": 281471645321712,
+      "cuda_stream_pointer": 777932368,
+      "device_buffers": {
+        "inputs": 13732151296,
+        "pred_logits": 57917080576,
+        "pred_boxes": 57917089280
+      },
+      "pinned_host_buffers": {
+        "inputs": 13738442752,
+        "pred_logits": 57979988992,
+        "pred_boxes": 57979997696
+      },
+      "buffer_bytes": {
+        "inputs": 4915200,
+        "pred_logits": 8400,
+        "pred_boxes": 4800
+      }
+    },
+    {
+      "worker_id": 3,
+      "context_object_id": 281471645324080,
+      "cuda_stream_pointer": 878498128,
+      "device_buffers": {
+        "inputs": 13797163008,
+        "pred_logits": 57917096448,
+        "pred_boxes": 57917105152
+      },
+      "pinned_host_buffers": {
+        "inputs": 13803454464,
+        "pred_logits": 57980002816,
+        "pred_boxes": 57980011520
+      },
+      "buffer_bytes": {
+        "inputs": 4915200,
+        "pred_logits": 8400,
+        "pred_boxes": 4800
+      }
+    }
+  ]
+}

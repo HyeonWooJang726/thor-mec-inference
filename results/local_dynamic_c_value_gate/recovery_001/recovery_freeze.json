@@ -1,0 +1,22 @@
+{
+  "frozen_at": "2026-09-13T08:50:27.552715+00:00",
+  "CPU_validation": "PASS",
+  "GPU_acquisitions_after_original": 0,
+  "hashes": {
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/continuation.py": "d1febb6dbd652c4d5daf447a07733f8b416ed20be8e24d40ab0b181a2efc31bd",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/validate_recovery.py": "5ded578aea5a615baa720d35fdb22ebb6d24ee073d8791570461ad2b2a8b93ae",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/launch_recovery.py": "b3a5172d94e09c1bbbc172f6fe564fd70f853384922b83b6aa88919420742845",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/bookkeeping.py": "746540d26d131f80e5e51657d283dff2f8eaef0362da6f2e4e6508decf5699eb",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/freeze_recovery.py": "22bb3567669f0d74825c8c32357c511a2473392a85ae282e942c027a723b1458",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/recovery_report.py": "970805ddcc7f956e6edf4bf4728add06bd4c68731704e79688fee15df2f7dab1",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/recovery_analysis.py": "af7315b83b9d355141baaf76ca71e1110bbd9989d6d75132c80f0eff9179a771",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/continuation_manifest.json": "864e7298191673baed56cf3cfba696f3e621629bd24f7e5c3d857915d05fc435",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/smoke_reuse_decision.json": "22ff68c37a579961a80a131761efbf546a104e86194dd673489379ed693657b1",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/cpu_replay_validation.json": "660d8adc8e27bc2a40cc16cf50d5795ff8e6a690a55e09f9eb8270b685237598",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/campaign_status.json": "8b7fba05fe1d9d51524d24f637e47a132b98d461bbd0c9174d6d6741d0ab70f5",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/frozen_plan.json": "b94a75693ca265f05b89177fad49341022457216e8066e7da04b2b402c0208e5",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/execution_order.csv": "4165727bc67781b04ef123b8ed02cd94106b1911bf7153a2d94a857f40ca1096",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/input_manifest.json": "7251bd3d88a07e54c00fc36ae7145d0c23f25101fa5a2242a6979d5c150494ec",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/postmortem/smoke_forensic_validation.json": "4477b88e38dde64373d680233c84e135fa99c84a2bc4cc8b6868cbe060b36b4a"
+  }
+}

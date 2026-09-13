@@ -1,0 +1,231 @@
+--- /home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/analyze.py
++++ /home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/recovery_analysis.py
+@@ -21,14 +21,34 @@
+   for stat,val in [('mean',np.mean(ns)),('p95',np.percentile(ns,95)),('p99',np.percentile(ns,99))]:result[f'{name}_{stat}_ms']=float(val)/1e6
+  return result
+ 
+-def run(row):
+- out=ROOT/row['acquisition_id'];frames=numbers(out/'per_frame.csv');events=numbers(out/'events.csv');term=json.loads((out/'termination.json').read_text());plan=Trace(row['trace'],row['duration_s'])
++def canonical_expected(row, plan, term, metadata, manifest):
++ canonical=len(plan.jobs)
++ candidates={'trace':canonical,'row':row['expected_frames'],'termination':term['expected'],'runtime_metadata':metadata['expected_frames']}
++ for key in ('acquisition_id','trace','policy','duration_s','expected_frames'):
++  if metadata[key]!=row[key]:raise ValueError('runtime metadata mismatch: '+key)
++ matches=[r for r in manifest['acquisitions'] if r['acquisition_id']==row['acquisition_id']]
++ if len(matches)!=1:raise ValueError('manifest acquisition not unique')
++ for key in ('trace','policy','duration_s','expected_frames'):
++  if matches[0][key]!=row[key]:raise ValueError('manifest mismatch: '+key)
++ candidates['manifest']=matches[0]['expected_frames']
++ if any(v!=canonical for v in candidates.values()):raise ValueError('expected_frames disagreement: '+str(candidates))
++ return canonical
++
++def run(row, input_dir=None, output_dir=None, manifest=None):
++ source=Path(input_dir) if input_dir else ROOT/row['acquisition_id']
++ out=Path(output_dir) if output_dir else source
++ frames=numbers(source/'per_frame.csv');events=numbers(source/'events.csv');term=json.loads((source/'termination.json').read_text());plan=Trace(row['trace'],row['duration_s'])
++ metadata=json.loads((source/'runtime_metadata.json').read_text())['row']
++ manifest=manifest if manifest is not None else json.loads((ROOT/'frozen_plan.json').read_text())
++ expected_frames_canonical=canonical_expected(row,plan,term,metadata,manifest)
++ # Only validated identity/plan columns enter summaries; runtime bookkeeping is separate.
++ summary_row={k:v for k,v in row.items() if k not in ('expected_frames','completed_frames','status','reason','child_pid','start_monotonic_ns','started_at','finished_at')}
+  checks=[]
+  def check(name,value):
+   checks.append(dict(check=name,PASS=bool(value)))
+   if not value:raise AssertionError(name)
+  try:
+-  check('actual_child_exit_zero',json.loads((out/'exit.json').read_text())['exit_code']==0)
++  check('actual_child_exit_zero',json.loads((source/'exit.json').read_text())['exit_code']==0)
+   check('exact_counts',len(frames)==len(plan.jobs)==term['expected']==term['generated']==term['enqueued']==term['started']==term['completed'])
+   check('source_budgets',term['samples']==plan.samples and all(term['front_done']))
+   check('pipeline_NULL_and_workers_joined',all(term['pipeline_NULL']) and len(term['joined'])==13 and all(term['joined'].values()))
+@@ -67,7 +87,7 @@
+    assert e['active_counter']==active and e['ready_waiting']==waiting and e['backlog_published']==generated-completed
+    assert min(active,waiting,generated-completed)>=0 and active<=4
+   check('event_order_FIFO_atomic_admission_cap_and_publication',active==waiting==generated-completed==0 and completed==len(frames))
+-  resources=json.loads((out/'resources.json').read_text())
++  resources=json.loads((source/'resources.json').read_text())
+   check('common_pool_4',all(resources[k]==4 for k in ('configured_workers','execution_context_count','cuda_stream_count','buffer_set_count','pinned_staging_set_count')) and resources['engine_instance_count']==1)
+  except Exception as error:
+   save(out/'integrity.json',dict(validation='FAIL',checks=checks,reason=str(error),completed_frames=len(frames)))
+@@ -93,7 +113,7 @@
+   maxA=max(maxA,A);maxQ=max(maxQ,Q);maxB=max(maxB,B);maxU=max(maxU,U)
+   timeline.append(dict(ns=ns,A_service=A,ready_waiting=Q,generated_backlog=B,due_not_generated=U,C=C));previous=ns
+  assert A==Q==B==U==0
+- result=dict(**row,**metrics(frames),completed_frames=len(frames),expected_frames=len(plan.jobs),integrity='PASS',observed_max_A=maxA,
++ result=dict(**summary_row,**metrics(frames),completed_frames=len(frames),expected_frames=expected_frames_canonical,integrity='PASS',observed_max_A=maxA,
+              completed_FPS=len(frames)/((max(r['c_ns'] for r in frames)-t0)/1e9),drain_duration=max(0,(max(r['c_ns'] for r in frames)-endpoint)/1e9),
+              time_weighted_mean_A=areaA/(endpoint-t0),time_weighted_ready_waiting=areaQ/(endpoint-t0),time_weighted_generated_backlog=areaB/(endpoint-t0),time_weighted_due_not_generated=areaU/(endpoint-t0),
+              fraction_A_eq_C=eq/(endpoint-t0),fraction_A_gt_C=above/(endpoint-t0),fraction_A_ge_C_and_waiting=blocked/(endpoint-t0),
+--- /home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/report.py
++++ /home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/recovery_report.py
+@@ -5,12 +5,15 @@
+ matplotlib.use('Agg')
+ import matplotlib.pyplot as plt
+ from core import *
+-from analyze import numbers
++from recovery_analysis import numbers
+ 
+-def aggregate():
+- state=json.loads((ROOT/'campaign_status.json').read_text());passed=[r for r in state['rows'] if r['status']=='PASS' and r['stage']=='primary'];runs=[];windows=[];trans=[];seconds=[]
++def aggregate(output_root=None, artifact_root=None):
++ global ROOT
++ ROOT=Path(output_root) if output_root else ROOT
++ artifact_root=Path(artifact_root) if artifact_root else ROOT
++ state=json.loads((ROOT/'continuation_status.json').read_text());passed=[r for r in state['rows'] if r['status']=='PASS' and r['stage']=='primary'];runs=[];windows=[];trans=[];seconds=[]
+  for r in passed:
+-  d=ROOT/r['acquisition_id'];runs.append(json.loads((d/'summary.json').read_text()));windows+=numbers(d/'window_summary.csv');trans+=numbers(d/'transition_summary.csv');seconds+=numbers(d/'state_seconds.csv')
++  d=artifact_root/r['acquisition_id'];runs.append(json.loads((d/'summary.json').read_text()));windows+=numbers(d/'window_summary.csv');trans+=numbers(d/'transition_summary.csv');seconds+=numbers(d/'state_seconds.csv')
+  csvout(ROOT/'per_run_summary.csv',runs,fields=None if runs else ['acquisition_id','status'])
+  csvout(ROOT/'per_window_summary.csv',windows,fields=None if windows else ['acquisition_id','window'])
+  csvout(ROOT/'transition_summary.csv',trans,fields=None if trans else ['acquisition_id','phase'])
+--- /home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/driver.py
++++ /home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/continuation.py
+@@ -1,43 +1,60 @@
+-"""Persistent single-owner 2-smoke + 30-primary campaign, fail-stop, no retries."""
+-import fcntl,signal,subprocess,sys,traceback,hashlib
+-from core import *
+-from environment import verify,snapshot
+-from analyze import run as analyze
+-
++"""Recovery-only orchestration; executes original frozen runtime without modification."""
++from pathlib import Path
++import sys,os,json,fcntl,signal,subprocess,traceback,time
++RECOVERY=Path(__file__).resolve().parents[1];ORIGINAL=RECOVERY.parent
++sys.path.append(str(ORIGINAL/'_code'))
++from core import save,atomic,utc,REPO
++from environment import sha,verify,snapshot
++from recovery_analysis import run as analyze
++from bookkeeping import checkpoint,success,failure,complete
+ STOP=None
+ def stopped(sig,frame):
+  global STOP
+  STOP=f'signal {sig}'
+ def log(kind,**data):
+  text=json.dumps(dict(time=utc(),kind=kind,**data))
+- with (ROOT/'progress.log').open('a') as f:f.write(text+'\n');f.flush();os.fsync(f.fileno())
++ with (RECOVERY/'progress.log').open('a') as f:f.write(text+'\n');f.flush();os.fsync(f.fileno())
+  print(text,flush=True)
+-def checkpoint(state):state['last_update']=utc();atomic(ROOT/'campaign_status.json',state)
++def guard():
++ verify()
++ for p,h in json.loads((RECOVERY/'recovery_freeze.json').read_text())['hashes'].items():
++  if sha(p)!=h:raise RuntimeError('recovery frozen hash mismatch: '+p)
++ if json.loads((ORIGINAL/'campaign_status.json').read_text())['campaign_status']!='HALTED':raise RuntimeError('historical status altered')
++ if json.loads((RECOVERY/'smoke_reuse_decision.json').read_text())['reuse_decision']!='VALIDATED_REUSE':raise RuntimeError('first smoke not reusable')
++ state=json.loads((RECOVERY/'continuation_status.json').read_text());manifest=json.loads((RECOVERY/'continuation_manifest.json').read_text())
++ if len(state['rows'])!=31:raise RuntimeError('wrong continuation length')
++ for a,b in zip(state['rows'],manifest['remaining_acquisitions']):
++  if any(a.get(k)!=v for k,v in b.items()):raise RuntimeError('execution order/row mismatch')
+ def execute():
+- with (ROOT/'campaign.lock').open('a+') as lock:
+-  fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+-  state=json.loads((ROOT/'campaign_status.json').read_text())
+-  if state['campaign_status'] in ('COMPLETED','HALTED'):raise RuntimeError('terminal campaign; no automatic rerun')
++ # Do not truncate or rewrite the old lock. Hold both locks for the whole continuation.
++ with (ORIGINAL/'campaign.lock').open('r') as original_lock,(RECOVERY/'continuation.lock').open('a+') as lock:
++  fcntl.flock(original_lock,fcntl.LOCK_EX|fcntl.LOCK_NB);fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
++  state=json.loads((RECOVERY/'continuation_status.json').read_text())
++  if state['campaign_status'] in ('HALTED','COMPLETED'):raise RuntimeError('terminal continuation; no rerun')
+   lock.seek(0);lock.truncate();lock.write(json.dumps(dict(pid=os.getpid(),start=utc())));lock.flush()
+-  state['runner_pid']=os.getpid();state['campaign_status']='RUNNING';state.setdefault('start_time',utc());checkpoint(state)
++  state.update(runner_pid=os.getpid(),campaign_status='RUNNING');state.setdefault('start_time',utc());checkpoint(RECOVERY,state)
++  row=None
+   try:
+    for row in state['rows']:
+-    if row['status']=='RUNNING':row['status']='ABORTED';raise RuntimeError('partial prior RUNNING row: no retry')
+-    if row['status'] in ('FAIL','ABORTED'):raise RuntimeError('prior failed or unknown acquisition: HALT')
++    if row['status']=='RUNNING':row['status']='ABORTED';raise RuntimeError('interrupted acquisition; no retry')
++    if row['status'] in ('FAIL','ABORTED'):raise RuntimeError('failed/unknown acquisition; no retry')
+     if row['status']=='PASS':continue
+-    verify();before=snapshot()
++    guard();before=snapshot()
+     if STOP:raise RuntimeError(STOP)
+-    out=ROOT/row['acquisition_id']
++    if row['stage']=='primary' and row['index']==1:
++     if state['rows'][0]['status']!='PASS':raise RuntimeError('lookup smoke did not PASS')
++     save(RECOVERY/'pre_primary_freeze_audit.json',dict(time=utc(),measurement_and_postprocessing_hashes='MATCH',environment=before,FIXED_C4='VALIDATED_REUSE',K_LOOKUP='LIVE_END_TO_END_PASS'))
++    out=ORIGINAL/row['acquisition_id']
+     if out.exists():raise RuntimeError('output collision: '+str(out))
+     out.mkdir();save(out/'environment_before.json',before)
+-    argv=['/usr/bin/python3','-B',str(ROOT/'_code/runtime.py'),'--acquisition-id',row['acquisition_id']]
+-    save(out/'command.json',dict(argv=argv,cwd=str(REPO),row=row))
+-    row.update(status='RUNNING',started_at=utc(),start_monotonic_ns=time.perf_counter_ns());checkpoint(state);log('START',acquisition=row['acquisition_id'],stage=row['stage'])
++    argv=['/usr/bin/python3','-B',str(ORIGINAL/'_code/runtime.py'),'--acquisition-id',row['acquisition_id']]
++    save(out/'command.json',dict(argv=argv,cwd=str(REPO),row=dict(row),recovery=str(RECOVERY)))
++    row.update(status='RUNNING',started_at=utc(),start_monotonic_ns=time.perf_counter_ns());checkpoint(RECOVERY,state);log('START',acquisition=row['acquisition_id'],stage=row['stage'])
+     code=None;child=None;timed_out=False
+     with (out/'stdout.log').open('x') as stdout,(out/'stderr.log').open('x') as stderr:
+      try:
+       child=subprocess.Popen(argv,cwd=REPO,stdin=subprocess.DEVNULL,stdout=stdout,stderr=stderr,start_new_session=True)
+-      row['child_pid']=child.pid;checkpoint(state)
++      row['child_pid']=child.pid;checkpoint(RECOVERY,state)
+       while child.poll() is None:
+        if STOP or (time.perf_counter_ns()-row['start_monotonic_ns'])/1e9>420:
+         timed_out=not bool(STOP);os.killpg(child.pid,signal.SIGTERM)
+@@ -53,24 +70,18 @@
+        except subprocess.TimeoutExpired:os.killpg(child.pid,signal.SIGKILL);child.wait()
+       if child:code=child.returncode
+       save(out/'exit.json',dict(exit_code=code,actual_child_pid=child.pid if child else None,parent_pid=os.getpid(),started_at=row['started_at'],finished_at=utc(),start_monotonic_ns=row['start_monotonic_ns'],end_monotonic_ns=time.perf_counter_ns(),timeout=timed_out,interruption=STOP))
+-    if code!=0 or timed_out or STOP:
+-     row.update(status='FAIL',reason=f'actual child exit={code}; timeout={timed_out}; signal={STOP}');checkpoint(state)
+-     raise RuntimeError(row['reason'])
+-    try:
+-     verify();after=snapshot();save(out/'environment_after.json',after)
+-     metrics=analyze(row);row.update(status='PASS',completed_frames=metrics['completed_frames'],finished_at=utc());checkpoint(state)
+-    except Exception as error:
+-     row.update(status='FAIL',reason=f'{type(error).__name__}: {error}');checkpoint(state);raise
+-    log('PASS',acquisition=row['acquisition_id'],frames=row['completed_frames'],DMR=metrics['DMR_percent'])
+-   state.update(campaign_status='COMPLETED',finish_time=utc());checkpoint(state)
++    if code!=0 or timed_out or STOP:raise RuntimeError(f'actual child exit={code}; timeout={timed_out}; signal={STOP}')
++    guard();after=snapshot();save(out/'environment_after.json',after)
++    metrics=analyze(row);success(RECOVERY,state,row,metrics)
++    log('PASS',acquisition=row['acquisition_id'],frames=metrics['completed_frames'],DMR=metrics['DMR_percent'])
++   complete(RECOVERY,state)
+   except BaseException as error:
+-   state.update(campaign_status='HALTED',halt_reason=f'{type(error).__name__}: {error}',finish_time=utc());checkpoint(state)
+-   (ROOT/'HALT_REASON.md').write_text('# HALTED\n\n'+state['halt_reason']+'\n\nNo retry or additional GPU run.\n');log('HALTED',reason=state['halt_reason'])
+-  # All acquisition policies stop on the first failure; analysis cannot launch GPU.
++   failure(RECOVERY,state,row,error);log('HALTED',reason=state['halt_reason'])
++   save(RECOVERY/'continuation_traceback.json',dict(traceback=traceback.format_exc()))
+   try:
+-   from report import aggregate
+-   aggregate()
++   from recovery_report import aggregate
++   aggregate(RECOVERY,ORIGINAL)
+   except Exception:
+-   save(ROOT/'post_analysis_failure.json',dict(error=traceback.format_exc()));log('POST_ANALYSIS_ERROR')
++   save(RECOVERY/'post_analysis_failure.json',dict(error=traceback.format_exc()));log('POST_ANALYSIS_ERROR')
+ if __name__=='__main__':
+  signal.signal(signal.SIGTERM,stopped);signal.signal(signal.SIGINT,stopped);execute()
+--- /home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/launch.py
++++ /home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/_code/launch_recovery.py
+@@ -1,15 +1,16 @@
+-"""One persistent launch, no retry. Host process/metadata guards precede spawn."""
+-import subprocess,sys,os
+-from core import *
+-from environment import snapshot,verify
++"""Exclusive persistent continuation launch. No GPU retry or historical state writes."""
++from continuation import *
+ if __name__=='__main__':
+- state=json.loads((ROOT/'campaign_status.json').read_text());assert state['campaign_status']=='READY' and all(r['status']=='UNATTEMPTED' for r in state['rows'])
+- verify();env=snapshot()
+- save(ROOT/'launch_environment.json',env)
+- # O_EXCL reservation: a second launch cannot create this artifact.
+- save(ROOT/'persistent_launch.json',dict(status='RESERVED',created_at=utc(),method='Popen(start_new_session=True), detached stdin, dedicated stdout/stderr',no_reboot_autorestart=True))
+- argv=['/usr/bin/python3','-B',str(ROOT/'_code/driver.py')]
+- with (ROOT/'runner_stdout.log').open('x') as stdout,(ROOT/'runner_stderr.log').open('x') as stderr:
++ state=json.loads((RECOVERY/'continuation_status.json').read_text())
++ if state['campaign_status']!='READY' or not all(r['status']=='UNATTEMPTED' for r in state['rows']):raise RuntimeError('not pristine READY continuation; audit instead')
++ guard();env=snapshot()
++ if any((ORIGINAL/r['acquisition_id']).exists() for r in state['rows']):raise RuntimeError('existing acquisition; audit instead')
++ with (ORIGINAL/'campaign.lock').open('r') as oldlock:
++  fcntl.flock(oldlock,fcntl.LOCK_EX|fcntl.LOCK_NB)
++  save(RECOVERY/'persistent_launch.json',dict(status='RESERVED',time=utc()))
++ save(RECOVERY/'launch_environment.json',env)
++ argv=['/usr/bin/python3','-B',str(RECOVERY/'_code/continuation.py')]
++ with (RECOVERY/'runner_stdout.log').open('x') as stdout,(RECOVERY/'runner_stderr.log').open('x') as stderr:
+   child=subprocess.Popen(argv,cwd=REPO,stdin=subprocess.DEVNULL,stdout=stdout,stderr=stderr,start_new_session=True,close_fds=True)
+- atomic(ROOT/'persistent_launch.json',dict(status='LAUNCHED',created_at=utc(),method='Popen(start_new_session=True)',pid=child.pid,argv=argv,cwd=str(REPO),progress_log=str(ROOT/'progress.log'),state=str(ROOT/'campaign_status.json'),no_reboot_autorestart=True))
+- print('Persistent campaign PID',child.pid,flush=True)
++ atomic(RECOVERY/'persistent_launch.json',dict(status='LAUNCHED',time=utc(),pid=child.pid,argv=argv,cwd=str(REPO),method='setsid via Popen(start_new_session=True), detached stdin, dedicated stdout/stderr',no_reboot_autorestart=True,progress_log=str(RECOVERY/'progress.log'),state=str(RECOVERY/'continuation_status.json')))
++ print('Persistent continuation PID',child.pid,flush=True)

@@ -1,0 +1,23 @@
+{
+  "reuse_decision": "VALIDATED_REUSE",
+  "time": "2026-09-13T08:50:27.011528+00:00",
+  "historical_status": "FAIL",
+  "historical_campaign_status": "HALTED",
+  "acquisition_validity_after_forensic_review": "VALID",
+  "reused_as_smoke": "YES",
+  "primary_sample": false,
+  "original_child_exit": 0,
+  "completed_frames": 780,
+  "original_artifact": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/smoke_fixed_c4",
+  "replay": "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/recovery_001/cpu_tests/attempt_001/smoke_fixed_c4",
+  "criteria": {
+    "A_raw_integrity": true,
+    "B_exit_zero": true,
+    "C_post_acquisition_failure_only": true,
+    "D_measurement_critical_unchanged": true,
+    "E_full_CPU_replay": true,
+    "F_success_failure_bookkeeping": true,
+    "G_FIXED_C4_full_path": true
+  },
+  "reason": "Acquisition completed normally. Original analyzer duplicate keyword reproduced on real raw input; minimal postprocessing copy passes full replay and deterministic fixtures. No GPU/runtime source changed. No first-smoke rerun."
+}

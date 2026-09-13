@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/ainet/research/thor-mec-inference/results/local_dynamic_c_value_gate/_code/runtime.py",
+    "--acquisition-id",
+    "smoke_fixed_c4"
+  ],
+  "cwd": "/home/ainet/research/thor-mec-inference",
+  "row": {
+    "acquisition_id": "smoke_fixed_c4",
+    "stage": "smoke",
+    "trace": "A",
+    "policy": "FIXED_C4",
+    "round": 0,
+    "position": 0,
+    "index": 0,
+    "duration_s": 4,
+    "expected_frames": 780,
+    "status": "UNATTEMPTED"
+  }
+}

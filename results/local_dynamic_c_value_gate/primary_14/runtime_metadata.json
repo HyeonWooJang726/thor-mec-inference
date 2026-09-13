@@ -1,0 +1,30 @@
+{
+  "row": {
+    "index": 14,
+    "round": 3,
+    "position": 2,
+    "shift": 0,
+    "trace": "B",
+    "policy": "FIXED_C2",
+    "acquisition_id": "primary_14",
+    "duration_s": 60,
+    "expected_frames": 11700,
+    "stage": "primary"
+  },
+  "P": 4,
+  "B": 1,
+  "warmup_inferences": 0,
+  "CUDA_Graph": false,
+  "deadline": "exact 1/30s; (c-a)*30>1e9",
+  "timestamp_definitions": {
+    "a": "t0+floor(global_tick*1e9/30)",
+    "b": "first timestamp after arrival dequeue immediately before pull-sample",
+    "r": "immediately after ready.put, before enqueue publication",
+    "s": "end of start bookkeeping immediately before lock release and infer",
+    "c": "first timestamp after frozen infer returns before output validation",
+    "reservation": "serialized cap check and slot reservation before s",
+    "publication": "counter release under lock after actual c; controller cannot know c earlier"
+  },
+  "termination": "planned sample-budget completion, not full-source EOS",
+  "input_manifest_sha256": "7251bd3d88a07e54c00fc36ae7145d0c23f25101fa5a2242a6979d5c150494ec"
+}
