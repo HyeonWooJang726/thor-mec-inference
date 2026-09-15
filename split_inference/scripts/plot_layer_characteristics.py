@@ -49,8 +49,8 @@ plt.rcParams.update({'font.family':'DejaVu Sans', 'font.size':11,
                      'axes.linewidth':0.7, 'pdf.fonttype':42,
                      'svg.fonttype':'none', 'figure.facecolor':'white',
                      'axes.facecolor':'white', 'savefig.facecolor':'white'})
-fig, primary = plt.subplots(1, 2, figsize=(12, 4.5))
-fig.subplots_adjust(left=0.075, right=0.925, bottom=0.25, top=0.95, wspace=0.68)
+fig, primary = plt.subplots(1, 2, figsize=(10.8, 4.5))
+fig.subplots_adjust(left=0.085, right=0.915, bottom=0.25, top=0.95, wspace=0.48)
 x = np.arange(9)
 width = 0.36
 texts = []
@@ -58,8 +58,8 @@ barsets = []
 legends = []
 secondary = []
 specs = [
-    ('mean_ms', 'output_mib', 'Processing time (ms)', 'Output data size (MiB)',
-     'Processing time', 'Output data size', '(a)'),
+    ('mean_ms', 'output_mib', 'Mean processing time (ms)', 'Output data size (MiB)',
+     'Mean processing time', 'Output data size', '(a)'),
     ('processing_time_density_ms_per_mbit', 'bit_conversion_ratio',
      'Processing-time density (ms/Mbit)', 'Bit conversion ratio (bits/bit)',
      'Processing-time density', 'Bit conversion ratio', '(b)'),
@@ -91,7 +91,7 @@ for left, spec in zip(primary, specs):
     legend = right.legend([lb, rb], [legend_left, legend_right], loc='upper right',
                           frameon=False, borderaxespad=0.55, handlelength=1.4)
     legends.append(legend)
-    panel_text = left.text(0.5, -0.25, panel, ha='center', va='top', fontsize=13,
+    panel_text = left.text(0.5, -0.205, panel, ha='center', va='top', fontsize=13,
                            transform=left.transAxes)
     texts.extend([left.xaxis.label,left.yaxis.label,right.yaxis.label,panel_text])
     texts.extend(legend.get_texts())
@@ -110,7 +110,9 @@ for left, right in zip(primary, secondary):
     texts.extend(t for t in right.get_yticklabels() if t.get_visible() and right.get_ylim()[0] <= t.get_position()[1] <= right.get_ylim()[1])
 for text in texts:
     label = text.get_text().lower()
-    assert not any(token in label for token in ('thor','jetson','nvidia','2026','p95','p99','median','mean','sample','prefix','suffix'))
+    assert not any(token in label for token in ('thor','jetson','nvidia','2026','p95','p99','median','sample','prefix','suffix'))
+    if 'mean' in label:
+        assert label in ('mean processing time', 'mean processing time (ms)')
     bb = text.get_window_extent(renderer)
     assert fig.bbox.contains(bb.x0,bb.y0) and fig.bbox.contains(bb.x1,bb.y1), ('clipped',text.get_text())
 for i, a in enumerate(texts):
@@ -140,7 +142,7 @@ validation = {
     'sigma_definition':'output_bits / input_bits',
     'source_sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in (base/'group_summary.csv',manifest_path)},
     'same_plot_area':True,'text_clipping_or_overlap':False,'errorbars':False,
-    'figure_size_inches':[12,4.5],'png_dpi':600,
+    'figure_size_inches':[10.8,4.5],'png_dpi':600,
 }
 (output/'figure_validation.json').write_text(json.dumps(validation,indent=2)+'\n')
 for row in values: print(json.dumps(row),flush=True)
