@@ -77,3 +77,6 @@ ENV/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Edge suffix profiling raw samples, metadata and logs stay local.
+/split_inference/results/edge_processing_profile/
