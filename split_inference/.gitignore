@@ -26,6 +26,7 @@
 !/weights/README.md
 # Raw observations and tensor dumps (keep local, never delete to clean Git)
 /results/profiling/raw/*
+/results/thor_processing_profile/
 *.npy
 *.npz
 *.bin
