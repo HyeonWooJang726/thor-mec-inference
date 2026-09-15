@@ -1,0 +1,46 @@
+{
+  "source": "split_inference/results/edge_processing_profile/imagenet_thor_seeded_order/20260915T130321_560472Z/validation.csv",
+  "source_sha256": "2e7dca174e710d57c0a83b684bdbf3fddda3b64655a6dd8d90c314830d116b92",
+  "definition": "300 × (G1–G9 entire sequential path 1 + P0–P9 recombined paths 10)",
+  "images": 300,
+  "comparisons_per_image": 11,
+  "comparisons": 3300,
+  "counts_by_execution": {
+    "G1-G9": 300,
+    "P0": 300,
+    "P1": 300,
+    "P2": 300,
+    "P3": 300,
+    "P4": 300,
+    "P5": 300,
+    "P6": 300,
+    "P7": 300,
+    "P8": 300,
+    "P9": 300
+  },
+  "unique_sample_execution_pairs": 3300,
+  "output_shapes": [
+    "[1, 1000]"
+  ],
+  "max_abs_diff": 0.0,
+  "max_rel_diff": 0.0,
+  "rtol": 1e-05,
+  "atol": 1e-06,
+  "relative_error_floor": 1e-08,
+  "passed": true,
+  "intermediate_checks": "shape, dtype and bytes; not nine independent numerical comparisons",
+  "measurement_validation": {
+    "raw_rows": 14400,
+    "warmup_rows": 900,
+    "measurement_rows": 13500,
+    "warmup_per_group": 100,
+    "measurement_per_group": 1500,
+    "all_group_round_permutations_match_seeds_1_to_5": true,
+    "no_duplicates_or_missing": true,
+    "all_timings_finite_positive": true,
+    "raw_statistics_independently_match_summary": true,
+    "excluded": 0,
+    "fallback": false,
+    "warnings": []
+  }
+}

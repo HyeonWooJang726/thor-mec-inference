@@ -141,6 +141,7 @@ def profile(args, metadata):
     metadata.update(preflight=preflight, conditions=CONDITIONS,
                     seed=0, image_selection="Random(0).sample(sorted JPEG members, 300)",
                     rounds=5, images_per_round=300, warmup_per_group=100,
+                    fixed_order=args.fixed_order, skip_render=args.skip_render,
                     corrupt_image_policy="Abort and record member/error; no skipping or replacement",
                     timer="CUDA events, end.synchronize per group; default stream",
                     excluded=["ZIP read", "JPEG decode", "preprocessing", "H2D", "CSV writes", "host wait"],
@@ -204,7 +205,14 @@ def profile(args, metadata):
         assert all(re.fullmatch(r"n\d{8}/ILSVRC2012_val_\d{8}\.JPEG", n) for n in images)
         assert len({Path(n).name for n in images}) == 50000
         assert len({n.split('/')[0] for n in images}) == 1000
-        selected = random.Random(0).sample(images, 300)
+        if args.fixed_order:
+            selection_path = ROOT / "docs/imagenet_profile/20260915T112015Z/selected_imagenet_members.txt"
+            selected = selection_path.read_text().splitlines()
+            assert len(selected) == 300 and all(member in images for member in selected)
+            metadata["image_selection"] = str(selection_path)
+            metadata["input_order_sha256"] = file_hash(selection_path)
+        else:
+            selected = random.Random(0).sample(images, 300)
         assert len(set(selected)) == 300
         (out / "selected_imagenet_members.txt").write_text("\n".join(selected)+"\n")
         metadata["dataset"] = dict(path=str(args.zip), zip_bytes=args.zip.stat().st_size,
@@ -274,7 +282,7 @@ def profile(args, metadata):
         end.record()
         end.synchronize()
         raw_fields = ["phase", "round", "order", "sample_id", "imagenet_member", "group", "elapsed_ms"]
-        metadata["round_seeds"] = list(range(1, 6))
+        metadata["round_seeds"] = [None] * 5 if args.fixed_order else list(range(1, 6))
         metadata["round_orders"] = []
         with (out / "raw_group_timing.csv").open("x", newline="", buffering=1) as f:
             writer = csv.DictWriter(f, fieldnames=raw_fields)
@@ -308,7 +316,8 @@ def profile(args, metadata):
             for round_id, seed in enumerate(metadata["round_seeds"]):
                 metadata["stage"] = f"measurement_round_{round_id}"
                 order = list(range(300))
-                random.Random(seed).shuffle(order)
+                if not args.fixed_order:
+                    random.Random(seed).shuffle(order)
                 metadata["round_orders"].append(order)
                 for position, sid in enumerate(order):
                     run_image(sid, "measurement", round_id, position)
@@ -349,8 +358,9 @@ def profile(args, metadata):
     metadata["raw_validation"] = dict(passed=True, rows=len(raw), measured_per_group=1500,
                                       warmup_per_group=100, excluded_samples=0)
     metadata["artifact_sha256"] = {p.name: file_hash(p) for p in out.glob("*.csv")}
-    metadata["stage"] = "render"
-    render(out)
+    if not args.skip_render:
+        metadata["stage"] = "render"
+        render(out)
     metadata["status"] = "passed"
     metadata["stage"] = "complete"
     print("ALL_PRETRAINED_IMAGENET_GROUP_PROFILE_PASS", flush=True)
@@ -360,7 +370,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--zip", type=Path, default=Path("/dataset/imagenet-val.zip"))
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--render", action="store_true")
+    parser.add_argument("--fixed-order", action="store_true",
+                        help="Use the committed 300-member selection in file order in every round")
+    render_options = parser.add_mutually_exclusive_group()
+    render_options.add_argument("--render", action="store_true")
+    render_options.add_argument("--skip-render", action="store_true",
+                                help="Skip figure generation; matplotlib is not required")
     args = parser.parse_args()
     if args.render:
         render(args.output)

@@ -1,0 +1,261 @@
+{
+  "role": "primary Edge ImageNet group profile",
+  "primary_local_results": "split_inference/results/edge_processing_profile/imagenet_thor_seeded_order/20260915T130321_560472Z",
+  "auxiliary_local_results": "split_inference/results/edge_processing_profile/imagenet_fixed_order/20260915T124213_566500Z",
+  "selection_reason": "Same documented Thor seeds 1–5, groups, model and 300 images; warmup 100/group and 5×300 samples/group",
+  "started_utc": "2026-09-15T13:03:28.909553+00:00",
+  "ended_utc": "2026-09-15T13:04:21.928217+00:00",
+  "measurement_git_head": "8775bfb04018cb9c39c1767698a058116c3f9338",
+  "measurement_worktree": "Profiler had the two uncommitted option additions; exact execution source hash below",
+  "source_sha256": {
+    "scripts/profile_efficientnet_v2_s_imagenet.py": "de2483f02ee89f094ba14eb3f8a741ea2b766a96af9c5a261e7698cbc1a893b1",
+    "manifests/efficientnet_v2_s_p0_p9.json": "55784ef6efb555b5bfe48f1f939dca2eb721df32a773d4d8299c0018f15e737d",
+    "src/common/efficientnet_v2_s_partitions.py": "f072436d18e672e9c6cdca4142c09d7238322675c290023449bc2ba08e1d48af"
+  },
+  "conditions": {
+    "seed": 0,
+    "round_seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "rounds": 5,
+    "images_per_round": 300,
+    "warmup_per_group": 100,
+    "fixed_order": false,
+    "skip_render": true,
+    "timer": "CUDA events, end.synchronize per group; default stream",
+    "excluded": [
+      "ZIP read",
+      "JPEG decode",
+      "preprocessing",
+      "H2D",
+      "CSV writes",
+      "host wait"
+    ],
+    "timing_caveat": "Eager device timeline may include GPU idle gaps between launches",
+    "tf32": false,
+    "tf32_environment": {
+      "TORCH_ALLOW_TF32_CUBLAS_OVERRIDE": "0",
+      "NVIDIA_TF32_OVERRIDE": "0"
+    },
+    "cudnn_benchmark": true,
+    "dtype": "torch.float32",
+    "eval": true,
+    "inference_mode": true,
+    "weight_enum": "EfficientNet_V2_S_Weights.IMAGENET1K_V1",
+    "checkpoint_filename": "efficientnet_v2_s-dd5fe13b.pth",
+    "checkpoint_url": "https://download.pytorch.org/models/efficientnet_v2_s-dd5fe13b.pth",
+    "checkpoint_sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+    "canonical_state_dict_sha256": "dcac15dc687d43926f62a7942918dc73d11372abbb612352336b4d5840ca4710",
+    "preprocessing": "ImageClassification(\n    crop_size=[384]\n    resize_size=[384]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+    "dataset": {
+      "path": "/mnt/c/Users/gusdn/Downloads/imagenet-val.zip",
+      "zip_bytes": 6669976535,
+      "zip_members": 50001,
+      "jpeg_count": 50000,
+      "classes": 1000,
+      "sorted_members_sha256": "330c982c43eff287787b87da72b9204bc27fc7e650dc9034f61e3e8aac9c02fd",
+      "selected_members_sha256": "f198e9fd3da063f0f4ae66dff1d6c76fdb66c7875abae88d462b37f96d338bc2"
+    }
+  },
+  "environment": {
+    "git_head": "8775bfb04018cb9c39c1767698a058116c3f9338",
+    "git_status": "## split-inference...origin/split-inference\n M split_inference/scripts/profile_efficientnet_v2_s_imagenet.py\n",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "executable": "/home/ainet/venvs/efficientnet-v2-s-cu132/bin/python",
+    "torch": "2.13.0+cu132",
+    "torchvision": "0.28.0+cu132",
+    "cuda_runtime": "13.2",
+    "cudnn": 92000,
+    "PIL": "12.3.0",
+    "numpy": "2.5.2",
+    "kernel": "6.18.33.2-microsoft-standard-WSL2",
+    "os": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "os_release": "PRETTY_NAME=\"Ubuntu 24.04.4 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.4 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+    "hostname": "CY415AINET",
+    "checkpoint": "/home/ainet/research/thor-mec-inference-edge-profile/split_inference/results/edge_processing_profile/imagenet_validation/20260915T122814_764707Z/torch_cache/checkpoints/efficientnet_v2_s-dd5fe13b.pth",
+    "checkpoint_sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+    "canonical_sha256": "dcac15dc687d43926f62a7942918dc73d11372abbb612352336b4d5840ca4710",
+    "selection": "/home/ainet/research/thor-mec-inference-edge-profile/split_inference/docs/imagenet_profile/20260915T112015Z/selected_imagenet_members.txt",
+    "selection_sha256": "f198e9fd3da063f0f4ae66dff1d6c76fdb66c7875abae88d462b37f96d338bc2",
+    "evidence": "/home/ainet/research/thor-mec-inference-edge-profile/split_inference/docs/imagenet_profile/20260915T112015Z/selected_image_evidence.csv",
+    "evidence_sha256": "5706419efb22bd224d7c1b4bac5cceb22d479c3ec1336cc4e9cbb467301bf794",
+    "input_hashes_verified": 600,
+    "zip": "/mnt/c/Users/gusdn/Downloads/imagenet-val.zip",
+    "zip_bytes": 6669976535,
+    "fixed_order": false,
+    "skip_render": true,
+    "fixed_order_reference": "/home/ainet/research/thor-mec-inference-edge-profile/split_inference/results/edge_processing_profile/imagenet_fixed_order/20260915T124213_566500Z",
+    "clock_policy": "No clock or power modifications; clocks not locked; WSL/WDDM display remains active",
+    "deterministic_observed_before_profile": {
+      "cudnn": false,
+      "algorithms": false
+    },
+    "precision": "FP32, batch1, inference_mode, autocast not used, TF32 off, cudnn benchmark on as set by original profiler",
+    "thor_parity_scope": "Documented seeds 1-5; original Thor raw sequence is not available on this host"
+  },
+  "historical_invocation": {
+    "launcher_command": "/home/ainet/venvs/efficientnet-v2-s-cu132/bin/python -B /tmp/run_edge_thor_seeded_audit.py",
+    "cwd": "/home/ainet/research/thor-mec-inference-edge-profile",
+    "profiler_argv": [
+      "/home/ainet/research/thor-mec-inference-edge-profile/split_inference/scripts/profile_efficientnet_v2_s_imagenet.py",
+      "--zip",
+      "/mnt/c/Users/gusdn/Downloads/imagenet-val.zip",
+      "--output",
+      "/home/ainet/research/thor-mec-inference-edge-profile/split_inference/results/edge_processing_profile/imagenet_thor_seeded_order/20260915T130321_560472Z",
+      "--skip-render"
+    ],
+    "TORCH_ALLOW_TF32_CUBLAS_OVERRIDE": "0",
+    "NVIDIA_TF32_OVERRIDE": "0",
+    "torch_hub_dir": "/home/ainet/research/thor-mec-inference-edge-profile/split_inference/results/edge_processing_profile/imagenet_validation/20260915T122814_764707Z/torch_cache",
+    "conditions_label_only_override": "EfficientNetV2-S | EfficientNet_V2_S_Weights.IMAGENET1K_V1\nImageNet-1K validation, 300 distinct images | FP32, batch 1, 384×384\nEdge RTX 5070 Ti, clocks not locked by this run | Processing-time density: ms/Mbit, not GPU cycles/bit",
+    "note": "Existing profiler main called without changes; --fixed-order omitted"
+  },
+  "group_definitions": [
+    {
+      "id": "G1",
+      "name": "stem",
+      "operations": [
+        {
+          "module": "features.0"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "name": "FusedMBConv stage 1",
+      "operations": [
+        {
+          "module": "features.1"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "name": "FusedMBConv stage 2",
+      "operations": [
+        {
+          "module": "features.2"
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "name": "FusedMBConv stage 3",
+      "operations": [
+        {
+          "module": "features.3"
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "name": "MBConv stage 4",
+      "operations": [
+        {
+          "module": "features.4"
+        }
+      ]
+    },
+    {
+      "id": "G6",
+      "name": "MBConv stage 5",
+      "operations": [
+        {
+          "module": "features.5"
+        }
+      ]
+    },
+    {
+      "id": "G7",
+      "name": "MBConv stage 6",
+      "operations": [
+        {
+          "module": "features.6"
+        }
+      ]
+    },
+    {
+      "id": "G8",
+      "name": "final convolution, avgpool, flatten",
+      "operations": [
+        {
+          "module": "features.7"
+        },
+        {
+          "module": "avgpool"
+        },
+        {
+          "op": "flatten",
+          "start_dim": 1
+        }
+      ]
+    },
+    {
+      "id": "G9",
+      "name": "classifier",
+      "operations": [
+        {
+          "module": "classifier"
+        }
+      ]
+    }
+  ],
+  "copy_verification": [
+    {
+      "file": "group_summary.csv",
+      "source_sha256": "0eba50cbbc7340f77dfc1ebef640339a0e96ff9f70287ad00580d2630658a92c",
+      "tracked_sha256": "40cdfb76ed4ce0d03d61988f6f1d56f1c54a51e57edd419463bb67f09c7b36d3",
+      "verification": "All parsed field strings equal; CRLF normalized to LF only"
+    },
+    {
+      "file": "activation_shapes_bytes.csv",
+      "source_sha256": "6e481def4c1a4c9f814c7d2dabedb6877f3afdeae5f5df5f847e5db83e359a95",
+      "tracked_sha256": "03816a6ce3df6f0cfd488f41a68da5f38e2eb5e0ff87467a7d0b9506eb55ac03",
+      "verification": "All parsed field strings equal; CRLF normalized to LF only"
+    },
+    {
+      "file": "fixed_vs_seeded_comparison.csv",
+      "source_sha256": "12802879437891add907b9787917781a01beb852fd1c919c8ade63150a164fcd",
+      "tracked_sha256": "a8624f54e45f19fea7bb60aaf7aff10981145b0599604d7a618dbac24347a2f2",
+      "verification": "All parsed field strings equal; CRLF normalized to LF only"
+    }
+  ],
+  "order_hash_format": "UTF-8 member paths in actual round order with LF after each member including the last",
+  "gpu_snapshots": {
+    "before": {
+      "utc": "2026-09-15T13:03:28Z",
+      "utilization_percent": 1,
+      "power_draw_w": 54.17,
+      "temperature_c": 32,
+      "sm_mhz": 2505,
+      "memory_mhz": 14001
+    },
+    "after": {
+      "utc": "2026-09-15T13:45:32Z",
+      "utilization_percent": 6,
+      "power_draw_w": 53.18,
+      "temperature_c": 31,
+      "sm_mhz": 2535,
+      "memory_mhz": 14001
+    },
+    "power_limit_w": 300,
+    "performance_state": "P0",
+    "compute_processes_before_after": [],
+    "display_active": true,
+    "note": "After snapshot was collected about 41 minutes after completion; immediate end state and continuous clocks unmeasured"
+  },
+  "limitations": [
+    "WSL/WDDM display active",
+    "No locked clocks or continuous clock trace",
+    "Different run times; no causal attribution to shuffle",
+    "Thor runtime versions differ; deployment comparison, not isolated hardware comparison",
+    "No networking/serialization/transmission/E2E",
+    "Maximum tail samples retained",
+    "Original Thor raw parity unverified; documented code/seed rule matched"
+  ],
+  "reproduction_document": "../../../edge_imagenet_group_profile.md"
+}
