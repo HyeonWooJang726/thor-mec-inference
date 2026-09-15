@@ -92,8 +92,14 @@ def main():
     parser.add_argument('--max-payload-bytes', type=int, default=wire.MAX_PAYLOAD)
     parser.add_argument('--verify-payload', action='store_true', help='Smoke-only SHA-256 trailers (off by default)')
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--profile-mode', choices=['formal', 'pilot'], help='Opt-in offline latency profiling; default smoke unchanged')
+    parser.add_argument('--profile-run-id', help='Same run ID on profiling Client and Server')
     args = parser.parse_args()
     wire.require(0 <= args.port <= 65535, 'port range')
+    if args.profile_mode is not None:
+        from split_inference.src.common.efficientnet_v2_s_profile_runtime import serve_profile
+        serve_profile(args)
+        return
     wire.validate(wire.control_header(wire.Kind.CLOSE), args.max_payload_bytes)
     args.output.mkdir(parents=True, exist_ok=False)
     metadata = {'status': 'starting', 'network_requests': 0, 'failed_requests': 0, 'connections': 0,

@@ -90,3 +90,6 @@ desktop.ini
 
 # Thor-Edge LAN correctness smoke artifacts stay local.
 /split_inference/results/split_e2e_lan_smoke/
+
+# Single-flight latency raw samples, pilot runs and analysis remain local.
+/split_inference/results/split_latency_profile/
