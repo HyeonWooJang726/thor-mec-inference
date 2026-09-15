@@ -26,7 +26,14 @@
 !/weights/README.md
 # Raw observations and tensor dumps (keep local, never delete to clean Git)
 /results/profiling/raw/*
-/results/thor_processing_profile/
+/results/thor_processing_profile/*
+# Publish only the final composite PNG/PDF; keep measurements and other artifacts local.
+!/results/thor_processing_profile/20260915T181507/
+/results/thor_processing_profile/20260915T181507/*
+!/results/thor_processing_profile/20260915T181507/layer_group_characteristics/
+/results/thor_processing_profile/20260915T181507/layer_group_characteristics/*
+!/results/thor_processing_profile/20260915T181507/layer_group_characteristics/efficientnetv2s_layer_group_characteristics.png
+!/results/thor_processing_profile/20260915T181507/layer_group_characteristics/efficientnetv2s_layer_group_characteristics.pdf
 *.npy
 *.npz
 *.bin
