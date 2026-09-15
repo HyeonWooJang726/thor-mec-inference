@@ -294,3 +294,180 @@ Run 'docker run --help' for more information
 실패 후 package 설치, 다른 image pull, runtime/CDI 재설정, 재시도 등의 우회 조치는 하지 않고 검증을 중단했다. pretrained weight 다운로드, ImageNet ZIP 해제·accuracy 측정, P0–P9 분할 검증, latency/throughput profiling, 실제 그래프 생성은 모두 미실행이다. 모델 생성 및 forward는 **0회**다.
 
 이번 결과는 이미지 pull 성공과 GPU 주입 실패를 구분한 환경 검증 기록이다. 향후 smoke test가 성공하더라도 **해당 장치에서의 동작성 확인이지 JetPack 7.2.1과 image 26.08의 공식 호환성 보증이 아니다**. 이번 작업에서는 동작성 성공도 아직 확인하지 못했다.
+
+
+## 10. CDI 방식 실패의 재확인 (기존 기록 보존)
+
+2026-09-15 (Asia/Seoul), 재시험 시작 HEAD `9269f022f03dd901be33aa05cf1791290730c65a`, worktree `/home/ainet/research/thor-mec-inference-split`, branch/upstream `split-inference` / `origin/split-inference`, 시작 git status clean.
+**섹션 9는 이전 CDI 방식 실패 기록으로 그대로 보존한다. 최신 실행 판정은 섹션 12를 기준으로 한다.**
+
+기존 문서의 실행 명령과 `logs/pytorch_smoke_20260915/gpu_smoke.stderr.log`를 다시 읽었다. 이전 명령의 `--runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=nvidia.com/gpu=all`은 **CDI-qualified 장치 이름을 통해 CDI mode를 선택했다**. NVIDIA 공식 문서는 CDI 이름을 요청하면 NVIDIA Container Runtime이 자동으로 CDI mode를 사용한다고 명시하며 같은 명령 예시를 제공한다. [NVIDIA CDI mode 공식 문서](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/cdi-support.html#using-cdi-with-non-cdi-enabled-runtimes)
+
+이전 stderr의 `failed to inject CDI devices` 및 `failed to stat CDI host device "/dev/dri/card0"`와 일치한다. 실패는 **Python 시작 전 CDI device injection 단계**였으며, **이미지 또는 PyTorch 비호환으로 확정하지 않는다**.
+
+이번 일반 NVIDIA runtime 재시험은 공식 예시의 `--runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all`과 `-e NVIDIA_DRIVER_CAPABILITIES=compute,utility`를 사용한다. `compute`는 CUDA, `utility`는 NVML 등의 접근에 필요한 capability다. [NVIDIA Docker GPU 및 capability 공식 문서](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/docker-specialized.html)
+
+여기서 “일반 NVIDIA runtime”은 위 실행 옵션을 구분하는 명칭이다. 내부 runtime mode가 반드시 legacy라는 주장은 하지 않는다. 공식 문서상 명시적으로 CDI mode가 설정된 환경에서는 `all`도 CDI로 해석될 수 있다. 이번에는 runtime 설정을 변경하지 않고 요청된 옵션의 실제 결과만 확인했다.
+
+## 11. 일반 NVIDIA runtime 재시험 전 읽기 전용 점검
+
+원문 및 개별 exit code는 호스트의 `logs/pytorch_runtime_retry_20260915/`에 보존했다. `logs/`는 Git 제외 경로다.
+
+### 실제 호스트 점검 명령
+
+```bash
+ls -l /dev/dri
+nvidia-ctk cdi list
+systemctl status nvidia-cdi-refresh.service --no-pager -l
+nvidia-smi -L
+nvidia-smi --query-gpu=index,name,mig.mode.current,mig.mode.pending --format=csv
+docker image inspect nvcr.io/nvidia/pytorch:26.08-py3
+```
+
+| 점검 | 실제 호스트 결과 | exit code |
+| --- | --- | --- |
+| `/dev/dri` | `by-path/`, `card1` (226,1), `renderD128` (226,128) 존재; **card0 없음** | 0 |
+| CDI list | `nvidia.com/gpu=0`, `nvidia.com/gpu=all`, `nvidia.com/pva=0`, `nvidia.com/pva=all` | 0 |
+| refresh service | `inactive (dead)`; 마지막 ExecStart **status=0/SUCCESS**, 16:07:11 KST 완료 | 3 |
+| `nvidia-smi -L` | GPU 0: **NVIDIA Thor**, UUID `GPU-a7c66ad2-6dbb-0ab8-c1a2-37ba6dba3600` | 0 |
+| MIG | current **Disabled**, pending **Disabled** | 0 |
+| image inspect | 기존 tag/RepoDigest 일치; **linux/arm64** | 0 |
+
+`systemctl status`의 exit 3은 inactive 상태 조회 결과이며, ExecStart 실패로 해석하지 않는다. 서비스 원문에는 이전과 같은 README soname `bad magic number` 및 `/usr/lib/aarch64-linux-gnu/tegra` symlink warning이 있고, 이후 `Generated CDI spec with version 0.7.0`, `Deactivated successfully`, 서비스 완료 기록이 있다. warning을 삭제하거나 이번 재시험 실패로 바꾸어 해석하지 않았다.
+
+image inspect 재확인값:
+
+- tag: `nvcr.io/nvidia/pytorch:26.08-py3`
+- image ID: `sha256:3becd068f49bd2ad38f90db5f9a4803019a76933a24e63d821376c44e7a9200a`
+- RepoDigest: `nvcr.io/nvidia/pytorch@sha256:3becd068f49bd2ad38f90db5f9a4803019a76933a24e63d821376c44e7a9200a`
+- architecture/OS: `arm64` / `linux`
+- inspect `.Size`: `11,962,276,999` bytes (디스크 사용량과의 구분은 섹션 8 참고).
+
+### sandbox 관찰과 실제 호스트 관찰의 구분
+
+최초 sandbox 내부 `ls -l /dev/dri`는 exit 2 (`ls: cannot access '/dev/dri': No such file or directory`), `systemctl status ...`는 exit 1 (`Failed to connect to bus: Operation not permitted`)이었다. sandbox 내부 `nvidia-smi -L` 및 MIG query는 driver 접근 오류를 출력했고, 두 명령을 실행한 shell의 최종 exit code는 9였다. 최초 결합 출력에서는 개별 exit code를 별도 수집하지 않았다.
+
+```text
+NvRmMemInitNvmap failed: error No such file or directory
+NvRmMemMgrInit failed: Memory Manager Not supported, line 340
+NvRmMemMgrInit failed: error type 196626
+libnvrm_gpu.so: NvRmGpuLibOpen failed, error=196625
+NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
+```
+
+위 오류 블록은 최초 두 NVIDIA-SMI 명령 각각에서 출력됐다. sandbox 외부 읽기 전용 재조회에서는 위 표와 같이 장치 열거·NVIDIA-SMI·MIG 조회가 정상 완료됐다. 따라서 sandbox의 장치 비노출을 호스트 `/dev/dri` 전체 부재나 GPU driver 고장으로 해석하지 않는다. 기존 컨테이너 오류의 **card0 부재는 실제 호스트에서도 확인**됐다. 모든 명령은 sudo 없이 실행했다.
+
+## 12. 일반 NVIDIA runtime 재시험 — 실측 성공
+
+### 실행 순서 및 정확한 명령
+
+기존 로컬 RepoDigest를 그대로 사용했으며 **다시 pull하거나 이미지를 삭제하지 않았다**. 모든 컨테이너 명령에 `--pull=never`를 지정했다. `--entrypoint python`으로 Python을 직접 시작했다. worktree(소스·weights·results 포함)와 데이터셋은 읽기 전용 bind mount로 연결했고 stdout/stderr는 호스트 로그에 보존했다.
+
+1. **GPU 없는 시작 검증**: `--runtime=runc -e NVIDIA_VISIBLE_DEVICES=void`. Python/PyTorch/TorchVision 버전과 CUDA available만 출력했다. CUDA False는 이 단계의 정상 결과다.
+2. 1단계 exit 0 확인 후 **일반 NVIDIA runtime GPU smoke test 1회**: `--runtime=nvidia`, `NVIDIA_VISIBLE_DEVICES=all`, `NVIDIA_DRIVER_CAPABILITIES=compute,utility`.
+3. 2단계의 CUDA 행렬곱·synchronize·CPU 결과 검증 성공 및 exit 0 확인 후 **EfficientNetV2-S forward 1회**.
+
+이번 실행 명령에 CDI-qualified `NVIDIA_VISIBLE_DEVICES`나 `--device=nvidia.com/gpu=all`은 사용하지 않았다. Docker default runtime과 NVIDIA runtime 설정은 변경하지 않았다.
+
+```bash
+docker run --rm --pull=never --platform=linux/arm64 --runtime=runc -e NVIDIA_VISIBLE_DEVICES=void --network=none --mount type=bind,src=/home/ainet/research/thor-mec-inference-split,dst=/workspace,readonly --mount type=bind,src=/home/ainet/datasets/imagenet1k,dst=/datasets,readonly -w /workspace --entrypoint python -i nvcr.io/nvidia/pytorch@sha256:3becd068f49bd2ad38f90db5f9a4803019a76933a24e63d821376c44e7a9200a -u - < logs/pytorch_runtime_retry_20260915/no_gpu.py > logs/pytorch_runtime_retry_20260915/no_gpu.stdout.log 2> logs/pytorch_runtime_retry_20260915/no_gpu.stderr.log
+docker run --rm --pull=never --platform=linux/arm64 --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=compute,utility --network=none --mount type=bind,src=/home/ainet/research/thor-mec-inference-split,dst=/workspace,readonly --mount type=bind,src=/home/ainet/datasets/imagenet1k,dst=/datasets,readonly -w /workspace --entrypoint python -i nvcr.io/nvidia/pytorch@sha256:3becd068f49bd2ad38f90db5f9a4803019a76933a24e63d821376c44e7a9200a -u - < logs/pytorch_runtime_retry_20260915/gpu_smoke.py > logs/pytorch_runtime_retry_20260915/gpu_smoke.stdout.log 2> logs/pytorch_runtime_retry_20260915/gpu_smoke.stderr.log
+docker run --rm --pull=never --platform=linux/arm64 --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=compute,utility --network=none --mount type=bind,src=/home/ainet/research/thor-mec-inference-split,dst=/workspace,readonly --mount type=bind,src=/home/ainet/datasets/imagenet1k,dst=/datasets,readonly -w /workspace --entrypoint python -i nvcr.io/nvidia/pytorch@sha256:3becd068f49bd2ad38f90db5f9a4803019a76933a24e63d821376c44e7a9200a -u - < logs/pytorch_runtime_retry_20260915/efficientnet_forward.py > logs/pytorch_runtime_retry_20260915/efficientnet_forward.stdout.log 2> logs/pytorch_runtime_retry_20260915/efficientnet_forward.stderr.log
+```
+
+GPU smoke 입력 스크립트는 섹션 9에 보존한 `gpu_smoke.py`와 **동일한 내용**을 새 로그 디렉터리에 복사해 사용했다. CUDA 4×4 행렬곱 결과를 CPU로 가져와 예상값과 `rtol=0, atol=0`으로 비교했다.
+
+GPU 없는 시작 검증 스크립트 (`no_gpu.py`):
+
+```python
+import sys
+import torch
+import torchvision
+print("Python:", sys.version, flush=True)
+print("PyTorch:", torch.__version__, flush=True)
+print("TorchVision:", torchvision.__version__, flush=True)
+print("torch.cuda.is_available():", torch.cuda.is_available(), flush=True)
+```
+
+EfficientNetV2-S 스크립트 (`efficientnet_forward.py`):
+
+```python
+import torch
+import torchvision
+
+exists = hasattr(torchvision.models, "efficientnet_v2_s")
+print("efficientnet_v2_s exists:", exists, flush=True)
+assert exists, "efficientnet_v2_s is missing"
+model = torchvision.models.efficientnet_v2_s(weights=None).cuda()
+model.eval()
+x = torch.zeros((1, 3, 384, 384), dtype=torch.float32, device="cuda")
+with torch.inference_mode():
+    output = model(x)
+    torch.cuda.synchronize()
+    print("output shape:", list(output.shape), flush=True)
+    assert list(output.shape) == [1, 1000], f"Unexpected shape: {list(output.shape)}"
+    assert output.is_cuda, "Output is not CUDA"
+    cpu_output = output.cpu()
+    assert torch.isfinite(cpu_output).all().item(), "Nonfinite output"
+    print("output CPU sample:", cpu_output[0, :5].tolist(), flush=True)
+print("EFFICIENTNET_V2_S_FORWARD_PASS", flush=True)
+```
+
+### 실측 출력과 결과
+
+세 컨테이너 명령 모두 **exit 0**, stderr **0 bytes**였다.
+
+GPU 없는 시작 검증 stdout:
+
+```text
+Python: 3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]
+PyTorch: 2.14.0a0+4fdf77b940.nv26.08
+TorchVision: 0.29.0a0+0bc41e67.nv26.08
+torch.cuda.is_available(): False
+```
+
+일반 NVIDIA runtime GPU smoke stdout:
+
+```text
+Python: 3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]
+PyTorch: 2.14.0a0+4fdf77b940.nv26.08
+TorchVision: 0.29.0a0+0bc41e67.nv26.08
+torch.version.cuda: 13.4
+cuDNN: 92500
+torch.cuda.is_available(): True
+torch.cuda.device_count(): 1
+GPU: 0 NVIDIA Thor capability: (11, 0)
+CUDA matmul CPU sample: [[0.0, 1.0, 2.0, 3.0], [4.0, 5.0, 6.0, 7.0]]
+GPU_SMOKE_PASS
+```
+
+EfficientNetV2-S CUDA forward stdout:
+
+```text
+efficientnet_v2_s exists: True
+output shape: [1, 1000]
+output CPU sample: [0.0, 0.0, 0.0, 0.0, 0.0]
+EFFICIENTNET_V2_S_FORWARD_PASS
+```
+
+| 검증 항목 | 최신 판정 |
+| --- | --- |
+| 이미지 자체 시작 / Python / PyTorch / TorchVision import | **성공** (GPU 없이 확인) |
+| 컨테이너 Python | `3.12.3`, GCC `13.3.0` |
+| PyTorch | `2.14.0a0+4fdf77b940.nv26.08` |
+| TorchVision | `0.29.0a0+0bc41e67.nv26.08` |
+| `torch.version.cuda` | **13.4** (컨테이너 값; 호스트 CUDA 13.2와 구분) |
+| `torch.backends.cudnn.version()` | **92500** (API 반환 원값) |
+| CUDA available / device count | **True / 1** |
+| GPU / capability | **NVIDIA Thor / (11, 0)** |
+| 작은 CUDA 행렬곱 / synchronize / CPU 결과 비교 | **성공** |
+| `efficientnet_v2_s` 존재 / `weights=None` 생성 / `eval()` | **성공** |
+| FP32 입력 `[1,3,384,384]`, inference mode CUDA forward | **성공**, 단일 forward |
+| 출력 shape / CUDA 출력 / 유한값 | **[1,1000] / 확인 / 확인** |
+| CUDA OOM 또는 `/dev/dri/card0` 오류 재발 | **없음** |
+| 기존 CDI-qualified 방식 | 섹션 9의 **실패 기록 유지**, 이번에 재실행하지 않음 |
+| 환경 채택 판단 | 일반 NVIDIA runtime 옵션으로 **이 장치에서 smoke test 동작성 확인** |
+
+제로 dummy 입력과 `weights=None` 모델의 출력 확인은 학습된 모델의 정확도 검증이 아니다. pretrained weight 다운로드, ImageNet ZIP 해제·accuracy 측정, P0–P9 분할 검증, latency/throughput profiling, 그래프 생성은 수행하지 않았다. CDI 파일 재생성, service restart, MIG 변경, device node 생성, runtime 설정 변경, host package 설치도 수행하지 않았다.
+
+**JetPack 7.2.1과 image 26.08의 공식 호환성은 여전히 미확인이다.** 이번 성공은 기록된 digest·실행 옵션·라이브러리 버전으로 해당 Thor 장치에서 동작했다는 실측 근거이며 공식 호환성 보증이 아니다. image pull 시간과 컨테이너 시작 시간은 향후 inference latency/throughput 측정 구간에서 제외한다.
