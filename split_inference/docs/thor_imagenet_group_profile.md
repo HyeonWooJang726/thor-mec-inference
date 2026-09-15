@@ -24,6 +24,14 @@
 - 300장 모두 ZIP CRC 검사·PIL 디코딩·RGB 변환·공식 `weights.transforms()`를 통과했다. 손상 이미지 0개, 제외·대체 0개. 오류 시 member와 traceback을 남기고 중단하며 자동 대체하지 않는다.
 - 전처리는 enum이 제공하는 resize 384, center crop 384, bilinear, mean `[0.485,0.456,0.406]`, std `[0.229,0.224,0.225]`를 그대로 사용한다. 완전한 transform repr는 metadata에 있다.
 
+### Git에 보존한 선택 메타데이터
+
+- 선택 목록: [imagenet_profile/20260915T112015Z/selected_imagenet_members.txt](imagenet_profile/20260915T112015Z/selected_imagenet_members.txt)
+- 이미지별 evidence: [imagenet_profile/20260915T112015Z/selected_image_evidence.csv](imagenet_profile/20260915T112015Z/selected_image_evidence.csv)
+- 선택 목록 SHA-256: `f198e9fd3da063f0f4ae66dff1d6c76fdb66c7875abae88d462b37f96d338bc2`
+- Evidence CSV SHA-256: `5706419efb22bd224d7c1b4bac5cceb22d479c3ec1336cc4e9cbb467301bf794`
+- 선택 이미지 300개와 evidence 300행을 원본 순서·바이트 그대로 보존한다. 실제 이미지 데이터는 포함하지 않으며 서버의 재현성 검증을 위한 목록과 해시만 Git에 추가했다.
+
 ## 그룹 경계와 측정 방법
 
 기존 공통 구현과 manifest는 수정하지 않았다. G1–G7=`features[0]`–`features[6]`, G8=`features[7] → avgpool → flatten(x,1)`, G9=`classifier`. 기존 manifest의 `weights:null`은 과거 검증 조건이며 이번 run의 weight는 위 metadata의 명시적 enum이다.
