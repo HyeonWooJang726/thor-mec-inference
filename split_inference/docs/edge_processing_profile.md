@@ -8,6 +8,8 @@
 G1–G7은 각각 `features[0]`–`features[6]`, G8은 `features[7] → avgpool → flatten`, G9는 `classifier`다.
 각 P0–P8은 `partitions.suffix(activation, point)`로 해당 잔여 구간 전체를 직접 실행했다. 개별 그룹 시간의 합을 사용하지 않았다.
 
+Thor와 서버는 모두 `split_inference/src/common/efficientnet_v2_s_partitions.py`의 동일한 G1–G9 정의를 사용했다.
+
 단위 **ms**, std는 표본 표준편차(`ddof=1`). 모든 warm-up은 아래 통계에서 제외하되 원본에 보존했다.
 
 | Point | Edge 잔여 구간 | mean | median | p95 | std | n | 경계 activation shape | bytes |
@@ -59,7 +61,7 @@ python3 -m venv /home/ainet/venvs/efficientnet-v2-s-cu132
 
 1. import, CUDA availability, GPU 이름, runtime/cuDNN/capability, 간단한 CUDA tensor 연산과 synchronize, EfficientNetV2-S CUDA FP32 forward가 모두 통과했다. Python warnings를 오류로 취급했고 실행 stderr는 0 bytes였다. CUDA architecture 경고나 kernel incompatibility가 없었다.
 2. 기존 [검증 스크립트](../scripts/verify_efficientnet_v2_s_partitions.py)를 CUDA에서 변경 없이 실행했다. 기존 조건인 cuDNN benchmark=False에서 `ALL_P0_P9_PASS`, exit 0, stderr 0 bytes였다.
-3. 실측에 사용할 동일 모델을 cuDNN benchmark=True에서 추가 검증했다. 아래 결과는 두 검증 모두에 해당한다.
+3. 실측에 사용할 동일 모델을 cuDNN benchmark=True에서 추가 검증했다. 서버 내부 full forward의 `[1,1000]` 출력을 기준으로 분할 재결합 출력을 비교했으며, 아래 결과는 두 검증 모두에 해당한다.
 
 | Point | 재결합 출력 shape | max_abs_diff | max_rel_diff | tolerance | activation shape/bytes |
 | --- | --- | ---: | ---: | --- | --- |
@@ -76,6 +78,8 @@ python3 -m venv /home/ainet/venvs/efficientnet-v2-s-cu132
 
 기존 tolerance `rtol=1e-5`, `atol=1e-6`, relative-error denominator floor `1e-8`를 유지했다.
 manifest에는 point별 byte 필드가 없으므로, 명시된 FP32 shape에서 `prod(shape) × 4`로 기대 bytes를 계산하여 실제 tensor의 `numel() × element_size()`와 비교했다.
+
+**실제 Thor와 서버 사이의 state_dict hash는 아직 비교하지 않았다.** 아래 값은 Edge 측정 모델의 식별값이며, 양쪽 동일 가중치가 검증됐다는 의미가 아니다.
 
 측정 모델의 state_dict SHA-256:
 
