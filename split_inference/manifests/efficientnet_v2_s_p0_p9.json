@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "model": "torchvision.models.efficientnet_v2_s",
+  "definition_status": "project_official",
+  "provenance": "Project-defined TorchVision boundaries authorized by the user; inspired by the Parecon 9-group/10-point configuration, not a reproduction of its exact internal implementation.",
+  "weights": null,
+  "groups": [
+    {
+      "id": "G1",
+      "name": "stem",
+      "operations": [
+        {
+          "module": "features.0"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "name": "FusedMBConv stage 1",
+      "operations": [
+        {
+          "module": "features.1"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "name": "FusedMBConv stage 2",
+      "operations": [
+        {
+          "module": "features.2"
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "name": "FusedMBConv stage 3",
+      "operations": [
+        {
+          "module": "features.3"
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "name": "MBConv stage 4",
+      "operations": [
+        {
+          "module": "features.4"
+        }
+      ]
+    },
+    {
+      "id": "G6",
+      "name": "MBConv stage 5",
+      "operations": [
+        {
+          "module": "features.5"
+        }
+      ]
+    },
+    {
+      "id": "G7",
+      "name": "MBConv stage 6",
+      "operations": [
+        {
+          "module": "features.6"
+        }
+      ]
+    },
+    {
+      "id": "G8",
+      "name": "final convolution, avgpool, flatten",
+      "operations": [
+        {
+          "module": "features.7"
+        },
+        {
+          "module": "avgpool"
+        },
+        {
+          "op": "flatten",
+          "start_dim": 1
+        }
+      ]
+    },
+    {
+      "id": "G9",
+      "name": "classifier",
+      "operations": [
+        {
+          "module": "classifier"
+        }
+      ]
+    }
+  ],
+  "points": [
+    {
+      "id": "P0",
+      "index": 0,
+      "before": "model input",
+      "after": "model.features[0]",
+      "expected_shape": [
+        1,
+        3,
+        384,
+        384
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "id": "P1",
+      "index": 1,
+      "before": "model.features[0]",
+      "after": "model.features[1]",
+      "expected_shape": [
+        1,
+        24,
+        192,
+        192
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "id": "P2",
+      "index": 2,
+      "before": "model.features[1]",
+      "after": "model.features[2]",
+      "expected_shape": [
+        1,
+        24,
+        192,
+        192
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "id": "P3",
+      "index": 3,
+      "before": "model.features[2]",
+      "after": "model.features[3]",
+      "expected_shape": [
+        1,
+        48,
+        96,
+        96
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "id": "P4",
+      "index": 4,
+      "before": "model.features[3]",
+      "after": "model.features[4]",
+      "expected_shape": [
+        1,
+        64,
+        48,
+        48
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "id": "P5",
+      "index": 5,
+      "before": "model.features[4]",
+      "after": "model.features[5]",
+      "expected_shape": [
+        1,
+        128,
+        24,
+        24
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "id": "P6",
+      "index": 6,
+      "before": "model.features[5]",
+      "after": "model.features[6]",
+      "expected_shape": [
+        1,
+        160,
+        24,
+        24
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "id": "P7",
+      "index": 7,
+      "before": "model.features[6]",
+      "after": "model.features[7]",
+      "expected_shape": [
+        1,
+        256,
+        12,
+        12
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "id": "P8",
+      "index": 8,
+      "before": "torch.flatten(x, 1)",
+      "after": "model.classifier",
+      "expected_shape": [
+        1,
+        1280
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "id": "P9",
+      "index": 9,
+      "before": "model.classifier",
+      "after": "model output",
+      "expected_shape": [
+        1,
+        1000
+      ],
+      "dtype": "torch.float32"
+    }
+  ],
+  "comparison": {
+    "rtol": 1e-05,
+    "atol": 1e-06,
+    "relative_error_floor": 1e-08
+  },
+  "p9_uplink_bytes": 0
+}
