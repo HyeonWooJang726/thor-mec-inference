@@ -27,6 +27,7 @@
 # Raw observations and tensor dumps (keep local, never delete to clean Git)
 /results/profiling/raw/*
 /results/thor_processing_profile/*
+/results/thor_imagenet_profile/
 # Publish only the final composite PNG/PDF; keep measurements and other artifacts local.
 !/results/thor_processing_profile/20260915T181507/
 /results/thor_processing_profile/20260915T181507/*
