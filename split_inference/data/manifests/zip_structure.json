@@ -1,0 +1,38 @@
+{
+  "status": "confirmed_zip_directory_and_metadata_only",
+  "zip_path": "/home/ainet/datasets/imagenet1k/imagenet-val.zip",
+  "zip_size_bytes": 6669976535,
+  "entry_count": 50001,
+  "explicit_directory_entries": 0,
+  "jpeg_count": 50000,
+  "synset_directory_count": 1000,
+  "images_per_synset_histogram": {
+    "50": 1000
+  },
+  "all_synset_names_match": true,
+  "common_class_parent_paths": [
+    "."
+  ],
+  "duplicate_entry_names": 0,
+  "non_jpeg_files": [
+    "dataset-metadata.json"
+  ],
+  "image_examples": [
+    "n01440764/ILSVRC2012_val_00000293.JPEG",
+    "n01440764/ILSVRC2012_val_00002138.JPEG",
+    "n01440764/ILSVRC2012_val_00003014.JPEG"
+  ],
+  "metadata": {
+    "dataset-metadata.json": {
+      "title": "Imagenet-1k Validation set",
+      "id": "titericz/imagenet1k-val",
+      "licenses": [
+        {
+          "name": "CC0-1.0"
+        }
+      ]
+    }
+  },
+  "sha256_user_preverified": "6079f8e894c194c77264fc336e6e2eb6a831d230abb09c24fe7bf7bdf41918a1",
+  "integrity_test_user_preverified": "passed; not repeated"
+}

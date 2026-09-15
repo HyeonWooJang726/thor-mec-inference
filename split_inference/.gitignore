@@ -1,0 +1,44 @@
+# Override repository-wide data/ exclusion for documentation and manifests.
+!/data/
+/data/*
+!/data/README.md
+!/data/manifests/
+# Dataset images and archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.JPEG
+*.jpeg
+*.jpg
+*.JPG
+/data/imagenet*/
+/data/images/
+# Model artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.engine
+*.plan
+/weights/*
+!/weights/README.md
+# Raw observations and tensor dumps (keep local, never delete to clean Git)
+/results/profiling/raw/*
+*.npy
+*.npz
+*.bin
+*.tensor
+*.pkl
+*.pickle
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+# README, configs, manifests, summary CSV, PNG/PDF/SVG remain trackable.
