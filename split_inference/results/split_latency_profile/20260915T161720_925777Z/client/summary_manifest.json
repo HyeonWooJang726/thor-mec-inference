@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "schema": "thor-client-only-single-flight-summary-v1",
+  "run_id": "20260915T161720_925777Z",
+  "scope": "single-flight closed-loop split-inference baseline",
+  "source_role": "Thor client",
+  "experiment_rerun": false,
+  "server_files_used": false,
+  "source_artifact_sha256": {
+    "client_raw.csv": "5dbe4ac102d217843326c2b45d4c442fa9487d621bb49eec25f1067c66ebf78b",
+    "run_manifest.json": "bbc4ccfd44342bd5d61e76a31f5d7c3e3440c5bae9eae77073d573aeb5c38bd3",
+    "correctness.csv": "c1eb533e2bdd7c308bbf78157bf64a2c085078261c0594030b98a79bb97d2be9"
+  },
+  "summary_sha256": "a2ed6649dbc4a65c2e43d87eaa98a70be9ac4e6f272f4b6af9302b869395cb69",
+  "metric_source_columns": {
+    "device_inference_ms": "device_inference_wall_ms",
+    "e2e_inference_ms": "e2e_inference_ms",
+    "device_inference_cuda_ms": "device_inference_cuda_ms",
+    "remote_roundtrip_ms": "remote_roundtrip_ms"
+  },
+  "phase_filter": "measurement only; preflight and warmup retained in client_raw.csv",
+  "phase_counts": {
+    "preflight": 30,
+    "warmup": 320,
+    "measurement": 30000
+  },
+  "measurement_samples_per_split": {
+    "0": 3000,
+    "1": 3000,
+    "2": 3000,
+    "3": 3000,
+    "4": 3000,
+    "5": 3000,
+    "6": 3000,
+    "7": 3000,
+    "8": 3000,
+    "9": 3000
+  },
+  "aggregations": "pooled across rounds and each round separately",
+  "percentile": "linear interpolation at (N-1)*q, same split_latency_profile.percentile implementation",
+  "standard_deviation": "sample standard deviation, ddof=1",
+  "correctness": {
+    "scope": "preflight only; not every measurement request",
+    "checks": 30,
+    "passed": 30,
+    "rtol": 0.0001,
+    "atol": 1e-05
+  },
+  "excluded_metrics": [
+    "edge_inference_ms",
+    "edge_inference_cuda_ms",
+    "offloading_overhead_ms"
+  ],
+  "throughput": "No pipeline throughput inferred from reciprocal mean E2E.",
+  "summary_rows": 440,
+  "existing_client_metric_summary_crosscheck": "all 440 rows match existing analysis client-only metric subset; no existing result modified"
+}
