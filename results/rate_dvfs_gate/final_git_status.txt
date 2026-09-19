@@ -1,0 +1,7 @@
+## rate-dvfs-gate...origin/main
+?? scripts/rate_dvfs_gate/
+
+Worktree: /home/ainet/research/thor-mec-rate-dvfs-gate
+Amended plan SHA256: 412198d20ec2b83a1778da3a2db420b8f0162085e8987e8bd4daee75e3db004c
+All 45 planned runs completed and raw-replay verified; final ADMISSION_GATE_FAIL.
+Historical runs preserved; no commit or branch/worktree changes.

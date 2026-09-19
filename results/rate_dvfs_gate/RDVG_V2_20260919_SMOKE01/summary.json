@@ -1,0 +1,141 @@
+{
+  "protocol_version": 2,
+  "run_id": "RDVG_V2_20260919_SMOKE01",
+  "kind": "smoke",
+  "repeat": null,
+  "K": 7,
+  "C": 4,
+  "freq_state": "HIGH",
+  "requested_freq_MHz": 1575,
+  "admission_fps_per_stream": 30,
+  "source_frames": 2100,
+  "admitted_frames": 2100,
+  "completed_frames_including_drain": 2100,
+  "errors": [],
+  "provenance": "measured",
+  "power_scope": "GPU rail VDD_GPU (tegrastats instantaneous channel)",
+  "queue_definition": "ready_timestamp_ns <= t < inference_start_timestamp_ns",
+  "hardware_status": "CLEAN",
+  "OC3_delta": 0,
+  "aggregate_admitted_fps": 210.0,
+  "aggregate_completed_fps": 209.7,
+  "completed_active_frames": 2097,
+  "min_per_stream_completed_fps": 29.9,
+  "mean_per_stream_completed_fps": 29.957142857142856,
+  "per_stream": [
+    {
+      "stream_id": 0,
+      "source_frames": 300,
+      "admitted_frames": 300,
+      "completed_active": 300,
+      "R_k": 30.0,
+      "eta_k": 1.0,
+      "g_Q_k": 0.008348050629424566
+    },
+    {
+      "stream_id": 1,
+      "source_frames": 300,
+      "admitted_frames": 300,
+      "completed_active": 299,
+      "R_k": 29.9,
+      "eta_k": 0.9966666666666666,
+      "g_Q_k": -0.02255464795187865
+    },
+    {
+      "stream_id": 2,
+      "source_frames": 300,
+      "admitted_frames": 300,
+      "completed_active": 300,
+      "R_k": 30.0,
+      "eta_k": 1.0,
+      "g_Q_k": -0.0058736222685242334
+    },
+    {
+      "stream_id": 3,
+      "source_frames": 300,
+      "admitted_frames": 300,
+      "completed_active": 299,
+      "R_k": 29.9,
+      "eta_k": 0.9966666666666666,
+      "g_Q_k": 0.008215953018388072
+    },
+    {
+      "stream_id": 4,
+      "source_frames": 300,
+      "admitted_frames": 300,
+      "completed_active": 300,
+      "R_k": 30.0,
+      "eta_k": 1.0,
+      "g_Q_k": -0.004578428549085114
+    },
+    {
+      "stream_id": 5,
+      "source_frames": 300,
+      "admitted_frames": 300,
+      "completed_active": 300,
+      "R_k": 30.0,
+      "eta_k": 1.0,
+      "g_Q_k": 0.01954348439574555
+    },
+    {
+      "stream_id": 6,
+      "source_frames": 300,
+      "admitted_frames": 300,
+      "completed_active": 299,
+      "R_k": 29.9,
+      "eta_k": 0.9966666666666666,
+      "g_Q_k": 0.030310534464010795
+    }
+  ],
+  "measurement_seconds": 10.0,
+  "aggregate_queue_slope": 0.033411323738080985,
+  "max_per_stream_queue_slope": 0.030310534464010795,
+  "queue_peak": 6,
+  "queue_at_active_end": 0,
+  "queue_wait_ms": {
+    "mean": 6.027811859047619,
+    "p50": 1.2955795,
+    "p95": 16.51266295,
+    "p99": 18.76446478999998
+  },
+  "service_ms": {
+    "mean": 15.572224354285714,
+    "p50": 15.492899999999999,
+    "p95": 19.87893105,
+    "p99": 23.00160299
+  },
+  "latency_ms": {
+    "mean": 36.95942576999999,
+    "p50": 35.27804,
+    "p95": 48.6786245,
+    "p99": 54.714070229999976
+  },
+  "avg_power_W": 48.535417620610005,
+  "active_energy_J": 485.3541762061001,
+  "actual_freq_mean_MHz": 1575.0,
+  "actual_freq_mean_scope": "nonzero active-interval observations",
+  "temperature": 47.17993684210526,
+  "actual_clock_non_target_fraction": 0.0,
+  "source_fps": 210.0,
+  "aggregate_ready_fps": 210.0,
+  "frontend_ready_deficit_fraction": 0.0,
+  "frontend_pending_slope": 0.03435834247485693,
+  "source_pending_slope": -0.00023572740668542907,
+  "frontend_bottleneck": false,
+  "source_to_admission_ms": {
+    "mean": 2.6313645852380954,
+    "p50": 1.9798525,
+    "p95": 6.3379695499999995,
+    "p99": 8.876223599999978
+  },
+  "active_concurrency_peak": 4,
+  "active_concurrency_mean": 3.2667027819000025,
+  "concurrency_scope": "host service intervals, not a claim of GPU kernel overlap",
+  "pipeline_failures": [],
+  "validity": "VALID",
+  "integrity_status": "VALID",
+  "pipeline_audit_status": "PASS",
+  "queue_stable": true,
+  "queue_classification": "QUEUE_STABLE",
+  "energy_per_frame_J": 0.23145168154797333
+}

@@ -1,0 +1,629 @@
+{
+  "execution_metadata_only": true,
+  "authorization": "Current user: exactly A1,A2,B recovery; only 3/3 exit0 + integrity PASS authorizes unchanged V2 primary design.",
+  "created_at_utc": "2026-09-19T12:00:10.535827+00:00",
+  "base_v2_plan_sha256": "4e4479312df2acd469b402074862a3f458f06e9db338e4674d889c5971476938",
+  "inputs": [
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4",
+      "sha256": "7a56955a524e8454ba63df4878a1634fba6f8f59a6136fce9b7a35c2b54a8caa",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0001.mp4",
+      "sha256": "bf1bb1fd71a811cfdab83bdad01c0c4cf426124f3e7e6635a77bbdc23f68cb45",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0002.mp4",
+      "sha256": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0003.mp4",
+      "sha256": "7deacc1aa539bb999ea16c0f656f52695b6fb034e6269bd80e670c090023766c",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0004.mp4",
+      "sha256": "57934396f19a0b777da07c6171985bf861f546d42c2c0203b1a6f972a9c3a210",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0005.mp4",
+      "sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0006.mp4",
+      "sha256": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    }
+  ],
+  "source_sha256": {
+    "scripts/rate_dvfs_gate/gpu_frequency.py": "549b959aef4ad4d4033641cea852b6ca4d05e187cf203047c301eb2a8cc3d82b",
+    "scripts/rate_dvfs_gate/analyze_rate_dvfs_gate.py": "7373e4ab39c014e7f343289f85bdbf718e39b4edfe8cee883f4117a628613e4a",
+    "scripts/rate_dvfs_gate/run_rate_dvfs_gate.py": "238ee06b3e4d24e18eeaaabc19e82be56719c7e809d58a815e5be7a4e789b527",
+    "scripts/local/profile_local_e2e.py": "aa9ec99381e6936f843a0e1e0cf3b3cc7beb93778748d0a3fb34b9d9be2084dd",
+    "scripts/common/rtdetr_preprocess.py": "48f510234b84e52db3fa7f102279fe778c9c929b80d71e6a34cf684f5a4f7d1e",
+    "scripts/concurrency/local_concurrency_tensorrt.py": "863cdd468d8565efdf2a82435e667f9fce837d7d2013ff61ab4ab8fafa8ba140",
+    "scripts/local/local_latency_breakdown_metrics.py": "4225d57739c29d18aef0e9e2d75bf4fc20f2407ffc50b603bcf8b8902aa08cce"
+  },
+  "smoke": [
+    {
+      "run_id": "RDVG_RECOVERY_20260919_A1",
+      "kind": "smoke",
+      "recovery_label": "A1",
+      "K": 7,
+      "C": 4,
+      "r": 30,
+      "frequency": "HIGH",
+      "seconds": 10
+    },
+    {
+      "run_id": "RDVG_RECOVERY_20260919_A2",
+      "kind": "smoke",
+      "recovery_label": "A2",
+      "K": 7,
+      "C": 4,
+      "r": 30,
+      "frequency": "HIGH",
+      "seconds": 10
+    },
+    {
+      "run_id": "RDVG_RECOVERY_20260919_B",
+      "kind": "smoke",
+      "recovery_label": "B",
+      "K": 7,
+      "C": 4,
+      "r": 21,
+      "frequency": "LOW",
+      "seconds": 10
+    }
+  ],
+  "order": [
+    {
+      "run_id": "RDVG_V2_20260919_P01",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 21,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P02",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 24,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P03",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 27,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P04",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 30,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P05",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 21,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P06",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 24,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P07",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 27,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P08",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 30,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P09",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 21,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P10",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 24,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P11",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 27,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P12",
+      "kind": "primary",
+      "repeat": 1,
+      "K": 7,
+      "C": 4,
+      "r": 30,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P13",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 24,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P14",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 27,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P15",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 30,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P16",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 21,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P17",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 24,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P18",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 27,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P19",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 30,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P20",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 21,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P21",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 24,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P22",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 27,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P23",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 30,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P24",
+      "kind": "primary",
+      "repeat": 2,
+      "K": 7,
+      "C": 4,
+      "r": 21,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P25",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 27,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P26",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 30,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P27",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 21,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P28",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 24,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P29",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 27,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P30",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 30,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P31",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 21,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P32",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 24,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P33",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 27,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P34",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 30,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P35",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 21,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_P36",
+      "kind": "primary",
+      "repeat": 3,
+      "K": 7,
+      "C": 4,
+      "r": 24,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_S01",
+      "kind": "sanity",
+      "repeat": 1,
+      "K": 6,
+      "C": 2,
+      "r": 30,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_S02",
+      "kind": "sanity",
+      "repeat": 1,
+      "K": 6,
+      "C": 2,
+      "r": 30,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_S03",
+      "kind": "sanity",
+      "repeat": 1,
+      "K": 6,
+      "C": 2,
+      "r": 30,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_S04",
+      "kind": "sanity",
+      "repeat": 2,
+      "K": 6,
+      "C": 2,
+      "r": 30,
+      "frequency": "MID",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_S05",
+      "kind": "sanity",
+      "repeat": 2,
+      "K": 6,
+      "C": 2,
+      "r": 30,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_S06",
+      "kind": "sanity",
+      "repeat": 2,
+      "K": 6,
+      "C": 2,
+      "r": 30,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_S07",
+      "kind": "sanity",
+      "repeat": 3,
+      "K": 6,
+      "C": 2,
+      "r": 30,
+      "frequency": "HIGH",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_S08",
+      "kind": "sanity",
+      "repeat": 3,
+      "K": 6,
+      "C": 2,
+      "r": 30,
+      "frequency": "LOW",
+      "seconds": 60
+    },
+    {
+      "run_id": "RDVG_V2_20260919_S09",
+      "kind": "sanity",
+      "repeat": 3,
+      "K": 6,
+      "C": 2,
+      "r": 30,
+      "frequency": "MID",
+      "seconds": 60
+    }
+  ],
+  "order_note": "Per latest user instruction: retain relative balanced order within K7, then run all K6. No conditions/repeats changed.",
+  "pipeline_semantics_baseline": "PASS from existing V2 evidence; this recovery tests process lifecycle separately."
+}

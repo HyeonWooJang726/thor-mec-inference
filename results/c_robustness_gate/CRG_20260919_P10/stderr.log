@@ -1,0 +1,23 @@
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+
+SUPERVISOR_STDOUT_TAIL
+{"run_id": "CRG_20260919_P10", "integrity_status": "PENDING_PROCESS_EXIT", "hardware_status": "CLEAN", "pipeline_audit_status": "PASS", "queue_classification": "QUEUE_STABLE", "completed_fps": 188.91666666666666, "errors": []}
+
+SUPERVISOR_STDERR_TAIL
+
+SUPERVISOR_PROCESS_OUTCOME {"child_pid": 113152, "child_returncode": 0, "child_exit_signal": null, "child_start_time": "2026-09-19T14:06:46.697364+00:00", "child_exit_time": "2026-09-19T14:07:51.183938+00:00", "child_start_monotonic_ns": 32656463458031, "child_exit_monotonic_ns": 32720950058309, "supervisor_timeout": false}

@@ -1,0 +1,23 @@
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+
+SUPERVISOR_STDOUT_TAIL
+{"run_id": "RDVG_V2_20260919_P02", "integrity_status": "PENDING_PROCESS_EXIT", "hardware_status": "CLEAN", "pipeline_audit_status": "FAIL", "queue_classification": "INVALID", "completed_fps": 163.01666666666668, "errors": ["front end: Traceback (most recent call last):\n  File \"/home/ainet/research/thor-mec-rate-dvfs-gate/scripts/rate_dvfs_gate/run_rate_dvfs_gate.py\", line 399, in front\n    raise RuntimeError('PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end')\nRuntimeError: PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end\n", "front end: Traceback (most recent call last):\n  File \"/home/ainet/research/thor-mec-rate-dvfs-gate/scripts/rate_dvfs_gate/run_rate_dvfs_gate.py\", line 399, in front\n    raise RuntimeError('PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end')\nRuntimeError: PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end\n", "front end: Traceback (most recent call last):\n  File \"/home/ainet/research/thor-mec-rate-dvfs-gate/scripts/rate_dvfs_gate/run_rate_dvfs_gate.py\", line 399, in front\n    raise RuntimeError('PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end')\nRuntimeError: PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end\n", "front end: Traceback (most recent call last):\n  File \"/home/ainet/research/thor-mec-rate-dvfs-gate/scripts/rate_dvfs_gate/run_rate_dvfs_gate.py\", line 399, in front\n    raise RuntimeError('PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end')\nRuntimeError: PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end\n", "front end: Traceback (most recent call last):\n  File \"/home/ainet/research/thor-mec-rate-dvfs-gate/scripts/rate_dvfs_gate/run_rate_dvfs_gate.py\", line 399, in front\n    raise RuntimeError('PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end')\nRuntimeError: PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end\n", "front end: Traceback (most recent call last):\n  File \"/home/ainet/research/thor-mec-rate-dvfs-gate/scripts/rate_dvfs_gate/run_rate_dvfs_gate.py\", line 399, in front\n    raise RuntimeError('PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end')\nRuntimeError: PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end\n", "front end: Traceback (most recent call last):\n  File \"/home/ainet/research/thor-mec-rate-dvfs-gate/scripts/rate_dvfs_gate/run_rate_dvfs_gate.py\", line 399, in front\n    raise RuntimeError('PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end')\nRuntimeError: PIPELINE_FRONTEND_BOTTLENECK: frame unavailable before active end\n", "Traceback (most recent call last):\n  File \"/home/ainet/research/thor-mec-rate-dvfs-gate/scripts/rate_dvfs_gate/run_rate_dvfs_gate.py\", line 480, in run_one\n    if errors:raise RuntimeError('run stopped after recorded failure')\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: run stopped after recorded failure\n", "stream 0: deterministic admission mismatch", "stream 1: deterministic admission mismatch", "stream 2: deterministic admission mismatch", "stream 3: deterministic admission mismatch", "stream 4: deterministic admission mismatch", "stream 5: deterministic admission mismatch", "stream 6: deterministic admission mismatch", "decode/admission timing corruption", "source frame decode record missing", "measurement trace: power trace does not bracket active interval or is nonmonotonic"]}
+
+SUPERVISOR_STDERR_TAIL
+
+SUPERVISOR_PROCESS_OUTCOME {"child_pid": 78077, "child_returncode": 1, "child_exit_signal": null, "child_start_time": "2026-09-19T12:04:08.688948+00:00", "child_exit_time": "2026-09-19T12:05:12.449291+00:00", "child_start_monotonic_ns": 25298455042640, "child_exit_monotonic_ns": 25362215412950, "supervisor_timeout": false}

@@ -1,0 +1,23 @@
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+Opening in BLOCKING MODE 
+
+SUPERVISOR_STDOUT_TAIL
+{"run_id": "RDVG_V2_20260919_P01", "integrity_status": "PENDING_PROCESS_EXIT", "hardware_status": "PROTECTION_LIMITED", "pipeline_audit_status": "PASS", "queue_classification": "QUEUE_STABLE", "completed_fps": 146.95, "errors": []}
+
+SUPERVISOR_STDERR_TAIL
+
+SUPERVISOR_PROCESS_OUTCOME {"child_pid": 77779, "child_returncode": 0, "child_exit_signal": null, "child_start_time": "2026-09-19T12:03:04.143347+00:00", "child_exit_time": "2026-09-19T12:04:08.325418+00:00", "child_start_monotonic_ns": 25233909440066, "child_exit_monotonic_ns": 25298091541244, "supervisor_timeout": false}

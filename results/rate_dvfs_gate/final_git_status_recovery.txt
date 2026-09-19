@@ -1,0 +1,12 @@
+worktree: /home/ainet/research/thor-mec-rate-dvfs-gate
+branch: rate-dvfs-gate
+
+?? scripts/rate_dvfs_gate/analyze_rate_dvfs_gate.py
+?? scripts/rate_dvfs_gate/gpu_frequency.py
+?? scripts/rate_dvfs_gate/run_rate_dvfs_gate.py
+
+Recovery A1/A2/B: all actual child exit0, integrity VALID, lifecycle PASS; OC3 deltas1/0/0; restore true. Primary began: P01 exit0 VALID/PROTECTION_LIMITED, P02 exit1 INVALID/CLEAN (existing front-end guard). K7 attempted2/36; K6 0/9. No retry.
+
+Final GPC state: {"min_freq": "315000000", "max_freq": "1575000000", "governor": "nvhost_podgov"}
+
+Verification: lifecycle finalization and signal fixtures; pipeline semantic function AST equality; raw replay; PID/returncode/signal/timestamp/phase flags present in every manifest and summary; all prior V1/V2 artifacts/plans/reports hash-identical. Historical source files unmodified; no tracked diff; git diff --check PASS.

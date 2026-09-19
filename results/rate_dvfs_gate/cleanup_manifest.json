@@ -1,0 +1,56 @@
+{
+  "observed_at_utc": "2026-09-19T10:54:20.621657+00:00",
+  "worktree": "/home/ainet/research/thor-mec-rate-dvfs-gate",
+  "branch": "rate-dvfs-gate",
+  "deleted": [],
+  "deleted_bytes": 0,
+  "reviewed": [
+    {
+      "path": "results/local_inference_concurrency",
+      "present_regular_files": 30,
+      "size_bytes": 246738,
+      "inventory_sha256": "9d5d1ee59a49088a7880d4f276f9c1fa3e4613fae3d4734e6994099121a255ba",
+      "inventory_method": "SHA256 of sorted (relative-path UTF8 + NUL + file SHA256 bytes); nonsymlink files only"
+    },
+    {
+      "path": "results/local_latency_breakdown",
+      "present_regular_files": 22,
+      "size_bytes": 1011195,
+      "inventory_sha256": "ed2be839ed55fe132b2c388c92ef9c93e3e08c05d2e7ac06443369a644583ba8",
+      "inventory_method": "SHA256 of sorted (relative-path UTF8 + NUL + file SHA256 bytes); nonsymlink files only"
+    }
+  ],
+  "protected": [
+    {
+      "path": "results/local_concurrency_formal_full",
+      "present_regular_files": 80,
+      "size_bytes": 7186677,
+      "inventory_sha256": "8a8bac93160e33c8fe633f910c24ae075d95220dd034832a35201cfbda44ff57",
+      "inventory_method": "SHA256 of sorted (relative-path UTF8 + NUL + file SHA256 bytes); nonsymlink files only"
+    },
+    {
+      "path": "results/local_dynamic_c_value_gate",
+      "present_regular_files": 327,
+      "size_bytes": 5761553,
+      "inventory_sha256": "f68654dae086057296f31a3057eeb3e23faa0045cfa63dac25ff52d20afe0bab",
+      "inventory_method": "SHA256 of sorted (relative-path UTF8 + NUL + file SHA256 bytes); nonsymlink files only"
+    },
+    {
+      "path": "results/local_canonical_c2",
+      "present_regular_files": 66,
+      "size_bytes": 1237947,
+      "inventory_sha256": "642cfe0dd8ad47f0a79c93f865d7fbf08dc2ed4887e2061ece499c6967d93cb9",
+      "inventory_method": "SHA256 of sorted (relative-path UTF8 + NUL + file SHA256 bytes); nonsymlink files only"
+    }
+  ],
+  "decision": "No cache/pyc files found; no derived file proven redundant and unused. All files retained.",
+  "reference_check": {
+    "method": "rg on scripts, canonical runtime configuration and results/INDEX.md",
+    "references_found": [
+      "scripts/concurrency/plot_local_paper_summary.py",
+      "scripts/concurrency/verify_canonical.py",
+      "scripts/local/run_local_latency_breakdown_formal.py"
+    ]
+  },
+  "raw_evidence_validation": "Only present files inventoried. Historical raw counts not independently revalidated; missing raw files not reconstructed."
+}

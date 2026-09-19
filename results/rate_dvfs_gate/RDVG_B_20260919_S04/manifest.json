@@ -1,0 +1,499 @@
+{
+  "protocol_version": 2,
+  "run_id": "RDVG_B_20260919_S04",
+  "kind": "sanity",
+  "repeat": 2,
+  "K": 6,
+  "C": 2,
+  "freq_state": "MID",
+  "requested_freq_MHz": 1260,
+  "admission_fps_per_stream": 30,
+  "errors": [],
+  "child_start_time": "2026-09-19T13:14:29.116371+00:00",
+  "child_start_monotonic_ns": 29518882466115,
+  "child_returncode": 0,
+  "child_exit_signal": null,
+  "child_pid": 99918,
+  "summary_written": true,
+  "active_phase_completed": true,
+  "drain_completed": true,
+  "cleanup_started": true,
+  "cleanup_completed": true,
+  "frequency_restore_ok": true,
+  "status_finalized": true,
+  "active_start_ns": 29520630526822,
+  "active_end_ns": 29580630526822,
+  "child_has_started": true,
+  "source_fps": 30,
+  "measurement_seconds": 60,
+  "queue_overflow": false,
+  "forced_drop": false,
+  "queue_cap_saturation": false,
+  "queue_capacity": null,
+  "warmup_inferences_per_worker": 30,
+  "warmup_input": "first actual decoded frame from stream 0, repeated",
+  "batch_size": 1,
+  "CUDA_Graph": false,
+  "plan_sha256": "412198d20ec2b83a1778da3a2db420b8f0162085e8987e8bd4daee75e3db004c",
+  "execution_manifest_sha256": "412198d20ec2b83a1778da3a2db420b8f0162085e8987e8bd4daee75e3db004c",
+  "source_sha256": {
+    "scripts/rate_dvfs_gate/gpu_frequency.py": "549b959aef4ad4d4033641cea852b6ca4d05e187cf203047c301eb2a8cc3d82b",
+    "scripts/rate_dvfs_gate/analyze_rate_dvfs_gate.py": "724e981fe6a74ebfb788dbe587d23f47ad7904351f5b8e9ad42ec31595919d6f",
+    "scripts/rate_dvfs_gate/run_rate_dvfs_gate.py": "290db909f9570b321c4d4340f10b17fe31c4239cf5e475a426d2e92ec6a3ac7c",
+    "scripts/local/profile_local_e2e.py": "aa9ec99381e6936f843a0e1e0cf3b3cc7beb93778748d0a3fb34b9d9be2084dd",
+    "scripts/common/rtdetr_preprocess.py": "48f510234b84e52db3fa7f102279fe778c9c929b80d71e6a34cf684f5a4f7d1e",
+    "scripts/concurrency/local_concurrency_tensorrt.py": "863cdd468d8565efdf2a82435e667f9fce837d7d2013ff61ab4ab8fafa8ba140",
+    "scripts/local/local_latency_breakdown_metrics.py": "4225d57739c29d18aef0e9e2d75bf4fc20f2407ffc50b603bcf8b8902aa08cce"
+  },
+  "inputs": [
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4",
+      "sha256": "7a56955a524e8454ba63df4878a1634fba6f8f59a6136fce9b7a35c2b54a8caa",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0001.mp4",
+      "sha256": "bf1bb1fd71a811cfdab83bdad01c0c4cf426124f3e7e6635a77bbdc23f68cb45",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0002.mp4",
+      "sha256": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0003.mp4",
+      "sha256": "7deacc1aa539bb999ea16c0f656f52695b6fb034e6269bd80e670c090023766c",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0004.mp4",
+      "sha256": "57934396f19a0b777da07c6171985bf861f546d42c2c0203b1a6f972a9c3a210",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0005.mp4",
+      "sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    }
+  ],
+  "protocol_amendment": "UNIFIED_BACKLOG_B",
+  "backlog_definition": "logical admitted count minus inference completion count",
+  "lifecycle_events": [
+    {
+      "phase": "preflight_completed",
+      "monotonic_ns": 29519124739136,
+      "utc": "2026-09-19T13:14:29.358658+00:00"
+    },
+    {
+      "phase": "resources_created",
+      "monotonic_ns": 29519681438905,
+      "utc": "2026-09-19T13:14:29.915358+00:00"
+    },
+    {
+      "phase": "warmup_completed",
+      "monotonic_ns": 29520276987875,
+      "utc": "2026-09-19T13:14:30.510908+00:00"
+    },
+    {
+      "phase": "active_started",
+      "monotonic_ns": 29520433553753,
+      "utc": "2026-09-19T13:14:30.667471+00:00"
+    },
+    {
+      "phase": "active_phase_completed",
+      "monotonic_ns": 29580659782847,
+      "utc": "2026-09-19T13:15:30.893704+00:00"
+    },
+    {
+      "phase": "drain_completed",
+      "monotonic_ns": 29580952574266,
+      "utc": "2026-09-19T13:15:31.186494+00:00"
+    },
+    {
+      "phase": "cleanup_started",
+      "monotonic_ns": 29580962899101,
+      "utc": "2026-09-19T13:15:31.196817+00:00"
+    },
+    {
+      "phase": "raw_measurements_written",
+      "monotonic_ns": 29581460820484,
+      "utc": "2026-09-19T13:15:31.694738+00:00"
+    },
+    {
+      "phase": "pipelines_null",
+      "monotonic_ns": 29581604332613,
+      "utc": "2026-09-19T13:15:31.838250+00:00"
+    },
+    {
+      "phase": "frequency_restored",
+      "monotonic_ns": 29581629267148,
+      "utc": "2026-09-19T13:15:31.863183+00:00"
+    },
+    {
+      "phase": "tensorrt_cleanup_started",
+      "monotonic_ns": 29581636052735,
+      "utc": "2026-09-19T13:15:31.869968+00:00"
+    },
+    {
+      "phase": "cleanup_completed",
+      "monotonic_ns": 29581709463450,
+      "utc": "2026-09-19T13:15:31.943380+00:00"
+    },
+    {
+      "phase": "summary_written",
+      "monotonic_ns": 29582336965173,
+      "utc": "2026-09-19T13:15:32.570882+00:00"
+    }
+  ],
+  "engine_provenance": {
+    "status": "PASS",
+    "engine_path": "/home/ainet/research/thor-mec-rate-dvfs-gate/models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine",
+    "resolved_path": "/home/ainet/research/thor-mec-inference/models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine",
+    "sha256": "9d01cdb2838bb1b9db58c246e6111a5dccee63bb937b673fb48caf43e53bc5ff",
+    "expected_sha256": "9d01cdb2838bb1b9db58c246e6111a5dccee63bb937b673fb48caf43e53bc5ff",
+    "evidence": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/local_concurrency_formal_full/replacements/c1/k2/replacement01/metadata.json"
+  },
+  "environment_before": {
+    "nvpmodel": "NV Power Mode: MAXN\n0\n",
+    "uname": [
+      "Linux",
+      "thor",
+      "6.8.12-1021-tegra",
+      "#1 SMP PREEMPT Thu Aug  6 21:56:04 PDT 2026",
+      "aarch64"
+    ],
+    "clock_sysfs": {
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_cur_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_driver": "tegra194",
+      "/sys/class/devfreq/gpu-gpc-0/governor": "nvhost_podgov",
+      "/sys/class/devfreq/gpu-gpc-0/min_freq": "315000000",
+      "/sys/class/devfreq/gpu-gpc-0/max_freq": "1575000000",
+      "/sys/class/devfreq/gpu-gpc-0/cur_freq": "936000000",
+      "/sys/class/devfreq/8188050000.vic/governor": "tegra_wmark",
+      "/sys/class/devfreq/8188050000.vic/min_freq": "54000000",
+      "/sys/class/devfreq/8188050000.vic/max_freq": "1107000000",
+      "/sys/class/devfreq/8188050000.vic/cur_freq": "54000000",
+      "/sys/class/devfreq/gpu-nvd-0/governor": "nvhost_podgov",
+      "/sys/class/devfreq/gpu-nvd-0/min_freq": "315000000",
+      "/sys/class/devfreq/gpu-nvd-0/max_freq": "1692000000",
+      "/sys/class/devfreq/gpu-nvd-0/cur_freq": "315000000",
+      "/sys/class/devfreq/bwmgr/governor": "bpmp-bwmgr",
+      "/sys/class/devfreq/bwmgr/min_freq": "665600000",
+      "/sys/class/devfreq/bwmgr/max_freq": "4266000000",
+      "/sys/class/devfreq/bwmgr/cur_freq": "2750000000"
+    },
+    "jetson_clocks": "not invoked; CPU/NVD/EMC unchanged",
+    "git_commit": "ad9fdbe5ed265dfbfa02970b115ebaa82625fd12"
+  },
+  "OC3_before": 321,
+  "last_completed_lifecycle_phase": "summary_written",
+  "last_frame_accounting_counts": {
+    "source_scheduled": 10800,
+    "source_decoded": 10800,
+    "admitted": 10800,
+    "ready": 10800,
+    "started": 10800,
+    "completed": 10800
+  },
+  "resources": [
+    {
+      "worker_id": 0,
+      "context_object_id": 281473493443184,
+      "cuda_stream_pointer": 109853616,
+      "device_buffers": {
+        "inputs": 57973669888,
+        "pred_logits": 57917048832,
+        "pred_boxes": 57917057536
+      },
+      "pinned_host_buffers": {
+        "inputs": 13608419328,
+        "pred_logits": 57979961344,
+        "pred_boxes": 57979970048
+      },
+      "buffer_bytes": {
+        "inputs": 4915200,
+        "pred_logits": 8400,
+        "pred_boxes": 4800
+      }
+    },
+    {
+      "worker_id": 1,
+      "context_object_id": 281473468043888,
+      "cuda_stream_pointer": 147060032,
+      "device_buffers": {
+        "inputs": 13667139584,
+        "pred_logits": 57917064704,
+        "pred_boxes": 57917073408
+      },
+      "pinned_host_buffers": {
+        "inputs": 13673431040,
+        "pred_logits": 57979975168,
+        "pred_boxes": 57979983872
+      },
+      "buffer_bytes": {
+        "inputs": 4915200,
+        "pred_logits": 8400,
+        "pred_boxes": 4800
+      }
+    }
+  ],
+  "TensorRT_version": "10.16.2.10",
+  "premeasurement_queue_empty": true,
+  "source_EOS": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "ready_queue_accounting": {
+    "enqueue": 10800,
+    "start": 10800
+  },
+  "clean_shutdown": true,
+  "restored_range_Hz": {
+    "min_freq": 315000000,
+    "max_freq": 1575000000,
+    "cur_freq": 1242000000
+  },
+  "OC3_after": 321,
+  "range_at_exit_Hz": {
+    "min_freq": 315000000,
+    "max_freq": 1575000000,
+    "cur_freq": 1215000000
+  },
+  "environment_after": {
+    "nvpmodel": "NV Power Mode: MAXN\n0\n",
+    "uname": [
+      "Linux",
+      "thor",
+      "6.8.12-1021-tegra",
+      "#1 SMP PREEMPT Thu Aug  6 21:56:04 PDT 2026",
+      "aarch64"
+    ],
+    "clock_sysfs": {
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_cur_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_driver": "tegra194",
+      "/sys/class/devfreq/gpu-gpc-0/governor": "nvhost_podgov",
+      "/sys/class/devfreq/gpu-gpc-0/min_freq": "315000000",
+      "/sys/class/devfreq/gpu-gpc-0/max_freq": "1575000000",
+      "/sys/class/devfreq/gpu-gpc-0/cur_freq": "1215000000",
+      "/sys/class/devfreq/8188050000.vic/governor": "tegra_wmark",
+      "/sys/class/devfreq/8188050000.vic/min_freq": "54000000",
+      "/sys/class/devfreq/8188050000.vic/max_freq": "1107000000",
+      "/sys/class/devfreq/8188050000.vic/cur_freq": "54000000",
+      "/sys/class/devfreq/gpu-nvd-0/governor": "nvhost_podgov",
+      "/sys/class/devfreq/gpu-nvd-0/min_freq": "315000000",
+      "/sys/class/devfreq/gpu-nvd-0/max_freq": "1692000000",
+      "/sys/class/devfreq/gpu-nvd-0/cur_freq": "315000000",
+      "/sys/class/devfreq/bwmgr/governor": "bpmp-bwmgr",
+      "/sys/class/devfreq/bwmgr/min_freq": "665600000",
+      "/sys/class/devfreq/bwmgr/max_freq": "4266000000",
+      "/sys/class/devfreq/bwmgr/cur_freq": "2750000000"
+    },
+    "jetson_clocks": "not invoked; CPU/NVD/EMC unchanged",
+    "git_commit": "ad9fdbe5ed265dfbfa02970b115ebaa82625fd12"
+  },
+  "child_exit_time": "2026-09-19T13:15:32.852335+00:00",
+  "child_exit_monotonic_ns": 29582618458195,
+  "supervisor_timeout": false,
+  "process_exit_code": 0,
+  "child_stdout_tail": "{\"run_id\": \"RDVG_B_20260919_S04\", \"integrity_status\": \"PENDING_PROCESS_EXIT\", \"hardware_status\": \"CLEAN\", \"pipeline_audit_status\": \"PASS\", \"queue_classification\": \"QUEUE_STABLE\", \"completed_fps\": 179.96666666666667, \"errors\": []}\n",
+  "child_stderr_tail": "Opening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \n\nSUPERVISOR_STDOUT_TAIL\n{\"run_id\": \"RDVG_B_20260919_S04\", \"integrity_status\": \"PENDING_PROCESS_EXIT\", \"hardware_status\": \"CLEAN\", \"pipeline_audit_status\": \"PASS\", \"queue_classification\": \"QUEUE_STABLE\", \"completed_fps\": 179.96666666666667, \"errors\": []}\n\nSUPERVISOR_STDERR_TAIL\n\nSUPERVISOR_PROCESS_OUTCOME {\"child_pid\": 99918, \"child_returncode\": 0, \"child_exit_signal\": null, \"child_start_time\": \"2026-09-19T13:14:29.116371+00:00\", \"child_exit_time\": \"2026-09-19T13:15:32.852335+00:00\", \"child_start_monotonic_ns\": 29518882466115, \"child_exit_monotonic_ns\": 29582618458195, \"supervisor_timeout\": false}\n",
+  "supervisor_observed_frequency_range_Hz": {
+    "min_freq": 315000000,
+    "max_freq": 1575000000,
+    "cur_freq": 810000000
+  },
+  "PIPELINE_SEMANTICS": "PASS",
+  "PROCESS_LIFECYCLE": "PASS",
+  "PIPELINE_AUDIT": "PASS"
+}

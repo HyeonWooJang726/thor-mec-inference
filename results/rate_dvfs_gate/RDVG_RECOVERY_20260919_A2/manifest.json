@@ -1,0 +1,557 @@
+{
+  "protocol_version": 2,
+  "run_id": "RDVG_RECOVERY_20260919_A2",
+  "kind": "smoke",
+  "repeat": null,
+  "K": 7,
+  "C": 4,
+  "freq_state": "HIGH",
+  "requested_freq_MHz": 1575,
+  "admission_fps_per_stream": 30,
+  "errors": [],
+  "child_start_time": "2026-09-19T12:01:42.533025+00:00",
+  "child_start_monotonic_ns": 25152299118490,
+  "child_returncode": 0,
+  "child_exit_signal": null,
+  "child_pid": 77263,
+  "summary_written": true,
+  "active_phase_completed": true,
+  "drain_completed": true,
+  "cleanup_started": true,
+  "cleanup_completed": true,
+  "frequency_restore_ok": true,
+  "status_finalized": true,
+  "active_start_ns": 25154429708973,
+  "active_end_ns": 25164429708973,
+  "child_has_started": true,
+  "source_fps": 30,
+  "measurement_seconds": 10,
+  "queue_overflow": false,
+  "forced_drop": false,
+  "queue_cap_saturation": false,
+  "queue_capacity": null,
+  "warmup_inferences_per_worker": 30,
+  "warmup_input": "first actual decoded frame from stream 0, repeated",
+  "batch_size": 1,
+  "CUDA_Graph": false,
+  "plan_sha256": "4e4479312df2acd469b402074862a3f458f06e9db338e4674d889c5971476938",
+  "execution_manifest_sha256": "cc3f96f32d020dac15c98283f886487001a68c95edcadf257df348bda31db8db",
+  "source_sha256": {
+    "scripts/rate_dvfs_gate/gpu_frequency.py": "549b959aef4ad4d4033641cea852b6ca4d05e187cf203047c301eb2a8cc3d82b",
+    "scripts/rate_dvfs_gate/analyze_rate_dvfs_gate.py": "7373e4ab39c014e7f343289f85bdbf718e39b4edfe8cee883f4117a628613e4a",
+    "scripts/rate_dvfs_gate/run_rate_dvfs_gate.py": "238ee06b3e4d24e18eeaaabc19e82be56719c7e809d58a815e5be7a4e789b527",
+    "scripts/local/profile_local_e2e.py": "aa9ec99381e6936f843a0e1e0cf3b3cc7beb93778748d0a3fb34b9d9be2084dd",
+    "scripts/common/rtdetr_preprocess.py": "48f510234b84e52db3fa7f102279fe778c9c929b80d71e6a34cf684f5a4f7d1e",
+    "scripts/concurrency/local_concurrency_tensorrt.py": "863cdd468d8565efdf2a82435e667f9fce837d7d2013ff61ab4ab8fafa8ba140",
+    "scripts/local/local_latency_breakdown_metrics.py": "4225d57739c29d18aef0e9e2d75bf4fc20f2407ffc50b603bcf8b8902aa08cce"
+  },
+  "inputs": [
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4",
+      "sha256": "7a56955a524e8454ba63df4878a1634fba6f8f59a6136fce9b7a35c2b54a8caa",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0001.mp4",
+      "sha256": "bf1bb1fd71a811cfdab83bdad01c0c4cf426124f3e7e6635a77bbdc23f68cb45",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0002.mp4",
+      "sha256": "29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0003.mp4",
+      "sha256": "7deacc1aa539bb999ea16c0f656f52695b6fb034e6269bd80e670c090023766c",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0004.mp4",
+      "sha256": "57934396f19a0b777da07c6171985bf861f546d42c2c0203b1a6f972a9c3a210",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0005.mp4",
+      "sha256": "87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    },
+    {
+      "path": "/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0006.mp4",
+      "sha256": "175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a",
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "avg_frame_rate": "30/1",
+            "duration": "60.000000",
+            "nb_frames": "1800"
+          }
+        ]
+      }
+    }
+  ],
+  "lifecycle_events": [
+    {
+      "phase": "preflight_completed",
+      "monotonic_ns": 25152534396250,
+      "utc": "2026-09-19T12:01:42.768315+00:00"
+    },
+    {
+      "phase": "resources_created",
+      "monotonic_ns": 25153351324858,
+      "utc": "2026-09-19T12:01:43.585242+00:00"
+    },
+    {
+      "phase": "warmup_completed",
+      "monotonic_ns": 25154082987473,
+      "utc": "2026-09-19T12:01:44.316908+00:00"
+    },
+    {
+      "phase": "active_started",
+      "monotonic_ns": 25154231802332,
+      "utc": "2026-09-19T12:01:44.465719+00:00"
+    },
+    {
+      "phase": "active_phase_completed",
+      "monotonic_ns": 25164451410344,
+      "utc": "2026-09-19T12:01:54.685331+00:00"
+    },
+    {
+      "phase": "drain_completed",
+      "monotonic_ns": 25164737000610,
+      "utc": "2026-09-19T12:01:54.970919+00:00"
+    },
+    {
+      "phase": "cleanup_started",
+      "monotonic_ns": 25164740241747,
+      "utc": "2026-09-19T12:01:54.974158+00:00"
+    },
+    {
+      "phase": "raw_measurements_written",
+      "monotonic_ns": 25164880758675,
+      "utc": "2026-09-19T12:01:55.114676+00:00"
+    },
+    {
+      "phase": "pipelines_null",
+      "monotonic_ns": 25165041229661,
+      "utc": "2026-09-19T12:01:55.275148+00:00"
+    },
+    {
+      "phase": "frequency_restored",
+      "monotonic_ns": 25165056070684,
+      "utc": "2026-09-19T12:01:55.289986+00:00"
+    },
+    {
+      "phase": "tensorrt_cleanup_started",
+      "monotonic_ns": 25165058328462,
+      "utc": "2026-09-19T12:01:55.292244+00:00"
+    },
+    {
+      "phase": "cleanup_completed",
+      "monotonic_ns": 25165153853443,
+      "utc": "2026-09-19T12:01:55.387772+00:00"
+    },
+    {
+      "phase": "summary_written",
+      "monotonic_ns": 25165277080521,
+      "utc": "2026-09-19T12:01:55.510998+00:00"
+    }
+  ],
+  "plan_snapshot_text": "# Rate / GPC frequency Gate V2 \u2014 SMOKE_PREPARATION\n\n## 1. Local Pipeline Audit\n\n**PIPELINE_AUDIT_FAIL \u2014 clean process shutdown not established.**\nBoth smoke raw replays pass source/admission/ready/completion accounting, physical\nqueue and concurrency checks. However, SMOKE01 child exited nonzero after writing\nits pre-exit VALID summary. The original supervisor observed its nonzero branch\nbut did not persist the numeric exit code or finalize the summary accordingly.\nNo cause or particular signal can be inferred from that missing record. Kernel\njournal query returned no entries and /var/crash was empty. SMOKE02 supervisor\nobserved successful exit. No primary run or retry has occurred.\n\nV2 smoke observations (diagnostic only):\n\n| Smoke | source FPS | admitted FPS | ready FPS | completed FPS | concurrency peak/mean | hardware |\n|---|---:|---:|---:|---:|---|---|\n| HIGH/r30 | 210 | 210 | 210 | 209.7 | 4 / 3.2667 | CLEAN |\n| LOW/r21 | 210 | 147 | 147 | 146.2 | 4 / 3.1511 | CLEAN |\n\nBoth had 2100 source frames, respectively 2100/1470 admitted and completed after\ndrain, no unexplained source drop, empty premeasurement queue, no sustained\nfront-end bottleneck, and default GPC range restored. Their original five files\nremain unchanged. The V2 aggregate index overlays SMOKE01 integrity=INVALID\nusing the supervisor observation recorded below; it never rewrites old summaries.\n\nThe supervisor implementation was corrected after this finding: future new runs\ncapture the child return code/output and finalize their manifest and summary\nonly after process exit. Primary guards now require a confirmed zero smoke exit.\nNo GPU run validates that correction yet, and no speculative native teardown\nworkaround was introduced. This is a smoke prerequisite failure, distinct from\nthe rule to continue after an ordinary INVALID primary repetition.\n\nThis document remains a blocked preparation plan, **not a final frozen primary\nplan**. Thresholds/grids/order were not changed. The exact smoke code/preparation\nplan and prior derived reports are retained in protocol_v2_smoke_snapshot.tar.gz;\nits code hashes match the immutable smoke manifests. A diagnosed recovery\nand fresh smoke IDs are needed before primary execution. No automatic retry.\nExisting engine/video/frequency provenance and active switching evidence are\nreused; those already-passed capability workloads are not repeated.\n\n- Source pacing: existing scheduler issues logical arrivals a=t0+floor(n*1e9/30).\n  A front-end thread only pulls a source frame after that arrival. Unchanged\n  GStreamer appsink sync=false, max-buffers=1, drop=false provides bounded\n  backpressure. Decode may prepare a bounded frame ahead; it cannot release an\n  unpaced source workload to admission. Source identity/PTS and source-to-m lag\n  are checked. Exact expected counts: primary 1800/stream, smoke 300/stream.\n- Admission correction: V1 decided admission in the scheduler before decode.\n  V2 scheduler only schedules the source. Front-end obtains a decoded sample,\n  records availability, makes deterministic admission decision m, then invokes\n  unchanged preprocess_bgr only for admitted frames. Skipped frames retain\n  source/PTS/m/admitted=false and have no preprocessing-ready/service timestamps.\n- Physical GPU queue correction: Q_k(t)=number of r<=t<s requests. r is the\n  existing QueueAccounting.enqueue timestamp after preprocessing; s is the\n  unchanged accounting.start timestamp immediately before ContextWorker.infer.\n  Admission m and r remain separate. The shared ready FIFO is not rewritten.\n- Front-end diagnostics: active source, admitted, ready and completed FPS;\n  source-to-admission latency and the exact time-weighted slope of source pending\n  [a,m) and preprocessing pending [m,r), each in the final half of smoke or final\n  30 seconds of primary. PIPELINE_FRONTEND_BOTTLENECK if ready count lags active\n  admitted count by >1% AND preprocessing-pending slope >0.5 aggregate or >0.2\n  any stream; also if source-pending slope >0.5 aggregate or >0.2 any stream.\n  These diagnostic engineering thresholds are fixed before V2 GPU results.\n  A decoded frame arriving too late for admission before active end records a\n  front-end failure, never becomes an unlogged drop or a fabricated GPU bottleneck.\n- Concurrency: reuse unchanged TensorRT ContextWorker, independent contexts,\n  nonblocking CUDA streams and private pinned/device buffers. Only queue accounting\n  holds a brief lock; infer/stream synchronization executes outside the lock.\n  One engine, B=1, no dynamic batching, no global cudaDeviceSynchronize. Reconstruct\n  host in-service concurrency from [s,c), not claimed GPU-kernel overlap. Peak must\n  not exceed C, and >100-frame tests with C>1 must show peak>1 (detect complete\n  serialization). Record peak/mean; no requirement to keep C busy when demand is low.\n- Warm-up: unchanged 30 actual-frame inferences per worker, stored phase=warmup,\n  excluded from active metrics. Verify ready queue empty and enqueue/start counters\n  zero before t0. Active phase has no carried warm-up backlog.\n- Drain: stop source arrivals at 60 s (10 s smoke), complete admitted work, require\n  natural EOS for full 60-s sources and clean pipeline NULL/worker shutdown.\n  No new arrivals during drain and no drain samples in queue-stability regression.\n\nAudit basis: current Gate runner and unchanged scripts/local/profile_local_e2e.py,\nscripts/common/rtdetr_preprocess.py, scripts/concurrency/local_concurrency_tensorrt.py,\nscripts/local/local_latency_breakdown_metrics.py. All exact hashes are frozen below.\nV1 source/report snapshots: protocol_v1_snapshot.tar.gz, SHA256\n70be92ac91f21210600ee7cc4133632c288f6d90dd58eda84f76c032e25f1619.\nV1 original plan and all original run artifacts remain byte-for-byte untouched.\n\n## 2. Frozen experiment design (unchanged by smoke outcomes)\n\nWorktree /home/ainet/research/thor-mec-rate-dvfs-gate, branch rate-dvfs-gate.\nMAXN fixed; do not change nvpmodel/governor/CPU/NVD/EMC/fan/thermal/network settings.\nNo jetson_clocks. Reuse verified RT-DETR Warehouse v1.0.2 canonical FP16 B1 engine,\nCUDA Graph OFF, existing NVIDIA GStreamer decode and preprocessing (resize640x360,\nzero pad640x640, RGB FP32 /255 NCHW). Canonical engine SHA256:\n9d01cdb2838bb1b9db58c246e6111a5dccee63bb937b673fb48caf43e53bc5ff.\nPaths, verified video hashes and ffprobe observations are reused verbatim below.\nNo engine build or new dependencies. Source: 1920x1080 H.264, 30 FPS, 1800 frames.\n\nK7/C4: r=21,24,27,30 FPS/stream; all streams equal r; source remains30 FPS.\nK6/C2: r=30 only. No extra K or C adaptation. Phase accumulator starts at0 for\n each stream; on every decoded source frame acc+=r; admit if acc>=30 and subtract30.\nNo random or post-admission dropping; no queue caps/forced drops.\n\nGPU GPC states LOW=945, MID=1260, HIGH=1575 MHz; supported available min54 MHz,\ndefault allowed range315\u20131575 MHz. Pin min=max=target with safe write order in\n/sys/class/devfreq/gpu-gpc-0. Restore min315/max1575 MHz after every run, including\nexceptions/signals where possible. Actual cur_freq is recorded; idle0 is retained\nand not treated alone as a failure. Prior switching observation13\u201357 ms is reused.\n\nPer run active60 s plus drain. Primary36 runs (12 conditions x3); K6 sanity9\n(3 frequencies x3). Exact previously balanced order is reused with fresh V2 IDs:\neach primary repeat contains all12 conditions and is followed by3 K6 states;\nfrequency/rate positions rotate across repeats. No outcome-dependent reordering.\nSmokes: K7/C4/r30/HIGH10 s, then K7/C4/r21/LOW10 s. Both require integrity VALID\nand pipeline audit PASS. Their preparation-plan full text is retained in their\nmanifests so final freeze does not lose the plan referenced by smoke SHA256.\n\n## 3. Integrity and hardware status are separate\n\nintegrity_status VALID/INVALID concerns only measurement integrity: crashes,\nsource failure, corrupt/missing trace, accounting/timestamp corruption, sysfs\nwrite/pin failure, restore failure, shutdown, or inability to continue normally.\nEvery run preserves failure reasons. No automatic retry. An ordinary INVALID run\nis retained and the next planned condition runs; fewer than2 valid repetitions\nmakes a condition INCONCLUSIVE. Recovery/replacement is a separate post-campaign\ndecision. A demonstrated pipeline bottleneck/implementation error stops Gate work\nas PIPELINE_AUDIT_FAIL; an unrecoverable restored-range error prevents safe continuation.\n\nhardware_status CLEAN iff OC3_delta=0; PROTECTION_LIMITED iff OC3_delta>0.\nCounters before warm-up and after cleanup cover the entire run and all raw\nsamples are retained. OC3 and actual clock limitations DO NOT invalidate or\nabort a run: finish60 s, drain and proceed. Pin bounds must still be correct.\nNon-target actual clock observations are diagnostics, including their fraction;\nno exact-clock-equality exclusion is applied. Every active second needs at least\none nonzero actual-frequency observation; missing readback is missing evidence.\n\nV1 P01 is excluded only as PROTOCOL_V1_ABORT_ON_OC3 in the V2 aggregate index.\nIts original INVALID status/failure files are historical and never rewritten.\nV1 smokes remain historical PROTOCOL_V1_SMOKE and are not V2 evidence.\n\n## 4. Measurements and classification\n\nPower source unchanged: instantaneous first tegrastats VDD_GPU mW channel /1000,\nGPU rail scope. GPU temperature gpu@C; OC3 soctherm_oc/oc3_event_cnt. Sampling100 ms,\nmonotonic host receive timestamp, preserve raw line and actual/requested clocks,\nmin/max. Do not claim exact internal sensor acquisition time or apply lag/model\ncorrections. Required trace brackets active endpoints, is monotonic/finite, has\nno active gap>0.5 s; otherwise INVALID. Integrate measured power piecewise-linearly\nwith bracketed endpoint interpolation. E_run is active-only; average power=E/T.\nE_frame=E_run/active completed frames only for queue-stable runs.\n\nPrimary R_k counts completions in [t0,t0+60s), eta_k=R_k/30. Report aggregate,\nmin/mean and all per-stream rates. Count source/admission/ready separately.\nPer-frame data preserve a,m,r,s,c and source PTS; Q only r\u2192s. Exact continuous-time\nuniform least-squares slope of the step queue in t30..60s (smoke last5s, diagnostic\nonly). QUEUE_STABLE iff aggregate slope<=0.5 frames/s AND every stream<=0.2,\nno cap saturation/forced drop and integrity VALID. Negative slope permitted.\nOC3 does not invalidate stability. Report mean/p50/p95/p99 latency/service/wait\nincluding drain completions as separately labeled descriptive statistics.\n\nA condition needs>=2 integrity-valid planned repetitions. All valid repetitions\nmust agree on stability; mixed is INCONCLUSIVE, no majority vote. Numerical cells\nare means of valid run metrics; condition median power is median of valid per-run\nactive average power. Every invalid/clean/protected count remains explicit.\n\nADMISSION_GATE: K7 same frequency, some higher r UNSTABLE and lower r STABLE;\nbest stable condition completed throughput >=95% of maximum observed condition\ncompleted throughput at that frequency. Require all four rate cells interpretable\nfor its maximum comparison; use condition means and do not cherry-pick repeats.\n\nFREQUENCY_CAPACITY_GATE: r_star(s)=highest stable tested r. PASS only if\nr_star(HIGH)-r_star(LOW)>=3. No stable LOW point means boundary below tested grid,\nnot an invented r_star=0; unresolved boundary is INCONCLUSIVE. Protection-limited\nruns remain empirical MAXN capacity evidence.\n\nENERGY_OPPORTUNITY_GATE: compare every lower/higher frequency pair at same K/C/r\nwhere both stable, using K7 and K6. PASS if absolute completed throughput difference\n/HIGHER-frequency throughput<=2%, lower-frequency median power<=90% higher, and\ndirection is consistent across>=2 matched repeat indices: each paired lower power\nis lower and paired throughput is within2%. Report E_frame direction for each pair;\nno three-parameter model fit. Matching by preassigned repeat prevents selective\npairing; all available valid matched repetitions must satisfy consistency.\n\nFinal requires PIPELINE_AUDIT_PASS plus all three control Gates PASS, with planned\ncampaign complete. Clear contradictory complete relevant evidence gives specific\nFAIL; insufficient/mixed evidence gives INCONCLUSIVE. OC3 itself is never FAIL.\nReport condition CLEAN/PROTECTION_LIMITED counts and OC3 occurrence rate over\nintegrity-valid repetitions; preserve invalid counts separately.\n\n## 5. Outputs and exclusions\n\nEach fresh RDVG_V2_* directory contains only manifest.json, per_frame.csv.gz,\npower_trace.csv.gz, summary.json, stderr.log. Manifest records protocol_version2,\nV2 plan SHA256, source hashes, current environment and restoration. Summaries\ninclude rates, per-stream R/eta/g_Q, pipeline diagnostics, both status axes.\nNo queue_trace.csv; reconstruct from per-frame data. Only aggregate_summary.csv,\noperating_map.csv, gate_verdict.md, final_git_status.txt updated at campaign level;\nV1 versions were losslessly archived before replacement. No run artifact overwrite.\nTemporary analysis stays /tmp. No new docs directory, workload/controller/energy fit.\n\n## 6. Exact execution configuration\n\n```json\n{\n  \"inputs\": [\n    {\n      \"path\": \"/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0000.mp4\",\n      \"sha256\": \"7a56955a524e8454ba63df4878a1634fba6f8f59a6136fce9b7a35c2b54a8caa\",\n      \"ffprobe\": {\n        \"programs\": [],\n        \"stream_groups\": [],\n        \"streams\": [\n          {\n            \"codec_name\": \"h264\",\n            \"width\": 1920,\n            \"height\": 1080,\n            \"avg_frame_rate\": \"30/1\",\n            \"duration\": \"60.000000\",\n            \"nb_frames\": \"1800\"\n          }\n        ]\n      }\n    },\n    {\n      \"path\": \"/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0001.mp4\",\n      \"sha256\": \"bf1bb1fd71a811cfdab83bdad01c0c4cf426124f3e7e6635a77bbdc23f68cb45\",\n      \"ffprobe\": {\n        \"programs\": [],\n        \"stream_groups\": [],\n        \"streams\": [\n          {\n            \"codec_name\": \"h264\",\n            \"width\": 1920,\n            \"height\": 1080,\n            \"avg_frame_rate\": \"30/1\",\n            \"duration\": \"60.000000\",\n            \"nb_frames\": \"1800\"\n          }\n        ]\n      }\n    },\n    {\n      \"path\": \"/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0002.mp4\",\n      \"sha256\": \"29bc455831e1b80210307405601a4b33fbe00430eea8839b9c8ffd3eccfd526a\",\n      \"ffprobe\": {\n        \"programs\": [],\n        \"stream_groups\": [],\n        \"streams\": [\n          {\n            \"codec_name\": \"h264\",\n            \"width\": 1920,\n            \"height\": 1080,\n            \"avg_frame_rate\": \"30/1\",\n            \"duration\": \"60.000000\",\n            \"nb_frames\": \"1800\"\n          }\n        ]\n      }\n    },\n    {\n      \"path\": \"/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0003.mp4\",\n      \"sha256\": \"7deacc1aa539bb999ea16c0f656f52695b6fb034e6269bd80e670c090023766c\",\n      \"ffprobe\": {\n        \"programs\": [],\n        \"stream_groups\": [],\n        \"streams\": [\n          {\n            \"codec_name\": \"h264\",\n            \"width\": 1920,\n            \"height\": 1080,\n            \"avg_frame_rate\": \"30/1\",\n            \"duration\": \"60.000000\",\n            \"nb_frames\": \"1800\"\n          }\n        ]\n      }\n    },\n    {\n      \"path\": \"/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0004.mp4\",\n      \"sha256\": \"57934396f19a0b777da07c6171985bf861f546d42c2c0203b1a6f972a9c3a210\",\n      \"ffprobe\": {\n        \"programs\": [],\n        \"stream_groups\": [],\n        \"streams\": [\n          {\n            \"codec_name\": \"h264\",\n            \"width\": 1920,\n            \"height\": 1080,\n            \"avg_frame_rate\": \"30/1\",\n            \"duration\": \"60.000000\",\n            \"nb_frames\": \"1800\"\n          }\n        ]\n      }\n    },\n    {\n      \"path\": \"/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0005.mp4\",\n      \"sha256\": \"87d37341d65464f48d1d028f63b80279d302bf341d429d73df9bf55353bd1632\",\n      \"ffprobe\": {\n        \"programs\": [],\n        \"stream_groups\": [],\n        \"streams\": [\n          {\n            \"codec_name\": \"h264\",\n            \"width\": 1920,\n            \"height\": 1080,\n            \"avg_frame_rate\": \"30/1\",\n            \"duration\": \"60.000000\",\n            \"nb_frames\": \"1800\"\n          }\n        ]\n      }\n    },\n    {\n      \"path\": \"/home/ainet/datasets/PhysicalAI-SmartSpaces/MTMC_Tracking_2026/test/Warehouse_027/videos/W027_Camera_0006.mp4\",\n      \"sha256\": \"175816231eced5e215d1733640a65757ad9c0429b3c846966342d142aed54b1a\",\n      \"ffprobe\": {\n        \"programs\": [],\n        \"stream_groups\": [],\n        \"streams\": [\n          {\n            \"codec_name\": \"h264\",\n            \"width\": 1920,\n            \"height\": 1080,\n            \"avg_frame_rate\": \"30/1\",\n            \"duration\": \"60.000000\",\n            \"nb_frames\": \"1800\"\n          }\n        ]\n      }\n    }\n  ],\n  \"source_sha256\": {\n    \"scripts/rate_dvfs_gate/gpu_frequency.py\": \"549b959aef4ad4d4033641cea852b6ca4d05e187cf203047c301eb2a8cc3d82b\",\n    \"scripts/rate_dvfs_gate/analyze_rate_dvfs_gate.py\": \"20d25859abbc783db15dd3351dc150a69705591a3a0ec363051ffffa0c437068\",\n    \"scripts/rate_dvfs_gate/run_rate_dvfs_gate.py\": \"d2cc553f439c27d196f96e34838b1a8d13a41d3a6f500d081d6e10e0ad1b46f5\",\n    \"scripts/local/profile_local_e2e.py\": \"aa9ec99381e6936f843a0e1e0cf3b3cc7beb93778748d0a3fb34b9d9be2084dd\",\n    \"scripts/common/rtdetr_preprocess.py\": \"48f510234b84e52db3fa7f102279fe778c9c929b80d71e6a34cf684f5a4f7d1e\",\n    \"scripts/concurrency/local_concurrency_tensorrt.py\": \"863cdd468d8565efdf2a82435e667f9fce837d7d2013ff61ab4ab8fafa8ba140\",\n    \"scripts/local/local_latency_breakdown_metrics.py\": \"4225d57739c29d18aef0e9e2d75bf4fc20f2407ffc50b603bcf8b8902aa08cce\"\n  },\n  \"smoke\": [\n    {\n      \"run_id\": \"RDVG_V2_20260919_SMOKE01\",\n      \"kind\": \"smoke\",\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 30,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 10\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_SMOKE02\",\n      \"kind\": \"smoke\",\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 21,\n      \"frequency\": \"LOW\",\n      \"seconds\": 10\n    }\n  ],\n  \"order\": [\n    {\n      \"run_id\": \"RDVG_V2_20260919_P01\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 21,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P02\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 24,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P03\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 27,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P04\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 30,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P05\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 21,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P06\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 24,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P07\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 27,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P08\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 30,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P09\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 21,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P10\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 24,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P11\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 27,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P12\",\n      \"kind\": \"primary\",\n      \"repeat\": 1,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 30,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_S01\",\n      \"kind\": \"sanity\",\n      \"repeat\": 1,\n      \"K\": 6,\n      \"C\": 2,\n      \"r\": 30,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_S02\",\n      \"kind\": \"sanity\",\n      \"repeat\": 1,\n      \"K\": 6,\n      \"C\": 2,\n      \"r\": 30,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_S03\",\n      \"kind\": \"sanity\",\n      \"repeat\": 1,\n      \"K\": 6,\n      \"C\": 2,\n      \"r\": 30,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P13\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 24,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P14\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 27,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P15\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 30,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P16\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 21,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P17\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 24,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P18\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 27,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P19\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 30,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P20\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 21,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P21\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 24,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P22\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 27,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P23\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 30,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P24\",\n      \"kind\": \"primary\",\n      \"repeat\": 2,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 21,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_S04\",\n      \"kind\": \"sanity\",\n      \"repeat\": 2,\n      \"K\": 6,\n      \"C\": 2,\n      \"r\": 30,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_S05\",\n      \"kind\": \"sanity\",\n      \"repeat\": 2,\n      \"K\": 6,\n      \"C\": 2,\n      \"r\": 30,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_S06\",\n      \"kind\": \"sanity\",\n      \"repeat\": 2,\n      \"K\": 6,\n      \"C\": 2,\n      \"r\": 30,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P25\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 27,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P26\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 30,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P27\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 21,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P28\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 24,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P29\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 27,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P30\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 30,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P31\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 21,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P32\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 24,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P33\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 27,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P34\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 30,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P35\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 21,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_P36\",\n      \"kind\": \"primary\",\n      \"repeat\": 3,\n      \"K\": 7,\n      \"C\": 4,\n      \"r\": 24,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_S07\",\n      \"kind\": \"sanity\",\n      \"repeat\": 3,\n      \"K\": 6,\n      \"C\": 2,\n      \"r\": 30,\n      \"frequency\": \"HIGH\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_S08\",\n      \"kind\": \"sanity\",\n      \"repeat\": 3,\n      \"K\": 6,\n      \"C\": 2,\n      \"r\": 30,\n      \"frequency\": \"LOW\",\n      \"seconds\": 60\n    },\n    {\n      \"run_id\": \"RDVG_V2_20260919_S09\",\n      \"kind\": \"sanity\",\n      \"repeat\": 3,\n      \"K\": 6,\n      \"C\": 2,\n      \"r\": 30,\n      \"frequency\": \"MID\",\n      \"seconds\": 60\n    }\n  ],\n  \"protocol_version\": 2,\n  \"freeze_status\": \"BLOCKED_SMOKE_PROCESS_EXIT\",\n  \"pipeline_audit_result\": \"FAIL\",\n  \"prepared_at_utc\": \"2026-09-19T11:44:22.490830+00:00\",\n  \"process_outcome_annotations\": {\n    \"RDVG_V2_20260919_SMOKE01\": {\n      \"nonzero_exit_observed\": true,\n      \"returncode\": null,\n      \"reason\": \"NONZERO_PROCESS_EXIT_AFTER_SUMMARY: supervisor took its nonzero-returncode branch; numeric returncode was not persisted by that revision. Pre-exit VALID summary is not authoritative evidence of clean process shutdown.\"\n    },\n    \"RDVG_V2_20260919_SMOKE02\": {\n      \"nonzero_exit_observed\": false,\n      \"returncode\": 0,\n      \"reason\": \"Supervisor did not take nonzero branch and completed campaign; no retry.\"\n    }\n  },\n  \"post_smoke_source_sha256\": {\n    \"scripts/rate_dvfs_gate/run_rate_dvfs_gate.py\": \"a4788ced032a11f4a521a6bbb1aa916848b613bdce388b04175500f6fea5d419\",\n    \"scripts/rate_dvfs_gate/analyze_rate_dvfs_gate.py\": \"bee1a91e6a032bded7ca000ec2fbbee1aeb13d97f06a8fa5242969a18f4df9e7\",\n    \"scripts/rate_dvfs_gate/gpu_frequency.py\": \"549b959aef4ad4d4033641cea852b6ca4d05e187cf203047c301eb2a8cc3d82b\"\n  }\n}\n```\n",
+  "engine_provenance": {
+    "status": "PASS",
+    "engine_path": "/home/ainet/research/thor-mec-rate-dvfs-gate/models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine",
+    "resolved_path": "/home/ainet/research/thor-mec-inference/models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine",
+    "sha256": "9d01cdb2838bb1b9db58c246e6111a5dccee63bb937b673fb48caf43e53bc5ff",
+    "expected_sha256": "9d01cdb2838bb1b9db58c246e6111a5dccee63bb937b673fb48caf43e53bc5ff",
+    "evidence": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/local_concurrency_formal_full/replacements/c1/k2/replacement01/metadata.json"
+  },
+  "environment_before": {
+    "nvpmodel": "NV Power Mode: MAXN\n0\n",
+    "uname": [
+      "Linux",
+      "thor",
+      "6.8.12-1021-tegra",
+      "#1 SMP PREEMPT Thu Aug  6 21:56:04 PDT 2026",
+      "aarch64"
+    ],
+    "clock_sysfs": {
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_cur_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_driver": "tegra194",
+      "/sys/class/devfreq/gpu-gpc-0/governor": "nvhost_podgov",
+      "/sys/class/devfreq/gpu-gpc-0/min_freq": "315000000",
+      "/sys/class/devfreq/gpu-gpc-0/max_freq": "1575000000",
+      "/sys/class/devfreq/gpu-gpc-0/cur_freq": "1179000000",
+      "/sys/class/devfreq/8188050000.vic/governor": "tegra_wmark",
+      "/sys/class/devfreq/8188050000.vic/min_freq": "54000000",
+      "/sys/class/devfreq/8188050000.vic/max_freq": "1107000000",
+      "/sys/class/devfreq/8188050000.vic/cur_freq": "54000000",
+      "/sys/class/devfreq/gpu-nvd-0/governor": "nvhost_podgov",
+      "/sys/class/devfreq/gpu-nvd-0/min_freq": "315000000",
+      "/sys/class/devfreq/gpu-nvd-0/max_freq": "1692000000",
+      "/sys/class/devfreq/gpu-nvd-0/cur_freq": "315000000",
+      "/sys/class/devfreq/bwmgr/governor": "bpmp-bwmgr",
+      "/sys/class/devfreq/bwmgr/min_freq": "665600000",
+      "/sys/class/devfreq/bwmgr/max_freq": "4266000000",
+      "/sys/class/devfreq/bwmgr/cur_freq": "2750000000"
+    },
+    "jetson_clocks": "not invoked; CPU/NVD/EMC unchanged",
+    "git_commit": "ad9fdbe5ed265dfbfa02970b115ebaa82625fd12"
+  },
+  "OC3_before": 2,
+  "last_completed_lifecycle_phase": "summary_written",
+  "last_frame_accounting_counts": {
+    "source_scheduled": 2100,
+    "source_decoded": 2100,
+    "admitted": 2100,
+    "ready": 2100,
+    "started": 2100,
+    "completed": 2100
+  },
+  "resources": [
+    {
+      "worker_id": 0,
+      "context_object_id": 281472974383472,
+      "cuda_stream_pointer": 1118014304,
+      "device_buffers": {
+        "inputs": 57973669888,
+        "pred_logits": 57917048832,
+        "pred_boxes": 57917057536
+      },
+      "pinned_host_buffers": {
+        "inputs": 13608419328,
+        "pred_logits": 57979961344,
+        "pred_boxes": 57979970048
+      },
+      "buffer_bytes": {
+        "inputs": 4915200,
+        "pred_logits": 8400,
+        "pred_boxes": 4800
+      }
+    },
+    {
+      "worker_id": 1,
+      "context_object_id": 281473222708720,
+      "cuda_stream_pointer": 1155080000,
+      "device_buffers": {
+        "inputs": 13667139584,
+        "pred_logits": 57917064704,
+        "pred_boxes": 57917073408
+      },
+      "pinned_host_buffers": {
+        "inputs": 13673431040,
+        "pred_logits": 57979975168,
+        "pred_boxes": 57979983872
+      },
+      "buffer_bytes": {
+        "inputs": 4915200,
+        "pred_logits": 8400,
+        "pred_boxes": 4800
+      }
+    },
+    {
+      "worker_id": 2,
+      "context_object_id": 281471826550512,
+      "cuda_stream_pointer": 1118014336,
+      "device_buffers": {
+        "inputs": 13732151296,
+        "pred_logits": 57917080576,
+        "pred_boxes": 57917089280
+      },
+      "pinned_host_buffers": {
+        "inputs": 13738442752,
+        "pred_logits": 57979988992,
+        "pred_boxes": 57979997696
+      },
+      "buffer_bytes": {
+        "inputs": 4915200,
+        "pred_logits": 8400,
+        "pred_boxes": 4800
+      }
+    },
+    {
+      "worker_id": 3,
+      "context_object_id": 281471826549168,
+      "cuda_stream_pointer": 1218760064,
+      "device_buffers": {
+        "inputs": 13797163008,
+        "pred_logits": 57917096448,
+        "pred_boxes": 57917105152
+      },
+      "pinned_host_buffers": {
+        "inputs": 13803454464,
+        "pred_logits": 57980002816,
+        "pred_boxes": 57980011520
+      },
+      "buffer_bytes": {
+        "inputs": 4915200,
+        "pred_logits": 8400,
+        "pred_boxes": 4800
+      }
+    }
+  ],
+  "TensorRT_version": "10.16.2.10",
+  "premeasurement_queue_empty": true,
+  "source_EOS": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "ready_queue_accounting": {
+    "enqueue": 2100,
+    "start": 2100
+  },
+  "clean_shutdown": true,
+  "restored_range_Hz": {
+    "min_freq": 315000000,
+    "max_freq": 1575000000,
+    "cur_freq": 1566000000
+  },
+  "OC3_after": 2,
+  "range_at_exit_Hz": {
+    "min_freq": 315000000,
+    "max_freq": 1575000000,
+    "cur_freq": 1530000000
+  },
+  "environment_after": {
+    "nvpmodel": "NV Power Mode: MAXN\n0\n",
+    "uname": [
+      "Linux",
+      "thor",
+      "6.8.12-1021-tegra",
+      "#1 SMP PREEMPT Thu Aug  6 21:56:04 PDT 2026",
+      "aarch64"
+    ],
+    "clock_sysfs": {
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy8/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy6/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy4/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy2/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy0/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_cur_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy12/scaling_driver": "tegra194",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_min_freq": "972000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_available_governors": "ondemand userspace performance schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_governor": "schedutil",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_available_frequencies": "54000 108000 162000 216000 270000 324000 378000 432000 486000 540000 594000 648000 702000 756000 810000 864000 918000 972000 1026000 1080000 1134000 1188000 1242000 1296000 1350000 1404000 1458000 1512000 1566000 1620000 1674000 1728000 1782000 1836000 1890000 1944000 1998000 2052000 2106000 2160000 2214000 2268000 2322000 2376000 2430000 2484000 2538000 2592000 2601000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_cur_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_setspeed": "<unsupported>",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_max_freq": "2601000",
+      "/sys/devices/system/cpu/cpufreq/policy10/scaling_driver": "tegra194",
+      "/sys/class/devfreq/gpu-gpc-0/governor": "nvhost_podgov",
+      "/sys/class/devfreq/gpu-gpc-0/min_freq": "315000000",
+      "/sys/class/devfreq/gpu-gpc-0/max_freq": "1575000000",
+      "/sys/class/devfreq/gpu-gpc-0/cur_freq": "1530000000",
+      "/sys/class/devfreq/8188050000.vic/governor": "tegra_wmark",
+      "/sys/class/devfreq/8188050000.vic/min_freq": "54000000",
+      "/sys/class/devfreq/8188050000.vic/max_freq": "1107000000",
+      "/sys/class/devfreq/8188050000.vic/cur_freq": "54000000",
+      "/sys/class/devfreq/gpu-nvd-0/governor": "nvhost_podgov",
+      "/sys/class/devfreq/gpu-nvd-0/min_freq": "315000000",
+      "/sys/class/devfreq/gpu-nvd-0/max_freq": "1692000000",
+      "/sys/class/devfreq/gpu-nvd-0/cur_freq": "450000000",
+      "/sys/class/devfreq/bwmgr/governor": "bpmp-bwmgr",
+      "/sys/class/devfreq/bwmgr/min_freq": "665600000",
+      "/sys/class/devfreq/bwmgr/max_freq": "4266000000",
+      "/sys/class/devfreq/bwmgr/cur_freq": "4266000000"
+    },
+    "jetson_clocks": "not invoked; CPU/NVD/EMC unchanged",
+    "git_commit": "ad9fdbe5ed265dfbfa02970b115ebaa82625fd12"
+  },
+  "child_exit_time": "2026-09-19T12:01:55.742095+00:00",
+  "child_exit_monotonic_ns": 25165508220340,
+  "supervisor_timeout": false,
+  "process_exit_code": 0,
+  "child_stdout_tail": "{\"run_id\": \"RDVG_RECOVERY_20260919_A2\", \"integrity_status\": \"PENDING_PROCESS_EXIT\", \"hardware_status\": \"CLEAN\", \"pipeline_audit_status\": \"PASS\", \"queue_classification\": \"QUEUE_STABLE\", \"completed_fps\": 209.7, \"errors\": []}\n",
+  "child_stderr_tail": "Opening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \nOpening in BLOCKING MODE \n\nSUPERVISOR_STDOUT_TAIL\n{\"run_id\": \"RDVG_RECOVERY_20260919_A2\", \"integrity_status\": \"PENDING_PROCESS_EXIT\", \"hardware_status\": \"CLEAN\", \"pipeline_audit_status\": \"PASS\", \"queue_classification\": \"QUEUE_STABLE\", \"completed_fps\": 209.7, \"errors\": []}\n\nSUPERVISOR_STDERR_TAIL\n\nSUPERVISOR_PROCESS_OUTCOME {\"child_pid\": 77263, \"child_returncode\": 0, \"child_exit_signal\": null, \"child_start_time\": \"2026-09-19T12:01:42.533025+00:00\", \"child_exit_time\": \"2026-09-19T12:01:55.742095+00:00\", \"child_start_monotonic_ns\": 25152299118490, \"child_exit_monotonic_ns\": 25165508220340, \"supervisor_timeout\": false}\n",
+  "supervisor_observed_frequency_range_Hz": {
+    "min_freq": 315000000,
+    "max_freq": 1575000000,
+    "cur_freq": 1377000000
+  },
+  "PIPELINE_SEMANTICS": "PASS",
+  "PROCESS_LIFECYCLE": "PASS",
+  "PIPELINE_AUDIT": "PASS"
+}

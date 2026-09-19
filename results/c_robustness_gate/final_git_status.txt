@@ -1,0 +1,9 @@
+## rate-dvfs-gate...origin/main
+?? scripts/c_robustness_gate/
+?? scripts/rate_dvfs_gate/
+
+Worktree: /home/ainet/research/thor-mec-rate-dvfs-gate
+Plan SHA256: a04ed5ca2b4acec6b8ed90210f47604269adccd6f66c3206b62d06f12432862a
+Primary: 27 VALID / 0 INVALID; smoke PASS. Final STATIC_C_SUFFICIENT, common offline C=2.
+Historical rate-DVFS files unchanged: 308 verified hashes.
+GPC default min315/max1575 MHz restored. No new branch/worktree/commit.

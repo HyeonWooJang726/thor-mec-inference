@@ -1,0 +1,3704 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-09-19T11:10:45.964969+00:00",
+  "observation_monotonic_ns": 22095731086938,
+  "provenance": "read-only host observation; no switching or GPU workload",
+  "uid": 1000,
+  "interface": "/sys/class/devfreq/gpu-gpc-0",
+  "switching_attempted": true,
+  "switching_samples": [
+    {
+      "command_timestamp_ns": 22097023882695,
+      "requested_MHz": 945,
+      "samples": [
+        {
+          "timestamp_ns": 22097036413460,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097046640787,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097058819023,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097069040506,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097079336795,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097090866427,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097101412309,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097112224534,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097123587066,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097134347577,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097145119209,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097155860202,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097166944816,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097177451197,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097187738865,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097198203256,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097208498591,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097218841935,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097229258520,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097239539901,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097249817633,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097260105876,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097270386081,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097280665184,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097291568844,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097301852707,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097312406015,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097323173045,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097333949336,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097344527903,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097354823636,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097365354564,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097375862641,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097386832811,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097397114368,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097407387018,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097418773179,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097429055662,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097439328970,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097450742150,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097461271402,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097472047627,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097483445362,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097494200310,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097504971970,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097515533111,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097525826205,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097536126236,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097547145442,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097557422695,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097567951187,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097579288237,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097589599564,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097599908723,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097610872781,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097621148376,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097631426563,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097642924993,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097653209105,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097663488552,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097675664021,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097686440598,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097697226221,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097708723845,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097719269635,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097732698124,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097742983062,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097753311434,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097763606519,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097774156216,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097788165448,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097798995848,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097809970286,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097820512973,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097830807789,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097841393689,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097851678385,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097862057045,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097872339629,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097884101846,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097894893950,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097906158426,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097916680993,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097926977818,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097937475320,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097947753405,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097958056573,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097968351168,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097979467448,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22097990092515,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22098000879851,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22098012536327,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22098023336866,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22098033922572,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        }
+      ],
+      "first_observed_target_timestamp_ns": 22097036413460,
+      "range_after_command_Hz": {
+        "min_freq": 945000000,
+        "max_freq": 945000000,
+        "cur_freq": 945000000
+      },
+      "command_return_timestamp_ns": 22097036210544,
+      "completed_inferences": 150,
+      "active_target_sample_count": 94,
+      "command_to_first_observed_ms": 12.530765,
+      "status": "PASS"
+    },
+    {
+      "command_timestamp_ns": 22098044091971,
+      "requested_MHz": 1260,
+      "samples": [
+        {
+          "timestamp_ns": 22098067438462,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098079111772,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098089396727,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098099961434,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098112840432,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098123659814,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098134301400,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098144780346,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098155053913,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098166100981,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098176436623,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098186725958,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098197310885,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098208208250,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098219040493,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098230520294,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098241088103,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098251419993,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098261752504,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098272040570,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098282368656,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098292926825,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098303779791,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098314581322,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098325648224,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098336189466,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098346479904,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098356774970,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098367237537,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098377522326,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098387809291,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098399897222,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098410735864,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098422258682,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098433032389,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098443570594,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098453870541,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098464240089,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098474523840,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098484807035,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098495081723,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098505629400,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098516518811,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098527958628,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098538978187,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098549534402,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098559824737,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098570108460,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098580387554,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098590671898,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098601217604,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098611737986,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098622069691,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098632357784,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098643033121,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098653305289,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098663583966,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098675730137,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098686055714,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098696348595,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098707150866,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098717432100,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098727714954,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098740016857,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098750897018,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098761452557,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098771747337,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098782022830,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098792315433,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098803253844,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098813590078,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098823869413,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098835544621,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098845851910,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098856138690,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098867048517,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098877323380,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098887602965,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098899173923,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098909451378,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098919723408,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098931159431,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098941436229,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098951724545,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098963497754,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098973768617,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098984045239,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22098995130715,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22099005410522,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22099015690052,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22099027138381,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22099037434854,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22099047714643,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        },
+        {
+          "timestamp_ns": 22099059287361,
+          "inference_in_progress": true,
+          "min_freq": 1260000000,
+          "max_freq": 1260000000,
+          "cur_freq": 1260000000
+        }
+      ],
+      "first_observed_target_timestamp_ns": 22098067438462,
+      "range_after_command_Hz": {
+        "min_freq": 1260000000,
+        "max_freq": 1260000000,
+        "cur_freq": 1260000000
+      },
+      "command_return_timestamp_ns": 22098067038452,
+      "completed_inferences": 169,
+      "active_target_sample_count": 94,
+      "command_to_first_observed_ms": 23.346491,
+      "status": "PASS"
+    },
+    {
+      "command_timestamp_ns": 22099069415020,
+      "requested_MHz": 1575,
+      "samples": [
+        {
+          "timestamp_ns": 22099126865180,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099139301843,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099149579187,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099159858328,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099171127610,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099181402065,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099191685085,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099202920394,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099213198683,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099223479879,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099234873345,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099245146818,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099255420690,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099266858027,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099277130815,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099287403335,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099298821006,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099309106016,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099319385296,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099332055829,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099342811128,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099353595326,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099364397800,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099375166117,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099385677823,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099395968852,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099406252223,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099416536234,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099426951551,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099437236886,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099447508777,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099458978624,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099469250385,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099479526322,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099491078011,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099501381041,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099511668829,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099523169177,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099533440512,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099543719375,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099555342575,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099565622372,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099575900143,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099587692351,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099598444446,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099609232893,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099620032712,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099630802159,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099641547930,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099651846589,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099662124249,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099672457297,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099682816123,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099693095959,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099703367960,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099714787445,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099725064160,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099735334356,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099746919870,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099757197688,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099767530986,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099778885619,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099789163176,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099799436669,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099811442035,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099821717675,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099831993121,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099843264162,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099853534552,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099863809044,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099874815380,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099885084872,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099895361364,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099906785553,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099917059444,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099927333668,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099938802699,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099949074496,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099959388026,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099971305864,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099981587856,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22099991897228,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100002931268,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100013202889,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100023481419,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100035278960,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100045558026,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100055831343,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100067022402,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100077293052,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100087561064,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100098836141,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100109107976,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        },
+        {
+          "timestamp_ns": 22100119379385,
+          "inference_in_progress": true,
+          "min_freq": 1575000000,
+          "max_freq": 1575000000,
+          "cur_freq": 1575000000
+        }
+      ],
+      "first_observed_target_timestamp_ns": 22099126865180,
+      "range_after_command_Hz": {
+        "min_freq": 1575000000,
+        "max_freq": 1575000000,
+        "cur_freq": 1575000000
+      },
+      "command_return_timestamp_ns": 22099126649447,
+      "completed_inferences": 216,
+      "active_target_sample_count": 94,
+      "command_to_first_observed_ms": 57.45016,
+      "status": "PASS"
+    },
+    {
+      "command_timestamp_ns": 22100129489998,
+      "requested_MHz": 945,
+      "samples": [
+        {
+          "timestamp_ns": 22100163278593,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100173562975,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100183850856,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100195245601,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100205529260,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100215806586,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100227288554,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100237574148,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100247865307,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100259367228,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100269641174,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100279915501,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100291162096,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100301437164,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100311715101,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100323222929,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100333504459,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100343781886,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100355462585,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100365735791,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100376052340,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100387100555,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100397380038,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100407701939,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100419378583,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100429652825,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100439926679,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100451315109,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100461591620,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100471876187,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100483234812,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100493639008,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100503913926,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100515100180,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100525375913,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100535651989,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100547213086,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100557493042,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100567765015,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100579492130,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100589765363,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100600042125,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100610601302,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100621398481,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100632245150,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100643034087,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100654116155,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100664619796,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100674919695,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100685218613,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100695513707,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100705792654,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100716072081,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100726348582,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100736621787,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100747163993,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100757443707,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100767722321,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100779077944,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100789354751,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100799630539,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100811153535,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100821433286,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100831707306,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100841991133,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100852272496,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100862562803,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100873103065,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100883942503,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100894722201,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100905543370,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100916319891,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100926849070,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100937142136,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100947463778,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100961042591,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100971351288,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100981635540,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22100991953014,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101002230145,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101015346143,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101025636340,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101035917055,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101047089642,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101057376931,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101067650377,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101077937185,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101088222714,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101099222579,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101109497257,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101119783268,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101130059075,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101140332605,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        },
+        {
+          "timestamp_ns": 22101151785553,
+          "inference_in_progress": true,
+          "min_freq": 945000000,
+          "max_freq": 945000000,
+          "cur_freq": 945000000
+        }
+      ],
+      "first_observed_target_timestamp_ns": 22100163278593,
+      "range_after_command_Hz": {
+        "min_freq": 945000000,
+        "max_freq": 945000000,
+        "cur_freq": 945000000
+      },
+      "command_return_timestamp_ns": 22100159879596,
+      "completed_inferences": 143,
+      "active_target_sample_count": 94,
+      "command_to_first_observed_ms": 33.788595,
+      "status": "PASS"
+    }
+  ],
+  "command_to_observed_delay_ms": null,
+  "requested_to_actual_verified": true,
+  "set_method": "ordered min_freq/max_freq sysfs writes; pin both to target; verify bounds",
+  "readback_method": "/sys/class/devfreq/gpu-gpc-0/cur_freq",
+  "errors": [],
+  "nvpmodel": {
+    "returncode": 0,
+    "stdout": "NV Power Mode: MAXN\n0\n",
+    "stderr": ""
+  },
+  "raw_sysfs": {
+    "available_frequencies": "54000000 63000000 72000000 81000000 90000000 99000000 108000000 117000000 126000000 135000000 144000000 153000000 162000000 171000000 180000000 189000000 198000000 207000000 216000000 225000000 234000000 243000000 252000000 261000000 270000000 279000000 288000000 297000000 306000000 315000000 324000000 333000000 342000000 351000000 360000000 369000000 378000000 387000000 396000000 405000000 414000000 423000000 432000000 441000000 450000000 459000000 468000000 477000000 486000000 495000000 504000000 513000000 522000000 531000000 540000000 549000000 558000000 567000000 576000000 585000000 594000000 603000000 612000000 621000000 630000000 639000000 648000000 657000000 666000000 675000000 684000000 693000000 702000000 711000000 720000000 729000000 738000000 747000000 756000000 765000000 774000000 783000000 792000000 801000000 810000000 819000000 828000000 837000000 846000000 855000000 864000000 873000000 882000000 891000000 900000000 909000000 918000000 927000000 936000000 945000000 954000000 963000000 972000000 981000000 990000000 999000000 1008000000 1017000000 1026000000 1035000000 1044000000 1053000000 1062000000 1071000000 1080000000 1089000000 1098000000 1107000000 1116000000 1125000000 1134000000 1143000000 1152000000 1161000000 1170000000 1179000000 1188000000 1197000000 1206000000 1215000000 1224000000 1233000000 1242000000 1251000000 1260000000 1269000000 1278000000 1287000000 1296000000 1305000000 1314000000 1323000000 1332000000 1341000000 1350000000 1359000000 1368000000 1377000000 1386000000 1395000000 1404000000 1413000000 1422000000 1431000000 1440000000 1449000000 1458000000 1467000000 1476000000 1485000000 1494000000 1503000000 1512000000 1521000000 1530000000 1539000000 1548000000 1557000000 1566000000 1575000000",
+    "available_governors": "nvhost_podgov tegra_wmark userspace performance simple_ondemand",
+    "governor": "nvhost_podgov",
+    "min_freq": "315000000",
+    "max_freq": "1575000000",
+    "cur_freq": "0"
+  },
+  "supported_frequencies_Hz": [
+    54000000,
+    63000000,
+    72000000,
+    81000000,
+    90000000,
+    99000000,
+    108000000,
+    117000000,
+    126000000,
+    135000000,
+    144000000,
+    153000000,
+    162000000,
+    171000000,
+    180000000,
+    189000000,
+    198000000,
+    207000000,
+    216000000,
+    225000000,
+    234000000,
+    243000000,
+    252000000,
+    261000000,
+    270000000,
+    279000000,
+    288000000,
+    297000000,
+    306000000,
+    315000000,
+    324000000,
+    333000000,
+    342000000,
+    351000000,
+    360000000,
+    369000000,
+    378000000,
+    387000000,
+    396000000,
+    405000000,
+    414000000,
+    423000000,
+    432000000,
+    441000000,
+    450000000,
+    459000000,
+    468000000,
+    477000000,
+    486000000,
+    495000000,
+    504000000,
+    513000000,
+    522000000,
+    531000000,
+    540000000,
+    549000000,
+    558000000,
+    567000000,
+    576000000,
+    585000000,
+    594000000,
+    603000000,
+    612000000,
+    621000000,
+    630000000,
+    639000000,
+    648000000,
+    657000000,
+    666000000,
+    675000000,
+    684000000,
+    693000000,
+    702000000,
+    711000000,
+    720000000,
+    729000000,
+    738000000,
+    747000000,
+    756000000,
+    765000000,
+    774000000,
+    783000000,
+    792000000,
+    801000000,
+    810000000,
+    819000000,
+    828000000,
+    837000000,
+    846000000,
+    855000000,
+    864000000,
+    873000000,
+    882000000,
+    891000000,
+    900000000,
+    909000000,
+    918000000,
+    927000000,
+    936000000,
+    945000000,
+    954000000,
+    963000000,
+    972000000,
+    981000000,
+    990000000,
+    999000000,
+    1008000000,
+    1017000000,
+    1026000000,
+    1035000000,
+    1044000000,
+    1053000000,
+    1062000000,
+    1071000000,
+    1080000000,
+    1089000000,
+    1098000000,
+    1107000000,
+    1116000000,
+    1125000000,
+    1134000000,
+    1143000000,
+    1152000000,
+    1161000000,
+    1170000000,
+    1179000000,
+    1188000000,
+    1197000000,
+    1206000000,
+    1215000000,
+    1224000000,
+    1233000000,
+    1242000000,
+    1251000000,
+    1260000000,
+    1269000000,
+    1278000000,
+    1287000000,
+    1296000000,
+    1305000000,
+    1314000000,
+    1323000000,
+    1332000000,
+    1341000000,
+    1350000000,
+    1359000000,
+    1368000000,
+    1377000000,
+    1386000000,
+    1395000000,
+    1404000000,
+    1413000000,
+    1422000000,
+    1431000000,
+    1440000000,
+    1449000000,
+    1458000000,
+    1467000000,
+    1476000000,
+    1485000000,
+    1494000000,
+    1503000000,
+    1512000000,
+    1521000000,
+    1530000000,
+    1539000000,
+    1548000000,
+    1557000000,
+    1566000000,
+    1575000000
+  ],
+  "supported_frequencies_MHz": [
+    54.0,
+    63.0,
+    72.0,
+    81.0,
+    90.0,
+    99.0,
+    108.0,
+    117.0,
+    126.0,
+    135.0,
+    144.0,
+    153.0,
+    162.0,
+    171.0,
+    180.0,
+    189.0,
+    198.0,
+    207.0,
+    216.0,
+    225.0,
+    234.0,
+    243.0,
+    252.0,
+    261.0,
+    270.0,
+    279.0,
+    288.0,
+    297.0,
+    306.0,
+    315.0,
+    324.0,
+    333.0,
+    342.0,
+    351.0,
+    360.0,
+    369.0,
+    378.0,
+    387.0,
+    396.0,
+    405.0,
+    414.0,
+    423.0,
+    432.0,
+    441.0,
+    450.0,
+    459.0,
+    468.0,
+    477.0,
+    486.0,
+    495.0,
+    504.0,
+    513.0,
+    522.0,
+    531.0,
+    540.0,
+    549.0,
+    558.0,
+    567.0,
+    576.0,
+    585.0,
+    594.0,
+    603.0,
+    612.0,
+    621.0,
+    630.0,
+    639.0,
+    648.0,
+    657.0,
+    666.0,
+    675.0,
+    684.0,
+    693.0,
+    702.0,
+    711.0,
+    720.0,
+    729.0,
+    738.0,
+    747.0,
+    756.0,
+    765.0,
+    774.0,
+    783.0,
+    792.0,
+    801.0,
+    810.0,
+    819.0,
+    828.0,
+    837.0,
+    846.0,
+    855.0,
+    864.0,
+    873.0,
+    882.0,
+    891.0,
+    900.0,
+    909.0,
+    918.0,
+    927.0,
+    936.0,
+    945.0,
+    954.0,
+    963.0,
+    972.0,
+    981.0,
+    990.0,
+    999.0,
+    1008.0,
+    1017.0,
+    1026.0,
+    1035.0,
+    1044.0,
+    1053.0,
+    1062.0,
+    1071.0,
+    1080.0,
+    1089.0,
+    1098.0,
+    1107.0,
+    1116.0,
+    1125.0,
+    1134.0,
+    1143.0,
+    1152.0,
+    1161.0,
+    1170.0,
+    1179.0,
+    1188.0,
+    1197.0,
+    1206.0,
+    1215.0,
+    1224.0,
+    1233.0,
+    1242.0,
+    1251.0,
+    1260.0,
+    1269.0,
+    1278.0,
+    1287.0,
+    1296.0,
+    1305.0,
+    1314.0,
+    1323.0,
+    1332.0,
+    1341.0,
+    1350.0,
+    1359.0,
+    1368.0,
+    1377.0,
+    1386.0,
+    1395.0,
+    1404.0,
+    1413.0,
+    1422.0,
+    1431.0,
+    1440.0,
+    1449.0,
+    1458.0,
+    1467.0,
+    1476.0,
+    1485.0,
+    1494.0,
+    1503.0,
+    1512.0,
+    1521.0,
+    1530.0,
+    1539.0,
+    1548.0,
+    1557.0,
+    1566.0,
+    1575.0
+  ],
+  "selected_frequencies_MHz": {
+    "LOW": 945.0,
+    "MID": 1260.0,
+    "HIGH": 1575.0
+  },
+  "selection_status": "user-fixed supported Gate points",
+  "available_frequency_minimum_MHz": 54.0,
+  "default_allowed_minimum_MHz": 315.0,
+  "maximum_MHz": 1575.0,
+  "current_allowed_minimum_MHz": 315.0,
+  "current_allowed_maximum_MHz": 1575.0,
+  "permissions": {
+    "min_freq": {
+      "path": "/sys/class/devfreq/gpu-gpc-0/min_freq",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o644",
+      "writable_by_current_user": true
+    },
+    "max_freq": {
+      "path": "/sys/class/devfreq/gpu-gpc-0/max_freq",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o644",
+      "writable_by_current_user": true
+    }
+  },
+  "status": "FREQUENCY_CONTROL_PASS",
+  "previous_observations": [
+    {
+      "schema_version": 1,
+      "observed_at_utc": "2026-09-19T10:54:20.537511+00:00",
+      "observation_monotonic_ns": 21110303626484,
+      "provenance": "read-only host observation; no switching or GPU workload",
+      "uid": 1000,
+      "interface": "/sys/class/devfreq/gpu-gpc-0",
+      "switching_attempted": false,
+      "switching_samples": [],
+      "command_to_observed_delay_ms": null,
+      "requested_to_actual_verified": false,
+      "set_method": "candidate only: pin min_freq=max_freq to a supported Hz value; untested",
+      "readback_method": "/sys/class/devfreq/gpu-gpc-0/cur_freq",
+      "errors": [],
+      "nvpmodel": {
+        "returncode": 0,
+        "stdout": "NV Power Mode: MAXN\n0\n",
+        "stderr": ""
+      },
+      "raw_sysfs": {
+        "available_frequencies": "54000000 63000000 72000000 81000000 90000000 99000000 108000000 117000000 126000000 135000000 144000000 153000000 162000000 171000000 180000000 189000000 198000000 207000000 216000000 225000000 234000000 243000000 252000000 261000000 270000000 279000000 288000000 297000000 306000000 315000000 324000000 333000000 342000000 351000000 360000000 369000000 378000000 387000000 396000000 405000000 414000000 423000000 432000000 441000000 450000000 459000000 468000000 477000000 486000000 495000000 504000000 513000000 522000000 531000000 540000000 549000000 558000000 567000000 576000000 585000000 594000000 603000000 612000000 621000000 630000000 639000000 648000000 657000000 666000000 675000000 684000000 693000000 702000000 711000000 720000000 729000000 738000000 747000000 756000000 765000000 774000000 783000000 792000000 801000000 810000000 819000000 828000000 837000000 846000000 855000000 864000000 873000000 882000000 891000000 900000000 909000000 918000000 927000000 936000000 945000000 954000000 963000000 972000000 981000000 990000000 999000000 1008000000 1017000000 1026000000 1035000000 1044000000 1053000000 1062000000 1071000000 1080000000 1089000000 1098000000 1107000000 1116000000 1125000000 1134000000 1143000000 1152000000 1161000000 1170000000 1179000000 1188000000 1197000000 1206000000 1215000000 1224000000 1233000000 1242000000 1251000000 1260000000 1269000000 1278000000 1287000000 1296000000 1305000000 1314000000 1323000000 1332000000 1341000000 1350000000 1359000000 1368000000 1377000000 1386000000 1395000000 1404000000 1413000000 1422000000 1431000000 1440000000 1449000000 1458000000 1467000000 1476000000 1485000000 1494000000 1503000000 1512000000 1521000000 1530000000 1539000000 1548000000 1557000000 1566000000 1575000000",
+        "available_governors": "nvhost_podgov tegra_wmark userspace performance simple_ondemand",
+        "governor": "nvhost_podgov",
+        "min_freq": "315000000",
+        "max_freq": "1575000000",
+        "cur_freq": "0"
+      },
+      "supported_frequencies_Hz": [
+        54000000,
+        63000000,
+        72000000,
+        81000000,
+        90000000,
+        99000000,
+        108000000,
+        117000000,
+        126000000,
+        135000000,
+        144000000,
+        153000000,
+        162000000,
+        171000000,
+        180000000,
+        189000000,
+        198000000,
+        207000000,
+        216000000,
+        225000000,
+        234000000,
+        243000000,
+        252000000,
+        261000000,
+        270000000,
+        279000000,
+        288000000,
+        297000000,
+        306000000,
+        315000000,
+        324000000,
+        333000000,
+        342000000,
+        351000000,
+        360000000,
+        369000000,
+        378000000,
+        387000000,
+        396000000,
+        405000000,
+        414000000,
+        423000000,
+        432000000,
+        441000000,
+        450000000,
+        459000000,
+        468000000,
+        477000000,
+        486000000,
+        495000000,
+        504000000,
+        513000000,
+        522000000,
+        531000000,
+        540000000,
+        549000000,
+        558000000,
+        567000000,
+        576000000,
+        585000000,
+        594000000,
+        603000000,
+        612000000,
+        621000000,
+        630000000,
+        639000000,
+        648000000,
+        657000000,
+        666000000,
+        675000000,
+        684000000,
+        693000000,
+        702000000,
+        711000000,
+        720000000,
+        729000000,
+        738000000,
+        747000000,
+        756000000,
+        765000000,
+        774000000,
+        783000000,
+        792000000,
+        801000000,
+        810000000,
+        819000000,
+        828000000,
+        837000000,
+        846000000,
+        855000000,
+        864000000,
+        873000000,
+        882000000,
+        891000000,
+        900000000,
+        909000000,
+        918000000,
+        927000000,
+        936000000,
+        945000000,
+        954000000,
+        963000000,
+        972000000,
+        981000000,
+        990000000,
+        999000000,
+        1008000000,
+        1017000000,
+        1026000000,
+        1035000000,
+        1044000000,
+        1053000000,
+        1062000000,
+        1071000000,
+        1080000000,
+        1089000000,
+        1098000000,
+        1107000000,
+        1116000000,
+        1125000000,
+        1134000000,
+        1143000000,
+        1152000000,
+        1161000000,
+        1170000000,
+        1179000000,
+        1188000000,
+        1197000000,
+        1206000000,
+        1215000000,
+        1224000000,
+        1233000000,
+        1242000000,
+        1251000000,
+        1260000000,
+        1269000000,
+        1278000000,
+        1287000000,
+        1296000000,
+        1305000000,
+        1314000000,
+        1323000000,
+        1332000000,
+        1341000000,
+        1350000000,
+        1359000000,
+        1368000000,
+        1377000000,
+        1386000000,
+        1395000000,
+        1404000000,
+        1413000000,
+        1422000000,
+        1431000000,
+        1440000000,
+        1449000000,
+        1458000000,
+        1467000000,
+        1476000000,
+        1485000000,
+        1494000000,
+        1503000000,
+        1512000000,
+        1521000000,
+        1530000000,
+        1539000000,
+        1548000000,
+        1557000000,
+        1566000000,
+        1575000000
+      ],
+      "supported_frequencies_MHz": [
+        54.0,
+        63.0,
+        72.0,
+        81.0,
+        90.0,
+        99.0,
+        108.0,
+        117.0,
+        126.0,
+        135.0,
+        144.0,
+        153.0,
+        162.0,
+        171.0,
+        180.0,
+        189.0,
+        198.0,
+        207.0,
+        216.0,
+        225.0,
+        234.0,
+        243.0,
+        252.0,
+        261.0,
+        270.0,
+        279.0,
+        288.0,
+        297.0,
+        306.0,
+        315.0,
+        324.0,
+        333.0,
+        342.0,
+        351.0,
+        360.0,
+        369.0,
+        378.0,
+        387.0,
+        396.0,
+        405.0,
+        414.0,
+        423.0,
+        432.0,
+        441.0,
+        450.0,
+        459.0,
+        468.0,
+        477.0,
+        486.0,
+        495.0,
+        504.0,
+        513.0,
+        522.0,
+        531.0,
+        540.0,
+        549.0,
+        558.0,
+        567.0,
+        576.0,
+        585.0,
+        594.0,
+        603.0,
+        612.0,
+        621.0,
+        630.0,
+        639.0,
+        648.0,
+        657.0,
+        666.0,
+        675.0,
+        684.0,
+        693.0,
+        702.0,
+        711.0,
+        720.0,
+        729.0,
+        738.0,
+        747.0,
+        756.0,
+        765.0,
+        774.0,
+        783.0,
+        792.0,
+        801.0,
+        810.0,
+        819.0,
+        828.0,
+        837.0,
+        846.0,
+        855.0,
+        864.0,
+        873.0,
+        882.0,
+        891.0,
+        900.0,
+        909.0,
+        918.0,
+        927.0,
+        936.0,
+        945.0,
+        954.0,
+        963.0,
+        972.0,
+        981.0,
+        990.0,
+        999.0,
+        1008.0,
+        1017.0,
+        1026.0,
+        1035.0,
+        1044.0,
+        1053.0,
+        1062.0,
+        1071.0,
+        1080.0,
+        1089.0,
+        1098.0,
+        1107.0,
+        1116.0,
+        1125.0,
+        1134.0,
+        1143.0,
+        1152.0,
+        1161.0,
+        1170.0,
+        1179.0,
+        1188.0,
+        1197.0,
+        1206.0,
+        1215.0,
+        1224.0,
+        1233.0,
+        1242.0,
+        1251.0,
+        1260.0,
+        1269.0,
+        1278.0,
+        1287.0,
+        1296.0,
+        1305.0,
+        1314.0,
+        1323.0,
+        1332.0,
+        1341.0,
+        1350.0,
+        1359.0,
+        1368.0,
+        1377.0,
+        1386.0,
+        1395.0,
+        1404.0,
+        1413.0,
+        1422.0,
+        1431.0,
+        1440.0,
+        1449.0,
+        1458.0,
+        1467.0,
+        1476.0,
+        1485.0,
+        1494.0,
+        1503.0,
+        1512.0,
+        1521.0,
+        1530.0,
+        1539.0,
+        1548.0,
+        1557.0,
+        1566.0,
+        1575.0
+      ],
+      "selected_frequencies_MHz": {
+        "LOW": 945.0,
+        "MID": 1260.0,
+        "HIGH": 1575.0
+      },
+      "selection_status": "supported candidates; primary plan not frozen",
+      "permissions": {
+        "min_freq": {
+          "path": "/sys/class/devfreq/gpu-gpc-0/min_freq",
+          "uid": 65534,
+          "gid": 65534,
+          "mode": "0o644",
+          "writable_by_current_user": false
+        },
+        "max_freq": {
+          "path": "/sys/class/devfreq/gpu-gpc-0/max_freq",
+          "uid": 65534,
+          "gid": 65534,
+          "mode": "0o644",
+          "writable_by_current_user": false
+        }
+      },
+      "status": "FREQUENCY_CONTROL_PERMISSION_REQUIRED"
+    }
+  ],
+  "user_reported_manual_check": {
+    "provenance": "user report, prior to this execution",
+    "MAXN": true,
+    "min_freq_write_315_to_1575_MHz": "success",
+    "restore_315_1575_MHz": "success",
+    "idle_cur_freq_MHz": 0
+  },
+  "microcheck": {
+    "classification": "NON_PRIMARY_CAPABILITY_ONLY",
+    "input": "synthetic zero FP32 tensor, 1x3x640x640; no throughput claim",
+    "sequence_MHz": [
+      945,
+      1260,
+      1575,
+      945
+    ],
+    "state_observation_seconds": 1.0,
+    "poll_interval_seconds": 0.01,
+    "minimum_matching_active_samples": 3,
+    "tegrastats_lines": [
+      {
+        "timestamp_ns": 22097133615575,
+        "line": "09-19-2026 20:10:47 RAM 4722/125749MB (lfb 2x4MB) CPU [9%@972,0%@972,36%@1080,0%@1080,0%@972,9%@972,0%@1620,0%@1620,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@37.812C/37.812C tj@39.593C/39.593C soc012@36.187C/36.187C gpu@39.593C/39.593C soc345@38.875C/38.875C VDD_GPU 11096mW/11096mW/11096mW VDD_CPU_SOC_MSS 7923mW/7923mW/7923mW VIN_SYS_5V0 7482mW/7482mW/7482mW VIN 65952mW/32976mW/65952mW"
+      },
+      {
+        "timestamp_ns": 22097237240286,
+        "line": "09-19-2026 20:10:47 RAM 4722/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,50%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@38.031C/38.031C tj@39.812C/39.812C soc012@36.218C/36.218C gpu@39.812C/39.812C soc345@39.125C/39.125C VDD_GPU 16242mW/12811mW/16242mW VDD_CPU_SOC_MSS 8319mW/8055mW/8319mW VIN_SYS_5V0 7887mW/7617mW/7887mW VIN 64144mW/40768mW/65952mW"
+      },
+      {
+        "timestamp_ns": 22097340440542,
+        "line": "09-19-2026 20:10:47 RAM 4722/125749MB (lfb 2x4MB) CPU [9%@972,0%@972,50%@972,0%@972,0%@972,9%@972,16%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@38.125C/38.125C tj@40.093C/40.093C soc012@36.312C/36.312C gpu@40.093C/40.093C soc345@39.5C/39.5C VDD_GPU 20592mW/14367mW/20592mW VDD_CPU_SOC_MSS 8319mW/8108mW/8319mW VIN_SYS_5V0 8291mW/7752mW/8291mW VIN 60586mW/44071mW/65952mW"
+      },
+      {
+        "timestamp_ns": 22097443737117,
+        "line": "09-19-2026 20:10:47 RAM 4722/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,50%@972,0%@972,0%@972,9%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,10%@972,8%@972] cpu@38.25C/38.25C tj@40.312C/40.312C soc012@36.468C/36.468C gpu@40.312C/40.312C soc345@39.781C/39.781C VDD_GPU 23760mW/15709mW/23760mW VDD_CPU_SOC_MSS 8712mW/8194mW/8712mW VIN_SYS_5V0 8608mW/7874mW/8608mW VIN 69596mW/47262mW/69596mW"
+      },
+      {
+        "timestamp_ns": 22097547328962,
+        "line": "09-19-2026 20:10:47 RAM 4722/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,54%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@38.343C/38.343C tj@41.437C/41.437C soc012@36.406C/36.468C gpu@41.437C/41.437C soc345@39.812C/39.812C VDD_GPU 26136mW/16868mW/26136mW VDD_CPU_SOC_MSS 8712mW/8252mW/8712mW VIN_SYS_5V0 8811mW/7978mW/8811mW VIN 72328mW/49768mW/72328mW"
+      },
+      {
+        "timestamp_ns": 22097650928444,
+        "line": "09-19-2026 20:10:47 RAM 4722/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,50%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@38.562C/38.562C tj@41.156C/41.437C soc012@36.531C/36.531C gpu@41.156C/41.437C soc345@40.031C/40.031C VDD_GPU 28116mW/17890mW/28116mW VDD_CPU_SOC_MSS 8715mW/8294mW/8715mW VIN_SYS_5V0 9013mW/8072mW/9013mW VIN 52644mW/50008mW/72328mW"
+      },
+      {
+        "timestamp_ns": 22097754571122,
+        "line": "09-19-2026 20:10:47 RAM 4722/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,54%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@38.468C/38.562C tj@40.031C/41.437C soc012@36.593C/36.593C gpu@40.031C/41.437C soc345@39.656C/40.031C VDD_GPU 28908mW/18738mW/28908mW VDD_CPU_SOC_MSS 8712mW/8326mW/8715mW VIN_SYS_5V0 9115mW/8152mW/9115mW VIN 54088mW/50299mW/72328mW"
+      },
+      {
+        "timestamp_ns": 22097857992574,
+        "line": "09-19-2026 20:10:48 RAM 4722/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,45%@972,0%@972,0%@972,9%@972,0%@972,8%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@38.312C/38.562C tj@40.343C/41.437C soc012@36.656C/36.656C gpu@40.343C/41.437C soc345@39.562C/40.031C VDD_GPU 28127mW/19364mW/28908mW VDD_CPU_SOC_MSS 8712mW/8352mW/8715mW VIN_SYS_5V0 9216mW/8223mW/9216mW VIN 52562mW/50441mW/72328mW"
+      },
+      {
+        "timestamp_ns": 22097961461932,
+        "line": "09-19-2026 20:10:48 RAM 4722/125749MB (lfb 2x4MB) CPU [9%@972,0%@972,44%@972,0%@972,0%@972,9%@972,8%@972,0%@972,0%@972,0%@972,0%@972,0%@972,11%@972,0%@972] cpu@38.281C/38.562C tj@39.937C/41.437C soc012@36.5C/36.656C gpu@39.937C/41.437C soc345@39.5C/40.031C VDD_GPU 27731mW/19856mW/28908mW VDD_CPU_SOC_MSS 8712mW/8373mW/8715mW VIN_SYS_5V0 9216mW/8282mW/9216mW VIN 58948mW/50913mW/72328mW"
+      },
+      {
+        "timestamp_ns": 22098065022549,
+        "line": "09-19-2026 20:10:48 RAM 4721/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,54%@972,0%@972,0%@972,0%@972,10%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972] cpu@38.531C/38.562C tj@39.906C/41.437C soc012@36.781C/36.781C gpu@40.375C/41.437C soc345@39.687C/40.031C VDD_GPU 26938mW/20229mW/28908mW VDD_CPU_SOC_MSS 8712mW/8391mW/8715mW VIN_SYS_5V0 9216mW/8331mW/9216mW VIN 46040mW/50670mW/72328mW"
+      },
+      {
+        "timestamp_ns": 22098168594301,
+        "line": "09-19-2026 20:10:48 RAM 4721/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,50%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@38.625C/38.625C tj@40.468C/41.437C soc012@36.718C/36.781C gpu@40.468C/41.437C soc345@40.25C/40.25C VDD_GPU 29315mW/20661mW/29315mW VDD_CPU_SOC_MSS 9108mW/8425mW/9108mW VIN_SYS_5V0 9317mW/8378mW/9317mW VIN 68426mW/51477mW/72328mW"
+      },
+      {
+        "timestamp_ns": 22098272609525,
+        "line": "09-19-2026 20:10:48 RAM 4721/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,60%@972,0%@972,0%@972,9%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@38.781C/38.781C tj@42.718C/42.718C soc012@36.687C/36.781C gpu@42.718C/42.718C soc345@40.468C/40.468C VDD_GPU 30504mW/21089mW/30504mW VDD_CPU_SOC_MSS 9108mW/8455mW/9108mW VIN_SYS_5V0 9419mW/8423mW/9419mW VIN 67662mW/52151mW/72328mW"
+      },
+      {
+        "timestamp_ns": 22098376147305,
+        "line": "09-19-2026 20:10:48 RAM 4721/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,50%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@38.812C/38.812C tj@40.75C/42.718C soc012@36.812C/36.812C gpu@40.75C/42.718C soc345@40.437C/40.468C VDD_GPU 31692mW/21513mW/31692mW VDD_CPU_SOC_MSS 9108mW/8481mW/9108mW VIN_SYS_5V0 9520mW/8467mW/9520mW VIN 73174mW/52960mW/73174mW"
+      },
+      {
+        "timestamp_ns": 22098479692314,
+        "line": "09-19-2026 20:10:48 RAM 4721/125749MB (lfb 2x4MB) CPU [9%@972,0%@972,60%@972,0%@972,0%@972,9%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@38.906C/38.906C tj@40.875C/42.718C soc012@36.875C/36.875C gpu@40.875C/42.718C soc345@40.687C/40.687C VDD_GPU 32088mW/21905mW/32088mW VDD_CPU_SOC_MSS 9108mW/8504mW/9108mW VIN_SYS_5V0 9520mW/8506mW/9520mW VIN 53404mW/52976mW/73174mW"
+      },
+      {
+        "timestamp_ns": 22098583201986,
+        "line": "09-19-2026 20:10:48 RAM 4721/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,55%@972,0%@972,0%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@39C/39C tj@42.156C/42.718C soc012@36.906C/36.906C gpu@42.156C/42.718C soc345@40.656C/40.687C VDD_GPU 32868mW/22283mW/32868mW VDD_CPU_SOC_MSS 9108mW/8525mW/9108mW VIN_SYS_5V0 9621mW/8544mW/9621mW VIN 69020mW/53510mW/73174mW"
+      },
+      {
+        "timestamp_ns": 22098686689048,
+        "line": "09-19-2026 20:10:48 RAM 4721/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,54%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@39.156C/39.156C tj@41.75C/42.718C soc012@36.937C/36.937C gpu@41.75C/42.718C soc345@40.843C/40.843C VDD_GPU 33660mW/22650mW/33660mW VDD_CPU_SOC_MSS 9108mW/8544mW/9108mW VIN_SYS_5V0 9621mW/8579mW/9621mW VIN 68852mW/53990mW/73174mW"
+      },
+      {
+        "timestamp_ns": 22098790086604,
+        "line": "09-19-2026 20:10:49 RAM 4721/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,60%@972,0%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,8%@972] cpu@39.093C/39.156C tj@41.5C/42.718C soc012@37.093C/37.093C gpu@41.5C/42.718C soc345@40.875C/40.875C VDD_GPU 34056mW/22996mW/34056mW VDD_CPU_SOC_MSS 9108mW/8561mW/9108mW VIN_SYS_5V0 9621mW/8611mW/9621mW VIN 71138mW/54494mW/73174mW"
+      },
+      {
+        "timestamp_ns": 22098893545088,
+        "line": "09-19-2026 20:10:49 RAM 4719/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,54%@972,0%@972,0%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@39.25C/39.25C tj@41.218C/42.718C soc012@37.156C/37.156C gpu@41.218C/42.718C soc345@40.968C/40.968C VDD_GPU 34452mW/23323mW/34452mW VDD_CPU_SOC_MSS 9108mW/8576mW/9108mW VIN_SYS_5V0 9621mW/8640mW/9621mW VIN 72846mW/55004mW/73174mW"
+      },
+      {
+        "timestamp_ns": 22098997105441,
+        "line": "09-19-2026 20:10:49 RAM 4719/125749MB (lfb 2x4MB) CPU [16%@972,0%@972,60%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@39.312C/39.312C tj@41.531C/42.718C soc012@37.187C/37.187C gpu@41.531C/42.718C soc345@41.062C/41.062C VDD_GPU 34848mW/23635mW/34848mW VDD_CPU_SOC_MSS 9108mW/8591mW/9108mW VIN_SYS_5V0 9722mW/8669mW/9722mW VIN 72698mW/55470mW/73174mW"
+      },
+      {
+        "timestamp_ns": 22099101002527,
+        "line": "09-19-2026 20:10:49 RAM 4719/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,50%@972,0%@972,0%@972,9%@972,0%@972,0%@972,9%@1566,0%@1566,0%@972,0%@972,0%@972,0%@972] cpu@39.312C/39.312C tj@42.25C/42.718C soc012@37.156C/37.187C gpu@42.25C/42.718C soc345@41.281C/41.281C VDD_GPU 34848mW/23922mW/34848mW VDD_CPU_SOC_MSS 9500mW/8614mW/9500mW VIN_SYS_5V0 9722mW/8696mW/9722mW VIN 74070mW/55935mW/74070mW"
+      },
+      {
+        "timestamp_ns": 22099204399248,
+        "line": "09-19-2026 20:10:49 RAM 4719/125749MB (lfb 2x4MB) CPU [9%@972,0%@972,63%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@39.593C/39.593C tj@44.062C/44.062C soc012@37.343C/37.343C gpu@44.062C/44.062C soc345@41.937C/41.937C VDD_GPU 37620mW/24256mW/37620mW VDD_CPU_SOC_MSS 9500mW/8636mW/9500mW VIN_SYS_5V0 9824mW/8723mW/9824mW VIN 80834mW/56527mW/80834mW"
+      },
+      {
+        "timestamp_ns": 22099307762616,
+        "line": "09-19-2026 20:10:49 RAM 4719/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,70%@972,0%@972,0%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@39.687C/39.687C tj@44.562C/44.562C soc012@37.406C/37.406C gpu@44.312C/44.312C soc345@42.125C/42.125C VDD_GPU 39996mW/24622mW/39996mW VDD_CPU_SOC_MSS 9896mW/8665mW/9896mW VIN_SYS_5V0 10026mW/8754mW/10026mW VIN 73844mW/56921mW/80834mW"
+      },
+      {
+        "timestamp_ns": 22099411397354,
+        "line": "09-19-2026 20:10:49 RAM 4719/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,63%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@39.843C/39.843C tj@43.656C/44.562C soc012@37.343C/37.406C gpu@43.656C/44.312C soc345@42.343C/42.343C VDD_GPU 41976mW/25008mW/41976mW VDD_CPU_SOC_MSS 9896mW/8692mW/9896mW VIN_SYS_5V0 10026mW/8782mW/10026mW VIN 80530mW/57434mW/80834mW"
+      },
+      {
+        "timestamp_ns": 22099514744105,
+        "line": "09-19-2026 20:10:49 RAM 4719/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,70%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.031C/40.031C tj@45.25C/45.25C soc012@37.5C/37.5C gpu@45.25C/45.25C soc345@42.468C/42.468C VDD_GPU 43164mW/25394mW/43164mW VDD_CPU_SOC_MSS 9896mW/8718mW/9896mW VIN_SYS_5V0 10128mW/8811mW/10128mW VIN 80524mW/57915mW/80834mW"
+      },
+      {
+        "timestamp_ns": 22099618129791,
+        "line": "09-19-2026 20:10:49 RAM 4719/125749MB (lfb 2x4MB) CPU [18%@1512,0%@1512,63%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.093C/40.093C tj@44.593C/45.25C soc012@37.5C/37.5C gpu@43.875C/45.25C soc345@42.562C/42.562C VDD_GPU 44748mW/25789mW/44748mW VDD_CPU_SOC_MSS 9896mW/8742mW/9896mW VIN_SYS_5V0 10229mW/8840mW/10229mW VIN 81084mW/58379mW/81084mW"
+      },
+      {
+        "timestamp_ns": 22099722328729,
+        "line": "09-19-2026 20:10:49 RAM 4719/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,70%@972,0%@972,0%@972,9%@972,8%@972,0%@972,0%@972,10%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.093C/40.093C tj@44.187C/45.25C soc012@37.593C/37.593C gpu@45.437C/45.437C soc345@42.812C/42.812C VDD_GPU 45125mW/26168mW/45125mW VDD_CPU_SOC_MSS 10291mW/8772mW/10291mW VIN_SYS_5V0 10229mW/8867mW/10229mW VIN 73866mW/58677mW/81084mW"
+      },
+      {
+        "timestamp_ns": 22099826521101,
+        "line": "09-19-2026 20:10:50 RAM 4719/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,60%@972,0%@972,0%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.187C/40.187C tj@45.406C/45.406C soc012@37.593C/37.593C gpu@45.406C/45.437C soc345@42.812C/42.812C VDD_GPU 45936mW/26541mW/45936mW VDD_CPU_SOC_MSS 10291mW/8801mW/10291mW VIN_SYS_5V0 10330mW/8894mW/10330mW VIN 83092mW/59129mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22099931256758,
+        "line": "09-19-2026 20:10:50 RAM 4719/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,70%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.25C/40.25C tj@44.75C/45.406C soc012@37.75C/37.75C gpu@44.187C/45.437C soc345@42.937C/42.937C VDD_GPU 46728mW/26908mW/46728mW VDD_CPU_SOC_MSS 10291mW/8828mW/10291mW VIN_SYS_5V0 10330mW/8921mW/10330mW VIN 77016mW/59448mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22100035858110,
+        "line": "09-19-2026 20:10:50 RAM 4719/125749MB (lfb 2x4MB) CPU [8%@972,0%@972,66%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,8%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.187C/40.25C tj@44.812C/45.406C soc012@37.843C/37.843C gpu@44.812C/45.437C soc345@42.937C/42.937C VDD_GPU 47124mW/27263mW/47124mW VDD_CPU_SOC_MSS 10291mW/8854mW/10291mW VIN_SYS_5V0 10330mW/8945mW/10330mW VIN 81344mW/59826mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22100139881510,
+        "line": "09-19-2026 20:10:50 RAM 4716/125749MB (lfb 2x4MB) CPU [9%@972,0%@972,60%@972,0%@972,0%@972,9%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.437C/40.437C tj@44.906C/45.406C soc012@37.781C/37.843C gpu@44.906C/45.437C soc345@43.031C/43.031C VDD_GPU 47520mW/27606mW/47520mW VDD_CPU_SOC_MSS 10291mW/8878mW/10291mW VIN_SYS_5V0 10330mW/8969mW/10330mW VIN 78340mW/60134mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22100244376541,
+        "line": "09-19-2026 20:10:50 RAM 4716/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,50%@972,0%@972,8%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,11%@972,0%@972] cpu@40.031C/40.437C tj@42.343C/45.406C soc012@37.906C/37.906C gpu@42.5C/45.437C soc345@41.781C/43.031C VDD_GPU 43164mW/27861mW/47520mW VDD_CPU_SOC_MSS 9896mW/8895mW/10291mW VIN_SYS_5V0 10128mW/8988mW/10330mW VIN 41978mW/59841mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22100347820644,
+        "line": "09-19-2026 20:10:50 RAM 4716/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,54%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.093C/40.437C tj@41.656C/45.406C soc012@37.843C/37.906C gpu@41.562C/45.437C soc345@41.656C/43.031C VDD_GPU 39204mW/28041mW/47520mW VDD_CPU_SOC_MSS 9896mW/8911mW/10291mW VIN_SYS_5V0 10026mW/9004mW/10330mW VIN 44262mW/59598mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22100451914157,
+        "line": "09-19-2026 20:10:50 RAM 4716/125749MB (lfb 2x4MB) CPU [9%@972,0%@972,54%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.031C/40.437C tj@41.531C/45.406C soc012@37.937C/37.937C gpu@41.437C/45.437C soc345@41.343C/43.031C VDD_GPU 36446mW/28171mW/47520mW VDD_CPU_SOC_MSS 9500mW/8920mW/10291mW VIN_SYS_5V0 9824mW/9017mW/10330mW VIN 47180mW/59410mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22100555669066,
+        "line": "09-19-2026 20:10:50 RAM 4716/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,54%@972,0%@972,0%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.031C/40.437C tj@41.375C/45.406C soc012@37.968C/37.968C gpu@41.375C/45.437C soc345@41.406C/43.031C VDD_GPU 34069mW/28259mW/47520mW VDD_CPU_SOC_MSS 9500mW/8928mW/10291mW VIN_SYS_5V0 9722mW/9027mW/10330mW VIN 52930mW/59314mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22100658704757,
+        "line": "09-19-2026 20:10:50 RAM 4716/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,40%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.031C/40.437C tj@41.312C/45.406C soc012@38.062C/38.062C gpu@41.375C/45.437C soc345@41.343C/43.031C VDD_GPU 32485mW/28320mW/47520mW VDD_CPU_SOC_MSS 9504mW/8937mW/10291mW VIN_SYS_5V0 9722mW/9037mW/10330mW VIN 62154mW/59355mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22100761749623,
+        "line": "09-19-2026 20:10:50 RAM 4716/125749MB (lfb 2x4MB) CPU [11%@972,9%@972,50%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.031C/40.437C tj@41.937C/45.406C soc012@38.031C/38.062C gpu@41.937C/45.437C soc345@41.281C/43.031C VDD_GPU 30900mW/28356mW/47520mW VDD_CPU_SOC_MSS 9108mW/8939mW/10291mW VIN_SYS_5V0 9621mW/9046mW/10330mW VIN 65582mW/59442mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22100864793549,
+        "line": "09-19-2026 20:10:51 RAM 4716/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,54%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.062C/40.437C tj@41.687C/45.406C soc012@38C/38.062C gpu@41.687C/45.437C soc345@41.312C/43.031C VDD_GPU 29724mW/28375mW/47520mW VDD_CPU_SOC_MSS 9108mW/8941mW/10291mW VIN_SYS_5V0 9621mW/9054mW/10330mW VIN 43236mW/59223mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22100967821050,
+        "line": "09-19-2026 20:10:51 RAM 4716/125749MB (lfb 2x4MB) CPU [10%@972,0%@972,50%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40.031C/40.437C tj@41.375C/45.406C soc012@38.031C/38.062C gpu@41.375C/45.437C soc345@41.312C/43.031C VDD_GPU 28931mW/28382mW/47520mW VDD_CPU_SOC_MSS 9111mW/8944mW/10291mW VIN_SYS_5V0 9520mW/9060mW/10330mW VIN 53314mW/59145mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22101070871486,
+        "line": "09-19-2026 20:10:51 RAM 4716/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,54%@972,0%@972,0%@972,0%@972,0%@972,8%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40C/40.437C tj@41.343C/45.406C soc012@38.062C/38.062C gpu@41.312C/45.437C soc345@41.375C/43.031C VDD_GPU 28127mW/28379mW/47520mW VDD_CPU_SOC_MSS 9111mW/8946mW/10291mW VIN_SYS_5V0 9520mW/9066mW/10330mW VIN 58078mW/59131mW/83092mW"
+      },
+      {
+        "timestamp_ns": 22101203485710,
+        "line": "09-19-2026 20:10:51 RAM 4716/125749MB (lfb 2x4MB) CPU [0%@972,0%@972,50%@972,0%@972,0%@972,0%@972,0%@972,9%@972,0%@972,0%@972,0%@972,0%@972,0%@972,0%@972] cpu@40C/40.437C tj@41.218C/45.406C soc012@37.937C/38.062C gpu@41.218C/45.437C soc345@41.156C/43.031C VDD_GPU 27335mW/28366mW/47520mW VDD_CPU_SOC_MSS 9111mW/8948mW/10291mW VIN_SYS_5V0 9419mW/9070mW/10330mW VIN 26336mW/58721mW/83092mW"
+      }
+    ],
+    "errors": [],
+    "total_completed_inferences": 701,
+    "worker_error": null
+  },
+  "engine_provenance": {
+    "status": "PASS",
+    "engine_path": "/home/ainet/research/thor-mec-rate-dvfs-gate/models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine",
+    "resolved_path": "/home/ainet/research/thor-mec-inference/models/rtdetr_warehouse_v1.0.2.fp16.b1.canonical.engine",
+    "sha256": "9d01cdb2838bb1b9db58c246e6111a5dccee63bb937b673fb48caf43e53bc5ff",
+    "expected_sha256": "9d01cdb2838bb1b9db58c246e6111a5dccee63bb937b673fb48caf43e53bc5ff",
+    "evidence": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/local_concurrency_formal_full/replacements/c1/k2/replacement01/metadata.json"
+  },
+  "OC3_before": 0,
+  "restored_range_Hz": {
+    "min_freq": 315000000,
+    "max_freq": 1575000000,
+    "cur_freq": 1035000000
+  },
+  "OC3_after": 0,
+  "OC3_delta": 0,
+  "range_at_exit_Hz": {
+    "min_freq": 315000000,
+    "max_freq": 1575000000,
+    "cur_freq": 1035000000
+  }
+}

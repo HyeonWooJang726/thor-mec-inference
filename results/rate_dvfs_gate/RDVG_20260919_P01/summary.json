@@ -1,0 +1,124 @@
+{
+  "run_id": "RDVG_20260919_P01",
+  "kind": "primary",
+  "K": 7,
+  "C": 4,
+  "freq_state": "HIGH",
+  "requested_freq_MHz": 1575,
+  "admission_fps_per_stream": 21,
+  "source_frames": 3507,
+  "admitted_frames": 2450,
+  "completed_frames_including_drain": 2450,
+  "errors": [
+    "OC3 event during run",
+    "Traceback (most recent call last):\n  File \"/home/ainet/research/thor-mec-rate-dvfs-gate/scripts/rate_dvfs_gate/run_rate_dvfs_gate.py\", line 425, in run_one\n    if errors:raise RuntimeError('run stopped after recorded failure')\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: run stopped after recorded failure\n",
+    "stream 0: source identity/count mismatch",
+    "stream 1: source identity/count mismatch",
+    "stream 2: source identity/count mismatch",
+    "stream 3: source identity/count mismatch",
+    "stream 4: source identity/count mismatch",
+    "stream 5: source identity/count mismatch",
+    "stream 6: source identity/count mismatch",
+    "measurement trace: power trace does not bracket active interval or is nonmonotonic"
+  ],
+  "provenance": "measured",
+  "power_scope": "GPU rail VDD_GPU (tegrastats instantaneous channel)",
+  "queue_definition": "admission/enqueue <= t < inference service start; includes front-end backlog",
+  "aggregate_admitted_fps": 40.833333333333336,
+  "aggregate_completed_fps": 40.833333333333336,
+  "completed_active_frames": 2450,
+  "min_per_stream_completed_fps": 5.833333333333333,
+  "mean_per_stream_completed_fps": 5.833333333333333,
+  "per_stream": [
+    {
+      "stream_id": 0,
+      "source_frames": 501,
+      "admitted_frames": 350,
+      "completed_active": 350,
+      "R_k": 5.833333333333333,
+      "eta_k": 0.19444444444444445,
+      "g_Q_k": 0.0
+    },
+    {
+      "stream_id": 1,
+      "source_frames": 501,
+      "admitted_frames": 350,
+      "completed_active": 350,
+      "R_k": 5.833333333333333,
+      "eta_k": 0.19444444444444445,
+      "g_Q_k": 0.0
+    },
+    {
+      "stream_id": 2,
+      "source_frames": 501,
+      "admitted_frames": 350,
+      "completed_active": 350,
+      "R_k": 5.833333333333333,
+      "eta_k": 0.19444444444444445,
+      "g_Q_k": 0.0
+    },
+    {
+      "stream_id": 3,
+      "source_frames": 501,
+      "admitted_frames": 350,
+      "completed_active": 350,
+      "R_k": 5.833333333333333,
+      "eta_k": 0.19444444444444445,
+      "g_Q_k": 0.0
+    },
+    {
+      "stream_id": 4,
+      "source_frames": 501,
+      "admitted_frames": 350,
+      "completed_active": 350,
+      "R_k": 5.833333333333333,
+      "eta_k": 0.19444444444444445,
+      "g_Q_k": 0.0
+    },
+    {
+      "stream_id": 5,
+      "source_frames": 501,
+      "admitted_frames": 350,
+      "completed_active": 350,
+      "R_k": 5.833333333333333,
+      "eta_k": 0.19444444444444445,
+      "g_Q_k": 0.0
+    },
+    {
+      "stream_id": 6,
+      "source_frames": 501,
+      "admitted_frames": 350,
+      "completed_active": 350,
+      "R_k": 5.833333333333333,
+      "eta_k": 0.19444444444444445,
+      "g_Q_k": 0.0
+    }
+  ],
+  "measurement_seconds": 60.0,
+  "aggregate_queue_slope": 0.0,
+  "max_per_stream_queue_slope": 0.0,
+  "queue_peak": 10,
+  "queue_at_active_end": 0,
+  "queue_wait_ms": {
+    "mean": 20.108639641224492,
+    "p50": 15.9275925,
+    "p95": 32.23174925,
+    "p99": 35.87448662999997
+  },
+  "service_ms": {
+    "mean": 15.017440778775507,
+    "p50": 14.828624999999999,
+    "p95": 19.30878439999999,
+    "p99": 21.434339029999975
+  },
+  "latency_ms": {
+    "mean": 35.29449529510204,
+    "p50": 33.0201885,
+    "p95": 45.8776639,
+    "p99": 50.17118908999997
+  },
+  "validity": "INVALID",
+  "queue_stable": false,
+  "queue_classification": "INVALID",
+  "energy_per_frame_J": null
+}

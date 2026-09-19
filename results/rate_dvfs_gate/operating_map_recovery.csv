@@ -1,0 +1,16 @@
+protocol_version,K,C,freq_state,requested_freq_MHz,actual_freq_mean_MHz,admission_fps_per_stream,source_fps,aggregate_admitted_fps,aggregate_ready_fps,aggregate_completed_fps,min_per_stream_completed_fps,mean_per_stream_completed_fps,aggregate_queue_slope,max_per_stream_queue_slope,queue_stable,avg_power_W,median_power_W,active_energy_J,energy_per_frame_J,temperature,OC3_delta,integrity_status,hardware_status,active_concurrency_peak,active_concurrency_mean,frontend_ready_deficit_fraction,frontend_pending_slope,source_pending_slope,pipeline_audit_status,attempted_repetitions,valid_repetitions,invalid_repetitions,clean_runs,protection_limited_runs,OC3_occurrence_rate
+2,6,2,HIGH,1575,,30,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,6,2,LOW,945,,30,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,6,2,MID,1260,,30,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,7,4,HIGH,1575,,21,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,PROTECTION_LIMITED,,,,,,INCONCLUSIVE,1,1,0,0,1,1.0
+2,7,4,HIGH,1575,,24,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,7,4,HIGH,1575,,27,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,7,4,HIGH,1575,,30,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,7,4,LOW,945,,21,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,7,4,LOW,945,,24,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,FAIL,1,0,1,0,0,
+2,7,4,LOW,945,,27,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,7,4,LOW,945,,30,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,7,4,MID,1260,,21,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,7,4,MID,1260,,24,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,7,4,MID,1260,,27,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
+2,7,4,MID,1260,,30,,,,,,,,,INCONCLUSIVE,,,,,,,INCONCLUSIVE,UNMEASURED,,,,,,INCONCLUSIVE,0,0,0,0,0,
