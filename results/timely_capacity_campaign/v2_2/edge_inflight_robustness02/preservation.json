@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "scope": "SHA256 of protected plans, campaign markers and analysis per-run files; all prior trees are read-only by this preparation",
+  "before": {
+    "edge_inflight_robustness01": {
+      "plan.json": "35d91a3c3a9dc5ea851274dd4d318a0f38f9f6c331ce499b3b694bfb31b8a356",
+      "plan.sha256": "893bc16dfa0e333546bcbc5c13a1926924966d59dbe51e82f6b7e5c0d84687fc",
+      "campaign_attempt.json": "65541f8e8eddfdf8f0e76554a599ee87dc5eec12310b02fda5472d9f36225d11"
+    },
+    "edge_e48_confirmation01": {
+      "plan.json": "b3705e5a34863ac262ff714b4ff031028ec8a9b5a78d8df97338832c869760c3",
+      "plan.sha256": "140175b387868c71c31cd4f14446b079f05d364a08858d1afb0d861faf01f646",
+      "analysis01/per_run.csv": "8edbf21e38bcd5044dabb3f87b9e577b67592feb8c060eba238c217d57099f1e",
+      "campaign_attempt.json": "0a95aab07faa1e0c3a8d354ade66fd2aa6003d9761734277a9cf30843b75ea49"
+    },
+    "edge_order_robustness01": {
+      "plan.json": "233370402d62b9d185710ef664b6a03c730fa3f72a3784fa86fc9ac59710c727",
+      "plan.sha256": "b1533bcb280eb2e198b1c8458e9080e98677c9df52a4ad91d211ebe3b7aa8ac8",
+      "analysis01/per_run.csv": "7301d9b45a11dac934837227ed754cd6863031b4d162e9c4a9628c0c92b67a26",
+      "campaign_attempt.json": "6c4c00b4211d9e9599ecb785496b654e963dcc2502eab4a5f1135b1c648f3956"
+    },
+    "block_b_grid02": {
+      "plan.json": "ecc6cfc219572ae2754ae3f9f3d8c7e9bcdfed0274c18a951bf459d71a66abe3",
+      "plan.sha256": "0c079be12f6bf50de3e37963681a4e0a4cdbf4bc3c8807bfd2f1cccd63a1a510",
+      "analysis01/per_run.csv": "46ad26be57d36717653531915627483fc071c0822dbda964de516a2a0d865356",
+      "campaign_attempt.json": "36a38dc8bcc4681a839cfbc404a6edc7360363c67f3e67d20861a336a43a836f"
+    },
+    "block_b_confirmation01": {
+      "plan.json": "156a2b3ce28f17d0c655e345a0ec96c86d7c7bd72653f8cb1ee3d407e6787bcd",
+      "plan.sha256": "55bfb0ececc1fc50c6bf70755697338171415b7826cf613764bf48c7a30aa18a"
+    },
+    "block_b_confirmation02": {
+      "plan.json": "2d51128bf897be48cd0db8835a9d1deb423c0053a31e8093350b3b525ca25a08",
+      "plan.sha256": "14733040b30ad7b79cb6adb998e1ab9f822a0063e561cdc09fa2fc094685e413",
+      "analysis01/per_run.csv": "3e5885412ff3ef2e4834c56889662c3c43287d05cbfba3b50ca257fa152051e4",
+      "campaign_attempt.json": "670f800050bea9f13e3f0e1c101775efd08653872290cee10d3568349db45a6b"
+    },
+    "local_inflight_calibration01": {
+      "plan.json": "928d76b28d5efbd996af431f6e8cf0f8d2cd5940f7516c32b80bc2609db81c3f",
+      "plan.sha256": "7ae56500e4707c86a1c7ad18d950aa1908991277beee748b8fbe5cd75be3971c",
+      "campaign_attempt.json": "96606e389461c82ec1110c2a4be06796dfc778c66f9e9a0e5c183074139ac04a"
+    },
+    "local_inflight_calibration02": {
+      "plan.json": "ea58eb5d29667d4aa0be065a290b44d0fb1e643eac80b6cbc3918d7531268669",
+      "plan.sha256": "c91b8a6882357203fa4b230623308baf37b1b9ddd05d15f7f641a9d72abce28b",
+      "campaign_attempt.json": "793cd00c9ce97c8a7071f422f8988ba5930ffe3be70a3150a01f15cbf188ba49"
+    },
+    "local_inflight_calibration03": {
+      "plan.json": "c41736aab6f2c7379cafe90b4c3ca6d0ec8ff811c3651f70c13a0fd05c9fb874",
+      "plan.sha256": "9d4d49d8f3f31d511ca6705710c676b62eac8eb13d27d9552c4d1b58e99b3e14",
+      "analysis01/per_run.csv": "3ac7812a6305dd8d38f3159208c8f24b6aa30c3876f3a23960b4b2e518f934f8",
+      "campaign_attempt.json": "8648f3ec55aa22ea751a3ef644d4a6d4508593c900f6d3fed5f432042f7c9be4"
+    },
+    "local_inflight_calibration04": {
+      "plan.json": "e77653e2825c31840bba3353a820316d65d2c684b780c2c88394ae1fa6b499c0",
+      "plan.sha256": "3c35adfd76494c40b0a62f2fe55b6ebc972f014a3544d0e29cf4d583f1a94d74",
+      "analysis01/per_run.csv": "33a118bd95b58c7d054a6a749b3fa48908dabf14f917563a8d8a435523500a4a",
+      "campaign_attempt.json": "8910756c08e2f52283cfaf3805829e5779bae68d7871f697a608592b95b9086d"
+    },
+    "local_inflight_calibration05": {
+      "plan.json": "8988f28531c0f3faa56a8e9e0c7dbc1386877b7df95e1ee5185a184590f36f57",
+      "plan.sha256": "0a13b05e345c68df4b43f54aa8e602f0a94a6844788a92ce6e9aeecbefcd40dd",
+      "analysis01/per_run.csv": "0692f35ed1c33efaacbe4c265b8f598aeeeb3df42a3d48a5b69b6fefb0a3d97b",
+      "campaign_attempt.json": "94a7c279f338763c40381a290027a5727f879450cb98e4089af38dcc75729479"
+    }
+  },
+  "after": {
+    "edge_inflight_robustness01": {
+      "plan.json": "35d91a3c3a9dc5ea851274dd4d318a0f38f9f6c331ce499b3b694bfb31b8a356",
+      "plan.sha256": "893bc16dfa0e333546bcbc5c13a1926924966d59dbe51e82f6b7e5c0d84687fc",
+      "campaign_attempt.json": "65541f8e8eddfdf8f0e76554a599ee87dc5eec12310b02fda5472d9f36225d11"
+    },
+    "edge_e48_confirmation01": {
+      "plan.json": "b3705e5a34863ac262ff714b4ff031028ec8a9b5a78d8df97338832c869760c3",
+      "plan.sha256": "140175b387868c71c31cd4f14446b079f05d364a08858d1afb0d861faf01f646",
+      "analysis01/per_run.csv": "8edbf21e38bcd5044dabb3f87b9e577b67592feb8c060eba238c217d57099f1e",
+      "campaign_attempt.json": "0a95aab07faa1e0c3a8d354ade66fd2aa6003d9761734277a9cf30843b75ea49"
+    },
+    "edge_order_robustness01": {
+      "plan.json": "233370402d62b9d185710ef664b6a03c730fa3f72a3784fa86fc9ac59710c727",
+      "plan.sha256": "b1533bcb280eb2e198b1c8458e9080e98677c9df52a4ad91d211ebe3b7aa8ac8",
+      "analysis01/per_run.csv": "7301d9b45a11dac934837227ed754cd6863031b4d162e9c4a9628c0c92b67a26",
+      "campaign_attempt.json": "6c4c00b4211d9e9599ecb785496b654e963dcc2502eab4a5f1135b1c648f3956"
+    },
+    "block_b_grid02": {
+      "plan.json": "ecc6cfc219572ae2754ae3f9f3d8c7e9bcdfed0274c18a951bf459d71a66abe3",
+      "plan.sha256": "0c079be12f6bf50de3e37963681a4e0a4cdbf4bc3c8807bfd2f1cccd63a1a510",
+      "analysis01/per_run.csv": "46ad26be57d36717653531915627483fc071c0822dbda964de516a2a0d865356",
+      "campaign_attempt.json": "36a38dc8bcc4681a839cfbc404a6edc7360363c67f3e67d20861a336a43a836f"
+    },
+    "block_b_confirmation01": {
+      "plan.json": "156a2b3ce28f17d0c655e345a0ec96c86d7c7bd72653f8cb1ee3d407e6787bcd",
+      "plan.sha256": "55bfb0ececc1fc50c6bf70755697338171415b7826cf613764bf48c7a30aa18a"
+    },
+    "block_b_confirmation02": {
+      "plan.json": "2d51128bf897be48cd0db8835a9d1deb423c0053a31e8093350b3b525ca25a08",
+      "plan.sha256": "14733040b30ad7b79cb6adb998e1ab9f822a0063e561cdc09fa2fc094685e413",
+      "analysis01/per_run.csv": "3e5885412ff3ef2e4834c56889662c3c43287d05cbfba3b50ca257fa152051e4",
+      "campaign_attempt.json": "670f800050bea9f13e3f0e1c101775efd08653872290cee10d3568349db45a6b"
+    },
+    "local_inflight_calibration01": {
+      "plan.json": "928d76b28d5efbd996af431f6e8cf0f8d2cd5940f7516c32b80bc2609db81c3f",
+      "plan.sha256": "7ae56500e4707c86a1c7ad18d950aa1908991277beee748b8fbe5cd75be3971c",
+      "campaign_attempt.json": "96606e389461c82ec1110c2a4be06796dfc778c66f9e9a0e5c183074139ac04a"
+    },
+    "local_inflight_calibration02": {
+      "plan.json": "ea58eb5d29667d4aa0be065a290b44d0fb1e643eac80b6cbc3918d7531268669",
+      "plan.sha256": "c91b8a6882357203fa4b230623308baf37b1b9ddd05d15f7f641a9d72abce28b",
+      "campaign_attempt.json": "793cd00c9ce97c8a7071f422f8988ba5930ffe3be70a3150a01f15cbf188ba49"
+    },
+    "local_inflight_calibration03": {
+      "plan.json": "c41736aab6f2c7379cafe90b4c3ca6d0ec8ff811c3651f70c13a0fd05c9fb874",
+      "plan.sha256": "9d4d49d8f3f31d511ca6705710c676b62eac8eb13d27d9552c4d1b58e99b3e14",
+      "analysis01/per_run.csv": "3ac7812a6305dd8d38f3159208c8f24b6aa30c3876f3a23960b4b2e518f934f8",
+      "campaign_attempt.json": "8648f3ec55aa22ea751a3ef644d4a6d4508593c900f6d3fed5f432042f7c9be4"
+    },
+    "local_inflight_calibration04": {
+      "plan.json": "e77653e2825c31840bba3353a820316d65d2c684b780c2c88394ae1fa6b499c0",
+      "plan.sha256": "3c35adfd76494c40b0a62f2fe55b6ebc972f014a3544d0e29cf4d583f1a94d74",
+      "analysis01/per_run.csv": "33a118bd95b58c7d054a6a749b3fa48908dabf14f917563a8d8a435523500a4a",
+      "campaign_attempt.json": "8910756c08e2f52283cfaf3805829e5779bae68d7871f697a608592b95b9086d"
+    },
+    "local_inflight_calibration05": {
+      "plan.json": "8988f28531c0f3faa56a8e9e0c7dbc1386877b7df95e1ee5185a184590f36f57",
+      "plan.sha256": "0a13b05e345c68df4b43f54aa8e602f0a94a6844788a92ce6e9aeecbefcd40dd",
+      "analysis01/per_run.csv": "0692f35ed1c33efaacbe4c265b8f598aeeeb3df42a3d48a5b69b6fefb0a3d97b",
+      "campaign_attempt.json": "94a7c279f338763c40381a290027a5727f879450cb98e4089af38dcc75729479"
+    }
+  }
+}

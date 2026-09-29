@@ -1,0 +1,26 @@
+{
+  "D100_gate": "TEMPORAL_EFFECT_SUPPORTED_FOR_FORMAL_EXPANSION",
+  "pairs": [
+    {
+      "pair": 1,
+      "aligned_run_id": "V22_BLOCKA_D100_A1_P02",
+      "staggered_run_id": "V22_BLOCKA_D100_S1_P02",
+      "aligned_TIR": 0.9688301282051283,
+      "staggered_TIR": 1.0,
+      "delta_TIR_S_minus_A": 0.03116987179487174,
+      "valid": true
+    },
+    {
+      "pair": 2,
+      "aligned_run_id": "V22_BLOCKA_D100_A2_P02",
+      "staggered_run_id": "V22_BLOCKA_D100_S2_P02",
+      "aligned_TIR": 0.9756410256410256,
+      "staggered_TIR": 1.0,
+      "delta_TIR_S_minus_A": 0.024358974358974383,
+      "valid": true
+    }
+  ],
+  "D67_role": "secondary descriptive only",
+  "historical_208_merged_into_repeat_count": false,
+  "statistical_significance_claim": false
+}

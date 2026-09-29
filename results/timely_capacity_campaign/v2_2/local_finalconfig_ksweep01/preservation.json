@@ -1,0 +1,241 @@
+{
+  "status": "PASS",
+  "method": "Prior namespaces were read-only; key artifact SHA-256 and file counts inventoried after preparation. No prior path was opened for write. This is not a full byte hash of every raw file.",
+  "protected": [
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/local_inflight_calibration01",
+      "file_count": 65,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "928d76b28d5efbd996af431f6e8cf0f8d2cd5940f7516c32b80bc2609db81c3f"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "7ae56500e4707c86a1c7ad18d950aa1908991277beee748b8fbe5cd75be3971c"
+        },
+        {
+          "path": "CALIBRATION_PREREGISTRATION.md",
+          "sha256": "b0c118b6f2e097de7d819f64a4d7448fab5b0ad183aee5c6412bdb150b500ad1"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/local_inflight_calibration02",
+      "file_count": 211,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "ea58eb5d29667d4aa0be065a290b44d0fb1e643eac80b6cbc3918d7531268669"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "c91b8a6882357203fa4b230623308baf37b1b9ddd05d15f7f641a9d72abce28b"
+        },
+        {
+          "path": "CALIBRATION_PREREGISTRATION.md",
+          "sha256": "6d07f1ffbf51d18717208696d5503e242decd68e9c39eb033b03c7e705a2fad4"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/local_inflight_calibration03",
+      "file_count": 325,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "c41736aab6f2c7379cafe90b4c3ca6d0ec8ff811c3651f70c13a0fd05c9fb874"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "9d4d49d8f3f31d511ca6705710c676b62eac8eb13d27d9552c4d1b58e99b3e14"
+        },
+        {
+          "path": "CALIBRATION_PREREGISTRATION.md",
+          "sha256": "085d74af9b3e4f64ad12a34b0633953f2c62481218f75207aa505264f07ec204"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/local_inflight_calibration04",
+      "file_count": 416,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "e77653e2825c31840bba3353a820316d65d2c684b780c2c88394ae1fa6b499c0"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "3c35adfd76494c40b0a62f2fe55b6ebc972f014a3544d0e29cf4d583f1a94d74"
+        },
+        {
+          "path": "CALIBRATION_PREREGISTRATION.md",
+          "sha256": "f1589f1335b874e77866fd4388ec225a4ed62672a9147d3dc77a7adf79bdb00a"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/local_inflight_calibration05",
+      "file_count": 600,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "8988f28531c0f3faa56a8e9e0c7dbc1386877b7df95e1ee5185a184590f36f57"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "0a13b05e345c68df4b43f54aa8e602f0a94a6844788a92ce6e9aeecbefcd40dd"
+        },
+        {
+          "path": "CALIBRATION_PREREGISTRATION.md",
+          "sha256": "5a2e603677e990e8658328a766519d8ce722d060aabeb9b7fbf2f4f701ee47cc"
+        },
+        {
+          "path": "analysis01/final_C_selection.json",
+          "sha256": "532def87ce6ecbe57288ad3cbf5de226eebec5ff3c871f1a08f4012f63112f1a"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/edge_e48_confirmation01",
+      "file_count": 318,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "b3705e5a34863ac262ff714b4ff031028ec8a9b5a78d8df97338832c869760c3"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "140175b387868c71c31cd4f14446b079f05d364a08858d1afb0d861faf01f646"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/edge_order_robustness01",
+      "file_count": 347,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "233370402d62b9d185710ef664b6a03c730fa3f72a3784fa86fc9ac59710c727"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "b1533bcb280eb2e198b1c8458e9080e98677c9df52a4ad91d211ebe3b7aa8ac8"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/block_b_grid01",
+      "file_count": 54,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "6766c351b0dcb3ecdab439d5e20f4bb108e3c1207ac23ecdaef491496a870db7"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "5ad5d0dbdd25370d6bdcbc4f0cfc49d53811947ca87e660e58ef75e4f00f9bfb"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/block_b_grid02",
+      "file_count": 768,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "ecc6cfc219572ae2754ae3f9f3d8c7e9bcdfed0274c18a951bf459d71a66abe3"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "0c079be12f6bf50de3e37963681a4e0a4cdbf4bc3c8807bfd2f1cccd63a1a510"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/block_b_confirmation01",
+      "file_count": 85,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "156a2b3ce28f17d0c655e345a0ec96c86d7c7bd72653f8cb1ee3d407e6787bcd"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "55bfb0ececc1fc50c6bf70755697338171415b7826cf613764bf48c7a30aa18a"
+        },
+        {
+          "path": "CONFIRMATION_PREREGISTRATION.md",
+          "sha256": "97b7094af70c1be18f0d6ca6f46df18904de0969e535c871a57682e3270f0044"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/block_b_confirmation02",
+      "file_count": 633,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "2d51128bf897be48cd0db8835a9d1deb423c0053a31e8093350b3b525ca25a08"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "14733040b30ad7b79cb6adb998e1ab9f822a0063e561cdc09fa2fc094685e413"
+        },
+        {
+          "path": "CONFIRMATION_PREREGISTRATION.md",
+          "sha256": "a96052b247b58108dab9b6c32543c124dec99cf4d7545052e861257e9586c571"
+        },
+        {
+          "path": "analysis01/confirmation_summary.json",
+          "sha256": "82ca7ea6d4f34b3fa1c50de74780d4dd7b7a7ebbe7d9694f1ed3e8e0a9a7e919"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/edge_inflight_robustness01",
+      "file_count": 49,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "35d91a3c3a9dc5ea851274dd4d318a0f38f9f6c331ce499b3b694bfb31b8a356"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "893bc16dfa0e333546bcbc5c13a1926924966d59dbe51e82f6b7e5c0d84687fc"
+        }
+      ],
+      "task_write_operations": "NONE"
+    },
+    {
+      "namespace": "results/timely_capacity_campaign/v2_2/edge_inflight_robustness02",
+      "file_count": 203,
+      "key_artifact_hashes": [
+        {
+          "path": "plan.json",
+          "sha256": "096de1830f6389f1c537664c001102659e4773465882d7499608d133515d5b5d"
+        },
+        {
+          "path": "plan.sha256",
+          "sha256": "bbb3819e024cf67103eaf302becc5b4c480205ebbf10dea6a221826bb0846ce3"
+        },
+        {
+          "path": "analysis01/edge_C_robustness.json",
+          "sha256": "f4834afe2c0edf3ac621f8c6974d0a138d67a488d237f0205496a04cdb606073"
+        }
+      ],
+      "task_write_operations": "NONE"
+    }
+  ]
+}

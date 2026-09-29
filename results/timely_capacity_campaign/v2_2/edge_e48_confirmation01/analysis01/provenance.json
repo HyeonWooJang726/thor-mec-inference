@@ -1,0 +1,10 @@
+{
+  "plan_SHA256": "b3705e5a34863ac262ff714b4ff031028ec8a9b5a78d8df97338832c869760c3",
+  "CPU_restore_status": "PASS",
+  "phase_search_used": false,
+  "Thor_versus_Edge_clock_subtraction": false,
+  "server_queue_stall_count": "N/A; queue timestamps and observed peak available",
+  "warmup_excluded": true,
+  "E64_robust_classification": false,
+  "network_rate_definition": "network_TX_bytes_delta*8/seconds; observed transmitted-data rate, not PHY"
+}

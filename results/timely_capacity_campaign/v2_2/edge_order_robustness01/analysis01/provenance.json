@@ -1,0 +1,11 @@
+{
+  "plan_sha256": "233370402d62b9d185710ef664b6a03c730fa3f72a3784fa86fc9ac59710c727",
+  "CPU_restore_status": "PASS",
+  "Edge_raw_required": true,
+  "run_level_metrics_not_allocated_to_positions": [
+    "pending",
+    "TX_bytes",
+    "observed_transmitted_data_rate"
+  ],
+  "Thor_Edge_clock_subtraction": false
+}

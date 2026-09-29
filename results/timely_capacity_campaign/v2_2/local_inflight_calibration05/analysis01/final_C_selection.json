@@ -1,0 +1,26 @@
+{
+  "per_C_supply_class": {
+    "3": "SATURATED_VALID",
+    "4": "SATURATED_VALID",
+    "5": "SATURATED_VALID",
+    "6": "SATURATED_VALID"
+  },
+  "C_selected": 3,
+  "source_ceiling_reached": false,
+  "plateau_supported": true,
+  "C7_extension_required": false,
+  "repeat_ambiguity": false,
+  "repeat_ambiguity_kind": null,
+  "invalid_run_ids": [],
+  "calibration05_is_selection_dataset": true,
+  "previous_calibrations_used_for_selection": false,
+  "OC3_diagnostic_only": true,
+  "no_C7_or_third_repeat_automatic": true,
+  "r_3": 232.8,
+  "r_4": 234.85833333333335,
+  "r_5": 235.47500000000002,
+  "r_6": 234.76666666666665,
+  "r6_over_r5": 0.9969918958134266,
+  "primary_verdict": "FINAL_SATURATED_PLATEAU_C_SELECTED",
+  "selection_reason": "All C are 2/2 SATURATED_VALID, r6 <= 1.02*r5, and the selected C is the smallest within 2% of the Calibration05 same-session maximum."
+}

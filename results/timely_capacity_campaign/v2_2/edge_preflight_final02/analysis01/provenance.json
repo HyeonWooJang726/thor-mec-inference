@@ -1,0 +1,7 @@
+{
+  "plan_SHA256": "4d4e5e4db784691fc188f15b0feb51c5710eb0a90db3b527f5048c2feb14b52f",
+  "CPU_restore_status": "PASS",
+  "phase_search_used": false,
+  "Thor_versus_Edge_clock_subtraction": false,
+  "server_queue_stall_count": "N/A; queue timestamps and observed peak available"
+}

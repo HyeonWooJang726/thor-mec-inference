@@ -1,0 +1,85 @@
+{
+  "rate": 80,
+  "seconds": 30,
+  "admitted": 2400,
+  "completed": 2263,
+  "expired": 137,
+  "timely": 1215,
+  "Edge_timely_ratio": 0.50625,
+  "timely_FPS": 40.5,
+  "Edge_E2E_ms": {
+    "mean": 107.55417196332301,
+    "p50": 96.964001,
+    "p95": 194.0245578,
+    "p99": 235.09110936000002
+  },
+  "errors": [],
+  "integrity_status": "VALID",
+  "after_drain_unfinished": 0,
+  "run_id": "EDGEF02_E80_A2",
+  "pattern": "ALIGNED",
+  "repeat": 2,
+  "stage": "BASE",
+  "TIR_admission": 0.50625,
+  "late_completed": 1048,
+  "request_response_latency_ms": {
+    "mean": 85.05973523066726,
+    "p50": 82.202731,
+    "p95": 132.1406637,
+    "p99": 180.7498064600002
+  },
+  "request_response_definition": "Thor monotonic socket_submission_ns to response_completion_ns; not one-way network",
+  "active_completed_FPS": 75.2,
+  "server_queue_peak_from_FINAL": 3,
+  "server_queue_stall_event_count": null,
+  "server_queue_stall_note": "No distinct stall-event counter in frozen server; queue timestamps available in server requests.csv",
+  "payload_admitted_frames": 2400,
+  "payload_bytes_per_frame": 691200,
+  "payload_submitted_frames": 2263,
+  "payload_submitted_bytes": 1564185600,
+  "network_TX_bytes_delta": 1644103043,
+  "wifi": {
+    "start": {
+      "timestamp_ns": 20583004475699,
+      "command": [
+        "iw",
+        "dev",
+        "wlP1p1s0",
+        "link"
+      ],
+      "returncode": 0,
+      "stdout": "Connected to a8:6e:84:50:70:8e (on wlP1p1s0)\n\tSSID: TP-Link_7090_5G\n\tfreq: 5240.0\n\tRX: 451489956 bytes (699187 packets)\n\tTX: 2342991093 bytes (3195799 packets)\n\tsignal: -41 dBm\n\trx bitrate: 1200.9 MBit/s 80MHz HE-MCS 11 HE-NSS 2 HE-GI 0 HE-DCM 0\n\ttx bitrate: 576.4 MBit/s 160MHz HE-MCS 5 HE-NSS 1 HE-GI 0 HE-DCM 0\n",
+      "stderr": "",
+      "status": "AVAILABLE",
+      "BSSID": "a8:6e:84:50:70:8e",
+      "signal_dBm": -41.0,
+      "tx_bitrate_Mbps": 576.4,
+      "connected": true
+    },
+    "end": {
+      "timestamp_ns": 20614156110592,
+      "command": [
+        "iw",
+        "dev",
+        "wlP1p1s0",
+        "link"
+      ],
+      "returncode": 0,
+      "stdout": "Connected to a8:6e:84:50:70:8e (on wlP1p1s0)\n\tSSID: TP-Link_7090_5G\n\tfreq: 5240.0\n\tRX: 487757981 bytes (716666 packets)\n\tTX: 3987094136 bytes (3608679 packets)\n\tsignal: -41 dBm\n\trx bitrate: 1200.9 MBit/s 80MHz HE-MCS 11 HE-NSS 2 HE-GI 0 HE-DCM 0\n\ttx bitrate: 1921.5 MBit/s 160MHz HE-MCS 9 HE-NSS 2 HE-GI 0 HE-DCM 0\n",
+      "stderr": "",
+      "status": "AVAILABLE",
+      "BSSID": "a8:6e:84:50:70:8e",
+      "signal_dBm": -41.0,
+      "tx_bitrate_Mbps": 1921.5,
+      "connected": true
+    },
+    "endpoint_disconnected_observed": false,
+    "endpoint_BSSID_changed": false,
+    "intervening_disconnect_reconnect": "UNOBSERVED: endpoint snapshots cannot exclude reconnects; no event timestamps inferred"
+  },
+  "network_carrier_counters_unchanged": true,
+  "CPU_pin_start": "PASS",
+  "CPU_pin_end": "PASS",
+  "Thor_GPU_frequency_restore": "NOT_APPLICABLE_NO_THOR_GPU_CONTROL",
+  "scientific_result_eligible": true
+}

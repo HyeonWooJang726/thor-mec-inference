@@ -1,0 +1,21 @@
+{
+  "CE1_ALIGNED_TIR_R1": 0.6284722222222222,
+  "CE1_ALIGNED_TIR_R2": 0.7208333333333333,
+  "CE2_ALIGNED_TIR_R1": 0.7666666666666667,
+  "CE2_ALIGNED_TIR_R2": 0.7458333333333333,
+  "Delta_R1": 0.1381944444444445,
+  "Delta_R2": 0.025000000000000022,
+  "C_E_selected": null,
+  "primary_verdict": "EDGE_C_REPEAT_AMBIGUOUS",
+  "repeat_ambiguity": true,
+  "aligned_staggered_gap_CE1": [
+    0.3458333333333333,
+    0.2583333333333333
+  ],
+  "aligned_staggered_gap_CE2": [
+    0.1611111111111111,
+    0.24097222222222225
+  ],
+  "server_configuration_method": "METHOD_B_PROCESS_RESTART",
+  "selection_metric": "overall E48 ALIGNED TIR only; absolute +0.10 both repeats"
+}

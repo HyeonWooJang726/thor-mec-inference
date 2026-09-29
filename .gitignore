@@ -77,3 +77,4 @@ ENV/
 .DS_Store
 Thumbs.db
 desktop.ini
+/experiment_workspace/

@@ -1,0 +1,243 @@
+{
+  "order": [
+    {
+      "run_id": "EDGEINFLIGHT02_CE1_R1_A",
+      "stage": "MEASURED",
+      "rate": 48,
+      "per_stream_rate": 6,
+      "pattern": "ALIGNED",
+      "repeat": 1,
+      "order_index": 1,
+      "seconds": 30,
+      "deadline_ms": 100,
+      "source_streams": 8,
+      "source_FPS_per_stream": 30,
+      "phase_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "edge_C": 1,
+      "edge_B": 1
+    },
+    {
+      "run_id": "EDGEINFLIGHT02_CE1_R1_S",
+      "stage": "MEASURED",
+      "rate": 48,
+      "per_stream_rate": 6,
+      "pattern": "STAGGERED",
+      "repeat": 1,
+      "order_index": 2,
+      "seconds": 30,
+      "deadline_ms": 100,
+      "source_streams": 8,
+      "source_FPS_per_stream": 30,
+      "phase_vector": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "edge_C": 1,
+      "edge_B": 1
+    },
+    {
+      "run_id": "EDGEINFLIGHT02_CE2_R1_A",
+      "stage": "MEASURED",
+      "rate": 48,
+      "per_stream_rate": 6,
+      "pattern": "ALIGNED",
+      "repeat": 1,
+      "order_index": 3,
+      "seconds": 30,
+      "deadline_ms": 100,
+      "source_streams": 8,
+      "source_FPS_per_stream": 30,
+      "phase_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "edge_C": 2,
+      "edge_B": 1
+    },
+    {
+      "run_id": "EDGEINFLIGHT02_CE2_R1_S",
+      "stage": "MEASURED",
+      "rate": 48,
+      "per_stream_rate": 6,
+      "pattern": "STAGGERED",
+      "repeat": 1,
+      "order_index": 4,
+      "seconds": 30,
+      "deadline_ms": 100,
+      "source_streams": 8,
+      "source_FPS_per_stream": 30,
+      "phase_vector": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "edge_C": 2,
+      "edge_B": 1
+    },
+    {
+      "run_id": "EDGEINFLIGHT02_CE2_R2_S",
+      "stage": "MEASURED",
+      "rate": 48,
+      "per_stream_rate": 6,
+      "pattern": "STAGGERED",
+      "repeat": 2,
+      "order_index": 5,
+      "seconds": 30,
+      "deadline_ms": 100,
+      "source_streams": 8,
+      "source_FPS_per_stream": 30,
+      "phase_vector": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "edge_C": 2,
+      "edge_B": 1
+    },
+    {
+      "run_id": "EDGEINFLIGHT02_CE2_R2_A",
+      "stage": "MEASURED",
+      "rate": 48,
+      "per_stream_rate": 6,
+      "pattern": "ALIGNED",
+      "repeat": 2,
+      "order_index": 6,
+      "seconds": 30,
+      "deadline_ms": 100,
+      "source_streams": 8,
+      "source_FPS_per_stream": 30,
+      "phase_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "edge_C": 2,
+      "edge_B": 1
+    },
+    {
+      "run_id": "EDGEINFLIGHT02_CE1_R2_S",
+      "stage": "MEASURED",
+      "rate": 48,
+      "per_stream_rate": 6,
+      "pattern": "STAGGERED",
+      "repeat": 2,
+      "order_index": 7,
+      "seconds": 30,
+      "deadline_ms": 100,
+      "source_streams": 8,
+      "source_FPS_per_stream": 30,
+      "phase_vector": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "edge_C": 1,
+      "edge_B": 1
+    },
+    {
+      "run_id": "EDGEINFLIGHT02_CE1_R2_A",
+      "stage": "MEASURED",
+      "rate": 48,
+      "per_stream_rate": 6,
+      "pattern": "ALIGNED",
+      "repeat": 2,
+      "order_index": 8,
+      "seconds": 30,
+      "deadline_ms": 100,
+      "source_streams": 8,
+      "source_FPS_per_stream": 30,
+      "phase_vector": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "edge_C": 1,
+      "edge_B": 1
+    }
+  ],
+  "stages": [
+    {
+      "stage": 1,
+      "start_index": 0,
+      "end_index": 2,
+      "C_E": 1,
+      "run_ids": [
+        "EDGEINFLIGHT02_CE1_R1_A",
+        "EDGEINFLIGHT02_CE1_R1_S"
+      ],
+      "boundary_after": "STAGE_COMPLETE_WAITING_FOR_EDGE_RESTART"
+    },
+    {
+      "stage": 2,
+      "start_index": 2,
+      "end_index": 6,
+      "C_E": 2,
+      "run_ids": [
+        "EDGEINFLIGHT02_CE2_R1_A",
+        "EDGEINFLIGHT02_CE2_R1_S",
+        "EDGEINFLIGHT02_CE2_R2_S",
+        "EDGEINFLIGHT02_CE2_R2_A"
+      ],
+      "boundary_after": "STAGE_COMPLETE_WAITING_FOR_EDGE_RESTART"
+    },
+    {
+      "stage": 3,
+      "start_index": 6,
+      "end_index": 8,
+      "C_E": 1,
+      "run_ids": [
+        "EDGEINFLIGHT02_CE1_R2_S",
+        "EDGEINFLIGHT02_CE1_R2_A"
+      ],
+      "boundary_after": "CAMPAIGN_COMPLETE"
+    }
+  ],
+  "method": "METHOD_B_PROCESS_RESTART",
+  "first_INVALID": "Stop remaining runs; no retry/resume/overwrite"
+}

@@ -1,0 +1,163 @@
+{
+  "method": "frozen: min across eligible run medians of HIGH-window Local raw completion FPS",
+  "HIGH_window_eligibility_minimum": 5,
+  "eligible_run_count": 23,
+  "eligible_mu_high_by_run": {
+    "BLOCKB02_L216_A1": 208.0,
+    "BLOCKB02_L216_S1": 209.0,
+    "BLOCKB02_L208_S1": 208.0,
+    "BLOCKB02_L208_A1": 204.0,
+    "BLOCKB02_L200_A1": 199.0,
+    "BLOCKB02_L208_A2": 202.0,
+    "BLOCKB02_L208_S2": 205.0,
+    "BLOCKB02_L216_S2": 209.0,
+    "BLOCKB02_L216_A2": 206.0,
+    "BLOCKB02_L216_S3": 208.0,
+    "BLOCKB02_L216_A3": 208.0,
+    "BLOCKB02_L208_A3": 205.0,
+    "BLOCKB02_L208_S3": 204.0,
+    "BLOCKB02_L216_A4": 206.0,
+    "BLOCKB02_L216_S4": 211.0,
+    "BLOCKB02_L200_A4": 201.0,
+    "BLOCKB02_L208_S4": 208.0,
+    "BLOCKB02_L208_A4": 204.0,
+    "BLOCKB02_L208_S5": 208.0,
+    "BLOCKB02_L208_A5": 206.5,
+    "BLOCKB02_L216_A5": 208.5,
+    "BLOCKB02_L216_S5": 208.5,
+    "BLOCKB02_L200_A5": 197.0
+  },
+  "excluded_runs": [
+    {
+      "run_id": "BLOCKB02_L200_S1",
+      "condition": "L200S",
+      "HIGH_window_count": 0,
+      "excluded_reason": "HIGH_WINDOWS_LT_5"
+    },
+    {
+      "run_id": "BLOCKB02_L200_A2",
+      "condition": "L200A",
+      "HIGH_window_count": 2,
+      "excluded_reason": "HIGH_WINDOWS_LT_5"
+    },
+    {
+      "run_id": "BLOCKB02_L200_S2",
+      "condition": "L200S",
+      "HIGH_window_count": 0,
+      "excluded_reason": "HIGH_WINDOWS_LT_5"
+    },
+    {
+      "run_id": "BLOCKB02_L200_S3",
+      "condition": "L200S",
+      "HIGH_window_count": 0,
+      "excluded_reason": "HIGH_WINDOWS_LT_5"
+    },
+    {
+      "run_id": "BLOCKB02_L200_A3",
+      "condition": "L200A",
+      "HIGH_window_count": 4,
+      "excluded_reason": "HIGH_WINDOWS_LT_5"
+    },
+    {
+      "run_id": "BLOCKB02_L200_S4",
+      "condition": "L200S",
+      "HIGH_window_count": 1,
+      "excluded_reason": "HIGH_WINDOWS_LT_5"
+    },
+    {
+      "run_id": "BLOCKB02_L200_S5",
+      "condition": "L200S",
+      "HIGH_window_count": 0,
+      "excluded_reason": "HIGH_WINDOWS_LT_5"
+    }
+  ],
+  "mu_backlog_lower_FPS": 197.0,
+  "lower_envelope_source_run_ids": [
+    "BLOCKB02_L200_A5"
+  ],
+  "bound_name": "conservative empirical backlog-service lower envelope; not a confidence bound",
+  "mu_backlog_lower_per_slot": 6.566666666666666,
+  "tested_lambda_FPS": [
+    200,
+    208,
+    216
+  ],
+  "tested_lambda_per_slot": {
+    "200": 6.666666666666667,
+    "208": 6.933333333333334,
+    "216": 7.2
+  },
+  "strict_lambda_less_than_bound": {
+    "200": false,
+    "208": false,
+    "216": false
+  },
+  "deadline_evidence_rule_for_exploratory_selection": "Grid02 condition has all five TIR_total >= 0.99; a transparent audit convention, not a changed Grid02 verdict",
+  "deadline_evidence_by_condition": {
+    "L200A": {
+      "TIR_total_5_runs": [
+        0.9079861111111112,
+        0.9130555555555555,
+        0.9234027777777778,
+        0.9245138888888889,
+        0.856875
+      ],
+      "five_of_five_at_least_0_99": false
+    },
+    "L200S": {
+      "TIR_total_5_runs": [
+        0.9967361111111112,
+        0.99875,
+        0.9966666666666667,
+        0.9991666666666666,
+        0.9943055555555556
+      ],
+      "five_of_five_at_least_0_99": true
+    },
+    "L208A": {
+      "TIR_total_5_runs": [
+        0.8724305555555556,
+        0.8520833333333333,
+        0.8761805555555555,
+        0.8731944444444445,
+        0.8713888888888889
+      ],
+      "five_of_five_at_least_0_99": false
+    },
+    "L208S": {
+      "TIR_total_5_runs": [
+        0.9944444444444445,
+        0.8326388888888889,
+        0.8211111111111111,
+        0.9997916666666666,
+        0.9960416666666667
+      ],
+      "five_of_five_at_least_0_99": false
+    },
+    "L216A": {
+      "TIR_total_5_runs": [
+        0.8388194444444445,
+        0.8115277777777777,
+        0.8302777777777778,
+        0.814375,
+        0.8315972222222222
+      ],
+      "five_of_five_at_least_0_99": false
+    },
+    "L216S": {
+      "TIR_total_5_runs": [
+        0.7875694444444444,
+        0.7886805555555556,
+        0.7682638888888889,
+        0.8021527777777778,
+        0.7822916666666667
+      ],
+      "five_of_five_at_least_0_99": false
+    }
+  },
+  "eligible_rates_after_both_filters": [],
+  "confirmation_selection_candidate_FPS": null,
+  "candidate_status": "INCONCLUSIVE_NO_TESTED_RATE_PASSES_BOTH_FILTERS",
+  "selection_evidence_strength": "MULTIPLE_ELIGIBLE_RUNS_BUT_CONSERVATIVE_ENVELOPE_LIMITS_SELECTION",
+  "L192_selection_excluded": true
+}

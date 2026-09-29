@@ -1,0 +1,10 @@
+{
+  "C_E_usable": {
+    "ALIGNED": null,
+    "STAGGERED": null
+  },
+  "E88_branch": "NONE",
+  "not_hybrid_capacity": true,
+  "classification_rule": "2/2 TIR_admission >=0.90 usable; 2/2 <0.80 fail; otherwise boundary",
+  "historical_rows_in_new_classification": 0
+}

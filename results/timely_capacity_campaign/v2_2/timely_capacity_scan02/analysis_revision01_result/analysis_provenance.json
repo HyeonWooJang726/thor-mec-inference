@@ -1,0 +1,9 @@
+{
+  "revision_sources": {
+    "scripts/timely_capacity_campaign/timely_capacity_scan/analysis_revision01/analyze_revision.py": "0826df64a7d5d4928bd8db2cc07106b0c4879e3a38071e2e57b105e2bb530ce9",
+    "scripts/timely_capacity_campaign/timely_capacity_scan/analysis_revision01/test_revision.py": "68fa7c53e2d4c1a8cd8c48fc3a83ec4078bd4e2a9cdf88b5e27ad403d83dabd1",
+    "results/timely_capacity_campaign/v2_2/timely_capacity_scan01/analysis_revision01/TIMELY_CAPACITY_SCAN_PLAN.md": "1baa52a8a6550660fdeedc6d0c0a7d3cf959593196554e243a17f1fe5bd42f89"
+  },
+  "original_plan_sha256": "609927f75eda08e6708286bfcd24d6ea3a04f20d9f08800cc4593fc28db51ebb",
+  "mechanism_reviews_sha256": null
+}

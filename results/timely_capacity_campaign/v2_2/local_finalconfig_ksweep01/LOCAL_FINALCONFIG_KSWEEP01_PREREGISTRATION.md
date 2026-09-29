@@ -1,0 +1,13 @@
+# Local final-configuration K sweep 01: preregistration
+
+Scientific question: How does actual Local-only multi-stream timely service scale with the number of independent 30-FPS streams under the final Local runtime configuration C_L=3, B=1?
+
+The sole independent variable is physical stream count K=1,2,3,4,5,6,7,8. Each run uses the first K distinct frozen Warehouse source videos and stream IDs 0..K-1. All frames are admitted to Local at their original 30-FPS source timestamps. Offered load is 30K FPS. Edge is off. C_L=3, B=1, RT-DETR Warehouse v1.0.2, FP16 TensorRT engine, RAW source decode and preprocessing, MAXN, GPU target 1575 MHz, CUDA Graph off, SpinWait off, one TRT stream per context, deadline D=100 ms, pruning off, and the seven-policy Thor CPU performance pin at 2601000 kHz are fixed. The validated V2.2 full Local execution, phase timing, 30 warm-up inferences per active worker, 60-s active interval, drain and terminal accounting are retained. Warm-up is excluded from measurement.
+
+Five independent measured repeats are planned for each K (40 runs). Repeat order is ascending K for R1, R3, R5 and descending K for R2, R4. The run IDs and exact order are frozen in `session_plan.json`. No post-result reorder, sixth repeat, retry, resume, or overwrite is allowed. On first INVALID, stop and preserve the namespace.
+
+Primary descriptive outputs per K are active completed FPS, overall timely-inference ratio, worst-stream timely-inference ratio, and timely FPS. Preserve all five repeat values; report mean and sample standard deviation. Supporting outputs are queue and service distributions, active Local concurrency, backlog at active end, drain accounting, and per-stream timely ratios. Exact expected physical source count is K × 30 × 60, with no missing, duplicate, extra-stream or unexpected-ID tolerance. CPU/GPU and process integrity must pass.
+
+This is a final-configuration Local-only multi-stream scaling baseline. It is not a C_L selection, C_E, batching, Edge, or temporal-placement optimization experiment. K=8 with reduced Local admission is a different experiment and cannot replace a physical K-stream sweep. No new post-hoc sustainable-K threshold is registered. A later claim that N streams are supported must use an already preregistered timely-service feasibility criterion or a separately preregistered criterion fixed before measured execution. Synthetic regression artifacts are structural validation only and are never performance measurements.
+
+All existing Local calibration, E48, Grid02, Confirmation and Edge robustness evidence remains unchanged. The prior C_L=2 hybrid data and this C_L=3 Local-only baseline must be reported as distinct configurations.

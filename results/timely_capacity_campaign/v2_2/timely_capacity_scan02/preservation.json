@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "Attempt01_file_count": 63,
+  "changed_or_missing_Attempt01_files": [],
+  "Attempt01_child_workload_count": 0,
+  "Attempt01_plan_sha256": "f632744cae9f38c2ce88b9d0e44947808762ff4bd18c7cb74da2fbf04db61f36",
+  "Attempt02_plan_sha256": "609927f75eda08e6708286bfcd24d6ea3a04f20d9f08800cc4593fc28db51ebb",
+  "V22_worker_source_sha256": "6bf2c6dcce91b0d986480e7e82104dbc6310e6516482134062c8c9a1a04a7b6b",
+  "worker_byte_identical": true,
+  "Attempt02_marker_exists": false,
+  "source_hash_drift": [],
+  "GPU_host_read_only_readiness": "PASS"
+}

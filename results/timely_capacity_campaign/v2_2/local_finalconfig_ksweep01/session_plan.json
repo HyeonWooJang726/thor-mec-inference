@@ -1,0 +1,286 @@
+{
+  "measured_run_count": 40,
+  "repeats_per_K": 5,
+  "order": [
+    {
+      "run_id": "LOCALFINALKS01_K1_R1",
+      "K": 1,
+      "repeat": 1,
+      "offered_FPS": 30,
+      "expected_source_frames": 1800
+    },
+    {
+      "run_id": "LOCALFINALKS01_K2_R1",
+      "K": 2,
+      "repeat": 1,
+      "offered_FPS": 60,
+      "expected_source_frames": 3600
+    },
+    {
+      "run_id": "LOCALFINALKS01_K3_R1",
+      "K": 3,
+      "repeat": 1,
+      "offered_FPS": 90,
+      "expected_source_frames": 5400
+    },
+    {
+      "run_id": "LOCALFINALKS01_K4_R1",
+      "K": 4,
+      "repeat": 1,
+      "offered_FPS": 120,
+      "expected_source_frames": 7200
+    },
+    {
+      "run_id": "LOCALFINALKS01_K5_R1",
+      "K": 5,
+      "repeat": 1,
+      "offered_FPS": 150,
+      "expected_source_frames": 9000
+    },
+    {
+      "run_id": "LOCALFINALKS01_K6_R1",
+      "K": 6,
+      "repeat": 1,
+      "offered_FPS": 180,
+      "expected_source_frames": 10800
+    },
+    {
+      "run_id": "LOCALFINALKS01_K7_R1",
+      "K": 7,
+      "repeat": 1,
+      "offered_FPS": 210,
+      "expected_source_frames": 12600
+    },
+    {
+      "run_id": "LOCALFINALKS01_K8_R1",
+      "K": 8,
+      "repeat": 1,
+      "offered_FPS": 240,
+      "expected_source_frames": 14400
+    },
+    {
+      "run_id": "LOCALFINALKS01_K8_R2",
+      "K": 8,
+      "repeat": 2,
+      "offered_FPS": 240,
+      "expected_source_frames": 14400
+    },
+    {
+      "run_id": "LOCALFINALKS01_K7_R2",
+      "K": 7,
+      "repeat": 2,
+      "offered_FPS": 210,
+      "expected_source_frames": 12600
+    },
+    {
+      "run_id": "LOCALFINALKS01_K6_R2",
+      "K": 6,
+      "repeat": 2,
+      "offered_FPS": 180,
+      "expected_source_frames": 10800
+    },
+    {
+      "run_id": "LOCALFINALKS01_K5_R2",
+      "K": 5,
+      "repeat": 2,
+      "offered_FPS": 150,
+      "expected_source_frames": 9000
+    },
+    {
+      "run_id": "LOCALFINALKS01_K4_R2",
+      "K": 4,
+      "repeat": 2,
+      "offered_FPS": 120,
+      "expected_source_frames": 7200
+    },
+    {
+      "run_id": "LOCALFINALKS01_K3_R2",
+      "K": 3,
+      "repeat": 2,
+      "offered_FPS": 90,
+      "expected_source_frames": 5400
+    },
+    {
+      "run_id": "LOCALFINALKS01_K2_R2",
+      "K": 2,
+      "repeat": 2,
+      "offered_FPS": 60,
+      "expected_source_frames": 3600
+    },
+    {
+      "run_id": "LOCALFINALKS01_K1_R2",
+      "K": 1,
+      "repeat": 2,
+      "offered_FPS": 30,
+      "expected_source_frames": 1800
+    },
+    {
+      "run_id": "LOCALFINALKS01_K1_R3",
+      "K": 1,
+      "repeat": 3,
+      "offered_FPS": 30,
+      "expected_source_frames": 1800
+    },
+    {
+      "run_id": "LOCALFINALKS01_K2_R3",
+      "K": 2,
+      "repeat": 3,
+      "offered_FPS": 60,
+      "expected_source_frames": 3600
+    },
+    {
+      "run_id": "LOCALFINALKS01_K3_R3",
+      "K": 3,
+      "repeat": 3,
+      "offered_FPS": 90,
+      "expected_source_frames": 5400
+    },
+    {
+      "run_id": "LOCALFINALKS01_K4_R3",
+      "K": 4,
+      "repeat": 3,
+      "offered_FPS": 120,
+      "expected_source_frames": 7200
+    },
+    {
+      "run_id": "LOCALFINALKS01_K5_R3",
+      "K": 5,
+      "repeat": 3,
+      "offered_FPS": 150,
+      "expected_source_frames": 9000
+    },
+    {
+      "run_id": "LOCALFINALKS01_K6_R3",
+      "K": 6,
+      "repeat": 3,
+      "offered_FPS": 180,
+      "expected_source_frames": 10800
+    },
+    {
+      "run_id": "LOCALFINALKS01_K7_R3",
+      "K": 7,
+      "repeat": 3,
+      "offered_FPS": 210,
+      "expected_source_frames": 12600
+    },
+    {
+      "run_id": "LOCALFINALKS01_K8_R3",
+      "K": 8,
+      "repeat": 3,
+      "offered_FPS": 240,
+      "expected_source_frames": 14400
+    },
+    {
+      "run_id": "LOCALFINALKS01_K8_R4",
+      "K": 8,
+      "repeat": 4,
+      "offered_FPS": 240,
+      "expected_source_frames": 14400
+    },
+    {
+      "run_id": "LOCALFINALKS01_K7_R4",
+      "K": 7,
+      "repeat": 4,
+      "offered_FPS": 210,
+      "expected_source_frames": 12600
+    },
+    {
+      "run_id": "LOCALFINALKS01_K6_R4",
+      "K": 6,
+      "repeat": 4,
+      "offered_FPS": 180,
+      "expected_source_frames": 10800
+    },
+    {
+      "run_id": "LOCALFINALKS01_K5_R4",
+      "K": 5,
+      "repeat": 4,
+      "offered_FPS": 150,
+      "expected_source_frames": 9000
+    },
+    {
+      "run_id": "LOCALFINALKS01_K4_R4",
+      "K": 4,
+      "repeat": 4,
+      "offered_FPS": 120,
+      "expected_source_frames": 7200
+    },
+    {
+      "run_id": "LOCALFINALKS01_K3_R4",
+      "K": 3,
+      "repeat": 4,
+      "offered_FPS": 90,
+      "expected_source_frames": 5400
+    },
+    {
+      "run_id": "LOCALFINALKS01_K2_R4",
+      "K": 2,
+      "repeat": 4,
+      "offered_FPS": 60,
+      "expected_source_frames": 3600
+    },
+    {
+      "run_id": "LOCALFINALKS01_K1_R4",
+      "K": 1,
+      "repeat": 4,
+      "offered_FPS": 30,
+      "expected_source_frames": 1800
+    },
+    {
+      "run_id": "LOCALFINALKS01_K1_R5",
+      "K": 1,
+      "repeat": 5,
+      "offered_FPS": 30,
+      "expected_source_frames": 1800
+    },
+    {
+      "run_id": "LOCALFINALKS01_K2_R5",
+      "K": 2,
+      "repeat": 5,
+      "offered_FPS": 60,
+      "expected_source_frames": 3600
+    },
+    {
+      "run_id": "LOCALFINALKS01_K3_R5",
+      "K": 3,
+      "repeat": 5,
+      "offered_FPS": 90,
+      "expected_source_frames": 5400
+    },
+    {
+      "run_id": "LOCALFINALKS01_K4_R5",
+      "K": 4,
+      "repeat": 5,
+      "offered_FPS": 120,
+      "expected_source_frames": 7200
+    },
+    {
+      "run_id": "LOCALFINALKS01_K5_R5",
+      "K": 5,
+      "repeat": 5,
+      "offered_FPS": 150,
+      "expected_source_frames": 9000
+    },
+    {
+      "run_id": "LOCALFINALKS01_K6_R5",
+      "K": 6,
+      "repeat": 5,
+      "offered_FPS": 180,
+      "expected_source_frames": 10800
+    },
+    {
+      "run_id": "LOCALFINALKS01_K7_R5",
+      "K": 7,
+      "repeat": 5,
+      "offered_FPS": 210,
+      "expected_source_frames": 12600
+    },
+    {
+      "run_id": "LOCALFINALKS01_K8_R5",
+      "K": 8,
+      "repeat": 5,
+      "offered_FPS": 240,
+      "expected_source_frames": 14400
+    }
+  ]
+}

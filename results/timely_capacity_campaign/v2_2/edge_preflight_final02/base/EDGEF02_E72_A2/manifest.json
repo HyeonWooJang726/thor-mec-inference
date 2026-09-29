@@ -1,0 +1,542 @@
+{
+  "plan_sha256": "4d4e5e4db784691fc188f15b0feb51c5710eb0a90db3b527f5048c2feb14b52f",
+  "condition": {
+    "run_id": "EDGEF02_E72_A2",
+    "stage": "BASE",
+    "rate": 72,
+    "per_stream_rate": 9,
+    "pattern": "ALIGNED",
+    "repeat": 2,
+    "order_index": 4,
+    "seconds": 30,
+    "deadline_ms": 100,
+    "source_streams": 8,
+    "source_FPS_per_stream": 30,
+    "phase_vector": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "edge_C": 1,
+    "edge_B": 1
+  },
+  "active_start_ns": 20418999678210,
+  "active_end_ns": 20448999678210,
+  "edge": {
+    "edge_ready": {
+      "backend": {
+        "TensorRT": "10.16.1.11",
+        "gpu_before": {
+          "timestamp_ns": 19400977812159,
+          "command": [
+            "nvidia-smi",
+            "-i",
+            "0",
+            "--query-gpu=name,driver_version,utilization.gpu,power.draw,temperature.gpu",
+            "--format=csv,noheader,nounits"
+          ],
+          "returncode": 0,
+          "stdout": "NVIDIA GeForce RTX 5070 Ti, 595.95, 0, 51.61, 33",
+          "stderr": ""
+        },
+        "resources": {
+          "worker_id": 0,
+          "context_object_id": 135897183381488,
+          "cuda_stream_pointer": 135896395583168,
+          "device_buffers": {
+            "inputs": 47351595008,
+            "pred_logits": 47294973952,
+            "pred_boxes": 47294982656
+          },
+          "pinned_host_buffers": {
+            "inputs": 8673820672,
+            "pred_logits": 8680112128,
+            "pred_boxes": 8680120832
+          },
+          "buffer_bytes": {
+            "inputs": 4915200,
+            "pred_logits": 8400,
+            "pred_boxes": 4800
+          }
+        },
+        "engine_aux_streams": 2,
+        "engine_sha256": "c94050f1969bca2fef9622c14fd9e307277ba26b0630bf5a669a980a8bad75e9",
+        "cache_sha256": "df1fcb6f842f6522ffdb743e14ec9bffc5aeac5a1be7954089b1d1ddc4407552",
+        "color_conversion": "numpy_channel_reverse_BGR_to_RGB",
+        "opencv_required": false,
+        "C_E": 1,
+        "B": 1,
+        "CUDA_Graph": false,
+        "dynamic_batching": false,
+        "inference_definition": "host H2D + execute_async_v3 + D2H + stream synchronization"
+      },
+      "warmup_inferences": 50,
+      "run_id": "EDGEF02_E72_A2",
+      "queue_cap": null
+    },
+    "edge_final": {
+      "received": 2107,
+      "completed": 2107,
+      "responses_sent": 2107,
+      "duplicates": 0,
+      "queue_peak_observed": 3,
+      "queue_cap_saturation": false,
+      "drops": 0,
+      "cleanup_started": true,
+      "cleanup_completed": true,
+      "end_received": true,
+      "backend": {
+        "TensorRT": "10.16.1.11",
+        "gpu_before": {
+          "timestamp_ns": 19400977812159,
+          "command": [
+            "nvidia-smi",
+            "-i",
+            "0",
+            "--query-gpu=name,driver_version,utilization.gpu,power.draw,temperature.gpu",
+            "--format=csv,noheader,nounits"
+          ],
+          "returncode": 0,
+          "stdout": "NVIDIA GeForce RTX 5070 Ti, 595.95, 0, 51.61, 33",
+          "stderr": ""
+        },
+        "resources": {
+          "worker_id": 0,
+          "context_object_id": 135897183381488,
+          "cuda_stream_pointer": 135896395583168,
+          "device_buffers": {
+            "inputs": 47351595008,
+            "pred_logits": 47294973952,
+            "pred_boxes": 47294982656
+          },
+          "pinned_host_buffers": {
+            "inputs": 8673820672,
+            "pred_logits": 8680112128,
+            "pred_boxes": 8680120832
+          },
+          "buffer_bytes": {
+            "inputs": 4915200,
+            "pred_logits": 8400,
+            "pred_boxes": 4800
+          }
+        },
+        "engine_aux_streams": 2,
+        "engine_sha256": "c94050f1969bca2fef9622c14fd9e307277ba26b0630bf5a669a980a8bad75e9",
+        "cache_sha256": "df1fcb6f842f6522ffdb743e14ec9bffc5aeac5a1be7954089b1d1ddc4407552",
+        "color_conversion": "numpy_channel_reverse_BGR_to_RGB",
+        "opencv_required": false,
+        "C_E": 1,
+        "B": 1,
+        "CUDA_Graph": false,
+        "dynamic_batching": false,
+        "inference_definition": "host H2D + execute_async_v3 + D2H + stream synchronization"
+      },
+      "warmup_inferences": 50,
+      "expired_request_ids": [
+        7,
+        12,
+        13,
+        14,
+        15,
+        21,
+        22,
+        23,
+        31,
+        38,
+        39,
+        45,
+        46,
+        47,
+        55,
+        61,
+        62,
+        63,
+        70,
+        71,
+        86,
+        87,
+        94,
+        95,
+        102,
+        103,
+        110,
+        111,
+        118,
+        119,
+        127,
+        133,
+        134,
+        135,
+        142,
+        143,
+        158,
+        159,
+        166,
+        167,
+        396,
+        397,
+        398,
+        399,
+        430,
+        431,
+        439,
+        445,
+        446,
+        447,
+        455,
+        615,
+        1231
+      ],
+      "client_expired_before_submission": 53,
+      "assigned": 2160,
+      "errors": [],
+      "integrity_status": "VALID",
+      "drain_completed": true,
+      "worker_thread_exited": true
+    },
+    "edge_threads_exited": true,
+    "edge_path_errors": []
+  },
+  "input_scope": "Cached actual RAW64030, source K8x30 synchronized slot admission; no Local inference",
+  "source_phase_ns": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "CPU_before": {
+    "status": "PASS",
+    "mode": "pinned",
+    "errors": [],
+    "snapshot": {
+      "monotonic_ns": 20418076404494,
+      "online": "0-13",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "policies": [
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy0",
+          "fields": {
+            "affected_cpus": "0 1",
+            "related_cpus": "0 1",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1691053\n1026000 775\n1080000 471\n1134000 400\n1188000 479\n1242000 714\n1296000 535\n1350000 590\n1404000 633\n1458000 728\n1512000 1014\n1566000 818\n1620000 1326\n1674000 7802\n1728000 827\n1782000 377\n1836000 237\n1890000 206\n1944000 193\n1998000 117\n2052000 115\n2106000 129\n2160000 178\n2214000 154\n2268000 121\n2322000 128\n2376000 133\n2430000 115\n2484000 108\n2538000 147\n2592000 170\n2601000 330680\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy2",
+          "fields": {
+            "affected_cpus": "2 3",
+            "related_cpus": "2 3",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1672729\n1026000 1397\n1080000 765\n1134000 694\n1188000 689\n1242000 1452\n1296000 859\n1350000 603\n1404000 632\n1458000 1086\n1512000 1964\n1566000 1534\n1620000 3416\n1674000 14315\n1728000 1004\n1782000 353\n1836000 425\n1890000 256\n1944000 337\n1998000 136\n2052000 108\n2106000 181\n2160000 504\n2214000 160\n2268000 129\n2322000 153\n2376000 387\n2430000 100\n2484000 96\n2538000 417\n2592000 165\n2601000 334429\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy4",
+          "fields": {
+            "affected_cpus": "4 5",
+            "related_cpus": "4 5",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1666708\n1026000 1866\n1080000 988\n1134000 898\n1188000 840\n1242000 1159\n1296000 769\n1350000 924\n1404000 579\n1458000 1288\n1512000 2977\n1566000 1624\n1620000 3877\n1674000 16223\n1728000 1097\n1782000 339\n1836000 293\n1890000 228\n1944000 254\n1998000 152\n2052000 129\n2106000 167\n2160000 272\n2214000 248\n2268000 207\n2322000 131\n2376000 224\n2430000 130\n2484000 171\n2538000 338\n2592000 235\n2601000 336139\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy6",
+          "fields": {
+            "affected_cpus": "6 7",
+            "related_cpus": "6 7",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1672294\n1026000 1086\n1080000 941\n1134000 908\n1188000 677\n1242000 1184\n1296000 774\n1350000 507\n1404000 456\n1458000 1246\n1512000 1866\n1566000 1583\n1620000 3934\n1674000 17222\n1728000 930\n1782000 333\n1836000 348\n1890000 208\n1944000 367\n1998000 112\n2052000 118\n2106000 113\n2160000 410\n2214000 202\n2268000 132\n2322000 99\n2376000 174\n2430000 76\n2484000 152\n2538000 239\n2592000 207\n2601000 332569\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy8",
+          "fields": {
+            "affected_cpus": "8 9",
+            "related_cpus": "8 9",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1664543\n1026000 906\n1080000 623\n1134000 641\n1188000 593\n1242000 1136\n1296000 701\n1350000 501\n1404000 500\n1458000 1092\n1512000 2943\n1566000 1621\n1620000 3877\n1674000 16252\n1728000 848\n1782000 274\n1836000 269\n1890000 247\n1944000 182\n1998000 117\n2052000 102\n2106000 79\n2160000 305\n2214000 153\n2268000 104\n2322000 92\n2376000 149\n2430000 111\n2484000 89\n2538000 237\n2592000 183\n2601000 341995\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy10",
+          "fields": {
+            "affected_cpus": "10 11",
+            "related_cpus": "10 11",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1668429\n1026000 967\n1080000 618\n1134000 495\n1188000 729\n1242000 977\n1296000 585\n1350000 493\n1404000 571\n1458000 806\n1512000 1855\n1566000 1610\n1620000 4553\n1674000 14712\n1728000 985\n1782000 436\n1836000 233\n1890000 292\n1944000 217\n1998000 101\n2052000 128\n2106000 101\n2160000 219\n2214000 144\n2268000 216\n2322000 163\n2376000 221\n2430000 75\n2484000 176\n2538000 342\n2592000 198\n2601000 339820\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy12",
+          "fields": {
+            "affected_cpus": "12 13",
+            "related_cpus": "12 13",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1684541\n1026000 614\n1080000 462\n1134000 432\n1188000 462\n1242000 672\n1296000 540\n1350000 511\n1404000 454\n1458000 692\n1512000 993\n1566000 1130\n1620000 3082\n1674000 9970\n1728000 896\n1782000 318\n1836000 228\n1890000 196\n1944000 236\n1998000 147\n2052000 104\n2106000 108\n2160000 220\n2214000 195\n2268000 102\n2322000 114\n2376000 209\n2430000 88\n2484000 90\n2538000 205\n2592000 154\n2601000 333296\n",
+          "time_in_state_readable": true
+        }
+      ]
+    }
+  },
+  "CPU_after": {
+    "status": "PASS",
+    "mode": "pinned",
+    "errors": [],
+    "snapshot": {
+      "monotonic_ns": 20449094979769,
+      "online": "0-13",
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "policies": [
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy0",
+          "fields": {
+            "affected_cpus": "0 1",
+            "related_cpus": "0 1",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1691053\n1026000 775\n1080000 471\n1134000 400\n1188000 479\n1242000 714\n1296000 535\n1350000 590\n1404000 633\n1458000 728\n1512000 1014\n1566000 818\n1620000 1326\n1674000 7802\n1728000 827\n1782000 377\n1836000 237\n1890000 206\n1944000 193\n1998000 117\n2052000 115\n2106000 129\n2160000 178\n2214000 154\n2268000 121\n2322000 128\n2376000 133\n2430000 115\n2484000 108\n2538000 147\n2592000 170\n2601000 333782\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy2",
+          "fields": {
+            "affected_cpus": "2 3",
+            "related_cpus": "2 3",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1672729\n1026000 1397\n1080000 765\n1134000 694\n1188000 689\n1242000 1452\n1296000 859\n1350000 603\n1404000 632\n1458000 1086\n1512000 1964\n1566000 1534\n1620000 3416\n1674000 14315\n1728000 1004\n1782000 353\n1836000 425\n1890000 256\n1944000 337\n1998000 136\n2052000 108\n2106000 181\n2160000 504\n2214000 160\n2268000 129\n2322000 153\n2376000 387\n2430000 100\n2484000 96\n2538000 417\n2592000 165\n2601000 337531\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy4",
+          "fields": {
+            "affected_cpus": "4 5",
+            "related_cpus": "4 5",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1666708\n1026000 1866\n1080000 988\n1134000 898\n1188000 840\n1242000 1159\n1296000 769\n1350000 924\n1404000 579\n1458000 1288\n1512000 2977\n1566000 1624\n1620000 3877\n1674000 16223\n1728000 1097\n1782000 339\n1836000 293\n1890000 228\n1944000 254\n1998000 152\n2052000 129\n2106000 167\n2160000 272\n2214000 248\n2268000 207\n2322000 131\n2376000 224\n2430000 130\n2484000 171\n2538000 338\n2592000 235\n2601000 339241\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy6",
+          "fields": {
+            "affected_cpus": "6 7",
+            "related_cpus": "6 7",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1672294\n1026000 1086\n1080000 941\n1134000 908\n1188000 677\n1242000 1184\n1296000 774\n1350000 507\n1404000 456\n1458000 1246\n1512000 1866\n1566000 1583\n1620000 3934\n1674000 17222\n1728000 930\n1782000 333\n1836000 348\n1890000 208\n1944000 367\n1998000 112\n2052000 118\n2106000 113\n2160000 410\n2214000 202\n2268000 132\n2322000 99\n2376000 174\n2430000 76\n2484000 152\n2538000 239\n2592000 207\n2601000 335671\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy8",
+          "fields": {
+            "affected_cpus": "8 9",
+            "related_cpus": "8 9",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1664543\n1026000 906\n1080000 623\n1134000 641\n1188000 593\n1242000 1136\n1296000 701\n1350000 501\n1404000 500\n1458000 1092\n1512000 2943\n1566000 1621\n1620000 3877\n1674000 16252\n1728000 848\n1782000 274\n1836000 269\n1890000 247\n1944000 182\n1998000 117\n2052000 102\n2106000 79\n2160000 305\n2214000 153\n2268000 104\n2322000 92\n2376000 149\n2430000 111\n2484000 89\n2538000 237\n2592000 183\n2601000 345097\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy10",
+          "fields": {
+            "affected_cpus": "10 11",
+            "related_cpus": "10 11",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1668429\n1026000 967\n1080000 618\n1134000 495\n1188000 729\n1242000 977\n1296000 585\n1350000 493\n1404000 571\n1458000 806\n1512000 1855\n1566000 1610\n1620000 4553\n1674000 14712\n1728000 985\n1782000 436\n1836000 233\n1890000 292\n1944000 217\n1998000 101\n2052000 128\n2106000 101\n2160000 219\n2214000 144\n2268000 216\n2322000 163\n2376000 221\n2430000 75\n2484000 176\n2538000 342\n2592000 198\n2601000 342922\n",
+          "time_in_state_readable": true
+        },
+        {
+          "path": "/sys/devices/system/cpu/cpufreq/policy12",
+          "fields": {
+            "affected_cpus": "12 13",
+            "related_cpus": "12 13",
+            "scaling_governor": "performance",
+            "scaling_min_freq": "2601000",
+            "scaling_max_freq": "2601000",
+            "cpuinfo_min_freq": "54000",
+            "cpuinfo_max_freq": "2601000",
+            "scaling_cur_freq": "2601000"
+          },
+          "errors": {},
+          "time_in_state_exists": true,
+          "time_in_state": "54000 0\n108000 0\n162000 0\n216000 0\n270000 0\n324000 0\n378000 0\n432000 0\n486000 0\n540000 0\n594000 0\n648000 0\n702000 0\n756000 0\n810000 0\n864000 0\n918000 0\n972000 1684541\n1026000 614\n1080000 462\n1134000 432\n1188000 462\n1242000 672\n1296000 540\n1350000 511\n1404000 454\n1458000 692\n1512000 993\n1566000 1130\n1620000 3082\n1674000 9970\n1728000 896\n1782000 318\n1836000 228\n1890000 196\n1944000 236\n1998000 147\n2052000 104\n2106000 108\n2160000 220\n2214000 195\n2268000 102\n2322000 114\n2376000 209\n2430000 88\n2484000 90\n2538000 205\n2592000 154\n2601000 336397\n",
+          "time_in_state_readable": true
+        }
+      ]
+    }
+  },
+  "wifi_start": {
+    "timestamp_ns": 20418076440521,
+    "command": [
+      "iw",
+      "dev",
+      "wlP1p1s0",
+      "link"
+    ],
+    "returncode": 0,
+    "stdout": "Connected to a8:6e:84:50:70:8e (on wlP1p1s0)\n\tSSID: TP-Link_7090_5G\n\tfreq: 5240.0\n\tRX: 315032580 bytes (633145 packets)\n\tTX: 473505568 bytes (1682683 packets)\n\tsignal: -42 dBm\n\trx bitrate: 1200.9 MBit/s 80MHz HE-MCS 11 HE-NSS 2 HE-GI 0 HE-DCM 0\n\ttx bitrate: 1729.6 MBit/s 160MHz HE-MCS 8 HE-NSS 2 HE-GI 0 HE-DCM 0\n",
+    "stderr": "",
+    "status": "AVAILABLE",
+    "BSSID": "a8:6e:84:50:70:8e",
+    "signal_dBm": -42.0,
+    "tx_bitrate_Mbps": 1729.6,
+    "connected": true
+  },
+  "wifi_end": {
+    "timestamp_ns": 20449095040037,
+    "command": [
+      "iw",
+      "dev",
+      "wlP1p1s0",
+      "link"
+    ],
+    "returncode": 0,
+    "stdout": "Connected to a8:6e:84:50:70:8e (on wlP1p1s0)\n\tSSID: TP-Link_7090_5G\n\tfreq: 5240.0\n\tRX: 349178156 bytes (649326 packets)\n\tTX: 2004557725 bytes (2059956 packets)\n\tsignal: -41 dBm\n\trx bitrate: 1200.9 MBit/s 80MHz HE-MCS 11 HE-NSS 2 HE-GI 0 HE-DCM 0\n\ttx bitrate: 1921.5 MBit/s 160MHz HE-MCS 9 HE-NSS 2 HE-GI 0 HE-DCM 0\n",
+    "stderr": "",
+    "status": "AVAILABLE",
+    "BSSID": "a8:6e:84:50:70:8e",
+    "signal_dBm": -41.0,
+    "tx_bitrate_Mbps": 1921.5,
+    "connected": true
+  }
+}

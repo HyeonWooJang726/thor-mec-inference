@@ -1,0 +1,10 @@
+{
+  "plan_sha256": "c41736aab6f2c7379cafe90b4c3ca6d0ec8ff811c3651f70c13a0fd05c9fb874",
+  "frozen_worker_sha256": "6bf2c6dcce91b0d986480e7e82104dbc6310e6516482134062c8c9a1a04a7b6b",
+  "calibration_worker_sha256": "01c5f7c8dd70a1f8b3720ccc102778c0ce354762d4b95253fd4379c467bc8a4b",
+  "source": "new calibration runs only",
+  "completion_FPS": "active completions divided by exactly 60 s; drain excluded",
+  "saturation": "Raw UNSUSTAINABLE is SATURATED_VALID; STABLE near 240 is SOURCE_LIMITED; BOUNDARY is AMBIGUOUS. Higher-C observed throughput can reject C2 even when source-limited, but cannot justify C2.",
+  "GPU_span_and_host_residual": "unchanged V2.2 phase instrumentation",
+  "previous_Confirmation02_reclassification": false
+}

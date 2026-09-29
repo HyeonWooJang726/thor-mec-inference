@@ -1,0 +1,13 @@
+{
+  "status": "EDGE_INFLIGHT_ROBUSTNESS02_READY_WAITING_FOR_EXECUTION_APPROVAL",
+  "verified_utc": "2026-09-29T02:02:13.645803+00:00",
+  "plan_sha256": "096de1830f6389f1c537664c001102659e4773465882d7499608d133515d5b5d",
+  "bundle_sha256": "6d4ed9e39d29b3a1267b1634a912622a95086a442d71e6d1d13071e7081d03d7",
+  "engine_sha256": "c94050f1969bca2fef9622c14fd9e307277ba26b0630bf5a669a980a8bad75e9",
+  "evidence_sha256": {
+    "edge_preflight_CE1.json": "b67e2146a74b673e732fd777ad4fcca7ea442b092f5aca240eed1e7319218a46",
+    "edge_preflight_CE2.json": "2ec497726dbdd61d27b7292f5889094129216377d7e6423753962051fed4709f",
+    "edge_preflight_stdout.txt": "e2471bb96cd5492bbc2f7042a87796c40742d3a89ec609aa27b10ed9cbe128db"
+  },
+  "scope": "Real Edge-local C_E=1/2 backend smoke only; no measured session"
+}

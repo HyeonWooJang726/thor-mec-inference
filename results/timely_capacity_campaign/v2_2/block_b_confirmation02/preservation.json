@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "protected_tree_sha256_before": {
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_grid01": "887b92e0263a26aa2a5ad80b0b529e933acaa66b40ee2ba0265b4438d1ec603b",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_grid02": "f4b68476c168ca48a145a16bbc3684d8d5f2b5feb221c6bb277fabb62453ac3e",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_confirmation01": "f124604e90c164a9ce7a12cf9a2ee8d2df5c91549d172e4062b369ddda3f6eaa",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/edge_order_robustness01": "318757a0b0bf579fc6e0f35b3635d1bec1cb09be24a412f39d58655a47e426ed",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_a_phase_pilot01": "68d98dccb61f45763556ea7d035c6e155535623f2a9fbbb74abaf2a88cfc7f46",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_a_phase_pilot02": "5e0b1fb136d920090e1ae28e0a1f8aa0653cdc3775b1be85be47e050b626b8d3"
+  },
+  "protected_tree_sha256_after": {
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_grid01": "887b92e0263a26aa2a5ad80b0b529e933acaa66b40ee2ba0265b4438d1ec603b",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_grid02": "f4b68476c168ca48a145a16bbc3684d8d5f2b5feb221c6bb277fabb62453ac3e",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_confirmation01": "f124604e90c164a9ce7a12cf9a2ee8d2df5c91549d172e4062b369ddda3f6eaa",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/edge_order_robustness01": "318757a0b0bf579fc6e0f35b3635d1bec1cb09be24a412f39d58655a47e426ed",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_a_phase_pilot01": "68d98dccb61f45763556ea7d035c6e155535623f2a9fbbb74abaf2a88cfc7f46",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_a_phase_pilot02": "5e0b1fb136d920090e1ae28e0a1f8aa0653cdc3775b1be85be47e050b626b8d3"
+  },
+  "protected_namespaces": [
+    "block_b_grid01",
+    "block_b_grid02",
+    "block_b_confirmation01",
+    "edge_order_robustness01",
+    "block_a_phase_pilot01",
+    "block_a_phase_pilot02"
+  ],
+  "Grid02_H1": "H1_NOT_SUPPORTED"
+}

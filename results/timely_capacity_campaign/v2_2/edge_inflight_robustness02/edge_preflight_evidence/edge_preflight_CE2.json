@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "timestamp_utc": "2026-09-29T02:01:50.737160+00:00",
+  "campaign": "EDGE_INFLIGHT_ROBUSTNESS02",
+  "C_E": 2,
+  "B": 1,
+  "plan_sha256": "096de1830f6389f1c537664c001102659e4773465882d7499608d133515d5b5d",
+  "bundle_sha256": "6d4ed9e39d29b3a1267b1634a912622a95086a442d71e6d1d13071e7081d03d7",
+  "server_source_sha256": "955a66b8b7a1334cae1c9b44b3ead772563913ceed219afc2ba4567ffc019402",
+  "engine_sha256": "c94050f1969bca2fef9622c14fd9e307277ba26b0630bf5a669a980a8bad75e9",
+  "engine_path": "/home/ainet/research/thor-mec-inference/server/models/rtdetr_warehouse_v1.0.2.fp16.b1.engine",
+  "cache_sha256": "df1fcb6f842f6522ffdb743e14ec9bffc5aeac5a1be7954089b1d1ddc4407552",
+  "TensorRT_version": "10.16.1.11",
+  "TensorRT_import": "PASS",
+  "engine_deserialization": "PASS",
+  "helpers_trt_binding": "PASS",
+  "worker_count": 2,
+  "context_count": 2,
+  "stream_count": 2,
+  "no_resource_alias": true,
+  "dtype_mapping": "PASS",
+  "warmup_status": "PASS",
+  "real_inference_status": "PASS",
+  "output_validity": "PASS",
+  "clean_teardown": true,
+  "workers": [
+    {
+      "worker_id": 0,
+      "warmup_completed": 2,
+      "real_inference_completed": 1,
+      "clean_teardown": true,
+      "resources": {
+        "worker_id": 0,
+        "context_object_id": 132610931723504,
+        "cuda_stream_pointer": 132596276438720,
+        "device_buffers": {
+          "inputs": 47301263360,
+          "pred_logits": 47469037568,
+          "pred_boxes": 47469046272
+        },
+        "pinned_host_buffers": {
+          "inputs": 8673820672,
+          "pred_logits": 8680112128,
+          "pred_boxes": 8680120832
+        },
+        "buffer_bytes": {
+          "inputs": 4915200,
+          "pred_logits": 8400,
+          "pred_boxes": 4800
+        }
+      },
+      "finite_expected_output": true
+    },
+    {
+      "worker_id": 1,
+      "warmup_completed": 2,
+      "real_inference_completed": 1,
+      "clean_teardown": true,
+      "resources": {
+        "worker_id": 1,
+        "context_object_id": 132610665369584,
+        "cuda_stream_pointer": 132609933850016,
+        "device_buffers": {
+          "inputs": 47357886464,
+          "pred_logits": 47469053440,
+          "pred_boxes": 47469062144
+        },
+        "pinned_host_buffers": {
+          "inputs": 8682209280,
+          "pred_logits": 8680125952,
+          "pred_boxes": 8680134656
+        },
+        "buffer_bytes": {
+          "inputs": 4915200,
+          "pred_logits": 8400,
+          "pred_boxes": 4800
+        }
+      },
+      "finite_expected_output": true
+    }
+  ],
+  "errors": [],
+  "scope": "Edge-local non-measured real TensorRT/CUDA backend smoke; no network client or listener"
+}

@@ -1,0 +1,20 @@
+{
+  "D100": {
+    "highest_2of2_TIMELY_FEASIBLE": 200,
+    "lowest_2of2_TIMELY_CLEAR_FAIL": 212,
+    "TIMELY_BOUNDARY_rates": [
+      208
+    ],
+    "invalid_or_missing_rates": [],
+    "observed_bracket": "200 to 212 FPS"
+  },
+  "D67": {
+    "highest_2of2_TIMELY_FEASIBLE": 200,
+    "lowest_2of2_TIMELY_CLEAR_FAIL": 216,
+    "TIMELY_BOUNDARY_rates": [
+      208
+    ],
+    "invalid_or_missing_rates": [],
+    "observed_bracket": "200 to 216 FPS"
+  }
+}

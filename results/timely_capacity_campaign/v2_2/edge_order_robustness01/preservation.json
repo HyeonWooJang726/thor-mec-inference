@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "protected_tree_sha256_before": {
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/edge_e48_confirmation01": "53c4e079f2fd11893fbda890e1e7e835283e447c74d9f591409d717119825005",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_a_phase_pilot02": "5e0b1fb136d920090e1ae28e0a1f8aa0653cdc3775b1be85be47e050b626b8d3",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/edge_preflight_final02": "df3cb75737d0b8895fc41d4187b521803de47ae3cf7149d866ce79ace0f37f98"
+  },
+  "protected_tree_sha256_after": {
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/edge_e48_confirmation01": "53c4e079f2fd11893fbda890e1e7e835283e447c74d9f591409d717119825005",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_a_phase_pilot02": "5e0b1fb136d920090e1ae28e0a1f8aa0653cdc3775b1be85be47e050b626b8d3",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/edge_preflight_final02": "df3cb75737d0b8895fc41d4187b521803de47ae3cf7149d866ce79ace0f37f98"
+  },
+  "final_status": "PASS",
+  "final_check_protected_tree_sha256": {
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/edge_e48_confirmation01": "53c4e079f2fd11893fbda890e1e7e835283e447c74d9f591409d717119825005",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_a_phase_pilot02": "5e0b1fb136d920090e1ae28e0a1f8aa0653cdc3775b1be85be47e050b626b8d3",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/edge_preflight_final02": "df3cb75737d0b8895fc41d4187b521803de47ae3cf7149d866ce79ace0f37f98"
+  },
+  "workload_sessions_started": 0,
+  "CPU_setting_changes_by_preparation": 0,
+  "git_diff_check": "PASS"
+}

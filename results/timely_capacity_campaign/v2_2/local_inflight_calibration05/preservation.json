@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "protected_before": {
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/raw_capacity_scan01": "2949d30e242afb33847a523c6534244202637cea0d10a2ab3dbbbd903820dd93",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_grid02": "f4b68476c168ca48a145a16bbc3684d8d5f2b5feb221c6bb277fabb62453ac3e",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_confirmation01": "f124604e90c164a9ce7a12cf9a2ee8d2df5c91549d172e4062b369ddda3f6eaa",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_confirmation02": "792a36491dd4598a123d4157f77cd4d04500de278098b96cde61c3722f1e6e1e",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/local_inflight_calibration01": "517bf4df4bda3353f0851908d303a552bf644dceb629228e1cb44c0dfd3b56bf",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/local_inflight_calibration02": "6dca480d8883b2a49ec0258dc12956ffeb8ac728494a37cdc2ad41117708f0ac",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/local_inflight_calibration03": "27c30b617cba91682f3b8331d889cd85d0a3c314649098a35e3090bff982dfc5",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/local_inflight_calibration04": "6dfae7cb0d9b3d1e571e6d9d53cb0ba9334c0f9ba0adc0345a07d821e17cc04d"
+  },
+  "protected_after": {
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/raw_capacity_scan01": "2949d30e242afb33847a523c6534244202637cea0d10a2ab3dbbbd903820dd93",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_grid02": "f4b68476c168ca48a145a16bbc3684d8d5f2b5feb221c6bb277fabb62453ac3e",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_confirmation01": "f124604e90c164a9ce7a12cf9a2ee8d2df5c91549d172e4062b369ddda3f6eaa",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_confirmation02": "792a36491dd4598a123d4157f77cd4d04500de278098b96cde61c3722f1e6e1e",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/local_inflight_calibration01": "517bf4df4bda3353f0851908d303a552bf644dceb629228e1cb44c0dfd3b56bf",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/local_inflight_calibration02": "6dca480d8883b2a49ec0258dc12956ffeb8ac728494a37cdc2ad41117708f0ac",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/local_inflight_calibration03": "27c30b617cba91682f3b8331d889cd85d0a3c314649098a35e3090bff982dfc5",
+    "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/local_inflight_calibration04": "6dfae7cb0d9b3d1e571e6d9d53cb0ba9334c0f9ba0adc0345a07d821e17cc04d"
+  }
+}

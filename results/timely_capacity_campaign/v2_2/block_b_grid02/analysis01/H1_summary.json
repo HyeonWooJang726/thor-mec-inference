@@ -1,0 +1,5 @@
+{
+  "verdict": "H1_NOT_SUPPORTED",
+  "rule": "same-round 5/5 strict timely FPS and non-strict worst TIR",
+  "statistical_significance_test": false
+}

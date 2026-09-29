@@ -1,0 +1,8 @@
+{
+  "plan_sha256": "ecc6cfc219572ae2754ae3f9f3d8c7e9bcdfed0274c18a951bf459d71a66abe3",
+  "CPU_restore": "PASS",
+  "warmup_excluded": "BLOCKB02_WARMUP_L200_E40_S",
+  "Edge_raw_collected": true,
+  "energy_scope": "Thor VIN only; full run energy unavailable until trace covers cleanup",
+  "Thor_vs_Edge_clock_subtraction": false
+}

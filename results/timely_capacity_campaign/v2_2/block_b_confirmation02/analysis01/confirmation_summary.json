@@ -1,0 +1,24 @@
+{
+  "C1": "L200S_FEASIBILITY_CONFIRMED",
+  "C2": "L200_TEMPORAL_EFFECT_CONFIRMED",
+  "C3": "L200S_VS_L216A_CONFIRMED",
+  "C4": "MAX_LOCAL_SELECTION_CONSISTENT",
+  "C5": "BOTH_FEASIBLE_NOT_OBSERVED",
+  "eta": 0.99,
+  "L208S_feasible_run_count": 1,
+  "L192S_feasible_run_count": 3,
+  "C5_Edge_assigned_FPS_if_both_feasible": null,
+  "no_statistical_significance_claim": true,
+  "mu_backlog_lower_not_used": true,
+  "L208S_total_timely_FPS_values": [
+    238.41666666666666,
+    237.43333333333334,
+    205.08333333333334,
+    218.8,
+    206.38333333333333
+  ],
+  "L208S_total_timely_FPS_spread": 33.333333333333314,
+  "Grid02_exploratory_H1_unchanged": "H1_NOT_SUPPORTED",
+  "warmup_excluded_from_scoring": "BCONF02_WARMUP_L200_S",
+  "confirmation_runs_only": true
+}

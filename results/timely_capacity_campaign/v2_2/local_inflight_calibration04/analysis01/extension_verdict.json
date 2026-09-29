@@ -1,0 +1,22 @@
+{
+  "per_C_supply_class": {
+    "3": "SATURATED_VALID",
+    "4": "SATURATED_VALID",
+    "5": "SATURATED_VALID"
+  },
+  "C_selected": 3,
+  "source_ceiling_reached": false,
+  "plateau_supported": true,
+  "C6_extension_required": false,
+  "repeat_ambiguity": false,
+  "repeat_ambiguity_kind": null,
+  "invalid_run_ids": [],
+  "OC3_diagnostic_only": true,
+  "no_C6_or_third_repeat_automatic": true,
+  "r_3": 232.14166666666665,
+  "r_4": 234.11666666666667,
+  "r_5": 235.58333333333334,
+  "r5_over_r4": 1.0062646828504307,
+  "primary_extension_verdict": "SATURATED_PLATEAU_C_SELECTED",
+  "selection_reason": "All C are 2/2 SATURATED_VALID, r5 <= 1.02*r4, and the selected C is the smallest within 2% of the same-session maximum."
+}

@@ -1,0 +1,48 @@
+{
+  "scope": "Existing BLOCK_B_GRID02 measured raw traces only; descriptive mechanism audit; no new causal identification",
+  "original_H1_verdict": "H1_NOT_SUPPORTED",
+  "hypotheses": {
+    "H_M1": {
+      "verdict": "SUPPORTED",
+      "evidence": "At matched Local rates, STAGGERED reduces frozen Edge slot peak from 8 to 1 (E24) or 2 (E32/E40). Mean across five runs of Edge offload-wait p95 changes A->S: L200 62.08->13.78 ms, L208 62.34->14.24 ms, L216 59.09->14.65 ms. Mean Edge-assigned TIR rises 0.492->0.983, 0.479->0.985, 0.437->0.979, respectively.",
+      "counterevidence_or_limit": "This is matched observational placement evidence, not isolated network/server causality. Local and Edge assignments change together."
+    },
+    "H_M2": {
+      "verdict": "SUPPORTED",
+      "evidence": "Exact frozen masks show zero-Local slots per 30-slot period: L216A 3, L208A 4, L200A 5, versus 0 for all three STAGGERED conditions. All 432000 active source assignments match frozen masks.",
+      "counterevidence_or_limit": "Removal of empty Local slots does not by itself determine the queue trajectory; STAGGERED also reduces per-slot Local peak."
+    },
+    "H_M3": {
+      "verdict": "PARTIALLY_SUPPORTED",
+      "evidence": "All five L216S runs have 60/60 HIGH windows, zero B_Q recoveries, 1799 consecutive B_Q-positive boundaries, and end B_Q 13-17. STAGGERED removes the explicit empty-Local recovery slots.",
+      "counterevidence_or_limit": "L216A also has 60/60 HIGH windows and zero recoveries. Three good L208S runs recover 171-199 times despite having no empty-Local slots. Phase change alone is not shown to cause persistent carry-over."
+    },
+    "H_M4": {
+      "verdict": "PARTIALLY_SUPPORTED",
+      "evidence": "L208S good R1/R4/R5 recover 181/171/199 times, end B_Q=1, expire zero; bad R2/R3 recover zero, stay HIGH 60/60 seconds, end B_Q=14/13, expire 196/255. Identical frozen masks hold in all five runs. Bad first-second B_Q means are 11.47/7.03 versus 1.70/5.17/1.13 in good runs; service and host residual are already higher in bad first seconds.",
+      "counterevidence_or_limit": "The first HIGH window is second zero in both bad runs, so no pre-transition windows exist. R4 begins with nontrivial B_Q and then recovers. The perturbation causing distinct trajectories is not identified."
+    },
+    "H_M5": {
+      "verdict": "PARTIALLY_SUPPORTED",
+      "evidence": "L200S has 318-330 B_Q recoveries/run, longest positive run 11-25 slots, end B_Q=1, zero Local expiry, and Local timely=200 FPS in all five runs. Edge smoothing raises total timely FPS relative to matched L200A in 5/5 rounds.",
+      "counterevidence_or_limit": "The prespecified conservative empirical backlog-service lower envelope is 197 FPS, below lambda_L=200. Thus the proposed lambda_L<mu_backlog inequality is not supported by this fixed pooled lower-bound procedure, despite observed L200S recovery."
+    }
+  },
+  "hardware_confound": {
+    "verdict": "NOT_SUPPORTED",
+    "evidence": "All L208S runs have CPU 2601000-kHz minimum residency fraction 1.0, GPU sampled non-target fraction 0, and CPU pin PASS. Bad R2/R3 mean temperatures 73.91/75.32 C overlap good R4/R5 75.25/75.09 C. Bad OC3 deltas 36/42 do not exceed good R4/R5 49/46. No measured hardware signal uniquely separates bad runs.",
+    "limit": "Sampled telemetry cannot exclude unobserved transients or other resource contention; GPU stream span and host residual are higher in bad runs and remain observational."
+  },
+  "edge_network_confound": {
+    "verdict": "NOT_SUPPORTED",
+    "evidence": "L208S bad R2/R3 Edge TIR is 0.99844/0.99896, Edge pending peak is 2/2, Edge integrity VALID, errors/drops/duplicates zero, and the BSSID is unchanged. Observed transmitted-data rates 186.14/186.05 Mbps overlap good R4 186.07 Mbps. The severe total-timely loss is on Local.",
+    "limit": "Bad offload-wait p95 is modestly higher (15.71/15.74 ms), and measured network summaries do not rule out subtle shared-host interactions."
+  },
+  "causal_claim": false,
+  "unresolved_questions": [
+    "What changes Local host residual and GPU stream span before the first one-second bad-run observation?",
+    "Can an independently controlled perturbation separate exogenous service variation from queue/expiry feedback?",
+    "How should a confirmation design handle the 197-FPS pooled lower envelope, which is set by L200A R5 and selects no tested Local rate?",
+    "Do the same recovery regimes recur under controlled repeat/thermal conditions without changing the frozen phase or runtime?"
+  ]
+}

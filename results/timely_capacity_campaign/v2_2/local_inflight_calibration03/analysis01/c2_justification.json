@@ -1,0 +1,43 @@
+{
+  "status": "C_L2_REJECTED_HIGHER_C_REQUIRED",
+  "primary_verdict": "C_L2_REJECTED_HIGHER_C_REQUIRED",
+  "r_C": {
+    "1": 178.675,
+    "2": 210.48333333333332,
+    "3": 232.23333333333335,
+    "4": 234.36666666666667
+  },
+  "r_1": 178.675,
+  "r_2": 210.48333333333332,
+  "r_3": 232.23333333333335,
+  "r_4": 234.36666666666667,
+  "T_2": 214.77891156462584,
+  "epsilon": 0.02,
+  "C1_not_minimal_observed": false,
+  "higher_C_observed_above_T2": {
+    "3": true,
+    "4": true
+  },
+  "per_C_supply_class": {
+    "1": "SATURATED_VALID",
+    "2": "SATURATED_VALID",
+    "3": "SATURATED_VALID",
+    "4": "SATURATED_VALID"
+  },
+  "per_repeat_verdict": {
+    "1": "C_L2_REJECTED_HIGHER_C_REQUIRED",
+    "2": "C_L2_REJECTED_HIGHER_C_REQUIRED"
+  },
+  "mean_based_verdict_before_ambiguity": "C_L2_REJECTED_HIGHER_C_REQUIRED",
+  "third_repeat_proposal_only": [],
+  "all_C_2of2_saturated_valid": true,
+  "auxiliary_plateau_eligible": [
+    3,
+    4
+  ],
+  "auxiliary_smallest_plateau_C": 3,
+  "C_selected": null,
+  "higher_C_final_winner_selected": false,
+  "higher_supply_design_needed": true,
+  "Grid02_and_Confirmation02_validity_unchanged": true
+}

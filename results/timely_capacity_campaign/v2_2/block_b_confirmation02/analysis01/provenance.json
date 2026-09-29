@@ -1,0 +1,13 @@
+{
+  "plan_sha256": "2d51128bf897be48cd0db8835a9d1deb423c0053a31e8093350b3b525ca25a08",
+  "preregistration_sha256": "a96052b247b58108dab9b6c32543c124dec99cf4d7545052e861257e9586c571",
+  "source": "new Confirmation02 measured raw only",
+  "prior_Grid02_use": "selection provenance only",
+  "Grid02_plan_sha256": "ecc6cfc219572ae2754ae3f9f3d8c7e9bcdfed0274c18a951bf459d71a66abe3",
+  "CPU_restore": "PASS",
+  "Edge_raw_collected": true,
+  "energy_scope": "Thor VIN 60-second active window only; Edge/server and full-run energy excluded",
+  "energy_missing_does_not_change_C1_C5": true,
+  "Thor_vs_Edge_clock_subtraction": false,
+  "mu_backlog_lower_not_used_for_selection": true
+}

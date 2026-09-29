@@ -1,0 +1,10 @@
+{
+  "plan_sha256": "8988f28531c0f3faa56a8e9e0c7dbc1386877b7df95e1ee5185a184590f36f57",
+  "frozen_worker_sha256": "6bf2c6dcce91b0d986480e7e82104dbc6310e6516482134062c8c9a1a04a7b6b",
+  "calibration_worker_sha256": "01c5f7c8dd70a1f8b3720ccc102778c0ce354762d4b95253fd4379c467bc8a4b",
+  "source": "Calibration05 measured runs only; Calibration03/04 excluded from final selection",
+  "completion_FPS": "active completions divided by exactly 60 s; drain excluded",
+  "saturation": "Raw UNSUSTAINABLE is SATURATED_VALID; STABLE near 240 is SOURCE_LIMITED; BOUNDARY is AMBIGUOUS. Two-of-two SOURCE_LIMITED selects the smallest tested full-load C; all-saturated data use the frozen plateau rule.",
+  "GPU_span_and_host_residual": "unchanged V2.2 phase instrumentation",
+  "previous_Confirmation02_reclassification": false
+}

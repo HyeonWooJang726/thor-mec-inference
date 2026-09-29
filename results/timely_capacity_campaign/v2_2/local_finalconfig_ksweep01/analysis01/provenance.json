@@ -1,0 +1,8 @@
+{
+  "plan_sha256": "3378b12a1ca430925601558a1f1c413a34c6bf3fb34a76a6ce765136a44252da",
+  "run_count": 40,
+  "synthetic_data_used": false,
+  "C_L": 3,
+  "B": 1,
+  "Edge": "OFF"
+}

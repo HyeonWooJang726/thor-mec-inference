@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "protected_roots": [
+    "results/timely_capacity_campaign/v2_2/edge_preflight_final01",
+    "scripts/timely_capacity_campaign/edge_preflight_final01",
+    "results/timely_capacity_campaign/v2_2/block_a_phase_pilot01",
+    "results/timely_capacity_campaign/v2_2/block_a_phase_pilot02",
+    "results/timely_capacity_campaign/v2_2/raw_capacity_scan01",
+    "results/timely_capacity_campaign/v2_2/timely_capacity_scan01",
+    "results/timely_capacity_campaign/v2_2/timely_capacity_scan02",
+    "results/timely_capacity_campaign/block_b_split/v2",
+    "scripts/timely_capacity_campaign/common/v2_2",
+    "results/edge_raw_capacity_gate/raw/semantic_raw640_30.npz"
+  ],
+  "before_file_count": 1056,
+  "after_file_count": 1056,
+  "modified": [],
+  "missing": [],
+  "added": [],
+  "Final01_all_artifacts_unchanged": true,
+  "frozen_V22_runtime_unchanged": true
+}
