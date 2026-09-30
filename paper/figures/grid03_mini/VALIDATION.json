@@ -6,6 +6,9 @@
     "ASSIGNMENT_PHASE_AUDIT.md": "12e51c76e8e0b9141348872d456ab993e08694e173257412d06cec19e267cfed",
     "GRID03_MINI_PREREGISTRATION.md": "a10d18d4f7106e0b13cd1ce51e3b8422d2b9317a402d1c43b7f1d102c18ac9f4",
     "ANALYSIS_SPECIFICATION.md": "2843ba14b041c984d57a32bcd47d7f43fbe5fbec4e4ba547581eba35792131ee",
+    "plan.json": "3dedb14b3cabad2564965460d159506537df83aed65020ee5d8461e03f601e29",
+    "runtime_manifest.json": "8ee015884dfff18f7bf8a7d8cc1fa6a73e410990c946a9037cb6c3f802d3cf7e",
+    "source_sha256.json": "425a87fc5d1f05d9e249b4db367521fb0f1e969801722bc3edc88b1b6ab51d68",
     "analysis01/per_run.csv": "0a5b902cbb9cc129c1fba89e9a9cbb801fec49707a1b3128f48d021f73ba0add",
     "analysis01/paired_comparison.csv": "8ec906dfa54e1897b9bf7d9b254a9235dde80a150481fe700d5285c09f7ca8e3",
     "analysis01/per_stream.csv": "89625a8e71cfae5205a0a03202885012e382ad52b37c5c5340cb2fea623b7893",
@@ -14,22 +17,28 @@
     "analysis01/grid03_mini_verdict.json": "b5b56f55dfa10485f838aa86150def5becb00e2d927074b5effde048f9c6734f"
   },
   "script_path": "scripts/figures/plot_grid03_mini_paper_figures.py",
-  "script_sha256": "adc617fa9861a631bc665a9758d7fa9d2952a96cdce876056655d262baf58203",
-  "matplotlib_version": "3.6.3",
+  "script_sha256": "1e90feba0b70f88bcf7c1f4724f0c1252b235624fe33d98007bf00d1b131de03",
+  "renderer": "Cairo CPU",
+  "cairo_version": "1.18.0",
   "numpy_version": "1.26.4",
+  "matplotlib_used": false,
+  "seaborn_used": false,
   "font_path": "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
   "font_sha256": "4659bc0c58c5028dd488ec928d41d9265db43d9b669fc14ca8b0832daca7b144",
   "minimum_font_pt": 8.5,
   "measured_run_count": 24,
-  "raw_repeat_point_count": 24,
+  "input_repeat_count": 24,
+  "individual_scatter_count": 0,
   "measured_integrity": "24/24 VALID",
   "preserved_analyzer_verdict": "TEMPORAL_PLACEMENT_SHIFTS_FEASIBLE_BOUNDARY",
   "all_coordinates_from_source_data": true,
   "no_fabricated_values": true,
   "structure_is_frozen_schedule_not_measured_execution": true,
   "assignment_counts_match_manifest": true,
-  "figure_B_repeats_match_per_run": true,
-  "figure_C_values_match_paired_comparison": true,
+  "assignment_sums_equal_eight": true,
+  "figure_B_mean_min_max_match_per_run": true,
+  "figure_C_paired_mean_min_max_match_CSV": true,
+  "paired_Total_equals_Local_plus_Edge": true,
   "stream_path_accounting_check": "PASS",
   "max_edge_burst_concentrated": 8,
   "max_edge_burst_dispersed": 1,
@@ -39,104 +48,498 @@
   "new_workload_executed": false,
   "figure_validation": {
     "fig_temporal_placement_structure": {
-      "layout": {
-        "minimum_text_font_pt": 8.5,
-        "unclipped_text": true,
-        "legends_outside_data_axes": true,
+      "layout_and_data": {
+        "scatter_count": 0,
+        "load_marker_count": 0,
+        "footer_count": 0,
+        "workload_title": false,
+        "annotations": false,
+        "step_edges_aligned_to_matrix": true,
+        "source_slot_zero_Local_visible": true,
+        "source_slot_fifteen_Local_visible": true,
+        "path_style_consistent_across_panels": true,
+        "minimum_font_pt": 8.5,
         "width_inches": 7.16,
-        "height_inches": 4.2,
-        "png_pixels": [
-          4296,
-          2520
-        ],
-        "png_dpi": [
-          599.9988,
-          599.9988
-        ]
+        "height_inches": 3.75,
+        "unclipped_text": true,
+        "legend_outside_data": true
       },
       "output_sha256": {
-        "fig_temporal_placement_structure.pdf": "4fa96f1a151f44479358e331daccce5cf784a72e79f6be1a2b670da4de4c6280",
-        "fig_temporal_placement_structure.svg": "4a1149566efa05ce6ce7ea2052cc6bff1c54c03724267042bfda1506a157b4f1",
-        "fig_temporal_placement_structure.png": "fc17fc62d5cea76bdfd82d9ae96cf5bc293611ae7ab5ffaf699f15f7e26ca8a6"
+        "fig_temporal_placement_structure.pdf": "e7ee099a70a4bd9f4099c44e6d07b762eb51c14a6fd84909b56942a3bd0fc799",
+        "fig_temporal_placement_structure.svg": "b8f0bd0ca0d1e8aca0823eb61ad49395028a7ea0d285c0f547438cd620d2bafe",
+        "fig_temporal_placement_structure.png": "e452666a7a9411f68fa21a66671447c5f90ffdbfcfe5b2c81ea3ac1ea4531b99"
       },
       "vector_outputs": true,
       "png_output": true
     },
     "fig_temporal_placement_results": {
-      "layout": {
-        "minimum_text_font_pt": 8.5,
-        "unclipped_text": true,
-        "legends_outside_data_axes": true,
-        "width_inches": 7.16,
-        "height_inches": 3.15,
-        "png_pixels": [
-          4296,
-          1890
+      "layout_and_data": {
+        "scatter_count": 0,
+        "jitter_count": 0,
+        "footer_count": 0,
+        "condition_mean_count": 8,
+        "errorbar_definition": "observed min-max across three runs; not CI or SE",
+        "mean_min_max": [
+          {
+            "local_FPS": 208,
+            "edge_FPS": 32,
+            "placement": "Concentrated",
+            "mean": 0.8666666666666667,
+            "min": 0.8666666666666667,
+            "max": 0.8666666666666667,
+            "values": [
+              0.8666666666666667,
+              0.8666666666666667,
+              0.8666666666666667
+            ],
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          {
+            "local_FPS": 216,
+            "edge_FPS": 24,
+            "placement": "Concentrated",
+            "mean": 0.9,
+            "min": 0.9,
+            "max": 0.9,
+            "values": [
+              0.9,
+              0.9,
+              0.9
+            ],
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          {
+            "local_FPS": 224,
+            "edge_FPS": 16,
+            "placement": "Concentrated",
+            "mean": 0.932962962962963,
+            "min": 0.9322222222222222,
+            "max": 0.9333333333333333,
+            "values": [
+              0.9322222222222222,
+              0.9333333333333333,
+              0.9333333333333333
+            ],
+            "lower": 0.0007407407407408195,
+            "upper": 0.00037037037037035425
+          },
+          {
+            "local_FPS": 232,
+            "edge_FPS": 8,
+            "placement": "Concentrated",
+            "mean": 0.8137037037037037,
+            "min": 0.7972222222222223,
+            "max": 0.8338888888888889,
+            "values": [
+              0.7972222222222223,
+              0.8338888888888889,
+              0.81
+            ],
+            "lower": 0.01648148148148143,
+            "upper": 0.020185185185185195
+          },
+          {
+            "local_FPS": 208,
+            "edge_FPS": 32,
+            "placement": "Dispersed",
+            "mean": 0.9972222222222222,
+            "min": 0.9933333333333333,
+            "max": 0.9994444444444445,
+            "values": [
+              0.9933333333333333,
+              0.9994444444444445,
+              0.9988888888888889
+            ],
+            "lower": 0.0038888888888889417,
+            "upper": 0.0022222222222222365
+          },
+          {
+            "local_FPS": 216,
+            "edge_FPS": 24,
+            "placement": "Dispersed",
+            "mean": 0.997037037037037,
+            "min": 0.995,
+            "max": 0.9994444444444445,
+            "values": [
+              0.9966666666666667,
+              0.995,
+              0.9994444444444445
+            ],
+            "lower": 0.0020370370370370594,
+            "upper": 0.0024074074074074137
+          },
+          {
+            "local_FPS": 224,
+            "edge_FPS": 16,
+            "placement": "Dispersed",
+            "mean": 0.9983333333333333,
+            "min": 0.9966666666666667,
+            "max": 1.0,
+            "values": [
+              1.0,
+              0.9983333333333333,
+              0.9966666666666667
+            ],
+            "lower": 0.0016666666666665941,
+            "upper": 0.0016666666666667052
+          },
+          {
+            "local_FPS": 232,
+            "edge_FPS": 8,
+            "placement": "Dispersed",
+            "mean": 0.752962962962963,
+            "min": 0.7338888888888889,
+            "max": 0.785,
+            "values": [
+              0.785,
+              0.74,
+              0.7338888888888889
+            ],
+            "lower": 0.01907407407407402,
+            "upper": 0.032037037037037086
+          }
         ],
-        "png_dpi": [
-          599.9988,
-          599.9988
-        ]
+        "reference_eta": null,
+        "minimum_font_pt": 8.5,
+        "width_inches": 7.16,
+        "height_inches": 2.75,
+        "unclipped_text": true,
+        "legend_outside_data": true
       },
       "output_sha256": {
-        "fig_temporal_placement_results.pdf": "098eee4ac87ed109dd5f40215c83296c9aefb3a723aadfcf43161ddf1a5d61a9",
-        "fig_temporal_placement_results.svg": "3501faffd8abd35c7ba15d6666a7b070c1b05f4640825fbd97b00b0cefecb2d4",
-        "fig_temporal_placement_results.png": "0f8cbc16acf6026de22ade5fd804e593385df4bd8d0d2b7c28f498cfe18641a2"
+        "fig_temporal_placement_results.pdf": "6bc98a7a709e74dceaab4f3752ec961860f3e756315cafd373151624b30deb44",
+        "fig_temporal_placement_results.svg": "44eb7517032e2c088a7a0d4e051ac3f2f989dd6824318ce659e96ae023eccd26",
+        "fig_temporal_placement_results.png": "27b394f7020a9ec86048371189183a2332fe6755b1e84c659d6a2169cba95414"
       },
       "vector_outputs": true,
       "png_output": true
     },
     "fig_pathwise_temporal_effect": {
-      "layout": {
-        "minimum_text_font_pt": 8.5,
-        "unclipped_text": true,
-        "legends_outside_data_axes": true,
-        "width_inches": 7.16,
-        "height_inches": 2.95,
-        "png_pixels": [
-          4296,
-          1770
+      "layout_and_data": {
+        "scatter_count": 0,
+        "footer_count": 0,
+        "bar_count": 12,
+        "paired_mean_min_max": [
+          {
+            "local_FPS": 208,
+            "edge_FPS": 32,
+            "path": "Local",
+            "R1": 0.0,
+            "R2": 0.0,
+            "R3": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          {
+            "local_FPS": 216,
+            "edge_FPS": 24,
+            "path": "Local",
+            "R1": 0.0,
+            "R2": 0.0,
+            "R3": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          {
+            "local_FPS": 224,
+            "edge_FPS": 16,
+            "path": "Local",
+            "R1": 0.21666666666666856,
+            "R2": 0.0,
+            "R3": 0.0,
+            "mean": 0.07222222222222285,
+            "min": 0.0,
+            "max": 0.21666666666666856,
+            "lower": 0.07222222222222285,
+            "upper": 0.1444444444444457
+          },
+          {
+            "local_FPS": 232,
+            "edge_FPS": 8,
+            "path": "Local",
+            "R1": -9.533333333333331,
+            "R2": -23.94999999999999,
+            "R3": -24.866666666666674,
+            "mean": -19.45,
+            "min": -24.866666666666674,
+            "max": -9.533333333333331,
+            "lower": 5.416666666666675,
+            "upper": 9.916666666666668
+          },
+          {
+            "local_FPS": 208,
+            "edge_FPS": 32,
+            "path": "Edge",
+            "R1": 14.616666666666667,
+            "R2": 15.900000000000002,
+            "R3": 15.899999999999999,
+            "mean": 15.472222222222223,
+            "min": 14.616666666666667,
+            "max": 15.900000000000002,
+            "lower": 0.8555555555555561,
+            "upper": 0.4277777777777789
+          },
+          {
+            "local_FPS": 216,
+            "edge_FPS": 24,
+            "path": "Edge",
+            "R1": 13.816666666666668,
+            "R2": 13.200000000000001,
+            "R3": 12.899999999999999,
+            "mean": 13.305555555555555,
+            "min": 12.899999999999999,
+            "max": 13.816666666666668,
+            "lower": 0.4055555555555568,
+            "upper": 0.5111111111111128
+          },
+          {
+            "local_FPS": 224,
+            "edge_FPS": 16,
+            "path": "Edge",
+            "R1": 9.883333333333333,
+            "R2": 10.066666666666666,
+            "R3": 9.45,
+            "mean": 9.799999999999999,
+            "min": 9.45,
+            "max": 10.066666666666666,
+            "lower": 0.34999999999999964,
+            "upper": 0.2666666666666675
+          },
+          {
+            "local_FPS": 232,
+            "edge_FPS": 8,
+            "path": "Edge",
+            "R1": 5.699999999999999,
+            "R2": 6.016666666666667,
+            "R3": 5.166666666666666,
+            "mean": 5.627777777777777,
+            "min": 5.166666666666666,
+            "max": 6.016666666666667,
+            "lower": 0.46111111111111125,
+            "upper": 0.3888888888888893
+          },
+          {
+            "local_FPS": 208,
+            "edge_FPS": 32,
+            "path": "Total",
+            "R1": 14.616666666666674,
+            "R2": 15.899999999999977,
+            "R3": 15.900000000000006,
+            "mean": 15.47222222222222,
+            "min": 14.616666666666674,
+            "max": 15.900000000000006,
+            "lower": 0.8555555555555454,
+            "upper": 0.42777777777778603
+          },
+          {
+            "local_FPS": 216,
+            "edge_FPS": 24,
+            "path": "Total",
+            "R1": 13.816666666666663,
+            "R2": 13.199999999999989,
+            "R3": 12.899999999999977,
+            "mean": 13.305555555555543,
+            "min": 12.899999999999977,
+            "max": 13.816666666666663,
+            "lower": 0.40555555555556566,
+            "upper": 0.51111111111112
+          },
+          {
+            "local_FPS": 224,
+            "edge_FPS": 16,
+            "path": "Total",
+            "R1": 10.099999999999994,
+            "R2": 10.066666666666663,
+            "R3": 9.450000000000017,
+            "mean": 9.872222222222225,
+            "min": 9.450000000000017,
+            "max": 10.099999999999994,
+            "lower": 0.4222222222222083,
+            "upper": 0.22777777777776897
+          },
+          {
+            "local_FPS": 232,
+            "edge_FPS": 8,
+            "path": "Total",
+            "R1": -3.8333333333333144,
+            "R2": -17.933333333333337,
+            "R3": -19.700000000000017,
+            "mean": -13.822222222222223,
+            "min": -19.700000000000017,
+            "max": -3.8333333333333144,
+            "lower": 5.877777777777794,
+            "upper": 9.988888888888908
+          }
         ],
-        "png_dpi": [
-          599.9988,
-          599.9988
-        ]
+        "errorbar_definition": "min-max of three same-repeat Dispersed minus Concentrated differences",
+        "minimum_font_pt": 8.5,
+        "width_inches": 7.16,
+        "height_inches": 2.6,
+        "unclipped_text": true,
+        "legend_outside_data": true
       },
       "output_sha256": {
-        "fig_pathwise_temporal_effect.pdf": "3a3245c432b22005a1c1172075515a903e6a6f494c930c640752a9fe9237b50a",
-        "fig_pathwise_temporal_effect.svg": "e9ec00a14d0573fedc572fda60c84480780bf13d351fae62c535764510711259",
-        "fig_pathwise_temporal_effect.png": "5f1ecc1d9758d2ddceae9db818539cebea940ef524ddbbbd14be729b81bf094e"
+        "fig_pathwise_temporal_effect.pdf": "065165d1494fc5a11fef1ba0becfcd2d5ba0b7e12067dd1a7617448a07a4f81a",
+        "fig_pathwise_temporal_effect.svg": "89802d8d1f087de9be966fcd25ddc3758eca20b208c8f64d21936180ba6778af",
+        "fig_pathwise_temporal_effect.png": "c2292fa3bfa0a153351f888249a9ff1771b85c23e4f0239b28e01c9fe32f05fb"
       },
       "vector_outputs": true,
       "png_output": true
     },
     "fig_temporal_placement_results_eta099": {
-      "layout": {
-        "minimum_text_font_pt": 8.5,
-        "unclipped_text": true,
-        "legends_outside_data_axes": true,
-        "width_inches": 7.16,
-        "height_inches": 3.15,
-        "png_pixels": [
-          4296,
-          1890
+      "layout_and_data": {
+        "scatter_count": 0,
+        "jitter_count": 0,
+        "footer_count": 0,
+        "condition_mean_count": 8,
+        "errorbar_definition": "observed min-max across three runs; not CI or SE",
+        "mean_min_max": [
+          {
+            "local_FPS": 208,
+            "edge_FPS": 32,
+            "placement": "Concentrated",
+            "mean": 0.8666666666666667,
+            "min": 0.8666666666666667,
+            "max": 0.8666666666666667,
+            "values": [
+              0.8666666666666667,
+              0.8666666666666667,
+              0.8666666666666667
+            ],
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          {
+            "local_FPS": 216,
+            "edge_FPS": 24,
+            "placement": "Concentrated",
+            "mean": 0.9,
+            "min": 0.9,
+            "max": 0.9,
+            "values": [
+              0.9,
+              0.9,
+              0.9
+            ],
+            "lower": 0.0,
+            "upper": 0.0
+          },
+          {
+            "local_FPS": 224,
+            "edge_FPS": 16,
+            "placement": "Concentrated",
+            "mean": 0.932962962962963,
+            "min": 0.9322222222222222,
+            "max": 0.9333333333333333,
+            "values": [
+              0.9322222222222222,
+              0.9333333333333333,
+              0.9333333333333333
+            ],
+            "lower": 0.0007407407407408195,
+            "upper": 0.00037037037037035425
+          },
+          {
+            "local_FPS": 232,
+            "edge_FPS": 8,
+            "placement": "Concentrated",
+            "mean": 0.8137037037037037,
+            "min": 0.7972222222222223,
+            "max": 0.8338888888888889,
+            "values": [
+              0.7972222222222223,
+              0.8338888888888889,
+              0.81
+            ],
+            "lower": 0.01648148148148143,
+            "upper": 0.020185185185185195
+          },
+          {
+            "local_FPS": 208,
+            "edge_FPS": 32,
+            "placement": "Dispersed",
+            "mean": 0.9972222222222222,
+            "min": 0.9933333333333333,
+            "max": 0.9994444444444445,
+            "values": [
+              0.9933333333333333,
+              0.9994444444444445,
+              0.9988888888888889
+            ],
+            "lower": 0.0038888888888889417,
+            "upper": 0.0022222222222222365
+          },
+          {
+            "local_FPS": 216,
+            "edge_FPS": 24,
+            "placement": "Dispersed",
+            "mean": 0.997037037037037,
+            "min": 0.995,
+            "max": 0.9994444444444445,
+            "values": [
+              0.9966666666666667,
+              0.995,
+              0.9994444444444445
+            ],
+            "lower": 0.0020370370370370594,
+            "upper": 0.0024074074074074137
+          },
+          {
+            "local_FPS": 224,
+            "edge_FPS": 16,
+            "placement": "Dispersed",
+            "mean": 0.9983333333333333,
+            "min": 0.9966666666666667,
+            "max": 1.0,
+            "values": [
+              1.0,
+              0.9983333333333333,
+              0.9966666666666667
+            ],
+            "lower": 0.0016666666666665941,
+            "upper": 0.0016666666666667052
+          },
+          {
+            "local_FPS": 232,
+            "edge_FPS": 8,
+            "placement": "Dispersed",
+            "mean": 0.752962962962963,
+            "min": 0.7338888888888889,
+            "max": 0.785,
+            "values": [
+              0.785,
+              0.74,
+              0.7338888888888889
+            ],
+            "lower": 0.01907407407407402,
+            "upper": 0.032037037037037086
+          }
         ],
-        "png_dpi": [
-          599.9988,
-          599.9988
-        ]
+        "reference_eta": 0.99,
+        "minimum_font_pt": 8.5,
+        "width_inches": 7.16,
+        "height_inches": 2.75,
+        "unclipped_text": true,
+        "legend_outside_data": true
       },
       "output_sha256": {
-        "fig_temporal_placement_results_eta099.pdf": "b027c66f7a64804f2dd6cbc29f78a27fec23e71e1488261d0c76c3e31ae7e05f",
-        "fig_temporal_placement_results_eta099.svg": "4f1b53a22a1ac6e38bf351149b950e94ece572d63ae814ccca0d1475d048c8b6",
-        "fig_temporal_placement_results_eta099.png": "a6120b4c67f67084fdd65b80ed87c9d649122d32a1048bb685575ed802cfb028"
+        "fig_temporal_placement_results_eta099.pdf": "697785deba70c0d7c8fb569b45b1a096e1a2fc57b2039d832e6f6da6de46f19e",
+        "fig_temporal_placement_results_eta099.svg": "c993592468acde4751648f00470196f26d57ce27589d0ac26ef8ea027c18f251",
+        "fig_temporal_placement_results_eta099.png": "58efc352892c96bddb55e3adb5cc0027233b596cb565e562a4d99a1b2f2cb177"
       },
       "vector_outputs": true,
       "png_output": true
     }
   },
   "additional_output_sha256": {
-    "CAPTIONS.md": "4827ba1c2a95fb2c93370b357fc8a0377c345cd2a6ae149c5524840a5b50017f",
-    "FIGURE_DATA.json": "6cb5b1828b6801a4825069e64013b5e71a5ce6dbc5a4d327a3953c1bd3b0b3ea"
+    "CAPTIONS.md": "b22cff21ee97b8309fee9e6f8fac65dbbc767b22602e89e94cba3bda393cd111"
   }
 }

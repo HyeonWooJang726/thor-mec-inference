@@ -2,81 +2,74 @@
 
 ## Figure A — Temporal placement structure
 
-Temporally concentrated placement and temporally dispersed placement at the
-same L224/E16 average split (eight 30-FPS streams; 240 FPS in total). Each cell
-shows one source-slot assignment, with Local in gray and Edge in hatched blue.
-Concentrated aligns Edge assignments across streams; Dispersed shifts the
-assignment phases using the frozen phase vector [0, 2, 4, 6, 8, 9, 11, 13].
-The traces show per-slot Local and Edge assignment counts, m_L[n] and m_E[n].
-Both schedules contain 224 Local and 16 Edge assignments per 30 source slots,
-including two Edge assignments per stream. The peak Edge assignment count is
-eight for Concentrated and one for Dispersed. Same average split, different
-temporal load shapes. Source timestamps are unchanged; assignment phases do
-not imply a change in physical camera capture timing or GPU start times.
+Temporally concentrated placement and temporally dispersed placement at the same
+L224/E16 mean split, with K=8 and F=30 FPS per stream. The 30 scheduled source
+slots span one second. Each stream is assigned 28 Local frames and two Edge
+frames, so both placements have identical total and per-stream assignment counts
+(224 Local and 16 Edge). Concentrated aligns Edge assignments across streams;
+Dispersed uses the frozen assignment phase vector [0, 2, 4, 6, 8, 9, 11, 13].
+The lower step curves show the number of frames assigned to each path in each
+source slot, with the same colors and line styles in both panels. A Local
+assignment count of zero does not imply GPU idle. Scheduled assignment times
+are distinct from actual queue arrivals, socket submissions, and GPU execution
+start times. The assignment phases do not change the common source phase or
+establish synchronized physical camera capture. This figure describes the
+frozen schedule, not measured GPU load or Edge receive times.
 
-Figure A displays the frozen assignment schedule, not measured execution times
-or a causal explanation of performance.
+## Figure B — Worst-stream timely service
 
-## Figure B — Measured timely service (main, threshold-independent)
+Measured worst-stream TIR at four Local/Edge splits for temporally concentrated
+placement and temporally dispersed placement. Markers and asymmetric error bars
+show means and observed ranges across three runs: lower=mean-min and
+upper=max-mean. All 24 VALID measured runs are included. The ranges are not
+confidence intervals or standard errors; zero ranges are not enlarged.
+Connecting lines guide the eye between measured operating points and estimate
+neither unmeasured performance nor a crossing point. The upper axis reports the
+corresponding Edge assigned rate. Runs use C_L=3, C_E=1, B=1, K=8, F=30 FPS,
+and D=100 ms. The main figure contains no eta reference line.
 
-Measured worst-stream timely-inference ratio (TIR) for temporally concentrated
-placement and temporally dispersed placement at four Local/Edge splits.
-Small markers show all three measured repeats per condition; their horizontal
-offsets are for visibility only. Large markers and lines show arithmetic means;
-connecting lines are visual guides between tested points. The top axis gives
-the corresponding Edge assigned rate. All 24 measured runs are VALID and use
-C_L=3, C_E=1, B=1, eight 30-FPS streams, and a 100-ms relative deadline.
-The main figure has no feasibility threshold line: it presents the measured
-TIR values and run-to-run variation. Dispersed has higher worst-stream TIR at
-L208/E32, L216/E24, and L224/E16; the measured ordering reverses at L232/E8.
-This observation establishes neither global optimality nor a causal mechanism.
+## Figure C — Path-wise timely FPS difference
 
-## Figure C — Path-wise temporal effect
+Paired timely FPS difference, Dispersed minus Concentrated, decomposed into
+Local, Edge, and Total. Grouped bars show paired means, and asymmetric error
+bars show the observed min-max range of three paired-run differences. Each
+difference is computed within the same split and repeat before summarization;
+the ranges are not obtained by subtracting the two conditions' extrema.
+Positive values mean Dispersed provided more timely results; negative values
+mean Concentrated provided more. Total=Local+Edge within each paired repeat,
+up to floating-point representation. This is a path-wise measured decomposition.
+At L232/E8 the Local and Edge contributions have opposite signs. It does not
+establish a causal mechanism involving Local relief, GPU idle, or hysteresis.
 
-Difference in timely FPS, Dispersed minus Concentrated, decomposed into Local,
-Edge, and Total contributions at each tested split. Bars show the stored mean
-of three paired repeat differences; small markers show all paired differences.
-The Edge contribution is positive across the tested points, while the Local
-contribution becomes negative at L232/E8. The measured path-wise contributions
-have opposite signs at L232/E8. A causal mechanism is not established.
+## Scope and reproduction
 
-## Scope and terminology
+Grid03-mini is not a strict one-factor reproduction of Grid02: C_L changes from
+two to three, and dispersed assignment phases use the preregistered period-aware
+rule. Configuration A, the mini-grid runtime, and final Configuration B are
+not pooled. Historical verdicts and screening targets remain unchanged. No claim
+is made about global optimality, controller necessity or sufficiency,
+state-dependent capacity, or a GPU/Edge queue causal mechanism.
 
-Grid03-mini is not a strict one-factor reproduction of Grid02. Local concurrency
-changes from two to three, and dispersed assignment phases use the preregistered
-period-aware construction. Configuration A, the mini-grid runtime, and final
-Configuration B are distinct; their repeats are not pooled. Internal assignment
-labels are translated only for display. No claim is made about an optimal
-placement, online-controller necessity or sufficiency, hysteresis, state-dependent
-capacity, or a GPU/Edge queue causal mechanism.
-
-All figures use Liberation Sans with text at least 8.5 pt at the native 7.16-inch
-two-column width. Insert at the native width to retain the font-size guarantee.
-PDF and SVG are vector-only; PNG is 600 dpi. Paths use hatches, line styles,
-and/or marker shapes in addition to color, for grayscale legibility.
-
-## Reproduction
-
-```bash
-python3 -B scripts/figures/plot_grid03_mini_paper_figures.py
-```
-
-Optional screening-target variant:
+Figures use the installed CPU Cairo renderer, without matplotlib or seaborn.
+PDF/SVG contain vector drawing and vector font glyphs; PNG is 600 dpi. Liberation
+Sans is used at a minimum 8.5 pt at the native 7.16-inch two-column width. No
+font file is copied. The PDF metadata date is fixed solely for reproducible
+rendering and is not an experiment date.
 
 ```bash
-python3 -B scripts/figures/plot_grid03_mini_paper_figures.py --eta 0.99
+python3 -B scripts/figures/plot_grid03_mini_paper_figures.py --output-dir <fresh-directory>
+python3 -B scripts/figures/plot_grid03_mini_paper_figures.py --eta 0.99 --output-dir <fresh-directory>
 ```
 
-Use `--output-dir <fresh-directory>` for another rendering; existing artifacts
-are not overwritten. `FIGURE_DATA.json` records the exact plotted coordinates
-and their CSV keys. `VALIDATION.json` records input/output SHA-256, cross-file
-checks, native figure sizes, fonts, and output checks. No raw trace, analysis,
-plan, preregistration, runtime, or Git index is modified.
+Existing outputs are never overwritten by the generator. VALIDATION.json holds
+current mean/min/max coordinates, all input SHA-256, output checksums, and layout
+checks. The preexisting FIGURE_DATA.json is retained unchanged as the prior
+rendering's coordinate record; its former jitter offsets are not used by this
+version. No scientific data, plan, preregistration, or runtime is modified.
 
-## Optional Figure B — Screening-target variant
+## Optional Figure B — Reference variant
 
-Same measured data as the main Figure B, with the separately requested
-screening operating target, eta = 0.99. The dashed reference is labeled
-“Screening target η = 0.99”. It is an operational screening target and is
-not a universal system requirement or a real-time standard. The main Figure B
-remains threshold-independent.
+The separate eta variant shows the same means and observed ranges, with the
+line labeled “Reference: η = 0.99”. At eta=0.99 this is the mini-grid's
+preregistered screening target, not a universal standard or a requirement for
+all experiments. It does not change the main threshold-independent figure.

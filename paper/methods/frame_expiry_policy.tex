@@ -1,0 +1,25 @@
+% Grid03-mini implementation provenance: frame_expiry_policy.md.
+\paragraph{Deadline expiry.}
+For frame $i$, the absolute deadline is $d_i=a_i+D$, where $a_i$ is
+its scheduled source time and $D=100\,\mathrm{ms}$ in the evaluated
+workload. The implementation uses expired-only removal at two host-side
+checkpoints: after acquisition from the Local ready queue and before the
+TensorRT call, or immediately before Thor submits an Edge request to the
+socket path. A frame is removed when $t_{\mathrm{check}}\ge d_i$;
+no predicted service time is used. The check time is distinct from actual
+GPU execution start and network transmission completion. Once Local
+execution has started or an Edge request has been submitted, expiry does
+not cancel it. The Edge server drains its FIFO without a separate
+deadline-expiry removal rule. Removal does not recover decode or
+preprocessing costs already incurred before the checkpoint.
+
+\paragraph{Timely-service accounting.}
+End-to-end latency is measured from scheduled source time $a_i$ to
+completion time $c_i$: the host observation after Local inference and
+stream synchronization return, or the Thor-side observation of an Edge
+response. A completed frame is timely iff $c_i-a_i\le D$; late completions
+are retained and distinguished from expired drops. TIR uses all generated
+active source frames in its denominator, including late completions and
+drops, with warm-up excluded. Valid runs require an exclusive, complete
+terminal partition. Failed or unfinished records are preserved and
+reported as integrity failures rather than silently omitted.

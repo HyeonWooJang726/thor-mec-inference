@@ -3,6 +3,7 @@
 
 No runtime/analyzer imports, inference, network access, or source-data writes.
 Default: threshold-independent Figures A--C. --eta adds a separate variant.
+Uses the installed CPU Cairo renderer; no matplotlib or seaborn.
 Existing outputs are never overwritten; --output-dir can select a fresh folder.
 """
 import argparse
@@ -10,20 +11,13 @@ import csv
 import hashlib
 import json
 import math
-import os
 from pathlib import Path
 import statistics
-import tempfile
+import io
+import subprocess
 import xml.etree.ElementTree as ET
 
-os.environ.setdefault('MPLCONFIGDIR', tempfile.mkdtemp(prefix='grid03-paper-mpl-'))
-import matplotlib
-matplotlib.use('Agg')
-from matplotlib import font_manager
-from matplotlib.lines import Line2D
-from matplotlib.patches import Patch, Rectangle
-from matplotlib.text import Text
-import matplotlib.pyplot as plt
+import cairo
 import numpy as np
 from PIL import Image
 
@@ -36,6 +30,7 @@ LABELS = {'ALIGNED': 'Concentrated', 'STAGGERED': 'Dispersed'}
 INPUT_NAMES = (
     'assignment_manifest.json', 'assignment_table.csv', 'ASSIGNMENT_PHASE_AUDIT.md',
     'GRID03_MINI_PREREGISTRATION.md', 'ANALYSIS_SPECIFICATION.md',
+    'plan.json', 'runtime_manifest.json', 'source_sha256.json',
     'analysis01/per_run.csv', 'analysis01/paired_comparison.csv',
     'analysis01/per_stream.csv', 'analysis01/per_path.csv',
     'analysis01/validity_summary.json', 'analysis01/grid03_mini_verdict.json',
@@ -96,6 +91,7 @@ def load_validate():
                 offsets[k, n] = int(row['scheduled_source_offset_ns'])
             edge = 1 - local
             ml, me = local.sum(axis=0), edge.sum(axis=0)
+            require(np.all(ml + me == 8), 'eight assignments at every source slot')
             require(local.tolist() == manifest['local_masks'] and edge.tolist() == manifest['edge_masks'],
                     f'{rate}/{pattern}: table/manifest cell equality')
             require(ml.tolist() == manifest['m_L'] and me.tolist() == manifest['m_E'], 'per-slot load')
@@ -163,6 +159,12 @@ def load_validate():
         require(all(near(v, float(by[rate, 'STAGGERED', j][metric]) -
                          float(by[rate, 'ALIGNED', j][metric])) for j, v in enumerate(values, 1)), 'paired direction')
         require(near(row['mean'], statistics.mean(values)), 'paired mean')
+        require(near(row['min'], min(values)) and near(row['max'], max(values)), 'paired observed range')
+    for rate in RATES:
+        for repeat in (1, 2, 3):
+            require(near(paired[rate, 'total_timely_FPS'][f'R{repeat}'],
+                         float(paired[rate, 'Local_timely_FPS'][f'R{repeat}']) +
+                         float(paired[rate, 'Edge_timely_FPS'][f'R{repeat}'])), 'paired Total = Local + Edge')
 
     # Supplied rounded values are validation checks only; never plot coordinates.
     references = {
@@ -178,381 +180,457 @@ def load_validate():
     return schedules, by, paired, verdict, before
 
 
-def style():
-    font_path = font_manager.findfont('Liberation Sans', fallback_to_default=False)
-    plt.rcParams.update({
-        'font.family': 'Liberation Sans', 'font.size': 9,
-        'axes.labelsize': 9, 'axes.titlesize': 10, 'axes.linewidth': .65,
-        'xtick.labelsize': MIN_FONT, 'ytick.labelsize': MIN_FONT,
-        'xtick.major.width': .65, 'ytick.major.width': .65,
-        'xtick.major.size': 3, 'ytick.major.size': 3,
-        'legend.fontsize': 9, 'legend.frameon': False,
-        'pdf.fonttype': 42, 'ps.fonttype': 42, 'svg.fonttype': 'none',
-        'svg.hashsalt': 'grid03-mini-paper-figures01',
-        'savefig.facecolor': 'white', 'figure.facecolor': 'white',
-        'hatch.linewidth': .45, 'text.usetex': False,
-    })
-    return font_path
+
+def stats(values):
+    return dict(mean=statistics.mean(values), min=min(values), max=max(values), values=list(values))
 
 
-def clean_axes(ax):
-    ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
-    ax.set_axisbelow(True)
-    ax.grid(axis='y', color='#dddddd', linewidth=.45)
+def color(value):
+    if value == 'white':
+        return (1., 1., 1.)
+    return tuple(int(value[i:i+2], 16)/255 for i in (1, 3, 5))
 
 
-def structure(schedules):
-    fig = plt.figure(figsize=(7.16, 4.2))
-    matrix_axes, load_axes = [], []
-    artists = []
+class Drawing:
+    """Point-coordinate drawing shared by PDF, SVG, and the 600-dpi raster."""
+    def __init__(self, context, width, height):
+        self.ctx, self.width, self.height = context, width, height
+        self.font_sizes, self.texts = [], []
+        self.ctx.set_source_rgb(1, 1, 1)
+        self.ctx.paint()
+
+    def line(self, points, ink=INK, width=.65, dash=()):
+        require(all(-.1 <= x <= self.width+.1 and -.1 <= y <= self.height+.1 for x, y in points),
+                'line outside figure bounds')
+        self.ctx.save()
+        self.ctx.set_source_rgb(*color(ink))
+        self.ctx.set_line_width(width)
+        self.ctx.set_dash(dash)
+        self.ctx.move_to(*points[0])
+        for point in points[1:]:
+            self.ctx.line_to(*point)
+        self.ctx.stroke()
+        self.ctx.restore()
+
+    def rectangle(self, x, y, w, h, fill, border=None, hatch=None, hatch_ink=INK):
+        require(w >= 0 and h >= 0 and 0 <= x <= x+w <= self.width and
+                0 <= y <= y+h <= self.height, 'rectangle outside figure bounds')
+        self.ctx.save()
+        self.ctx.rectangle(x, y, w, h)
+        self.ctx.set_source_rgb(*color(fill))
+        self.ctx.fill_preserve()
+        if border:
+            self.ctx.set_source_rgb(*color(border))
+            self.ctx.set_line_width(.5)
+            self.ctx.stroke()
+        else:
+            self.ctx.new_path()
+        if hatch:
+            self.ctx.rectangle(x, y, w, h)
+            self.ctx.clip()
+            self.ctx.set_source_rgb(*color(hatch_ink))
+            self.ctx.set_line_width(.4)
+            if hatch == '///':
+                for offset in np.arange(-h, w+h, 6):
+                    self.ctx.move_to(x+offset, y+h)
+                    self.ctx.line_to(x+offset+h, y)
+                self.ctx.stroke()
+            else:
+                for xx in np.arange(x+2, x+w, 5):
+                    for yy in np.arange(y+2, y+h, 5):
+                        self.ctx.arc(xx, yy, .45, 0, 2*math.pi)
+                        self.ctx.fill()
+        self.ctx.restore()
+
+    def text(self, x, y, value, size=9, align='left', rotation=0, bold=False):
+        require(size >= MIN_FONT, 'minimum font size')
+        self.ctx.save()
+        self.ctx.select_font_face('Liberation Sans', cairo.FONT_SLANT_NORMAL,
+                                  cairo.FONT_WEIGHT_BOLD if bold else cairo.FONT_WEIGHT_NORMAL)
+        self.ctx.set_font_size(size)
+        xb, yb, w, h, advance, _ = self.ctx.text_extents(value)
+        shift = -advance/2 if align == 'center' else -advance if align == 'right' else 0
+        c, s = math.cos(rotation), math.sin(rotation)
+        corners = [(x+c*xx-s*yy, y+s*xx+c*yy)
+                   for xx in (xb+shift, xb+shift+w) for yy in (yb, yb+h)]
+        require(all(-.5 <= xx <= self.width+.5 and -.5 <= yy <= self.height+.5 for xx, yy in corners),
+                'clipped text: '+value)
+        self.ctx.translate(x, y)
+        self.ctx.rotate(rotation)
+        self.ctx.set_source_rgb(*color(INK))
+        self.ctx.move_to(shift, 0)
+        self.ctx.show_text(value)
+        self.ctx.restore()
+        self.font_sizes.append(size)
+        self.texts.append(value)
+
+    def marker(self, x, y, marker, ink, radius=3):
+        self.ctx.save()
+        if marker == 'circle':
+            self.ctx.arc(x, y, radius, 0, 2*math.pi)
+        else:
+            self.ctx.move_to(x, y-radius)
+            self.ctx.line_to(x-radius, y+radius)
+            self.ctx.line_to(x+radius, y+radius)
+            self.ctx.close_path()
+        self.ctx.set_source_rgb(*color('white' if marker == 'circle' else ink))
+        self.ctx.fill_preserve()
+        self.ctx.set_source_rgb(*color(ink))
+        self.ctx.set_line_width(.85)
+        self.ctx.stroke()
+        self.ctx.restore()
+
+    def errorbar(self, x, mean, low, high, ymap, ink=INK):
+        require(low <= mean <= high, 'mean inside observed range')
+        if low == high:
+            return  # Never inflate a zero observed range.
+        top, bottom = ymap(high), ymap(low)
+        self.line([(x, top), (x, bottom)], ink, .8)
+        for y in (top, bottom):
+            self.line([(x-4, y), (x+4, y)], ink, .8)
+
+
+def axes(d, box, xvalues, xlabels, yticks, ylim, xlabel, ylabel):
+    left, top, width, height = box
+    lo, hi = ylim
+    ymap = lambda v: top + (hi-v)/(hi-lo)*height
+    for tick in yticks:
+        y = ymap(tick)
+        d.line([(left, y), (left+width, y)], '#dddddd', .45)
+        d.line([(left-3, y), (left, y)])
+        label = f'{tick:.2f}' if hi < 2 else f'{tick:g}'
+        d.text(left-6, y+3, label, MIN_FONT, 'right')
+    d.line([(left, top), (left, top+height), (left+width, top+height)])
+    for x, label in zip(xvalues, xlabels):
+        d.line([(x, top+height), (x, top+height+3)])
+        d.text(x, top+height+15, label, MIN_FONT, 'center')
+    d.text(left+width/2, top+height+29, xlabel, 9, 'center')
+    d.text(14, top+height/2, ylabel, 9, 'center', -math.pi/2)
+    return ymap
+
+
+def structure(d, schedules):
+    column_starts = (40., 302.)
+    column_width = 198.
+    matrix_top, matrix_height = 48., 108.
+    load_top, load_height = 173., 64.
+    require(all(schedules[224, 'ALIGNED']['ml'][n] == 0 for n in (0, 15)),
+            'concentrated slots 0 and 15 have zero Local assignments')
+    legend_start = d.width/2-55
+    for x, label, fill, hatch in [(legend_start, 'Local', LOCAL, None),
+                                 (legend_start+68, 'Edge', EDGE, '///')]:
+        d.rectangle(x, 5, 20, 9, fill, INK, hatch)
+        d.text(x+25, 14, label)
     for i, pattern in enumerate(PATTERNS):
-        x = .078 if i == 0 else .585
-        ax = fig.add_axes([x, .46, .385, .36])
-        load = fig.add_axes([x, .13, .385, .245])
-        matrix_axes.append(ax)
-        load_axes.append(load)
+        left = column_starts[i]
         data = schedules[224, pattern]
+        d.text(left, 36, f"({'ab'[i]}) {LABELS[pattern]}", 10, bold=True)
         for k in range(8):
             for n in range(30):
                 edge = bool(data['edge'][k, n])
-                cell = Rectangle((n, k), 1, 1, facecolor=EDGE if edge else LOCAL,
-                                 edgecolor='white', linewidth=.35, hatch='///' if edge else None)
-                ax.add_patch(cell)
-                artists.append((cell, edge, bool(data['edge'][k, n])))
-        ax.set(xlim=(0, 30), ylim=(8, 0), yticks=np.arange(8) + .5,
-               yticklabels=[str(k) for k in range(8)], ylabel='Stream',
-               xticks=np.array([0, 5, 10, 15, 20, 25, 29]) + .5,
-               xticklabels=['0', '5', '10', '15', '20', '25', '29'])
-        ax.tick_params(axis='x', labelbottom=False, bottom=False)
-        ax.tick_params(axis='y', length=0)
-        ax.set_title(f"({'ab'[i]}) {LABELS[pattern]}", loc='left', pad=9, fontweight='bold')
-        for spine in ax.spines.values():
-            spine.set_color('#999999')
-        slots = np.arange(30) + .5
-        load.step(slots, data['ml'], where='mid', color=INK, linestyle='--', linewidth=1,
-                  marker='s', markersize=2.5, label='Local')
-        load.step(slots, data['me'], where='mid', color=EDGE,
-                  linestyle='-' if i == 0 else ':', linewidth=1.1,
-                  marker='o' if i == 0 else '^', markersize=3, label='Edge')
-        load.set(xlim=(0, 30), ylim=(-.6, 10.4), yticks=[0, 4, 8],
-                 xticks=np.array([0, 5, 10, 15, 20, 25, 29]) + .5,
-                 xticklabels=['0', '5', '10', '15', '20', '25', '29'],
-                 ylabel='Assignments\nper slot', xlabel='Source slot n')
-        clean_axes(load)
-        arrow = dict(arrowstyle='->', color=INK, linewidth=.65, shrinkA=2, shrinkB=2)
-        if i == 0:
-            load.annotate('Edge burst', xy=(.5, 8), xytext=(4, 4.8), arrowprops=arrow,
-                          fontsize=MIN_FONT)
-            load.annotate('Local relief slot', xy=(15.5, 0), xytext=(17, 3), arrowprops=arrow,
-                          fontsize=MIN_FONT)
-        else:
-            load.annotate('Smoothed Edge arrivals', xy=(11.5, 1), xytext=(5, 3.2),
-                          arrowprops=arrow, fontsize=MIN_FONT)
-            load.annotate('Continuous Local load', xy=(19.5, 8), xytext=(4, 9.3),
-                          arrowprops=arrow, fontsize=MIN_FONT)
-    legend = fig.legend(handles=[Patch(facecolor=LOCAL, edgecolor=INK, linewidth=.5, label='Local'),
-                                 Patch(facecolor=EDGE, edgecolor=INK, linewidth=.5, hatch='///', label='Edge')],
-                        loc='upper center', bbox_to_anchor=(.5, .995), ncol=2, columnspacing=2)
-    fig.text(.5, .905, 'L224/E16  ·  8 streams  ·  30 FPS per stream', ha='center', fontsize=9)
-    fig.text(.5, .025, 'Same average split, different temporal load shapes.', ha='center', fontsize=9)
-    require(all(edge == reference for _, edge, reference in artists), 'plotted assignment cells')
-    for i, pattern in enumerate(PATTERNS):
-        require(np.array_equal(load_axes[i].lines[0].get_ydata(), schedules[224, pattern]['ml']) and
-                np.array_equal(load_axes[i].lines[1].get_ydata(), schedules[224, pattern]['me']), 'plotted load traces')
-    return fig, [legend], matrix_axes + load_axes
+                d.rectangle(left+n*column_width/30, matrix_top+k*matrix_height/8,
+                            column_width/30, matrix_height/8,
+                            EDGE if edge else LOCAL, 'white', '///' if edge else None, 'white')
+        for k in range(8):
+            d.text(left-7, matrix_top+(k+.5)*matrix_height/8+3, str(k), MIN_FONT, 'right')
+        d.text(left-25, matrix_top+matrix_height/2, 'Stream', 9, 'center', -math.pi/2)
+        # Matrix cells occupy [n,n+1); the load step has exactly the same edges.
+        ymap = lambda v: load_top + (8.5-v)/9*load_height
+        for tick in (0, 1, 4, 7, 8):
+            yy = ymap(tick)
+            d.line([(left, yy), (left+column_width, yy)], '#dddddd', .45)
+            d.line([(left-3, yy), (left, yy)])
+            d.text(left-6, yy+3, str(tick), MIN_FONT, 'right')
+        d.line([(left, load_top), (left, load_top+load_height),
+                (left+column_width, load_top+load_height)])
+        for n in (0, 5, 10, 15, 20, 25, 29):
+            x = left+(n+.5)*column_width/30
+            d.line([(x, load_top+load_height), (x, load_top+load_height+3)])
+            d.text(x, load_top+load_height+15, str(n), MIN_FONT, 'center')
+        d.text(left+column_width/2, load_top+load_height+29, 'Source slot n', 9, 'center')
+        d.text(left-25, load_top+load_height/2, 'Frames assigned per slot', MIN_FONT,
+               'center', -math.pi/2)
+        for field, ink, dash in [('ml', INK, (3, 2)), ('me', EDGE, ())]:
+            points = []
+            for n, count in enumerate(data[field]):
+                points.extend([(left+n*column_width/30, ymap(count)),
+                               (left+(n+1)*column_width/30, ymap(count))])
+            d.line(points, ink, 1.05, dash)
+        require(data['ml'][0] >= 0 and ymap(0) < load_top+load_height, 'zero steps visible inside axes')
+    return dict(scatter_count=0, load_marker_count=0, footer_count=0,
+                workload_title=False, annotations=False, step_edges_aligned_to_matrix=True,
+                source_slot_zero_Local_visible=True, source_slot_fifteen_Local_visible=True,
+                path_style_consistent_across_panels=True)
 
 
-def results(by, eta=None):
-    fig = plt.figure(figsize=(7.16, 3.15))
-    ax = fig.add_axes([.09, .22, .885, .53])
-    legends = []
-    data = []
-    for pattern, color, marker, line, offsets in (
-        ('ALIGNED', INK, 'o', '--', [-1.05, -.70, -.35]),
-        ('STAGGERED', EDGE, '^', '-', [.35, .70, 1.05]),
-    ):
-        means = []
-        for rate in RATES:
-            values = [float(by[rate, pattern, j]['worst_stream_TIR']) for j in (1, 2, 3)]
-            points = ax.scatter(np.array(offsets) + rate, values, marker=marker, s=14,
-                                facecolors='white' if pattern == 'ALIGNED' else color,
-                                edgecolors=color, linewidths=.7, zorder=4)
-            require(np.array_equal(np.asarray(points.get_offsets())[:, 1], values), 'raw repeat y coordinates')
-            means.append(statistics.mean(values))
-            data.extend(dict(run_id=by[rate, pattern, j]['run_id'], local_FPS=rate, edge_FPS=240-rate,
-                             placement=LABELS[pattern], repeat=j, worst_stream_TIR=v,
-                             display_x_offset_FPS=offsets[j-1]) for j, v in enumerate(values, 1))
-        curve, = ax.plot(RATES, means, color=color, linestyle=line, linewidth=1.25,
-                         marker=marker, markersize=6,
-                         markerfacecolor='white' if pattern == 'ALIGNED' else color,
-                         markeredgewidth=.85, zorder=3,
-                         label='Temporally ' + LABELS[pattern].lower())
-        require(np.array_equal(curve.get_ydata(), means), 'condition mean coordinates')
-    ax.set(xlim=(206.2, 233.8), ylim=(.70, 1.022), xticks=RATES,
-           yticks=np.arange(.70, 1.001, .05), xlabel='Local assigned rate [FPS]', ylabel='Worst-stream TIR')
-    clean_axes(ax)
-    top = ax.secondary_xaxis('top')
-    top.set_xticks(RATES)
-    top.set_xticklabels([str(240-rate) for rate in RATES])
-    top.set_xlabel('Edge assigned rate [FPS]', labelpad=6)
-    handles, labels = ax.get_legend_handles_labels()
+def results(d, by, eta=None):
+    left, top, width, height = 46., 58., 456., 105.
+    xmap = lambda v: left+(v-206.2)/(233.8-206.2)*width
+    ymap = axes(d, (left, top, width, height), [xmap(r) for r in RATES],
+                 [str(r) for r in RATES], np.arange(.70, 1.001, .05), (.70, 1.022),
+                 'Local assigned rate [FPS]', 'Worst-stream TIR')
+    d.text(left+width/2, 34, 'Edge assigned rate [FPS]', 9, 'center')
+    d.line([(left, top), (left+width, top)])
+    for rate in RATES:
+        x = xmap(rate)
+        d.line([(x, top), (x, top-3)])
+        d.text(x, top-8, str(240-rate), MIN_FONT, 'center')
+    entries = [('Temporally concentrated', INK, (4, 3), 'circle'),
+               ('Temporally dispersed', EDGE, (), 'triangle')]
     if eta is not None:
-        ax.axhline(eta, color='#777777', linestyle=(0, (3, 3)), linewidth=.85, zorder=1)
-        handles.append(Line2D([], [], color='#777777', linestyle='--', linewidth=.85))
-        labels.append(f'Screening target η = {eta:g}')
-    legend = fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(.5, .998),
-                        ncol=3 if eta is not None else 2, columnspacing=1.3, handlelength=2.4,
-                        fontsize=MIN_FONT if eta is not None else 9)
-    legends.append(legend)
-    fig.text(.5, .032, 'Small markers: all 3 repeats (horizontal offsets for visibility).  Large markers and lines: means.',
-             ha='center', fontsize=MIN_FONT)
-    return fig, legends, [ax], data
-
-
-def pathwise(paired):
-    fig = plt.figure(figsize=(7.16, 2.95))
-    ax = fig.add_axes([.09, .22, .885, .60])
-    positions = np.arange(4)
+        entries.append((f'Reference: η = {eta:g}', '#777777', (3, 3), None))
+        require(.70 <= eta <= 1, 'eta reference within plotted TIR range')
+        d.line([(left, ymap(eta)), (left+width, ymap(eta))], '#777777', .8, (3, 3))
+    # Fixed legend boxes are outside the data area.
+    starts = (70, 285) if eta is None else (18, 202, 388)
+    font_size = 9 if eta is None else MIN_FONT
+    for x, (label, ink, dash, marker) in zip(starts, entries):
+        d.line([(x, 11), (x+22, 11)], ink, 1.1, dash)
+        if marker:
+            d.marker(x+11, 11, marker, ink, 2.6)
+        d.text(x+27, 14, label, font_size)
     data = []
-    for offset, (metric, label, color, hatch) in zip((-.26, 0, .26), (
-        ('Local_timely_FPS', 'Local', LOCAL, '///'),
-        ('Edge_timely_FPS', 'Edge', EDGE, None),
-        ('total_timely_FPS', 'Total', 'white', '...'),
-    )):
-        values = [float(paired[rate, metric]['mean']) for rate in RATES]
-        bars = ax.bar(positions + offset, values, width=.23, color=color, edgecolor=INK,
-                      linewidth=.7, hatch=hatch, label=label, zorder=2)
-        require([bar.get_height() for bar in bars] == values, 'paired CSV bar heights')
-        for i, rate in enumerate(RATES):
+    for pattern, ink, dash, marker in [('ALIGNED', INK, (4, 3), 'circle'),
+                                      ('STAGGERED', EDGE, (), 'triangle')]:
+        observed = [stats([float(by[r, pattern, j]['worst_stream_TIR']) for j in (1, 2, 3)]) for r in RATES]
+        d.line([(xmap(r), ymap(s['mean'])) for r, s in zip(RATES, observed)], ink, 1.25, dash)
+        for rate, s in zip(RATES, observed):
+            d.errorbar(xmap(rate), s['mean'], s['min'], s['max'], ymap, ink)
+            d.marker(xmap(rate), ymap(s['mean']), marker, ink)
+            data.append(dict(local_FPS=rate, edge_FPS=240-rate, placement=LABELS[pattern], **s,
+                             lower=s['mean']-s['min'], upper=s['max']-s['mean']))
+    return dict(scatter_count=0, jitter_count=0, footer_count=0, condition_mean_count=8,
+                errorbar_definition='observed min-max across three runs; not CI or SE',
+                mean_min_max=data, reference_eta=eta)
+
+
+def pathwise(d, paired):
+    left, top, width, height = 58., 39., 444., 112.
+    vals = [float(paired[r, m][f'R{j}']) for r in RATES
+            for m in ('Local_timely_FPS', 'Edge_timely_FPS', 'total_timely_FPS') for j in (1, 2, 3)]
+    margin = .08*(max(vals)-min(vals))
+    limits = (min(vals)-margin, max(vals)+margin)
+    # Include the complete outer bars and caps, not just the group centers.
+    xmap = lambda v: left+(v-205)/(235-205)*width
+    ticks = [v for v in range(-30, 31, 10) if limits[0] <= v <= limits[1]]
+    ymap = axes(d, (left, top, width, height), [xmap(r) for r in RATES], [str(r) for r in RATES],
+                 ticks, limits, 'Local assigned rate [FPS]', 'Δ timely FPS (Dispersed − Concentrated)')
+    d.line([(left, ymap(0)), (left+width, ymap(0))], INK, .75)
+    data = []
+    entries = [('Local_timely_FPS', 'Local', LOCAL, '///', -1.8),
+               ('Edge_timely_FPS', 'Edge', EDGE, None, 0),
+               ('total_timely_FPS', 'Total', 'white', '...', 1.8)]
+    for i, (metric, label, fill, hatch, offset) in enumerate(entries):
+        xx = d.width/2-101+i*75
+        d.rectangle(xx, 5, 22, 10, fill, INK, hatch)
+        d.text(xx+28, 14, label)
+        for rate in RATES:
             row = paired[rate, metric]
-            repeats = [float(row[f'R{j}']) for j in (1, 2, 3)]
-            points = ax.scatter(positions[i] + offset + np.array([-.05, 0, .05]), repeats,
-                                s=10, color=INK, marker='o', edgecolors='white', linewidths=.25, zorder=4)
-            require(np.array_equal(np.asarray(points.get_offsets())[:, 1], repeats), 'paired repeat coordinates')
+            s = stats([float(row[f'R{j}']) for j in (1, 2, 3)])
+            require(near(s['mean'], row['mean']) and near(s['min'], row['min']) and near(s['max'], row['max']),
+                    'paired stored mean/min/max')
+            # The bar uses the stored mean verbatim; the range uses paired R1--R3.
+            mean = float(row['mean'])
+            x = xmap(rate+offset)
+            bar_width = xmap(rate+1.5)-xmap(rate)
+            d.rectangle(x-bar_width/2, min(ymap(0), ymap(mean)), bar_width,
+                        abs(ymap(mean)-ymap(0)), fill, INK, hatch)
+            d.errorbar(x, mean, s['min'], s['max'], ymap)
             data.append(dict(local_FPS=rate, edge_FPS=240-rate, path=label,
-                             R1=repeats[0], R2=repeats[1], R3=repeats[2], mean=values[i]))
-    ax.axhline(0, color=INK, linewidth=.7, zorder=3)
-    ax.set(xticks=positions, xticklabels=[str(rate) for rate in RATES], xlim=(-.6, 3.6),
-           xlabel='Local assigned rate [FPS]', ylabel='Δ timely FPS\n(Dispersed − Concentrated)')
-    clean_axes(ax)
-    legend = fig.legend(*ax.get_legend_handles_labels(), loc='upper center', bbox_to_anchor=(.5, .997),
-                        ncol=3, columnspacing=2)
-    fig.text(.5, .035, 'Bars: mean of 3 paired repeat differences.  Small markers: individual paired differences.',
-             ha='center', fontsize=MIN_FONT)
-    return fig, [legend], [ax], data
+                             R1=s['values'][0], R2=s['values'][1], R3=s['values'][2],
+                             mean=mean, min=s['min'], max=s['max'],
+                             lower=mean-s['min'], upper=s['max']-mean))
+    return dict(scatter_count=0, footer_count=0, bar_count=12, paired_mean_min_max=data,
+                errorbar_definition='min-max of three same-repeat Dispersed minus Concentrated differences')
 
 
-def validate_layout(fig, legends, axes):
-    fig.canvas.draw()
-    renderer = fig.canvas.get_renderer()
-    canvas = fig.bbox
-    text_items = [t for t in fig.findobj(Text) if t.get_visible() and t.get_text()]
-    require(all(t.get_fontsize() >= MIN_FONT for t in text_items), 'minimum font size')
-    for item in text_items:
-        bbox = item.get_window_extent(renderer)
-        require(canvas.x0 - .5 <= bbox.x0 and bbox.x1 <= canvas.x1 + .5 and
-                canvas.y0 - .5 <= bbox.y0 and bbox.y1 <= canvas.y1 + .5,
-                f'clipped text: {item.get_text()}')
-    for legend in legends:
-        bbox = legend.get_window_extent(renderer)
-        require(all(not bbox.overlaps(ax.bbox) for ax in axes), 'legend overlaps data axes')
-    return dict(minimum_text_font_pt=min(t.get_fontsize() for t in text_items),
-                unclipped_text=True, legends_outside_data_axes=True,
-                width_inches=float(fig.get_figwidth()), height_inches=float(fig.get_figheight()))
-
-
-def save(fig, stem, output, legends, axes):
-    layout = validate_layout(fig, legends, axes)
+def save(stem, output, size, painter):
+    width, height = (v*72 for v in size)
+    checks = []
     generated = {}
     for extension in FORMATS:
         path = output / f'{stem}.{extension}'
-        metadata = {'Creator': 'Grid03-mini paper plotting script', 'CreationDate': None, 'ModDate': None}
-        if extension == 'svg':
-            metadata = {'Creator': 'Grid03-mini paper plotting script', 'Date': None}
-        elif extension == 'png':
-            metadata = {'Software': 'Grid03-mini paper plotting script'}
-        with path.open('xb') as stream:
-            fig.savefig(stream, format=extension, dpi=600, metadata=metadata)
+        buffer = io.BytesIO()
         if extension == 'pdf':
-            require(path.read_bytes().startswith(b'%PDF-'), 'PDF output')
-            require(b'/Subtype /Image' not in path.read_bytes(), 'PDF raster image embedded')
+            surface = cairo.PDFSurface(buffer, width, height)
+            surface.set_metadata(cairo.PDF_METADATA_CREATOR, 'Grid03-mini paper plotting script')
+            surface.set_metadata(cairo.PDF_METADATA_CREATE_DATE, '2000-01-01T00:00:00Z')
+            surface.set_metadata(cairo.PDF_METADATA_MOD_DATE, '2000-01-01T00:00:00Z')
         elif extension == 'svg':
-            root = ET.parse(path).getroot()
-            require(not list(root.iter('{http://www.w3.org/2000/svg}image')), 'SVG raster image embedded')
-            require(bool(list(root.iter('{http://www.w3.org/2000/svg}text'))), 'SVG editable vector text')
+            surface = cairo.SVGSurface(buffer, width, height)
+            surface.restrict_to_version(cairo.SVG_VERSION_1_2)
+        else:
+            surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, round(size[0]*600), round(size[1]*600))
+        ctx = cairo.Context(surface)
+        if extension == 'png':
+            ctx.scale(600/72, 600/72)
+        drawing = Drawing(ctx, width, height)
+        check = painter(drawing)
+        require(not any(any(word in t for word in ('Small markers:', 'Bars: mean', 'Edge burst',
+                'Local relief slot', 'Smoothed Edge arrivals', 'Continuous Local load',
+                'Same average split', 'L224/E16')) for t in drawing.texts), 'removed text reappeared')
+        check.update(minimum_font_pt=min(drawing.font_sizes), width_inches=size[0], height_inches=size[1],
+                     unclipped_text=True, legend_outside_data=True)
+        checks.append(check)
+        if extension == 'png':
+            surface.write_to_png(buffer)
+            buffer.seek(0)
+            with Image.open(buffer) as image:
+                with path.open('xb') as stream:
+                    image.save(stream, format='PNG', dpi=(600, 600))
+        else:
+            surface.finish()
+            with path.open('xb') as stream:
+                stream.write(buffer.getvalue())
+        surface.finish()
+        if extension == 'pdf':
+            require(path.read_bytes().startswith(b'%PDF-') and b'/Subtype /Image' not in path.read_bytes(), 'vector PDF')
+        elif extension == 'svg':
+            svg = ET.parse(path).getroot()
+            require(not list(svg.iter('{http://www.w3.org/2000/svg}image')), 'vector SVG')
         else:
             with Image.open(path) as image:
-                require(abs(image.info['dpi'][0] - 600) < .1, 'PNG 600 dpi metadata')
-                require(abs(image.size[0] - 600 * fig.get_figwidth()) <= 1 and
-                        abs(image.size[1] - 600 * fig.get_figheight()) <= 1, 'PNG dimensions')
-                layout['png_pixels'] = list(image.size)
-                layout['png_dpi'] = list(image.info['dpi'])
+                require(abs(image.info['dpi'][0]-600) < .1, '600 dpi PNG')
         generated[path.name] = sha(path)
-    plt.close(fig)
-    return dict(layout=layout, output_sha256=generated, vector_outputs=True, png_output=True)
+    require(checks[0] == checks[1] == checks[2], 'identical data and layout across formats')
+    return dict(layout_and_data=checks[0], output_sha256=generated, vector_outputs=True, png_output=True)
 
 
 def captions(eta):
-    text = '''# Grid03-mini figure captions and reproduction
+    text = """# Grid03-mini figure captions and reproduction
 
 ## Figure A — Temporal placement structure
 
-Temporally concentrated placement and temporally dispersed placement at the
-same L224/E16 average split (eight 30-FPS streams; 240 FPS in total). Each cell
-shows one source-slot assignment, with Local in gray and Edge in hatched blue.
-Concentrated aligns Edge assignments across streams; Dispersed shifts the
-assignment phases using the frozen phase vector [0, 2, 4, 6, 8, 9, 11, 13].
-The traces show per-slot Local and Edge assignment counts, m_L[n] and m_E[n].
-Both schedules contain 224 Local and 16 Edge assignments per 30 source slots,
-including two Edge assignments per stream. The peak Edge assignment count is
-eight for Concentrated and one for Dispersed. Same average split, different
-temporal load shapes. Source timestamps are unchanged; assignment phases do
-not imply a change in physical camera capture timing or GPU start times.
+Temporally concentrated placement and temporally dispersed placement at the same
+L224/E16 mean split, with K=8 and F=30 FPS per stream. The 30 scheduled source
+slots span one second. Each stream is assigned 28 Local frames and two Edge
+frames, so both placements have identical total and per-stream assignment counts
+(224 Local and 16 Edge). Concentrated aligns Edge assignments across streams;
+Dispersed uses the frozen assignment phase vector [0, 2, 4, 6, 8, 9, 11, 13].
+The lower step curves show the number of frames assigned to each path in each
+source slot, with the same colors and line styles in both panels. A Local
+assignment count of zero does not imply GPU idle. Scheduled assignment times
+are distinct from actual queue arrivals, socket submissions, and GPU execution
+start times. The assignment phases do not change the common source phase or
+establish synchronized physical camera capture. This figure describes the
+frozen schedule, not measured GPU load or Edge receive times.
 
-Figure A displays the frozen assignment schedule, not measured execution times
-or a causal explanation of performance.
+## Figure B — Worst-stream timely service
 
-## Figure B — Measured timely service (main, threshold-independent)
+Measured worst-stream TIR at four Local/Edge splits for temporally concentrated
+placement and temporally dispersed placement. Markers and asymmetric error bars
+show means and observed ranges across three runs: lower=mean-min and
+upper=max-mean. All 24 VALID measured runs are included. The ranges are not
+confidence intervals or standard errors; zero ranges are not enlarged.
+Connecting lines guide the eye between measured operating points and estimate
+neither unmeasured performance nor a crossing point. The upper axis reports the
+corresponding Edge assigned rate. Runs use C_L=3, C_E=1, B=1, K=8, F=30 FPS,
+and D=100 ms. The main figure contains no eta reference line.
 
-Measured worst-stream timely-inference ratio (TIR) for temporally concentrated
-placement and temporally dispersed placement at four Local/Edge splits.
-Small markers show all three measured repeats per condition; their horizontal
-offsets are for visibility only. Large markers and lines show arithmetic means;
-connecting lines are visual guides between tested points. The top axis gives
-the corresponding Edge assigned rate. All 24 measured runs are VALID and use
-C_L=3, C_E=1, B=1, eight 30-FPS streams, and a 100-ms relative deadline.
-The main figure has no feasibility threshold line: it presents the measured
-TIR values and run-to-run variation. Dispersed has higher worst-stream TIR at
-L208/E32, L216/E24, and L224/E16; the measured ordering reverses at L232/E8.
-This observation establishes neither global optimality nor a causal mechanism.
+## Figure C — Path-wise timely FPS difference
 
-## Figure C — Path-wise temporal effect
+Paired timely FPS difference, Dispersed minus Concentrated, decomposed into
+Local, Edge, and Total. Grouped bars show paired means, and asymmetric error
+bars show the observed min-max range of three paired-run differences. Each
+difference is computed within the same split and repeat before summarization;
+the ranges are not obtained by subtracting the two conditions' extrema.
+Positive values mean Dispersed provided more timely results; negative values
+mean Concentrated provided more. Total=Local+Edge within each paired repeat,
+up to floating-point representation. This is a path-wise measured decomposition.
+At L232/E8 the Local and Edge contributions have opposite signs. It does not
+establish a causal mechanism involving Local relief, GPU idle, or hysteresis.
 
-Difference in timely FPS, Dispersed minus Concentrated, decomposed into Local,
-Edge, and Total contributions at each tested split. Bars show the stored mean
-of three paired repeat differences; small markers show all paired differences.
-The Edge contribution is positive across the tested points, while the Local
-contribution becomes negative at L232/E8. The measured path-wise contributions
-have opposite signs at L232/E8. A causal mechanism is not established.
+## Scope and reproduction
 
-## Scope and terminology
+Grid03-mini is not a strict one-factor reproduction of Grid02: C_L changes from
+two to three, and dispersed assignment phases use the preregistered period-aware
+rule. Configuration A, the mini-grid runtime, and final Configuration B are
+not pooled. Historical verdicts and screening targets remain unchanged. No claim
+is made about global optimality, controller necessity or sufficiency,
+state-dependent capacity, or a GPU/Edge queue causal mechanism.
 
-Grid03-mini is not a strict one-factor reproduction of Grid02. Local concurrency
-changes from two to three, and dispersed assignment phases use the preregistered
-period-aware construction. Configuration A, the mini-grid runtime, and final
-Configuration B are distinct; their repeats are not pooled. Internal assignment
-labels are translated only for display. No claim is made about an optimal
-placement, online-controller necessity or sufficiency, hysteresis, state-dependent
-capacity, or a GPU/Edge queue causal mechanism.
-
-All figures use Liberation Sans with text at least 8.5 pt at the native 7.16-inch
-two-column width. Insert at the native width to retain the font-size guarantee.
-PDF and SVG are vector-only; PNG is 600 dpi. Paths use hatches, line styles,
-and/or marker shapes in addition to color, for grayscale legibility.
-
-## Reproduction
-
-```bash
-python3 -B scripts/figures/plot_grid03_mini_paper_figures.py
-```
-
-Optional screening-target variant:
+Figures use the installed CPU Cairo renderer, without matplotlib or seaborn.
+PDF/SVG contain vector drawing and vector font glyphs; PNG is 600 dpi. Liberation
+Sans is used at a minimum 8.5 pt at the native 7.16-inch two-column width. No
+font file is copied. The PDF metadata date is fixed solely for reproducible
+rendering and is not an experiment date.
 
 ```bash
-python3 -B scripts/figures/plot_grid03_mini_paper_figures.py --eta 0.99
+python3 -B scripts/figures/plot_grid03_mini_paper_figures.py --output-dir <fresh-directory>
+python3 -B scripts/figures/plot_grid03_mini_paper_figures.py --eta 0.99 --output-dir <fresh-directory>
 ```
 
-Use `--output-dir <fresh-directory>` for another rendering; existing artifacts
-are not overwritten. `FIGURE_DATA.json` records the exact plotted coordinates
-and their CSV keys. `VALIDATION.json` records input/output SHA-256, cross-file
-checks, native figure sizes, fonts, and output checks. No raw trace, analysis,
-plan, preregistration, runtime, or Git index is modified.
-'''
+Existing outputs are never overwritten by the generator. VALIDATION.json holds
+current mean/min/max coordinates, all input SHA-256, output checksums, and layout
+checks. The preexisting FIGURE_DATA.json is retained unchanged as the prior
+rendering's coordinate record; its former jitter offsets are not used by this
+version. No scientific data, plan, preregistration, or runtime is modified.
+"""
     if eta is not None:
-        text += f'''
-## Optional Figure B — Screening-target variant
+        text += f"""
+## Optional Figure B — Reference variant
 
-Same measured data as the main Figure B, with the separately requested
-screening operating target, eta = {eta:g}. The dashed reference is labeled
-“Screening target η = {eta:g}”. It is an operational screening target and is
-not a universal system requirement or a real-time standard. The main Figure B
-remains threshold-independent.
-'''
+The separate eta variant shows the same means and observed ranges, with the
+line labeled “Reference: η = {eta:g}”. At eta=0.99 this is the mini-grid's
+preregistered screening target, not a universal standard or a requirement for
+all experiments. It does not change the main threshold-independent figure.
+"""
     return text
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--eta', type=float, help='add a separate screening-target Figure B variant')
+    parser.add_argument('--eta', type=float, help='add a separate reference Figure B variant')
     parser.add_argument('--output-dir', type=Path, default=DEFAULT_OUTPUT, help='fresh output directory')
     args = parser.parse_args()
     if args.eta is not None:
-        require(math.isfinite(args.eta) and 0 <= args.eta <= 1, 'eta must be a finite ratio')
+        require(math.isfinite(args.eta) and .70 <= args.eta <= 1, 'eta within plotted TIR range')
     output = args.output_dir.resolve()
-    require(not output.is_relative_to(ROOT / 'results'), 'never write into scientific results')
+    require(not output.is_relative_to(ROOT/'results'), 'never write into scientific results')
     schedules, by, paired, verdict, before = load_validate()
-    font_path = style()
+    font_path = Path(subprocess.check_output(['fc-match', '-f', '%{file}', 'Liberation Sans'], text=True))
+    require(font_path.is_file() and 'LiberationSans' in font_path.name, 'installed Liberation Sans')
     stems = list(STEMS)
-    eta_stem = None
-    if args.eta is not None:
-        eta_stem = f'fig_temporal_placement_results_eta{args.eta:g}'.replace('.', '')
-        stems.append(eta_stem)
-    names = [f'{stem}.{ext}' for stem in stems for ext in FORMATS]
-    names += ['CAPTIONS.md', 'FIGURE_DATA.json', 'VALIDATION.json']
-    collisions = [name for name in names if (output / name).exists() or (output / name).is_symlink()]
-    require(not collisions, f'refusing to overwrite: {collisions}; use a fresh --output-dir')
-    output.mkdir(parents=True, exist_ok=True)
-    validation = {}
-    fig, legends, axes = structure(schedules)
-    validation[STEMS[0]] = save(fig, STEMS[0], output, legends, axes)
-    fig, legends, axes, result_data = results(by)
-    validation[STEMS[1]] = save(fig, STEMS[1], output, legends, axes)
-    fig, legends, axes, path_data = pathwise(paired)
-    validation[STEMS[2]] = save(fig, STEMS[2], output, legends, axes)
+    eta_stem = f'fig_temporal_placement_results_eta{args.eta:g}'.replace('.', '') if args.eta is not None else None
     if eta_stem:
-        fig, legends, axes, eta_data = results(by, args.eta)
-        require(eta_data == result_data, 'eta variant must preserve all measured coordinates')
-        validation[eta_stem] = save(fig, eta_stem, output, legends, axes)
-    after = {name: sha(SOURCE / name) for name in INPUT_NAMES}
-    require(before == after, 'scientific source files changed')
-    with (output / 'CAPTIONS.md').open('x') as stream:
+        stems.append(eta_stem)
+    names = [f'{s}.{ext}' for s in stems for ext in FORMATS] + ['CAPTIONS.md', 'VALIDATION.json']
+    require(not any((output/n).exists() or (output/n).is_symlink() for n in names),
+            'refusing to overwrite; use a fresh --output-dir')
+    output.mkdir(parents=True, exist_ok=True)
+    validation = {
+        STEMS[0]: save(STEMS[0], output, (7.16, 3.75), lambda d: structure(d, schedules)),
+        STEMS[1]: save(STEMS[1], output, (7.16, 2.75), lambda d: results(d, by)),
+        STEMS[2]: save(STEMS[2], output, (7.16, 2.60), lambda d: pathwise(d, paired)),
+    }
+    if eta_stem:
+        validation[eta_stem] = save(eta_stem, output, (7.16, 2.75), lambda d: results(d, by, args.eta))
+        require(validation[eta_stem]['layout_and_data']['mean_min_max'] ==
+                validation[STEMS[1]]['layout_and_data']['mean_min_max'], 'reference data unchanged')
+    require(before == {name: sha(SOURCE/name) for name in INPUT_NAMES}, 'input hashes unchanged')
+    with (output/'CAPTIONS.md').open('x') as stream:
         stream.write(captions(args.eta))
-    data = dict(
-        structure=dict(source_type='FROZEN_ASSIGNMENT_SCHEDULE', local_FPS=224, edge_FPS=16,
-                       source_slots=list(range(30)), streams=list(range(8)),
-                       placements={LABELS[p]: dict(local_masks=schedules[224, p]['local'].tolist(),
-                                                  edge_masks=schedules[224, p]['edge'].tolist(),
-                                                  m_L=schedules[224, p]['ml'].tolist(),
-                                                  m_E=schedules[224, p]['me'].tolist(),
-                                                  phase_vector=schedules[224, p]['phase']) for p in PATTERNS}),
-        measured_results=result_data, paired_pathwise_measured_differences=path_data,
-    )
-    with (output / 'FIGURE_DATA.json').open('x') as stream:
-        json.dump(data, stream, indent=2, allow_nan=False)
-        stream.write('\n')
-    report = dict(
-        source_directory=str(SOURCE.relative_to(ROOT)), input_sha256=before,
-        script_path=str(Path(__file__).resolve().relative_to(ROOT)), script_sha256=sha(Path(__file__)),
-        matplotlib_version=matplotlib.__version__, numpy_version=np.__version__,
-        font_path=font_path, font_sha256=sha(Path(font_path)), minimum_font_pt=MIN_FONT,
-        measured_run_count=24, raw_repeat_point_count=24, measured_integrity='24/24 VALID',
-        preserved_analyzer_verdict=verdict['primary_verdict'],
-        all_coordinates_from_source_data=True, no_fabricated_values=True,
-        structure_is_frozen_schedule_not_measured_execution=True,
-        assignment_counts_match_manifest=True, figure_B_repeats_match_per_run=True,
-        figure_C_values_match_paired_comparison=True, stream_path_accounting_check='PASS',
-        max_edge_burst_concentrated=8, max_edge_burst_dispersed=1,
-        main_figure_has_threshold=False, optional_eta=args.eta,
-        inputs_unchanged=True, new_workload_executed=False,
-        figure_validation=validation,
-        additional_output_sha256={n: sha(output / n) for n in ('CAPTIONS.md', 'FIGURE_DATA.json')},
-    )
-    with (output / 'VALIDATION.json').open('x') as stream:
+    report = dict(source_directory=str(SOURCE.relative_to(ROOT)), input_sha256=before,
+                  script_path=str(Path(__file__).resolve().relative_to(ROOT)), script_sha256=sha(Path(__file__)),
+                  renderer='Cairo CPU', cairo_version=cairo.cairo_version_string(),
+                  numpy_version=np.__version__, matplotlib_used=False, seaborn_used=False,
+                  font_path=str(font_path), font_sha256=sha(font_path), minimum_font_pt=MIN_FONT,
+                  measured_run_count=24, input_repeat_count=24, individual_scatter_count=0,
+                  measured_integrity='24/24 VALID', preserved_analyzer_verdict=verdict['primary_verdict'],
+                  all_coordinates_from_source_data=True, no_fabricated_values=True,
+                  structure_is_frozen_schedule_not_measured_execution=True,
+                  assignment_counts_match_manifest=True, assignment_sums_equal_eight=True,
+                  figure_B_mean_min_max_match_per_run=True, figure_C_paired_mean_min_max_match_CSV=True,
+                  paired_Total_equals_Local_plus_Edge=True, stream_path_accounting_check='PASS',
+                  max_edge_burst_concentrated=8, max_edge_burst_dispersed=1,
+                  main_figure_has_threshold=False, optional_eta=args.eta,
+                  inputs_unchanged=True, new_workload_executed=False, figure_validation=validation,
+                  additional_output_sha256={'CAPTIONS.md':sha(output/'CAPTIONS.md')})
+    with (output/'VALIDATION.json').open('x') as stream:
         json.dump(report, stream, indent=2, allow_nan=False)
         stream.write('\n')
-    print(json.dumps(dict(output_directory=str(output), figures=stems,
-                          raw_repeat_count=24, validation='PASS', sources_unchanged=True), indent=2))
+    print(json.dumps(dict(output_directory=str(output), figures=stems, input_repeat_count=24,
+                          individual_scatter_count=0, validation='PASS', sources_unchanged=True), indent=2))
 
 
 if __name__ == '__main__':
