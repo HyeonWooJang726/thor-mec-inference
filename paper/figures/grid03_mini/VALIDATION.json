@@ -1,0 +1,142 @@
+{
+  "source_directory": "results/timely_capacity_campaign/v2_2/grid03_mini01",
+  "input_sha256": {
+    "assignment_manifest.json": "ea26f5337672541ce8040c15d46e5df138434134eb67ea2b611a0ea663c29a75",
+    "assignment_table.csv": "68dd73a1f1bf50793462a2817d1c17871c05d71e7b63e54baf06fc1198948b5c",
+    "ASSIGNMENT_PHASE_AUDIT.md": "12e51c76e8e0b9141348872d456ab993e08694e173257412d06cec19e267cfed",
+    "GRID03_MINI_PREREGISTRATION.md": "a10d18d4f7106e0b13cd1ce51e3b8422d2b9317a402d1c43b7f1d102c18ac9f4",
+    "ANALYSIS_SPECIFICATION.md": "2843ba14b041c984d57a32bcd47d7f43fbe5fbec4e4ba547581eba35792131ee",
+    "analysis01/per_run.csv": "0a5b902cbb9cc129c1fba89e9a9cbb801fec49707a1b3128f48d021f73ba0add",
+    "analysis01/paired_comparison.csv": "8ec906dfa54e1897b9bf7d9b254a9235dde80a150481fe700d5285c09f7ca8e3",
+    "analysis01/per_stream.csv": "89625a8e71cfae5205a0a03202885012e382ad52b37c5c5340cb2fea623b7893",
+    "analysis01/per_path.csv": "100e42aa134fa6d280e5652e0b4eaa2dd4d3ed9750affe0255d5fc53319a79cb",
+    "analysis01/validity_summary.json": "537ec6b1319de710ac12858b4a4647faf784373e80de2be14130675e452a1ff8",
+    "analysis01/grid03_mini_verdict.json": "b5b56f55dfa10485f838aa86150def5becb00e2d927074b5effde048f9c6734f"
+  },
+  "script_path": "scripts/figures/plot_grid03_mini_paper_figures.py",
+  "script_sha256": "adc617fa9861a631bc665a9758d7fa9d2952a96cdce876056655d262baf58203",
+  "matplotlib_version": "3.6.3",
+  "numpy_version": "1.26.4",
+  "font_path": "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+  "font_sha256": "4659bc0c58c5028dd488ec928d41d9265db43d9b669fc14ca8b0832daca7b144",
+  "minimum_font_pt": 8.5,
+  "measured_run_count": 24,
+  "raw_repeat_point_count": 24,
+  "measured_integrity": "24/24 VALID",
+  "preserved_analyzer_verdict": "TEMPORAL_PLACEMENT_SHIFTS_FEASIBLE_BOUNDARY",
+  "all_coordinates_from_source_data": true,
+  "no_fabricated_values": true,
+  "structure_is_frozen_schedule_not_measured_execution": true,
+  "assignment_counts_match_manifest": true,
+  "figure_B_repeats_match_per_run": true,
+  "figure_C_values_match_paired_comparison": true,
+  "stream_path_accounting_check": "PASS",
+  "max_edge_burst_concentrated": 8,
+  "max_edge_burst_dispersed": 1,
+  "main_figure_has_threshold": false,
+  "optional_eta": 0.99,
+  "inputs_unchanged": true,
+  "new_workload_executed": false,
+  "figure_validation": {
+    "fig_temporal_placement_structure": {
+      "layout": {
+        "minimum_text_font_pt": 8.5,
+        "unclipped_text": true,
+        "legends_outside_data_axes": true,
+        "width_inches": 7.16,
+        "height_inches": 4.2,
+        "png_pixels": [
+          4296,
+          2520
+        ],
+        "png_dpi": [
+          599.9988,
+          599.9988
+        ]
+      },
+      "output_sha256": {
+        "fig_temporal_placement_structure.pdf": "4fa96f1a151f44479358e331daccce5cf784a72e79f6be1a2b670da4de4c6280",
+        "fig_temporal_placement_structure.svg": "4a1149566efa05ce6ce7ea2052cc6bff1c54c03724267042bfda1506a157b4f1",
+        "fig_temporal_placement_structure.png": "fc17fc62d5cea76bdfd82d9ae96cf5bc293611ae7ab5ffaf699f15f7e26ca8a6"
+      },
+      "vector_outputs": true,
+      "png_output": true
+    },
+    "fig_temporal_placement_results": {
+      "layout": {
+        "minimum_text_font_pt": 8.5,
+        "unclipped_text": true,
+        "legends_outside_data_axes": true,
+        "width_inches": 7.16,
+        "height_inches": 3.15,
+        "png_pixels": [
+          4296,
+          1890
+        ],
+        "png_dpi": [
+          599.9988,
+          599.9988
+        ]
+      },
+      "output_sha256": {
+        "fig_temporal_placement_results.pdf": "098eee4ac87ed109dd5f40215c83296c9aefb3a723aadfcf43161ddf1a5d61a9",
+        "fig_temporal_placement_results.svg": "3501faffd8abd35c7ba15d6666a7b070c1b05f4640825fbd97b00b0cefecb2d4",
+        "fig_temporal_placement_results.png": "0f8cbc16acf6026de22ade5fd804e593385df4bd8d0d2b7c28f498cfe18641a2"
+      },
+      "vector_outputs": true,
+      "png_output": true
+    },
+    "fig_pathwise_temporal_effect": {
+      "layout": {
+        "minimum_text_font_pt": 8.5,
+        "unclipped_text": true,
+        "legends_outside_data_axes": true,
+        "width_inches": 7.16,
+        "height_inches": 2.95,
+        "png_pixels": [
+          4296,
+          1770
+        ],
+        "png_dpi": [
+          599.9988,
+          599.9988
+        ]
+      },
+      "output_sha256": {
+        "fig_pathwise_temporal_effect.pdf": "3a3245c432b22005a1c1172075515a903e6a6f494c930c640752a9fe9237b50a",
+        "fig_pathwise_temporal_effect.svg": "e9ec00a14d0573fedc572fda60c84480780bf13d351fae62c535764510711259",
+        "fig_pathwise_temporal_effect.png": "5f1ecc1d9758d2ddceae9db818539cebea940ef524ddbbbd14be729b81bf094e"
+      },
+      "vector_outputs": true,
+      "png_output": true
+    },
+    "fig_temporal_placement_results_eta099": {
+      "layout": {
+        "minimum_text_font_pt": 8.5,
+        "unclipped_text": true,
+        "legends_outside_data_axes": true,
+        "width_inches": 7.16,
+        "height_inches": 3.15,
+        "png_pixels": [
+          4296,
+          1890
+        ],
+        "png_dpi": [
+          599.9988,
+          599.9988
+        ]
+      },
+      "output_sha256": {
+        "fig_temporal_placement_results_eta099.pdf": "b027c66f7a64804f2dd6cbc29f78a27fec23e71e1488261d0c76c3e31ae7e05f",
+        "fig_temporal_placement_results_eta099.svg": "4f1b53a22a1ac6e38bf351149b950e94ece572d63ae814ccca0d1475d048c8b6",
+        "fig_temporal_placement_results_eta099.png": "a6120b4c67f67084fdd65b80ed87c9d649122d32a1048bb685575ed802cfb028"
+      },
+      "vector_outputs": true,
+      "png_output": true
+    }
+  },
+  "additional_output_sha256": {
+    "CAPTIONS.md": "4827ba1c2a95fb2c93370b357fc8a0377c345cd2a6ae149c5524840a5b50017f",
+    "FIGURE_DATA.json": "6cb5b1828b6801a4825069e64013b5e71a5ce6dbc5a4d327a3953c1bd3b0b3ea"
+  }
+}
