@@ -1,0 +1,146 @@
+Preliminary Measurement temporal-placement figure provenance
+generation_timestamp_utc: 2026-10-02T06:26:02.032872+00:00
+repository: /home/ainet/research/thor-mec-rate-dvfs-gate
+git_branch: rate-dvfs-gate
+git_HEAD: 793b41e9b94dd2be7fcb211b43da1a3ef463877e
+runtime: C_L=3; C_E=1; TensorRT B=1; K=8; F=30 FPS/stream; aggregate=240 FPS; D=100 ms; active=60 s; expiry ON
+split: Local 224 FPS / Edge 16 FPS; per-stream 28 Local + 2 Edge per 30 source slots
+logical source phase: common_zero_offset; original physical capture synchronization: UNVERIFIED
+panel_a: exact assignment-time structure; not socket arrivals or GPU execution
+panel_b: Grid03-mini, three independent measured repeats per condition; same-repeat pairing
+panel_c: separately preregistered Confirmation03, five measured repeats per condition; same-round P1 A-B
+No cross-campaign pooling. No existing scientific verdict reclassified.
+hardware_status for all measured runs: {"block_b_confirmation03": {"PROTECTION_LIMITED": 25}, "grid03_mini01": {"PROTECTION_LIMITED": 24}}
+PROTECTION_LIMITED is retained as recorded. VALID does not mean absence of protection events.
+dimensions_inches: 7.16 x 3.95
+PNG_dpi: 600
+font: Liberation Sans; minimum=8.5 pt; maximum=9.5 pt
+font_file_used_not_copied: /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf
+font_SHA256: 4659bc0c58c5028dd488ec928d41d9265db43d9b669fc14ca8b0832daca7b144
+matplotlib: 3.6.3; numpy: 1.26.4
+R_min axis limits: [0.90, 1.005]; the metric is bounded in [0,1]. No eta line.
+Pair points: filled blue circles / orange squares. Means: larger open markers with the same condition encodings.
+Horizontal offsets separate coincident observations and the mean; only y coordinates encode measured R_min.
+No error bars or confidence intervals. Pair lines only connect preregistered repeat identities.
+scientific_inputs_SHA256_before_after: PASS
+no_experimental_result_modified: YES
+existing_paper_figures_unchanged: YES
+preserved_file_inventory_count: 3900
+preserved_inventory_SHA256_before: 9527d28859a1ba31504241cb08af64480f05e2e486e76cb9ef4e187c37b11a3e
+preserved_inventory_SHA256_after: 9527d28859a1ba31504241cb08af64480f05e2e486e76cb9ef4e187c37b11a3e
+
+SCIENTIFIC SCOPE CHECKS
+01 PASS: Identical mean split and per-stream assignment counts
+02 PASS: Exactly three Grid03-mini pairs in panel (b)
+03 PASS: Exactly five Confirmation03 pairs in panel (c)
+04 PASS: Campaigns remain separate; no pooled samples or means
+05 PASS: Every plotted repeat and paired difference matches canonical CSV
+06 PASS: Both measured runtimes verified as C_L=3, C_E=1, B=1
+07 PASS: No Configuration B label in the figure
+08 PASS: No eta threshold or reference line
+09 PASS: No causal queue/GPU explanation in the figure
+10 PASS: No universal optimality claim
+11 PASS: Concentrated/dispersed are controlled placement conditions
+12 PASS: Every valid L224/E16 repetition is visible
+
+CANONICAL INPUT SHA-256 (relative to repository)
+9ad4c5827b224561a87b10ed78ed343b064b9c3cb0166260f3c54150af26793b  results/timely_capacity_campaign/v2_2/block_b_confirmation03/ANALYSIS_SPECIFICATION.md
+a97f8b97997f6bad9ba9c53ebdbdcbee3ec62785d3d9f2998258e12d69589c35  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_A_L224E16_DISP_R1/summary.json
+3c01e2b323ff0e3a3064687a1f40fa3813113f881bc870c37810a008e6fcf78a  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_A_L224E16_DISP_R2/summary.json
+b767386ea9afd4ef5edfc4d2e60fcf899fc0f543cca832d2103836c2d6d591d4  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_A_L224E16_DISP_R3/summary.json
+ec8822751364331eaf47c4cb6bc8ed65d087f15cd4612be14aae184c6febad7f  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_A_L224E16_DISP_R4/summary.json
+915ef54a39b3404821923c5d480908f84c911975031b22b1974fc03f8b02104f  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_A_L224E16_DISP_R5/summary.json
+a676d4b0e31283d0388820fc3ab8d8085ed90095ea8d0ed5235aed672d80c746  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_B_L224E16_CONC_R1/summary.json
+ce35e791a337ed46b0284aac859d51bf223d865912cd270af734316afbcf8a71  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_B_L224E16_CONC_R2/summary.json
+5d5fa5e41eabcf5cf0f159769dde865b4b6a63a5c21c80318612d4539a1bfe9a  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_B_L224E16_CONC_R3/summary.json
+cc447007aefe5ef1fffed319e5fb45aef38b9c932008baf260a9aa8dd5dfe65e  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_B_L224E16_CONC_R4/summary.json
+311d8253eb9486b724165c8fb82aaae2755e5f34d47f73b3ca66633937eb0594  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_B_L224E16_CONC_R5/summary.json
+e3ca82af516387c257549692ff4960dd9f542c92d28f0ae6cad5a6c0f5dabb10  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_C_L232E8_DISP_R1/summary.json
+97245d230274cc25b91fe28663b1c8ef929f808747839e844bdf639bae4e2cab  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_C_L232E8_DISP_R2/summary.json
+e94909f191b8bc71da3963e6391d17f3f90dff35483ce7e145ef6c04ac77eb8f  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_C_L232E8_DISP_R3/summary.json
+6cc69297f506368a5d1cfc7cad33701cb9cc529d333b177dfe5f0f5258c24ac7  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_C_L232E8_DISP_R4/summary.json
+373df23aa417fe264636dbd0f8ebf643bf9e7a7f5fb6f0f9cea9fe485909fde9  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_C_L232E8_DISP_R5/summary.json
+353ffcb5814630823e8097cf02f4e548b1c282703f623b52916db96e06952331  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_D_L232E8_CONC_R1/summary.json
+01fc4bb5010bea18c91f9a5a7dd592cc9ab19b4a3435b850e9843c053f81e8e1  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_D_L232E8_CONC_R2/summary.json
+243d091d40e724e4838029d2cd8bdc3f39e7d812b96c80971fcdb21fc04ab72a  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_D_L232E8_CONC_R3/summary.json
+0a3711abcd58fe495b5fec198d4c7b9287abfde594e048d271c23b874d285b13  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_D_L232E8_CONC_R4/summary.json
+f55e098f561bdf042af1ac4373b69144c91133193aa663dc95ace32aab79f42b  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_D_L232E8_CONC_R5/summary.json
+8d17a6ef9f56ae7dfdfc2bb27f2e4252f5fa6131fc98d8753b4dc8afbe288692  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_E_L240E0_LOCAL_ONLY_R1/summary.json
+5e21d0e649a2b518b1aad8f9f35fdb021795968394cf190ece44a94fce313cb4  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_E_L240E0_LOCAL_ONLY_R2/summary.json
+de6f66ae2fb9228b2860bdfd74105261d2bdd83fdc41fb08288775a540553c82  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_E_L240E0_LOCAL_ONLY_R3/summary.json
+c1007a3109fa4adda052536a99f0f607ea53177596ac8aa0591bd5620bca9a68  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_E_L240E0_LOCAL_ONLY_R4/summary.json
+49b1ad40650ee32bce9d5824991c55fc1a2b7aae6a815be590263f4843087a54  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONF03_E_L240E0_LOCAL_ONLY_R5/summary.json
+1c1667ee375ba11f146820b6b020e78d91bb398b8443ab5900cd89122db1afbf  results/timely_capacity_campaign/v2_2/block_b_confirmation03/CONFIRMATION03_PREREGISTRATION.md
+24ac9d2addc844d5a63e41b56189d7ca6d03fade51bb39b190b91284b8c76c6a  results/timely_capacity_campaign/v2_2/block_b_confirmation03/analysis01/confirmation03_verdict.json
+da33d893b9faf37d352a72e43c85d4bad173d9e743cc2d1822e7ddc3afafd1fa  results/timely_capacity_campaign/v2_2/block_b_confirmation03/analysis01/paired_comparison.csv
+17f303b8cea6e0722893f3c10713a4db0760a21d29cce95f159638038dd36ac2  results/timely_capacity_campaign/v2_2/block_b_confirmation03/analysis01/per_path.csv
+39e193856ba55e51f4da31d076ec8f5f1acf154df26fd3394e4e76666a6bfd90  results/timely_capacity_campaign/v2_2/block_b_confirmation03/analysis01/per_run.csv
+4b351a7c19ebe83d36a0421542d017ef37cbd0a3c2667ab936fa7d70e0f824f9  results/timely_capacity_campaign/v2_2/block_b_confirmation03/analysis01/per_stream.csv
+1b2bd7e69371d7ef16534d2fb5dc9845c9c60e0c318feac234892e2d18b64076  results/timely_capacity_campaign/v2_2/block_b_confirmation03/analysis01/validity_summary.json
+7bf46de2f077994e0a97020a9db159607531104b69f919576371162de0bad07c  results/timely_capacity_campaign/v2_2/block_b_confirmation03/assignment_manifest.json
+e7b3a5cb5a8daf69021be445cfb14384bdb33c0513a189b4e00609aa0eb50a61  results/timely_capacity_campaign/v2_2/block_b_confirmation03/assignment_table.csv
+371d3ee4963fd6870b291650bb9d8601c8ade0a17435a0256afc0bf6a7b5ae1b  results/timely_capacity_campaign/v2_2/block_b_confirmation03/plan.json
+49f2875b1f829c0aff86d807d2455fe3bf239a679b15142f807705172378a2f5  results/timely_capacity_campaign/v2_2/block_b_confirmation03/plan.sha256
+f4824540f118b8a714ce6b88d3cc4973df6ce5642368cc85918fd42d48899f0a  results/timely_capacity_campaign/v2_2/block_b_confirmation03/runtime_manifest.json
+d121a54325d733ff29b0a3e2c92b1513f5999862b9132aadc9dca2b0326d10c5  results/timely_capacity_campaign/v2_2/block_b_confirmation03/session_plan.json
+748a33f9421ac357b8cc52fcbeaf7985e069ae549571e5850bc7239fe194f056  results/timely_capacity_campaign/v2_2/block_b_confirmation03/source_sha256.json
+2843ba14b041c984d57a32bcd47d7f43fbe5fbec4e4ba547581eba35792131ee  results/timely_capacity_campaign/v2_2/grid03_mini01/ANALYSIS_SPECIFICATION.md
+4f5a34641bd62a7b60a9a8bafd1562ab6543581f2f1f307e39c34e03ca171092  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L208_CONC_R1/summary.json
+bf5021c8002685dc9c7d10c8a2413c606f99c7ed6a207441ba07685b2e29f4a9  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L208_CONC_R2/summary.json
+bd14fbccbce88e8efddf8a720e27e1f10b0d06934aa1958d7ad3618ae2f4cdcf  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L208_CONC_R3/summary.json
+aeeab772fdfa7beb068a63413e62e27f1c85edd3f3c64a67ee931faf1b242124  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L208_DISP_R1/summary.json
+6a530e904966bc46a15f800d4903679551fe3bfdce4a2b2768b01c58c6ae8aac  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L208_DISP_R2/summary.json
+c39fd3a9b8abfbb42b948b0fbcc1925b8985040c15746c7515113d99b4103999  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L208_DISP_R3/summary.json
+0730bdace805d883f554a1bb2cfc64fbc2fa4ff024a79074de4d88dc01b3468d  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L216_CONC_R1/summary.json
+bd938a47da604bb4fb0602e91a6746f6e200bbfd2ee596df34f1ee9fef278cfb  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L216_CONC_R2/summary.json
+3fd2ac3f1af0bde2e57ae32eeffaf85e74b54e9340f77efbf7897c28585103c0  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L216_CONC_R3/summary.json
+db106e7e73d79bb8b74a522d245d7d8d5fba3095222bd244fc60ffaed51c8534  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L216_DISP_R1/summary.json
+5b42df14b94a651e70af95bfdaa4bdad3fabe139ffcef2f9c027b09da1267f16  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L216_DISP_R2/summary.json
+7c900ba57e34de6dc5c9f23f50eba5874597c81b19f9b06992b14d0e3302272c  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L216_DISP_R3/summary.json
+17fdf34c50fe507b4d8276a59de595b826ee35d170c0cf70e224c39a1d167218  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L224_CONC_R1/summary.json
+35bcde476b0a9c1a000ba28d14d9892e2d7ec08c4aacd817d44989ff1f741f41  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L224_CONC_R2/summary.json
+5d52850e5a2e3ef9b7024411730e2c79784695da33c96719bd44144b92d97506  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L224_CONC_R3/summary.json
+58f9b83a66e4790091cacef0594a786182d8b4225d5c6b7cf7781eed49f69c29  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L224_DISP_R1/summary.json
+983c7c4eccec9396d8ebcf5fb696c2d50da91ec4922b4da7e998f1d398279d2b  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L224_DISP_R2/summary.json
+aa80d281fbc5b65d27f1fc880619d32a4566b11bb0e4561c15276d3eafed9776  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L224_DISP_R3/summary.json
+92099543252645577e57a6918aa3b989e05462a0eae57dc31e1fbac0602c5075  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L232_CONC_R1/summary.json
+1047e3956e897e5d6d8c82b047e250a48cb086c50e7a487ff4f505ded56f80f5  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L232_CONC_R2/summary.json
+b5d03b79684de6f494faee5de3e3ae3894ed1d1a247d38d0d8a4d428a79bc0a6  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L232_CONC_R3/summary.json
+fcf23f7e96f62c177ba34da29366e08a8a7fbc42afcc0a0bb93e0f4ce307d6b2  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L232_DISP_R1/summary.json
+faeb075705d0926899ff13540286267f143be0aafe40f9af2387b3d8659cb5d6  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L232_DISP_R2/summary.json
+9bb4be56940415b53e1595706217cc94e2983b147aed84c9d218ce5e8f7a1e39  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03M_L232_DISP_R3/summary.json
+a10d18d4f7106e0b13cd1ce51e3b8422d2b9317a402d1c43b7f1d102c18ac9f4  results/timely_capacity_campaign/v2_2/grid03_mini01/GRID03_MINI_PREREGISTRATION.md
+b5b56f55dfa10485f838aa86150def5becb00e2d927074b5effde048f9c6734f  results/timely_capacity_campaign/v2_2/grid03_mini01/analysis01/grid03_mini_verdict.json
+8ec906dfa54e1897b9bf7d9b254a9235dde80a150481fe700d5285c09f7ca8e3  results/timely_capacity_campaign/v2_2/grid03_mini01/analysis01/paired_comparison.csv
+100e42aa134fa6d280e5652e0b4eaa2dd4d3ed9750affe0255d5fc53319a79cb  results/timely_capacity_campaign/v2_2/grid03_mini01/analysis01/per_path.csv
+0a5b902cbb9cc129c1fba89e9a9cbb801fec49707a1b3128f48d021f73ba0add  results/timely_capacity_campaign/v2_2/grid03_mini01/analysis01/per_run.csv
+89625a8e71cfae5205a0a03202885012e382ad52b37c5c5340cb2fea623b7893  results/timely_capacity_campaign/v2_2/grid03_mini01/analysis01/per_stream.csv
+537ec6b1319de710ac12858b4a4647faf784373e80de2be14130675e452a1ff8  results/timely_capacity_campaign/v2_2/grid03_mini01/analysis01/validity_summary.json
+ea26f5337672541ce8040c15d46e5df138434134eb67ea2b611a0ea663c29a75  results/timely_capacity_campaign/v2_2/grid03_mini01/assignment_manifest.json
+68dd73a1f1bf50793462a2817d1c17871c05d71e7b63e54baf06fc1198948b5c  results/timely_capacity_campaign/v2_2/grid03_mini01/assignment_table.csv
+3dedb14b3cabad2564965460d159506537df83aed65020ee5d8461e03f601e29  results/timely_capacity_campaign/v2_2/grid03_mini01/plan.json
+3543dbbb0ffd871e81c43cb792104b867dcea0b6571e93856fb61eb5dcccfc86  results/timely_capacity_campaign/v2_2/grid03_mini01/plan.sha256
+8ee015884dfff18f7bf8a7d8cc1fa6a73e410990c946a9037cb6c3f802d3cf7e  results/timely_capacity_campaign/v2_2/grid03_mini01/runtime_manifest.json
+5f295b70c24ddfdffd1f242dd83898b5a286e30b7f62197af463bfc82acf432b  results/timely_capacity_campaign/v2_2/grid03_mini01/session_plan.json
+425a87fc5d1f05d9e249b4db367521fb0f1e969801722bc3edc88b1b6ab51d68  results/timely_capacity_campaign/v2_2/grid03_mini01/source_sha256.json
+
+PAIRED DIFFERENCES (source CSV strings, dispersed minus concentrated)
+grid03_mini01: {"total_timely_FPS": ["10.099999999999994", "10.066666666666663", "9.450000000000017"], "worst_stream_TIR": ["0.06777777777777783", "0.06499999999999995", "0.06333333333333335"]}
+block_b_confirmation03: {"total_timely_FPS": ["9.433333333333334", "9.466666666666667", "8.816666666666666", "10.45", "13.966666666666667"], "worst_stream_TIR": ["0.06277777777777778", "0.0661111111111111", "0.06222222222222222", "0.06888888888888889", "0.08666666666666667"]}
+
+OPTIONAL SUPPLEMENTARY TIMELY-FPS TABLE (not plotted on the main axes)
+campaign | placement | n | repeats | mean | min | max
+grid03_mini01 | Temporally concentrated placement | 3 | [229.9, 229.65, 229.88333333333333] | 229.8111111111111 | 229.65 | 229.9
+grid03_mini01 | Temporally dispersed placement | 3 | [240.0, 239.71666666666667, 239.33333333333334] | 239.68333333333334 | 239.33333333333334 | 240.0
+block_b_confirmation03 | Temporally concentrated placement | 5 | [229.76666666666668, 230.48333333333332, 230.1, 229.35, 225.98333333333332] | 229.13666666666666 | 225.98333333333332 | 230.48333333333332
+block_b_confirmation03 | Temporally dispersed placement | 5 | [239.2, 239.95, 238.91666666666666, 239.8, 239.95] | 239.56333333333333 | 238.91666666666666 | 239.95
+
+PROPOSED PAPER CAPTION
+Temporal placement at a fixed L224/E16 mean split. (a) Exact controlled assignment schedules for eight 30-FPS streams: each stream receives 28 Local and two Edge assignments per 30 source slots. Temporally concentrated placement aligns Edge assignments across streams, whereas temporally dispersed placement shifts assignment phases without changing the logical source schedule or assignment counts. The schedules represent assignment-time structure, not simultaneous transmission or GPU execution. (b) Worst-stream timely inference ratio R_min in Grid03-mini, with three preregistered pairs. (c) The independently preregistered Confirmation03 comparison, with five pairs. Filled points are individual measured runs, gray lines connect the same repeat, and larger open markers show each condition's mean within its own campaign. Small horizontal offsets separate coincident observations. R_min is bounded in [0,1]; both measurement panels use the same restricted vertical range. The measured runtime is C_L=3, C_E=1, B=1, with a 100-ms deadline and expired-frame dropping enabled. The direction of the L224/E16 difference is reproduced in all five confirmation pairs. This comparison does not establish universal optimality or a causal mechanism.
+
+OUTPUT SHA-256 (provenance file excluded to avoid self-reference)
+a1fd263e984e8e2db8b384513f3ba1fe05d4b98c85b7fee36bdcd2672c61f603  plot_preliminary_temporal_placement.py
+a752aa7a5093ccc9f483212488b234a224a360575e34c42bcf401f886e03bc6f  preliminary_temporal_placement.pdf
+58f80d975665c5b4435af505ef00968c4c2128145ac791ac7b3048e01ad3c69a  preliminary_temporal_placement.png
+b47f6e0813597c3f983b4d2b431fff1d24ff9b191428385a10a493fbb9e81af3  preliminary_temporal_placement.svg
+a80636684f5a91ee7637b34001bafb4dbf489f287cb66d4033bedfc2c08f1a25  preliminary_temporal_placement_data.csv
