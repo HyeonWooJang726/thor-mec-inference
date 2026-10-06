@@ -1,0 +1,809 @@
+{
+  "task": "CAMPAIGN2_SECTION3_FIGURE1_CLEANUP_AND_PUBLISH",
+  "repository_root": "/home/ainet/research/thor-mec-rate-dvfs-gate",
+  "canonical_output_directory": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2",
+  "started_utc": "2026-10-06T13:44:17.394072+00:00",
+  "input_files": [
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figure_data_section3.csv",
+      "relative_path": "paper/figure_data_section3.csv",
+      "sha256": "dae92fe52892316a99ff7be33513c610a7ef55d763ad99e39a4f0dcfb81d59f8",
+      "size_bytes": 86755,
+      "mtime_ns": 1791273776729269847,
+      "mtime_utc": "2026-10-06T08:02:56.729270+00:00",
+      "role": "frozen E16 run-level values and existing stream mean/min/max"
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/validation_section3.json",
+      "relative_path": "paper/validation_section3.json",
+      "sha256": "d25191daa5bee07d7cc6904cf5f492bcd403bc01556bcca03d6c60ee4d59d4cf",
+      "size_bytes": 350083,
+      "mtime_ns": 1791277833041008960,
+      "mtime_utc": "2026-10-06T09:10:33.041009+00:00",
+      "role": "preserved figure-data and assignment validation source"
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/assignment_table.csv",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/assignment_table.csv",
+      "sha256": "c6651f1ca12a5ed569ff67155893948eb35f3fc0be9310182541b6fc01cdfb92",
+      "size_bytes": 265882,
+      "mtime_ns": 1790941904619664054,
+      "mtime_utc": "2026-10-02T11:51:44.619664+00:00",
+      "role": "canonical measured E16 assignment cells"
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/assignment_manifest.json",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/assignment_manifest.json",
+      "sha256": "8f324387bff48eb2e07acf238ecd320b434df499c055e7cb089e328b3b97e805",
+      "size_bytes": 118331,
+      "mtime_ns": 1790941904607664048,
+      "mtime_utc": "2026-10-02T11:51:44.607664+00:00",
+      "role": "cell-by-cell mask, phase and count verification"
+    }
+  ],
+  "deleted_files_precheck": [
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/fig1_e16.pdf",
+      "relative_path": "paper/fig1_e16.pdf",
+      "sha256": "09429d8846b6ed781350e41fb31575333fdcc5e3f56eab97048d43e37b425d77",
+      "size_bytes": 11872,
+      "mtime_ns": 1791277689482709171,
+      "mtime_utc": "2026-10-06T09:08:09.482709+00:00",
+      "reason": "Obsolete Section III Figure 1 REV03 render; replaced by the scoped campaign2 Figure 1.",
+      "git_tracked": true
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/fig1_e16.png",
+      "relative_path": "paper/fig1_e16.png",
+      "sha256": "c25199a60b26128cc18567238df576f4d65ea826d72b20c8d674eee913f4c245",
+      "size_bytes": 188985,
+      "mtime_ns": 1791277689482709171,
+      "mtime_utc": "2026-10-06T09:08:09.482709+00:00",
+      "reason": "Obsolete Section III Figure 1 REV03 render; replaced by the scoped campaign2 Figure 1.",
+      "git_tracked": true
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/fig1.pdf",
+      "relative_path": "paper/figures/fig1.pdf",
+      "sha256": "86c33b24d5166d047da4edc1a56f13fd05c807e99845de95d17ff48231c0e1ec",
+      "size_bytes": 12178,
+      "mtime_ns": 1791284631125526414,
+      "mtime_utc": "2026-10-06T11:03:51.125526+00:00",
+      "reason": "Obsolete Figure 1 redesign06 output or dedicated generator; superseded by the new Figure 1 generator.",
+      "git_tracked": true
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/fig1.png",
+      "relative_path": "paper/figures/fig1.png",
+      "sha256": "24576ef1b1907103b56c669fc23d9d1ed19c315e3eab869ecf59e25fbd12ced4",
+      "size_bytes": 307292,
+      "mtime_ns": 1791284631381527293,
+      "mtime_utc": "2026-10-06T11:03:51.381527+00:00",
+      "reason": "Obsolete Figure 1 redesign06 output or dedicated generator; superseded by the new Figure 1 generator.",
+      "git_tracked": true
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/plot_fig1.py",
+      "relative_path": "paper/figures/plot_fig1.py",
+      "sha256": "f48d9be0524e709366ce8ded64e3190b05b0751165c75fe454d8a1a851492d1b",
+      "size_bytes": 16601,
+      "mtime_ns": 1791284630181523177,
+      "mtime_utc": "2026-10-06T11:03:50.181523+00:00",
+      "reason": "Obsolete Figure 1 redesign06 output or dedicated generator; superseded by the new Figure 1 generator.",
+      "git_tracked": true
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.pdf",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.pdf",
+      "sha256": "19aaec011d9a7cca08ae47b89e6f9e16c4666f25f345ccdda54aaea8197bfb9b",
+      "size_bytes": 19200,
+      "mtime_ns": 1791282579361274724,
+      "mtime_utc": "2026-10-06T10:29:39.361275+00:00",
+      "reason": "Generated E16 Figure 1 draft output; not an input to the new figure, original data and validation are preserved.",
+      "git_tracked": false
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.png",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.png",
+      "sha256": "9d4477dc4c7d8c518199081a7c520e1c200692255c2eda6d287707b824b7eb32",
+      "size_bytes": 297814,
+      "mtime_ns": 1791282579361274724,
+      "mtime_utc": "2026-10-06T10:29:39.361275+00:00",
+      "reason": "Generated E16 Figure 1 draft output; not an input to the new figure, original data and validation are preserved.",
+      "git_tracked": false
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.svg",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.svg",
+      "sha256": "6f3fce994d70e1c0b0c4231aa3fb5c18b78a359e7504b9ca75164277cef59899",
+      "size_bytes": 121555,
+      "mtime_ns": 1791282579361274724,
+      "mtime_utc": "2026-10-06T10:29:39.361275+00:00",
+      "reason": "Generated E16 Figure 1 draft output; not an input to the new figure, original data and validation are preserved.",
+      "git_tracked": false
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT_DATA.csv",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT_DATA.csv",
+      "sha256": "b1baf8a8f0bbf466fd1bca4f077e0e593cfe36e95c41c9b3a165656c945b68ef",
+      "size_bytes": 394097,
+      "mtime_ns": 1791282579361274724,
+      "mtime_utc": "2026-10-06T10:29:39.361275+00:00",
+      "reason": "Generated E16 Figure 1 draft output; not an input to the new figure, original data and validation are preserved.",
+      "git_tracked": false
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT_CAPTION.md",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT_CAPTION.md",
+      "sha256": "64132b7365ec9d78b419afc8675abec9e0a4bbd85223e4aed40d8e5014cdadd1",
+      "size_bytes": 5276,
+      "mtime_ns": 1791282579361274724,
+      "mtime_utc": "2026-10-06T10:29:39.361275+00:00",
+      "reason": "Generated E16 Figure 1 draft output; not an input to the new figure, original data and validation are preserved.",
+      "git_tracked": false
+    }
+  ],
+  "deleted_files": [
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/fig1_e16.pdf",
+      "relative_path": "paper/fig1_e16.pdf",
+      "sha256_before": "09429d8846b6ed781350e41fb31575333fdcc5e3f56eab97048d43e37b425d77",
+      "deleted_utc": "2026-10-06T13:48:35.241762+00:00",
+      "git_tracked": true
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/fig1_e16.png",
+      "relative_path": "paper/fig1_e16.png",
+      "sha256_before": "c25199a60b26128cc18567238df576f4d65ea826d72b20c8d674eee913f4c245",
+      "deleted_utc": "2026-10-06T13:48:35.242383+00:00",
+      "git_tracked": true
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/fig1.pdf",
+      "relative_path": "paper/figures/fig1.pdf",
+      "sha256_before": "86c33b24d5166d047da4edc1a56f13fd05c807e99845de95d17ff48231c0e1ec",
+      "deleted_utc": "2026-10-06T13:48:35.242877+00:00",
+      "git_tracked": true
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/fig1.png",
+      "relative_path": "paper/figures/fig1.png",
+      "sha256_before": "24576ef1b1907103b56c669fc23d9d1ed19c315e3eab869ecf59e25fbd12ced4",
+      "deleted_utc": "2026-10-06T13:48:35.243399+00:00",
+      "git_tracked": true
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/plot_fig1.py",
+      "relative_path": "paper/figures/plot_fig1.py",
+      "sha256_before": "f48d9be0524e709366ce8ded64e3190b05b0751165c75fe454d8a1a851492d1b",
+      "deleted_utc": "2026-10-06T13:48:35.243861+00:00",
+      "git_tracked": true
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.pdf",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.pdf",
+      "sha256_before": "19aaec011d9a7cca08ae47b89e6f9e16c4666f25f345ccdda54aaea8197bfb9b",
+      "deleted_utc": "2026-10-06T13:48:35.244323+00:00",
+      "git_tracked": false
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.png",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.png",
+      "sha256_before": "9d4477dc4c7d8c518199081a7c520e1c200692255c2eda6d287707b824b7eb32",
+      "deleted_utc": "2026-10-06T13:48:35.244824+00:00",
+      "git_tracked": false
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.svg",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT.svg",
+      "sha256_before": "6f3fce994d70e1c0b0c4231aa3fb5c18b78a359e7504b9ca75164277cef59899",
+      "deleted_utc": "2026-10-06T13:48:35.245308+00:00",
+      "git_tracked": false
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT_DATA.csv",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT_DATA.csv",
+      "sha256_before": "b1baf8a8f0bbf466fd1bca4f077e0e593cfe36e95c41c9b3a165656c945b68ef",
+      "deleted_utc": "2026-10-06T13:48:35.245835+00:00",
+      "git_tracked": false
+    },
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT_CAPTION.md",
+      "relative_path": "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01/FIG1_TEMPORAL_PLACEMENT_CAPTION.md",
+      "sha256_before": "64132b7365ec9d78b419afc8675abec9e0a4bbd85223e4aed40d8e5014cdadd1",
+      "deleted_utc": "2026-10-06T13:48:35.246303+00:00",
+      "git_tracked": false
+    }
+  ],
+  "generated_files": [
+    "paper/figures/campaign2/fig1_e16.pdf",
+    "paper/figures/campaign2/fig1_e16.png",
+    "paper/figures/campaign2/figure1_data.csv",
+    "paper/figures/campaign2/plot_fig1.py",
+    "paper/figures/campaign2/validation_fig1.json",
+    "paper/figures/campaign2/README_fig1.txt"
+  ],
+  "status": "PASS",
+  "Figure_2_change_authorized": false,
+  "retained_shared_files": [
+    "paper/figure_data_section3.csv",
+    "paper/validation_section3.json",
+    "paper/plot_section3.py",
+    "paper/captions_section3.tex",
+    "paper/fig2_edge_rate_sweep.pdf",
+    "paper/fig2_edge_rate_sweep.png"
+  ],
+  "unresolved_items": [],
+  "rendering": {
+    "figure_size_inches": {
+      "width": 7.16,
+      "height": 3.5
+    },
+    "png_dpi": 600,
+    "font": {
+      "family": "STIXGeneral",
+      "size_pt": 8.5,
+      "pdf_fonttype": 42,
+      "ps_fonttype": 42,
+      "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nCZRBLR+STIXGeneral-Regular           CID TrueType      Identity-H       yes yes yes     21  0\n",
+      "Type_3_present": false
+    },
+    "text_clipping_check": "PASS",
+    "vector_assignment_cells": true,
+    "outcome_connecting_lines": false,
+    "range_line_width_pt": 0.8,
+    "marker_size_pt": 4.5,
+    "range_cap_size_pt": 2
+  },
+  "data_validation": {
+    "assignment_patterns": {
+      "CONCENTRATED": {
+        "Local_total": 224,
+        "Edge_total": 16,
+        "Local_per_stream": [
+          28,
+          28,
+          28,
+          28,
+          28,
+          28,
+          28,
+          28
+        ],
+        "Edge_per_stream": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "phase_vector": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "m_E": [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "m_L": [
+          0,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          0,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "table_manifest_cell_match": true
+      },
+      "DISPERSED": {
+        "Local_total": 224,
+        "Edge_total": 16,
+        "Local_per_stream": [
+          28,
+          28,
+          28,
+          28,
+          28,
+          28,
+          28,
+          28
+        ],
+        "Edge_per_stream": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "phase_vector": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          9,
+          11,
+          13
+        ],
+        "m_E": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "m_L": [
+          7,
+          8,
+          7,
+          8,
+          7,
+          8,
+          7,
+          8,
+          7,
+          7,
+          8,
+          7,
+          8,
+          7,
+          8,
+          7,
+          8,
+          7,
+          8,
+          7,
+          8,
+          7,
+          8,
+          7,
+          7,
+          8,
+          7,
+          8,
+          7,
+          8
+        ],
+        "table_manifest_cell_match": true
+      }
+    },
+    "stream_mean_min_max": [
+      {
+        "placement": "CONCENTRATED",
+        "stream_id": 0,
+        "mean": 0.9833333333333333,
+        "min": 0.9666666666666667,
+        "max": 1.0,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_CONC_R01",
+          "ESWEEP01_L224E16_CONC_R02",
+          "ESWEEP01_L224E16_CONC_R03",
+          "ESWEEP01_L224E16_CONC_R04",
+          "ESWEEP01_L224E16_CONC_R05"
+        ]
+      },
+      {
+        "placement": "CONCENTRATED",
+        "stream_id": 1,
+        "mean": 0.9716666666666667,
+        "min": 0.9583333333333334,
+        "max": 0.9916666666666667,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_CONC_R01",
+          "ESWEEP01_L224E16_CONC_R02",
+          "ESWEEP01_L224E16_CONC_R03",
+          "ESWEEP01_L224E16_CONC_R04",
+          "ESWEEP01_L224E16_CONC_R05"
+        ]
+      },
+      {
+        "placement": "CONCENTRATED",
+        "stream_id": 2,
+        "mean": 0.91,
+        "min": 0.8416666666666667,
+        "max": 0.9666666666666667,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_CONC_R01",
+          "ESWEEP01_L224E16_CONC_R02",
+          "ESWEEP01_L224E16_CONC_R03",
+          "ESWEEP01_L224E16_CONC_R04",
+          "ESWEEP01_L224E16_CONC_R05"
+        ]
+      },
+      {
+        "placement": "CONCENTRATED",
+        "stream_id": 3,
+        "mean": 0.39666666666666667,
+        "min": 0.15833333333333333,
+        "max": 0.7583333333333333,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_CONC_R01",
+          "ESWEEP01_L224E16_CONC_R02",
+          "ESWEEP01_L224E16_CONC_R03",
+          "ESWEEP01_L224E16_CONC_R04",
+          "ESWEEP01_L224E16_CONC_R05"
+        ]
+      },
+      {
+        "placement": "CONCENTRATED",
+        "stream_id": 4,
+        "mean": 0.05333333333333333,
+        "min": 0.0,
+        "max": 0.16666666666666666,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_CONC_R01",
+          "ESWEEP01_L224E16_CONC_R02",
+          "ESWEEP01_L224E16_CONC_R03",
+          "ESWEEP01_L224E16_CONC_R04",
+          "ESWEEP01_L224E16_CONC_R05"
+        ]
+      },
+      {
+        "placement": "CONCENTRATED",
+        "stream_id": 5,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_CONC_R01",
+          "ESWEEP01_L224E16_CONC_R02",
+          "ESWEEP01_L224E16_CONC_R03",
+          "ESWEEP01_L224E16_CONC_R04",
+          "ESWEEP01_L224E16_CONC_R05"
+        ]
+      },
+      {
+        "placement": "CONCENTRATED",
+        "stream_id": 6,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_CONC_R01",
+          "ESWEEP01_L224E16_CONC_R02",
+          "ESWEEP01_L224E16_CONC_R03",
+          "ESWEEP01_L224E16_CONC_R04",
+          "ESWEEP01_L224E16_CONC_R05"
+        ]
+      },
+      {
+        "placement": "CONCENTRATED",
+        "stream_id": 7,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_CONC_R01",
+          "ESWEEP01_L224E16_CONC_R02",
+          "ESWEEP01_L224E16_CONC_R03",
+          "ESWEEP01_L224E16_CONC_R04",
+          "ESWEEP01_L224E16_CONC_R05"
+        ]
+      },
+      {
+        "placement": "DISPERSED",
+        "stream_id": 0,
+        "mean": 0.9766666666666667,
+        "min": 0.95,
+        "max": 0.9916666666666667,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_DISP_R01",
+          "ESWEEP01_L224E16_DISP_R02",
+          "ESWEEP01_L224E16_DISP_R03",
+          "ESWEEP01_L224E16_DISP_R04",
+          "ESWEEP01_L224E16_DISP_R05"
+        ]
+      },
+      {
+        "placement": "DISPERSED",
+        "stream_id": 1,
+        "mean": 0.985,
+        "min": 0.95,
+        "max": 1.0,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_DISP_R01",
+          "ESWEEP01_L224E16_DISP_R02",
+          "ESWEEP01_L224E16_DISP_R03",
+          "ESWEEP01_L224E16_DISP_R04",
+          "ESWEEP01_L224E16_DISP_R05"
+        ]
+      },
+      {
+        "placement": "DISPERSED",
+        "stream_id": 2,
+        "mean": 0.99,
+        "min": 0.9666666666666667,
+        "max": 1.0,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_DISP_R01",
+          "ESWEEP01_L224E16_DISP_R02",
+          "ESWEEP01_L224E16_DISP_R03",
+          "ESWEEP01_L224E16_DISP_R04",
+          "ESWEEP01_L224E16_DISP_R05"
+        ]
+      },
+      {
+        "placement": "DISPERSED",
+        "stream_id": 3,
+        "mean": 0.9916666666666667,
+        "min": 0.9583333333333334,
+        "max": 1.0,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_DISP_R01",
+          "ESWEEP01_L224E16_DISP_R02",
+          "ESWEEP01_L224E16_DISP_R03",
+          "ESWEEP01_L224E16_DISP_R04",
+          "ESWEEP01_L224E16_DISP_R05"
+        ]
+      },
+      {
+        "placement": "DISPERSED",
+        "stream_id": 4,
+        "mean": 0.9916666666666667,
+        "min": 0.9666666666666667,
+        "max": 1.0,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_DISP_R01",
+          "ESWEEP01_L224E16_DISP_R02",
+          "ESWEEP01_L224E16_DISP_R03",
+          "ESWEEP01_L224E16_DISP_R04",
+          "ESWEEP01_L224E16_DISP_R05"
+        ]
+      },
+      {
+        "placement": "DISPERSED",
+        "stream_id": 5,
+        "mean": 0.99,
+        "min": 0.9583333333333334,
+        "max": 1.0,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_DISP_R01",
+          "ESWEEP01_L224E16_DISP_R02",
+          "ESWEEP01_L224E16_DISP_R03",
+          "ESWEEP01_L224E16_DISP_R04",
+          "ESWEEP01_L224E16_DISP_R05"
+        ]
+      },
+      {
+        "placement": "DISPERSED",
+        "stream_id": 6,
+        "mean": 0.9916666666666667,
+        "min": 0.9666666666666667,
+        "max": 1.0,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_DISP_R01",
+          "ESWEEP01_L224E16_DISP_R02",
+          "ESWEEP01_L224E16_DISP_R03",
+          "ESWEEP01_L224E16_DISP_R04",
+          "ESWEEP01_L224E16_DISP_R05"
+        ]
+      },
+      {
+        "placement": "DISPERSED",
+        "stream_id": 7,
+        "mean": 0.9866666666666667,
+        "min": 0.95,
+        "max": 1.0,
+        "denominator": 120,
+        "n": 5,
+        "run_ids": [
+          "ESWEEP01_L224E16_DISP_R01",
+          "ESWEEP01_L224E16_DISP_R02",
+          "ESWEEP01_L224E16_DISP_R03",
+          "ESWEEP01_L224E16_DISP_R04",
+          "ESWEEP01_L224E16_DISP_R05"
+        ]
+      }
+    ],
+    "run_ids": {
+      "CONCENTRATED": [
+        "ESWEEP01_L224E16_CONC_R01",
+        "ESWEEP01_L224E16_CONC_R02",
+        "ESWEEP01_L224E16_CONC_R03",
+        "ESWEEP01_L224E16_CONC_R04",
+        "ESWEEP01_L224E16_CONC_R05"
+      ],
+      "DISPERSED": [
+        "ESWEEP01_L224E16_DISP_R01",
+        "ESWEEP01_L224E16_DISP_R02",
+        "ESWEEP01_L224E16_DISP_R03",
+        "ESWEEP01_L224E16_DISP_R04",
+        "ESWEEP01_L224E16_DISP_R05"
+      ]
+    },
+    "measured_runs_per_placement": 5,
+    "Edge_assigned_denominator_per_stream_run": 120,
+    "pre_submission_expirations_already_in_denominator": true,
+    "denominator_is_submitted_only": false,
+    "ranges": "observed min–max across five measured runs",
+    "existing_valid_run_count": 85,
+    "existing_nonzero_pair_count": 40,
+    "ANALYZER_SHA_RECORD_NOT_FOUND": true
+  },
+  "input_sha_after": {
+    "paper/figure_data_section3.csv": "dae92fe52892316a99ff7be33513c610a7ef55d763ad99e39a4f0dcfb81d59f8",
+    "paper/validation_section3.json": "d25191daa5bee07d7cc6904cf5f492bcd403bc01556bcca03d6c60ee4d59d4cf",
+    "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/assignment_table.csv": "c6651f1ca12a5ed569ff67155893948eb35f3fc0be9310182541b6fc01cdfb92",
+    "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/assignment_manifest.json": "8f324387bff48eb2e07acf238ecd320b434df499c055e7cb089e328b3b97e805"
+  },
+  "input_files_unchanged": true,
+  "generated_utc": "2026-10-06T13:47:29.473703+00:00",
+  "plot_generation_status": "PASS",
+  "visual_inspection": {
+    "status": "PASS",
+    "checked_utc": "2026-10-06T13:48:35.246824+00:00",
+    "raster_counts_and_temporal_positions_clear": true,
+    "stream_means_and_observed_ranges_clear": true,
+    "legend_in_empty_space": true,
+    "no_clipping_or_text_overlap": true,
+    "no_unnecessary_outcome_connecting_lines": true,
+    "Times_family_typography_readable": true
+  },
+  "source_data_modified": false,
+  "analysis01_modified": false,
+  "paper_evidence01_modified": false,
+  "analyze_reexecuted": false,
+  "new_experiment": false,
+  "short_caption": "Temporal placement at L224/E16. (a) Both placements assign 28 Local and 2 Edge frames per stream per 30 frame indices; only temporal positions differ. (b) Stream-wise Edge-assigned timely ratios: means and observed min–max across five runs. Denominators include pre-submission expirations. This is descriptive preliminary evidence, not an algorithm comparison.",
+  "output_sha256": {
+    "fig1_e16.pdf": "ec537dfc4cc159fa815082a9baa68563bbf142456744cacee1f13c2a4ba25041",
+    "fig1_e16.png": "6d40b399a7ee0eb30ccbf8d1cd97e25df93dc6bd4f9279d581414a4eb9c40195",
+    "figure1_data.csv": "4c3443a3d353492c19ea6db7403446bf23635e0a5a16542df30065de97250aa2",
+    "plot_fig1.py": "d994d3ea4ffc20b755dec0524f9f1dc467fb3f253f924e4b40422e8a68a0bd05",
+    "README_fig1.txt": "33eba17b3c43fda13eae0d3692e7ac879ead68c9105cfcd7f829acfda00123aa"
+  },
+  "validation_self_sha_note": "Self SHA omitted to avoid a recursive manifest.",
+  "deleted_directories_precheck": [
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01",
+      "reason": "Contains only the five generated Figure 1 draft artifacts listed in deleted_files_precheck; remove after emptying."
+    }
+  ],
+  "deleted_directories": [
+    {
+      "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/paper_figures01",
+      "deleted_utc": "2026-10-06T13:48:35.246819+00:00"
+    }
+  ],
+  "checks": {
+    "assignment_table_manifest_cell_match": "PASS",
+    "aggregate_and_per_stream_assignment_counts": "PASS",
+    "frozen_stream_values_and_summary_match": "PASS",
+    "assigned_denominator_includes_expired_once": "PASS",
+    "five_measured_runs_per_placement": "PASS",
+    "input_sha_preservation": "PASS",
+    "pdf_vector_and_no_Type_3": "PASS",
+    "PNG_600_dpi": "PASS",
+    "visual_inspection": "PASS",
+    "cleanup_exact_prechecked_files_only": "PASS"
+  },
+  "preservation": {
+    "existing_paper_files_checked": 42,
+    "existing_campaign_files_checked": 4542,
+    "analysis_evidence_files_SHA_checked": 23,
+    "Figure_2_unchanged": true,
+    "raw_result_metadata_unchanged": true,
+    "analysis01_SHA_unchanged": true,
+    "paper_evidence01_SHA_unchanged": true
+  },
+  "completed_utc": "2026-10-06T13:48:35.246831+00:00"
+}
