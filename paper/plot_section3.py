@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""Campaign 2 Section III figures from frozen CSVs; never runs an analyzer.
+"""REV03 restyling of Campaign 2 Section III figures from an immutable figure CSV.
 
-Usage:
-  python3 -B plot_section3.py
-  python3 -B plot_section3.py --output-dir /path/to/a/new/directory
+Usage: python3 -B paper/plot_section3.py --replace-generated
 
-Only proven generated target files may be replaced with --replace-generated.
-Only this campaign's analysis01, paper_evidence01 and assignment artifacts
-supply scientific data. Outputs default to the repository paper directory.
+The production entry point reads only figure_data_section3.csv and existing
+validation_section3.json. Legacy collect/make_data extraction functions below
+are preserved verbatim for provenance; REV03 never calls them. No upstream
+raw, analysis01, or paper_evidence01 data are used to recompute coordinates.
 """
 import argparse
 import csv
@@ -359,62 +358,141 @@ def make_data(data):
             source="assignment_table.csv:schedule_role=MEASURED"))
     return records
 
-def captions(data):
-    pattern=data["pattern"]
-    rates=", ".join(str(e) for e in RATES[1:])
-    concentrated=[pattern[(e,"CONCENTRATED")]["max_m_E"] for e in RATES[1:]]
-    dispersed=[pattern[(e,"DISPERSED")]["max_m_E"] for e in RATES[1:]]
-    if len(set(concentrated))==1:
-        concentrated_text=f"{concentrated[0]} for all nonzero Edge rates"
-    else:
-        concentrated_text="["+ ", ".join(map(str,concentrated))+f"] at $E={rates}$ FPS"
-    dispersed_text="["+ ", ".join(map(str,dispersed))+f"] at $E={rates}$ FPS"
-    one=(
+def captions_from_frozen():
+    """Restyle captions without changing the recorded scientific quantities."""
+    one = (
         r"Fixed-split comparison at L224/E16 in Campaign 2 "
-        r"($C_L=3$, $C_E=1$, TensorRT batch $B=1$). "
-        r"Temporally concentrated and temporally dispersed placement have "
-        r"identical aggregate assignment counts and identical per-stream "
-        r"assignment counts. (a) All five paired worst-stream TIR ($R_{\min}$) "
-        r"measurements; each gray line connects the two observations in one "
-        r"repeat. (b) Stream-wise timely ratios of Edge-assigned frames for "
-        r"both Concentrated and Dispersed. Each run and stream has 120 "
-        r"Edge-assigned frames in the denominator, including pre-submission "
-        r"expiration; submitted-only counts are not used. Point ranges in "
-        r"(b) show means and observed min--max across five runs, not confidence "
-        r"intervals, with small horizontal offsets around each stream ID "
-        r"for visibility. Concentrated stream IDs 0--7 are fixed to logical "
-        r"burst positions 1--8. This is assigned logical order, not network "
-        r"transmission or GPU execution rank; a causal position effect is "
-        r"not isolated. TIR is bounded in $[0,1]$."
+        r"($C_L=3$, $C_E=1$, TensorRT batch $B=1$). Temporally concentrated "
+        r"and temporally dispersed placement have identical aggregate "
+        r"Local--Edge assignment counts and identical per-stream assignment counts. "
+        r"(a) Five paired worst-stream TIR observations; gray segments connect "
+        r"observations from the same repeat and are not trend lines. "
+        r"(b) Stream-wise Edge-assigned timely ratios for both Concentrated "
+        r"and Dispersed. Each stream and run has 120 Edge-assigned frames "
+        r"in the denominator, including pre-submission expirations; expired "
+        r"frames are not added again, and submitted-only counts are not used. "
+        r"Point ranges in (b) show means and observed min--max across five runs, "
+        r"not confidence intervals, with horizontal offsets of $\mp0.15$ around "
+        r"stream IDs for visibility. Filled markers denote whole-stream or "
+        r"Local-assigned ratios, whereas open markers denote Edge-assigned ratios. "
+        r"Concentrated stream IDs 0--7 are fixed to logical burst positions 1--8; "
+        r"these are not network submission or GPU execution ranks, and a causal "
+        r"position effect is not isolated. TIR is bounded in $[0,1]$."
     )
-    two=(
+    two = (
         r"Temporal placement across the Campaign 2 Edge-rate sweep. "
-        r"(a) Worst-stream TIR. (b) Local- and Edge-path assigned-frame TIR, "
-        r"using all frames assigned to each path, including expired frames. "
-        r"The common E0 Local-only point is shown once in each panel; "
-        r"E0 has no defined Edge-assigned TIR. The Local-assignment fraction "
-        r"$1-E/240$ is an arithmetic reference only, not a bound, expected "
-        r"TIR, or performance guarantee. Markers and error bars show means "
-        r"and observed min--max across five runs, not confidence intervals. "
-        r"Connecting lines are visual guides between measured points only; "
-        r"they do not estimate unmeasured rates. Figure~\ref{fig:campaign-two-e16} "
-        r"and this figure share the same E16 five pairs. Maximum Edge assignments "
-        r"per input instant were "+concentrated_text+" for Concentrated, and "+
-        dispersed_text+r" for Dispersed; E0 has zero. These are maximum frame "
-        r"counts at the same scheduled input index, not GPU concurrency, "
-        r"simultaneous transmission, or server concurrency. Assignment "
-        r"burstiness is descriptive and does not establish the cause of "
-        r"deadline failures."
+        r"(a) Worst-stream TIR. (b) Path-wise timely ratios of all Local- or "
+        r"Edge-assigned frames, including expired frames. The common E0 "
+        r"Local-only observation is shown once in each panel; its Edge-assigned "
+        r"TIR is undefined. Markers and error bars show means and observed "
+        r"min--max across five runs, not confidence intervals. Filled markers "
+        r"denote whole-stream or Local-assigned ratios, whereas open markers "
+        r"denote Edge-assigned ratios. Nonzero Concentrated and Dispersed points "
+        r"are offset by $-0.6$ and $+0.6$ frames/s for visibility. The "
+        r"Local-assignment fraction $1-\lambda_E/240$ is an arithmetic reference "
+        r"only, not a bound, expected TIR, or guarantee. Connecting lines are "
+        r"visual guides between measured operating points only, not interpolation "
+        r"or estimates of unmeasured rates. Figure 1 and Figure 2 share the same "
+        r"E16 five pairs. Concentrated has a maximum of 8 Edge assignments per "
+        r"common scheduled input index at every nonzero Edge rate. Dispersed "
+        r"has maximum 1 at E8--E24, 2 at E32--E56, and 4 at E64; E0 has zero. "
+        r"These maxima are descriptive assignment properties, not GPU concurrency, "
+        r"simultaneous transmission counts, server concurrency, or a causal "
+        r"explanation of deadline failures."
     )
-    # Cross-reference labels cannot be assumed without the root document.
-    # Refer to the paired fixed-split figure in prose rather than inventing a label.
-    two=two.replace(r"Figure~\ref{fig:campaign-two-e16} and this figure",
-                    "The fixed-split figure and this figure")
-    return (r"\newcommand{\CampaignTwoFigOneCaption}{"+one+"}\n\n"+
-            r"\newcommand{\CampaignTwoFigTwoCaption}{"+two+"}\n")
+    return (r"\newcommand{\CampaignTwoFigOneCaption}{" + one + "}\n\n" +
+            r"\newcommand{\CampaignTwoFigTwoCaption}{" + two + "}\n")
 
-def render(data, records):
-    with tempfile.TemporaryDirectory(prefix="campaign2_paper_matplotlib_") as cache:
+
+def frozen_csv_records(output, previous):
+    """Read REV01 CSV. Never call collect/make_data or write a data CSV."""
+    path = output / "figure_data_section3.csv"
+    require(path.is_file() and not path.is_symlink(), "Missing regular figure CSV")
+    require(sha(path) == previous["output_SHA256"]["figure_data_section3.csv"],
+            "FIGURE_DATA_MODIFIED=YES")
+    rows = read_csv(path)
+    require(len(rows) == 432, "Frozen CSV row count differs from REV01")
+    require(all(r["campaign"] == CAMPAIGN for r in rows), "Campaign pooling forbidden")
+    numbers = {"figure", "Edge_FPS", "Local_FPS", "repeat", "stream_id", "n",
+               "denominator", "timely_count", "expired_count", "late_count",
+               "logical_burst_position"}
+    reals = {"display_x", "value", "mean", "min", "max"}
+    records = []
+    for row in rows:
+        r = dict(row)
+        for key in numbers:
+            if r[key] != "":
+                r[key] = int(r[key])
+        for key in reals:
+            if r[key] != "":
+                r[key] = float(r[key])
+        records.append(r)
+    runs = [r for r in records if r["record_type"] == "RUN"]
+    summaries = [r for r in records if r["record_type"] == "SUMMARY"]
+    require(len(runs) == 340 and len(summaries) == 66, "Frozen record coverage mismatch")
+    # Compare coordinates and summaries with REV01, without reaggregating samples.
+    for kind, key in [("RUN", "all_figure_run_values"),
+                      ("SUMMARY", "all_figure_mean_min_max")]:
+        current = [r for r in records if r["record_type"] == kind]
+        original = previous[key]
+        require(len(current) == len(original), "REV01 record count mismatch")
+        for actual, expected in zip(current, original):
+            for name, value in expected.items():
+                require(actual[name] == value, "Frozen coordinate mismatch: " + name)
+    ids = {r["run_id"] for r in runs}
+    require(len(ids) == previous["valid_run_count"] == 85 and
+            previous["invalid_run_count"] == 0, "REV01 run coverage mismatch")
+    require(ids == set(previous["run_IDs_used"]), "REV01 run IDs mismatch")
+    fig1a = [r for r in runs if (r["figure"], r["panel"]) == (1, "a")]
+    require(len(fig1a) == 10 and
+            {(r["repeat"], r["placement"]) for r in fig1a} ==
+            {(rep, p) for rep in range(1, 6) for p in PLACEMENTS},
+            "E16 five-pair coverage mismatch")
+    require(previous["nonzero_pair_count"] == 40 and
+            previous["E16_pair_count"] == 5, "REV01 pairing provenance mismatch")
+    pairs = previous["E16_pairs"]
+    require(len(pairs) == 5, "Missing E16 pairing provenance")
+    for pair in pairs:
+        rep = int(pair["round"])
+        for p, column in [("CONCENTRATED", "concentrated_run_id"),
+                          ("DISPERSED", "dispersed_run_id")]:
+            require(next(r["run_id"] for r in fig1a if
+                         r["repeat"] == rep and r["placement"] == p) == pair[column],
+                    "Frozen E16 pairing differs")
+    e16_fig2 = [r for r in runs if r["figure"] == 2 and r["Edge_FPS"] == 16]
+    require({r["run_id"] for r in e16_fig2} == {r["run_id"] for r in fig1a},
+            "Figures must share the same E16 five pairs")
+    stream_runs = [r for r in runs if (r["figure"], r["panel"]) == (1, "b")]
+    require(len(stream_runs) == 80 and
+            all(r["denominator"] == 120 for r in stream_runs),
+            "Fig1b denominator must include all 120 assignments")
+    for r in stream_runs:
+        require(r["timely_count"] + r["expired_count"] + r["late_count"] == 120,
+                "Frozen stream terminal partition mismatch")
+        require(close(r["value"], r["timely_count"] / 120),
+                "Frozen assigned-frame ratio mismatch")
+        if r["placement"] == "CONCENTRATED":
+            require(r["logical_burst_position"] == r["stream_id"] + 1,
+                    "Frozen logical position mapping mismatch")
+    require(not any(r["Edge_FPS"] == 0 and r["metric"] == "Edge_assigned_TIR"
+                    for r in records), "E0 Edge TIR is undefined")
+    peaks = [dict(Edge_FPS=r["Edge_FPS"], placement=r["placement"],
+                  max_m_E=int(r["value"])) for r in records
+             if r["record_type"] == "ASSIGNMENT_MAX"]
+    require(peaks == previous["max_m_E_by_Edge_rate_and_placement"],
+            "Frozen assignment maxima differ from REV01")
+    expected_dis = dict(zip(RATES[1:], [1, 1, 1, 2, 2, 2, 2, 4]))
+    for p in peaks:
+        expected = (0 if p["Edge_FPS"] == 0 else
+                    8 if p["placement"] == "CONCENTRATED" else
+                    expected_dis[p["Edge_FPS"]])
+        require(p["max_m_E"] == expected, "Caption maximum differs from REV01")
+    return records
+
+
+def render_frozen(records):
+    """Plot raw values or existing summaries directly; no numeric aggregation."""
+    with tempfile.TemporaryDirectory(prefix="campaign2_rev03_matplotlib_") as cache:
         os.environ["MPLCONFIGDIR"] = cache
         import matplotlib
         matplotlib.use("Agg")
@@ -422,306 +500,348 @@ def render(data, records):
         from matplotlib import font_manager
         from matplotlib.lines import Line2D
         from matplotlib.text import Text
+        from matplotlib.transforms import Bbox
         import numpy as np
         from PIL import Image
+
+        selected_font = "STIXGeneral"
         font_path = font_manager.findfont(
-            font_manager.FontProperties(family="Liberation Sans"), fallback_to_default=False)
+            font_manager.FontProperties(family=selected_font), fallback_to_default=False)
         plt.rcParams.update({
-            "font.family": "Liberation Sans", "font.size": 9.0,
-            "axes.labelsize": 9.5, "axes.titlesize": 10.0,
-            "xtick.labelsize": 8.5, "ytick.labelsize": 8.5,
-            "legend.fontsize": 8.5, "axes.linewidth": 0.7,
-            "xtick.major.width": 0.65, "ytick.major.width": 0.65,
-            "xtick.major.size": 3.0, "ytick.major.size": 3.0,
+            "font.family": selected_font, "font.size": 8,
+            "mathtext.fontset": "stix", "axes.labelsize": 8, "axes.titlesize": 8,
+            "xtick.labelsize": 8, "ytick.labelsize": 8, "legend.fontsize": 8,
+            "axes.linewidth": .65, "xtick.major.width": .65, "ytick.major.width": .65,
+            "xtick.major.size": 2.5, "ytick.major.size": 2.5,
             "pdf.fonttype": 42, "ps.fonttype": 42,
             "figure.facecolor": "white", "axes.facecolor": "white",
             "savefig.facecolor": "white", "path.simplify": False,
+            "lines.linewidth": 1, "lines.markersize": 4.5,
         })
-        buffers, drawing, artist_points = {}, {}, []
+        buffers, drawings, coordinates = {}, {}, []
+        range_items = {}
+        raw_items = {}
+
+        def subset(figure, panel, kind, **filters):
+            group = [r for r in records if r["figure"] == figure and
+                     r["panel"] == panel and r["record_type"] == kind and
+                     all(r[key] == value for key, value in filters.items())]
+            return sorted(group, key=lambda r: (r["Edge_FPS"],
+                          r["stream_id"] if r["stream_id"] != "" else -1,
+                          r["repeat"] if r["repeat"] != "" else -1))
+
         def style(ax, panel):
             ax.spines["top"].set_visible(False)
             ax.spines["right"].set_visible(False)
+            ax.grid(False)
             ax.set_axisbelow(True)
-            ax.set_title(panel, loc="left", fontweight="bold", pad=8)
-        def handle(p, label, path=None):
-            edge = path == "Edge"
-            face = "white" if edge or p=="DISPERSED" else COLOR[p]
-            line = ((0,(4.0,1.8,1.0,1.8)) if p=="CONCENTRATED" else (0,(1.2,1.8))) \
-                if edge else ("-" if p=="CONCENTRATED" else "--")
-            return Line2D([],[],label=label,color=COLOR[p],marker=MARKER[p],
-                          markerfacecolor=face,markeredgewidth=0.9,
-                          markersize=5.5 if edge else 4.5,linewidth=1.1,linestyle=line)
-        def ranges(ax,x,summaries,p,label=None,path=None,connected=True):
-            means=np.array([s["mean"] for s in summaries])
-            lower=means-np.array([s["min"] for s in summaries])
-            upper=np.array([s["max"] for s in summaries])-means
-            edge=path=="Edge"
-            linestyle=(((0,(4.0,1.8,1.0,1.8)) if p=="CONCENTRATED" else (0,(1.2,1.8)))
-                       if edge else ("-" if p=="CONCENTRATED" else "--"))
-            if not connected:linestyle="None"
-            color=COLOR.get(p,"#353535")
-            face="white" if edge or p=="DISPERSED" else color
-            size=5.5 if edge else 4.5
-            if p=="LOCAL_ONLY":face=color;size=4.9
-            artist=ax.errorbar(x,means,yerr=np.vstack([lower,upper]),
-                color=color,ecolor=color,marker=MARKER.get(p,"D"),
-                markerfacecolor=face,markeredgecolor=color,markeredgewidth=0.85,
-                markersize=size,linestyle=linestyle,linewidth=1.05,
-                elinewidth=0.70,capsize=2.0,capthick=0.7,zorder=4 if edge else 3)
-            if not connected and p=="DISPERSED":
-                for bar in artist.lines[2]:bar.set_linestyle("--")
-            require(np.array_equal(artist.lines[0].get_ydata(),means),"Artist mean mismatch")
-            artist_points.append({"placement":p,"label":label,"path":path,
-                "display_x":list(map(float,x)),"mean":means.tolist(),
-                "min":[s["min"] for s in summaries],"max":[s["max"] for s in summaries]})
+            ax.text(.5, -.22, panel, transform=ax.transAxes, ha="center", va="top",
+                    fontsize=8, fontweight="normal", clip_on=False)
+
+        def handle(p, label, edge=False, connected=True):
+            color = COLOR.get(p, "#111111")
+            marker = MARKER.get(p, "D")
+            return Line2D([], [], color=color, marker=marker, markersize=4.5,
+                          markerfacecolor="white" if edge else color,
+                          markeredgewidth=.8, linewidth=1,
+                          linestyle=("-" if p == "CONCENTRATED" else "--")
+                                    if connected else "None", label=label)
+
+        def point_range(ax, rows, x, p, figure, panel, edge=False, connected=False):
+            require(rows, "Missing frozen point range")
+            means = np.array([r["mean"] for r in rows])
+            minima = np.array([r["min"] for r in rows])
+            maxima = np.array([r["max"] for r in rows])
+            require(all(r["n"] == 5 for r in rows), "Need five observed runs")
+            color = COLOR.get(p, "#111111")
+            marker = MARKER.get(p, "D")
+            ax.errorbar(x, means, yerr=np.vstack([means-minima, maxima-means]),
+                        fmt="none", ecolor=color, elinewidth=.8, capsize=2,
+                        capthick=.8, zorder=2)
+            if connected:
+                ax.plot(x, means, color=color, linewidth=1,
+                        linestyle="-" if p == "CONCENTRATED" else "--", zorder=2)
+            artist, = ax.plot(x, means, color=color, marker=marker, markersize=4.5,
+                             markeredgecolor=color, markeredgewidth=.8,
+                             markerfacecolor="white" if edge else color,
+                             linestyle="None", zorder=3)
+            require(np.array_equal(artist.get_ydata(), means), "Mean coordinates changed")
+            coordinates.append({"figure":figure, "panel":panel, "placement":p,
+                "metric":rows[0]["metric"], "display_x":list(map(float, x)),
+                "mean":means.tolist(), "min":minima.tolist(), "max":maxima.tolist(),
+                "marker_fill":"open" if edge else "filled",
+                "line_style":("-" if p=="CONCENTRATED" else "--") if connected else "None"})
+            range_items.setdefault(ax, []).extend(zip(x, means, minima, maxima))
             return artist
-        def finish(fig,name):
+
+        def finish(fig, name):
             fig.canvas.draw()
-            renderer=fig.canvas.get_renderer()
-            width,height=fig.canvas.get_width_height()
-            outside=[];font_sizes=[]
+            renderer = fig.canvas.get_renderer()
+            canvas_box = fig.bbox
+            text_sizes = []
             for text in fig.findobj(Text):
-                if not text.get_visible() or not text.get_text():continue
-                font_sizes.append(text.get_fontsize())
-                box=text.get_window_extent(renderer)
-                if box.x0 < -.5 or box.y0 < -.5 or box.x1 > width+.5 or box.y1 > height+.5:
-                    outside.append(text.get_text())
-            require(not outside,f"Clipped text in {name}: {outside}")
-            require(min(font_sizes)>=8.5,"Font below 8.5 pt")
+                if not text.get_visible() or not text.get_text():
+                    continue
+                text_sizes.append(text.get_fontsize())
+                box = text.get_window_extent(renderer)
+                require(box.x0 >= canvas_box.x0-.5 and box.y0 >= canvas_box.y0-.5 and
+                        box.x1 <= canvas_box.x1+.5 and box.y1 <= canvas_box.y1+.5,
+                        "Text outside figure: " + text.get_text())
+            require(set(text_sizes) == {8.0}, "All typography must be 8 pt")
+            legend_records = []
             for ax in fig.axes:
-                legend=ax.get_legend()
-                if legend is not None:
-                    box=legend.get_window_extent(renderer)
-                    require(not box.overlaps(ax.bbox),"Legend overlaps plotted data")
-            pdf=io.BytesIO();png=io.BytesIO()
-            fig.savefig(pdf,format="pdf",metadata={
-                "Title":"","Author":"","Creator":"plot_section3.py",
-                "CreationDate":None,"ModDate":None})
-            fig.savefig(png,format="png",dpi=600)
-            image=Image.open(io.BytesIO(png.getvalue()))
-            require(image.size==tuple(round(v*600) for v in fig.get_size_inches()),
-                    "Unexpected PNG dimensions")
-            require(all(abs(v-600)<.1 for v in image.info["dpi"]),"PNG is not 600 dpi")
-            require(pdf.getvalue().startswith(b"%PDF") and b"/Subtype /Image" not in pdf.getvalue(),
-                    "PDF is not vector-only")
-            drawing[name]={
-                "dimensions_inches":fig.get_size_inches().tolist(),
-                "PNG_pixels":list(image.size),"PNG_dpi":list(image.info["dpi"]),
-                "vector_PDF":True,"minimum_font_size_pt":min(font_sizes),
-                "font_family":"Liberation Sans","font_path":font_path,
-                "text_inside_canvas":True,"legends_outside_data":True,
-                "condition_encoding":"blue circles / orange squares; solid / dashed mean curves",
-                "path_encoding":"Local small markers; Edge larger hollow markers and distinct line patterns"}
-            buffers[name+".pdf"]=pdf.getvalue();buffers[name+".png"]=png.getvalue()
+                for getter in (ax.get_xticklabels, ax.get_yticklabels):
+                    labels = [t for t in getter() if t.get_visible() and t.get_text()]
+                    boxes = [t.get_window_extent(renderer) for t in labels]
+                    require(not any(a.overlaps(b) for a,b in zip(boxes,boxes[1:])),
+                            "Adjacent tick labels overlap")
+                legend = ax.get_legend()
+                if legend is None:
+                    continue
+                box = legend.get_window_extent(renderer)
+                require(ax.bbox.contains(box.x0, box.y0) and
+                        ax.bbox.contains(box.x1, box.y1), "Legend outside panel")
+                for x, mean, low, high in range_items.get(ax, []):
+                    p1 = ax.transData.transform((x, low))
+                    p2 = ax.transData.transform((x, high))
+                    stem = Bbox.from_extents(p1[0]-3, p1[1]-3, p2[0]+3, p2[1]+3)
+                    require(not stem.overlaps(box),
+                            f"Legend obscures observed range in {ax.get_ylabel()}: "
+                            f"x={x}, min={low}, max={high}; legend={box.bounds}")
+                for x,y in raw_items.get(ax,[]):
+                    px,py = ax.transData.transform((x,y))
+                    require(not box.contains(px,py), "Legend obscures raw point")
+                legend_records.append({"labels":[t.get_text() for t in legend.get_texts()],
+                    "inside_axes":True, "observed_points_and_ranges_unobscured":True})
+            pdf, png = io.BytesIO(), io.BytesIO()
+            # Include the full white canvas in tight bounding-box computation so
+            # exported two-column dimensions remain exactly 7.16 x 2.8 inches.
+            save_options = dict(bbox_inches="tight", pad_inches=0,
+                                bbox_extra_artists=(fig.patch,))
+            fig.savefig(pdf, format="pdf", metadata={
+                "Title":"", "Author":"", "Creator":"plot_section3.py REV03",
+                "CreationDate":None, "ModDate":None}, **save_options)
+            fig.savefig(png, format="png", dpi=600, **save_options)
+            im = Image.open(io.BytesIO(png.getvalue()))
+            require(im.size == (4296,1680), "Exported size differs from 7.16 x 2.8 in")
+            require(all(abs(v-600)<.1 for v in im.info["dpi"]), "PNG must be 600 dpi")
+            require(b"/Subtype /Image" not in pdf.getvalue(), "PDF has raster image")
+            drawings[name] = {
+                "width_inches":7.16, "height_inches":2.8, "PNG_pixels":list(im.size),
+                "PNG_dpi":list(im.info["dpi"]), "vector_PDF":True,
+                "selected_font":selected_font, "font_path":font_path,
+                "requested_font_size_pt":8, "observed_text_sizes_pt":sorted(set(text_sizes)),
+                "text_inside_canvas":True, "tick_overlap":False,
+                "legends":legend_records, "bbox_inches":"tight",
+                "full_canvas_in_tight_bbox":True}
+            buffers[name+".pdf"] = pdf.getvalue()
+            buffers[name+".png"] = png.getvalue()
             plt.close(fig)
 
-        fig,axes=plt.subplots(1,2,figsize=(7.16,3.18))
-        fig.subplots_adjust(left=.087,right=.985,bottom=.17,top=.785,wspace=.40)
-        a,b=axes
-        for ax,panel in zip(axes,("(a)","(b)")):style(ax,panel)
-        for repeat in range(1,6):
-            c=data["groups"][(16,"CONCENTRATED")][repeat-1]
-            d=data["groups"][(16,"DISPERSED")][repeat-1]
-            a.plot([repeat,repeat],[float(c["R_min"]),float(d["R_min"])],
-                   color="#A9A9A9",linewidth=.80,zorder=1)
+        fig, (a,b) = plt.subplots(1,2,figsize=(7.16,2.8))
+        fig.subplots_adjust(left=.075, right=.987, bottom=.23, top=.95, wspace=.38)
+        for ax,panel in [(a,"(a)"),(b,"(b)")]:
+            style(ax,panel)
+        c = subset(1,"a","RUN",placement="CONCENTRATED")
+        d = subset(1,"a","RUN",placement="DISPERSED")
+        for cr,dr in zip(c,d):
+            require(cr["repeat"] == dr["repeat"], "Pair repeat mismatch")
+            a.plot([cr["repeat"],dr["repeat"]], [cr["value"],dr["value"]],
+                   color="#A5A5A5",linewidth=.65,zorder=1)
         for p in PLACEMENTS:
-            values=[float(r["R_min"]) for r in data["groups"][(16,p)]]
-            artist,=a.plot(range(1,6),values,linestyle="None",color=COLOR[p],
-                          marker=MARKER[p],markersize=5.1,markeredgewidth=.95,
-                          markerfacecolor="white" if p=="DISPERSED" else COLOR[p],
-                          zorder=4)
-            require(list(artist.get_ydata())==values,"Actual paired R_min values changed")
-        a.set(xlabel="Repeat",ylabel="Worst-stream TIR",
-              xlim=(.6,5.4),ylim=(.85,1.025))
-        a.set_xticks(range(1,6));a.set_yticks([.85,.90,.95,1.00])
+            rows = c if p=="CONCENTRATED" else d
+            x,y = [r["repeat"] for r in rows],[r["value"] for r in rows]
+            artist, = a.plot(x,y,linestyle="None",color=COLOR[p],marker=MARKER[p],
+                            markerfacecolor=COLOR[p],markeredgewidth=.8,
+                            markersize=4.5,zorder=3)
+            require(list(artist.get_ydata()) == y, "Paired measured values changed")
+            coordinates.append({"figure":1,"panel":"a","placement":p,"metric":"R_min",
+                "display_x":x,"value":y,"run_ids":[r["run_id"] for r in rows],
+                "marker_fill":"filled","line_style":"None"})
+            raw_items.setdefault(a,[]).extend(zip(x,y))
+        a.set(xlabel="Repeat",ylabel="Worst-stream TIR",xlim=(.6,5.4),ylim=(.90,1.01))
+        a.set_xticks(range(1,6));a.set_yticks([.90,.95,1])
+        from matplotlib.ticker import FormatStrFormatter
+        a.yaxis.set_major_formatter(FormatStrFormatter("%.2f"))
         for p in PLACEMENTS:
-            summaries=[stats([int(r["Edge_timely"])/int(r["Edge_assigned_count"])
-                       for r in data["stream_groups"][(p,k)]]) for k in range(8)]
-            shift=-.11 if p=="CONCENTRATED" else .11
-            ranges(b,[k+shift for k in range(8)],summaries,p,label=LABEL[p],connected=False)
-        b.set(xlabel="Stream ID",ylabel="Timely ratio of\nEdge-assigned frames",
-              xlim=(-.45,7.45),ylim=(-.04,1.05))
+            rows = subset(1,"b","SUMMARY",placement=p)
+            shift = -.15 if p=="CONCENTRATED" else .15
+            point_range(b,rows,[r["stream_id"]+shift for r in rows],p,1,"b",edge=True)
+        b.set(xlabel="Stream ID",ylabel="Timely ratio of Edge-assigned frames",
+              xlim=(-.5,7.5),ylim=(-.04,1.05))
         b.set_xticks(range(8));b.set_yticks([0,.25,.5,.75,1])
-        b.grid(axis="y",color="#EBEBEB",linewidth=.45)
-        fig.legend(handles=[
-            Line2D([],[],color=COLOR[p],marker=MARKER[p],linestyle="None",
-                   markerfacecolor="white" if p=="DISPERSED" else COLOR[p],
-                   markeredgewidth=.95,markersize=5.0,label=LABEL[p])
-            for p in PLACEMENTS],loc="upper center",bbox_to_anchor=(.5,.985),
-            frameon=False,ncol=2,columnspacing=2.0,handletextpad=.55)
+        b.legend(handles=[handle(p,LABEL[p],edge=True,connected=False) for p in PLACEMENTS],
+                 loc="center left",bbox_to_anchor=(.01,.47),frameon=False,
+                 handlelength=1,handletextpad=.45,borderaxespad=.2,labelspacing=.35)
         finish(fig,"fig1_e16")
 
-        fig,axes=plt.subplots(1,2,figsize=(7.16,3.54))
-        fig.subplots_adjust(left=.087,right=.985,bottom=.16,top=.73,wspace=.40)
-        a,b=axes
-        for ax,panel in zip(axes,("(a)","(b)")):
-            style(ax,panel);ax.set_xlim(-2.5,66.5);ax.set_xticks(RATES)
-            ax.set_xlabel("Edge assigned rate [FPS]")
+        fig,(a,b) = plt.subplots(1,2,figsize=(7.16,2.8))
+        fig.subplots_adjust(left=.075, right=.987, bottom=.23, top=.95, wspace=.38)
+        for ax,panel in [(a,"(a)"),(b,"(b)")]:
+            style(ax,panel)
+            ax.set(xlabel="Edge assignment rate (frames/s)",xlim=(-3,67))
+            ax.set_xticks(RATES)
+        refs = subset(2,"a","REFERENCE")
+        a.plot([r["Edge_FPS"] for r in refs],[r["value"] for r in refs],
+               color="#555555",linestyle="--",linewidth=1,zorder=1)
         for p in PLACEMENTS:
-            ranges(a,RATES[1:],[data["summaries"][(e,p,"R_min")] for e in RATES[1:]],
-                   p,label=LABEL[p])
-        ranges(a,[0],[data["summaries"][(0,"LOCAL_ONLY","R_min")]],"LOCAL_ONLY",
-               label="Local-only",connected=False)
-        line,=a.plot(RATES,[1-e/240 for e in RATES],color="#858585",
-                     linestyle=":",linewidth=1.20,zorder=2)
-        require(list(line.get_ydata())==[1-e/240 for e in RATES],"Reference changed")
-        a.set_ylabel("Worst-stream TIR");a.set_ylim(.48,1.03)
+            rows = subset(2,"a","SUMMARY",placement=p)
+            shift = -.6 if p=="CONCENTRATED" else .6
+            point_range(a,rows,[r["Edge_FPS"]+shift for r in rows],p,2,"a",
+                        connected=(p=="DISPERSED"))
+        point_range(a,subset(2,"a","SUMMARY",placement="LOCAL_ONLY"),[0],
+                    "LOCAL_ONLY",2,"a")
+        a.set(ylabel="Worst-stream TIR",ylim=(.49,1.04))
         a.set_yticks([.5,.6,.7,.8,.9,1])
-        a.grid(axis="y",color="#EBEBEB",linewidth=.45)
+        reference_handle = Line2D([],[],color="#555555",linestyle="--",linewidth=1,
+            label=r"Local-assignment fraction $1-\lambda_E/240$")
+        a.legend(handles=[handle("CONCENTRATED","Concentrated",connected=False),
+            handle("DISPERSED","Dispersed"),handle("LOCAL_ONLY","Local-only",connected=False),
+            reference_handle],loc="lower right",frameon=False,handlelength=1.4,
+            handletextpad=.45,borderaxespad=.35,labelspacing=.35)
         for path,metric in [("Local","Local_assigned_TIR"),("Edge","Edge_assigned_TIR")]:
             for p in PLACEMENTS:
-                ranges(b,RATES[1:],[data["summaries"][(e,p,metric)] for e in RATES[1:]],
-                       p,label=f"{path} / {LABEL[p]}",path=path)
-        ranges(b,[0],[data["summaries"][(0,"LOCAL_ONLY","Local_assigned_TIR")]],
-               "LOCAL_ONLY",connected=False)
-        b.set_ylabel("Timely ratio of\nassigned frames");b.set_ylim(0,1.055)
+                rows = subset(2,"b","SUMMARY",placement=p,metric=metric)
+                shift = -.6 if p=="CONCENTRATED" else .6
+                point_range(b,rows,[r["Edge_FPS"]+shift for r in rows],p,2,"b",
+                            edge=(path=="Edge"),connected=True)
+        point_range(b,subset(2,"b","SUMMARY",placement="LOCAL_ONLY"),[0],
+                    "LOCAL_ONLY",2,"b")
+        b.set(ylabel="Timely ratio of assigned frames",ylim=(-.015,1.065))
         b.set_yticks([0,.25,.5,.75,1])
-        b.grid(axis="y",color="#EBEBEB",linewidth=.45)
-        common=Line2D([],[],color="#353535",marker="D",linestyle="None",
-                      markersize=4.9,label="Local-only")
-        ref=Line2D([],[],color="#858585",linestyle=":",linewidth=1.20,
-                   label="Local-assignment fraction")
-        a.legend(handles=[handle(p,LABEL[p]) for p in PLACEMENTS]+[common,ref],
-                 loc="lower center",bbox_to_anchor=(.5,1.115),frameon=False,
-                 ncol=2,handlelength=1.45,columnspacing=.8,handletextpad=.4,borderaxespad=0)
-        b.legend(handles=[handle(p,f"{path} / {LABEL[p]}",path) for path in ("Local","Edge")
-                          for p in PLACEMENTS],
-                 loc="lower center",bbox_to_anchor=(.5,1.115),frameon=False,
-                 ncol=2,handlelength=1.65,columnspacing=.7,handletextpad=.4,borderaxespad=0)
+        b.legend(handles=[handle(p,f"{path} / {LABEL[p]}",edge=(path=="Edge"))
+                          for path in ("Local","Edge") for p in PLACEMENTS]+[
+                          handle("LOCAL_ONLY","Local-only",connected=False)],
+                 loc="lower right",frameon=False,handlelength=1.5,
+                 handletextpad=.45,borderaxespad=.15,labelspacing=.12)
         finish(fig,"fig2_edge_rate_sweep")
-        return buffers,drawing,artist_points
+        return buffers,drawings,coordinates
 
-def main(script_text=None, removal_record=None):
-    parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--campaign-dir",type=Path,
-        default=Path(__file__).resolve().parent.parent/
-                "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01")
-    parser.add_argument("--output-dir",type=Path,default=Path(__file__).resolve().parent)
+
+def main():
+    """REV03 entry point: frozen figure CSV only, no upstream data extraction."""
+    import shutil
+    import subprocess
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--replace-generated",action="store_true",
-        help="Replace only outputs with matching provenance from this generator")
-    args=parser.parse_args()
-    campaign=args.campaign_dir.resolve();output=args.output_dir.resolve()
-    require(not output.is_symlink(),"Output directory must not be a symlink")
-    existing=[name for name in OUTPUTS if (output/name).exists() or (output/name).is_symlink()]
-    if existing:
-        require(args.replace_generated,"Existing target files; no replacement requested")
-        vp=output/"validation_section3.json"
-        require(vp.is_file() and not vp.is_symlink(),"Missing replacement provenance")
-        previous=json.loads(vp.read_text())
-        require(previous.get("task")=="CAMPAIGN2_SECTION3_FIGURES02_PUBLISH" and
-                previous.get("campaign")==CAMPAIGN,"Unknown target provenance")
-        require(set(existing)==OUTPUTS,"Incomplete previous generated output set")
-        for name in existing:
-            require((output/name).is_file() and not (output/name).is_symlink(),
-                    "Unexpected target type")
-            if name not in ("validation_section3.json","plot_section3.py"):
-                require(sha(output/name)==previous["output_SHA256"].get(name),
-                        "Manually edited target; refusing overwrite: "+name)
-    original={str(p.relative_to(campaign)):(p.stat().st_size,str(p.stat().st_mtime_ns))
-              for p in campaign.rglob("*") if p.is_file()}
-    data=collect(campaign);records=make_data(data)
-    for r in records:
-        if r["figure"]==1:
-            if r["panel"]=="a":r["display_x"]=r["repeat"]
-            elif r["panel"]=="b":
-                r["display_x"]=r["stream_id"]+(-.11 if r["placement"]=="CONCENTRATED" else .11)
-        elif r["panel"] in ("a","b"):r["display_x"]=r["Edge_FPS"]
-    e16_ids=sorted(r["run_id"] for p in PLACEMENTS for r in data["groups"][(16,p)])
-    require(sorted({r["run_id"] for r in records if r.get("run_id") and
-                    r["figure"]==1})==e16_ids,"Figure 1 run coverage mismatch")
-    require(sorted({r["run_id"] for r in records if r.get("run_id") and
-                    r["figure"]==2 and r["Edge_FPS"]==16})==e16_ids,
-            "Figures do not share the same five E16 pairs")
-    buffers,drawing,artist_points=render(data,records)
-    stream=io.StringIO(newline="")
-    fields=["campaign","figure","panel","record_type","Edge_FPS","Local_FPS","placement",
-            "repeat","stream_id","display_x","run_id","run_ids","metric","value","n",
-            "mean","min","max","denominator","timely_count","expired_count","late_count",
-            "logical_burst_position","source"]
-    writer=csv.DictWriter(stream,fieldnames=fields,lineterminator="\n")
-    writer.writeheader();writer.writerows(records)
-    buffers["figure_data_section3.csv"]=stream.getvalue().encode()
-    buffers["captions_section3.tex"]=captions(data).encode()
-    if script_text is None:script_text=Path(__file__).read_text()
-    buffers["plot_section3.py"]=script_text.encode()
-    require(all(sha(campaign/n)==digest for n,digest in data["identities"].items()),
-            "Scientific source content changed")
-    current={str(p.relative_to(campaign)):(p.stat().st_size,str(p.stat().st_mtime_ns))
-             for p in campaign.rglob("*") if p.is_file()}
-    require(current==original,"Existing campaign changed while plotting")
-    expected_peaks={8:1,16:1,24:1,32:2,40:2,48:2,56:2,64:4}
-    discrepancies=[{"Edge_FPS":e,"reference":expected_peaks[e],
-                    "CSV_max_m_E":data["pattern"][(e,"DISPERSED")]["max_m_E"]}
-                   for e in RATES[1:]
-                   if data["pattern"][(e,"DISPERSED")]["max_m_E"]!=expected_peaks[e]]
-    checks={
-        "campaign_only_no_pooling":"PASS","valid_runs_85_preserved":"PASS",
-        "invalid_runs_zero":"PASS","nonzero_pairs_40":"PASS","E16_five_pairs":"PASS",
-        "Fig1a_all_actual_paired_values":"PASS","Fig1b_denominator_all_assigned_120":"PASS",
-        "Fig1b_pre_submission_expiration_in_denominator":"PASS",
-        "fixed_logical_stream_position_mapping":"PASS","same_E16_pairs_in_both_figures":"PASS",
-        "assignment_cell_manifest_consistency":"PASS","means_ranges_match_original_summaries":"PASS",
-        "E0_not_duplicated":"PASS","E0_Edge_TIR_undefined":"PASS",
-        "no_eta_threshold":"PASS","no_smoothing":"PASS","vector_PDF_and_600dpi_PNG":"PASS",
-        "minimum_font_8_5pt":"PASS","no_clipping":"PASS","legends_outside_data":"PASS",
-        "source_SHA_unchanged":"PASS","campaign_original_files_unchanged":"PASS",
-        "no_new_validity_or_statistical_test":"PASS"}
-    validation={
-        "task":"CAMPAIGN2_SECTION3_FIGURES02_PUBLISH","campaign":CAMPAIGN,
+                        help="Replace validated rendered figures and captions only")
+    args = parser.parse_args()
+    require(args.replace_generated,"Explicit --replace-generated is required")
+    output = Path(__file__).absolute().parent
+    expected = Path("/home/ainet/research/thor-mec-rate-dvfs-gate/paper")
+    require(output == expected and output.resolve() == expected and
+            not output.is_symlink(), "FIGURE_DIRECTORY_MISMATCH")
+    vp = output / "validation_section3.json"
+    previous = json.loads(vp.read_text())
+    require(previous["output_root"] == str(expected), "FIGURE_DIRECTORY_MISMATCH")
+    require(previous["campaign"] == CAMPAIGN, "Wrong figure campaign")
+    require(shutil.which("pdffonts"), "pdffonts is unavailable")
+    records = frozen_csv_records(output,previous)
+    before = sha(output/"figure_data_section3.csv")
+    rendered = ["fig1_e16.pdf","fig1_e16.png",
+                "fig2_edge_rate_sweep.pdf","fig2_edge_rate_sweep.png"]
+    revisions = previous.setdefault("plot_revisions",[])
+    current = next((r for r in revisions if r["plot_revision"]==3),None)
+    pending = current is not None and current["status"] == "PRE_RENDER"
+    reference_hashes = (previous["output_SHA256"] if current is None else
+                        current.get("output_SHA256", previous["output_SHA256"]))
+    for name in rendered+["captions_section3.tex"]:
+        p = output/name
+        if pending and name in rendered and not p.exists():
+            continue
+        require(p.is_file() and not p.is_symlink(), "Missing/unexpected output: "+name)
+        require(sha(p)==reference_hashes[name],
+                "Output differs from recorded provenance: "+name)
+    if current is None:
+        deleted = []
+        for name in rendered:
+            p=output/name;st=p.stat()
+            deleted.append({"path":str(p.resolve()),"SHA256":sha(p),
+                            "size":st.st_size,"mtime_ns":st.st_mtime_ns,
+                            "mtime_UTC":datetime.fromtimestamp(st.st_mtime,
+                                          timezone.utc).isoformat()})
+        current = {
+            "plot_revision":3,
+            "task":"CAMPAIGN2_SECTION3_FIGURES03_RESTYLE_AND_PUBLISH",
+            "revision_started_UTC":datetime.now(timezone.utc).isoformat(),
+            "figure_data_sha_before":before,
+            "deleted_previous_outputs":deleted,
+            "REV01_validation_sha_before":sha(vp),
+            "REV01_provenance_preserved":True,
+            "numeric_source_of_truth":str(output/"figure_data_section3.csv"),
+            "upstream_data_read_for_coordinates":False,
+            "data_extraction_functions_used":False,
+            "status":"PRE_RENDER"}
+        revisions.append(current)
+    else:
+        require(current["figure_data_sha_before"]==before,"FIGURE_DATA_MODIFIED=YES")
+    current["status"]="PRE_RENDER"
+    # Record original hashes/metadata before removing exactly the four render files.
+    previous["plot_revision"]=3
+    vp.write_text(json.dumps(previous,indent=2,sort_keys=True,ensure_ascii=False)+"\n")
+    for name in rendered:
+        if (output/name).exists():
+            (output/name).unlink()
+    buffers,drawings,coordinates = render_frozen(records)
+    buffers["captions_section3.tex"]=captions_from_frozen().encode()
+    for name,value in buffers.items():
+        (output/name).write_bytes(value)
+    font_reports = {}
+    for name in ["fig1_e16","fig2_edge_rate_sweep"]:
+        command = ["pdffonts",str(output/(name+".pdf"))]
+        result = subprocess.run(command,capture_output=True,text=True,check=True)
+        lines=result.stdout.splitlines()
+        fonts=lines[2:]
+        require(fonts and all("Type 3" not in line for line in fonts),
+                "PDF_FONT_VALIDATION=FAIL")
+        font_reports[name]={"command":command,"stdout":result.stdout,
+                           "stderr":result.stderr,"embedded_font_rows":fonts,
+                           "Type_3_present":False,"status":"PASS"}
+    after = sha(output/"figure_data_section3.csv")
+    require(before==after,"FIGURE_DATA_MODIFIED=YES")
+    current.update({
+        "status":"RENDERED_PENDING_VISUAL_INSPECTION",
         "generated_UTC":datetime.now(timezone.utc).isoformat(),
-        "source_root":str(campaign),"output_root":str(output),
-        "source_files":data["source_files"],"source_SHA256":data["identities"],
-        "valid_run_count":85,"invalid_run_count":0,"nonzero_pair_count":40,
-        "run_IDs_used":sorted(data["runs"]),"E16_pair_count":5,"E16_pairs":data["e16_pairs"],
-        "E16_run_IDs_in_both_figures":e16_ids,
-        "E16_Edge_denominator_per_run_per_stream":120,
-        "E16_stream_run_count":80,"E16_logical_position_mapping":{str(k):k+1 for k in range(8)},
-        "assignment_patterns":list(data["pattern"].values()),
-        "max_m_E_by_Edge_rate_and_placement":[
-            {"Edge_FPS":p["Edge_FPS"],"placement":p["placement"],"max_m_E":p["max_m_E"]}
-            for _,p in sorted(data["pattern"].items())],
-        "reference_peak_discrepancies":discrepancies,
-        "all_figure_mean_min_max":[r for r in records if r["record_type"]=="SUMMARY"],
-        "all_figure_run_values":[r for r in records if r["record_type"]=="RUN"],
-        "plotted_artist_values":artist_points,
-        "E0_displayed_values":[r for r in records
-            if r["record_type"] in ("RUN","SUMMARY") and r["Edge_FPS"]==0],
-        "E0_completion_scope_check":data["e0_completion"],
-        "range_definition":"Observed min--max of five run observations; not CI or SE",
-        "horizontal_offset_note":"Figure 1(b) only: +/-0.11 around stream ID to separate point ranges; all Figure 2 rates are exact",
-        "arithmetic_reference":"1 - Edge_FPS/240; not a bound or prediction",
-        "hardware_status_counts":dict(Counter(r["hardware_status"] for r in data["rows"])),
-        "hardware_note":"PROTECTION_LIMITED preserved; VALID does not imply protection-free hardware",
-        "analyze_py_SHA_record_in_closeout":data["analyzer_sha_record"],
-        "ANALYZER_SHA_RECORD_NOT_FOUND":isinstance(data["analyzer_sha_record"],str),
-        "raw_modified":False,"analysis01_modified":False,"paper_evidence01_modified":False,
-        "new_experiment":False,"analyze_py_reexecuted":False,"validity_reclassified":False,
-        "authorized_old_figure_removal":removal_record,
-        "checks":checks,"rendering_checks":drawing,
+        "figure_data_sha_after":after,"figure_data_unchanged":True,
+        "rendering_checks":drawings,
+        "font":{"selected_font":"STIXGeneral","requested_size_pt":8,
+                "pdf_fonttype":42,"ps_fonttype":42,
+                "embedded_fonts":font_reports,"Type_3_present":False},
+        "pdffonts_result":font_reports,"PDF_FONT_VALIDATION":"PASS",
+        "style":{"main_line_width_pt":1,"marker_size_pt":4.5,
+                 "errorbar_width_pt":.8,"cap_size_pt":2,
+                 "paired_gray_line_width_pt":.65,
+                 "panel_label_location":"below each x-axis label, centered",
+                 "legend_locations":{"fig1a":"NONE","fig1b":"inside center left",
+                     "fig2a":"inside lower right","fig2b":"inside lower right"},
+                 "Fig1b_x_offsets":{"CONCENTRATED":-.15,"DISPERSED":.15},
+                 "Fig2_nonzero_x_offsets":{"CONCENTRATED":-.6,"DISPERSED":.6},
+                 "reference_zorder":1,"errorbar_zorder":2,"marker_zorder":3,
+                 "Fig2a_Concentrated_connecting_line":False,
+                 "Fig2a_Dispersed_connecting_line":"dashed visual guide",
+                 "marker_fill":"filled whole-stream/Local; open Edge"},
+        "data_validation":{"valid_runs":previous["valid_run_count"],
+            "invalid_runs":previous["invalid_run_count"],
+            "nonzero_pairs":previous["nonzero_pair_count"],
+            "E16_five_pair_IDs":previous["E16_pairs"],
+            "Fig1b_denominator":120,"Fig1b_stream_run_count":80,
+            "E0_values":previous["E0_displayed_values"],
+            "all_figure_mean_min_max":previous["all_figure_mean_min_max"],
+            "assignment_max_m_E":previous["max_m_E_by_Edge_rate_and_placement"],
+            "figure_data_rows":len(records),
+            "original_values_and_summary_coordinates_match_REV01":True,
+            "CSV_display_x_preserved":
+                "REV01 CSV display_x unchanged; REV03 display offsets recorded separately"},
+        "plotted_artist_values":coordinates,
         "visual_inspection":{"status":"PENDING_IMAGE_REVIEW"},
-        "figure_data_record_counts":dict(Counter(r["record_type"] for r in records)),
-        "output_SHA256":{n:hashlib.sha256(value).hexdigest() for n,value in buffers.items()},
-        "self_SHA_note":"validation_section3.json omits its own recursive hash",
-        "unresolved_items":(["ANALYZER_SHA_RECORD_NOT_FOUND; recorded, not a plotting blocker"]
-                            if isinstance(data["analyzer_sha_record"],str) else [])}
-    buffers["validation_section3.json"]=(json.dumps(validation,indent=2,
-        sort_keys=True,ensure_ascii=False)+"\n").encode()
-    require(set(buffers)==OUTPUTS,"Output allowlist mismatch")
-    output.mkdir(parents=True,exist_ok=True)
-    for name in sorted(buffers):
-        with (output/name).open("wb" if name in existing else "xb") as f:f.write(buffers[name])
-    require(all(sha(output/n)==digest for n,digest in validation["output_SHA256"].items()),
-            "Output SHA mismatch")
-    require(all(sha(campaign/n)==digest for n,digest in data["identities"].items()),
-            "Source content changed after figure generation")
-    for name,(size,mtime) in original.items():
-        st=(campaign/name).stat()
-        require((st.st_size,str(st.st_mtime_ns))==(size,mtime),"Original campaign file changed")
-    print(json.dumps({"status":"GENERATED_DATA_VALIDATED","output":str(output),
-        "files":sorted(OUTPUTS),"valid_runs":85,"nonzero_pairs":40,"E16_pairs":5,
-        "max_m_E":validation["max_m_E_by_Edge_rate_and_placement"],
-        "peak_discrepancies":discrepancies,"rendering":drawing,
-        "analyzer_SHA_record":data["analyzer_sha_record"]},ensure_ascii=False))
+        "ANALYZER_SHA_RECORD_NOT_FOUND":previous["ANALYZER_SHA_RECORD_NOT_FOUND"],
+        "output_SHA256":{name:sha(output/name) for name in rendered+
+                        ["captions_section3.tex","plot_section3.py"]}})
+    vp.write_text(json.dumps(previous,indent=2,sort_keys=True,ensure_ascii=False)+"\n")
+    print(json.dumps({"status":current["status"],"output":str(output),
+        "figure_data_sha_before":before,"figure_data_sha_after":after,
+        "PDF_FONT_VALIDATION":"PASS","rendering":drawings},ensure_ascii=False))
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     main()
