@@ -223,10 +223,11 @@ def render(matrices, stats, output):
             ax.pcolormesh(np.arange(31) - .5, np.arange(9) - .5,
                           np.array(matrices[placement]),
                           cmap=ListedColormap(["#F0F1F2", COLOR[placement]]),
-                          vmin=0, vmax=1, shading="flat", edgecolors="none",
-                          rasterized=False, antialiased=False)
+                          vmin=0, vmax=1, shading="flat", edgecolors="#D9DCE0",
+                          linewidth=.25, rasterized=False, antialiased=False)
             ax.set(xlim=(-.5, 29.5), ylim=(7.5, -.5), yticks=range(8),
                    xticks=[0, 5, 10, 15, 20, 25, 29], ylabel="Stream ID")
+            ax.set_aspect("equal", adjustable="box")
             ax.set_title(LABEL[placement], color=COLOR[placement], pad=5)
             ax.tick_params(pad=2)
             ax.spines[["top", "right"]].set_visible(False)
@@ -262,6 +263,17 @@ def render(matrices, stats, output):
             fig.text(x, .035, label, ha="center", va="center")
         fig.canvas.draw()
         renderer = fig.canvas.get_renderer()
+        raster_cells = {}
+        for ax, placement in zip((top, bottom), PLACEMENTS):
+            box = ax.get_window_extent(renderer)
+            cell_width, cell_height = box.width / 30, box.height / 8
+            require(math.isclose(cell_width, cell_height, rel_tol=1e-12),
+                    "Assignment cells must be square")
+            raster_cells[placement] = {
+                "width_inches": cell_width / fig.dpi,
+                "height_inches": cell_height / fig.dpi,
+                "height_width_ratio": cell_height / cell_width,
+            }
         clipped = []
         for text in fig.findobj(Text):
             if text.get_visible() and text.get_text():
@@ -284,6 +296,8 @@ def render(matrices, stats, output):
             "png_dpi": DPI, "font": {"family": "STIXGeneral", "size_pt": FONT_SIZE,
             "pdf_fonttype": 42, "ps_fonttype": 42, "pdffonts": fonts, "Type_3_present": False},
             "text_clipping_check": "PASS", "vector_assignment_cells": True,
+            "raster_cell_grid": {"boundary_color": "#D9DCE0", "width_pt": .25,
+                                 "cells": raster_cells, "square_cell_check": "PASS"},
             "outcome_connecting_lines": False, "range_line_width_pt": .8,
             "marker_size_pt": 4.5, "range_cap_size_pt": 2}
 

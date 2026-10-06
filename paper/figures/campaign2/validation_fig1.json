@@ -250,6 +250,23 @@
     },
     "text_clipping_check": "PASS",
     "vector_assignment_cells": true,
+    "raster_cell_grid": {
+      "boundary_color": "#D9DCE0",
+      "width_pt": 0.25,
+      "cells": {
+        "CONCENTRATED": {
+          "width_inches": 0.08830666666666666,
+          "height_inches": 0.08830666666666666,
+          "height_width_ratio": 1.0
+        },
+        "DISPERSED": {
+          "width_inches": 0.08830666666666666,
+          "height_inches": 0.08830666666666664,
+          "height_width_ratio": 0.9999999999999998
+        }
+      },
+      "square_cell_check": "PASS"
+    },
     "outcome_connecting_lines": false,
     "range_line_width_pt": 0.8,
     "marker_size_pt": 4.5,
@@ -750,13 +767,14 @@
   "plot_generation_status": "PASS",
   "visual_inspection": {
     "status": "PASS",
-    "checked_utc": "2026-10-06T13:48:35.246824+00:00",
-    "raster_counts_and_temporal_positions_clear": true,
-    "stream_means_and_observed_ranges_clear": true,
-    "legend_in_empty_space": true,
-    "no_clipping_or_text_overlap": true,
-    "no_unnecessary_outcome_connecting_lines": true,
-    "Times_family_typography_readable": true
+    "checked_utc": "2026-10-06T14:04:22.920403+00:00",
+    "all_cell_boundaries_visible_and_subtle": true,
+    "Local_background_light_gray": true,
+    "Edge_cells_emphasized_blue_or_orange": true,
+    "square_cells": true,
+    "tick_legend_and_panel_labels_readable": true,
+    "clipping_or_text_overlap": false,
+    "panel_b_unchanged": true
   },
   "source_data_modified": false,
   "analysis01_modified": false,
@@ -765,10 +783,10 @@
   "new_experiment": false,
   "short_caption": "Temporal placement at L224/E16. (a) Both placements assign 28 Local and 2 Edge frames per stream per 30 frame indices; only temporal positions differ. (b) Stream-wise Edge-assigned timely ratios: means and observed min–max across five runs. Denominators include pre-submission expirations. This is descriptive preliminary evidence, not an algorithm comparison.",
   "output_sha256": {
-    "fig1_e16.pdf": "ec537dfc4cc159fa815082a9baa68563bbf142456744cacee1f13c2a4ba25041",
-    "fig1_e16.png": "6d40b399a7ee0eb30ccbf8d1cd97e25df93dc6bd4f9279d581414a4eb9c40195",
+    "fig1_e16.pdf": "8d0f75a5fe1d79caa73e9af163407d6842bc24a32d48f97dc0712543391ba006",
+    "fig1_e16.png": "75467f62318ade6a14e247569e5329793b1f67dc531e2ff658f40ef085a9fdb3",
     "figure1_data.csv": "4c3443a3d353492c19ea6db7403446bf23635e0a5a16542df30065de97250aa2",
-    "plot_fig1.py": "d994d3ea4ffc20b755dec0524f9f1dc467fb3f253f924e4b40422e8a68a0bd05",
+    "plot_fig1.py": "762e6ee4b6f7f18372c4d15dd695687f2d0e15b58928483255cfcb4b49bfbdfc",
     "README_fig1.txt": "33eba17b3c43fda13eae0d3692e7ac879ead68c9105cfcd7f829acfda00123aa"
   },
   "validation_self_sha_note": "Self SHA omitted to avoid a recursive manifest.",
@@ -805,5 +823,607 @@
     "analysis01_SHA_unchanged": true,
     "paper_evidence01_SHA_unchanged": true
   },
-  "completed_utc": "2026-10-06T13:48:35.246831+00:00"
+  "completed_utc": "2026-10-06T13:48:35.246831+00:00",
+  "raster_revisions": [
+    {
+      "task": "CAMPAIGN2_FIG1_RASTER_REVISE_AND_PUSH",
+      "started_utc": "2026-10-06T14:03:42.073742+00:00",
+      "deleted_previous_outputs": [
+        {
+          "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2/fig1_e16.pdf",
+          "sha256": "ec537dfc4cc159fa815082a9baa68563bbf142456744cacee1f13c2a4ba25041",
+          "size_bytes": 17859,
+          "mtime_ns": 1791294449026086168
+        },
+        {
+          "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2/fig1_e16.png",
+          "sha256": "6d40b399a7ee0eb30ccbf8d1cd97e25df93dc6bd4f9279d581414a4eb9c40195",
+          "size_bytes": 264402,
+          "mtime_ns": 1791294449450090044
+        }
+      ],
+      "deleted_files": [
+        {
+          "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2/fig1_e16.pdf",
+          "deleted_utc": "2026-10-06T14:03:42.074985+00:00"
+        },
+        {
+          "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2/fig1_e16.png",
+          "deleted_utc": "2026-10-06T14:03:42.075959+00:00"
+        }
+      ],
+      "data_validation_unchanged": true,
+      "figure1_data_sha_before": "4c3443a3d353492c19ea6db7403446bf23635e0a5a16542df30065de97250aa2",
+      "visual_inspection": {
+        "status": "PASS",
+        "checked_utc": "2026-10-06T14:04:22.920403+00:00",
+        "all_cell_boundaries_visible_and_subtle": true,
+        "Local_background_light_gray": true,
+        "Edge_cells_emphasized_blue_or_orange": true,
+        "square_cells": true,
+        "tick_legend_and_panel_labels_readable": true,
+        "clipping_or_text_overlap": false,
+        "panel_b_unchanged": true
+      },
+      "status": "PASS",
+      "panel_b_pixel_region": {
+        "box": [
+          1976,
+          0,
+          4296,
+          2100
+        ],
+        "sha256": "cb3f1b918f18ccc92890c80ed0f3052d231bd84c093d2ad94124fdaf23c1349d",
+        "image_size": [
+          4296,
+          2100
+        ],
+        "sha256_after": "cb3f1b918f18ccc92890c80ed0f3052d231bd84c093d2ad94124fdaf23c1349d",
+        "unchanged": true
+      },
+      "figure1_data_sha_after": "4c3443a3d353492c19ea6db7403446bf23635e0a5a16542df30065de97250aa2",
+      "figure1_data_unchanged": true,
+      "rendering": {
+        "figure_size_inches": {
+          "width": 7.16,
+          "height": 3.5
+        },
+        "png_dpi": 600,
+        "font": {
+          "family": "STIXGeneral",
+          "size_pt": 8.5,
+          "pdf_fonttype": 42,
+          "ps_fonttype": 42,
+          "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nCZRBLR+STIXGeneral-Regular           CID TrueType      Identity-H       yes yes yes     21  0\n",
+          "Type_3_present": false
+        },
+        "text_clipping_check": "PASS",
+        "vector_assignment_cells": true,
+        "raster_cell_grid": {
+          "boundary_color": "#D9DCE0",
+          "width_pt": 0.25,
+          "cells": {
+            "CONCENTRATED": {
+              "width_inches": 0.08830666666666666,
+              "height_inches": 0.08830666666666666,
+              "height_width_ratio": 1.0
+            },
+            "DISPERSED": {
+              "width_inches": 0.08830666666666666,
+              "height_inches": 0.08830666666666664,
+              "height_width_ratio": 0.9999999999999998
+            }
+          },
+          "square_cell_check": "PASS"
+        },
+        "outcome_connecting_lines": false,
+        "range_line_width_pt": 0.8,
+        "marker_size_pt": 4.5,
+        "range_cap_size_pt": 2
+      },
+      "assignment_table_manifest_cells_match": true,
+      "data_validation": {
+        "assignment_patterns": {
+          "CONCENTRATED": {
+            "Local_total": 224,
+            "Edge_total": 16,
+            "Local_per_stream": [
+              28,
+              28,
+              28,
+              28,
+              28,
+              28,
+              28,
+              28
+            ],
+            "Edge_per_stream": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "phase_vector": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "m_E": [
+              8,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              8,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "m_L": [
+              0,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              0,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "table_manifest_cell_match": true
+          },
+          "DISPERSED": {
+            "Local_total": 224,
+            "Edge_total": 16,
+            "Local_per_stream": [
+              28,
+              28,
+              28,
+              28,
+              28,
+              28,
+              28,
+              28
+            ],
+            "Edge_per_stream": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "phase_vector": [
+              0,
+              2,
+              4,
+              6,
+              8,
+              9,
+              11,
+              13
+            ],
+            "m_E": [
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "m_L": [
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8
+            ],
+            "table_manifest_cell_match": true
+          }
+        },
+        "stream_mean_min_max": [
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 0,
+            "mean": 0.9833333333333333,
+            "min": 0.9666666666666667,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 1,
+            "mean": 0.9716666666666667,
+            "min": 0.9583333333333334,
+            "max": 0.9916666666666667,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 2,
+            "mean": 0.91,
+            "min": 0.8416666666666667,
+            "max": 0.9666666666666667,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 3,
+            "mean": 0.39666666666666667,
+            "min": 0.15833333333333333,
+            "max": 0.7583333333333333,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 4,
+            "mean": 0.05333333333333333,
+            "min": 0.0,
+            "max": 0.16666666666666666,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 5,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 6,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 7,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 0,
+            "mean": 0.9766666666666667,
+            "min": 0.95,
+            "max": 0.9916666666666667,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 1,
+            "mean": 0.985,
+            "min": 0.95,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 2,
+            "mean": 0.99,
+            "min": 0.9666666666666667,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 3,
+            "mean": 0.9916666666666667,
+            "min": 0.9583333333333334,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 4,
+            "mean": 0.9916666666666667,
+            "min": 0.9666666666666667,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 5,
+            "mean": 0.99,
+            "min": 0.9583333333333334,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 6,
+            "mean": 0.9916666666666667,
+            "min": 0.9666666666666667,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 7,
+            "mean": 0.9866666666666667,
+            "min": 0.95,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          }
+        ],
+        "run_ids": {
+          "CONCENTRATED": [
+            "ESWEEP01_L224E16_CONC_R01",
+            "ESWEEP01_L224E16_CONC_R02",
+            "ESWEEP01_L224E16_CONC_R03",
+            "ESWEEP01_L224E16_CONC_R04",
+            "ESWEEP01_L224E16_CONC_R05"
+          ],
+          "DISPERSED": [
+            "ESWEEP01_L224E16_DISP_R01",
+            "ESWEEP01_L224E16_DISP_R02",
+            "ESWEEP01_L224E16_DISP_R03",
+            "ESWEEP01_L224E16_DISP_R04",
+            "ESWEEP01_L224E16_DISP_R05"
+          ]
+        },
+        "measured_runs_per_placement": 5,
+        "Edge_assigned_denominator_per_stream_run": 120,
+        "pre_submission_expirations_already_in_denominator": true,
+        "denominator_is_submitted_only": false,
+        "ranges": "observed min–max across five measured runs",
+        "existing_valid_run_count": 85,
+        "existing_nonzero_pair_count": 40,
+        "ANALYZER_SHA_RECORD_NOT_FOUND": true
+      },
+      "input_files_unchanged": true,
+      "Figure_2_unchanged": true,
+      "output_sha256": {
+        "fig1_e16.pdf": "8d0f75a5fe1d79caa73e9af163407d6842bc24a32d48f97dc0712543391ba006",
+        "fig1_e16.png": "75467f62318ade6a14e247569e5329793b1f67dc531e2ff658f40ef085a9fdb3",
+        "plot_fig1.py": "762e6ee4b6f7f18372c4d15dd695687f2d0e15b58928483255cfcb4b49bfbdfc"
+      },
+      "previous_visual_inspection": {
+        "status": "PASS",
+        "checked_utc": "2026-10-06T13:48:35.246824+00:00",
+        "raster_counts_and_temporal_positions_clear": true,
+        "stream_means_and_observed_ranges_clear": true,
+        "legend_in_empty_space": true,
+        "no_clipping_or_text_overlap": true,
+        "no_unnecessary_outcome_connecting_lines": true,
+        "Times_family_typography_readable": true
+      },
+      "completed_utc": "2026-10-06T14:04:22.920403+00:00"
+    }
+  ]
 }
