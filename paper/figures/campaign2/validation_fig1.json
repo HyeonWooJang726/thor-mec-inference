@@ -1,5 +1,5 @@
 {
-  "task": "CAMPAIGN2_SECTION3_FIGURE1_CLEANUP_AND_PUBLISH",
+  "task": "CAMPAIGN2_SECTION3_FIGURES_FINALIZE_AND_PUSH",
   "repository_root": "/home/ainet/research/thor-mec-rate-dvfs-gate",
   "canonical_output_directory": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2",
   "started_utc": "2026-10-06T13:44:17.394072+00:00",
@@ -221,10 +221,13 @@
     "paper/figures/campaign2/figure1_data.csv",
     "paper/figures/campaign2/plot_fig1.py",
     "paper/figures/campaign2/validation_fig1.json",
-    "paper/figures/campaign2/README_fig1.txt"
+    "paper/figures/campaign2/README_fig1.txt",
+    "paper/figures/campaign2/fig2_edge_rate_sweep.pdf",
+    "paper/figures/campaign2/fig2_edge_rate_sweep.png",
+    "paper/figures/campaign2/plot_section3_figures.py"
   ],
   "status": "PASS",
-  "Figure_2_change_authorized": false,
+  "Figure_2_change_authorized": true,
   "retained_shared_files": [
     "paper/figure_data_section3.csv",
     "paper/validation_section3.json",
@@ -235,42 +238,445 @@
   ],
   "unresolved_items": [],
   "rendering": {
-    "figure_size_inches": {
-      "width": 7.16,
-      "height": 3.5
-    },
-    "png_dpi": 600,
-    "font": {
-      "family": "STIXGeneral",
-      "size_pt": 8.5,
-      "pdf_fonttype": 42,
-      "ps_fonttype": 42,
-      "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nCZRBLR+STIXGeneral-Regular           CID TrueType      Identity-H       yes yes yes     21  0\n",
-      "Type_3_present": false
-    },
-    "text_clipping_check": "PASS",
-    "vector_assignment_cells": true,
-    "raster_cell_grid": {
-      "boundary_color": "#D9DCE0",
-      "width_pt": 0.25,
-      "cells": {
-        "CONCENTRATED": {
-          "width_inches": 0.08830666666666666,
-          "height_inches": 0.08830666666666666,
-          "height_width_ratio": 1.0
-        },
-        "DISPERSED": {
-          "width_inches": 0.08830666666666666,
-          "height_inches": 0.08830666666666664,
-          "height_width_ratio": 0.9999999999999998
-        }
+    "figures": {
+      "1": {
+        "size_inches": [
+          3.5,
+          4.5
+        ],
+        "font_family": "STIXGeneral",
+        "font_size_pt": 8.5,
+        "PNG_dpi": 600,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nCZRBLR+STIXGeneral-Regular           CID TrueType      Identity-H       yes yes yes     21  0\n",
+        "Type_3_present": false,
+        "text_clipping": false,
+        "legend_data_overlap": false,
+        "vector_PDF": true,
+        "panel_labels_below_axes": true
       },
-      "square_cell_check": "PASS"
+      "2": {
+        "size_inches": [
+          3.5,
+          5.3
+        ],
+        "font_family": "STIXGeneral",
+        "font_size_pt": 8.5,
+        "PNG_dpi": 600,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nCZRBLR+STIXGeneral-Regular           CID TrueType      Identity-H       yes yes yes     33  0\n",
+        "Type_3_present": false,
+        "text_clipping": false,
+        "legend_data_overlap": false,
+        "vector_PDF": true,
+        "panel_labels_below_axes": true
+      }
     },
-    "outcome_connecting_lines": false,
-    "range_line_width_pt": 0.8,
+    "plotted_series": [
+      {
+        "series": "Concentrated",
+        "metric": "Edge_assigned_TIR",
+        "display_x": [
+          -0.14,
+          0.86,
+          1.8599999999999999,
+          2.86,
+          3.86,
+          4.86,
+          5.86,
+          6.86
+        ],
+        "mean": [
+          0.9833333333333333,
+          0.9716666666666667,
+          0.91,
+          0.39666666666666667,
+          0.05333333333333333,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "min": [
+          0.9666666666666667,
+          0.9583333333333334,
+          0.8416666666666667,
+          0.15833333333333333,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max": [
+          1.0,
+          0.9916666666666667,
+          0.9666666666666667,
+          0.7583333333333333,
+          0.16666666666666666,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "connected": false
+      },
+      {
+        "series": "Dispersed",
+        "metric": "Edge_assigned_TIR",
+        "display_x": [
+          0.14,
+          1.1400000000000001,
+          2.14,
+          3.14,
+          4.14,
+          5.14,
+          6.14,
+          7.14
+        ],
+        "mean": [
+          0.9766666666666667,
+          0.985,
+          0.99,
+          0.9916666666666667,
+          0.9916666666666667,
+          0.99,
+          0.9916666666666667,
+          0.9866666666666667
+        ],
+        "min": [
+          0.95,
+          0.95,
+          0.9666666666666667,
+          0.9583333333333334,
+          0.9666666666666667,
+          0.9583333333333334,
+          0.9666666666666667,
+          0.95
+        ],
+        "max": [
+          0.9916666666666667,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "connected": false
+      },
+      {
+        "series": "Concentrated",
+        "metric": "R_min",
+        "display_x": [
+          7.2,
+          15.2,
+          23.2,
+          31.2,
+          39.2,
+          47.2,
+          55.2,
+          63.2
+        ],
+        "mean": [
+          0.8340000000000001,
+          0.9333333333333333,
+          0.899888888888889,
+          0.8673333333333334,
+          0.8334444444444444,
+          0.8003333333333333,
+          0.768,
+          0.7337777777777778
+        ],
+        "min": [
+          0.7827777777777778,
+          0.9333333333333333,
+          0.8994444444444445,
+          0.8666666666666667,
+          0.8333333333333334,
+          0.8,
+          0.7666666666666667,
+          0.7322222222222222
+        ],
+        "max": [
+          0.8766666666666667,
+          0.9333333333333333,
+          0.9,
+          0.8694444444444445,
+          0.8338888888888889,
+          0.8011111111111111,
+          0.7694444444444445,
+          0.7366666666666667
+        ],
+        "connected": true
+      },
+      {
+        "series": "Dispersed",
+        "metric": "R_min",
+        "display_x": [
+          8.8,
+          16.8,
+          24.8,
+          32.8,
+          40.8,
+          48.8,
+          56.8,
+          64.8
+        ],
+        "mean": [
+          0.8327777777777777,
+          0.9983333333333333,
+          0.9961111111111111,
+          0.9974444444444445,
+          0.9878888888888889,
+          0.9916666666666667,
+          0.9778888888888889,
+          0.9747777777777779
+        ],
+        "min": [
+          0.7438888888888889,
+          0.9961111111111111,
+          0.99,
+          0.9927777777777778,
+          0.9733333333333334,
+          0.9872222222222222,
+          0.9672222222222222,
+          0.9661111111111111
+        ],
+        "max": [
+          0.9983333333333333,
+          0.9994444444444445,
+          0.9994444444444445,
+          0.9994444444444445,
+          0.9994444444444445,
+          0.9977777777777778,
+          0.9994444444444445,
+          0.9838888888888889
+        ],
+        "connected": true
+      },
+      {
+        "series": "Local-only",
+        "metric": "R_min",
+        "display_x": [
+          0.0
+        ],
+        "mean": [
+          0.5675555555555556
+        ],
+        "min": [
+          0.5333333333333333
+        ],
+        "max": [
+          0.5911111111111111
+        ],
+        "connected": false
+      },
+      {
+        "series": "Local / Concentrated",
+        "metric": "Local_assigned_TIR",
+        "display_x": [
+          7.2,
+          15.2,
+          23.2,
+          31.2,
+          39.2,
+          47.2,
+          55.2,
+          63.2
+        ],
+        "mean": [
+          0.8807471264367815,
+          1.0,
+          0.9999537037037037,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.999810606060606
+        ],
+        "min": [
+          0.832183908045977,
+          1.0,
+          0.9997685185185186,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9990530303030303
+        ],
+        "max": [
+          0.9156609195402299,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "connected": true
+      },
+      {
+        "series": "Local / Dispersed",
+        "metric": "Local_assigned_TIR",
+        "display_x": [
+          8.8,
+          16.8,
+          24.8,
+          32.8,
+          40.8,
+          48.8,
+          56.8,
+          64.8
+        ],
+        "mean": [
+          0.8526436781609196,
+          0.9999702380952381,
+          0.9996141975308642,
+          1.0,
+          1.0,
+          0.9999826388888889,
+          1.0,
+          0.9999810606060606
+        ],
+        "min": [
+          0.7683908045977011,
+          0.9998511904761904,
+          0.9983024691358025,
+          1.0,
+          1.0,
+          0.9999131944444445,
+          1.0,
+          0.999905303030303
+        ],
+        "max": [
+          0.9998563218390805,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "connected": true
+      },
+      {
+        "series": "Edge / Concentrated",
+        "metric": "Edge_assigned_TIR",
+        "display_x": [
+          7.2,
+          15.2,
+          23.2,
+          31.2,
+          39.2,
+          47.2,
+          55.2,
+          63.2
+        ],
+        "mean": [
+          0.28500000000000003,
+          0.414375,
+          0.4980555555555556,
+          0.609375,
+          0.5034166666666666,
+          0.6163194444444444,
+          0.601845238095238,
+          0.6105729166666667
+        ],
+        "min": [
+          0.24791666666666667,
+          0.3729166666666667,
+          0.4618055555555556,
+          0.49166666666666664,
+          0.42041666666666666,
+          0.4979166666666667,
+          0.42589285714285713,
+          0.5395833333333333
+        ],
+        "max": [
+          0.32083333333333336,
+          0.484375,
+          0.5541666666666667,
+          0.715625,
+          0.6191666666666666,
+          0.7361111111111112,
+          0.7324404761904761,
+          0.7192708333333333
+        ],
+        "connected": true
+      },
+      {
+        "series": "Edge / Dispersed",
+        "metric": "Edge_assigned_TIR",
+        "display_x": [
+          8.8,
+          16.8,
+          24.8,
+          32.8,
+          40.8,
+          48.8,
+          56.8,
+          64.8
+        ],
+        "mean": [
+          0.9804166666666667,
+          0.9879166666666667,
+          0.9723611111111111,
+          0.9855208333333333,
+          0.9488333333333333,
+          0.9709722222222222,
+          0.9110714285714285,
+          0.9297395833333333
+        ],
+        "min": [
+          0.9395833333333333,
+          0.9583333333333334,
+          0.9083333333333333,
+          0.9536458333333333,
+          0.8779166666666667,
+          0.9541666666666667,
+          0.8663690476190476,
+          0.8947916666666667
+        ],
+        "max": [
+          0.9979166666666667,
+          0.9989583333333333,
+          0.9979166666666667,
+          0.9984375,
+          0.9995833333333334,
+          0.9961805555555555,
+          0.999702380952381,
+          0.9471354166666667
+        ],
+        "connected": true
+      },
+      {
+        "series": "Local-only",
+        "metric": "Local_assigned_TIR",
+        "display_x": [
+          0.0
+        ],
+        "mean": [
+          0.6130277777777777
+        ],
+        "min": [
+          0.6006944444444444
+        ],
+        "max": [
+          0.6236805555555556
+        ],
+        "connected": false
+      }
+    ],
     "marker_size_pt": 4.5,
-    "range_cap_size_pt": 2
+    "line_width_pt": 1,
+    "range_line_width_pt": 0.8,
+    "cap_size_pt": 2,
+    "nonzero_sweep_display_x_offsets": {
+      "Concentrated": -0.8,
+      "Dispersed": 0.8
+    },
+    "display_offset_note": "Horizontal separation is presentation only; nominal assigned rates are unchanged.",
+    "ranges": "five-run observed min–max, not confidence intervals",
+    "connecting_lines": "visual guides between measured points only"
   },
   "data_validation": {
     "assignment_patterns": {
@@ -763,18 +1169,35 @@
     "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/assignment_manifest.json": "8f324387bff48eb2e07acf238ecd320b434df499c055e7cb089e328b3b97e805"
   },
   "input_files_unchanged": true,
-  "generated_utc": "2026-10-06T13:47:29.473703+00:00",
+  "generated_utc": "2026-10-06T14:37:59.005560+00:00",
   "plot_generation_status": "PASS",
   "visual_inspection": {
     "status": "PASS",
-    "checked_utc": "2026-10-06T14:04:22.920403+00:00",
-    "all_cell_boundaries_visible_and_subtle": true,
-    "Local_background_light_gray": true,
-    "Edge_cells_emphasized_blue_or_orange": true,
-    "square_cells": true,
-    "tick_legend_and_panel_labels_readable": true,
-    "clipping_or_text_overlap": false,
-    "panel_b_unchanged": true
+    "checked_utc": "2026-10-06T14:42:57.106829+00:00",
+    "inspection_method": "Both final 600-dpi PNGs opened with view_image; dimensions and all text sizes checked against rendering.",
+    "Figure_1": {
+      "one_column_readable": true,
+      "exact_square_raster_cells_visible": true,
+      "subtle_cell_grid": true,
+      "stream_comparison_clear": true,
+      "open_Circle_square_markers_distinct": true,
+      "legend_data_overlap": false,
+      "panel_label_clipping": false,
+      "causal_annotations_present": false
+    },
+    "Figure_2": {
+      "one_column_readable": true,
+      "reference_behind_data": true,
+      "series_distinct_by_color_shape_fill_line": true,
+      "Local_only_standalone": true,
+      "E0_Edge_TIR_not_plotted": true,
+      "legend_data_overlap": false,
+      "panel_label_clipping": false,
+      "error_ranges_not_overemphasized": true
+    },
+    "font_size_pt": 8.5,
+    "tick_overlap": false,
+    "text_clipping": false
   },
   "source_data_modified": false,
   "analysis01_modified": false,
@@ -783,11 +1206,14 @@
   "new_experiment": false,
   "short_caption": "Temporal placement at L224/E16. (a) Both placements assign 28 Local and 2 Edge frames per stream per 30 frame indices; only temporal positions differ. (b) Stream-wise Edge-assigned timely ratios: means and observed min–max across five runs. Denominators include pre-submission expirations. This is descriptive preliminary evidence, not an algorithm comparison.",
   "output_sha256": {
-    "fig1_e16.pdf": "8d0f75a5fe1d79caa73e9af163407d6842bc24a32d48f97dc0712543391ba006",
-    "fig1_e16.png": "75467f62318ade6a14e247569e5329793b1f67dc531e2ff658f40ef085a9fdb3",
+    "fig1_e16.pdf": "59fa81ffb35b6505668b0a971d7f07c667648144ca75fb2ce80e116de93981e6",
+    "fig1_e16.png": "c5859210f84135908d5abc18e6f33b7723e99a242e9b6c598e3257c2a51d2a08",
     "figure1_data.csv": "4c3443a3d353492c19ea6db7403446bf23635e0a5a16542df30065de97250aa2",
     "plot_fig1.py": "762e6ee4b6f7f18372c4d15dd695687f2d0e15b58928483255cfcb4b49bfbdfc",
-    "README_fig1.txt": "33eba17b3c43fda13eae0d3692e7ac879ead68c9105cfcd7f829acfda00123aa"
+    "README_fig1.txt": "ec35c311bb21b0bcfa13f3e84a4bd7c3665062017774166cc40340923f2cb98e",
+    "fig2_edge_rate_sweep.pdf": "95c44bdc02b8a845c844a92eeb07ed76ef355e4198ebfd001806b318869927c1",
+    "fig2_edge_rate_sweep.png": "17eee5f5f3a600e48658fbbc0c4f9a3f120ff0956eec15dc7713c004e9b26c67",
+    "plot_section3_figures.py": "883a3ac71cb244b2cd4a0dde4b1c7610bba740f84dd77b531c23d923234287c4"
   },
   "validation_self_sha_note": "Self SHA omitted to avoid a recursive manifest.",
   "deleted_directories_precheck": [
@@ -812,18 +1238,30 @@
     "pdf_vector_and_no_Type_3": "PASS",
     "PNG_600_dpi": "PASS",
     "visual_inspection": "PASS",
-    "cleanup_exact_prechecked_files_only": "PASS"
+    "cleanup_exact_prechecked_files_only": "PASS",
+    "frozen_sweep_values_and_summary_match": "PASS",
+    "E16_run_IDs_shared_by_Figures_1_and_2": "PASS",
+    "85_measured_run_IDs_preserved": "PASS",
+    "E0_Edge_TIR_undefined": "PASS",
+    "source_CSV_not_regenerated": "PASS",
+    "preservation": "PASS"
   },
   "preservation": {
-    "existing_paper_files_checked": 42,
+    "status": "PASS",
+    "protected_paper_files_checked": 44,
     "existing_campaign_files_checked": 4542,
-    "analysis_evidence_files_SHA_checked": 23,
-    "Figure_2_unchanged": true,
-    "raw_result_metadata_unchanged": true,
+    "analysis_evidence_SHA_files_checked": 23,
+    "protected_paper_SHA_size_mtime_unchanged": true,
+    "raw_result_file_inventory_size_mtime_unchanged": true,
     "analysis01_SHA_unchanged": true,
-    "paper_evidence01_SHA_unchanged": true
+    "paper_evidence01_SHA_unchanged": true,
+    "canonical_figure_CSV_SHA_unchanged": true,
+    "derived_Figure_1_CSV_SHA_unchanged": true,
+    "original_paper_Figure_2_outputs_unchanged": true,
+    "duplicate_CSV_created": false,
+    "canonical_CSV_SHA256": "dae92fe52892316a99ff7be33513c610a7ef55d763ad99e39a4f0dcfb81d59f8"
   },
-  "completed_utc": "2026-10-06T13:48:35.246831+00:00",
+  "completed_utc": "2026-10-06T14:42:57.106829+00:00",
   "raster_revisions": [
     {
       "task": "CAMPAIGN2_FIG1_RASTER_REVISE_AND_PUSH",
@@ -1424,6 +1862,2066 @@
         "Times_family_typography_readable": true
       },
       "completed_utc": "2026-10-06T14:04:22.920403+00:00"
+    }
+  ],
+  "section3_finalizations": [
+    {
+      "task": "CAMPAIGN2_SECTION3_FIGURES_FINALIZE_AND_PUSH",
+      "started_utc": "2026-10-06T14:32:24.908231+00:00",
+      "rendered_outputs_precheck": [
+        {
+          "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2/fig1_e16.pdf",
+          "relative_path": "paper/figures/campaign2/fig1_e16.pdf",
+          "existed": true,
+          "sha256": "8d0f75a5fe1d79caa73e9af163407d6842bc24a32d48f97dc0712543391ba006",
+          "size_bytes": 18023,
+          "mtime_ns": 1791295423048609219
+        },
+        {
+          "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2/fig1_e16.png",
+          "relative_path": "paper/figures/campaign2/fig1_e16.png",
+          "existed": true,
+          "sha256": "75467f62318ade6a14e247569e5329793b1f67dc531e2ff658f40ef085a9fdb3",
+          "size_bytes": 266227,
+          "mtime_ns": 1791295423472611499
+        },
+        {
+          "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2/fig2_edge_rate_sweep.pdf",
+          "relative_path": "paper/figures/campaign2/fig2_edge_rate_sweep.pdf",
+          "existed": false
+        },
+        {
+          "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2/fig2_edge_rate_sweep.png",
+          "relative_path": "paper/figures/campaign2/fig2_edge_rate_sweep.png",
+          "existed": false
+        }
+      ],
+      "deleted_files": [
+        {
+          "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2/fig1_e16.pdf",
+          "sha256_before": "8d0f75a5fe1d79caa73e9af163407d6842bc24a32d48f97dc0712543391ba006",
+          "deleted_utc": "2026-10-06T14:36:42.499351+00:00"
+        },
+        {
+          "path": "/home/ainet/research/thor-mec-rate-dvfs-gate/paper/figures/campaign2/fig1_e16.png",
+          "sha256_before": "75467f62318ade6a14e247569e5329793b1f67dc531e2ff658f40ef085a9fdb3",
+          "deleted_utc": "2026-10-06T14:36:42.500876+00:00"
+        }
+      ],
+      "results_obsolete_figure_candidates": [],
+      "canonical_numeric_source": "paper/figure_data_section3.csv",
+      "source_sha_before": {
+        "paper/figure_data_section3.csv": "dae92fe52892316a99ff7be33513c610a7ef55d763ad99e39a4f0dcfb81d59f8",
+        "paper/validation_section3.json": "d25191daa5bee07d7cc6904cf5f492bcd403bc01556bcca03d6c60ee4d59d4cf",
+        "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/assignment_table.csv": "c6651f1ca12a5ed569ff67155893948eb35f3fc0be9310182541b6fc01cdfb92",
+        "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/assignment_manifest.json": "8f324387bff48eb2e07acf238ecd320b434df499c055e7cb089e328b3b97e805",
+        "paper/figures/campaign2/figure1_data.csv": "4c3443a3d353492c19ea6db7403446bf23635e0a5a16542df30065de97250aa2",
+        "paper/figures/campaign2/plot_fig1.py": "762e6ee4b6f7f18372c4d15dd695687f2d0e15b58928483255cfcb4b49bfbdfc"
+      },
+      "duplicate_figure_CSV_created": false,
+      "status": "PASS",
+      "visual_inspection": {
+        "status": "PASS",
+        "checked_utc": "2026-10-06T14:42:57.106829+00:00",
+        "inspection_method": "Both final 600-dpi PNGs opened with view_image; dimensions and all text sizes checked against rendering.",
+        "Figure_1": {
+          "one_column_readable": true,
+          "exact_square_raster_cells_visible": true,
+          "subtle_cell_grid": true,
+          "stream_comparison_clear": true,
+          "open_Circle_square_markers_distinct": true,
+          "legend_data_overlap": false,
+          "panel_label_clipping": false,
+          "causal_annotations_present": false
+        },
+        "Figure_2": {
+          "one_column_readable": true,
+          "reference_behind_data": true,
+          "series_distinct_by_color_shape_fill_line": true,
+          "Local_only_standalone": true,
+          "E0_Edge_TIR_not_plotted": true,
+          "legend_data_overlap": false,
+          "panel_label_clipping": false,
+          "error_ranges_not_overemphasized": true
+        },
+        "font_size_pt": 8.5,
+        "tick_overlap": false,
+        "text_clipping": false
+      },
+      "generated_utc": "2026-10-06T14:37:59.004122+00:00",
+      "source_sha_after": {
+        "paper/figure_data_section3.csv": "dae92fe52892316a99ff7be33513c610a7ef55d763ad99e39a4f0dcfb81d59f8",
+        "paper/validation_section3.json": "d25191daa5bee07d7cc6904cf5f492bcd403bc01556bcca03d6c60ee4d59d4cf",
+        "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/assignment_table.csv": "c6651f1ca12a5ed569ff67155893948eb35f3fc0be9310182541b6fc01cdfb92",
+        "results/timely_capacity_campaign/v2_2/block_b_edge_rate_sweep01/assignment_manifest.json": "8f324387bff48eb2e07acf238ecd320b434df499c055e7cb089e328b3b97e805",
+        "paper/figures/campaign2/figure1_data.csv": "4c3443a3d353492c19ea6db7403446bf23635e0a5a16542df30065de97250aa2",
+        "paper/figures/campaign2/plot_fig1.py": "762e6ee4b6f7f18372c4d15dd695687f2d0e15b58928483255cfcb4b49bfbdfc"
+      },
+      "source_data_unchanged": true,
+      "Figure_1_data_validation": {
+        "assignment_patterns": {
+          "CONCENTRATED": {
+            "Local_total": 224,
+            "Edge_total": 16,
+            "Local_per_stream": [
+              28,
+              28,
+              28,
+              28,
+              28,
+              28,
+              28,
+              28
+            ],
+            "Edge_per_stream": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "phase_vector": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "m_E": [
+              8,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              8,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "m_L": [
+              0,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              0,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "table_manifest_cell_match": true
+          },
+          "DISPERSED": {
+            "Local_total": 224,
+            "Edge_total": 16,
+            "Local_per_stream": [
+              28,
+              28,
+              28,
+              28,
+              28,
+              28,
+              28,
+              28
+            ],
+            "Edge_per_stream": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "phase_vector": [
+              0,
+              2,
+              4,
+              6,
+              8,
+              9,
+              11,
+              13
+            ],
+            "m_E": [
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "m_L": [
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8,
+              7,
+              7,
+              8,
+              7,
+              8,
+              7,
+              8
+            ],
+            "table_manifest_cell_match": true
+          }
+        },
+        "stream_mean_min_max": [
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 0,
+            "mean": 0.9833333333333333,
+            "min": 0.9666666666666667,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 1,
+            "mean": 0.9716666666666667,
+            "min": 0.9583333333333334,
+            "max": 0.9916666666666667,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 2,
+            "mean": 0.91,
+            "min": 0.8416666666666667,
+            "max": 0.9666666666666667,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 3,
+            "mean": 0.39666666666666667,
+            "min": 0.15833333333333333,
+            "max": 0.7583333333333333,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 4,
+            "mean": 0.05333333333333333,
+            "min": 0.0,
+            "max": 0.16666666666666666,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 5,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 6,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "CONCENTRATED",
+            "stream_id": 7,
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 0,
+            "mean": 0.9766666666666667,
+            "min": 0.95,
+            "max": 0.9916666666666667,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 1,
+            "mean": 0.985,
+            "min": 0.95,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 2,
+            "mean": 0.99,
+            "min": 0.9666666666666667,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 3,
+            "mean": 0.9916666666666667,
+            "min": 0.9583333333333334,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 4,
+            "mean": 0.9916666666666667,
+            "min": 0.9666666666666667,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 5,
+            "mean": 0.99,
+            "min": 0.9583333333333334,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 6,
+            "mean": 0.9916666666666667,
+            "min": 0.9666666666666667,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          },
+          {
+            "placement": "DISPERSED",
+            "stream_id": 7,
+            "mean": 0.9866666666666667,
+            "min": 0.95,
+            "max": 1.0,
+            "denominator": 120,
+            "n": 5,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ]
+          }
+        ],
+        "run_ids": {
+          "CONCENTRATED": [
+            "ESWEEP01_L224E16_CONC_R01",
+            "ESWEEP01_L224E16_CONC_R02",
+            "ESWEEP01_L224E16_CONC_R03",
+            "ESWEEP01_L224E16_CONC_R04",
+            "ESWEEP01_L224E16_CONC_R05"
+          ],
+          "DISPERSED": [
+            "ESWEEP01_L224E16_DISP_R01",
+            "ESWEEP01_L224E16_DISP_R02",
+            "ESWEEP01_L224E16_DISP_R03",
+            "ESWEEP01_L224E16_DISP_R04",
+            "ESWEEP01_L224E16_DISP_R05"
+          ]
+        },
+        "measured_runs_per_placement": 5,
+        "Edge_assigned_denominator_per_stream_run": 120,
+        "pre_submission_expirations_already_in_denominator": true,
+        "denominator_is_submitted_only": false,
+        "ranges": "observed min–max across five measured runs",
+        "existing_valid_run_count": 85,
+        "existing_nonzero_pair_count": 40,
+        "ANALYZER_SHA_RECORD_NOT_FOUND": true
+      },
+      "Figure_2_data_validation": {
+        "canonical_source": "paper/figure_data_section3.csv",
+        "valid_runs_in_existing_validation": 85,
+        "invalid_runs_in_existing_validation": 0,
+        "nonzero_pairs_in_existing_validation": 40,
+        "all_measured_run_ids": [
+          "ESWEEP01_L176E64_CONC_R01",
+          "ESWEEP01_L176E64_CONC_R02",
+          "ESWEEP01_L176E64_CONC_R03",
+          "ESWEEP01_L176E64_CONC_R04",
+          "ESWEEP01_L176E64_CONC_R05",
+          "ESWEEP01_L176E64_DISP_R01",
+          "ESWEEP01_L176E64_DISP_R02",
+          "ESWEEP01_L176E64_DISP_R03",
+          "ESWEEP01_L176E64_DISP_R04",
+          "ESWEEP01_L176E64_DISP_R05",
+          "ESWEEP01_L184E56_CONC_R01",
+          "ESWEEP01_L184E56_CONC_R02",
+          "ESWEEP01_L184E56_CONC_R03",
+          "ESWEEP01_L184E56_CONC_R04",
+          "ESWEEP01_L184E56_CONC_R05",
+          "ESWEEP01_L184E56_DISP_R01",
+          "ESWEEP01_L184E56_DISP_R02",
+          "ESWEEP01_L184E56_DISP_R03",
+          "ESWEEP01_L184E56_DISP_R04",
+          "ESWEEP01_L184E56_DISP_R05",
+          "ESWEEP01_L192E48_CONC_R01",
+          "ESWEEP01_L192E48_CONC_R02",
+          "ESWEEP01_L192E48_CONC_R03",
+          "ESWEEP01_L192E48_CONC_R04",
+          "ESWEEP01_L192E48_CONC_R05",
+          "ESWEEP01_L192E48_DISP_R01",
+          "ESWEEP01_L192E48_DISP_R02",
+          "ESWEEP01_L192E48_DISP_R03",
+          "ESWEEP01_L192E48_DISP_R04",
+          "ESWEEP01_L192E48_DISP_R05",
+          "ESWEEP01_L200E40_CONC_R01",
+          "ESWEEP01_L200E40_CONC_R02",
+          "ESWEEP01_L200E40_CONC_R03",
+          "ESWEEP01_L200E40_CONC_R04",
+          "ESWEEP01_L200E40_CONC_R05",
+          "ESWEEP01_L200E40_DISP_R01",
+          "ESWEEP01_L200E40_DISP_R02",
+          "ESWEEP01_L200E40_DISP_R03",
+          "ESWEEP01_L200E40_DISP_R04",
+          "ESWEEP01_L200E40_DISP_R05",
+          "ESWEEP01_L208E32_CONC_R01",
+          "ESWEEP01_L208E32_CONC_R02",
+          "ESWEEP01_L208E32_CONC_R03",
+          "ESWEEP01_L208E32_CONC_R04",
+          "ESWEEP01_L208E32_CONC_R05",
+          "ESWEEP01_L208E32_DISP_R01",
+          "ESWEEP01_L208E32_DISP_R02",
+          "ESWEEP01_L208E32_DISP_R03",
+          "ESWEEP01_L208E32_DISP_R04",
+          "ESWEEP01_L208E32_DISP_R05",
+          "ESWEEP01_L216E24_CONC_R01",
+          "ESWEEP01_L216E24_CONC_R02",
+          "ESWEEP01_L216E24_CONC_R03",
+          "ESWEEP01_L216E24_CONC_R04",
+          "ESWEEP01_L216E24_CONC_R05",
+          "ESWEEP01_L216E24_DISP_R01",
+          "ESWEEP01_L216E24_DISP_R02",
+          "ESWEEP01_L216E24_DISP_R03",
+          "ESWEEP01_L216E24_DISP_R04",
+          "ESWEEP01_L216E24_DISP_R05",
+          "ESWEEP01_L224E16_CONC_R01",
+          "ESWEEP01_L224E16_CONC_R02",
+          "ESWEEP01_L224E16_CONC_R03",
+          "ESWEEP01_L224E16_CONC_R04",
+          "ESWEEP01_L224E16_CONC_R05",
+          "ESWEEP01_L224E16_DISP_R01",
+          "ESWEEP01_L224E16_DISP_R02",
+          "ESWEEP01_L224E16_DISP_R03",
+          "ESWEEP01_L224E16_DISP_R04",
+          "ESWEEP01_L224E16_DISP_R05",
+          "ESWEEP01_L232E8_CONC_R01",
+          "ESWEEP01_L232E8_CONC_R02",
+          "ESWEEP01_L232E8_CONC_R03",
+          "ESWEEP01_L232E8_CONC_R04",
+          "ESWEEP01_L232E8_CONC_R05",
+          "ESWEEP01_L232E8_DISP_R01",
+          "ESWEEP01_L232E8_DISP_R02",
+          "ESWEEP01_L232E8_DISP_R03",
+          "ESWEEP01_L232E8_DISP_R04",
+          "ESWEEP01_L232E8_DISP_R05",
+          "ESWEEP01_L240E0_LOCAL_ONLY_R01",
+          "ESWEEP01_L240E0_LOCAL_ONLY_R02",
+          "ESWEEP01_L240E0_LOCAL_ONLY_R03",
+          "ESWEEP01_L240E0_LOCAL_ONLY_R04",
+          "ESWEEP01_L240E0_LOCAL_ONLY_R05"
+        ],
+        "summary_count": 50,
+        "summaries": [
+          {
+            "metric": "R_min",
+            "placement": "LOCAL_ONLY",
+            "Edge_FPS": 0,
+            "mean": 0.5675555555555556,
+            "min": 0.5333333333333333,
+            "max": 0.5911111111111111,
+            "run_ids": [
+              "ESWEEP01_L240E0_LOCAL_ONLY_R01",
+              "ESWEEP01_L240E0_LOCAL_ONLY_R02",
+              "ESWEEP01_L240E0_LOCAL_ONLY_R03",
+              "ESWEEP01_L240E0_LOCAL_ONLY_R04",
+              "ESWEEP01_L240E0_LOCAL_ONLY_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "LOCAL_ONLY",
+            "Edge_FPS": 0,
+            "mean": 0.6130277777777777,
+            "min": 0.6006944444444444,
+            "max": 0.6236805555555556,
+            "run_ids": [
+              "ESWEEP01_L240E0_LOCAL_ONLY_R01",
+              "ESWEEP01_L240E0_LOCAL_ONLY_R02",
+              "ESWEEP01_L240E0_LOCAL_ONLY_R03",
+              "ESWEEP01_L240E0_LOCAL_ONLY_R04",
+              "ESWEEP01_L240E0_LOCAL_ONLY_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 8,
+            "mean": 0.8340000000000001,
+            "min": 0.7827777777777778,
+            "max": 0.8766666666666667,
+            "run_ids": [
+              "ESWEEP01_L232E8_CONC_R01",
+              "ESWEEP01_L232E8_CONC_R02",
+              "ESWEEP01_L232E8_CONC_R03",
+              "ESWEEP01_L232E8_CONC_R04",
+              "ESWEEP01_L232E8_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 8,
+            "mean": 0.8807471264367815,
+            "min": 0.832183908045977,
+            "max": 0.9156609195402299,
+            "run_ids": [
+              "ESWEEP01_L232E8_CONC_R01",
+              "ESWEEP01_L232E8_CONC_R02",
+              "ESWEEP01_L232E8_CONC_R03",
+              "ESWEEP01_L232E8_CONC_R04",
+              "ESWEEP01_L232E8_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 8,
+            "mean": 0.28500000000000003,
+            "min": 0.24791666666666667,
+            "max": 0.32083333333333336,
+            "run_ids": [
+              "ESWEEP01_L232E8_CONC_R01",
+              "ESWEEP01_L232E8_CONC_R02",
+              "ESWEEP01_L232E8_CONC_R03",
+              "ESWEEP01_L232E8_CONC_R04",
+              "ESWEEP01_L232E8_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "DISPERSED",
+            "Edge_FPS": 8,
+            "mean": 0.8327777777777777,
+            "min": 0.7438888888888889,
+            "max": 0.9983333333333333,
+            "run_ids": [
+              "ESWEEP01_L232E8_DISP_R01",
+              "ESWEEP01_L232E8_DISP_R02",
+              "ESWEEP01_L232E8_DISP_R03",
+              "ESWEEP01_L232E8_DISP_R04",
+              "ESWEEP01_L232E8_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 8,
+            "mean": 0.8526436781609196,
+            "min": 0.7683908045977011,
+            "max": 0.9998563218390805,
+            "run_ids": [
+              "ESWEEP01_L232E8_DISP_R01",
+              "ESWEEP01_L232E8_DISP_R02",
+              "ESWEEP01_L232E8_DISP_R03",
+              "ESWEEP01_L232E8_DISP_R04",
+              "ESWEEP01_L232E8_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 8,
+            "mean": 0.9804166666666667,
+            "min": 0.9395833333333333,
+            "max": 0.9979166666666667,
+            "run_ids": [
+              "ESWEEP01_L232E8_DISP_R01",
+              "ESWEEP01_L232E8_DISP_R02",
+              "ESWEEP01_L232E8_DISP_R03",
+              "ESWEEP01_L232E8_DISP_R04",
+              "ESWEEP01_L232E8_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 16,
+            "mean": 0.9333333333333333,
+            "min": 0.9333333333333333,
+            "max": 0.9333333333333333,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 16,
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 16,
+            "mean": 0.414375,
+            "min": 0.3729166666666667,
+            "max": 0.484375,
+            "run_ids": [
+              "ESWEEP01_L224E16_CONC_R01",
+              "ESWEEP01_L224E16_CONC_R02",
+              "ESWEEP01_L224E16_CONC_R03",
+              "ESWEEP01_L224E16_CONC_R04",
+              "ESWEEP01_L224E16_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "DISPERSED",
+            "Edge_FPS": 16,
+            "mean": 0.9983333333333333,
+            "min": 0.9961111111111111,
+            "max": 0.9994444444444445,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 16,
+            "mean": 0.9999702380952381,
+            "min": 0.9998511904761904,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 16,
+            "mean": 0.9879166666666667,
+            "min": 0.9583333333333334,
+            "max": 0.9989583333333333,
+            "run_ids": [
+              "ESWEEP01_L224E16_DISP_R01",
+              "ESWEEP01_L224E16_DISP_R02",
+              "ESWEEP01_L224E16_DISP_R03",
+              "ESWEEP01_L224E16_DISP_R04",
+              "ESWEEP01_L224E16_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 24,
+            "mean": 0.899888888888889,
+            "min": 0.8994444444444445,
+            "max": 0.9,
+            "run_ids": [
+              "ESWEEP01_L216E24_CONC_R01",
+              "ESWEEP01_L216E24_CONC_R02",
+              "ESWEEP01_L216E24_CONC_R03",
+              "ESWEEP01_L216E24_CONC_R04",
+              "ESWEEP01_L216E24_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 24,
+            "mean": 0.9999537037037037,
+            "min": 0.9997685185185186,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L216E24_CONC_R01",
+              "ESWEEP01_L216E24_CONC_R02",
+              "ESWEEP01_L216E24_CONC_R03",
+              "ESWEEP01_L216E24_CONC_R04",
+              "ESWEEP01_L216E24_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 24,
+            "mean": 0.4980555555555556,
+            "min": 0.4618055555555556,
+            "max": 0.5541666666666667,
+            "run_ids": [
+              "ESWEEP01_L216E24_CONC_R01",
+              "ESWEEP01_L216E24_CONC_R02",
+              "ESWEEP01_L216E24_CONC_R03",
+              "ESWEEP01_L216E24_CONC_R04",
+              "ESWEEP01_L216E24_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "DISPERSED",
+            "Edge_FPS": 24,
+            "mean": 0.9961111111111111,
+            "min": 0.99,
+            "max": 0.9994444444444445,
+            "run_ids": [
+              "ESWEEP01_L216E24_DISP_R01",
+              "ESWEEP01_L216E24_DISP_R02",
+              "ESWEEP01_L216E24_DISP_R03",
+              "ESWEEP01_L216E24_DISP_R04",
+              "ESWEEP01_L216E24_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 24,
+            "mean": 0.9996141975308642,
+            "min": 0.9983024691358025,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L216E24_DISP_R01",
+              "ESWEEP01_L216E24_DISP_R02",
+              "ESWEEP01_L216E24_DISP_R03",
+              "ESWEEP01_L216E24_DISP_R04",
+              "ESWEEP01_L216E24_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 24,
+            "mean": 0.9723611111111111,
+            "min": 0.9083333333333333,
+            "max": 0.9979166666666667,
+            "run_ids": [
+              "ESWEEP01_L216E24_DISP_R01",
+              "ESWEEP01_L216E24_DISP_R02",
+              "ESWEEP01_L216E24_DISP_R03",
+              "ESWEEP01_L216E24_DISP_R04",
+              "ESWEEP01_L216E24_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 32,
+            "mean": 0.8673333333333334,
+            "min": 0.8666666666666667,
+            "max": 0.8694444444444445,
+            "run_ids": [
+              "ESWEEP01_L208E32_CONC_R01",
+              "ESWEEP01_L208E32_CONC_R02",
+              "ESWEEP01_L208E32_CONC_R03",
+              "ESWEEP01_L208E32_CONC_R04",
+              "ESWEEP01_L208E32_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 32,
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L208E32_CONC_R01",
+              "ESWEEP01_L208E32_CONC_R02",
+              "ESWEEP01_L208E32_CONC_R03",
+              "ESWEEP01_L208E32_CONC_R04",
+              "ESWEEP01_L208E32_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 32,
+            "mean": 0.609375,
+            "min": 0.49166666666666664,
+            "max": 0.715625,
+            "run_ids": [
+              "ESWEEP01_L208E32_CONC_R01",
+              "ESWEEP01_L208E32_CONC_R02",
+              "ESWEEP01_L208E32_CONC_R03",
+              "ESWEEP01_L208E32_CONC_R04",
+              "ESWEEP01_L208E32_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "DISPERSED",
+            "Edge_FPS": 32,
+            "mean": 0.9974444444444445,
+            "min": 0.9927777777777778,
+            "max": 0.9994444444444445,
+            "run_ids": [
+              "ESWEEP01_L208E32_DISP_R01",
+              "ESWEEP01_L208E32_DISP_R02",
+              "ESWEEP01_L208E32_DISP_R03",
+              "ESWEEP01_L208E32_DISP_R04",
+              "ESWEEP01_L208E32_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 32,
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L208E32_DISP_R01",
+              "ESWEEP01_L208E32_DISP_R02",
+              "ESWEEP01_L208E32_DISP_R03",
+              "ESWEEP01_L208E32_DISP_R04",
+              "ESWEEP01_L208E32_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 32,
+            "mean": 0.9855208333333333,
+            "min": 0.9536458333333333,
+            "max": 0.9984375,
+            "run_ids": [
+              "ESWEEP01_L208E32_DISP_R01",
+              "ESWEEP01_L208E32_DISP_R02",
+              "ESWEEP01_L208E32_DISP_R03",
+              "ESWEEP01_L208E32_DISP_R04",
+              "ESWEEP01_L208E32_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 40,
+            "mean": 0.8334444444444444,
+            "min": 0.8333333333333334,
+            "max": 0.8338888888888889,
+            "run_ids": [
+              "ESWEEP01_L200E40_CONC_R01",
+              "ESWEEP01_L200E40_CONC_R02",
+              "ESWEEP01_L200E40_CONC_R03",
+              "ESWEEP01_L200E40_CONC_R04",
+              "ESWEEP01_L200E40_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 40,
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L200E40_CONC_R01",
+              "ESWEEP01_L200E40_CONC_R02",
+              "ESWEEP01_L200E40_CONC_R03",
+              "ESWEEP01_L200E40_CONC_R04",
+              "ESWEEP01_L200E40_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 40,
+            "mean": 0.5034166666666666,
+            "min": 0.42041666666666666,
+            "max": 0.6191666666666666,
+            "run_ids": [
+              "ESWEEP01_L200E40_CONC_R01",
+              "ESWEEP01_L200E40_CONC_R02",
+              "ESWEEP01_L200E40_CONC_R03",
+              "ESWEEP01_L200E40_CONC_R04",
+              "ESWEEP01_L200E40_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "DISPERSED",
+            "Edge_FPS": 40,
+            "mean": 0.9878888888888889,
+            "min": 0.9733333333333334,
+            "max": 0.9994444444444445,
+            "run_ids": [
+              "ESWEEP01_L200E40_DISP_R01",
+              "ESWEEP01_L200E40_DISP_R02",
+              "ESWEEP01_L200E40_DISP_R03",
+              "ESWEEP01_L200E40_DISP_R04",
+              "ESWEEP01_L200E40_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 40,
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L200E40_DISP_R01",
+              "ESWEEP01_L200E40_DISP_R02",
+              "ESWEEP01_L200E40_DISP_R03",
+              "ESWEEP01_L200E40_DISP_R04",
+              "ESWEEP01_L200E40_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 40,
+            "mean": 0.9488333333333333,
+            "min": 0.8779166666666667,
+            "max": 0.9995833333333334,
+            "run_ids": [
+              "ESWEEP01_L200E40_DISP_R01",
+              "ESWEEP01_L200E40_DISP_R02",
+              "ESWEEP01_L200E40_DISP_R03",
+              "ESWEEP01_L200E40_DISP_R04",
+              "ESWEEP01_L200E40_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 48,
+            "mean": 0.8003333333333333,
+            "min": 0.8,
+            "max": 0.8011111111111111,
+            "run_ids": [
+              "ESWEEP01_L192E48_CONC_R01",
+              "ESWEEP01_L192E48_CONC_R02",
+              "ESWEEP01_L192E48_CONC_R03",
+              "ESWEEP01_L192E48_CONC_R04",
+              "ESWEEP01_L192E48_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 48,
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L192E48_CONC_R01",
+              "ESWEEP01_L192E48_CONC_R02",
+              "ESWEEP01_L192E48_CONC_R03",
+              "ESWEEP01_L192E48_CONC_R04",
+              "ESWEEP01_L192E48_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 48,
+            "mean": 0.6163194444444444,
+            "min": 0.4979166666666667,
+            "max": 0.7361111111111112,
+            "run_ids": [
+              "ESWEEP01_L192E48_CONC_R01",
+              "ESWEEP01_L192E48_CONC_R02",
+              "ESWEEP01_L192E48_CONC_R03",
+              "ESWEEP01_L192E48_CONC_R04",
+              "ESWEEP01_L192E48_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "DISPERSED",
+            "Edge_FPS": 48,
+            "mean": 0.9916666666666667,
+            "min": 0.9872222222222222,
+            "max": 0.9977777777777778,
+            "run_ids": [
+              "ESWEEP01_L192E48_DISP_R01",
+              "ESWEEP01_L192E48_DISP_R02",
+              "ESWEEP01_L192E48_DISP_R03",
+              "ESWEEP01_L192E48_DISP_R04",
+              "ESWEEP01_L192E48_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 48,
+            "mean": 0.9999826388888889,
+            "min": 0.9999131944444445,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L192E48_DISP_R01",
+              "ESWEEP01_L192E48_DISP_R02",
+              "ESWEEP01_L192E48_DISP_R03",
+              "ESWEEP01_L192E48_DISP_R04",
+              "ESWEEP01_L192E48_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 48,
+            "mean": 0.9709722222222222,
+            "min": 0.9541666666666667,
+            "max": 0.9961805555555555,
+            "run_ids": [
+              "ESWEEP01_L192E48_DISP_R01",
+              "ESWEEP01_L192E48_DISP_R02",
+              "ESWEEP01_L192E48_DISP_R03",
+              "ESWEEP01_L192E48_DISP_R04",
+              "ESWEEP01_L192E48_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 56,
+            "mean": 0.768,
+            "min": 0.7666666666666667,
+            "max": 0.7694444444444445,
+            "run_ids": [
+              "ESWEEP01_L184E56_CONC_R01",
+              "ESWEEP01_L184E56_CONC_R02",
+              "ESWEEP01_L184E56_CONC_R03",
+              "ESWEEP01_L184E56_CONC_R04",
+              "ESWEEP01_L184E56_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 56,
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L184E56_CONC_R01",
+              "ESWEEP01_L184E56_CONC_R02",
+              "ESWEEP01_L184E56_CONC_R03",
+              "ESWEEP01_L184E56_CONC_R04",
+              "ESWEEP01_L184E56_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 56,
+            "mean": 0.601845238095238,
+            "min": 0.42589285714285713,
+            "max": 0.7324404761904761,
+            "run_ids": [
+              "ESWEEP01_L184E56_CONC_R01",
+              "ESWEEP01_L184E56_CONC_R02",
+              "ESWEEP01_L184E56_CONC_R03",
+              "ESWEEP01_L184E56_CONC_R04",
+              "ESWEEP01_L184E56_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "DISPERSED",
+            "Edge_FPS": 56,
+            "mean": 0.9778888888888889,
+            "min": 0.9672222222222222,
+            "max": 0.9994444444444445,
+            "run_ids": [
+              "ESWEEP01_L184E56_DISP_R01",
+              "ESWEEP01_L184E56_DISP_R02",
+              "ESWEEP01_L184E56_DISP_R03",
+              "ESWEEP01_L184E56_DISP_R04",
+              "ESWEEP01_L184E56_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 56,
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L184E56_DISP_R01",
+              "ESWEEP01_L184E56_DISP_R02",
+              "ESWEEP01_L184E56_DISP_R03",
+              "ESWEEP01_L184E56_DISP_R04",
+              "ESWEEP01_L184E56_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 56,
+            "mean": 0.9110714285714285,
+            "min": 0.8663690476190476,
+            "max": 0.999702380952381,
+            "run_ids": [
+              "ESWEEP01_L184E56_DISP_R01",
+              "ESWEEP01_L184E56_DISP_R02",
+              "ESWEEP01_L184E56_DISP_R03",
+              "ESWEEP01_L184E56_DISP_R04",
+              "ESWEEP01_L184E56_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 64,
+            "mean": 0.7337777777777778,
+            "min": 0.7322222222222222,
+            "max": 0.7366666666666667,
+            "run_ids": [
+              "ESWEEP01_L176E64_CONC_R01",
+              "ESWEEP01_L176E64_CONC_R02",
+              "ESWEEP01_L176E64_CONC_R03",
+              "ESWEEP01_L176E64_CONC_R04",
+              "ESWEEP01_L176E64_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 64,
+            "mean": 0.999810606060606,
+            "min": 0.9990530303030303,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L176E64_CONC_R01",
+              "ESWEEP01_L176E64_CONC_R02",
+              "ESWEEP01_L176E64_CONC_R03",
+              "ESWEEP01_L176E64_CONC_R04",
+              "ESWEEP01_L176E64_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "CONCENTRATED",
+            "Edge_FPS": 64,
+            "mean": 0.6105729166666667,
+            "min": 0.5395833333333333,
+            "max": 0.7192708333333333,
+            "run_ids": [
+              "ESWEEP01_L176E64_CONC_R01",
+              "ESWEEP01_L176E64_CONC_R02",
+              "ESWEEP01_L176E64_CONC_R03",
+              "ESWEEP01_L176E64_CONC_R04",
+              "ESWEEP01_L176E64_CONC_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "R_min",
+            "placement": "DISPERSED",
+            "Edge_FPS": 64,
+            "mean": 0.9747777777777779,
+            "min": 0.9661111111111111,
+            "max": 0.9838888888888889,
+            "run_ids": [
+              "ESWEEP01_L176E64_DISP_R01",
+              "ESWEEP01_L176E64_DISP_R02",
+              "ESWEEP01_L176E64_DISP_R03",
+              "ESWEEP01_L176E64_DISP_R04",
+              "ESWEEP01_L176E64_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Local_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 64,
+            "mean": 0.9999810606060606,
+            "min": 0.999905303030303,
+            "max": 1.0,
+            "run_ids": [
+              "ESWEEP01_L176E64_DISP_R01",
+              "ESWEEP01_L176E64_DISP_R02",
+              "ESWEEP01_L176E64_DISP_R03",
+              "ESWEEP01_L176E64_DISP_R04",
+              "ESWEEP01_L176E64_DISP_R05"
+            ],
+            "n": 5
+          },
+          {
+            "metric": "Edge_assigned_TIR",
+            "placement": "DISPERSED",
+            "Edge_FPS": 64,
+            "mean": 0.9297395833333333,
+            "min": 0.8947916666666667,
+            "max": 0.9471354166666667,
+            "run_ids": [
+              "ESWEEP01_L176E64_DISP_R01",
+              "ESWEEP01_L176E64_DISP_R02",
+              "ESWEEP01_L176E64_DISP_R03",
+              "ESWEEP01_L176E64_DISP_R04",
+              "ESWEEP01_L176E64_DISP_R05"
+            ],
+            "n": 5
+          }
+        ],
+        "reference_values": [
+          1.0,
+          0.9666666666666667,
+          0.9333333333333333,
+          0.9,
+          0.8666666666666667,
+          0.8333333333333334,
+          0.8,
+          0.7666666666666666,
+          0.7333333333333334
+        ],
+        "E0_Edge_TIR_undefined": true,
+        "E16_runs_shared_with_Figure_1": true,
+        "values_match_canonical_CSV_and_validation": true,
+        "ANALYZER_SHA_RECORD_NOT_FOUND": true
+      },
+      "rendering": {
+        "figures": {
+          "1": {
+            "size_inches": [
+              3.5,
+              4.5
+            ],
+            "font_family": "STIXGeneral",
+            "font_size_pt": 8.5,
+            "PNG_dpi": 600,
+            "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nCZRBLR+STIXGeneral-Regular           CID TrueType      Identity-H       yes yes yes     21  0\n",
+            "Type_3_present": false,
+            "text_clipping": false,
+            "legend_data_overlap": false,
+            "vector_PDF": true,
+            "panel_labels_below_axes": true
+          },
+          "2": {
+            "size_inches": [
+              3.5,
+              5.3
+            ],
+            "font_family": "STIXGeneral",
+            "font_size_pt": 8.5,
+            "PNG_dpi": 600,
+            "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nCZRBLR+STIXGeneral-Regular           CID TrueType      Identity-H       yes yes yes     33  0\n",
+            "Type_3_present": false,
+            "text_clipping": false,
+            "legend_data_overlap": false,
+            "vector_PDF": true,
+            "panel_labels_below_axes": true
+          }
+        },
+        "plotted_series": [
+          {
+            "series": "Concentrated",
+            "metric": "Edge_assigned_TIR",
+            "display_x": [
+              -0.14,
+              0.86,
+              1.8599999999999999,
+              2.86,
+              3.86,
+              4.86,
+              5.86,
+              6.86
+            ],
+            "mean": [
+              0.9833333333333333,
+              0.9716666666666667,
+              0.91,
+              0.39666666666666667,
+              0.05333333333333333,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "min": [
+              0.9666666666666667,
+              0.9583333333333334,
+              0.8416666666666667,
+              0.15833333333333333,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "max": [
+              1.0,
+              0.9916666666666667,
+              0.9666666666666667,
+              0.7583333333333333,
+              0.16666666666666666,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "connected": false
+          },
+          {
+            "series": "Dispersed",
+            "metric": "Edge_assigned_TIR",
+            "display_x": [
+              0.14,
+              1.1400000000000001,
+              2.14,
+              3.14,
+              4.14,
+              5.14,
+              6.14,
+              7.14
+            ],
+            "mean": [
+              0.9766666666666667,
+              0.985,
+              0.99,
+              0.9916666666666667,
+              0.9916666666666667,
+              0.99,
+              0.9916666666666667,
+              0.9866666666666667
+            ],
+            "min": [
+              0.95,
+              0.95,
+              0.9666666666666667,
+              0.9583333333333334,
+              0.9666666666666667,
+              0.9583333333333334,
+              0.9666666666666667,
+              0.95
+            ],
+            "max": [
+              0.9916666666666667,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "connected": false
+          },
+          {
+            "series": "Concentrated",
+            "metric": "R_min",
+            "display_x": [
+              7.2,
+              15.2,
+              23.2,
+              31.2,
+              39.2,
+              47.2,
+              55.2,
+              63.2
+            ],
+            "mean": [
+              0.8340000000000001,
+              0.9333333333333333,
+              0.899888888888889,
+              0.8673333333333334,
+              0.8334444444444444,
+              0.8003333333333333,
+              0.768,
+              0.7337777777777778
+            ],
+            "min": [
+              0.7827777777777778,
+              0.9333333333333333,
+              0.8994444444444445,
+              0.8666666666666667,
+              0.8333333333333334,
+              0.8,
+              0.7666666666666667,
+              0.7322222222222222
+            ],
+            "max": [
+              0.8766666666666667,
+              0.9333333333333333,
+              0.9,
+              0.8694444444444445,
+              0.8338888888888889,
+              0.8011111111111111,
+              0.7694444444444445,
+              0.7366666666666667
+            ],
+            "connected": true
+          },
+          {
+            "series": "Dispersed",
+            "metric": "R_min",
+            "display_x": [
+              8.8,
+              16.8,
+              24.8,
+              32.8,
+              40.8,
+              48.8,
+              56.8,
+              64.8
+            ],
+            "mean": [
+              0.8327777777777777,
+              0.9983333333333333,
+              0.9961111111111111,
+              0.9974444444444445,
+              0.9878888888888889,
+              0.9916666666666667,
+              0.9778888888888889,
+              0.9747777777777779
+            ],
+            "min": [
+              0.7438888888888889,
+              0.9961111111111111,
+              0.99,
+              0.9927777777777778,
+              0.9733333333333334,
+              0.9872222222222222,
+              0.9672222222222222,
+              0.9661111111111111
+            ],
+            "max": [
+              0.9983333333333333,
+              0.9994444444444445,
+              0.9994444444444445,
+              0.9994444444444445,
+              0.9994444444444445,
+              0.9977777777777778,
+              0.9994444444444445,
+              0.9838888888888889
+            ],
+            "connected": true
+          },
+          {
+            "series": "Local-only",
+            "metric": "R_min",
+            "display_x": [
+              0.0
+            ],
+            "mean": [
+              0.5675555555555556
+            ],
+            "min": [
+              0.5333333333333333
+            ],
+            "max": [
+              0.5911111111111111
+            ],
+            "connected": false
+          },
+          {
+            "series": "Local / Concentrated",
+            "metric": "Local_assigned_TIR",
+            "display_x": [
+              7.2,
+              15.2,
+              23.2,
+              31.2,
+              39.2,
+              47.2,
+              55.2,
+              63.2
+            ],
+            "mean": [
+              0.8807471264367815,
+              1.0,
+              0.9999537037037037,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.999810606060606
+            ],
+            "min": [
+              0.832183908045977,
+              1.0,
+              0.9997685185185186,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.9990530303030303
+            ],
+            "max": [
+              0.9156609195402299,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "connected": true
+          },
+          {
+            "series": "Local / Dispersed",
+            "metric": "Local_assigned_TIR",
+            "display_x": [
+              8.8,
+              16.8,
+              24.8,
+              32.8,
+              40.8,
+              48.8,
+              56.8,
+              64.8
+            ],
+            "mean": [
+              0.8526436781609196,
+              0.9999702380952381,
+              0.9996141975308642,
+              1.0,
+              1.0,
+              0.9999826388888889,
+              1.0,
+              0.9999810606060606
+            ],
+            "min": [
+              0.7683908045977011,
+              0.9998511904761904,
+              0.9983024691358025,
+              1.0,
+              1.0,
+              0.9999131944444445,
+              1.0,
+              0.999905303030303
+            ],
+            "max": [
+              0.9998563218390805,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "connected": true
+          },
+          {
+            "series": "Edge / Concentrated",
+            "metric": "Edge_assigned_TIR",
+            "display_x": [
+              7.2,
+              15.2,
+              23.2,
+              31.2,
+              39.2,
+              47.2,
+              55.2,
+              63.2
+            ],
+            "mean": [
+              0.28500000000000003,
+              0.414375,
+              0.4980555555555556,
+              0.609375,
+              0.5034166666666666,
+              0.6163194444444444,
+              0.601845238095238,
+              0.6105729166666667
+            ],
+            "min": [
+              0.24791666666666667,
+              0.3729166666666667,
+              0.4618055555555556,
+              0.49166666666666664,
+              0.42041666666666666,
+              0.4979166666666667,
+              0.42589285714285713,
+              0.5395833333333333
+            ],
+            "max": [
+              0.32083333333333336,
+              0.484375,
+              0.5541666666666667,
+              0.715625,
+              0.6191666666666666,
+              0.7361111111111112,
+              0.7324404761904761,
+              0.7192708333333333
+            ],
+            "connected": true
+          },
+          {
+            "series": "Edge / Dispersed",
+            "metric": "Edge_assigned_TIR",
+            "display_x": [
+              8.8,
+              16.8,
+              24.8,
+              32.8,
+              40.8,
+              48.8,
+              56.8,
+              64.8
+            ],
+            "mean": [
+              0.9804166666666667,
+              0.9879166666666667,
+              0.9723611111111111,
+              0.9855208333333333,
+              0.9488333333333333,
+              0.9709722222222222,
+              0.9110714285714285,
+              0.9297395833333333
+            ],
+            "min": [
+              0.9395833333333333,
+              0.9583333333333334,
+              0.9083333333333333,
+              0.9536458333333333,
+              0.8779166666666667,
+              0.9541666666666667,
+              0.8663690476190476,
+              0.8947916666666667
+            ],
+            "max": [
+              0.9979166666666667,
+              0.9989583333333333,
+              0.9979166666666667,
+              0.9984375,
+              0.9995833333333334,
+              0.9961805555555555,
+              0.999702380952381,
+              0.9471354166666667
+            ],
+            "connected": true
+          },
+          {
+            "series": "Local-only",
+            "metric": "Local_assigned_TIR",
+            "display_x": [
+              0.0
+            ],
+            "mean": [
+              0.6130277777777777
+            ],
+            "min": [
+              0.6006944444444444
+            ],
+            "max": [
+              0.6236805555555556
+            ],
+            "connected": false
+          }
+        ],
+        "marker_size_pt": 4.5,
+        "line_width_pt": 1,
+        "range_line_width_pt": 0.8,
+        "cap_size_pt": 2,
+        "nonzero_sweep_display_x_offsets": {
+          "Concentrated": -0.8,
+          "Dispersed": 0.8
+        },
+        "display_offset_note": "Horizontal separation is presentation only; nominal assigned rates are unchanged.",
+        "ranges": "five-run observed min–max, not confidence intervals",
+        "connecting_lines": "visual guides between measured points only"
+      },
+      "numeric_CSV_created": false,
+      "output_sha256": {
+        "fig1_e16.pdf": "59fa81ffb35b6505668b0a971d7f07c667648144ca75fb2ce80e116de93981e6",
+        "fig1_e16.png": "c5859210f84135908d5abc18e6f33b7723e99a242e9b6c598e3257c2a51d2a08",
+        "fig2_edge_rate_sweep.pdf": "95c44bdc02b8a845c844a92eeb07ed76ef355e4198ebfd001806b318869927c1",
+        "fig2_edge_rate_sweep.png": "17eee5f5f3a600e48658fbbc0c4f9a3f120ff0956eec15dc7713c004e9b26c67",
+        "plot_section3_figures.py": "883a3ac71cb244b2cd4a0dde4b1c7610bba740f84dd77b531c23d923234287c4",
+        "README_fig1.txt": "ec35c311bb21b0bcfa13f3e84a4bd7c3665062017774166cc40340923f2cb98e"
+      },
+      "previous_validation_metadata": {
+        "task": "CAMPAIGN2_SECTION3_FIGURE1_CLEANUP_AND_PUBLISH",
+        "started_utc": "2026-10-06T13:44:17.394072+00:00",
+        "completed_utc": "2026-10-06T13:48:35.246831+00:00",
+        "status": "PENDING_SECTION3_FINALIZATION",
+        "Figure_2_change_authorized": false,
+        "rendering": {
+          "figure_size_inches": {
+            "width": 7.16,
+            "height": 3.5
+          },
+          "png_dpi": 600,
+          "font": {
+            "family": "STIXGeneral",
+            "size_pt": 8.5,
+            "pdf_fonttype": 42,
+            "ps_fonttype": 42,
+            "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nCZRBLR+STIXGeneral-Regular           CID TrueType      Identity-H       yes yes yes     21  0\n",
+            "Type_3_present": false
+          },
+          "text_clipping_check": "PASS",
+          "vector_assignment_cells": true,
+          "raster_cell_grid": {
+            "boundary_color": "#D9DCE0",
+            "width_pt": 0.25,
+            "cells": {
+              "CONCENTRATED": {
+                "width_inches": 0.08830666666666666,
+                "height_inches": 0.08830666666666666,
+                "height_width_ratio": 1.0
+              },
+              "DISPERSED": {
+                "width_inches": 0.08830666666666666,
+                "height_inches": 0.08830666666666664,
+                "height_width_ratio": 0.9999999999999998
+              }
+            },
+            "square_cell_check": "PASS"
+          },
+          "outcome_connecting_lines": false,
+          "range_line_width_pt": 0.8,
+          "marker_size_pt": 4.5,
+          "range_cap_size_pt": 2
+        },
+        "visual_inspection": {
+          "status": "PASS",
+          "checked_utc": "2026-10-06T14:04:22.920403+00:00",
+          "all_cell_boundaries_visible_and_subtle": true,
+          "Local_background_light_gray": true,
+          "Edge_cells_emphasized_blue_or_orange": true,
+          "square_cells": true,
+          "tick_legend_and_panel_labels_readable": true,
+          "clipping_or_text_overlap": false,
+          "panel_b_unchanged": true
+        },
+        "checks": {
+          "assignment_table_manifest_cell_match": "PASS",
+          "aggregate_and_per_stream_assignment_counts": "PASS",
+          "frozen_stream_values_and_summary_match": "PASS",
+          "assigned_denominator_includes_expired_once": "PASS",
+          "five_measured_runs_per_placement": "PASS",
+          "input_sha_preservation": "PASS",
+          "pdf_vector_and_no_Type_3": "PASS",
+          "PNG_600_dpi": "PASS",
+          "visual_inspection": "PASS",
+          "cleanup_exact_prechecked_files_only": "PASS"
+        },
+        "preservation": {
+          "existing_paper_files_checked": 42,
+          "existing_campaign_files_checked": 4542,
+          "analysis_evidence_files_SHA_checked": 23,
+          "Figure_2_unchanged": true,
+          "raw_result_metadata_unchanged": true,
+          "analysis01_SHA_unchanged": true,
+          "paper_evidence01_SHA_unchanged": true
+        },
+        "plot_generation_status": "PASS",
+        "generated_files": [
+          "paper/figures/campaign2/fig1_e16.pdf",
+          "paper/figures/campaign2/fig1_e16.png",
+          "paper/figures/campaign2/figure1_data.csv",
+          "paper/figures/campaign2/plot_fig1.py",
+          "paper/figures/campaign2/validation_fig1.json",
+          "paper/figures/campaign2/README_fig1.txt"
+        ]
+      },
+      "preservation": {
+        "status": "PASS",
+        "protected_paper_files_checked": 44,
+        "existing_campaign_files_checked": 4542,
+        "analysis_evidence_SHA_files_checked": 23,
+        "protected_paper_SHA_size_mtime_unchanged": true,
+        "raw_result_file_inventory_size_mtime_unchanged": true,
+        "analysis01_SHA_unchanged": true,
+        "paper_evidence01_SHA_unchanged": true,
+        "canonical_figure_CSV_SHA_unchanged": true,
+        "derived_Figure_1_CSV_SHA_unchanged": true,
+        "original_paper_Figure_2_outputs_unchanged": true,
+        "duplicate_CSV_created": false,
+        "canonical_CSV_SHA256": "dae92fe52892316a99ff7be33513c610a7ef55d763ad99e39a4f0dcfb81d59f8"
+      },
+      "completed_utc": "2026-10-06T14:42:57.106829+00:00",
+      "generated_files": [
+        "paper/figures/campaign2/fig1_e16.pdf",
+        "paper/figures/campaign2/fig1_e16.png",
+        "paper/figures/campaign2/fig2_edge_rate_sweep.pdf",
+        "paper/figures/campaign2/fig2_edge_rate_sweep.png",
+        "paper/figures/campaign2/plot_section3_figures.py",
+        "paper/figures/campaign2/validation_fig1.json",
+        "paper/figures/campaign2/README_fig1.txt"
+      ],
+      "scientific_scope": {
+        "new_metric": false,
+        "new_experiment": false,
+        "analyzer_reexecuted": false,
+        "validity_changed": false,
+        "excluded_runs": false,
+        "other_campaigns_combined": false
+      }
     }
   ]
 }
